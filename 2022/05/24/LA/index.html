@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"uynajgi.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="线性代数笔记，包括考研用，学习用，以及深入了解记录，持续更新中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线性代数">
+<meta property="og:url" content="https://uynajgi.github.io/2022/05/24/LA/index.html">
+<meta property="og:site_name" content="逢灯暗室">
+<meta property="og:description" content="线性代数笔记，包括考研用，学习用，以及深入了解记录，持续更新中">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-24T15:12:26.000Z">
+<meta property="article:modified_time" content="2022-05-24T15:12:26.724Z">
+<meta property="article:author" content="UynajGI">
+<meta property="article:tag" content="行列式">
+<meta property="article:tag" content="矩阵">
+<meta property="article:tag" content="二次型">
+<meta property="article:tag" content="线性空间">
+<meta property="article:tag" content="基">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://uynajgi.github.io/2022/05/24/LA/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>线性代数 | 逢灯暗室</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">逢灯暗室</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">柳暗花明又一村</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>图书馆</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>所有文章</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://uynajgi.github.io/2022/05/24/LA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/U_avatar.jpg">
+      <meta itemprop="name" content="UynajGI">
+      <meta itemprop="description" content="如果你想走到高处，就要使用自己的两条腿！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="逢灯暗室">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          线性代数
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-05-24 23:12:26" itemprop="dateCreated datePublished" datetime="2022-05-24T23:12:26+08:00">2022-05-24</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">线性代数笔记，包括考研用，学习用，以及深入了解记录，持续更新中</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="考研用"><a href="#考研用" class="headerlink" title="考研用"></a>考研用</h1><center>
+<font face="宋体" color=#B77F70 size=6>
+知识集
+</font>
+</center>
+
+<h2 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a>行列式</h2><p>行列式的计算是按照行列式的性质进行的。低阶行列式的计算主要有两个思路：转化为上（下）三角行列式和降阶，但一般是把两种思路相结合；n 阶行列式的计算主要有数学归纳法、递推法、升阶法、转化为上（下）三角行列式法.</p>
+<h3 id="行列式的基本概念与性质"><a href="#行列式的基本概念与性质" class="headerlink" title="行列式的基本概念与性质"></a>行列式的基本概念与性质</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><ol>
+<li>逆序</li>
+<li>逆序数 $\tau(421635)=3+1+0+2+0=6$</li>
+<li>行列式 $n\times n$的矩阵$D$的行列式为<script type="math/tex; mode=display">
+ D=\sum_{j_1j_2\cdots j_n}{(-1)^{\tau{j_1j_2\cdots j_n}}a_{1j_1}a_{2j_2}\cdots a_{nj_n}}</script></li>
+<li>余子式与代数余子式<br>把行列式$D$中元素$a_{ij}$所在的行列去掉后剩下的行列式称为$a_{ij}$的余子式，记为$M_{ij}$，称$A_{ij}=(-1)^{i+j}M_{ij}$为代数余子式</li>
+</ol>
+<h4 id="几个特殊的高阶行列式"><a href="#几个特殊的高阶行列式" class="headerlink" title="几个特殊的高阶行列式"></a>几个特殊的高阶行列式</h4><h5 id="对角、上（下）三角行列式"><a href="#对角、上（下）三角行列式" class="headerlink" title="对角、上（下）三角行列式"></a>对角、上（下）三角行列式</h5><ol>
+<li>对角、上（下）三角矩阵的行列式为$\prod_{n}{a_{ii}}$</li>
+<li>反对角矩阵的行列式为$(-1)^{\frac{n(n-1)}{2}}\prod_{n}{l_{i}}$，$l$为反对角线上的元素.</li>
+</ol>
+<h5 id="范德蒙行列式"><a href="#范德蒙行列式" class="headerlink" title="范德蒙行列式"></a>范德蒙行列式</h5><script type="math/tex; mode=display">
+\left|\begin{matrix}
+1&1&\cdots&1\\
+a_1&a_2&\cdots&a_n\\
+\vdots&\vdots&&\vdots\\
+a_1^{n-1}&a_2^{n-1}&\cdots&a_n^{n-1}
+\end{matrix}\right|=\prod_{1\le j< i\le n}{(a_i-a_j)}</script><h5 id="分块行列式"><a href="#分块行列式" class="headerlink" title="分块行列式"></a>分块行列式</h5><ol>
+<li>分块与元素情况相同</li>
+<li>除此之外还有<script type="math/tex; mode=display">
+\left|\begin{matrix}\mathbf{O}&\mathbf{A}\\\mathbf{B}&\mathbf{B}\end{matrix}\right|=(-1)^{mn}|\mathbf{A}||\mathbf{B}|</script></li>
+</ol>
+<h4 id="行列式的计算性质"><a href="#行列式的计算性质" class="headerlink" title="行列式的计算性质"></a>行列式的计算性质</h4><h5 id="一般行列式转化为上（下）三角行列式的性质"><a href="#一般行列式转化为上（下）三角行列式的性质" class="headerlink" title="一般行列式转化为上（下）三角行列式的性质"></a>一般行列式转化为上（下）三角行列式的性质</h5><ol>
+<li>行列式与其转置行列式相等，即$D=D^{T}$</li>
+<li>对调两行（或列）行列式改变符号</li>
+<li>行列式某行（或列）有公因子可以提取到行列式的外面<blockquote>
+<p>推论</p>
+<ol>
+<li>若行列式某行（或列）元素全为零，则该行列式值为零</li>
+<li>若行列式某两行（或列）元素相同，则行式值为零</li>
+<li>若行列式某两行（或列）元素对应成比例，则行列式值为</li>
+</ol>
+</blockquote>
+</li>
+<li>行列式某行（或列）的每个元素皆为两数之和时，行列式可分解为两个行列式之和</li>
+<li>列式的某行（或列）的倍数加到另一行（或列），行列式不变</li>
+</ol>
+<h5 id="行列式的降阶性质"><a href="#行列式的降阶性质" class="headerlink" title="行列式的降阶性质"></a>行列式的降阶性质</h5><ol>
+<li>行列式等于行列式某行（或列）元素与其对应的代数余子式之积的和</li>
+<li>行列式的某行（或列）元素与另一行（或列）对应元素的代数余子式之积的和为零</li>
+</ol>
+<blockquote>
+<p>n 阶方阵对应的行列式的性质：</p>
+<ol>
+<li>$|\mathbf{A}^T|=|\mathbf{A}|$</li>
+<li>$|k\mathbf{A}|=k^n|\mathbf{A}|$</li>
+<li>$|\mathbf{A}\mathbf{B}|=|\mathbf{A}||\mathbf{B}|$</li>
+<li>$|\mathbf{A}^{-1}|=\dfrac{1}{|\mathbf{A}|}$</li>
+<li>$|\mathbf{A}^*|=||\mathbf{A}|\mathbf{A}^{-1}|=|\mathbf{A}|^{n-1}$</li>
+</ol>
+</blockquote>
+<h3 id="行列式的应用一克拉默法则"><a href="#行列式的应用一克拉默法则" class="headerlink" title="行列式的应用一克拉默法则"></a>行列式的应用一克拉默法则</h3><ol>
+<li>齐次方程存在非零解，有$\det{\mathbf{A}}=0$</li>
+<li>非齐次方程存在唯一解，有$\det{\mathbf{A}}\not = 0$</li>
+</ol>
+<p>例题</p>
+<script type="math/tex; mode=display">
+D_n=\det{\left(\begin{matrix}b&a&\cdots&a\\a&b&\cdots&a\\\vdots&\vdots&&\vdots\\a&a&\cdots&b\end{matrix}\right)}</script><script type="math/tex; mode=display">
+D_n=\det{\left(
+        \begin{matrix}
+        1+a_1&1&\cdots&1\\
+        1&1+a_2&\cdots&1\\
+        \vdots&\vdots&&\vdots\\
+        1&1&\cdots&1+a_n
+        \end{matrix}
+        \right)}</script><script type="math/tex; mode=display">
+D_{2n}=\det{\left(
+        \begin{matrix}
+        a&&&&&b\\
+        &\ddots&&&&\\
+        &&a&b&&\\
+        &&b&a&&\\
+        &&&&\ddots&\\
+        b&&&&&a
+        \end{matrix}
+        \right)}</script><p><strong>三对角行列式</strong></p>
+<script type="math/tex; mode=display">
+D_1 = a\quad D_2 = \det{\left(\begin{matrix}a&b\\c&a\end{matrix}\right)}</script><p>有特征方程$\lambda^2-b\lambda+ac=0$，解得行列式值为</p>
+<script type="math/tex; mode=display">
+D_n=\begin{cases}
+    C_1\lambda_1^n+C_2\lambda_2^n,&\Delta>0\\
+    (C_1n+C_2)\lambda^n,&\Delta=0\\
+    (C_1\cos{n\theta}+C_2\sin{n\theta})\mathrm{Re}{\lambda}^n,&\Delta<0
+\end{cases}</script><h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><h3 id="矩阵的基本概念与特殊矩阵"><a href="#矩阵的基本概念与特殊矩阵" class="headerlink" title="矩阵的基本概念与特殊矩阵"></a>矩阵的基本概念与特殊矩阵</h3><h4 id="基本概念-1"><a href="#基本概念-1" class="headerlink" title="基本概念"></a>基本概念</h4><ol>
+<li>矩阵$\mathbf{A}=(a_{ij})_{m\times n}$</li>
+<li>矩阵$\mathbf{A},\mathbf{B}$的行数和列数相同，称矩阵$\mathbf{A},\mathbf{B}$为同型矩阵，$a_{ij}=b_{ij}$称矩阵$A,B$相等，$\mathbf{A}=\mathbf{B}$</li>
+<li>伴随矩阵<script type="math/tex; mode=display">
+\mathbf{A}^*=\left(\begin{matrix}A_{11}&A_{21}&\cdots&A_{n1}\\
+A_{12}&A_{22}&\cdots&A_{n2}\\
+\vdots&\vdots&&\vdots\\
+A_{1n}&A_{2n}&\cdots&A_{nn}\end{matrix}\right)</script></li>
+</ol>
+<h4 id="特殊矩阵"><a href="#特殊矩阵" class="headerlink" title="特殊矩阵"></a>特殊矩阵</h4><ol>
+<li>零矩阵$\mathbf{O}$</li>
+<li>$n$阶方阵</li>
+<li>$\mathbf{E}$单位矩阵，$a\mathbf{E}$数量矩阵</li>
+<li>$\mathbf{A}^T$转置矩阵</li>
+<li>$\det{\mathbf{A}}\not = 0$非奇异矩阵</li>
+<li>$\mathbf{A}^T=\mathbf{A}$实对称矩阵</li>
+<li>$\mathbf{A}^T\mathbf{A}=\mathbf{E}$正交矩阵</li>
+<li>$(a_{ij}\delta_{ij})_{m\times n}$对角矩阵</li>
+</ol>
+<h3 id="矩阵的运算及性质"><a href="#矩阵的运算及性质" class="headerlink" title="矩阵的运算及性质"></a>矩阵的运算及性质</h3><h4 id="矩阵的三则运算及性质"><a href="#矩阵的三则运算及性质" class="headerlink" title="矩阵的三则运算及性质"></a>矩阵的三则运算及性质</h4><h5 id="矩阵的三则运算"><a href="#矩阵的三则运算" class="headerlink" title="矩阵的三则运算"></a>矩阵的三则运算</h5><ol>
+<li>加法</li>
+<li>乘法<br>当$\mathbf{A}=\mathbf{\alpha}\mathbf{\beta}^T$，有$\mathbf{\alpha}^T\mathbf{\beta}=\mathbf{\beta}^T\mathbf{\alpha}=\text{tr}(\mathbf{A})$</li>
+</ol>
+<h5 id="矩阵三则运算的性质"><a href="#矩阵三则运算的性质" class="headerlink" title="矩阵三则运算的性质"></a>矩阵三则运算的性质</h5><ol>
+<li>加法交换律</li>
+<li>加法结合律</li>
+<li>乘法结合律</li>
+<li>线性</li>
+</ol>
+<h4 id="矩阵的转置运算及性质"><a href="#矩阵的转置运算及性质" class="headerlink" title="矩阵的转置运算及性质"></a>矩阵的转置运算及性质</h4><h5 id="矩阵转置的定义"><a href="#矩阵转置的定义" class="headerlink" title="矩阵转置的定义"></a>矩阵转置的定义</h5><h5 id="矩阵转置的性质"><a href="#矩阵转置的性质" class="headerlink" title="矩阵转置的性质"></a>矩阵转置的性质</h5><ol>
+<li>$(\mathbf{A}^T)^T=\mathbf{A}$</li>
+<li>$(k\mathbf{A})^T=k\mathbf{A}^T$</li>
+<li>$(\mathbf{A}\pm\mathbf{B})^T=\mathbf{A}^T\pm\mathbf{B}^T$</li>
+<li>$(\mathbf{A}\mathbf{B})^T=\mathbf{B}^T\mathbf{A}^T$</li>
+<li>$(\mathbf{A}^{-1})^T=(\mathbf{A}^T)^{-1}$</li>
+<li>$(\mathbf{A}^m)^T=(\mathbf{A}^T)^m$</li>
+</ol>
+<h3 id="矩阵的逆矩阵"><a href="#矩阵的逆矩阵" class="headerlink" title="矩阵的逆矩阵"></a>矩阵的逆矩阵</h3><h4 id="矩阵的逆矩阵的定义"><a href="#矩阵的逆矩阵的定义" class="headerlink" title="矩阵的逆矩阵的定义"></a>矩阵的逆矩阵的定义</h4><h4 id="矩阵可逆的充分必要条件（重要定理）"><a href="#矩阵可逆的充分必要条件（重要定理）" class="headerlink" title="矩阵可逆的充分必要条件（重要定理）"></a>矩阵可逆的充分必要条件（重要定理）</h4><p><strong>定理</strong> 设$\mathbf{A}$是$n$阶矩阵，则$\mathbf{A}$可逆的充分必要条件是$\det{\mathbf{A}}\not = 0$</p>
+<h4 id="逆矩阵的求法"><a href="#逆矩阵的求法" class="headerlink" title="逆矩阵的求法"></a>逆矩阵的求法</h4><ol>
+<li>伴随矩阵求法</li>
+<li>初等变换法求逆矩阵一一思想体系与求法<script type="math/tex; mode=display">
+(\mathbf{A}\vdots\mathbf{E})(\rightarrow\text{行变换})(\mathbf{E}\vdots\mathbf{A}^{-1})</script></li>
+</ol>
+<h4 id="逆矩阵的性质"><a href="#逆矩阵的性质" class="headerlink" title="逆矩阵的性质"></a>逆矩阵的性质</h4><ol>
+<li>$(\mathbf{A}^{-1})^{-1}=\mathbf{A}$</li>
+<li>$(k\mathbf{A})^{-1}=\dfrac{1}{k}\mathbf{A}^{-1}$</li>
+<li>$(\mathbf{A}\mathbf{B})^{-1}=\mathbf{B}^{-1}\mathbf{A}^{-1}$</li>
+<li>$(\mathbf{A}^{-1})^T=(\mathbf{A}^T)^{-1}$</li>
+<li>$(\mathbf{A}^{-1})^n=(\mathbf{A}^n)^{-1}$</li>
+<li>对于$\mathbf{A},\mathbf{B}$<ol>
+<li>$\left(\begin{matrix}\mathbf{A}&amp;\mathbf{O}\\\mathbf{O}&amp;\mathbf{B}\end{matrix}\right)^{-1}=\left(\begin{matrix}\mathbf{A}^{-1}&amp;\mathbf{O}\\\mathbf{O}&amp;\mathbf{B}^{-1}\end{matrix}\right)$</li>
+<li>$\left(\begin{matrix}\mathbf{O}&amp;\mathbf{A}\\\mathbf{B}&amp;\mathbf{O}\end{matrix}\right)^{-1}=\left(\begin{matrix}\mathbf{O}&amp;\mathbf{B}^{-1}\\\mathbf{A}^{-1}&amp;\mathbf{O}\end{matrix}\right)$</li>
+</ol>
+</li>
+</ol>
+<h3 id="矩阵的秩"><a href="#矩阵的秩" class="headerlink" title="矩阵的秩"></a>矩阵的秩</h3><h4 id="矩阵秩的概念"><a href="#矩阵秩的概念" class="headerlink" title="矩阵秩的概念"></a>矩阵秩的概念</h4><p>$r(\mathbf{A})\le \min\{m,n\}$</p>
+<h4 id="矩阵秩的求法"><a href="#矩阵秩的求法" class="headerlink" title="矩阵秩的求法"></a>矩阵秩的求法</h4><p>行变换后非零行的个数为矩阵的秩</p>
+<ol>
+<li>矩阵的秩本质上即为方程组约束条件的个数</li>
+<li>$r(\mathbf{A})=0$的充分必要条件是$\mathbf{A}=\mathbf{O}$</li>
+<li>$r(\mathbf{A})≥1$的充分必要条件是$\mathbf{A}\not ={\mathbf{O}}$</li>
+<li>$r(\mathbf{A})≥2$的充分必要条件是$\mathbf{A}$至少两行不成比例</li>
+</ol>
+<h4 id="矩阵秩的性质"><a href="#矩阵秩的性质" class="headerlink" title="矩阵秩的性质"></a>矩阵秩的性质</h4><p><strong>性质1</strong> $r(\mathbf{A})=r(\mathbf{A}^T)=r(\mathbf{A}^T\mathbf{A})=r(\mathbf{A}\mathbf{A}^T)=$</p>
+<p><strong>性质2</strong> $\mathbf{A},\mathbf{B}$同型，$r(\mathbf{A}\pm\mathbf{B})\le r(\mathbf{A})+r(\mathbf{B})$</p>
+<p><strong>性质3</strong> $r(\mathbf{AB})\le\min\{r(\mathbf{A}),r(\mathbf{B})\}$</p>
+<p><strong>性质4</strong> $r(\mathbf{AB})=\mathbf{O}\Rightarrow r(\mathbf{A})+r(\mathbf{B})\le n$</p>
+<p><strong>性质5</strong> $\mathbf{P},\mathbf{Q}$可逆，$r(\mathbf{A})=r(\mathbf{PAQ})$</p>
+<p><strong>性质6</strong></p>
+<script type="math/tex; mode=display">
+r(\mathbf{A}^*)=\begin{cases}
+   n,& r(\mathbf{A})=n\\
+   1,& r(\mathbf{A})=n-1\\
+   0,& r(\mathbf{A})<n-1
+\end{cases}</script><p><strong>性质7</strong></p>
+<script type="math/tex; mode=display">
+\max\{r(\mathbf{A}),r(\mathbf{B})\}\le r\left(\begin{matrix}\mathbf{A}\\\mathbf{B}\end{matrix}\right)\le r(\mathbf{A})+r(\mathbf{B})</script><script type="math/tex; mode=display">
+\max\{r(\mathbf{A}),r(\mathbf{B})\}\le r\left(\mathbf{A}:\mathbf{B}\right)\le r(\mathbf{A})+r(\mathbf{B})</script><script type="math/tex; mode=display">
+r\left(\begin{matrix}\mathbf{A}&\mathbf{O}\\\mathbf{O}&\mathbf{B}\end{matrix}\right)=r(\mathbf{A})+r(\mathbf{B})</script><p><strong>性质8</strong> $r(\mathbf{A})=1\Leftrightarrow \mathbf{A}=\alpha\beta^T$</p>
+<h3 id="矩阵等价"><a href="#矩阵等价" class="headerlink" title="矩阵等价"></a>矩阵等价</h3><h4 id="矩阵等价的定义"><a href="#矩阵等价的定义" class="headerlink" title="矩阵等价的定义"></a>矩阵等价的定义</h4><p>$\mathbf{A}$有限初等变换变为$\mathbf{B}$，称为$\mathbf{A},\mathbf{B}$等价</p>
+<h4 id="矩阵等价判别法"><a href="#矩阵等价判别法" class="headerlink" title="矩阵等价判别法"></a>矩阵等价判别法</h4><p><strong>定理1</strong> 设$\mathbf{A},\mathbf{B}$为同型矩阵，$\mathbf{A},\mathbf{B}$是等价矩阵必是$r(\mathbf{A})=r(\mathbf{B})$</p>
+<p><strong>定理2</strong> 设$\mathbf{A},\mathbf{B}$为同型矩阵，$\mathbf{A},\mathbf{B}$等价的充分必要条件是，存在可逆矩阵$\mathbf{P},\mathbf{Q}$，使得$\mathbf{PAQ}=\mathbf{B}$</p>
+<p><em>矩阵的幂矩阵</em></p>
+<ol>
+<li>归纳法</li>
+<li>$\mathbf{A}=\alpha\beta^T\Rightarrow \mathbf{A}^n=(\alpha\cdot\beta)^{n-1}\mathbf{A}$</li>
+<li>本征化</li>
+</ol>
+<h2 id="向量"><a href="#向量" class="headerlink" title="向量"></a>向量</h2><h3 id="向量的概念与运算"><a href="#向量的概念与运算" class="headerlink" title="向量的概念与运算"></a>向量的概念与运算</h3><h4 id="基本概念-2"><a href="#基本概念-2" class="headerlink" title="基本概念"></a>基本概念</h4><ol>
+<li>向量</li>
+<li>向量的模</li>
+<li>向量的单位化</li>
+<li>向量的加、减、数乘</li>
+<li>向量的内积</li>
+</ol>
+<h4 id="向量运算的性质"><a href="#向量运算的性质" class="headerlink" title="向量运算的性质"></a>向量运算的性质</h4><h5 id="向量三则运算的性质"><a href="#向量三则运算的性质" class="headerlink" title="向量三则运算的性质"></a>向量三则运算的性质</h5><p>线性</p>
+<h5 id="向量内积运算的性质"><a href="#向量内积运算的性质" class="headerlink" title="向量内积运算的性质"></a>向量内积运算的性质</h5><h3 id="向量组的相关性与线性表示"><a href="#向量组的相关性与线性表示" class="headerlink" title="向量组的相关性与线性表示"></a>向量组的相关性与线性表示</h3><h4 id="向量的相关性与线性表示理论的背景"><a href="#向量的相关性与线性表示理论的背景" class="headerlink" title="向量的相关性与线性表示理论的背景"></a>向量的相关性与线性表示理论的背景</h4><script type="math/tex; mode=display">
+k_1\alpha_1+k_2\alpha_2+\cdots k_n\alpha_n</script><p>称为$\alpha_1+\alpha_2+\cdots+\alpha_n$的线性组合</p>
+<script type="math/tex; mode=display">
+\beta = k_1\alpha_1+k_2\alpha_2+\cdots k_n\alpha_n</script><p>称为$\beta$可由$\alpha_1+\alpha_2+\cdots+\alpha_n$的线性表示</p>
+<h4 id="向量组相关性与线性表示的基本概念"><a href="#向量组相关性与线性表示的基本概念" class="headerlink" title="向量组相关性与线性表示的基本概念"></a>向量组相关性与线性表示的基本概念</h4><ol>
+<li>相关性<script type="math/tex; mode=display">
+   k_1\alpha_1+k_2\alpha_2+\cdots k_n\alpha_n = \mathbf{0}</script>若只有零解，则称$\alpha_1+\alpha_2+\cdots+\alpha_n$线性无关，反之线性相关.</li>
+<li>线性表示</li>
+</ol>
+<h4 id="向量组相关性与线性表示的性质"><a href="#向量组相关性与线性表示的性质" class="headerlink" title="向量组相关性与线性表示的性质"></a>向量组相关性与线性表示的性质</h4><p><strong>性质1</strong> 向量组$\alpha_1+\alpha_2+\cdots+\alpha_n$线性相关的充分必要条件是向量组$\alpha_1+\alpha_2+\cdots+\alpha_n$中至少有一个向量可由其余向量线性表示</p>
+<p><strong>性质2</strong></p>
+<p><strong>性质3</strong> 若一个向量组线性无关，则该向量组的任何部分向量组都线性无关</p>
+<p><strong>性质4</strong> 若向量组有一个部分向量组线性相关，则该向量组一定线性相关</p>
+<p><strong>性质5</strong> $\alpha_1+\alpha_2+\cdots+\alpha_n$线性相关的充分必要条件是$\det(\alpha_1+\alpha_2+\cdots+\alpha_n)\not = 0$</p>
+<p><strong>性质6</strong> 设$\alpha_1+\alpha_2+\cdots+\alpha_n$为$n$个$m$维向量，若$m&lt;n$，$\alpha_1+\alpha_2+\cdots+\alpha_n$一定线性相关</p>
+<p><strong>性质7</strong> 线性无关扩充性</p>
+<p><strong>性质8</strong> 正交向量组是线性无关向量组的充分条件</p>
+<h3 id="向量组等价、向量组的极大线性无关组与向量组的秩"><a href="#向量组等价、向量组的极大线性无关组与向量组的秩" class="headerlink" title="向量组等价、向量组的极大线性无关组与向量组的秩"></a>向量组等价、向量组的极大线性无关组与向量组的秩</h3><h4 id="基本概念-3"><a href="#基本概念-3" class="headerlink" title="基本概念"></a>基本概念</h4><ol>
+<li>向量组等价 若$\beta=\mathbf{P}\alpha,\alpha=\mathbf{P}^{-1}\beta$称$\alpha,\beta$等价</li>
+<li>向量组的极大线性无关组与向量组的秩<br>极大线性无关组中所含向量的个数称为向量组的秩</li>
+</ol>
+<h4 id="向量组秩的性质"><a href="#向量组秩的性质" class="headerlink" title="向量组秩的性质"></a>向量组秩的性质</h4><p><strong>性质1</strong> 秩=行秩=列秩</p>
+<p><strong>性质2</strong> 若$\alpha = \mathbf{P}\beta$，$r(\alpha)\le r(\beta)$</p>
+<p><strong>性质3</strong> 等价的向量组秩相等，反之不对</p>
+<h2 id="线性方程组"><a href="#线性方程组" class="headerlink" title="线性方程组"></a>线性方程组</h2><h3 id="线性方程组的基本概念与表达形式"><a href="#线性方程组的基本概念与表达形式" class="headerlink" title="线性方程组的基本概念与表达形式"></a>线性方程组的基本概念与表达形式</h3><h3 id="线性方程组解的基本定理"><a href="#线性方程组解的基本定理" class="headerlink" title="线性方程组解的基本定理"></a>线性方程组解的基本定理</h3><p><strong>定理1</strong> $\mathbf{A}_{m\times n}$</p>
+<ol>
+<li>齐次线性方程组$\mathbf{AX}=\mathbf{0}$只有零解的充分必要条件是$r(\mathbf{A})=n$</li>
+<li>齐次线性方程组$\mathbf{AX}=\mathbf{0}$有非零解（或无数）的充必要条件是$r(\mathbf{A})&lt;n$</li>
+</ol>
+<p><strong>推论1</strong>  $\mathbf{A}_{n\times n}$</p>
+<ol>
+<li>齐次线性方程组$\mathbf{AX}=\mathbf{0}$只有零解的充分必要条件是$\det{\mathbf{A}}\not = 0$</li>
+<li>齐次线性方程组$\mathbf{AX}=\mathbf{0}$有非零解（或无数）的充必要条件是$\det{\mathbf{A}}= 0$</li>
+</ol>
+<p><strong>定理2</strong> $\mathbf{A}_{m\times n},\bar{\mathbf{A}}=(\mathbf{A}:\mathbf{b})$</p>
+<ol>
+<li>$\mathbf{AX}=\mathbf{b}$有解等价于$r(\mathbf{A})=r(\mathbf{\bar{A}})$，其中$r(\mathbf{A})=n$有唯一解，$r(\mathbf{A})&lt;n$有无数解</li>
+<li>$\mathbf{AX}=\mathbf{b}$无解等价于$r(\mathbf{A})\not = r(\mathbf{\bar{A}})$</li>
+</ol>
+<p><strong>推论2</strong> 同推论1</p>
+<h3 id="线性方程组解的结构"><a href="#线性方程组解的结构" class="headerlink" title="线性方程组解的结构"></a>线性方程组解的结构</h3><ol>
+<li>$\{\mathbf{X}_i\}$是$\mathbf{AX}=\mathbf{0}$一组解，则$\mathbf{Y}=\sum{k_i\mathbf{X}_i}$也是$\mathbf{AX}=\mathbf{0}$的一个解</li>
+<li>$\eta_0$是$\mathbf{AX}=\mathbf{b}$的解，$\{\mathbf{X}_i\}$是$\mathbf{AX}=\mathbf{0}$一组解，则$\mathbf{Y}=\sum{k_i\mathbf{X}_i}+\eta_0$也是$\mathbf{AX}=\mathbf{b}$的一个解</li>
+<li>$\eta_1,\eta_2$是$\mathbf{AX}=\mathbf{b}$的解，则$\mathbf{Y}=\eta_1-\eta_2$是$\mathbf{AX}=\mathbf{0}$的一个解</li>
+<li>$\{\mathbf{X}_i\}$是$\mathbf{AX}=\mathbf{b}$一组解，则$\mathbf{Y}=\sum{k_i\mathbf{X}_i}$是$\mathbf{AX}=\mathbf{b}$的一个解等价于$\sum{k_i}=1$</li>
+<li>$\{\mathbf{X}_i\}$是$\mathbf{AX}=\mathbf{b}$一组解，则$\mathbf{Y}=\sum{k_i\mathbf{X}_i}$是$\mathbf{AX}=\mathbf{0}$的一个解等价于$\sum{k_i}=0$</li>
+</ol>
+<h3 id="线性方程组的通解"><a href="#线性方程组的通解" class="headerlink" title="线性方程组的通解"></a>线性方程组的通解</h3><h4 id="齐次线性方程组-mathbf-AX-mathbf-0-的基础解系与通解"><a href="#齐次线性方程组-mathbf-AX-mathbf-0-的基础解系与通解" class="headerlink" title="齐次线性方程组$\mathbf{AX}=\mathbf{0}$的基础解系与通解"></a>齐次线性方程组$\mathbf{AX}=\mathbf{0}$的基础解系与通解</h4><p>线性无关解的数量为$n-r$个</p>
+<h4 id="非齐次线性方程组-mathbf-AX-mathbf-b-的通解"><a href="#非齐次线性方程组-mathbf-AX-mathbf-b-的通解" class="headerlink" title="非齐次线性方程组$\mathbf{AX}=\mathbf{b}$的通解"></a>非齐次线性方程组$\mathbf{AX}=\mathbf{b}$的通解</h4><p>解为</p>
+<script type="math/tex; mode=display">
+\sum{k_i\xi_i}+\eta_0</script><h4 id="方程组解的理论延伸"><a href="#方程组解的理论延伸" class="headerlink" title="方程组解的理论延伸"></a>方程组解的理论延伸</h4><p><strong>定理1</strong> $\mathbf{AB}=\mathbf{O}$，则$\mathbf{A}B_{:i}=\mathbf{0}$</p>
+<p><strong>定理2</strong> 设方程组$\mathbf{AX}=\mathbf{0}$与$\mathbf{BX}=\mathbf{0}$为同解方程组，则$r(\mathbf{A})=r(\mathbf{B})$，反之不对</p>
+<p><strong>定理3</strong> 设方组$\mathbf{AX}=\mathbf{0}$的为$\mathbf{BX}=\mathbf{0}$的解，则$r(\mathbf{A})\ge r(\mathbf{B})$</p>
+<p><strong>定理4</strong> 设</p>
+<script type="math/tex; mode=display">
+\mathbf{AX}=\mathbf{b}\\
+\mathbf{BX}=\mathbf{c}</script><p>则</p>
+<script type="math/tex; mode=display">
+\left(\begin{matrix}\mathbf{A}\\\mathbf{B}\end{matrix}\right)\mathbf{X}=\left(\begin{matrix}\mathbf{b}\\\mathbf{c}\end{matrix}\right)</script><p>的解即为线性方程组(I)和(II)的公共解。</p>
+<h2 id="特征值和特征向量"><a href="#特征值和特征向量" class="headerlink" title="特征值和特征向量"></a>特征值和特征向量</h2><h3 id="特征值与特征向量的基本概念"><a href="#特征值与特征向量的基本概念" class="headerlink" title="特征值与特征向量的基本概念"></a>特征值与特征向量的基本概念</h3><h4 id="特征值与特征向量的理论背景"><a href="#特征值与特征向量的理论背景" class="headerlink" title="特征值与特征向量的理论背景"></a>特征值与特征向量的理论背景</h4><h4 id="基本概念-4"><a href="#基本概念-4" class="headerlink" title="基本概念"></a>基本概念</h4><h5 id="特征值与特征向量"><a href="#特征值与特征向量" class="headerlink" title="特征值与特征向量"></a>特征值与特征向量</h5><script type="math/tex; mode=display">
+\mathbf{A}\alpha=\lambda\alpha</script><p>$\lambda$为特征值，$\alpha$为特征向量</p>
+<h5 id="特征方程"><a href="#特征方程" class="headerlink" title="特征方程"></a>特征方程</h5><script type="math/tex; mode=display">
+|\lambda\mathbf{E}-\mathbf{A}|=0</script><h5 id="矩阵相似"><a href="#矩阵相似" class="headerlink" title="矩阵相似"></a>矩阵相似</h5><script type="math/tex; mode=display">
+\mathbf{P}^{-1}\mathbf{AP}=\mathbf{B}\Rightarrow \mathbf{A}\sim\mathbf{B}</script><p>性质</p>
+<ol>
+<li>反身性</li>
+<li>对称性</li>
+<li>传递性</li>
+<li>变换不改变相似性</li>
+<li>相似，秩相等，反之错误</li>
+<li>相似，特征值相等，反之错误</li>
+<li>相似，行列式相等，迹相等</li>
+</ol>
+<h5 id="施密特正交化"><a href="#施密特正交化" class="headerlink" title="施密特正交化"></a>施密特正交化</h5><ol>
+<li>正交化<script type="math/tex; mode=display">
+\beta_1=\alpha_1,\beta_n=\alpha_n-\sum_{i=1}^{n-1}{\dfrac{(\alpha_n,\beta_i)}{(\beta_i,\beta_i)}\beta_i}</script></li>
+<li>规范化<script type="math/tex; mode=display">
+\gamma_i=\dfrac{\beta_i}{|\beta_i|}</script></li>
+</ol>
+<h5 id="正交矩阵"><a href="#正交矩阵" class="headerlink" title="正交矩阵"></a>正交矩阵</h5><script type="math/tex; mode=display">
+\mathbf{Q}\mathbf{Q}^T=\mathbf{E}</script><p>正交矩阵有以下性质</p>
+<ol>
+<li>$\mathbf{Q}^{-1}=\mathbf{Q}^T$</li>
+<li>$\mathbf{Q}=\{\gamma_i\}$，$\gamma_i$两两正交</li>
+<li>$\det{\mathbf{Q}}=\pm 1$</li>
+<li>$\lambda(\mathbf{Q})=1,-1$</li>
+<li>$\beta=\mathbf{Q}\alpha\Rightarrow |\beta|=|\alpha|$</li>
+</ol>
+<h3 id="特征值与特征向量的性质"><a href="#特征值与特征向量的性质" class="headerlink" title="特征值与特征向量的性质"></a>特征值与特征向量的性质</h3><h4 id="特征值与特征向量的一般性质"><a href="#特征值与特征向量的一般性质" class="headerlink" title="特征值与特征向量的一般性质"></a>特征值与特征向量的一般性质</h4><p><strong>定理1</strong> 对于$\{\lambda_i(\mathbf{A}_n)\}$</p>
+<ol>
+<li>$\sum{\lambda_i}=\text{tr}(\mathbf{A})$</li>
+<li>$\prod{\lambda_i}=\det{\mathbf{A}}$</li>
+</ol>
+<p><strong>定理2</strong> $\lambda_0$是$k$重根</p>
+<ol>
+<li>$k=1$，只对应一个线性无关向量</li>
+<li>$k&gt;1$，对应$l\le k$个线性无关向量</li>
+</ol>
+<p><strong>定理3</strong> 对于$\{\lambda_i(\mathbf{A}_n)\}$</p>
+<ol>
+<li>$\mathbf{A}^{-1}\alpha = \lambda^{-1}\alpha$</li>
+<li>$\mathbf{A}^{*}\alpha = \lambda^{-1}\det{(\mathbf{A})}\alpha$</li>
+</ol>
+<p><strong>定理4</strong> $\mathbf{A}$的不同特征值对应的特征向量线性无关</p>
+<p><strong>定理5</strong> 设$\mathbf{A}$为$n$阶矩阵，则$\mathbf{A}$可相似对角化（或与对角矩阵相似）的充分必要条件是$\mathbf{A}$有$n$个线性无关的特征向量</p>
+<p><strong>定理6</strong> 设$\mathbf{A}$为$n$阶矩阵，$\sum{k_i\alpha_i}$一定不是特征向量</p>
+<h4 id="实对称矩阵特征值与特征向量的性质"><a href="#实对称矩阵特征值与特征向量的性质" class="headerlink" title="实对称矩阵特征值与特征向量的性质"></a>实对称矩阵特征值与特征向量的性质</h4><p><strong>定理1</strong> 设$\mathbf{A}$为实对称矩阵，则$\mathbf{A}$的特征值都是实数</p>
+<p><strong>定理2</strong> 设$\mathbf{A}$为实对称矩阵，则$\mathbf{A}$的不同特征值对应的特征向量正交</p>
+<h3 id="矩阵对角化理论"><a href="#矩阵对角化理论" class="headerlink" title="矩阵对角化理论"></a>矩阵对角化理论</h3><h4 id="一般矩阵的相似对角化"><a href="#一般矩阵的相似对角化" class="headerlink" title="一般矩阵的相似对角化"></a>一般矩阵的相似对角化</h4><ol>
+<li>$|\lambda\mathbf{E}-\mathbf{A}|=0$求$\lambda$</li>
+<li>$(\lambda_i\mathbf{E}-\mathbf{A})\alpha=0$代入特征值求基础解系</li>
+<li>$\mathbf{P}=(\alpha_1,\alpha_2,\cdots,\alpha_n)$</li>
+</ol>
+<h4 id="实对称矩阵的相似对角化"><a href="#实对称矩阵的相似对角化" class="headerlink" title="实对称矩阵的相似对角化"></a>实对称矩阵的相似对角化</h4><h5 id="实对称矩阵对角化定理"><a href="#实对称矩阵对角化定理" class="headerlink" title="实对称矩阵对角化定理"></a>实对称矩阵对角化定理</h5><p><strong>定理1</strong> 实对称矩阵一定可以相似对角化</p>
+<p><strong>定理2</strong> 实对称矩阵存在正交矩阵使其相似对角化，有$\mathbf{Q}^T\mathbf{AQ}=\mathbf{\Lambda}$</p>
+<p>同上，最后进行施密特正交化</p>
+<h2 id="二次型"><a href="#二次型" class="headerlink" title="二次型"></a>二次型</h2><h3 id="二次型的基本概念及其标准形"><a href="#二次型的基本概念及其标准形" class="headerlink" title="二次型的基本概念及其标准形"></a>二次型的基本概念及其标准形</h3><h4 id="基本概念-5"><a href="#基本概念-5" class="headerlink" title="基本概念"></a>基本概念</h4><ol>
+<li><p><strong>二次型</strong></p>
+<script type="math/tex; mode=display">
+f(x_1,x_2,\cdots,x_n)=\mathbf{X}^T\mathbf{A}\mathbf{X}</script></li>
+<li><p><strong>标准二次型</strong> 只含有平方项不含交叉项的二次型称为标准二次型</p>
+</li>
+<li><strong>二次型的标准化</strong> $f(\mathbf{X})=\mathbf{X}^T\mathbf{AX}=\mathbf{Y}^T(\mathbf{P}^T\mathbf{AP})\mathbf{Y}$</li>
+<li><strong>规范二次型</strong> 系数为1和-1的标准形，称为二次型的规范形</li>
+<li><strong>可逆的坐标变换</strong> $\mathbf{X}=\mathbf{PY},|\mathbf{P}|\not = 0$</li>
+<li><strong>矩阵合同</strong> $\mathbf{P}^T\mathbf{AP}=\mathbf{B}$，称矩阵$\mathbf{A}$与$\mathbf{B}$合同，记为$\mathbf{A}\approx\mathbf{B}$</li>
+</ol>
+<h4 id="基本定理"><a href="#基本定理" class="headerlink" title="基本定理"></a>基本定理</h4><p><strong>定理1（标准形定理）</strong> 任何二次型都可以化为标准形</p>
+<p><strong>定理2（惯性定理）</strong> 二次型的标准形的系数中正、负系数的个数保持不变，分别称为二次型的正、负惯性指数</p>
+<p><strong>定理3（矩阵合同定理）</strong> 设A,B为n阶实对称矩阵，则A≈B的充分必要条件是A,B的特征值中正、负及零的个数相同</p>
+<p><strong>定理4</strong> $\mathbf{X}^T\mathbf{AX}=\mathbf{Y}^T(\mathbf{Q}^T\mathbf{AQ})\mathbf{Y}=\sum{\lambda_iy_i^2},\mathbf{Q}\mathbf{Q}^T=\mathbf{E}$</p>
+<h4 id="二次型标准化方法"><a href="#二次型标准化方法" class="headerlink" title="二次型标准化方法"></a>二次型标准化方法</h4><h5 id="配方法"><a href="#配方法" class="headerlink" title="配方法"></a>配方法</h5><h5 id="正交变换法"><a href="#正交变换法" class="headerlink" title="正交变换法"></a>正交变换法</h5><ol>
+<li>实对称矩阵的相似对角化</li>
+<li>$\mathbf{X}=\mathbf{QY}$</li>
+</ol>
+<h4 id="正定矩阵"><a href="#正定矩阵" class="headerlink" title="正定矩阵"></a>正定矩阵</h4><p><strong>顺序主子式法</strong> 若矩阵$\mathbf{A}$的各阶顺序主子式都大于零，则矩阵$\mathbf{A}$为正定矩阵</p>
+<p><strong>求矩阵A的特征值</strong> 若$\mathbf{A}$的特征值全为正数，则矩阵$\mathbf{A}$为正定矩阵</p>
+<p><strong>利用定义法</strong> 矩阵$\mathbf{A}$为定矩阵，二次型$\mathbf{X}^T\mathbf{AX}$为正定二次型</p>
+<p><strong>可逆矩阵法</strong> 若存在可逆矩阵$\mathbf{P}$，使得$\mathbf{A}=\mathbf{P}\mathbf{P}^{-1}$，则A是正定矩阵</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>UynajGI
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://uynajgi.github.io/2022/05/24/LA/" title="线性代数">https://uynajgi.github.io/2022/05/24/LA/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/BY-NC-SA/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%A1%8C%E5%88%97%E5%BC%8F/" rel="tag"># 行列式</a>
+              <a href="/tags/%E7%9F%A9%E9%98%B5/" rel="tag"># 矩阵</a>
+              <a href="/tags/%E4%BA%8C%E6%AC%A1%E5%9E%8B/" rel="tag"># 二次型</a>
+              <a href="/tags/%E7%BA%BF%E6%80%A7%E7%A9%BA%E9%97%B4/" rel="tag"># 线性空间</a>
+              <a href="/tags/%E5%9F%BA/" rel="tag"># 基</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/05/23/CDG/" rel="prev" title="古典微分几何">
+      <i class="fa fa-chevron-left"></i> 古典微分几何
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%80%83%E7%A0%94%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">考研用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">行列式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%80%A7%E8%B4%A8"><span class="nav-number">1.1.1.</span> <span class="nav-text">行列式的基本概念与性质</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%A0%E4%B8%AA%E7%89%B9%E6%AE%8A%E7%9A%84%E9%AB%98%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">几个特殊的高阶行列式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AF%B9%E8%A7%92%E3%80%81%E4%B8%8A%EF%BC%88%E4%B8%8B%EF%BC%89%E4%B8%89%E8%A7%92%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-number">1.1.1.2.1.</span> <span class="nav-text">对角、上（下）三角行列式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%8C%83%E5%BE%B7%E8%92%99%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-number">1.1.1.2.2.</span> <span class="nav-text">范德蒙行列式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%86%E5%9D%97%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-number">1.1.1.2.3.</span> <span class="nav-text">分块行列式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E8%AE%A1%E7%AE%97%E6%80%A7%E8%B4%A8"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">行列式的计算性质</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B8%80%E8%88%AC%E8%A1%8C%E5%88%97%E5%BC%8F%E8%BD%AC%E5%8C%96%E4%B8%BA%E4%B8%8A%EF%BC%88%E4%B8%8B%EF%BC%89%E4%B8%89%E8%A7%92%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.1.1.3.1.</span> <span class="nav-text">一般行列式转化为上（下）三角行列式的性质</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E9%99%8D%E9%98%B6%E6%80%A7%E8%B4%A8"><span class="nav-number">1.1.1.3.2.</span> <span class="nav-text">行列式的降阶性质</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E5%BA%94%E7%94%A8%E4%B8%80%E5%85%8B%E6%8B%89%E9%BB%98%E6%B3%95%E5%88%99"><span class="nav-number">1.1.2.</span> <span class="nav-text">行列式的应用一克拉默法则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5"><span class="nav-number">1.2.</span> <span class="nav-text">矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E7%89%B9%E6%AE%8A%E7%9F%A9%E9%98%B5"><span class="nav-number">1.2.1.</span> <span class="nav-text">矩阵的基本概念与特殊矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5-1"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E7%9F%A9%E9%98%B5"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">特殊矩阵</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E8%BF%90%E7%AE%97%E5%8F%8A%E6%80%A7%E8%B4%A8"><span class="nav-number">1.2.2.</span> <span class="nav-text">矩阵的运算及性质</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E4%B8%89%E5%88%99%E8%BF%90%E7%AE%97%E5%8F%8A%E6%80%A7%E8%B4%A8"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">矩阵的三则运算及性质</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E4%B8%89%E5%88%99%E8%BF%90%E7%AE%97"><span class="nav-number">1.2.2.1.1.</span> <span class="nav-text">矩阵的三则运算</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E4%B8%89%E5%88%99%E8%BF%90%E7%AE%97%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.2.2.1.2.</span> <span class="nav-text">矩阵三则运算的性质</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E8%BD%AC%E7%BD%AE%E8%BF%90%E7%AE%97%E5%8F%8A%E6%80%A7%E8%B4%A8"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">矩阵的转置运算及性质</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.2.2.2.1.</span> <span class="nav-text">矩阵转置的定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.2.2.2.2.</span> <span class="nav-text">矩阵转置的性质</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E9%80%86%E7%9F%A9%E9%98%B5"><span class="nav-number">1.2.3.</span> <span class="nav-text">矩阵的逆矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E9%80%86%E7%9F%A9%E9%98%B5%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">矩阵的逆矩阵的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E5%8F%AF%E9%80%86%E7%9A%84%E5%85%85%E5%88%86%E5%BF%85%E8%A6%81%E6%9D%A1%E4%BB%B6%EF%BC%88%E9%87%8D%E8%A6%81%E5%AE%9A%E7%90%86%EF%BC%89"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">矩阵可逆的充分必要条件（重要定理）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%86%E7%9F%A9%E9%98%B5%E7%9A%84%E6%B1%82%E6%B3%95"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">逆矩阵的求法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%86%E7%9F%A9%E9%98%B5%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.2.3.4.</span> <span class="nav-text">逆矩阵的性质</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9"><span class="nav-number">1.2.4.</span> <span class="nav-text">矩阵的秩</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%A7%A9%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">矩阵秩的概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%A7%A9%E7%9A%84%E6%B1%82%E6%B3%95"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">矩阵秩的求法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%A7%A9%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">矩阵秩的性质</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%AD%89%E4%BB%B7"><span class="nav-number">1.2.5.</span> <span class="nav-text">矩阵等价</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%AD%89%E4%BB%B7%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.2.5.1.</span> <span class="nav-text">矩阵等价的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%AD%89%E4%BB%B7%E5%88%A4%E5%88%AB%E6%B3%95"><span class="nav-number">1.2.5.2.</span> <span class="nav-text">矩阵等价判别法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F"><span class="nav-number">1.3.</span> <span class="nav-text">向量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E6%A6%82%E5%BF%B5%E4%B8%8E%E8%BF%90%E7%AE%97"><span class="nav-number">1.3.1.</span> <span class="nav-text">向量的概念与运算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5-2"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E8%BF%90%E7%AE%97%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">向量运算的性质</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E4%B8%89%E5%88%99%E8%BF%90%E7%AE%97%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.3.1.2.1.</span> <span class="nav-text">向量三则运算的性质</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E5%86%85%E7%A7%AF%E8%BF%90%E7%AE%97%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.3.1.2.2.</span> <span class="nav-text">向量内积运算的性质</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%BB%84%E7%9A%84%E7%9B%B8%E5%85%B3%E6%80%A7%E4%B8%8E%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.3.2.</span> <span class="nav-text">向量组的相关性与线性表示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E7%9B%B8%E5%85%B3%E6%80%A7%E4%B8%8E%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%A4%BA%E7%90%86%E8%AE%BA%E7%9A%84%E8%83%8C%E6%99%AF"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">向量的相关性与线性表示理论的背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%BB%84%E7%9B%B8%E5%85%B3%E6%80%A7%E4%B8%8E%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%A4%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">向量组相关性与线性表示的基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%BB%84%E7%9B%B8%E5%85%B3%E6%80%A7%E4%B8%8E%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%A4%BA%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">向量组相关性与线性表示的性质</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%BB%84%E7%AD%89%E4%BB%B7%E3%80%81%E5%90%91%E9%87%8F%E7%BB%84%E7%9A%84%E6%9E%81%E5%A4%A7%E7%BA%BF%E6%80%A7%E6%97%A0%E5%85%B3%E7%BB%84%E4%B8%8E%E5%90%91%E9%87%8F%E7%BB%84%E7%9A%84%E7%A7%A9"><span class="nav-number">1.3.3.</span> <span class="nav-text">向量组等价、向量组的极大线性无关组与向量组的秩</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5-3"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%BB%84%E7%A7%A9%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">向量组秩的性质</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84"><span class="nav-number">1.4.</span> <span class="nav-text">线性方程组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E8%A1%A8%E8%BE%BE%E5%BD%A2%E5%BC%8F"><span class="nav-number">1.4.1.</span> <span class="nav-text">线性方程组的基本概念与表达形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E8%A7%A3%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9A%E7%90%86"><span class="nav-number">1.4.2.</span> <span class="nav-text">线性方程组解的基本定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E8%A7%A3%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">1.4.3.</span> <span class="nav-text">线性方程组解的结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E9%80%9A%E8%A7%A3"><span class="nav-number">1.4.4.</span> <span class="nav-text">线性方程组的通解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%BD%90%E6%AC%A1%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84-mathbf-AX-mathbf-0-%E7%9A%84%E5%9F%BA%E7%A1%80%E8%A7%A3%E7%B3%BB%E4%B8%8E%E9%80%9A%E8%A7%A3"><span class="nav-number">1.4.4.1.</span> <span class="nav-text">齐次线性方程组$\mathbf{AX}&#x3D;\mathbf{0}$的基础解系与通解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%9E%E9%BD%90%E6%AC%A1%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84-mathbf-AX-mathbf-b-%E7%9A%84%E9%80%9A%E8%A7%A3"><span class="nav-number">1.4.4.2.</span> <span class="nav-text">非齐次线性方程组$\mathbf{AX}&#x3D;\mathbf{b}$的通解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E7%A8%8B%E7%BB%84%E8%A7%A3%E7%9A%84%E7%90%86%E8%AE%BA%E5%BB%B6%E4%BC%B8"><span class="nav-number">1.4.4.3.</span> <span class="nav-text">方程组解的理论延伸</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E5%80%BC%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F"><span class="nav-number">1.5.</span> <span class="nav-text">特征值和特征向量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E5%80%BC%E4%B8%8E%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.5.1.</span> <span class="nav-text">特征值与特征向量的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E5%80%BC%E4%B8%8E%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F%E7%9A%84%E7%90%86%E8%AE%BA%E8%83%8C%E6%99%AF"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">特征值与特征向量的理论背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5-4"><span class="nav-number">1.5.1.2.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E5%80%BC%E4%B8%8E%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F"><span class="nav-number">1.5.1.2.1.</span> <span class="nav-text">特征值与特征向量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E6%96%B9%E7%A8%8B"><span class="nav-number">1.5.1.2.2.</span> <span class="nav-text">特征方程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9B%B8%E4%BC%BC"><span class="nav-number">1.5.1.2.3.</span> <span class="nav-text">矩阵相似</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%BD%E5%AF%86%E7%89%B9%E6%AD%A3%E4%BA%A4%E5%8C%96"><span class="nav-number">1.5.1.2.4.</span> <span class="nav-text">施密特正交化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AD%A3%E4%BA%A4%E7%9F%A9%E9%98%B5"><span class="nav-number">1.5.1.2.5.</span> <span class="nav-text">正交矩阵</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E5%80%BC%E4%B8%8E%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.5.2.</span> <span class="nav-text">特征值与特征向量的性质</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E5%80%BC%E4%B8%8E%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F%E7%9A%84%E4%B8%80%E8%88%AC%E6%80%A7%E8%B4%A8"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">特征值与特征向量的一般性质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5%E7%89%B9%E5%BE%81%E5%80%BC%E4%B8%8E%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.5.2.2.</span> <span class="nav-text">实对称矩阵特征值与特征向量的性质</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E5%AF%B9%E8%A7%92%E5%8C%96%E7%90%86%E8%AE%BA"><span class="nav-number">1.5.3.</span> <span class="nav-text">矩阵对角化理论</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E8%88%AC%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9B%B8%E4%BC%BC%E5%AF%B9%E8%A7%92%E5%8C%96"><span class="nav-number">1.5.3.1.</span> <span class="nav-text">一般矩阵的相似对角化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9B%B8%E4%BC%BC%E5%AF%B9%E8%A7%92%E5%8C%96"><span class="nav-number">1.5.3.2.</span> <span class="nav-text">实对称矩阵的相似对角化</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%9E%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5%E5%AF%B9%E8%A7%92%E5%8C%96%E5%AE%9A%E7%90%86"><span class="nav-number">1.5.3.2.1.</span> <span class="nav-text">实对称矩阵对角化定理</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E5%9E%8B"><span class="nav-number">1.6.</span> <span class="nav-text">二次型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E5%9E%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%8F%8A%E5%85%B6%E6%A0%87%E5%87%86%E5%BD%A2"><span class="nav-number">1.6.1.</span> <span class="nav-text">二次型的基本概念及其标准形</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5-5"><span class="nav-number">1.6.1.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%AE%9A%E7%90%86"><span class="nav-number">1.6.1.2.</span> <span class="nav-text">基本定理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E5%9E%8B%E6%A0%87%E5%87%86%E5%8C%96%E6%96%B9%E6%B3%95"><span class="nav-number">1.6.1.3.</span> <span class="nav-text">二次型标准化方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%85%8D%E6%96%B9%E6%B3%95"><span class="nav-number">1.6.1.3.1.</span> <span class="nav-text">配方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AD%A3%E4%BA%A4%E5%8F%98%E6%8D%A2%E6%B3%95"><span class="nav-number">1.6.1.3.2.</span> <span class="nav-text">正交变换法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AD%A3%E5%AE%9A%E7%9F%A9%E9%98%B5"><span class="nav-number">1.6.1.4.</span> <span class="nav-text">正定矩阵</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="UynajGI"
+      src="/images/U_avatar.jpg">
+  <p class="site-author-name" itemprop="name">UynajGI</p>
+  <div class="site-description" itemprop="description">如果你想走到高处，就要使用自己的两条腿！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/UynajGI" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;UynajGI" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/suquan12148@outlook.com" title="E-Mail → suquan12148@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">UynajGI</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>

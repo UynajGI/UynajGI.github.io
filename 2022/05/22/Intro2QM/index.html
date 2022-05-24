@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"uynajgi.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="本篇主要是本科阶段学习的量子力学笔记。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="量子力学">
+<meta property="og:url" content="https://uynajgi.github.io/2022/05/22/Intro2QM/index.html">
+<meta property="og:site_name" content="逢灯暗室">
+<meta property="og:description" content="本篇主要是本科阶段学习的量子力学笔记。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.328888.xyz/2022/05/22/dRr3y.png">
+<meta property="article:published_time" content="2022-05-22T05:54:16.000Z">
+<meta property="article:modified_time" content="2022-05-22T08:34:04.394Z">
+<meta property="article:author" content="UynajGI">
+<meta property="article:tag" content="Schrodinger 方程">
+<meta property="article:tag" content="Hilbert 空间">
+<meta property="article:tag" content="Dirac 符号">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.328888.xyz/2022/05/22/dRr3y.png">
+
+<link rel="canonical" href="https://uynajgi.github.io/2022/05/22/Intro2QM/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>量子力学 | 逢灯暗室</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">逢灯暗室</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">柳暗花明又一村</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>图书馆</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>所有文章</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://uynajgi.github.io/2022/05/22/Intro2QM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/U_avatar.jpg">
+      <meta itemprop="name" content="UynajGI">
+      <meta itemprop="description" content="如果你想走到高处，就要使用自己的两条腿！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="逢灯暗室">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          量子力学
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-05-22 13:54:16 / 修改时间：16:34:04" itemprop="dateCreated datePublished" datetime="2022-05-22T13:54:16+08:00">2022-05-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%89%A9%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">物理</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">本篇主要是本科阶段学习的量子力学笔记。</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="一些数学准备"><a href="#一些数学准备" class="headerlink" title="一些数学准备"></a>一些数学准备</h1><h2 id="球坐标下拉普拉斯算符的表示"><a href="#球坐标下拉普拉斯算符的表示" class="headerlink" title="球坐标下拉普拉斯算符的表示"></a>球坐标下拉普拉斯算符的表示</h2><script type="math/tex; mode=display">
+\nabla^2 = \dfrac{1}{r^2}\dfrac{\partial^2}{\partial{r}}{r^2\dfrac{\partial{}}{\partial{r}}}+\dfrac{1}{r^2\sin{\theta}}\dfrac{\partial{}}{\partial{\theta}}{\sin{\theta}\dfrac{\partial{}}{\partial{\theta}}}+\dfrac{1}{r^2\sin^2{\theta}}\dfrac{\partial^2}{\partial{\varphi^2}}</script><h2 id="柱坐标下拉普拉斯算符的表示"><a href="#柱坐标下拉普拉斯算符的表示" class="headerlink" title="柱坐标下拉普拉斯算符的表示"></a>柱坐标下拉普拉斯算符的表示</h2><script type="math/tex; mode=display">
+\nabla^2 = \dfrac{1}{\rho}\dfrac{\partial{}}{\partial{\rho}}{\rho\dfrac{\partial{}}{\partial{\rho}}}+\dfrac{1}{\rho^2}\dfrac{\partial^2}{\partial{\varphi^2}}+\dfrac{\partial^2}{\partial{z^2}}</script><h2 id="有关-delta-函数"><a href="#有关-delta-函数" class="headerlink" title="有关$\delta$函数"></a>有关$\delta$函数</h2><h2 id="有关矢量分析"><a href="#有关矢量分析" class="headerlink" title="有关矢量分析"></a>有关矢量分析</h2><p>恒等式</p>
+<script type="math/tex; mode=display">
+\nabla(\mathbf{A}\cdot\mathbf{v})=(\mathbf{A}\cdot\nabla)\mathbf{v}+(\mathbf{v}\cdot\nabla)\mathbf{A}+\mathbf{A}\times(\nabla\times\mathbf{v})+v\times(\nabla\times\mathbf{A})</script><h1 id="量子力学的诞生"><a href="#量子力学的诞生" class="headerlink" title="量子力学的诞生"></a>量子力学的诞生</h1><h2 id="一些无法用经典物理学解释的实验事实"><a href="#一些无法用经典物理学解释的实验事实" class="headerlink" title="一些无法用经典物理学解释的实验事实"></a>一些无法用经典物理学解释的实验事实</h2><h3 id="黑体辐射实验"><a href="#黑体辐射实验" class="headerlink" title="黑体辐射实验"></a>黑体辐射实验</h3><h3 id="光电效应"><a href="#光电效应" class="headerlink" title="光电效应"></a>光电效应</h3><h3 id="原子线状光谱及其规律"><a href="#原子线状光谱及其规律" class="headerlink" title="原子线状光谱及其规律"></a>原子线状光谱及其规律</h3><h3 id="原子的稳定性"><a href="#原子的稳定性" class="headerlink" title="原子的稳定性"></a>原子的稳定性</h3><h2 id="普朗克的光量子论"><a href="#普朗克的光量子论" class="headerlink" title="普朗克的光量子论"></a>普朗克的光量子论</h2><p>拟合公式</p>
+<script type="math/tex; mode=display">
+E_\nu\mathrm{d}\nu=\dfrac{C_1\nu^3}{\exp{(C_2\nu/T)}-1}\mathrm{d}\nu</script><p>光子的动量能量公式</p>
+<script type="math/tex; mode=display">
+E_\nu=\hbar\omega</script><script type="math/tex; mode=display">
+\mathbf{p}=\hbar\mathbf{k}</script><h2 id="Bohr-的量子论"><a href="#Bohr-的量子论" class="headerlink" title="Bohr 的量子论"></a>Bohr 的量子论</h2><ol>
+<li>原子能够而且只能够稳定地存在于与分立的能量对应的一系列状态中。这些态称为定态。因此，体系能量的任何改变，包括吸收和发射电磁波，都必须在两个定态之间以跳迁的方式进行。</li>
+<li>在两个定态之间跳迁时，原子吸收或发射的电磁波频率是唯一的，其值由下式给出</li>
+</ol>
+<script type="math/tex; mode=display">
+\hbar \nu_{1,2}=E_1-E_2</script><h2 id="Heisenberg-和-Dirac-的矩阵力学"><a href="#Heisenberg-和-Dirac-的矩阵力学" class="headerlink" title="Heisenberg 和 Dirac 的矩阵力学"></a>Heisenberg 和 Dirac 的矩阵力学</h2><p>量子力学基本方程式</p>
+<script type="math/tex; mode=display">
+\left[\hat{x},\hat{p}_x\right]=\mathrm{i}\hbar</script><h2 id="De-Broglie-的物质波和-Schrodinger-的波动力学"><a href="#De-Broglie-的物质波和-Schrodinger-的波动力学" class="headerlink" title="De Broglie 的物质波和 Schrodinger 的波动力学"></a>De Broglie 的物质波和 Schrodinger 的波动力学</h2><p>De Broglie 关系</p>
+<script type="math/tex; mode=display">
+E=\hbar\omega</script><script type="math/tex; mode=display">
+\mathbf{p}=\hbar\mathbf{k}</script><p>自由粒子 Schrodinger 方程</p>
+<script type="math/tex; mode=display">
+\mathrm{i}\hbar\dfrac{\partial{}}{\partial{t}}\Psi(\mathbf{r},t)=-\dfrac{\hbar^2}{2m}\nabla^2\Psi(\mathbf{r},t)</script><p>有外场 Schrodinger 方程</p>
+<script type="math/tex; mode=display">
+\mathrm{i}\hbar\dfrac{\partial{}}{\partial{t}}\Psi(\mathbf{r},t)=-\dfrac{\hbar^2}{2m}\nabla^2\Psi(\mathbf{r},t)+V(\mathbf{r})\Psi(\mathbf{r},t)</script><h2 id="波函数的几率解释及两种量子力学形式的等价性"><a href="#波函数的几率解释及两种量子力学形式的等价性" class="headerlink" title="波函数的几率解释及两种量子力学形式的等价性"></a>波函数的几率解释及两种量子力学形式的等价性</h2><p>在坐标表象下，动量算符</p>
+<script type="math/tex; mode=display">
+\hat{p}_x=-\mathrm{i}\hbar\dfrac{\partial{}}{\partial{x}}</script><h2 id="Heisenberg-的测不准原理"><a href="#Heisenberg-的测不准原理" class="headerlink" title="Heisenberg 的测不准原理"></a>Heisenberg 的测不准原理</h2><p>对于两个具有完备本征态的力学量，在二者对易情况下必存在共同本征态系，不对易情况不可能存在共同本征态系，只可能存在个别的共同本征态。</p>
+<script type="math/tex; mode=display">
+\Delta A \Delta B \ge \dfrac{1}{4}[\hat{A},\hat{B}]^2</script><h1 id="一维势场中的粒子运动"><a href="#一维势场中的粒子运动" class="headerlink" title="一维势场中的粒子运动"></a>一维势场中的粒子运动</h1><h2 id="一维谐振子"><a href="#一维谐振子" class="headerlink" title="一维谐振子"></a>一维谐振子</h2><h3 id="代数方法"><a href="#代数方法" class="headerlink" title="代数方法"></a>代数方法</h3><p>谐振子的势能为$V(x)=\dfrac{1}{2}m\omega^2x^2$<br>哈密顿量的薛定谔方程写为</p>
+<script type="math/tex; mode=display">
+\hat{H}\psi=\dfrac{1}{2m} \left[\hat{p}^2+(m\omega x)^2\right]\psi=E\psi</script><p>将算子展开成</p>
+<script type="math/tex; mode=display">
+\hat{a}_{\pm}=\dfrac{1}{\sqrt{2\hbar m\omega}} \left(\mp\mathrm{i}\hat{p}+m\omega x\right)</script><p>再次相乘得到</p>
+<script type="math/tex; mode=display">
+\hat{a}_{-}\hat{a}_+=\dfrac{1}{2\hbar m\omega} \left[\hat{p}^2+(m\omega x)^2-\mathrm{i}m\omega \left(x\hat{p}-\hat{p}x\right)\right]</script><p>后面的$\left(x\hat{p}-\hat{p}x\right)$不可对异，我们用$\left[\hat{A},\hat{B}\right]\equiv\hat{A}\hat{B}-\hat{B}\hat{A} $来表示</p>
+<script type="math/tex; mode=display">
+\hat{a}_{-}\hat{a}_+=\dfrac{1}{2m} \left[\hat{p}^2+(m\omega x)^2\right]-\dfrac{\mathrm{i}}{2\hbar} \left[x,\hat{p}\right]</script><p>对于这个算子，我们有</p>
+<script type="math/tex; mode=display">
+\left[x,\hat{p}\right]=\mathrm{i}\hbar</script><p>也可以得到</p>
+<script type="math/tex; mode=display">
+\left[\hat{a}_-,\hat{a}_+\right]=1</script><p>于是我们可以得到新的哈密顿算子</p>
+<script type="math/tex; mode=display">
+\hat{H}=\hbar\omega(\hat{a}_\mp\hat{a}_\pm\mp\dfrac{1}{2})</script><p>同时可以证明出<strong>升降算符</strong>有</p>
+<script type="math/tex; mode=display">
+\hat{H}(\hat{a}_{\mp}\psi)=(E\mp\hbar\omega)(\hat{a}_{\mp}\psi)</script><p>对于最低能级，有</p>
+<script type="math/tex; mode=display">
+\hat{a}_-\psi_0=0</script><script type="math/tex; mode=display">
+\Rightarrow\psi_0=\left(\left(\dfrac{m\omega}{\pi\hbar}\right)^{1/4}\mathrm{e}^{-\frac{m\omega}{2\hbar}x^2}\right)</script><script type="math/tex; mode=display">E_0=\dfrac{1}{2}\hbar\omega</script><p>可以得到通式为</p>
+<script type="math/tex; mode=display">
+\psi_n(x)=A_n(\hat{a}_+)^n\psi_0(x),\qquad\text{with}\ E_n=(n+\dfrac{1}{2})\hbar\omega,\quad\text{with}</script><p>有公式</p>
+<script type="math/tex; mode=display">
+\int_{-\infty}^{+\infty}{f^*(\hat{a}\pm g)\mathrm{d}x}=\int_{-\infty}^{+\infty}{(\hat{a}_\mp f)^*g\mathrm{d}x}</script><script type="math/tex; mode=display">
+\int_{-\infty}^{+\infty}{(\hat{a}_{\pm}\psi)^*(\hat{a}_{\pm}\psi)\mathrm{d}x}=\int_{-\infty}^{+\infty}{(\hat{a}_{\mp}\hat{a}_{\pm}\psi_n)^*\psi_n\mathrm{d}x}</script><p>得</p>
+<script type="math/tex; mode=display">
+\hat{a}_+\psi_n=\sqrt{n+1}\psi_{n+1},\quad\hat{a}_-\psi_n=\sqrt{n}\psi_{n-1}</script><script type="math/tex; mode=display">
+\psi_n=\dfrac{1}{\sqrt{n!}}(\hat{a}_+)^n\psi_0</script><p>将$x$和$\hat{p}$用升降算子表示，有</p>
+<script type="math/tex; mode=display">
+x=\sqrt{\dfrac{\hbar}{2m\omega}}(\hat{a}_++\hat{a}_-);\quad\hat{p}=\mathrm{i}\sqrt{\dfrac{\hbar m\omega}{2}}(\hat{a}_+-\hat{a}_-)</script><p>可得势能的期望值为</p>
+<script type="math/tex; mode=display">
+\left<V\right>=\dfrac{1}{2}m\omega^2\int_{-\infty}^{+\infty}{\left<\psi\right|x^2\left|\psi\right>\mathrm{d}x}=\dfrac{1}{2}\hbar\omega(n+\dfrac{1}{2})</script><h3 id="分析方法"><a href="#分析方法" class="headerlink" title="分析方法"></a>分析方法</h3><blockquote>
+<p>详见《数学物理方法》，厄米多项式</p>
+</blockquote>
+<script type="math/tex; mode=display">
+\psi_n=\left(\dfrac{m\omega}{\pi\hbar}\right)^{1/4}\dfrac{1}{\sqrt{2^nn!}}H_n(\xi)\mathrm{e}^{-\xi^2/2},\quad\xi\equiv\sqrt{\dfrac{m\omega}{\hbar}x}</script><h2 id="一维定态体系的一些基本性质"><a href="#一维定态体系的一些基本性质" class="headerlink" title="一维定态体系的一些基本性质"></a>一维定态体系的一些基本性质</h2><p><strong>定理 1</strong> 设势能函数$V(x)$为一实函数。若$\psi(x)$是本征方程</p>
+<script type="math/tex; mode=display">
+E\psi(x)=-\dfrac{\hbar^2}{2m}\dfrac{\mathrm{d}^2}{\mathrm{d}x^2}\psi(x)+V(x)\psi(x)</script><p>的一个解，则$\psi^*(x)$也是一个解，对应的本质值也是$E$</p>
+<p><strong>定理 2</strong> 设势能函数$V(x)$为一实函数。则对应于任何方程的本征值$E$，总<br>可以找到方程的一组实函数解。凡是属于本征值$E$的任何一个解，都可以表<br>示成这组实函数解的线性叠加。</p>
+<p><strong>定理 3</strong> 设势能函数$V(x)$具有空间反射对称性，即满足条件$V(-x)=V(x)$。若$\psi(x)$是方程的一个解，则$\psi(-x)$亦是该方程的一个解。</p>
+<p>在量子力学中，$\hat{P}$称为宇称算符。若$\hat{P}\psi(x)=\psi(-x)$,则称$\psi(x)$具有偶宇称。同理，若$\hat{P}\psi(x)=-\psi(x)$成立，则称$\psi(x)$具有奇宇称。</p>
+<p><strong>定理 4</strong> 设势能函数$V(x)$具有空间反射对称性。则对应于任何一个本征值$E$,我们总可以找到方程的一组解，它们的每一个都具有确定的宇称。而且，任何对应于本征值$E$的解$\psi(x)$都可以按照它们来展开。</p>
+<p><strong>定理 5</strong> 对于一维空间的定态 Schrodinger 方程，若$\psi_1(x)$和$\psi_2(x)$是对应于同一本征值$E$的两个解，则我们有</p>
+<script type="math/tex; mode=display">
+\psi_1(x)\psi_2'(x)-\psi_1'(x)\psi_2(x)=C</script><p><strong>定理 6</strong> 假设粒子在一个一维空间中规则(regular，既没有奇异点)的势函数$V(x)$中运动。则其束缚态必为非简并的。</p>
+<h2 id="一维方势阱"><a href="#一维方势阱" class="headerlink" title="一维方势阱"></a>一维方势阱</h2><h3 id="无穷深一维方势阱"><a href="#无穷深一维方势阱" class="headerlink" title="无穷深一维方势阱"></a>无穷深一维方势阱</h3><p>假设</p>
+<script type="math/tex; mode=display">
+V(x)=\begin{cases}
+    0,&0\le x\le a\\
+    \infty,&\text{otherwise}
+\end{cases}</script><p>有</p>
+<script type="math/tex; mode=display">
+\dfrac{\mathrm{d}^2\psi}{\mathrm{d}x^2}+\dfrac{2m}{\hbar^2}E\psi=0 \left[0\le x\le a\right]</script><script type="math/tex; mode=display">\left[k^2=\dfrac{2m}{\hbar^2}E\right]</script><p>解得</p>
+<script type="math/tex; mode=display">
+\psi_n(x)=A\sin{(n\pi x/a)}</script><script type="math/tex; mode=display">
+E_n=\dfrac{n^2\pi^2\hbar^2}{2ma^2}</script><p>再又归一化得到$|A|^2=\dfrac{2}{a}$，得到定态波函数为</p>
+<script type="math/tex; mode=display">
+\psi_n(x)=\sqrt{\dfrac{2}{a}}\sin{(n\pi x/a)}</script><p>完整波函数为</p>
+<script type="math/tex; mode=display">
+\Psi_n=\sum_n^\infty{c_n\psi_n\mathrm{e}^{-\mathrm{i}E_nt/\hbar}}</script><p>常数$c_n$可以由</p>
+<script type="math/tex; mode=display">
+\Psi_n (x,0)=\sum_n^\infty{c_n\psi_n(x)}</script><script type="math/tex; mode=display">
+\Rightarrow c_n=\int{\psi_n^*(x)\Psi_n(x,0)\mathrm{d}x}</script><h3 id="有限深对称方势阱"><a href="#有限深对称方势阱" class="headerlink" title="有限深对称方势阱"></a>有限深对称方势阱</h3><p>假设</p>
+<script type="math/tex; mode=display">
+V(x)=\begin{cases}
+    0,&|x|\le a/2\\
+    V_0,&\text{otherwise}
+\end{cases}</script><p>可以解得三段</p>
+<script type="math/tex; mode=display">
+\psi(x)=\begin{cases}
+    A\mathrm{e}^{-\beta x},&x\ge a/2\\
+    C_1\mathrm{e}^{\mathrm{i}kx}+C_2\mathrm{e}^{-\mathrm{i} kx},&|x|\le a/2\\
+   B\mathrm{e}^{\beta x},&x\le -a/2
+\end{cases}</script><p>其中，$k=\sqrt{2mE/\hbar^2},\beta=\sqrt{2m(V_0-E)/\hbar^2}$</p>
+<p>根据连续边界条件和，得</p>
+<script type="math/tex; mode=display">
+\beta=k\tan{(ka/2)}</script><script type="math/tex; mode=display">
+\xi\equiv ka/2,\quad \eta\equiv\dfrac{\beta a}{2}</script><script type="math/tex; mode=display">
+\Rightarrow \eta=\xi\tan{\xi}</script><p>与$\xi^2+\eta^2=\dfrac{mV_0a^2}{2\hbar^2}$，联立取数值解.</p>
+<h2 id="方势垒的反射与穿透"><a href="#方势垒的反射与穿透" class="headerlink" title="方势垒的反射与穿透"></a>方势垒的反射与穿透</h2><p>设波函数为</p>
+<script type="math/tex; mode=display">
+\psi(x)=\begin{cases}
+    \mathrm{e}^{\mathrm{i}kx}+R\mathrm{e}^{-\mathrm{i}kx}&x<0\\
+    S\mathrm{e}^{\mathrm{i}kx}&x>0
+\end{cases}</script><p>入射流密度为</p>
+<script type="math/tex; mode=display">
+j_m=\dfrac{\hbar}{2m\mathrm{i}}\left(\mathrm{e}^{-\mathrm{i}kx}\dfrac{\mathrm{d}}{\mathrm{d}x}\mathrm{e}^{\mathrm{i}kx}-\mathrm{e}^{\mathrm{i}kx}\dfrac{\mathrm{d}}{\mathrm{d}x}\mathrm{e}^{-\mathrm{i}kx}\right)=\dfrac{\hbar k}{m}=v_m</script><p>相应地，反射流和透射流密度分别为</p>
+<script type="math/tex; mode=display">
+j_r=\mathcal{R}v_m=|R|^2v_m,\quad j_t=\mathcal{T}v_m=|S|^2v_m</script><p>这里，有两种情况需要分别考虑。</p>
+<ol>
+<li><p>$0&lt;E&lt;V_0$</p>
+<script type="math/tex; mode=display">
+\psi(x)=A\mathrm{e}^{\beta x}+B\mathrm{e}^{-\beta x},\beta =\sqrt{\dfrac{2m(V_0-E)}{\hbar^2}}</script><p>解得</p>
+<script type="math/tex; mode=display">
+\mathcal{T}=\left[1+\mathrm{sh}^2{\beta a}\dfrac{(\beta^2+k^2)^2}{4\beta^2k^2}\right]^{-1}</script><script type="math/tex; mode=display">
+\mathcal{R}=\left[1+\left(\mathrm{sh}^2{\beta a}\dfrac{(\beta^2+k^2)^2}{4\beta^2k^2}\right)^{-1}\right]^{-1}</script><script type="math/tex; mode=display">
+\mathcal{R}+\mathcal{T}=1</script><p>其中</p>
+<script type="math/tex; mode=display">
+k^2=\dfrac{2mE}{\hbar^2},\qquad \beta^2 = \dfrac{2m(V_0-E)}{\hbar^2}</script><script type="math/tex; mode=display">
+\dfrac{(\beta^2+k^2)^2}{4\beta^2k^2}=\left[4\frac{E}{V_0}\left(1-\frac{E}{V_0}\right)\right]^{-1}</script></li>
+<li><p>$E&gt;0$</p>
+<p>此时，我们仅需将前面运算中的$\beta$改写作$\mathrm{i}\beta’$即可。这里</p>
+<script type="math/tex; mode=display">
+\beta'=\sqrt{\dfrac{2m(E-V_0)}{\hbar^2}}</script><p>利用恒等式</p>
+<script type="math/tex; mode=display">
+\mathrm{sh}{\mathrm{i}\beta'a}=\mathrm{i}\sin{\beta'a}</script><p>剩余过程一致.</p>
+</li>
+</ol>
+<h2 id="方势阱的反射，透射与共振"><a href="#方势阱的反射，透射与共振" class="headerlink" title="方势阱的反射，透射与共振"></a>方势阱的反射，透射与共振</h2><p>势函数$V_0$被$-V_0$所替代</p>
+<script type="math/tex; mode=display">
+\beta'=\sqrt{\dfrac{2m(E+V_0)}{\hbar^2}}\ge \sqrt{\dfrac{2mE}{\hbar^2}}</script><p>代入原式，透射系数有</p>
+<script type="math/tex; mode=display">
+\mathcal{T}=\left[1+\dfrac{\sin^2{\beta'a}}{4\frac{E}{V_0}\left(1+\frac{E}{V_0}\right)}\right]^{-1}</script><p>可以看出，当$\beta’a=n\pi$，$\mathcal{T}=1$。时，这种现象称为共振隧穿。其物理意义是，入射粒子在进入势阱后，碰到两侧阱壁时将发生反射与透射。若能量合适，使它在阱内的波长满足关系</p>
+<script type="math/tex; mode=display">
+n\lambda'=2a</script><p>粒子能量为</p>
+<script type="math/tex; mode=display">
+E=E_n=-V_0+\dfrac{n^2\pi^2\hbar^2}{2ma^2}</script><h2 id="δ-势阱"><a href="#δ-势阱" class="headerlink" title="$δ$势阱"></a>$δ$势阱</h2><blockquote>
+<p>见《数学物理方法》</p>
+</blockquote>
+<p>若势能$V(x)=-\alpha\delta{(x)}$，解得</p>
+<ul>
+<li>$E&lt;0$(束缚态)<script type="math/tex; mode=display">
+\psi(x)=\dfrac{\sqrt{m\alpha}}{\hbar}\mathrm{e}^{-m\alpha|x|/\hbar^2};\quad E=-\dfrac{m\alpha^2}{2\hbar^2}</script></li>
+<li>$E&gt;0$(发散态)<script type="math/tex; mode=display">
+R=\dfrac{1}{1+(2\hbar^2E/m\alpha^2)},\quad T=\dfrac{1}{1+(m\alpha^2/2\hbar^2E)}</script></li>
+</ul>
+<h1 id="力学量的算符表示与表象变换"><a href="#力学量的算符表示与表象变换" class="headerlink" title="力学量的算符表示与表象变换"></a>力学量的算符表示与表象变换</h1><h2 id="力学量的定义及其算符表示"><a href="#力学量的定义及其算符表示" class="headerlink" title="力学量的定义及其算符表示"></a>力学量的定义及其算符表示</h2><h2 id="线性空间及线性变换"><a href="#线性空间及线性变换" class="headerlink" title="线性空间及线性变换"></a>线性空间及线性变换</h2><p>算符性质</p>
+<ol>
+<li>$\hat{A}=\hat{B}\Rightarrow \hat{A}\psi=\hat{B}\psi $</li>
+<li>$\hat{I}\psi=\psi$</li>
+<li>$(\hat{A}+\hat{B})\psi = \hat{A}\psi+\hat{B}\psi$</li>
+<li>$\left(\hat{A}\hat{B}\right)\psi=\hat{A}\left(\hat{B}\psi\right),\quad \text{commonly }\hat{A}\hat{B}\not = \hat{B}\hat{A}$</li>
+<li>$\hat{A}^n=\hat{A}\cdots\hat{A}$</li>
+<li>$\hat{A}\hat{A}^{-1}=\hat{I}$</li>
+<li>$F(\hat{A})=\sum_{n=0}^{\infty}{\dfrac{1}{n!}\left.\dfrac{\mathrm{d}^n}{\mathrm{d}x^n}F(x)\right|_{x=0}\hat{A}^n}$</li>
+</ol>
+<p>内积性质</p>
+<ol>
+<li>$(\mathbf{u},\mathbf{u})\ge 0,\text{only } \mathbf{u}=0$</li>
+<li>$(\mathbf{u},\mathbf{v})=(\mathbf{v},\mathbf{u})^*$</li>
+<li>$(\mathbf{u},C_1\mathbf{v}_1+C_2\mathbf{v}_2)=C_1(\mathbf{u},\mathbf{v}_1)+C_2(\mathbf{u},\mathbf{v}_2)$</li>
+<li>$(C_1\mathbf{u}_1+C_2\mathbf{u}_2,\mathbf{v})=\tilde{C_1}(\mathbf{u}_1,\mathbf{v})+\tilde{C_1}(\mathbf{u}_2,\mathbf{v})$</li>
+</ol>
+<p>对于线性空间$V$的任意两个向量$\mathbf{u}$和$\mathbf{v}$，我们都有</p>
+<script type="math/tex; mode=display">
+\left(\mathbf{u},\hat{A}\mathbf{v}\right)=\left(\hat{B}\mathbf{u},\mathbf{v}\right)</script><p>则我们称算符$\hat{B}$为算符$\hat{A}$的共轭算符，并将它记作$\hat{A}^\dagger$。特别是当$\hat{A}^\dagger=\hat{A}$时，我们将$\hat{A}$称为厄密算符。</p>
+<p>厄米算符性质</p>
+<ol>
+<li>$\hat{A},\hat{B}$厄米，$\hat{C}=\hat{A}+\hat{B}$厄米</li>
+<li>$\hat{A},\hat{B}$厄米，$\hat{A}\hat{B}=\hat{B}\hat{A}$，$\hat{D}=\hat{A}\hat{B}$厄米</li>
+</ol>
+<p><strong>定理 3.1</strong> 一个算符$\hat{A}$是厄密的，当且仅当对于任何一个波函数$\psi$，平均值$(\psi,\hat{A}\psi)$都是实值的。</p>
+<p><strong>定理 3.2</strong> 一个厄密算符的本征值必为实数。</p>
+<p><strong>定理 3.3</strong> 一个厄密算符的属于不同本征值的本征函数彼此是正交的。</p>
+<p><strong>定理 3.4</strong> 当$\left[\hat{A},\hat{B}\right]=0$时，总可以找到二者的一组共同本征函数族$\{\psi_{nm}\}$,使得$\hat{A}\psi_{nm}=\lambda_n\psi_{nm}$和$\hat{B}\psi_{nm}=q_n\psi_{nm}$同时成立。</p>
+<p><strong>定理 3.5</strong><br>在$\hat{C}=\left[\hat{A},\hat{B}\right]$，同时$\left[\hat{A},\hat{C}\right]=\left[\hat{B},\hat{C}\right]=0$的情况下</p>
+<script type="math/tex; mode=display">
+\left[\hat{A}^n,\hat{B}\right]=n\hat{A}^{n-1}\hat{C}</script><script type="math/tex; mode=display">
+\left[\mathrm{e}^{\lambda\hat{A}},\hat{B}\right]=\lambda\mathrm{e}^{\lambda\hat{A}}\hat{C}</script><p>我们有以下公式</p>
+<script type="math/tex; mode=display">
+\left[\hat{A}+\hat{B},\hat{C}\right]=\left[\hat{A},\hat{C}\right]+\left[\hat{B},\hat{C}\right]</script><script type="math/tex; mode=display">
+\left[\hat{A}\hat{B},\hat{C}\right]=\hat{A}\left[\hat{B},\hat{C}\right]+\left[\hat{A},\hat{C}\right]\hat{B}</script><script type="math/tex; mode=display">
+\left[x^n,\hat{p}\right]=\mathrm{i}\hbar nx^{n-1}</script><script type="math/tex; mode=display">
+\left[f(x),\hat{p}\right]=\mathrm{i}\hbar\dfrac{\mathrm{d}f}{\mathrm{d}x}</script><script type="math/tex; mode=display">
+\left[\hat{H},\hat{a}_{\pm}\right]=\pm\hbar\omega\hat{a}_{\pm}</script><h2 id="同一-Hilbert-空间中的基底变换"><a href="#同一-Hilbert-空间中的基底变换" class="headerlink" title="同一 Hilbert 空间中的基底变换"></a>同一 Hilbert 空间中的基底变换</h2><p><img src="https://s1.328888.xyz/2022/05/22/dRr3y.png" alt="dRr3y.png"></p>
+<h2 id="表象变换"><a href="#表象变换" class="headerlink" title="表象变换"></a>表象变换</h2><script type="math/tex; mode=display">
+L^2(\Omega')\rightarrow L^2(\Omega)</script><script type="math/tex; mode=display">
+(\phi_i,\phi_j)_{\Omega'}=\left(\hat{S}\psi_i,\hat{S}\psi_j\right)_{\Omega'}=(\psi_i,\psi_j)_{\Omega}</script><p>定义$\text{bra ket}$</p>
+<script type="math/tex; mode=display">
+\left\langle \phi|\psi\right\rangle=(\phi,\psi)</script><p>定义两个函数的内积，如下所示:</p>
+<script type="math/tex; mode=display">
+\left<\phi|\psi\right>\equiv\int_{a}^{b}{\phi(x)^*\psi(x)\mathrm{d}x}</script><p>我们有如下性质</p>
+<script type="math/tex; mode=display">
+\left<\psi|\phi\right>=\left<\phi|\psi\right>^*</script><script type="math/tex; mode=display">
+c_n=\left<\phi_n|\phi\right></script><p>作为特例，我们用$\left|\mathbf{r}\right\rangle$表示一个粒子具有特定坐标$\mathbf{r}$的态，而$\left|\mathbf{p}\right\rangle$作为该粒子具有给定动量$\mathbf{p}$的态。我们要求</p>
+<script type="math/tex; mode=display">
+\left\langle \mathbf{r}|\mathbf{r}'\right\rangle=\delta(\mathbf{r}-\mathbf{r}'),\quad \left\langle \mathbf{p}|\mathbf{p}'\right\rangle=\delta(\mathbf{p}-\mathbf{p}')</script><p>Dirac 规定</p>
+<script type="math/tex; mode=display">
+\left\langle \mathbf{r}|\Psi\right\rangle=\Psi(\mathbf{r})</script><p>为$\left|\Psi\right\rangle$在坐标表象中的波函数，动量表象同理。<br>有</p>
+<script type="math/tex; mode=display">
+\left\langle x|p\right\rangle=\dfrac{1}{\sqrt{2\pi\hbar}}\exp{\left(\frac{\mathrm{i}px}{\hbar}\right)}</script><p>我们令</p>
+<script type="math/tex; mode=display">
+\hat{I}\equiv \sum_n\left|\psi_n\right>\left<\psi_n\right|</script><p>为<strong>投影算符</strong></p>
+<p>我们可以推导出如下的重要公式</p>
+<script type="math/tex; mode=display">
+\delta(\mathbf{r}-\mathbf{r}')=\left\langle \mathbf{r}|\mathbf{r}'\right\rangle=\sum_n{\left\langle \mathbf{r}|\psi_n\right\rangle\left\langle \psi_n|\mathbf{r}'\right\rangle}=\sum_n{\psi_n(\mathbf{r})\psi^*_n(\mathbf{r}')}</script><h1 id="力学量随时间的演化与对称性"><a href="#力学量随时间的演化与对称性" class="headerlink" title="力学量随时间的演化与对称性"></a>力学量随时间的演化与对称性</h1><h2 id="守恒量"><a href="#守恒量" class="headerlink" title="守恒量"></a>守恒量</h2><p>力学量对时间求导为</p>
+<script type="math/tex; mode=display">
+\dfrac{\mathrm{d}\hat{A}}{\mathrm{d}t}=\dfrac{1}{\mathrm{i}\hbar}\left[\hat{A},\hat{H}\right]+\dfrac{\partial{\hat{A}}}{\partial{t}}</script><p>故力学量守恒要满足</p>
+<script type="math/tex; mode=display">
+\dfrac{\partial{\hat{A}}}{\partial{t}}=0,\quad \left[\hat{A},\hat{H}\right]=0</script><p><strong>Virial 定理</strong><br>定态</p>
+<script type="math/tex; mode=display">
+2\left\langle \hat{T}\right\rangle=\left\langle \hat{\mathbf{r}}\cdot\nabla\hat{V}\right\rangle</script><script type="math/tex; mode=display">
+</script><p>如果$V$是$\mathbf{r}$的齐次函数，则变为</p>
+<script type="math/tex; mode=display">
+2\left\langle \hat{T}\right\rangle=\alpha\left\langle\hat{V}\right\rangle</script><p><strong>$F-H$定理</strong></p>
+<p>如果$\psi_n$为定态、束缚态</p>
+<script type="math/tex; mode=display">
+\dfrac{\partial{E_n(\lambda)}}{\partial{\lambda}}=\left\langle \psi_n\right|\dfrac{\partial{\hat{H}}}{\partial{t}}\left| \psi_n\right\rangle</script><h2 id="演化算子"><a href="#演化算子" class="headerlink" title="演化算子"></a>演化算子</h2><p>我们定义时间算子$\hat{U}(t)\Psi(x,0)=\Psi(x,t)$<br>有</p>
+<script type="math/tex; mode=display">
+\hat{U}(t)=exp{\left[-\dfrac{\mathrm{i}t}{\hbar}\hat{H}\right]}</script><h3 id="海森堡绘景"><a href="#海森堡绘景" class="headerlink" title="海森堡绘景"></a>海森堡绘景</h3><script type="math/tex; mode=display">
+\hat{Q}_H(t)=\hat{U}^\dagger(t)\hat{Q}\hat{U}(t)</script><p>对于坐标算子</p>
+<script type="math/tex; mode=display">
+\hat{x}_H=\sqrt{\dfrac{\hbar}{2m\omega}}\left[\mathrm{e}^{\mathrm{i}\omega t}\hat{a}_++\mathrm{e}^{-\mathrm{i}\omega t}\hat{a}_-\right]</script><h3 id="时间平移不变性"><a href="#时间平移不变性" class="headerlink" title="时间平移不变性"></a>时间平移不变性</h3><p>时间平移不变性是指时间演化与我们所考虑的时间区间无关。换句话说</p>
+<script type="math/tex; mode=display">
+\hat{U}(t_1+\delta,t_1)=\hat{U}(t_2+\delta,t_2)</script><h2 id="守恒量与对称性的关系"><a href="#守恒量与对称性的关系" class="headerlink" title="守恒量与对称性的关系"></a>守恒量与对称性的关系</h2><p>Noether 定理的量子力学表达形式</p>
+<script type="math/tex; mode=display">
+\left[\hat{H},\hat{Q}\right]=0</script><h2 id="转换算子"><a href="#转换算子" class="headerlink" title="转换算子"></a>转换算子</h2><p>将平移算子泰勒展开</p>
+<script type="math/tex; mode=display">
+\hat{T}(a)\psi(x)=\psi(x-a)=\sum_{n=0}^\infty{\dfrac{1}{n!}(-a)^n\dfrac{\mathrm{d}^n}{\mathrm{d}x^n}\psi(x)}=\sum_{n=0}^\infty{\dfrac{1}{n!}(-\dfrac{\mathrm{i}a}{\hbar}\hat{p})^n\psi(x)}</script><script type="math/tex; mode=display">
+\Rightarrow\hat{T}(a)=\exp{\left[-\dfrac{\mathrm{i}a}{\hbar}\hat{p}\right]},\quad \hat{T}(a)^{-1}=\hat{T}(-a)=\hat{T}(a)^{\dagger}</script><h3 id="算子如何进行变换"><a href="#算子如何进行变换" class="headerlink" title="算子如何进行变换"></a>算子如何进行变换</h3><script type="math/tex; mode=display">
+\hat{Q}'=\hat{T}^\dagger\hat{Q}\hat{T}</script><p>例子</p>
+<script type="math/tex; mode=display">
+\hat{x}'f(x)=\hat{T}^\dagger(a)\hat{x}\hat{T}(a)f(x)=\hat{T}(-a)\hat{x}\hat{T}(a)f(x)</script><script type="math/tex; mode=display">=\hat{T}(-a)xf(x-a)=(x+a)f(x)</script><script type="math/tex; mode=display">
+\Rightarrow\hat{x}'=\hat{x}+a</script><script type="math/tex; mode=display">
+\hat{Q}'(\hat{x},\hat{p})=\hat{T}^\dagger\hat{Q}(\hat{x},\hat{p})\hat{T}=\hat{Q}(\hat{x}',\hat{p}')=\hat{Q}(\hat{x}+a,\hat{p})</script><h2 id="空间变换"><a href="#空间变换" class="headerlink" title="空间变换"></a>空间变换</h2><p>平移算子</p>
+<script type="math/tex; mode=display">
+\hat{T}(a)\psi(x)=\psi'(x)=\psi(x-a)</script><p>反演算子</p>
+<script type="math/tex; mode=display">
+\hat{\Pi}\psi(x)=\psi'(x)=\psi(-x)</script><p>旋转算子</p>
+<script type="math/tex; mode=display">
+\hat{R}_z(\varphi)\psi(r,\theta,\phi)=\psi'(r,\theta,\phi)=\psi(r,\theta,\phi-\varphi)</script><h3 id="平移对称"><a href="#平移对称" class="headerlink" title="平移对称"></a>平移对称</h3><p>如果$\left[\hat{H},\hat{T}\right]=0$，则说明满足</p>
+<script type="math/tex; mode=display">
+V(x+a)=V(x)</script><p>即$V$是常数或有周期性.</p>
+<ul>
+<li>离散平移对称与布洛赫定理</li>
+</ul>
+<script type="math/tex; mode=display">
+\psi(x)=\mathrm{e}^{\mathrm{i}qx}u(x)</script><ul>
+<li>连续平移对称与动量守恒</li>
+</ul>
+<script type="math/tex; mode=display">
+\left[\hat{H},\hat{T}(\delta)\right]=\left[\hat{H},1-\mathrm{i}\dfrac{\delta}{\hbar}\hat{p}\right]=0\Rightarrow \left[\hat{H},\hat{p}\right]=0</script><p>对应的是<strong>动量守恒</strong></p>
+<h3 id="旋转对称"><a href="#旋转对称" class="headerlink" title="旋转对称"></a>旋转对称</h3><h4 id="绕-z-轴旋转"><a href="#绕-z-轴旋转" class="headerlink" title="绕$z$轴旋转"></a>绕$z$轴旋转</h4><p>与平移对称运算相似，算子有</p>
+<script type="math/tex; mode=display">
+\hat{R}_z(\varphi)=\exp{\left[-\dfrac{\mathrm{i}\varphi}{\hbar}\hat{L}_z\right]}</script><h4 id="三维旋转"><a href="#三维旋转" class="headerlink" title="三维旋转"></a>三维旋转</h4><p>同理可得</p>
+<script type="math/tex; mode=display">
+\hat{R}_\mathbf{n}(\varphi)=\exp{\left[-\dfrac{\mathrm{i}\varphi}{\hbar}\mathbf{n}\cdot\hat{\mathbf{L}}\right]}</script><p>对于矢量函数</p>
+<script type="math/tex; mode=display">
+\left[\hat{L}_i,\hat{V}_j\right]=\mathrm{i}\hbar\epsilon_{ijk}\hat{V}_k</script><p>对于标量函数</p>
+<script type="math/tex; mode=display">
+\left[\hat{L}_i,\hat{f}\right]=0</script><h3 id="宇称对称"><a href="#宇称对称" class="headerlink" title="宇称对称"></a>宇称对称</h3><h4 id="一维奇偶性"><a href="#一维奇偶性" class="headerlink" title="一维奇偶性"></a>一维奇偶性</h4><script type="math/tex; mode=display">
+\hat{\Pi}\psi(x)=\psi'(x)=\psi(-x)</script><script type="math/tex; mode=display">
+\hat{\Pi}^{-1}=\hat{\Pi}=\hat{\Pi}^{\dagger}</script><p>如果哈密顿量通过奇偶变换而不变，则系统具有反演对称性:</p>
+<script type="math/tex; mode=display">
+\left[\hat{H},\hat{\Pi}\right]=0</script><h3 id="三维奇偶性"><a href="#三维奇偶性" class="headerlink" title="三维奇偶性"></a>三维奇偶性</h3><script type="math/tex; mode=display">
+\hat{\Pi}\psi(\mathbf{r})=\psi'(\mathbf{r})=\psi(-\mathbf{r})</script><script type="math/tex; mode=display">
+\hat{\mathbf{L}}'=\hat{\Pi}^\dagger\hat{\mathbf{L}}\hat{\Pi}=\hat{\mathbf{r}}'\times\hat{\mathbf{p}}'=\hat{\mathbf{r}}\times\hat{\mathbf{p}}=\hat{\mathbf{L}}</script><script type="math/tex; mode=display">
+\hat{\Pi}\psi_{nlm}=(-1)^{-l}\psi_{nlm}</script><h2 id="全同粒子体系与波函数的交换对称性"><a href="#全同粒子体系与波函数的交换对称性" class="headerlink" title="全同粒子体系与波函数的交换对称性"></a>全同粒子体系与波函数的交换对称性</h2><h3 id="两粒子系统"><a href="#两粒子系统" class="headerlink" title="两粒子系统"></a>两粒子系统</h3><ol>
+<li>不互相作用的粒子<br>$V(\mathbf{r}_1,\mathbf{r}_2)=V_1(\mathbf{r}_1)+V(\mathbf{r}_2)$</li>
+<li>中心位势<br>$V(\mathbf{r}_1,\mathbf{r}_2)\rightarrow V(|\mathbf{r}_1-\mathbf{r}_2|)$</li>
+</ol>
+<p>联合得总哈密顿量</p>
+<script type="math/tex; mode=display">
+\hat{H}=\hat{h}(q_1)+\hat{h}(q_2)+V(|\mathbf{r}_1-\mathbf{r}_2|)</script><h3 id="玻色子和费米子"><a href="#玻色子和费米子" class="headerlink" title="玻色子和费米子"></a>玻色子和费米子</h3><p>假设我们有两个不相互作用的粒子，有波函数</p>
+<script type="math/tex; mode=display">
+\psi(\mathbf{r}_1,\mathbf{r}_2)=\psi_a(\mathbf{r}_1)\psi_b(\mathbf{r}_2)</script><p>这是经典做法，但实际上量子力学我们并不能区分两个粒子是否处于$a$还是$b$态，我们无法区分两个粒子.<br>对于全同粒子就有了如下表示</p>
+<script type="math/tex; mode=display">
+\psi_\pm(\mathbf{r}_1,\mathbf{r}_2)=\dfrac{1}{\sqrt{2}} \left[\psi_a(\mathbf{r}_1)\psi_b(\mathbf{r}_2)\pm\psi_b(\mathbf{r}_1)\psi_a(\mathbf{r}_2)\right]</script><p>该理论承认两种相同的粒子:玻色子(正号)和费米子(负号)。玻色子态在交换下是对称的，$\psi_+(\mathbf{r}_1,\mathbf{r}_2)=\psi_+(\mathbf{r}_2,\mathbf{r}_1)$，费米子态是反对称的，$\psi_-(\mathbf{r}_1,\mathbf{r}_2)=-\psi_-(\mathbf{r}_2,\mathbf{r}_1)$<br>特别是，两个相同的费米子(例如，两个电子)不能占据相同的状态。若$\psi_a=\psi_b$，就有</p>
+<script type="math/tex; mode=display">
+\psi_-(\mathbf{r}_1,\mathbf{r}_2)=0</script><h1 id="中心力场"><a href="#中心力场" class="headerlink" title="中心力场"></a>中心力场</h1><h2 id="中心力场中粒子运动的一般性质"><a href="#中心力场中粒子运动的一般性质" class="headerlink" title="中心力场中粒子运动的一般性质"></a>中心力场中粒子运动的一般性质</h2><p>动量算子变为</p>
+<script type="math/tex; mode=display">
+\mathbf{p}\rightarrow-\mathrm{i}\hbar\nabla</script><p>薛定谔方程变为</p>
+<script type="math/tex; mode=display">
+\mathrm{i}\hbar\dfrac{\partial{\Psi}}{\partial{t}}=-\dfrac{\hbar^2}{2m}\nabla^2\Psi+V\Psi</script><p>定态薛定谔方程变为</p>
+<script type="math/tex; mode=display">
+-\dfrac{\hbar^2}{2m}\nabla^2\psi+V\psi=E\psi</script><p>正则变换变为</p>
+<script type="math/tex; mode=display">
+\left[r_i,p_j\right]=- \left[p_j,r_i\right]=\mathrm{i}\hbar\delta_{ij},\quad \left[r_i,r_j\right]=\left[p_i,p_j\right]=0</script><p>对于中心势场$V(r)$的束缚态有以下结论</p>
+<p>当$l\not ={0}$时， 有$\left\langle \dfrac{\mathrm{d}V(r)}{\mathrm{d}r}\right\rangle=\dfrac{1}{\mu}\left\langle \dfrac{\hat{L^2}}{r^3}\right\rangle$<br>当$l=0$时，有$\left\langle \dfrac{\mathrm{d}V(r)}{\mathrm{d}r}\right\rangle=\dfrac{2\pi\hbar^2}{\mu}|\psi(0)|^2$</p>
+<h2 id="无限深势阱"><a href="#无限深势阱" class="headerlink" title="无限深势阱"></a>无限深势阱</h2><h2 id="各向同性谐振子"><a href="#各向同性谐振子" class="headerlink" title="各向同性谐振子"></a>各向同性谐振子</h2><h2 id="氢原子"><a href="#氢原子" class="headerlink" title="氢原子"></a>氢原子</h2><h3 id="径向波函数"><a href="#径向波函数" class="headerlink" title="径向波函数"></a>径向波函数</h3><blockquote>
+<p>详见《数学物理方法》</p>
+</blockquote>
+<script type="math/tex; mode=display">
+E_n=-\left[\dfrac{m_e}{2\hbar^2} \left(\dfrac{e^2}{4\pi\varepsilon_0}\right)^2\right]\dfrac{1}{n^2}=\dfrac{E_1}{n^2}=\dfrac{-13.6\mathrm{eV}}{n^2}</script><script type="math/tex; mode=display">
+\kappa=\dfrac{1}{an}</script><script type="math/tex; mode=display">
+a\equiv\dfrac{4\pi\varepsilon_0\hbar^2}{m_ee^2}=0.529\times10^{-10}\mathrm{m}</script><script type="math/tex; mode=display">
+\psi_{100}(r,\theta,\phi)=\dfrac{1}{\sqrt{\pi a^3}}\mathrm{e}^{-r/a}</script><script type="math/tex; mode=display">
+\psi_{nml}=\sqrt{\left(\dfrac{2}{na}\right)^3\dfrac{(n-l-1)!}{2n(n+l)!}}\mathrm{e}^{-r/na}\left(\dfrac{2r}{na}\right)^l \left[L_{n-l-1}^{2l+1}(2r/na)\right]Y_l^m(\theta,\phi)</script><h3 id="氢的光谱"><a href="#氢的光谱" class="headerlink" title="氢的光谱"></a>氢的光谱</h3><script type="math/tex; mode=display">
+E_{\gamma}=E_i-E_j=-13.6\mathrm{eV}\left(\dfrac{1}{n_i^2}-\dfrac{1}{n_j^2}\right)=h\nu=hc\lambda^{-1}</script><h1 id="磁场中带电粒子的运动"><a href="#磁场中带电粒子的运动" class="headerlink" title="磁场中带电粒子的运动"></a>磁场中带电粒子的运动</h1><p>假定外磁场是恒定的，即$\mathbf{B}=B\mathbf{e}_z$</p>
+<h2 id="带电粒子在电磁场中的-Schrodinger-方程"><a href="#带电粒子在电磁场中的-Schrodinger-方程" class="headerlink" title="带电粒子在电磁场中的 Schrodinger 方程"></a>带电粒子在电磁场中的 Schrodinger 方程</h2><p>我们引入矢势和标势</p>
+<script type="math/tex; mode=display">
+\mathbf{B}=\nabla\times \mathbf{A},\quad \mathbf{E}=-\dfrac{1}{c}\dfrac{\partial{\mathbf{A}}}{\partial{t}}-\nabla\varphi</script><p>得到电磁场下的拉格朗日量</p>
+<script type="math/tex; mode=display">
+L=\dfrac{mv^2}{2}+\dfrac{q}{c}\mathbf{A}\cdot\mathbf{v}-q\varphi</script><p>我们要求正则动量。它由下式给出</p>
+<script type="math/tex; mode=display">
+\mathbf{P}\equiv m\mathbf{v}+\dfrac{q}{c}\mathbf{A}</script><p>得到哈密顿量</p>
+<script type="math/tex; mode=display">
+H=\mathbf{P}\cdot\mathbf{v}-L=\dfrac{1}{2m}\left(\mathbf{P}-\dfrac{q}{c}\mathbf{A}\right)^2+q\varphi</script><p>最后得到动量算子和 Schrodinger 方程</p>
+<script type="math/tex; mode=display">
+\hat{\mathbf{P}}=-\mathrm{i}\hbar\nabla</script><script type="math/tex; mode=display">
+\mathrm{i}\hbar\dfrac{\partial{}}{\partial{t}}{\Phi(\mathbf{r},t)}=H\Phi(\mathbf{r},t)</script><h2 id="正常-Zeeman-效应"><a href="#正常-Zeeman-效应" class="headerlink" title="正常 Zeeman 效应"></a>正常 Zeeman 效应</h2><p>氢原子光谱在强磁场下的分裂现象。我们有</p>
+<script type="math/tex; mode=display">
+\mathbf{A}(\mathbf{r},t)=\dfrac{1}{2}\mathbf{B}\times\mathbf{r},\quad q\varphi(\mathbf{r})=V(r)</script><h2 id="Landau-能级"><a href="#Landau-能级" class="headerlink" title="Landau 能级"></a>Landau 能级</h2><p>外磁场中的自由电子运动。我们有</p>
+<script type="math/tex; mode=display">
+\varphi(\mathbf{r})=0,\quad \mathbf{A}(\mathbf{r})=\dfrac{1}{2}\mathbf{B}\times\mathbf{r}</script><h1 id="自旋"><a href="#自旋" class="headerlink" title="自旋"></a>自旋</h1><h2 id="角动量"><a href="#角动量" class="headerlink" title="角动量"></a>角动量</h2><script type="math/tex; mode=display">
+\mathbf{L}=\mathbf{r}\times\mathbf{p}</script><h3 id="本征值"><a href="#本征值" class="headerlink" title="本征值"></a>本征值</h3><p>角动量的正则变换为</p>
+<script type="math/tex; mode=display">
+\left[\hat{L}_i,\hat{A}_j\right]=\mathrm{i}\hbar \hat{A}_k \varepsilon_{ijk}</script><p>我们选择$z$轴为对称轴，即$\hat{L}^2f=\lambda f,\quad \hat{L}_zf=\mu f$还有以下性质</p>
+<script type="math/tex; mode=display">
+\left[\hat{L}^2,\hat{\mathbf{L}}\right]=0</script><script type="math/tex; mode=display">
+\hat{L}_\pm\equiv L_x\pm\mathrm{i}\hat{L}_y</script><script type="math/tex; mode=display">
+\left[\hat{L}_z,\hat{L}_{\pm}\right]=\pm\hbar \hat{L}_\pm</script><script type="math/tex; mode=display">
+\left[\hat{L}^2,\hat{L}_{\pm}\right]=0</script><script type="math/tex; mode=display">
+\hat{L}^2=\hat{L}_\pm \hat{L}_\mp+\hat{L}_z^2\mp\hbar \hat{L}_z</script><script type="math/tex; mode=display">
+\hat{L}_+f_l=0\Rightarrow \hat{L}^2f_l=\hbar^2l(l+1)f_l\rightarrow \lambda=\hbar^2l(l+1)f_l</script><script type="math/tex; mode=display">
+\hat{L}_-f_b=0\Rightarrow \overline{l}=-l</script><p>综上所诉，有</p>
+<script type="math/tex; mode=display">
+\hat{L}^2f_l^m=\hbar l(l+1)f_l^m;\quad \hat{L}_zf_l^m=\hbar mf_l^m</script><p>其中，$l=0,1/2,1,3/2,\dots;\quad m=-l,-l+1,\dots,l-1,l$</p>
+<h3 id="本征函数"><a href="#本征函数" class="headerlink" title="本征函数"></a>本征函数</h3><p>将动量算子替换为$\hat{\mathbf{L}}=-\mathrm{i}\hbar(\mathbf{r}\times\nabla)$后，角动量算子为</p>
+<script type="math/tex; mode=display">
+\hat{L}_x=-\mathrm{i}\hbar \left(-\sin{\phi}\dfrac{\partial}{\partial{\theta}}-\cos{\phi}\cot{\theta}\dfrac{\partial}{\partial{\phi}}\right)</script><script type="math/tex; mode=display">
+\hat{L}_y=-\mathrm{i}\hbar \left(+\cos{\phi}\dfrac{\partial}{\partial{\theta}}-\sin{\phi}\cot{\theta}\dfrac{\partial}{\partial{\phi}}\right)</script><script type="math/tex; mode=display">
+\hat{L}_z=-\mathrm{i}\hbar\dfrac{\partial}{\partial{\phi}}</script><script type="math/tex; mode=display">
+\hat{L}^2=-\hbar^2 \left[\dfrac{1}{\sin{\theta}}\dfrac{\partial}{\partial{\theta}}\left(\sin{\theta}\dfrac{\partial}{\partial{\theta}}\right)+\dfrac{1}{\sin^2{\theta}}\dfrac{\partial^2}{\partial\phi^2}\right]</script><h2 id="1-2-自旋"><a href="#1-2-自旋" class="headerlink" title="1/2 自旋"></a>1/2 自旋</h2><p>算符$\hat{\mathbf{S}}$与$\hat{\mathbf{L}}$运算相同</p>
+<script type="math/tex; mode=display">
+\chi=a\chi_++b\chi_-,\ |a|^2+|b|^2\equiv 1</script><script type="math/tex; mode=display">
+\chi_+ =\left(\begin{matrix}1
+\\0\end{matrix}\right),\quad\chi_- = \left(\begin{matrix}0
+\\1\end{matrix}\right)</script><p>$\hat{\mathbf{S}}$的算符有</p>
+<script type="math/tex; mode=display">
+\hat{S}^2=\dfrac{3}{4}\hbar^2 \left(\begin{matrix}
+1&0\\0&1
+\end{matrix}\right),\quad
+\hat{S}_z=\dfrac{\hbar}{2}\left(\begin{matrix}
+1&0\\0&-1
+\end{matrix}\right)\\
+\hat{S}_+=\hbar \left(\begin{matrix}
+0&1\\0&0
+\end{matrix}\right),\quad
+\hat{S}_-=\hbar \left(\begin{matrix}
+0&0\\1&0
+\end{matrix}\right)</script><p><strong>Pauli 矩阵</strong></p>
+<script type="math/tex; mode=display">
+\sigma_x\equiv \left(\begin{matrix}
+0&1\\1&0
+\end{matrix}\right),\ \sigma_y\equiv \left(\begin{matrix}
+0&-i\\i&0
+\end{matrix}\right),\ \sigma_z\equiv \left(\begin{matrix}
+1&0\\0&-1
+\end{matrix}\right)</script><p>有恒等式</p>
+<script type="math/tex; mode=display">
+\left[\hat{\sigma}_i,\hat{\sigma}_j\right]=2\mathrm{i}\hat{\sigma}_k\epsilon_{ijk}\\
+\hat{\sigma}_i^2=\hat{I},\quad \hat{\sigma}_i^\dagger=\hat{\sigma}_i\\
+\hat{\sigma}_i\hat{\sigma}_j+\hat{\sigma}_j\hat{\sigma}_i=0</script><h2 id="总角动量的本征态"><a href="#总角动量的本征态" class="headerlink" title="总角动量的本征态"></a>总角动量的本征态</h2><p>作为角动量，自旋$\hat{\mathbf{S}}$可以与轨道角动量$\hat{\mathbf{L}}$相加，从而得到</p>
+<script type="math/tex; mode=display">
+\hat{\mathbf{J}}=\hat{\mathbf{S}}+\hat{\mathbf{L}}</script><p>对异关系</p>
+<script type="math/tex; mode=display">
+\left[\hat{J}_i,\hat{J}_j\right]=\mathrm{i}\hbar\sum_{k}\hat{J}_k\epsilon_{ijk}</script><script type="math/tex; mode=display">
+\left[\hat{L}^2,\hat{J}^2\right]=0</script><h2 id="碱金属原子光谱的双线结构与反常-Zeeman-效应"><a href="#碱金属原子光谱的双线结构与反常-Zeeman-效应" class="headerlink" title="碱金属原子光谱的双线结构与反常 Zeeman 效应"></a>碱金属原子光谱的双线结构与反常 Zeeman 效应</h2><p>当考虑自旋的影响时，我们应加进下面的自旋-轨道耦合相互作用项</p>
+<script type="math/tex; mode=display">
+\hat{H}'=\dfrac{1}{2m^2c^2}\dfrac{1}{r}\dfrac{\mathrm{d}}{\mathrm{d}r}\left(-\dfrac{e^2}{r}\right)\hat{\mathbf{S}}\cdot\hat{\mathbf{L}}\equiv\xi(r)\hat{\mathbf{S}}\cdot\hat{\mathbf{L}}</script><p>我们有 Schrodinger 方程</p>
+<script type="math/tex; mode=display">
+\left[-\dfrac{\hbar^2}{2m}\left(\dfrac{1}{r^2}\dfrac{\partial{}}{\partial{r}}{r^2\dfrac{\partial{}}{\partial{r}}}-\dfrac{1}{\hbar^2r^2}\hat{L}^2\right)+V(r)+\xi(r)\hat{\mathbf{S}}\cdot\hat{\mathbf{L}}\right]\Psi(\mathbf{r})=E\Psi(\mathbf{r})</script><h2 id="自旋的单重态与三重态"><a href="#自旋的单重态与三重态" class="headerlink" title="自旋的单重态与三重态"></a>自旋的单重态与三重态</h2><p>考虑两个粒子<br>$z$方向容易得到</p>
+<script type="math/tex; mode=display">
+m=m_1+m_2</script><p>全方向比较复杂，我们有<br><strong>triplet</strong></p>
+<script type="math/tex; mode=display">
+\left\{\begin{matrix}
+\left|1\ 1\right>&=&\left|\uparrow\ \uparrow\right>\\
+\left|1\ 0\right>&=&\frac{1}{\sqrt{2}}\left(\left|\uparrow\ \downarrow\right>+\left|\downarrow\ \uparrow\right>\right)\\
+\left|1\ -1\right>&=&\left|\downarrow\ \downarrow\right>
+\end{matrix}\right\}\quad s=1 \left(\text{triplet}\right)</script><p><strong>singlet</strong></p>
+<script type="math/tex; mode=display">
+\left\{\begin{matrix}
+\left|0\ 0\right>&=&\frac{1}{\sqrt{2}}\left(\left|\uparrow\ \downarrow\right>-\left|\downarrow\ \uparrow\right>\right)
+\end{matrix}\right\}\quad s=0 \left(\text{singlet}\right)</script><p>$s$有规律</p>
+<script type="math/tex; mode=display">
+s=(s_1+s_2),(s_1+s_2-1),(s_1+s_2-2),\dots,|s_1-s_2|</script><p>通式可以写为</p>
+<script type="math/tex; mode=display">
+\left|sm\right>=\sum_{m_1+m_2=m}{C_{m_1m_2m}^{s_1s_2s}\left|s_1s_2m_1m_2\right>}</script><script type="math/tex; mode=display">
+\left|s_1s_2m_1m_2\right>=\sum_s{C_{m_1m_2m}^{s_1s_2s}\left|sm\right>}</script><h1 id="定态微扰论"><a href="#定态微扰论" class="headerlink" title="定态微扰论"></a>定态微扰论</h1><h2 id="非简并微扰理论"><a href="#非简并微扰理论" class="headerlink" title="非简并微扰理论"></a>非简并微扰理论</h2><h3 id="通用方法"><a href="#通用方法" class="headerlink" title="通用方法"></a>通用方法</h3><p>首先，我们把新的哈密顿量写成两项的和</p>
+<script type="math/tex; mode=display">
+H=H^0+\lambda H'</script><p>波函数写成</p>
+<script type="math/tex; mode=display">
+\psi_n=\psi_n^0+\lambda \psi_n^1+\lambda^2\psi_n^2+\dots</script><p>有</p>
+<script type="math/tex; mode=display">
+\lambda^1:H^0\psi_n^1+H'\psi_n^0=E_n^0\psi_n^1+E_n^1\psi_n^0</script><script type="math/tex; mode=display">
+\lambda^2:H^0\psi_n^2+H'\psi_n^1=E_n^0\psi_n^2+E_n^1\psi_n^1+E_n^2\psi_n^0</script><script type="math/tex; mode=display">
+\dots</script><h3 id="一阶理论"><a href="#一阶理论" class="headerlink" title="一阶理论"></a>一阶理论</h3><p>一阶算子作用在初始波函数$\psi_n^0$上，有</p>
+<script type="math/tex; mode=display">
+E_n^1=\left<\psi^0_n|H'|\psi_n^0\right></script><p>更加通式的结果</p>
+<script type="math/tex; mode=display">
+(H^0-E_n^0)\psi_n^1=-(H'-E_n^1)\psi_n^0</script><script type="math/tex; mode=display">
+\psi_n^1=\sum_{m\not ={n}}{c_m^{(n)}\psi_m^0}</script><script type="math/tex; mode=display">
+\Rightarrow\sum_{m\not ={n}}(E^0_m-E_n^0){c_m^{(n)}\left<\psi_l^0|\psi_m^0\right>}=-\left<\psi_l^0|H'|\psi_n^0\right>+E_n^1 \left<\psi_l^0|\psi_n^0\right></script><p>$l=n$的时候，为之前的式子，如果$l\not ={n}$，则</p>
+<script type="math/tex; mode=display">
+(E^0_l-E_n^0){c_l^{(n)}}=-\left<\psi_l^0|H'|\psi_n^0\right></script><script type="math/tex; mode=display">
+\Rightarrow{c_m^{(n)}}=-\dfrac{\left<\psi_m^0|H'|\psi_n^0\right>}{(E^0_m-E_n^0)}</script><p>通解为</p>
+<script type="math/tex; mode=display">
+\psi_n^1=\sum_{m\not ={n}}{-\dfrac{\left<\psi_m^0|H'|\psi_n^0\right>}{(E^0_m-E_n^0)}\psi_m^0}</script><h3 id="二阶能量"><a href="#二阶能量" class="headerlink" title="二阶能量"></a>二阶能量</h3><script type="math/tex; mode=display">
+\left<\psi_n^0| H^0\psi_n^2\right>+\left<\psi_n^0|H'\psi_n^1\right>=\left<\psi_n^0|E_n^0\psi_n^2\right>+\left<\psi_n^0|E_n^1\psi_n^1\right>+\left<\psi_n^0|E_n^2\psi_n^0\right></script><script type="math/tex; mode=display">
+\Rightarrow E_n^2=\left<\psi_n^0|H'\psi_n^1\right>-E_n^1\left<\psi_n^0|\psi_n^1\right>=\left<\psi_n^0|H'\psi_n^1\right></script><script type="math/tex; mode=display">
+E_n^2=\left<\psi_n^0|H'\psi_n^1\right>=\sum_{m\not ={n}}{-\dfrac{\left<\psi_m^0|H'|\psi_n^0\right>}{(E^0_m-E_n^0)}\left<\psi_n^0|H'\psi_n^0\right>}</script><script type="math/tex; mode=display">
+\Rightarrow E_n^2=\sum_{m\not ={n}}{-\dfrac{|\left<\psi_m^0|H'|\psi_n^0\right>|^2}{(E^0_m-E_n^0)}}</script><h2 id="简并态微扰论"><a href="#简并态微扰论" class="headerlink" title="简并态微扰论"></a>简并态微扰论</h2><p>为了确定起见，我们假设能级$E_n^{(0)}$是$f_n$重简并的。即我们有</p>
+<script type="math/tex; mode=display">
+\hat{H}\left| n\nu\right\rangle=E_n^{(0)}\left| n\nu\right\rangle,\ \nu=1,2,\dots,f_n,</script><p>以及</p>
+<script type="math/tex; mode=display">
+\left\langle m\mu|n\nu\right\rangle=\delta_{mn}\delta_{\mu\nu}</script><p>现在，我们考虑本征方程</p>
+<script type="math/tex; mode=display">
+\hat{H}\left| \psi\right\rangle\left(\hat{H}_0+\lambda\hat{H}'\right)\left| \psi\right\rangle=E\left| \psi\right\rangle</script><p>做与$\left\langle m\mu\right|$的内积后，我们得到</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+   \left\langle m\mu\right|\left(\hat{H}_0+\lambda\hat{H}'\right)\left| \psi\right\rangle=&E_m^{(0)}\left\langle m\mu|\psi\right\rangle+\lambda\left\langle m\mu\right|\hat{H}'\left| \psi\right\rangle\\
+   =&E_m^{(0)}C_{m\mu}+\lambda\sum_n{\sum_{\nu=1}^{f_n}{\left\langle m\mu\right|\hat{H}'\left| n\nu\right\rangle\left\langle n\nu| \psi\right\rangle}}\\
+      =&E_m^{(0)}C_{m\mu}+\lambda\sum_n{\sum_{\nu=1}^{f_n}{H'_{m\mu,n\nu}C_{n\nu}}=EC_{m\mu}}
+\end{aligned}</script><p>将展开式代入，对比$\lambda$各次幂的系数，得</p>
+<script type="math/tex; mode=display">
+\left(E^{(0)}-E_m^{(0)}\right)C_{m\mu}^{(0)}=0</script><script type="math/tex; mode=display">
+\left(E^{(0)}-E_m^{(0)}\right)C_{m\mu}^{(1)}+E^{(1)}C_{m\mu}^{(0)}-\sum_n{\sum_{\nu=1}^{f_n}{H'_{m\mu,n\nu}C_{n\nu}^{(0)}}}=0</script><h1 id="量子跳跃和散射理论初步"><a href="#量子跳跃和散射理论初步" class="headerlink" title="量子跳跃和散射理论初步"></a>量子跳跃和散射理论初步</h1><h2 id="含时微扰论"><a href="#含时微扰论" class="headerlink" title="含时微扰论"></a>含时微扰论</h2><p>量子体系在某种外相互作用下，可以在两个定态之间发生跳迁。此时，人<br>们需要计算其跳迁几率。</p>
+<p>哈密顿算子变为</p>
+<script type="math/tex; mode=display">
+\hat{H}(t)=\hat{H}_0+\lambda\hat{H}'(t)</script><p>Schrodinger 方程的解可设为</p>
+<script type="math/tex; mode=display">
+\psi(\mathbf{r},t)=\sum_n{C_n(t)\mathrm{e}^{-\frac{\mathrm{i}}{\hbar}E_nt}\psi_n(\mathbf{r})}</script><p>代入 Schrodinger 方程，并做内积有</p>
+<script type="math/tex; mode=display">
+\mathrm{i}\hbar\dot{C}_{k'}(t)=\lambda\sum_n{C_n(t)\mathrm{e}^{\frac{\mathrm{i}}{\hbar}(E_{k'}-E_{n})t}\left\langle \psi_{k'}|\hat{H}'(t)|\psi_n\right\rangle}</script><p>按照微扰论的思路，我们令</p>
+<script type="math/tex; mode=display">
+C_n(t)=\delta_{nk}+\lambda c_n(t)</script><p>得</p>
+<script type="math/tex; mode=display">
+\mathrm{i}\hbar\dot{c}_{k'}(t)\approx\sum_n{\mathrm{e}^{\frac{\mathrm{i}}{\hbar}(E_{k'}-E_{n})t}\delta_{nk}\left\langle \psi_{k'}|\hat{H}'(t)|\psi_n\right\rangle}</script><script type="math/tex; mode=display">=\mathrm{e}^{\frac{\mathrm{i}}{\hbar}(E_{k'}-E_{k})t}\left\langle \psi_{k'}|\hat{H}'(t)|\psi_k\right\rangle</script><p>解此方程，当$k’\not ={k}$时，我们得到</p>
+<script type="math/tex; mode=display">
+C_{k'}(t)=c_{k'}(t)=\dfrac{1}{\mathrm{i}\hbar}\int_0^t{\mathrm{d}t'\mathrm{e}^{\frac{\mathrm{i}}{\hbar}(E_{k'}-E_{k})t'}\left\langle \psi_{k'}|\hat{H}'(t')|\psi_k\right\rangle}</script><script type="math/tex; mode=display">
+P_{k'k}(t)=|C_{k'}(t)|^2</script><h2 id="散射理论"><a href="#散射理论" class="headerlink" title="散射理论"></a>散射理论</h2><h3 id="经典散射理论"><a href="#经典散射理论" class="headerlink" title="经典散射理论"></a>经典散射理论</h3><p>硬球散射</p>
+<script type="math/tex; mode=display">
+b=R\sin{\left(\dfrac{\pi}{2}-\dfrac{\theta}{2}\right)}=R\cos{\left(\dfrac{\theta}{2}\right)}</script><script type="math/tex; mode=display">
+\theta=\begin{cases}2\cos^{-1}{b/R},&(b\le R)
+\\
+0,&(b\ge R)\end{cases}</script><p>微分散射截面</p>
+<script type="math/tex; mode=display">
+\mathrm{d}\sigma=D(\theta)\mathrm{d}\Omega,\quad D(\theta)=\dfrac{b}{\sin{\theta}}\left|\dfrac{\mathrm{d}b}{\mathrm{d}\theta}\right|</script><p>硬球散射(连续)</p>
+<script type="math/tex; mode=display">
+\dfrac{\mathrm{d}b}{\mathrm{d}\theta}=-\dfrac{1}{2}R\sin{\left(\dfrac{\theta}{2}\right)}</script><script type="math/tex; mode=display">
+\Rightarrow D(\theta)=\dfrac{R^2}{4}</script><h3 id="量子散射理论"><a href="#量子散射理论" class="headerlink" title="量子散射理论"></a>量子散射理论</h3><script type="math/tex; mode=display">
+\psi(r,\theta)\approx A \left\{\mathrm{e}^{\mathrm{i}kz}+f(\theta)\dfrac{\mathrm{e}^{\mathrm{i}kr}}{r}\right\},\quad \text{for large }r,\quad k\equiv \dfrac{\sqrt{2mE}}{\hbar}</script><p>有</p>
+<script type="math/tex; mode=display">
+D(\theta)=\dfrac{\mathrm{d}\sigma}{\mathrm{d}\Omega}=|f(\theta)|^2</script><h3 id="分波分析"><a href="#分波分析" class="headerlink" title="分波分析"></a>分波分析</h3><h3 id="波恩近似"><a href="#波恩近似" class="headerlink" title="波恩近似"></a>波恩近似</h3><h4 id="Schrodinger-方程的积分形式"><a href="#Schrodinger-方程的积分形式" class="headerlink" title="Schrödinger 方程的积分形式"></a>Schrödinger 方程的积分形式</h4><p>利用数学物理方法-格林函数，有</p>
+<script type="math/tex; mode=display">
+\psi(\mathbf{r})=\psi_0(\mathbf{r})-\dfrac{m}{2\pi\hbar^2}\int_V{\dfrac{\mathrm{e}^{\mathrm{i}k|\mathbf{r}-\mathbf{r}_0|}}{|\mathbf{r}-\mathbf{r}_0|}V(\mathbf{r}_0)\psi(\mathbf{r}_0)\mathrm{d}\tau_0},\quad k=\dfrac{\sqrt{2m(E-V)}}{\hbar}</script><h4 id="第一玻恩近似"><a href="#第一玻恩近似" class="headerlink" title="第一玻恩近似"></a>第一玻恩近似</h4><p>对于$r$极大时，有近似</p>
+<script type="math/tex; mode=display">
+f(\theta,\phi)\approx-\dfrac{m}{2\pi\hbar^2}\int_V{\mathrm{e}^{\mathrm{i}(\mathbf{k}'-\mathbf{k})\cdot\mathbf{r}_0}V(\mathbf{r}_0)\mathrm{d}\tau_0}</script><script type="math/tex; mode=display">
+f(\theta,\phi)\approx-\dfrac{m}{2\pi\hbar^2}\int_V{V(\mathbf{r}_0)\mathrm{d}\tau_0},\quad \text{low energy}</script><script type="math/tex; mode=display">
+f(\theta)\approx -\dfrac{2m}{\hbar^2\kappa}\int_0^\infty{rV(r)\sin{(\kappa r)}\mathrm{d}r},\quad \text{spherically symmetry},\  \kappa\equiv2k\sin{(\theta/2)}</script><p><strong>汤川散射</strong><br>$V(r)=\beta\dfrac{\mathrm{e}^{-\mu r}}{r}$下，积分得</p>
+<script type="math/tex; mode=display">
+f(\theta)\approx \dfrac{2m\beta}{\hbar^2\kappa}\int_0^\infty{\mathrm{e}^{-\mu r}\sin{(\kappa r)}\mathrm{d}r}=-\dfrac{2m\beta}{\hbar^2(\mu^2+\kappa^2)}</script><p><strong>卢瑟福散射</strong></p>
+<script type="math/tex; mode=display">
+\beta=q_1q_2/4\pi\varepsilon_0,\ \mu=0,</script><script type="math/tex; mode=display">
+f(\theta)\approx-\dfrac{2mq_1q_2}{4\pi\varepsilon_0\hbar^2\kappa^2}=-\dfrac{q_1q_2}{16\pi\varepsilon_0E\sin^2{(\theta/2)}}</script>
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>UynajGI
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://uynajgi.github.io/2022/05/22/Intro2QM/" title="量子力学">https://uynajgi.github.io/2022/05/22/Intro2QM/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/BY-NC-SA/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Schrodinger-%E6%96%B9%E7%A8%8B/" rel="tag"># Schrodinger 方程</a>
+              <a href="/tags/Hilbert-%E7%A9%BA%E9%97%B4/" rel="tag"># Hilbert 空间</a>
+              <a href="/tags/Dirac-%E7%AC%A6%E5%8F%B7/" rel="tag"># Dirac 符号</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/05/22/Electrodynamics/" rel="prev" title="经典电动力学">
+      <i class="fa fa-chevron-left"></i> 经典电动力学
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/05/22/NetLogo/" rel="next" title="NetLogo">
+      NetLogo <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E6%95%B0%E5%AD%A6%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">一些数学准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%83%E5%9D%90%E6%A0%87%E4%B8%8B%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E7%AC%A6%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.1.</span> <span class="nav-text">球坐标下拉普拉斯算符的表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%B1%E5%9D%90%E6%A0%87%E4%B8%8B%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E7%AC%A6%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.2.</span> <span class="nav-text">柱坐标下拉普拉斯算符的表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E5%85%B3-delta-%E5%87%BD%E6%95%B0"><span class="nav-number">1.3.</span> <span class="nav-text">有关$\delta$函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E5%85%B3%E7%9F%A2%E9%87%8F%E5%88%86%E6%9E%90"><span class="nav-number">1.4.</span> <span class="nav-text">有关矢量分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6%E7%9A%84%E8%AF%9E%E7%94%9F"><span class="nav-number">2.</span> <span class="nav-text">量子力学的诞生</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E6%97%A0%E6%B3%95%E7%94%A8%E7%BB%8F%E5%85%B8%E7%89%A9%E7%90%86%E5%AD%A6%E8%A7%A3%E9%87%8A%E7%9A%84%E5%AE%9E%E9%AA%8C%E4%BA%8B%E5%AE%9E"><span class="nav-number">2.1.</span> <span class="nav-text">一些无法用经典物理学解释的实验事实</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BB%91%E4%BD%93%E8%BE%90%E5%B0%84%E5%AE%9E%E9%AA%8C"><span class="nav-number">2.1.1.</span> <span class="nav-text">黑体辐射实验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%89%E7%94%B5%E6%95%88%E5%BA%94"><span class="nav-number">2.1.2.</span> <span class="nav-text">光电效应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E5%AD%90%E7%BA%BF%E7%8A%B6%E5%85%89%E8%B0%B1%E5%8F%8A%E5%85%B6%E8%A7%84%E5%BE%8B"><span class="nav-number">2.1.3.</span> <span class="nav-text">原子线状光谱及其规律</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E5%AD%90%E7%9A%84%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="nav-number">2.1.4.</span> <span class="nav-text">原子的稳定性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%99%AE%E6%9C%97%E5%85%8B%E7%9A%84%E5%85%89%E9%87%8F%E5%AD%90%E8%AE%BA"><span class="nav-number">2.2.</span> <span class="nav-text">普朗克的光量子论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bohr-%E7%9A%84%E9%87%8F%E5%AD%90%E8%AE%BA"><span class="nav-number">2.3.</span> <span class="nav-text">Bohr 的量子论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Heisenberg-%E5%92%8C-Dirac-%E7%9A%84%E7%9F%A9%E9%98%B5%E5%8A%9B%E5%AD%A6"><span class="nav-number">2.4.</span> <span class="nav-text">Heisenberg 和 Dirac 的矩阵力学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#De-Broglie-%E7%9A%84%E7%89%A9%E8%B4%A8%E6%B3%A2%E5%92%8C-Schrodinger-%E7%9A%84%E6%B3%A2%E5%8A%A8%E5%8A%9B%E5%AD%A6"><span class="nav-number">2.5.</span> <span class="nav-text">De Broglie 的物质波和 Schrodinger 的波动力学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A2%E5%87%BD%E6%95%B0%E7%9A%84%E5%87%A0%E7%8E%87%E8%A7%A3%E9%87%8A%E5%8F%8A%E4%B8%A4%E7%A7%8D%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6%E5%BD%A2%E5%BC%8F%E7%9A%84%E7%AD%89%E4%BB%B7%E6%80%A7"><span class="nav-number">2.6.</span> <span class="nav-text">波函数的几率解释及两种量子力学形式的等价性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Heisenberg-%E7%9A%84%E6%B5%8B%E4%B8%8D%E5%87%86%E5%8E%9F%E7%90%86"><span class="nav-number">2.7.</span> <span class="nav-text">Heisenberg 的测不准原理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4%E5%8A%BF%E5%9C%BA%E4%B8%AD%E7%9A%84%E7%B2%92%E5%AD%90%E8%BF%90%E5%8A%A8"><span class="nav-number">3.</span> <span class="nav-text">一维势场中的粒子运动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4%E8%B0%90%E6%8C%AF%E5%AD%90"><span class="nav-number">3.1.</span> <span class="nav-text">一维谐振子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E6%95%B0%E6%96%B9%E6%B3%95"><span class="nav-number">3.1.1.</span> <span class="nav-text">代数方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95"><span class="nav-number">3.1.2.</span> <span class="nav-text">分析方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4%E5%AE%9A%E6%80%81%E4%BD%93%E7%B3%BB%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8"><span class="nav-number">3.2.</span> <span class="nav-text">一维定态体系的一些基本性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4%E6%96%B9%E5%8A%BF%E9%98%B1"><span class="nav-number">3.3.</span> <span class="nav-text">一维方势阱</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E7%A9%B7%E6%B7%B1%E4%B8%80%E7%BB%B4%E6%96%B9%E5%8A%BF%E9%98%B1"><span class="nav-number">3.3.1.</span> <span class="nav-text">无穷深一维方势阱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E9%99%90%E6%B7%B1%E5%AF%B9%E7%A7%B0%E6%96%B9%E5%8A%BF%E9%98%B1"><span class="nav-number">3.3.2.</span> <span class="nav-text">有限深对称方势阱</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E5%8A%BF%E5%9E%92%E7%9A%84%E5%8F%8D%E5%B0%84%E4%B8%8E%E7%A9%BF%E9%80%8F"><span class="nav-number">3.4.</span> <span class="nav-text">方势垒的反射与穿透</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E5%8A%BF%E9%98%B1%E7%9A%84%E5%8F%8D%E5%B0%84%EF%BC%8C%E9%80%8F%E5%B0%84%E4%B8%8E%E5%85%B1%E6%8C%AF"><span class="nav-number">3.5.</span> <span class="nav-text">方势阱的反射，透射与共振</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%CE%B4-%E5%8A%BF%E9%98%B1"><span class="nav-number">3.6.</span> <span class="nav-text">$δ$势阱</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8A%9B%E5%AD%A6%E9%87%8F%E7%9A%84%E7%AE%97%E7%AC%A6%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%A1%A8%E8%B1%A1%E5%8F%98%E6%8D%A2"><span class="nav-number">4.</span> <span class="nav-text">力学量的算符表示与表象变换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%9B%E5%AD%A6%E9%87%8F%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E5%85%B6%E7%AE%97%E7%AC%A6%E8%A1%A8%E7%A4%BA"><span class="nav-number">4.1.</span> <span class="nav-text">力学量的定义及其算符表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E7%A9%BA%E9%97%B4%E5%8F%8A%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2"><span class="nav-number">4.2.</span> <span class="nav-text">线性空间及线性变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E4%B8%80-Hilbert-%E7%A9%BA%E9%97%B4%E4%B8%AD%E7%9A%84%E5%9F%BA%E5%BA%95%E5%8F%98%E6%8D%A2"><span class="nav-number">4.3.</span> <span class="nav-text">同一 Hilbert 空间中的基底变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8%E8%B1%A1%E5%8F%98%E6%8D%A2"><span class="nav-number">4.4.</span> <span class="nav-text">表象变换</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8A%9B%E5%AD%A6%E9%87%8F%E9%9A%8F%E6%97%B6%E9%97%B4%E7%9A%84%E6%BC%94%E5%8C%96%E4%B8%8E%E5%AF%B9%E7%A7%B0%E6%80%A7"><span class="nav-number">5.</span> <span class="nav-text">力学量随时间的演化与对称性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%88%E6%81%92%E9%87%8F"><span class="nav-number">5.1.</span> <span class="nav-text">守恒量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BC%94%E5%8C%96%E7%AE%97%E5%AD%90"><span class="nav-number">5.2.</span> <span class="nav-text">演化算子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%B7%E6%A3%AE%E5%A0%A1%E7%BB%98%E6%99%AF"><span class="nav-number">5.2.1.</span> <span class="nav-text">海森堡绘景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%B9%B3%E7%A7%BB%E4%B8%8D%E5%8F%98%E6%80%A7"><span class="nav-number">5.2.2.</span> <span class="nav-text">时间平移不变性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%88%E6%81%92%E9%87%8F%E4%B8%8E%E5%AF%B9%E7%A7%B0%E6%80%A7%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">5.3.</span> <span class="nav-text">守恒量与对称性的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AC%E6%8D%A2%E7%AE%97%E5%AD%90"><span class="nav-number">5.4.</span> <span class="nav-text">转换算子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E5%AD%90%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E5%8F%98%E6%8D%A2"><span class="nav-number">5.4.1.</span> <span class="nav-text">算子如何进行变换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A9%BA%E9%97%B4%E5%8F%98%E6%8D%A2"><span class="nav-number">5.5.</span> <span class="nav-text">空间变换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B3%E7%A7%BB%E5%AF%B9%E7%A7%B0"><span class="nav-number">5.5.1.</span> <span class="nav-text">平移对称</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%8B%E8%BD%AC%E5%AF%B9%E7%A7%B0"><span class="nav-number">5.5.2.</span> <span class="nav-text">旋转对称</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%95-z-%E8%BD%B4%E6%97%8B%E8%BD%AC"><span class="nav-number">5.5.2.1.</span> <span class="nav-text">绕$z$轴旋转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E7%BB%B4%E6%97%8B%E8%BD%AC"><span class="nav-number">5.5.2.2.</span> <span class="nav-text">三维旋转</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%87%E7%A7%B0%E5%AF%B9%E7%A7%B0"><span class="nav-number">5.5.3.</span> <span class="nav-text">宇称对称</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4%E5%A5%87%E5%81%B6%E6%80%A7"><span class="nav-number">5.5.3.1.</span> <span class="nav-text">一维奇偶性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%BB%B4%E5%A5%87%E5%81%B6%E6%80%A7"><span class="nav-number">5.5.4.</span> <span class="nav-text">三维奇偶性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E5%90%8C%E7%B2%92%E5%AD%90%E4%BD%93%E7%B3%BB%E4%B8%8E%E6%B3%A2%E5%87%BD%E6%95%B0%E7%9A%84%E4%BA%A4%E6%8D%A2%E5%AF%B9%E7%A7%B0%E6%80%A7"><span class="nav-number">5.6.</span> <span class="nav-text">全同粒子体系与波函数的交换对称性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%A4%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F"><span class="nav-number">5.6.1.</span> <span class="nav-text">两粒子系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%BB%E8%89%B2%E5%AD%90%E5%92%8C%E8%B4%B9%E7%B1%B3%E5%AD%90"><span class="nav-number">5.6.2.</span> <span class="nav-text">玻色子和费米子</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AD%E5%BF%83%E5%8A%9B%E5%9C%BA"><span class="nav-number">6.</span> <span class="nav-text">中心力场</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E5%BF%83%E5%8A%9B%E5%9C%BA%E4%B8%AD%E7%B2%92%E5%AD%90%E8%BF%90%E5%8A%A8%E7%9A%84%E4%B8%80%E8%88%AC%E6%80%A7%E8%B4%A8"><span class="nav-number">6.1.</span> <span class="nav-text">中心力场中粒子运动的一般性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A0%E9%99%90%E6%B7%B1%E5%8A%BF%E9%98%B1"><span class="nav-number">6.2.</span> <span class="nav-text">无限深势阱</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%84%E5%90%91%E5%90%8C%E6%80%A7%E8%B0%90%E6%8C%AF%E5%AD%90"><span class="nav-number">6.3.</span> <span class="nav-text">各向同性谐振子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B0%A2%E5%8E%9F%E5%AD%90"><span class="nav-number">6.4.</span> <span class="nav-text">氢原子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%84%E5%90%91%E6%B3%A2%E5%87%BD%E6%95%B0"><span class="nav-number">6.4.1.</span> <span class="nav-text">径向波函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B0%A2%E7%9A%84%E5%85%89%E8%B0%B1"><span class="nav-number">6.4.2.</span> <span class="nav-text">氢的光谱</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A3%81%E5%9C%BA%E4%B8%AD%E5%B8%A6%E7%94%B5%E7%B2%92%E5%AD%90%E7%9A%84%E8%BF%90%E5%8A%A8"><span class="nav-number">7.</span> <span class="nav-text">磁场中带电粒子的运动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%A6%E7%94%B5%E7%B2%92%E5%AD%90%E5%9C%A8%E7%94%B5%E7%A3%81%E5%9C%BA%E4%B8%AD%E7%9A%84-Schrodinger-%E6%96%B9%E7%A8%8B"><span class="nav-number">7.1.</span> <span class="nav-text">带电粒子在电磁场中的 Schrodinger 方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%B8%B8-Zeeman-%E6%95%88%E5%BA%94"><span class="nav-number">7.2.</span> <span class="nav-text">正常 Zeeman 效应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Landau-%E8%83%BD%E7%BA%A7"><span class="nav-number">7.3.</span> <span class="nav-text">Landau 能级</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%87%AA%E6%97%8B"><span class="nav-number">8.</span> <span class="nav-text">自旋</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%92%E5%8A%A8%E9%87%8F"><span class="nav-number">8.1.</span> <span class="nav-text">角动量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%BE%81%E5%80%BC"><span class="nav-number">8.1.1.</span> <span class="nav-text">本征值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%BE%81%E5%87%BD%E6%95%B0"><span class="nav-number">8.1.2.</span> <span class="nav-text">本征函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E8%87%AA%E6%97%8B"><span class="nav-number">8.2.</span> <span class="nav-text">1&#x2F;2 自旋</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E8%A7%92%E5%8A%A8%E9%87%8F%E7%9A%84%E6%9C%AC%E5%BE%81%E6%80%81"><span class="nav-number">8.3.</span> <span class="nav-text">总角动量的本征态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A2%B1%E9%87%91%E5%B1%9E%E5%8E%9F%E5%AD%90%E5%85%89%E8%B0%B1%E7%9A%84%E5%8F%8C%E7%BA%BF%E7%BB%93%E6%9E%84%E4%B8%8E%E5%8F%8D%E5%B8%B8-Zeeman-%E6%95%88%E5%BA%94"><span class="nav-number">8.4.</span> <span class="nav-text">碱金属原子光谱的双线结构与反常 Zeeman 效应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E6%97%8B%E7%9A%84%E5%8D%95%E9%87%8D%E6%80%81%E4%B8%8E%E4%B8%89%E9%87%8D%E6%80%81"><span class="nav-number">8.5.</span> <span class="nav-text">自旋的单重态与三重态</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9A%E6%80%81%E5%BE%AE%E6%89%B0%E8%AE%BA"><span class="nav-number">9.</span> <span class="nav-text">定态微扰论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E7%AE%80%E5%B9%B6%E5%BE%AE%E6%89%B0%E7%90%86%E8%AE%BA"><span class="nav-number">9.1.</span> <span class="nav-text">非简并微扰理论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">9.1.1.</span> <span class="nav-text">通用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E9%98%B6%E7%90%86%E8%AE%BA"><span class="nav-number">9.1.2.</span> <span class="nav-text">一阶理论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E9%98%B6%E8%83%BD%E9%87%8F"><span class="nav-number">9.1.3.</span> <span class="nav-text">二阶能量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%B9%B6%E6%80%81%E5%BE%AE%E6%89%B0%E8%AE%BA"><span class="nav-number">9.2.</span> <span class="nav-text">简并态微扰论</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%87%8F%E5%AD%90%E8%B7%B3%E8%B7%83%E5%92%8C%E6%95%A3%E5%B0%84%E7%90%86%E8%AE%BA%E5%88%9D%E6%AD%A5"><span class="nav-number">10.</span> <span class="nav-text">量子跳跃和散射理论初步</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AB%E6%97%B6%E5%BE%AE%E6%89%B0%E8%AE%BA"><span class="nav-number">10.1.</span> <span class="nav-text">含时微扰论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%A3%E5%B0%84%E7%90%86%E8%AE%BA"><span class="nav-number">10.2.</span> <span class="nav-text">散射理论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%8F%E5%85%B8%E6%95%A3%E5%B0%84%E7%90%86%E8%AE%BA"><span class="nav-number">10.2.1.</span> <span class="nav-text">经典散射理论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8F%E5%AD%90%E6%95%A3%E5%B0%84%E7%90%86%E8%AE%BA"><span class="nav-number">10.2.2.</span> <span class="nav-text">量子散射理论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%B3%A2%E5%88%86%E6%9E%90"><span class="nav-number">10.2.3.</span> <span class="nav-text">分波分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A2%E6%81%A9%E8%BF%91%E4%BC%BC"><span class="nav-number">10.2.4.</span> <span class="nav-text">波恩近似</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Schrodinger-%E6%96%B9%E7%A8%8B%E7%9A%84%E7%A7%AF%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="nav-number">10.2.4.1.</span> <span class="nav-text">Schrödinger 方程的积分形式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%8E%BB%E6%81%A9%E8%BF%91%E4%BC%BC"><span class="nav-number">10.2.4.2.</span> <span class="nav-text">第一玻恩近似</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="UynajGI"
+      src="/images/U_avatar.jpg">
+  <p class="site-author-name" itemprop="name">UynajGI</p>
+  <div class="site-description" itemprop="description">如果你想走到高处，就要使用自己的两条腿！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/UynajGI" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;UynajGI" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/suquan12148@outlook.com" title="E-Mail → suquan12148@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">UynajGI</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>

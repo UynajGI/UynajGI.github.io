@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"uynajgi.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="本文主要参考了集智俱乐部出品的《NetLogo多主体建模入门》的教材，对模型代码进行了记录和总结。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NetLogo">
+<meta property="og:url" content="https://uynajgi.github.io/2022/05/22/NetLogo/index.html">
+<meta property="og:site_name" content="逢灯暗室">
+<meta property="og:description" content="本文主要参考了集智俱乐部出品的《NetLogo多主体建模入门》的教材，对模型代码进行了记录和总结。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-22T08:56:58.000Z">
+<meta property="article:modified_time" content="2022-05-22T09:00:39.769Z">
+<meta property="article:author" content="UynajGI">
+<meta property="article:tag" content="复杂科学">
+<meta property="article:tag" content="NetLogo">
+<meta property="article:tag" content="网络科学">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://uynajgi.github.io/2022/05/22/NetLogo/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>NetLogo | 逢灯暗室</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">逢灯暗室</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">柳暗花明又一村</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>图书馆</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>所有文章</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://uynajgi.github.io/2022/05/22/NetLogo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/U_avatar.jpg">
+      <meta itemprop="name" content="UynajGI">
+      <meta itemprop="description" content="如果你想走到高处，就要使用自己的两条腿！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="逢灯暗室">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          NetLogo
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-05-22 16:56:58 / 修改时间：17:00:39" itemprop="dateCreated datePublished" datetime="2022-05-22T16:56:58+08:00">2022-05-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">计算机科学</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">编程语言</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">本文主要参考了集智俱乐部出品的《NetLogo多主体建模入门》的教材，对模型代码进行了记录和总结。</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="小球"><a href="#小球" class="headerlink" title="小球"></a>小球</h1><h2 id="小球宇宙"><a href="#小球宇宙" class="headerlink" title="小球宇宙"></a>小球宇宙</h2><h2 id="搭建宇宙框架"><a href="#搭建宇宙框架" class="headerlink" title="搭建宇宙框架"></a>搭建宇宙框架</h2><p><code>ask x</code>: 对全体 x 元素作用</p>
+<p>实例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">to setup    ;;设置初始对象</span><br><span class="line">    clear-all   ;;清除界面</span><br><span class="line">    set-default-shape turtles &quot;circle&quot; ;;设置对象形状</span><br><span class="line">    create-turtles 50[</span><br><span class="line">        setxy random-xcor random-ycor ;;随机设置对象坐标</span><br><span class="line">    ]</span><br><span class="line">end</span><br><span class="line">to go</span><br><span class="line">    ask turtles[</span><br><span class="line">        forward 1 ;;要求每个对象前进1格</span><br><span class="line">    ]</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<h1 id="生命"><a href="#生命" class="headerlink" title="生命"></a>生命</h1><h2 id="生命游戏"><a href="#生命游戏" class="headerlink" title="生命游戏"></a>生命游戏</h2><h2 id="patch"><a href="#patch" class="headerlink" title="patch"></a>patch</h2><h2 id="模拟"><a href="#模拟" class="headerlink" title="模拟"></a>模拟</h2><p><code>random-float x</code>: 生成一个 0~x 之间的随机浮点数</p>
+<p><code>set pcolor [color]</code>: 设置 patch 颜色</p>
+<h3 id="自定义-patch-属性"><a href="#自定义-patch-属性" class="headerlink" title="自定义 patch 属性"></a>自定义 patch 属性</h3><p><code>patches-own[...]</code>: 设定 patch 的[…]属性</p>
+<p><code>ifelse</code>:语法如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ifelse condition[</span><br><span class="line">    expression1</span><br><span class="line">][</span><br><span class="line">    expression2</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p><code>&lt; &gt; + -</code>: 左右要加空格</p>
+<p>实例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">patches-own [living]</span><br><span class="line">to setup</span><br><span class="line">    clear-all</span><br><span class="line">    ask patches [</span><br><span class="line">        if random-float 1 &lt; 0.3[</span><br><span class="line">            set pcolor white</span><br><span class="line">        ]</span><br><span class="line">        set living 0</span><br><span class="line">    ]</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to go</span><br><span class="line">    ask patches[</span><br><span class="line">        set living count neighbors with [pcolor = black]</span><br><span class="line">    ]</span><br><span class="line">    ask patches[</span><br><span class="line">        ifelse (pcolor = black)[</span><br><span class="line">            if living &gt; 3 or living &lt; 2[</span><br><span class="line">                set pcolor white</span><br><span class="line">                ]</span><br><span class="line">            ][</span><br><span class="line">                if (living = 3)[</span><br><span class="line">                    set pcolor black</span><br><span class="line">                ]</span><br><span class="line">            ]</span><br><span class="line">        ]</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<h1 id="朗顿的蚂蚁"><a href="#朗顿的蚂蚁" class="headerlink" title="朗顿的蚂蚁"></a>朗顿的蚂蚁</h1><h2 id="蚂蚁"><a href="#蚂蚁" class="headerlink" title="蚂蚁"></a>蚂蚁</h2><p><code>random x</code>: 生成一个 0~x 之间的随机整数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">to setup</span><br><span class="line">    clear-all</span><br><span class="line">    reset-ticks</span><br><span class="line">    create-turtles 1[</span><br><span class="line">        set heading random 3 * 90 ;;set heading ( ( random 3 ) * 90 )</span><br><span class="line">    ]</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to go</span><br><span class="line">    ask turtles[</span><br><span class="line">        ifelse (pcolor = white)[</span><br><span class="line">            right 90</span><br><span class="line">            set pcolor black</span><br><span class="line">            forward 1</span><br><span class="line">        ][</span><br><span class="line">            left 90</span><br><span class="line">            set pcolor white</span><br><span class="line">            forward 1</span><br><span class="line">        ]</span><br><span class="line">    ]</span><br><span class="line">    tick</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p><code>reset-ticks</code>,<code>tick</code>: 记录程序运行周期</p>
+<h1 id="羊-草生态系统"><a href="#羊-草生态系统" class="headerlink" title="羊-草生态系统"></a>羊-草生态系统</h1><p><code>n-of size agentset</code>: agentset 中随机挑选 size 个元素形成集合</p>
+<p><code>hatch x</code>: 增加 x 个 turtles</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">turtles-own[energy]</span><br><span class="line">to setup</span><br><span class="line">    clear-all</span><br><span class="line">    reset-ticks</span><br><span class="line">    ask patches[</span><br><span class="line">        if random-float 1 &lt; 0.2[</span><br><span class="line">            set pcolor green</span><br><span class="line">        ]</span><br><span class="line">    ]</span><br><span class="line">    create-turtles 1[</span><br><span class="line">        set energy 100</span><br><span class="line">    ]</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to go</span><br><span class="line">    add_food</span><br><span class="line">    ask turtles[</span><br><span class="line">        turtle_move</span><br><span class="line">        turtle_breed</span><br><span class="line">        turtle_die</span><br><span class="line">    ]</span><br><span class="line">    tick</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to add_food</span><br><span class="line">    ask n-of 10 patches[</span><br><span class="line">        set pcolor green</span><br><span class="line">    ]</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to turtle_move</span><br><span class="line">    if pcolor = green[</span><br><span class="line">        set energy energy + 10</span><br><span class="line">        set pcolor black</span><br><span class="line">    ]</span><br><span class="line">    if random-float 1 &lt; 0.2[</span><br><span class="line">        set heading random 360</span><br><span class="line">    ]</span><br><span class="line">    set energy energy - 1</span><br><span class="line">    forward 1</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to turtle_breed</span><br><span class="line">    if energy &gt; 500[</span><br><span class="line">        set energy energy - 500</span><br><span class="line">        hatch 1[</span><br><span class="line">            forward 1</span><br><span class="line">            set energy 100</span><br><span class="line">        ]</span><br><span class="line">    ]</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to turtle_die</span><br><span class="line">    if energy &lt;= 0[</span><br><span class="line">        die</span><br><span class="line">    ]</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<h1 id="人工经济模型"><a href="#人工经济模型" class="headerlink" title="人工经济模型"></a>人工经济模型</h1><p><code>let</code>: 定义新变量</p>
+<p>实例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">turtles-own [money]</span><br><span class="line"></span><br><span class="line">to setup</span><br><span class="line">    clear-all</span><br><span class="line">    reset-ticks</span><br><span class="line">    create-turtles num_agents[</span><br><span class="line">        set money (total_money / num_agents)</span><br><span class="line">        setxy random-xcor random-ycor</span><br><span class="line">    ]</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to go</span><br><span class="line">    ask turtles[</span><br><span class="line">        let agsets other turtles-here</span><br><span class="line">        if count agsets &gt;= 1</span><br><span class="line">        [</span><br><span class="line">            transaction (one-of agsets)</span><br><span class="line">        ]</span><br><span class="line">        forward 1</span><br><span class="line">    ]</span><br><span class="line">    tick</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to transaction[trader]</span><br><span class="line">    let deltam 0</span><br><span class="line">    let money1 ([money] of trader)</span><br><span class="line">    let epsilon (random-float 1)</span><br><span class="line">    set deltam (epsilon - 1) * money + epsilon * money1</span><br><span class="line"></span><br><span class="line">    if money + deltam &gt;= 0 and money1 - deltam &gt;= 0</span><br><span class="line">    [</span><br><span class="line">        set money money + deltam</span><br><span class="line">        ask trader[</span><br><span class="line">            set money money1 - deltam</span><br><span class="line">        ]</span><br><span class="line">    ]</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">;;绘图函数</span><br><span class="line">to to-update-plot</span><br><span class="line">    let lst [money] of turtles</span><br><span class="line">    set-histogram-num-bars 100</span><br><span class="line">    if not empty? lst [</span><br><span class="line">        set-plot-x-range 0 max lst</span><br><span class="line">        histogram lst</span><br><span class="line">    ]</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p><code>set-plot-x-range a b</code>: 以[a,b]为区间的 x 轴<br><code>histogram lst</code>: 绘制 lst 的直方图</p>
+<h1 id="导出文件"><a href="#导出文件" class="headerlink" title="导出文件"></a>导出文件</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">to save-file</span><br><span class="line">    file-open &quot;agents.txt&quot;</span><br><span class="line">    let wealths &quot;&quot;</span><br><span class="line">    ask turtles[</span><br><span class="line">        set wealths (word wealths money &quot;\r\n&quot;)</span><br><span class="line">    ]</span><br><span class="line">    file-print wealths</span><br><span class="line">    file-close</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<h2 id="洛伦兹曲线"><a href="#洛伦兹曲线" class="headerlink" title="洛伦兹曲线"></a>洛伦兹曲线</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">to update-lorenz-plot</span><br><span class="line">    ;绘制表示财富分布绝对均衡的斜线</span><br><span class="line">    clear-plot</span><br><span class="line">    set-current-plot-pen &quot;equal&quot;</span><br><span class="line">    plot 0</span><br><span class="line">    plot 1</span><br><span class="line"></span><br><span class="line">    ;绘制表示财富分布极端不均衡的折线</span><br><span class="line">    set-current-plot-pen &quot;dominant&quot;</span><br><span class="line">    plot-pen-down</span><br><span class="line">    plotxy 0 0</span><br><span class="line">    plotxy 1 0</span><br><span class="line">    plotxy 1 1</span><br><span class="line">    plot-pen-up</span><br><span class="line"></span><br><span class="line">    ;绘制洛伦兹曲线</span><br><span class="line">    set-current-plot-pen &quot;lorenz&quot;</span><br><span class="line">    set-plot-pen-interval 1 / num_agents</span><br><span class="line">    plot 0</span><br><span class="line"></span><br><span class="line">    let sorted-wealths sort [money] of turtles</span><br><span class="line">    let total-wealth sum sorted-wealths</span><br><span class="line">    let wealth-sum-so-far 0</span><br><span class="line">    let index 0</span><br><span class="line"></span><br><span class="line">    repeat num_agents[</span><br><span class="line">        set wealth-sum-so-far (wealth-sum-so-far + item index sorted-wealths)</span><br><span class="line">        plot (wealth-sum-so-far / total-wealth)</span><br><span class="line">        set index (index + 1)</span><br><span class="line">    ]</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p><code>set-current-plot &quot;name&quot;</code>: 激活 name 绘图框<br><code>set-current-pen &quot;name&quot;</code>: 激活 name 画笔<br><code>set-plot-pen-interval</code>: 设置间距<br><code>plot-pen-down</code>: 开始绘图<br><code>plot-pen-up</code>: 停止绘图<br><code>repeat n</code>: 循环 n 次<br><code>item idx lst</code>: 从 lst 取出 idx 序号元素（从 0 开始）</p>
+<h1 id="行为空间"><a href="#行为空间" class="headerlink" title="行为空间"></a>行为空间</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br></pre></td><td class="code"><pre><span class="line">turtles-own [</span><br><span class="line">    money</span><br><span class="line">    save_rate</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">to setup</span><br><span class="line">    clear-all</span><br><span class="line">    reset-ticks</span><br><span class="line">    create-turtles num_agents[</span><br><span class="line">        set money (total_money / num_agents)</span><br><span class="line">        setxy random-xcor random-ycor</span><br><span class="line">        set save_rate random-float 1</span><br><span class="line">    ]</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to go</span><br><span class="line">    ask turtles[</span><br><span class="line">        let agsets other turtles-here</span><br><span class="line">        if count agsets &gt;= 1</span><br><span class="line">        [</span><br><span class="line">            transaction (one-of agsets)</span><br><span class="line">        ]</span><br><span class="line">        forward 1</span><br><span class="line">    ]</span><br><span class="line">    tick</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to new_go</span><br><span class="line">    ask turtles[</span><br><span class="line">        let agsets other turtles-here</span><br><span class="line">        if count agsets &gt;= 1</span><br><span class="line">        [</span><br><span class="line">            new_transaction (one-of agsets)</span><br><span class="line">        ]</span><br><span class="line">        if random-float 1 &lt; 0.2[</span><br><span class="line">            set heading random 360</span><br><span class="line">        ]</span><br><span class="line">        forward 1</span><br><span class="line">    ]</span><br><span class="line">    tick</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to new_transaction [trader]</span><br><span class="line">    let money0 ((1 - save_rate) * money)</span><br><span class="line">    let money1 ((1 - ([save_rate] of trader)) * ([money] of trader))</span><br><span class="line">    ;;取出两者可交易部分</span><br><span class="line"></span><br><span class="line">    let deltam 0</span><br><span class="line">    let epsilon (random-float 1)</span><br><span class="line">    set deltam (epsilon - 1) * money0 + epsilon * money1</span><br><span class="line"></span><br><span class="line">    if money + deltam &gt;= 0 and ([money] of trader) - deltam &gt;= 0</span><br><span class="line">    [</span><br><span class="line">        set money money + deltam</span><br><span class="line">        ask trader[</span><br><span class="line">            set money money - deltam</span><br><span class="line">        ]</span><br><span class="line">    ]</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to transaction[trader]</span><br><span class="line">    let deltam 0</span><br><span class="line">    let money1 ([money] of trader)</span><br><span class="line">    let epsilon (random-float 1)</span><br><span class="line">    set deltam (epsilon - 1) * money + epsilon * money1</span><br><span class="line"></span><br><span class="line">    if money + deltam &gt;= 0 and money1 - deltam &gt;= 0</span><br><span class="line">    [</span><br><span class="line">        set money money + deltam</span><br><span class="line">        ask trader[</span><br><span class="line">            set money money1 - deltam</span><br><span class="line">        ]</span><br><span class="line">    ]</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">;;绘图函数</span><br><span class="line">to to-update-plot</span><br><span class="line">    let lst [money] of turtles</span><br><span class="line">    set-histogram-num-bars 100</span><br><span class="line">    if not empty? lst [</span><br><span class="line">        set-plot-x-range 0 max lst</span><br><span class="line">        histogram lst</span><br><span class="line">    ]</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to save-file</span><br><span class="line">    file-open &quot;agents.txt&quot;</span><br><span class="line">    let wealths &quot;&quot;</span><br><span class="line">    ask turtles[</span><br><span class="line">        set wealths (word wealths money &quot;\r\n&quot;)</span><br><span class="line">    ]</span><br><span class="line">    file-print wealths</span><br><span class="line">    file-close</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to update-lorenz-plot</span><br><span class="line">    ;绘制表示财富分布绝对均衡的斜线</span><br><span class="line">    clear-plot</span><br><span class="line">    set-current-plot-pen &quot;equal&quot;</span><br><span class="line">    plot 0</span><br><span class="line">    plot 1</span><br><span class="line"></span><br><span class="line">    ;绘制表示财富分布极端不均衡的折线</span><br><span class="line">    set-current-plot-pen &quot;dominant&quot;</span><br><span class="line">    plot-pen-down</span><br><span class="line">    plotxy 0 0</span><br><span class="line">    plotxy 1 0</span><br><span class="line">    plotxy 1 1</span><br><span class="line">    plot-pen-up</span><br><span class="line"></span><br><span class="line">    ;绘制洛伦兹曲线</span><br><span class="line">    set-current-plot-pen &quot;lorenz&quot;</span><br><span class="line">    set-plot-pen-interval 1 / num_agents</span><br><span class="line">    plot 0</span><br><span class="line"></span><br><span class="line">    let sorted-wealths sort [money] of turtles</span><br><span class="line">    let total-wealth sum sorted-wealths</span><br><span class="line">    let wealth-sum-so-far 0</span><br><span class="line">    let index 0</span><br><span class="line">    let gini 0</span><br><span class="line"></span><br><span class="line">    repeat num_agents[</span><br><span class="line">        set wealth-sum-so-far (wealth-sum-so-far + item index sorted-wealths)</span><br><span class="line">        plot (wealth-sum-so-far / total-wealth)</span><br><span class="line">        set index (index + 1)</span><br><span class="line">        set gini (gini + ((index / num_agents) - (wealth-sum-so-far / total-wealth)) / num_agents)</span><br><span class="line">    ]</span><br><span class="line">    ;绘制基尼曲线</span><br><span class="line">    set-current-plot &quot;gini&quot;</span><br><span class="line">    plot gini * 2</span><br><span class="line"></span><br><span class="line">    ;绘制交叉熵.</span><br><span class="line">    set-current-plot &quot;S&quot;</span><br><span class="line">    let S 0</span><br><span class="line">    set index 0</span><br><span class="line">    let percent-wealth 0</span><br><span class="line">    let ln-percent-wealth 0</span><br><span class="line"></span><br><span class="line">    repeat num_agents[</span><br><span class="line">        set percent-wealth ((item index sorted-wealths) / total-wealth)</span><br><span class="line">        set ln-percent-wealth ln percent-wealth</span><br><span class="line">        set S (S + (ln-percent-wealth * percent-wealth))</span><br><span class="line">        set index (index + 1)</span><br><span class="line">    ]</span><br><span class="line">    set S 1 + S / (ln num_agents)</span><br><span class="line">    plot S</span><br><span class="line"></span><br><span class="line">    set-current-plot &quot;g-s&quot;</span><br><span class="line">    let gs (gini * 2 * S)</span><br><span class="line">    plot gs</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">;;实验程序</span><br><span class="line">to-report compute-gini</span><br><span class="line">    let sorted-wealths sort [money] of turtles</span><br><span class="line">    let total-wealth sum sorted-wealths</span><br><span class="line">    let wealth-sum-so-far 0</span><br><span class="line">    let index 0</span><br><span class="line">    let gini 0</span><br><span class="line"></span><br><span class="line">    repeat num_agents[</span><br><span class="line">        set wealth-sum-so-far (wealth-sum-so-far + item index sorted-wealths)</span><br><span class="line">        plot (wealth-sum-so-far / total-wealth)</span><br><span class="line">        set index (index + 1)</span><br><span class="line">        set gini (gini + ((index / num_agents) - (wealth-sum-so-far / total-wealth)) / num_agents)</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    ;绘制基尼曲线</span><br><span class="line">    set-current-plot &quot;gini&quot;</span><br><span class="line">    report gini * 2</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to-report compute-S</span><br><span class="line">    ;绘制交叉熵</span><br><span class="line">    let S 0</span><br><span class="line">    let index 0</span><br><span class="line">    let percent-wealth 0</span><br><span class="line">    let ln-percent-wealth 0</span><br><span class="line">    let sorted-wealths sort [money] of turtles</span><br><span class="line">    let total-wealth sum sorted-wealths</span><br><span class="line"></span><br><span class="line">    repeat num_agents[</span><br><span class="line">        set percent-wealth ((item index sorted-wealths) / total-wealth)</span><br><span class="line">        set ln-percent-wealth ln percent-wealth</span><br><span class="line">        set S (S + (ln-percent-wealth * percent-wealth))</span><br><span class="line">        set index (index + 1)</span><br><span class="line">    ]</span><br><span class="line">    set S 1 + S / (ln num_agents)</span><br><span class="line">    set-current-plot &quot;S&quot;</span><br><span class="line">    report S</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<h1 id="Boids"><a href="#Boids" class="headerlink" title="Boids"></a>Boids</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line">turtles-own [</span><br><span class="line">    velocity flockingmates clsmates;;速度 吸引邻 排斥邻</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">to setup</span><br><span class="line">    clear-all</span><br><span class="line">    reset-ticks</span><br><span class="line">    crt num_boids[</span><br><span class="line">        setxy random-xcor random-ycor ;;随机设置对象坐标</span><br><span class="line">        set velocity [0 0] ;;初始化速度矢量</span><br><span class="line">        ;set heading random 360</span><br><span class="line">        set size 10 ;;设置鸟的初始大小</span><br><span class="line">    ]</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to go</span><br><span class="line">    ask turtles[</span><br><span class="line">        get-neighbors ;;获取每只鸟的邻居</span><br><span class="line">        flocking ;;更新力并更新速度</span><br><span class="line">        facexy xcor + (first velocity) ycor + (last velocity) ;;设置鸟的朝向</span><br><span class="line">        setxy xcor + (first velocity) ycor + (last velocity) ;;设定下一时刻的位置</span><br><span class="line">    ]</span><br><span class="line">    tick</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to get-neighbors</span><br><span class="line">    set flockingmates (other turtles in-radius viewdis) ;;获得viewdis距离内的所有其他鸟</span><br><span class="line">    set clsmates (other turtles in-radius collisiondis) ;;;;获得clsdis距离内的所有其他鸟</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to flocking</span><br><span class="line">    let mean_corr [0 0]</span><br><span class="line">    let mean_v [0 0]</span><br><span class="line">    let dis [0 0]</span><br><span class="line">    let neighbors_num count flockingmates</span><br><span class="line">    ifelse neighbors_num &gt; 0[</span><br><span class="line">        ask flockingmates[</span><br><span class="line">            set mean_corr (map + mean_corr (list xcor ycor)) ;; mean_corr += [xcor, ycor]</span><br><span class="line">            set mean_v (map + mean_v velocity);; v += velocity</span><br><span class="line">        ]</span><br><span class="line">        set mean_corr (map [ ?1 -&gt; ?1 / neighbors_num] mean_corr) ;;取坐标平均值</span><br><span class="line">        set mean_v (map [ ?1 -&gt; ?1 / neighbors_num] mean_v) ;;取速度平均值</span><br><span class="line">        set dis (map - mean_corr (list xcor ycor)) ;;dis = mean_corr -[xcor, ycor], 从对象到重心的矢量</span><br><span class="line">    ][</span><br><span class="line">        set dis [0 0]</span><br><span class="line">        set mean_v [0 0]</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    let mean_cls_corr [0 0]</span><br><span class="line">    let clsdis [0 0]</span><br><span class="line">    set neighbors_num count clsmates</span><br><span class="line">    ifelse neighbors_num &gt; 0[</span><br><span class="line">        ask clsmates[</span><br><span class="line">            set mean_cls_corr (map + mean_cls_corr (list xcor ycor)) ;; mean_cls_corr += [xcor, ycor]</span><br><span class="line">        ]</span><br><span class="line">        set mean_cls_corr (map [ ?1 -&gt; ?1 / neighbors_num] mean_cls_corr) ;;取坐标平均值</span><br><span class="line">        set clsdis (map - (list xcor ycor) mean_cls_corr) ;;dis = mean_cls_corr -[xcor, ycor], 从对象到重心的矢量</span><br><span class="line">        set clsdis (map [ ?1 -&gt; ?1 / ((norm clsdis) * (norm clsdis) + 0.001) ] clsdis)</span><br><span class="line">    ][</span><br><span class="line">        set clsdis [0 0]</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    let w1 weight_cohesion</span><br><span class="line">    let w2 weight_alignment</span><br><span class="line">    let w3 weight_cls</span><br><span class="line"></span><br><span class="line">    let f1 (map [ ?1 -&gt; ?1 * w1] dis)</span><br><span class="line">    let f2 (map [ ?1 -&gt; ?1 * w2] mean_v)</span><br><span class="line">    let f3 (map [ ?1 -&gt; ?1 * w3] clsdis)</span><br><span class="line"></span><br><span class="line">    let force (map [[ ?1 ?2 ?3 ] -&gt; ?1 + ?2 + ?3] f1 f2 f3)</span><br><span class="line"></span><br><span class="line">    ;;欧拉法更新速度</span><br><span class="line">    set velocity (map + velocity force)</span><br><span class="line"></span><br><span class="line">    ;;设置最大速度</span><br><span class="line">    if (norm velocity) &gt; 5[</span><br><span class="line">        set velocity normlize velocity</span><br><span class="line">        set velocity map [ ?1 -&gt; ?1 * 5] velocity</span><br><span class="line">    ]</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to-report normlize [xy]</span><br><span class="line">    let realdis norm xy</span><br><span class="line">    let out [0 0]</span><br><span class="line">    if realdis &gt; 0[</span><br><span class="line">        set out (map [ ?1 -&gt; ?1 / realdis] xy)</span><br><span class="line">    ]</span><br><span class="line">    report out</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to-report norm [arr]</span><br><span class="line">    let xx first arr</span><br><span class="line">    let yy last arr</span><br><span class="line">    report sqrt (xx * xx + yy * yy)</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>数乘</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">to-report multi[lst w]</span><br><span class="line">    let out (map [?1 -&gt; ?1 * w] lst)</span><br><span class="line">    report out</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>点乘</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">to-report cdot[lst1 lst2]</span><br><span class="line">    let out (map * lst1 lst2)</span><br><span class="line">    report out</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<h1 id="link建模网络动力学"><a href="#link建模网络动力学" class="headerlink" title="link建模网络动力学"></a>link建模网络动力学</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">turtles-own [</span><br><span class="line">    state; 0 S, 1 I, 2 R</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">to setup</span><br><span class="line">    clear-all</span><br><span class="line">    set-default-shape turtles &quot;circle&quot;</span><br><span class="line">    create-turtles number-of-nodes[</span><br><span class="line">        setxy (random-xcor * 0.95) (random-ycor * 0.95)</span><br><span class="line">        become-susceptible</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    setup-network</span><br><span class="line">    ask n-of initial-outbreak-size turtles[</span><br><span class="line">        become-infected</span><br><span class="line">    ]</span><br><span class="line">    ask links[</span><br><span class="line">        set color white</span><br><span class="line">    ]</span><br><span class="line">    reset-ticks</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to setup-network</span><br><span class="line">    ask turtles[</span><br><span class="line">        let potential other turtles in-radius link-radius with [not link-neighbor? myself];;self = turtle ;; myself = turtles</span><br><span class="line">        create-links-with potential</span><br><span class="line">    ]</span><br><span class="line">    repeat 10[</span><br><span class="line">        layout-spring turtles links 0.3 (world-width / (sqrt number-of-nodes)) 1</span><br><span class="line">    ]</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to add-hyper-links</span><br><span class="line">    ask n-of num-of-hyper-links turtles[</span><br><span class="line">        let attached [one-of both-ends] of one-of links</span><br><span class="line">        if not link-neighbor? attached and not (self = attached)[</span><br><span class="line">            create-link-with attached</span><br><span class="line">        ]</span><br><span class="line">    ]</span><br><span class="line">    repeat 100[</span><br><span class="line">        layout-spring turtles links 0.3 (world-width / (sqrt number-of-nodes)) 1</span><br><span class="line">    ]</span><br><span class="line">    ask links [ set color white ]</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to go</span><br><span class="line">    ask turtles with [state = 1][</span><br><span class="line">        if random-float 100 &lt; recovery-chance[</span><br><span class="line">            become-recovery</span><br><span class="line">        ]</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    ask turtles with [state = 1][</span><br><span class="line">        ask link-neighbors with [state = 0][</span><br><span class="line">            if random-float 100 &lt; virus-spreed-chance[</span><br><span class="line">                become-infected</span><br><span class="line">            ]</span><br><span class="line">        ]</span><br><span class="line">    ]</span><br><span class="line">    tick</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to become-infected</span><br><span class="line">    set state 1</span><br><span class="line">    set color red</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to become-susceptible</span><br><span class="line">    set state 0</span><br><span class="line">    set color blue</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">to become-recovery</span><br><span class="line">    set state 2</span><br><span class="line">    set color gray</span><br><span class="line">    ask my-links [ set color gray - 2]</span><br><span class="line">end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>UynajGI
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://uynajgi.github.io/2022/05/22/NetLogo/" title="NetLogo">https://uynajgi.github.io/2022/05/22/NetLogo/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/BY-NC-SA/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%A4%8D%E6%9D%82%E7%A7%91%E5%AD%A6/" rel="tag"># 复杂科学</a>
+              <a href="/tags/NetLogo/" rel="tag"># NetLogo</a>
+              <a href="/tags/%E7%BD%91%E7%BB%9C%E7%A7%91%E5%AD%A6/" rel="tag"># 网络科学</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/05/22/Intro2QM/" rel="prev" title="量子力学">
+      <i class="fa fa-chevron-left"></i> 量子力学
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/05/22/TDynamics-SPhysics-cookbook/" rel="next" title="热力学与统计物理(cookbook)">
+      热力学与统计物理(cookbook) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%8F%E7%90%83"><span class="nav-number">1.</span> <span class="nav-text">小球</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%90%83%E5%AE%87%E5%AE%99"><span class="nav-number">1.1.</span> <span class="nav-text">小球宇宙</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%AD%E5%BB%BA%E5%AE%87%E5%AE%99%E6%A1%86%E6%9E%B6"><span class="nav-number">1.2.</span> <span class="nav-text">搭建宇宙框架</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%9F%E5%91%BD"><span class="nav-number">2.</span> <span class="nav-text">生命</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F"><span class="nav-number">2.1.</span> <span class="nav-text">生命游戏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#patch"><span class="nav-number">2.2.</span> <span class="nav-text">patch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E6%8B%9F"><span class="nav-number">2.3.</span> <span class="nav-text">模拟</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89-patch-%E5%B1%9E%E6%80%A7"><span class="nav-number">2.3.1.</span> <span class="nav-text">自定义 patch 属性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%97%E9%A1%BF%E7%9A%84%E8%9A%82%E8%9A%81"><span class="nav-number">3.</span> <span class="nav-text">朗顿的蚂蚁</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%9A%82%E8%9A%81"><span class="nav-number">3.1.</span> <span class="nav-text">蚂蚁</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BE%8A-%E8%8D%89%E7%94%9F%E6%80%81%E7%B3%BB%E7%BB%9F"><span class="nav-number">4.</span> <span class="nav-text">羊-草生态系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%BA%E5%B7%A5%E7%BB%8F%E6%B5%8E%E6%A8%A1%E5%9E%8B"><span class="nav-number">5.</span> <span class="nav-text">人工经济模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%BC%E5%87%BA%E6%96%87%E4%BB%B6"><span class="nav-number">6.</span> <span class="nav-text">导出文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B4%9B%E4%BC%A6%E5%85%B9%E6%9B%B2%E7%BA%BF"><span class="nav-number">6.1.</span> <span class="nav-text">洛伦兹曲线</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%8C%E4%B8%BA%E7%A9%BA%E9%97%B4"><span class="nav-number">7.</span> <span class="nav-text">行为空间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Boids"><span class="nav-number">8.</span> <span class="nav-text">Boids</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#link%E5%BB%BA%E6%A8%A1%E7%BD%91%E7%BB%9C%E5%8A%A8%E5%8A%9B%E5%AD%A6"><span class="nav-number">9.</span> <span class="nav-text">link建模网络动力学</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="UynajGI"
+      src="/images/U_avatar.jpg">
+  <p class="site-author-name" itemprop="name">UynajGI</p>
+  <div class="site-description" itemprop="description">如果你想走到高处，就要使用自己的两条腿！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/UynajGI" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;UynajGI" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/suquan12148@outlook.com" title="E-Mail → suquan12148@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">UynajGI</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>

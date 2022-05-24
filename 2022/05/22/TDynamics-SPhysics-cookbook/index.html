@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"uynajgi.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="本篇主要是本科阶段学习的热力学与统计物理常用公式记录。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="热力学与统计物理(cookbook)">
+<meta property="og:url" content="https://uynajgi.github.io/2022/05/22/TDynamics-SPhysics-cookbook/index.html">
+<meta property="og:site_name" content="逢灯暗室">
+<meta property="og:description" content="本篇主要是本科阶段学习的热力学与统计物理常用公式记录。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-22T09:16:09.000Z">
+<meta property="article:modified_time" content="2022-05-22T09:16:09.212Z">
+<meta property="article:author" content="UynajGI">
+<meta property="article:tag" content="能量守恒">
+<meta property="article:tag" content="玻尔兹曼">
+<meta property="article:tag" content="系综">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://uynajgi.github.io/2022/05/22/TDynamics-SPhysics-cookbook/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>热力学与统计物理(cookbook) | 逢灯暗室</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">逢灯暗室</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">柳暗花明又一村</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>图书馆</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>所有文章</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://uynajgi.github.io/2022/05/22/TDynamics-SPhysics-cookbook/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/U_avatar.jpg">
+      <meta itemprop="name" content="UynajGI">
+      <meta itemprop="description" content="如果你想走到高处，就要使用自己的两条腿！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="逢灯暗室">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          热力学与统计物理(cookbook)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-05-22 17:16:09" itemprop="dateCreated datePublished" datetime="2022-05-22T17:16:09+08:00">2022-05-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%89%A9%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">物理</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">本篇主要是本科阶段学习的热力学与统计物理常用公式记录。</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="热力学的基本规律"><a href="#热力学的基本规律" class="headerlink" title="热力学的基本规律"></a>热力学的基本规律</h1><script type="math/tex; mode=display">
+\begin{aligned}
+    &\text{定压体胀系数：}\alpha = \dfrac{1}{V}\left(\dfrac{\partial{V}}{\partial{T}}\right)_p\\
+    &\text{定容压强系数：}\beta = \dfrac{1}{p}\left(\dfrac{\partial{p}}{\partial{T}}\right)_V\\
+    &\text{等温压缩系数：}\kappa_T = \dfrac{1}{V}\left(\dfrac{\partial{V}}{\partial{p}}\right)_T\\
+    &\alpha = \kappa_T\beta p\\
+    &\left(p+\dfrac{a}{V_m}\right)(V_m-b)=RT\\
+    &\left(p+\dfrac{an^2}{V}\right)(V-nb)=nRT\\
+    &W=-\int{p\mathrm{d}V}=-\int_{V_1}^{V_2}{p\mathrm{d}V}\\
+    &C=\dfrac{\mathrm{đ}Q}{\mathrm{d}T}\quad C_m=\dfrac{C}{m}\quad C_V=\left(\dfrac{\partial{U}}{\partial{T}}\right)_V\quad C_p=\left(\dfrac{\partial{H}}{\partial{T}}\right)_p\\
+    &H=U+pV=U+nRT\\
+    &C_p=C_V+nR\quad C_V=\dfrac{nR}{\gamma-1}\quad C_p=\gamma C_V=\gamma\dfrac{nR}{\gamma-1}\\
+    &\mathrm{d}Q=\mathrm{d}U+p\mathrm{d}V\\
+    &\text{绝热：}\begin{cases}
+        C_V\mathrm{d}T=-p\mathrm{d}V\\
+        p\mathrm{d}V+V\mathrm{d}p=nR\mathrm{d}T
+    \end{cases}\\
+    &\Rightarrow\begin{cases}
+        pV^\gamma=C\\
+        TV^{\gamma-1}=C\\
+        \dfrac{p^{\gamma-1}}{T^\gamma}=C
+    \end{cases}\\
+    &\begin{cases}
+        \eta=\dfrac{W}{Q_1}=1-\dfrac{Q_2}{Q_1}=1-\dfrac{T_2}{T_1}\\
+        ε=\dfrac{Q_2}{Q_1-Q_2}=\dfrac{Q_2}{W}\\
+        \eta^{-1}-ε=1
+    \end{cases}\\
+    &\text{卡诺循环：}\begin{cases}
+        Q_1=nRT_1\ln{\dfrac{V_2}{V_1}}\\
+        T_1V_2^{\gamma-1}=T_2V_3^{\gamma-1}\\
+        Q_2=nRT_2\ln{\dfrac{V_3}{V_4}}\\
+        T_1V_1^{\gamma-1}=T_2V_4^{\gamma-1}
+    \end{cases}\\
+    &\mathrm{d}S=\dfrac{\mathrm{d}Q}{T}\ge0\\
+    &\text{理想气体的熵：}S=\begin{cases}
+        C_V\ln{T}+nR\ln{V}+S_0\\
+        C_p\ln{T}-nR\ln{p}+S_0
+    \end{cases}
+\end{aligned}</script><hr>
+<h1 id="均匀物质的热力学性质"><a href="#均匀物质的热力学性质" class="headerlink" title="均匀物质的热力学性质"></a>均匀物质的热力学性质</h1><script type="math/tex; mode=display">
+\begin{aligned}
+   &\begin{cases}
+        H=U+pV\\ F=U-TS \\ G=U-TS+pV=H-TS=F+pV
+    \end{cases}\\
+    &\begin{cases}
+    \left(\dfrac{\partial{T}}{\partial{V}}\right)_S = -\left(\dfrac{\partial{p}}{\partial{S}}\right)_V
+    \\
+    \left(\dfrac{\partial{T}}{\partial{p}}\right)_S = \left(\dfrac{\partial{V}}{\partial{S}}\right)_p
+    \\
+    \left(\dfrac{\partial{S}}{\partial{V}}\right)_T = \left(\dfrac{\partial{p}}{\partial{T}}\right)_V
+    \\
+    \left(\dfrac{\partial{S}}{\partial{p}}\right)_T = -\left(\dfrac{\partial{V}}{\partial{T}}\right)_p
+    \end{cases} \\
+    &\left(\dfrac{\partial{x}}{\partial{y}}\right)_z\left(\dfrac{\partial{y}}{\partial{z}}\right)_x\left(\dfrac{\partial{z}}{\partial{x}}\right)_y=-1\\
+    &\left(\dfrac{\partial{x}}{\partial{y}}\right)_z=-1\dfrac{\left(\dfrac{\partial{z}}{\partial{y}}\right)_x}{\left(\dfrac{\partial{z}}{\partial{x}}\right)_y}\\
+    &C_p=C_V=T\left(\dfrac{\partial{p}}{\partial{T}}\right)_V\left(\dfrac{\partial{V}}{\partial{T}}\right)_p\\
+    &\mathrm{d}U=T\mathrm{d}S-p\mathrm{d}V=T\left(\dfrac{\partial{S}}{\partial{T}}\right)_V\mathrm{d}T+\left[T\left(\dfrac{\partial{S}}{\partial{V}}\right)_T-p\right]\mathrm{d}V\\
+    &\mathrm{d}H=T\mathrm{d}S+V\mathrm{d}p=T\left(\dfrac{\partial{S}}{\partial{T}}\right)_p\mathrm{d}T+\left[-T\left(\dfrac{\partial{S}}{\partial{p}}\right)_T+V\right]\mathrm{d}p\\
+    &\mathrm{d}S=\dfrac{C_V}{T}\mathrm{d}T+\left(\dfrac{\partial{p}}{\partial{T}}\right)_V\mathrm{d}V=\dfrac{C_p}{T}\mathrm{d}T-\left(\dfrac{\partial{V}}{\partial{T}}\right)_p\mathrm{d}p\\
+    &G_m=RT(\varphi+\ln{p})\\
+    &m=\mathscr{M}V\\
+    &\mathrm{d}W=\mu_0\mathscr{H}\mathrm{d}\mathscr{m}=-\mu_0\mathscr{m}\mathrm{d}\mathscr{H}\\
+    &p\rightarrow-\mu_0\mathscr{H},\quad V\rightarrow m
+\end{aligned}</script><hr>
+<h1 id="单元复相系的平衡性质"><a href="#单元复相系的平衡性质" class="headerlink" title="单元复相系的平衡性质"></a>单元复相系的平衡性质</h1><script type="math/tex; mode=display">
+\begin{aligned}
+    &\dfrac{\mathrm{d}p}{\mathrm{d}T}=\dfrac{S_m^\beta-S_m^\alpha}{V_m^\beta-V_m^\alpha}=\dfrac{L}{T(V_m^\beta-V_m^\alpha)}\\
+    &\begin{cases}
+        T_C=\dfrac{8a}{27Rb},\\ p_c=\dfrac{a}{27b^2},\\ V_{mc}=3b
+    \end{cases}\\
+    &\dfrac{RT_c}{p_CV_{mc}}=\dfrac{8}{3}
+\end{aligned}</script><hr>
+<h1 id="系统微观运动状态的描述"><a href="#系统微观运动状态的描述" class="headerlink" title="系统微观运动状态的描述"></a>系统微观运动状态的描述</h1><script type="math/tex; mode=display">
+\begin{aligned}
+    &N=\int{\dots\int{\prod_{i=1}^n\mathrm{d}{n_i}}}=\dfrac{L^n}{h^n}\int{\dots\int{\prod_{i=1}^n{\mathrm{d}p_i\mathrm{d}q_i}}}\\
+    &\begin{cases}
+        \dfrac{4\pi V}{h^3}p^2\mathrm{d}p=\dfrac{2\pi V}{h^3}(2m)^{3/2}\varepsilon^{1/2}\mathrm{d}\varepsilon,&n=3\\
+        \dfrac{2\pi S}{h^2}p\mathrm{d}p=\dfrac{2\pi S}{h^2}m\mathrm{d}\varepsilon,&n=2\\
+        \dfrac{2L}{h}\mathrm{d}p=\dfrac{2L}{h}\sqrt{\dfrac{m}{2\varepsilon}}\mathrm{d}\varepsilon,&n=1\\
+        \dfrac{L^n}{h^n}\dfrac{n\pi^{n/2}}{\Gamma({1+n/2})}p^{n-1}\mathrm{d}p=\dfrac{L^n}{2\varepsilon h^n}\dfrac{n\pi^{n/2}}{\Gamma({1+n/2})}(2m\varepsilon)^{\frac{n}{2}}\mathrm{d}\varepsilon\\\text{奇数也可写为：}\\
+        \dfrac{L^n}{h^n}\dfrac{2^{\frac{n+1}{2}}\pi^{\frac{n-1}{2}}n}{n!!}p^{n-1}\mathrm{d}p=\dfrac{L^n}{\varepsilon h^n}\dfrac{(2\pi)^{\frac{n-1}{2}}n}{n!!}(2m\varepsilon)^{\frac{n}{2}}\mathrm{d}\varepsilon
+    \end{cases}(\text{自旋}\times 2
+    )\\
+    &\begin{cases}
+        \varOmega_{M.B.}=\dfrac{N!}{\prod_l{a_l!}}\prod_l{\omega_l^{a_l}}\\
+        \varOmega_{B.E.}=\prod_l{\dfrac{(\omega_l+a_l-1)!}{a_l!(\omega_l-1)!}}\\
+        \varOmega_{F.D.}=\prod_l{\dfrac{(\omega_l)!}{a_l!(\omega_l-a_l)!}}
+    \end{cases}\\
+    &a_l=\dfrac{\omega_1}{\mathrm{e}^{\alpha+\beta\varepsilon_l}+\delta_k}\begin{cases}
+        \delta_k=0,&M.B.\\
+        \delta_k=-1,&B.E.\\
+        \delta_k=1,&F.D.
+    \end{cases}
+\end{aligned}</script><hr>
+<h1 id="玻尔兹曼统计"><a href="#玻尔兹曼统计" class="headerlink" title="玻尔兹曼统计"></a>玻尔兹曼统计</h1><script type="math/tex; mode=display">
+\begin{aligned}
+    &Z_1=\sum_l{\omega_l\mathrm{e}^{-\beta\varepsilon_l}}\\
+    &N=\mathrm{e}^{-\alpha}Z_1\\
+    &U=-N\dfrac{\partial}{\partial{\beta}}{\ln{Z_1}}\\
+    &Y=-\dfrac{N}{\beta}\dfrac{\partial}{\partial{y}}{\ln{Z_1}}\\
+    &p=\dfrac{N}{\beta}\dfrac{\partial}{\partial{V}}{\ln{Z_1}}\\
+    &S=Nk\left(\ln{Z_1}-\beta\dfrac{\partial}{\partial{V}}{\ln{Z_1}}\right)-[k\ln{N!}]\\
+    &F=-NkT\ln{Z_1}+[kT\ln{N!}]\\
+    &\text{理想气体：}Z_1=V\left(\dfrac{2\pi m}{h^2\beta}\right)^{3/2}\\
+    &\varepsilon=\dfrac{p_x^2+p_y^2+p_z^2}{2m}=\dfrac{1}{2I}\left(p+\theta^2+\dfrac{1}{\sin^2{\theta}}p_\varphi^2\right)=\dfrac{1}{2m_\mu}(p_r^2+m^2_\mu\omega^2r^2)\\&=\left(n+\dfrac{1}{2}\right)\hbar\omega=\dfrac{l(l+1)\hbar^2}{2I}\\
+    &\begin{cases}
+        Z_1^t=V\left(\dfrac{2\pi m}{h^2\beta}\right)^{3/2}\\
+        Z_1^V=\dfrac{\exp{(-\beta\hbar\omega/2)}}{1-\exp{(-\beta\hbar\omega)}}\\
+        Z_1^r=\sum_{l=0}^\infty{(2l+1)\mathrm{e}^{-\frac{\theta_r}{T}l(l+1)}}=\dfrac{2I}{\beta\hbar^2}
+    \end{cases}\\
+    &\mu=\left(\dfrac{\partial{F}}{\partial{N}}\right)_{T,V}=-kT\ln{\dfrac{Z_1}{N}}
+\end{aligned}</script><hr>
+<h1 id="玻色统计和费米统计"><a href="#玻色统计和费米统计" class="headerlink" title="玻色统计和费米统计"></a>玻色统计和费米统计</h1><script type="math/tex; mode=display">
+\begin{aligned}
+    &B.E.\quad\ln{\varXi}=-\sum_l{\omega_l\ln{(1-\mathrm{e}^{-\alpha-\beta\varepsilon_l})}}\\
+    &F.D.\quad\ln{\varXi}=\sum_l{\omega_l\ln{(1+\mathrm{e}^{-\alpha-\beta\varepsilon_l})}}\\
+    &T_c=\dfrac{2\pi}{(2.612)^{2/3}}\dfrac{h^2}{mk}(n)^{2/3}\\
+    &n_0(T)=n\left[1-\left(\dfrac{T}{T_c}\right)^{3/2}\right]\\
+    &\varepsilon=cp=\hbar\omega=hc/\lambda\\
+    &U(\omega,T)\mathrm{d}\omega=\dfrac{V}{\pi^2c^3}\dfrac{\hbar\omega^3}{\mathrm{e}^{\hbar\omega/kT}-1}\mathrm{d}\omega\\
+    &U(\lambda,T)\mathrm{d}\lambda=\dfrac{8\pi hcV}{\lambda^5}\dfrac{1}{\mathrm{e}^{hc/k\lambda T}-1}\mathrm{d}\lambda\\
+    &p=\begin{cases}
+        \dfrac{2}{3}\dfrac{U}{V},&\text{非相对论}\\
+        \dfrac{1}{3}\dfrac{U}{V},&\text{相对论}
+    \end{cases}\\
+    &\dfrac{2\pi V}{h^3}(2m)^{3/2}\int_0^{\mu{(0)}}{\varepsilon^{1/2}\mathrm{d}\varepsilon}\Rightarrow\mu{(0)}=\dfrac{\hbar^2}{2m}\left(3\pi^2n\right)^{2/3}\\
+    &p_F=(3\pi^n)^{1/3}\hbar\\
+    &kT_F=\mu(0)\\
+    &p(0)=\dfrac{2}{3}\dfrac{U(0)}{V}=\dfrac{2}{5}n\mu(0)
+\end{aligned}</script>
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>UynajGI
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://uynajgi.github.io/2022/05/22/TDynamics-SPhysics-cookbook/" title="热力学与统计物理(cookbook)">https://uynajgi.github.io/2022/05/22/TDynamics-SPhysics-cookbook/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/BY-NC-SA/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%83%BD%E9%87%8F%E5%AE%88%E6%81%92/" rel="tag"># 能量守恒</a>
+              <a href="/tags/%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC/" rel="tag"># 玻尔兹曼</a>
+              <a href="/tags/%E7%B3%BB%E7%BB%BC/" rel="tag"># 系综</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/05/22/NetLogo/" rel="prev" title="NetLogo">
+      <i class="fa fa-chevron-left"></i> NetLogo
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/05/23/Mpe/" rel="next" title="数学物理方程">
+      数学物理方程 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%BE%8B"><span class="nav-number">1.</span> <span class="nav-text">热力学的基本规律</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9D%87%E5%8C%80%E7%89%A9%E8%B4%A8%E7%9A%84%E7%83%AD%E5%8A%9B%E5%AD%A6%E6%80%A7%E8%B4%A8"><span class="nav-number">2.</span> <span class="nav-text">均匀物质的热力学性质</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%95%E5%85%83%E5%A4%8D%E7%9B%B8%E7%B3%BB%E7%9A%84%E5%B9%B3%E8%A1%A1%E6%80%A7%E8%B4%A8"><span class="nav-number">3.</span> <span class="nav-text">单元复相系的平衡性质</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E5%BE%AE%E8%A7%82%E8%BF%90%E5%8A%A8%E7%8A%B6%E6%80%81%E7%9A%84%E6%8F%8F%E8%BF%B0"><span class="nav-number">4.</span> <span class="nav-text">系统微观运动状态的描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E7%BB%9F%E8%AE%A1"><span class="nav-number">5.</span> <span class="nav-text">玻尔兹曼统计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8E%BB%E8%89%B2%E7%BB%9F%E8%AE%A1%E5%92%8C%E8%B4%B9%E7%B1%B3%E7%BB%9F%E8%AE%A1"><span class="nav-number">6.</span> <span class="nav-text">玻色统计和费米统计</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="UynajGI"
+      src="/images/U_avatar.jpg">
+  <p class="site-author-name" itemprop="name">UynajGI</p>
+  <div class="site-description" itemprop="description">如果你想走到高处，就要使用自己的两条腿！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/UynajGI" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;UynajGI" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/suquan12148@outlook.com" title="E-Mail → suquan12148@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">UynajGI</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
