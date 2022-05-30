@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s1.328888.xyz/2022/05/22/dRr3y.png">
 <meta property="article:published_time" content="2022-05-22T05:54:16.000Z">
-<meta property="article:modified_time" content="2022-05-22T08:34:04.394Z">
+<meta property="article:modified_time" content="2022-05-30T13:02:16.224Z">
 <meta property="article:author" content="UynajGI">
 <meta property="article:tag" content="Schrodinger 方程">
 <meta property="article:tag" content="Hilbert 空间">
@@ -193,10 +193,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-05-22 13:54:16 / 修改时间：16:34:04" itemprop="dateCreated datePublished" datetime="2022-05-22T13:54:16+08:00">2022-05-22</time>
+              <time title="创建时间：2022-05-22 13:54:16" itemprop="dateCreated datePublished" datetime="2022-05-22T13:54:16+08:00">2022-05-22</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-05-30 21:02:16" itemprop="dateModified" datetime="2022-05-30T21:02:16+08:00">2022-05-30</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -265,7 +271,8 @@ E=\hbar\omega</script><script type="math/tex; mode=display">
 \hat{H}(\hat{a}_{\mp}\psi)=(E\mp\hbar\omega)(\hat{a}_{\mp}\psi)</script><p>对于最低能级，有</p>
 <script type="math/tex; mode=display">
 \hat{a}_-\psi_0=0</script><script type="math/tex; mode=display">
-\Rightarrow\psi_0=\left(\left(\dfrac{m\omega}{\pi\hbar}\right)^{1/4}\mathrm{e}^{-\frac{m\omega}{2\hbar}x^2}\right)</script><script type="math/tex; mode=display">E_0=\dfrac{1}{2}\hbar\omega</script><p>可以得到通式为</p>
+\Rightarrow\psi_0=\left(\left(\dfrac{m\omega}{\pi\hbar}\right)^{1/4}\mathrm{e}^{-\frac{m\omega}{2\hbar}x^2}\right)</script><script type="math/tex; mode=display">
+E_0=\dfrac{1}{2}\hbar\omega</script><p>可以得到通式为</p>
 <script type="math/tex; mode=display">
 \psi_n(x)=A_n(\hat{a}_+)^n\psi_0(x),\qquad\text{with}\ E_n=(n+\dfrac{1}{2})\hbar\omega,\quad\text{with}</script><p>有公式</p>
 <script type="math/tex; mode=display">
@@ -279,9 +286,9 @@ x=\sqrt{\dfrac{\hbar}{2m\omega}}(\hat{a}_++\hat{a}_-);\quad\hat{p}=\mathrm{i}\sq
 <script type="math/tex; mode=display">
 \left<V\right>=\dfrac{1}{2}m\omega^2\int_{-\infty}^{+\infty}{\left<\psi\right|x^2\left|\psi\right>\mathrm{d}x}=\dfrac{1}{2}\hbar\omega(n+\dfrac{1}{2})</script><h3 id="分析方法"><a href="#分析方法" class="headerlink" title="分析方法"></a>分析方法</h3><blockquote>
 <p>详见《数学物理方法》，厄米多项式</p>
-</blockquote>
 <script type="math/tex; mode=display">
-\psi_n=\left(\dfrac{m\omega}{\pi\hbar}\right)^{1/4}\dfrac{1}{\sqrt{2^nn!}}H_n(\xi)\mathrm{e}^{-\xi^2/2},\quad\xi\equiv\sqrt{\dfrac{m\omega}{\hbar}x}</script><h2 id="一维定态体系的一些基本性质"><a href="#一维定态体系的一些基本性质" class="headerlink" title="一维定态体系的一些基本性质"></a>一维定态体系的一些基本性质</h2><p><strong>定理 1</strong> 设势能函数$V(x)$为一实函数。若$\psi(x)$是本征方程</p>
+\psi_n=\left(\dfrac{m\omega}{\pi\hbar}\right)^{1/4}\dfrac{1}{\sqrt{2^nn!}}H_n(\xi)\mathrm{e}^{-\xi^2/2},\quad\xi\equiv\sqrt{\dfrac{m\omega}{\hbar}x}</script><h2 id="一维定态体系的一些基本性质"><a href="#一维定态体系的一些基本性质" class="headerlink" title="一维定态体系的一些基本性质"></a>一维定态体系的一些基本性质</h2></blockquote>
+<p><strong>定理 1</strong> 设势能函数$V(x)$为一实函数。若$\psi(x)$是本征方程</p>
 <script type="math/tex; mode=display">
 E\psi(x)=-\dfrac{\hbar^2}{2m}\dfrac{\mathrm{d}^2}{\mathrm{d}x^2}\psi(x)+V(x)\psi(x)</script><p>的一个解，则$\psi^*(x)$也是一个解，对应的本质值也是$E$</p>
 <p><strong>定理 2</strong> 设势能函数$V(x)$为一实函数。则对应于任何方程的本征值$E$，总<br>可以找到方程的一组实函数解。凡是属于本征值$E$的任何一个解，都可以表<br>示成这组实函数解的线性叠加。</p>
@@ -298,7 +305,8 @@ V(x)=\begin{cases}
     \infty,&\text{otherwise}
 \end{cases}</script><p>有</p>
 <script type="math/tex; mode=display">
-\dfrac{\mathrm{d}^2\psi}{\mathrm{d}x^2}+\dfrac{2m}{\hbar^2}E\psi=0 \left[0\le x\le a\right]</script><script type="math/tex; mode=display">\left[k^2=\dfrac{2m}{\hbar^2}E\right]</script><p>解得</p>
+\dfrac{\mathrm{d}^2\psi}{\mathrm{d}x^2}+\dfrac{2m}{\hbar^2}E\psi=0 \left[0\le x\le a\right]</script><script type="math/tex; mode=display">
+\left[k^2=\dfrac{2m}{\hbar^2}E\right]</script><p>解得</p>
 <script type="math/tex; mode=display">
 \psi_n(x)=A\sin{(n\pi x/a)}</script><script type="math/tex; mode=display">
 E_n=\dfrac{n^2\pi^2\hbar^2}{2ma^2}</script><p>再又归一化得到$|A|^2=\dfrac{2}{a}$，得到定态波函数为</p>
@@ -336,16 +344,16 @@ j_m=\dfrac{\hbar}{2m\mathrm{i}}\left(\mathrm{e}^{-\mathrm{i}kx}\dfrac{\mathrm{d}
 <script type="math/tex; mode=display">
 j_r=\mathcal{R}v_m=|R|^2v_m,\quad j_t=\mathcal{T}v_m=|S|^2v_m</script><p>这里，有两种情况需要分别考虑。</p>
 <ol>
-<li><p>$0&lt;E&lt;V_0$</p>
+<li>$0&lt;E&lt;V_0$<script type="math/tex; mode=display">
+\psi(x)=A\mathrm{e}^{\beta x}+B\mathrm{e}^{-\beta x},\beta =\sqrt{\dfrac{2m(V_0-E)}{\hbar^2}}</script>解得<script type="math/tex; mode=display">
+\mathcal{T}=\left[1+\mathrm{sh}^2{\beta a}\dfrac{(\beta^2+k^2)^2}{4\beta^2k^2}\right]^{-1}</script></li>
+</ol>
 <script type="math/tex; mode=display">
-\psi(x)=A\mathrm{e}^{\beta x}+B\mathrm{e}^{-\beta x},\beta =\sqrt{\dfrac{2m(V_0-E)}{\hbar^2}}</script><p>解得</p>
+   \mathcal{R}=\left[1+\left(\mathrm{sh}^2{\beta a}\dfrac{(\beta^2+k^2)^2}{4\beta^2k^2}\right)^{-1}\right]^{-1}</script><script type="math/tex; mode=display">
+   \mathcal{R}+\mathcal{T}=1</script><p>   其中</p>
 <script type="math/tex; mode=display">
-\mathcal{T}=\left[1+\mathrm{sh}^2{\beta a}\dfrac{(\beta^2+k^2)^2}{4\beta^2k^2}\right]^{-1}</script><script type="math/tex; mode=display">
-\mathcal{R}=\left[1+\left(\mathrm{sh}^2{\beta a}\dfrac{(\beta^2+k^2)^2}{4\beta^2k^2}\right)^{-1}\right]^{-1}</script><script type="math/tex; mode=display">
-\mathcal{R}+\mathcal{T}=1</script><p>其中</p>
-<script type="math/tex; mode=display">
-k^2=\dfrac{2mE}{\hbar^2},\qquad \beta^2 = \dfrac{2m(V_0-E)}{\hbar^2}</script><script type="math/tex; mode=display">
-\dfrac{(\beta^2+k^2)^2}{4\beta^2k^2}=\left[4\frac{E}{V_0}\left(1-\frac{E}{V_0}\right)\right]^{-1}</script></li>
+   k^2=\dfrac{2mE}{\hbar^2},\qquad \beta^2 = \dfrac{2m(V_0-E)}{\hbar^2}</script><script type="math/tex; mode=display">
+   \dfrac{(\beta^2+k^2)^2}{4\beta^2k^2}=\left[4\frac{E}{V_0}\left(1-\frac{E}{V_0}\right)\right]^{-1}</script><ol>
 <li><p>$E&gt;0$</p>
 <p>此时，我们仅需将前面运算中的$\beta$改写作$\mathrm{i}\beta’$即可。这里</p>
 <script type="math/tex; mode=display">
@@ -370,9 +378,9 @@ E=E_n=-V_0+\dfrac{n^2\pi^2\hbar^2}{2ma^2}</script><h2 id="δ-势阱"><a href="#�
 <li>$E&lt;0$(束缚态)<script type="math/tex; mode=display">
 \psi(x)=\dfrac{\sqrt{m\alpha}}{\hbar}\mathrm{e}^{-m\alpha|x|/\hbar^2};\quad E=-\dfrac{m\alpha^2}{2\hbar^2}</script></li>
 <li>$E&gt;0$(发散态)<script type="math/tex; mode=display">
-R=\dfrac{1}{1+(2\hbar^2E/m\alpha^2)},\quad T=\dfrac{1}{1+(m\alpha^2/2\hbar^2E)}</script></li>
+R=\dfrac{1}{1+(2\hbar^2E/m\alpha^2)},\quad T=\dfrac{1}{1+(m\alpha^2/2\hbar^2E)}</script><h1 id="力学量的算符表示与表象变换"><a href="#力学量的算符表示与表象变换" class="headerlink" title="力学量的算符表示与表象变换"></a>力学量的算符表示与表象变换</h1></li>
 </ul>
-<h1 id="力学量的算符表示与表象变换"><a href="#力学量的算符表示与表象变换" class="headerlink" title="力学量的算符表示与表象变换"></a>力学量的算符表示与表象变换</h1><h2 id="力学量的定义及其算符表示"><a href="#力学量的定义及其算符表示" class="headerlink" title="力学量的定义及其算符表示"></a>力学量的定义及其算符表示</h2><h2 id="线性空间及线性变换"><a href="#线性空间及线性变换" class="headerlink" title="线性空间及线性变换"></a>线性空间及线性变换</h2><p>算符性质</p>
+<h2 id="力学量的定义及其算符表示"><a href="#力学量的定义及其算符表示" class="headerlink" title="力学量的定义及其算符表示"></a>力学量的定义及其算符表示</h2><h2 id="线性空间及线性变换"><a href="#线性空间及线性变换" class="headerlink" title="线性空间及线性变换"></a>线性空间及线性变换</h2><p>算符性质</p>
 <ol>
 <li>$\hat{A}=\hat{B}\Rightarrow \hat{A}\psi=\hat{B}\psi $</li>
 <li>$\hat{I}\psi=\psi$</li>
@@ -458,7 +466,8 @@ c_n=\left<\phi_n|\phi\right></script><p>作为特例，我们用$\left|\mathbf{r
 \Rightarrow\hat{T}(a)=\exp{\left[-\dfrac{\mathrm{i}a}{\hbar}\hat{p}\right]},\quad \hat{T}(a)^{-1}=\hat{T}(-a)=\hat{T}(a)^{\dagger}</script><h3 id="算子如何进行变换"><a href="#算子如何进行变换" class="headerlink" title="算子如何进行变换"></a>算子如何进行变换</h3><script type="math/tex; mode=display">
 \hat{Q}'=\hat{T}^\dagger\hat{Q}\hat{T}</script><p>例子</p>
 <script type="math/tex; mode=display">
-\hat{x}'f(x)=\hat{T}^\dagger(a)\hat{x}\hat{T}(a)f(x)=\hat{T}(-a)\hat{x}\hat{T}(a)f(x)</script><script type="math/tex; mode=display">=\hat{T}(-a)xf(x-a)=(x+a)f(x)</script><script type="math/tex; mode=display">
+\hat{x}'f(x)=\hat{T}^\dagger(a)\hat{x}\hat{T}(a)f(x)=\hat{T}(-a)\hat{x}\hat{T}(a)f(x)</script><script type="math/tex; mode=display">
+=\hat{T}(-a)xf(x-a)=(x+a)f(x)</script><script type="math/tex; mode=display">
 \Rightarrow\hat{x}'=\hat{x}+a</script><script type="math/tex; mode=display">
 \hat{Q}'(\hat{x},\hat{p})=\hat{T}^\dagger\hat{Q}(\hat{x},\hat{p})\hat{T}=\hat{Q}(\hat{x}',\hat{p}')=\hat{Q}(\hat{x}+a,\hat{p})</script><h2 id="空间变换"><a href="#空间变换" class="headerlink" title="空间变换"></a>空间变换</h2><p>平移算子</p>
 <script type="math/tex; mode=display">
@@ -470,14 +479,11 @@ c_n=\left<\phi_n|\phi\right></script><p>作为特例，我们用$\left|\mathbf{r
 <script type="math/tex; mode=display">
 V(x+a)=V(x)</script><p>即$V$是常数或有周期性.</p>
 <ul>
-<li>离散平移对称与布洛赫定理</li>
+<li>离散平移对称与布洛赫定理<script type="math/tex; mode=display">
+\psi(x)=\mathrm{e}^{\mathrm{i}qx}u(x)</script></li>
+<li>连续平移对称与动量守恒<script type="math/tex; mode=display">
+\left[\hat{H},\hat{T}(\delta)\right]=\left[\hat{H},1-\mathrm{i}\dfrac{\delta}{\hbar}\hat{p}\right]=0\Rightarrow \left[\hat{H},\hat{p}\right]=0</script>对应的是<strong>动量守恒</strong></li>
 </ul>
-<script type="math/tex; mode=display">
-\psi(x)=\mathrm{e}^{\mathrm{i}qx}u(x)</script><ul>
-<li>连续平移对称与动量守恒</li>
-</ul>
-<script type="math/tex; mode=display">
-\left[\hat{H},\hat{T}(\delta)\right]=\left[\hat{H},1-\mathrm{i}\dfrac{\delta}{\hbar}\hat{p}\right]=0\Rightarrow \left[\hat{H},\hat{p}\right]=0</script><p>对应的是<strong>动量守恒</strong></p>
 <h3 id="旋转对称"><a href="#旋转对称" class="headerlink" title="旋转对称"></a>旋转对称</h3><h4 id="绕-z-轴旋转"><a href="#绕-z-轴旋转" class="headerlink" title="绕$z$轴旋转"></a>绕$z$轴旋转</h4><p>与平移对称运算相似，算子有</p>
 <script type="math/tex; mode=display">
 \hat{R}_z(\varphi)=\exp{\left[-\dfrac{\mathrm{i}\varphi}{\hbar}\hat{L}_z\right]}</script><h4 id="三维旋转"><a href="#三维旋转" class="headerlink" title="三维旋转"></a>三维旋转</h4><p>同理可得</p>
@@ -517,9 +523,9 @@ V(x+a)=V(x)</script><p>即$V$是常数或有周期性.</p>
 <p>当$l\not ={0}$时， 有$\left\langle \dfrac{\mathrm{d}V(r)}{\mathrm{d}r}\right\rangle=\dfrac{1}{\mu}\left\langle \dfrac{\hat{L^2}}{r^3}\right\rangle$<br>当$l=0$时，有$\left\langle \dfrac{\mathrm{d}V(r)}{\mathrm{d}r}\right\rangle=\dfrac{2\pi\hbar^2}{\mu}|\psi(0)|^2$</p>
 <h2 id="无限深势阱"><a href="#无限深势阱" class="headerlink" title="无限深势阱"></a>无限深势阱</h2><h2 id="各向同性谐振子"><a href="#各向同性谐振子" class="headerlink" title="各向同性谐振子"></a>各向同性谐振子</h2><h2 id="氢原子"><a href="#氢原子" class="headerlink" title="氢原子"></a>氢原子</h2><h3 id="径向波函数"><a href="#径向波函数" class="headerlink" title="径向波函数"></a>径向波函数</h3><blockquote>
 <p>详见《数学物理方法》</p>
-</blockquote>
 <script type="math/tex; mode=display">
-E_n=-\left[\dfrac{m_e}{2\hbar^2} \left(\dfrac{e^2}{4\pi\varepsilon_0}\right)^2\right]\dfrac{1}{n^2}=\dfrac{E_1}{n^2}=\dfrac{-13.6\mathrm{eV}}{n^2}</script><script type="math/tex; mode=display">
+E_n=-\left[\dfrac{m_e}{2\hbar^2} \left(\dfrac{e^2}{4\pi\varepsilon_0}\right)^2\right]\dfrac{1}{n^2}=\dfrac{E_1}{n^2}=\dfrac{-13.6\mathrm{eV}}{n^2}</script></blockquote>
+<script type="math/tex; mode=display">
 \kappa=\dfrac{1}{an}</script><script type="math/tex; mode=display">
 a\equiv\dfrac{4\pi\varepsilon_0\hbar^2}{m_ee^2}=0.529\times10^{-10}\mathrm{m}</script><script type="math/tex; mode=display">
 \psi_{100}(r,\theta,\phi)=\dfrac{1}{\sqrt{\pi a^3}}\mathrm{e}^{-r/a}</script><script type="math/tex; mode=display">
@@ -554,7 +560,12 @@ H=\mathbf{P}\cdot\mathbf{v}-L=\dfrac{1}{2m}\left(\mathbf{P}-\dfrac{q}{c}\mathbf{
 \hat{L}_-f_b=0\Rightarrow \overline{l}=-l</script><p>综上所诉，有</p>
 <script type="math/tex; mode=display">
 \hat{L}^2f_l^m=\hbar l(l+1)f_l^m;\quad \hat{L}_zf_l^m=\hbar mf_l^m</script><p>其中，$l=0,1/2,1,3/2,\dots;\quad m=-l,-l+1,\dots,l-1,l$</p>
-<h3 id="本征函数"><a href="#本征函数" class="headerlink" title="本征函数"></a>本征函数</h3><p>将动量算子替换为$\hat{\mathbf{L}}=-\mathrm{i}\hbar(\mathbf{r}\times\nabla)$后，角动量算子为</p>
+<p>升降算符</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+   \hat{L}_+\left|l,m \right\rangle=\hbar\sqrt{(l+1)l-(m+1)m}\left|l,m+1 \right\rangle\\
+   \hat{L}_-\left|l,m+1 \right\rangle=\hbar\sqrt{(l+1)l-(m+1)m}\left|l,m \right\rangle
+\end{align*}</script><h3 id="本征函数"><a href="#本征函数" class="headerlink" title="本征函数"></a>本征函数</h3><p>将动量算子替换为$\hat{\mathbf{L}}=-\mathrm{i}\hbar(\mathbf{r}\times\nabla)$后，角动量算子为</p>
 <script type="math/tex; mode=display">
 \hat{L}_x=-\mathrm{i}\hbar \left(-\sin{\phi}\dfrac{\partial}{\partial{\theta}}-\cos{\phi}\cot{\theta}\dfrac{\partial}{\partial{\phi}}\right)</script><script type="math/tex; mode=display">
 \hat{L}_y=-\mathrm{i}\hbar \left(+\cos{\phi}\dfrac{\partial}{\partial{\theta}}-\sin{\phi}\cot{\theta}\dfrac{\partial}{\partial{\phi}}\right)</script><script type="math/tex; mode=display">
@@ -664,7 +675,8 @@ E_n^2=\left<\psi_n^0|H'\psi_n^1\right>=\sum_{m\not ={n}}{-\dfrac{\left<\psi_m^0|
 <script type="math/tex; mode=display">
 C_n(t)=\delta_{nk}+\lambda c_n(t)</script><p>得</p>
 <script type="math/tex; mode=display">
-\mathrm{i}\hbar\dot{c}_{k'}(t)\approx\sum_n{\mathrm{e}^{\frac{\mathrm{i}}{\hbar}(E_{k'}-E_{n})t}\delta_{nk}\left\langle \psi_{k'}|\hat{H}'(t)|\psi_n\right\rangle}</script><script type="math/tex; mode=display">=\mathrm{e}^{\frac{\mathrm{i}}{\hbar}(E_{k'}-E_{k})t}\left\langle \psi_{k'}|\hat{H}'(t)|\psi_k\right\rangle</script><p>解此方程，当$k’\not ={k}$时，我们得到</p>
+\mathrm{i}\hbar\dot{c}_{k'}(t)\approx\sum_n{\mathrm{e}^{\frac{\mathrm{i}}{\hbar}(E_{k'}-E_{n})t}\delta_{nk}\left\langle \psi_{k'}|\hat{H}'(t)|\psi_n\right\rangle}</script><script type="math/tex; mode=display">
+=\mathrm{e}^{\frac{\mathrm{i}}{\hbar}(E_{k'}-E_{k})t}\left\langle \psi_{k'}|\hat{H}'(t)|\psi_k\right\rangle</script><p>解此方程，当$k’\not ={k}$时，我们得到</p>
 <script type="math/tex; mode=display">
 C_{k'}(t)=c_{k'}(t)=\dfrac{1}{\mathrm{i}\hbar}\int_0^t{\mathrm{d}t'\mathrm{e}^{\frac{\mathrm{i}}{\hbar}(E_{k'}-E_{k})t'}\left\langle \psi_{k'}|\hat{H}'(t')|\psi_k\right\rangle}</script><script type="math/tex; mode=display">
 P_{k'k}(t)=|C_{k'}(t)|^2</script><h2 id="散射理论"><a href="#散射理论" class="headerlink" title="散射理论"></a>散射理论</h2><h3 id="经典散射理论"><a href="#经典散射理论" class="headerlink" title="经典散射理论"></a>经典散射理论</h3><p>硬球散射</p>
@@ -959,7 +971,7 @@ f(\theta)\approx-\dfrac{2mq_1q_2}{4\pi\varepsilon_0\hbar^2\kappa^2}=-\dfrac{q_1q
     };
     (function () {
       var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.src = 'https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
       script.defer = true;
       document.head.appendChild(script);
     })();
