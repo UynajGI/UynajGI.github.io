@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"uynajgi.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="本文是Physcic Report在2022年刊登的综述文章Social Physcic的个人中译版，旨在学习社会物理学及系统科学相关前沿知识，本人英语水平有限，如有错误和建议欢迎指正。持续翻译中... 摘要：近几十年来，人们越来越多地使用物理学方法来研究不同的社会现象。这一发展得益于物理学家在传统兴趣领域之外的大胆尝试，也得益于其他学科的科学家从物理学中汲取了在整个 19 世纪和 20 世纪被证">
+<meta property="og:type" content="article">
+<meta property="og:title" content="社会物理学">
+<meta property="og:url" content="https://uynajgi.github.io/2022/06/04/SocialPhy/index.html">
+<meta property="og:site_name" content="逢灯暗室">
+<meta property="og:description" content="本文是Physcic Report在2022年刊登的综述文章Social Physcic的个人中译版，旨在学习社会物理学及系统科学相关前沿知识，本人英语水平有限，如有错误和建议欢迎指正。持续翻译中... 摘要：近几十年来，人们越来越多地使用物理学方法来研究不同的社会现象。这一发展得益于物理学家在传统兴趣领域之外的大胆尝试，也得益于其他学科的科学家从物理学中汲取了在整个 19 世纪和 20 世纪被证">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/06/01/eNuUXlPq92Dt83y.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/01/phyZaP53RAxGNLH.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/01/x8ryYkGh6bapAvO.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/01/ufnXaPdD35kJ8mY.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/01/fIDABi9cHSPob3n.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/03/wioa4IhNPUjpgmn.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/03/9jAyEdO2hCzZu8R.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/04/XJbtEvOHfRqiwPx.png">
+<meta property="article:published_time" content="2022-06-04T09:23:14.000Z">
+<meta property="article:modified_time" content="2022-06-04T09:23:14.144Z">
+<meta property="article:author" content="UynajGI">
+<meta property="article:tag" content="矩阵">
+<meta property="article:tag" content="复杂科学">
+<meta property="article:tag" content="统计物理">
+<meta property="article:tag" content="社会系统">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/06/01/eNuUXlPq92Dt83y.png">
+
+<link rel="canonical" href="https://uynajgi.github.io/2022/06/04/SocialPhy/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>社会物理学 | 逢灯暗室</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">逢灯暗室</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">柳暗花明又一村</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>图书馆</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>所有文章</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://uynajgi.github.io/2022/06/04/SocialPhy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/U_avatar.jpg">
+      <meta itemprop="name" content="UynajGI">
+      <meta itemprop="description" content="如果你想走到高处，就要使用自己的两条腿！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="逢灯暗室">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          社会物理学
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-06-04 17:23:14" itemprop="dateCreated datePublished" datetime="2022-06-04T17:23:14+08:00">2022-06-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">系统科学</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/%E7%A4%BE%E4%BC%9A%E7%89%A9%E7%90%86%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">社会物理学</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/06/04/SocialPhy/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/06/04/SocialPhy/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <div class="post-description">本文是<I>Physcic Report</I>在2022年刊登的综述文章<I>Social Physcic</I>的个人中译版，旨在学习社会物理学及系统科学相关前沿知识，本人英语水平有限，如有错误和建议欢迎指正。<p><b>持续翻译中...</b><p> 摘要：近几十年来，人们越来越多地使用物理学方法来研究不同的社会现象。这一发展得益于物理学家在传统兴趣领域之外的大胆尝试，也得益于其他学科的科学家从物理学中汲取了在整个 19 世纪和 20 世纪被证明非常成功的方法。在这里，我们用“社会物理学”一词来描述这一领域，并向那些将其发展到成熟的标新立异的学者致敬。我们通过回顾当前的技术水平来实现这一点。从一系列现代人类社会的核心主题开始，我们回顾了城市发展和交通系统、金融市场的运作机理、作为我们进化成功基础的合作行为、社会网络的结构以及将智能机器集成到这些网络中。然后，我们将注意力转移到一系列探讨社会潜在威胁的话题上。其中包括犯罪行为、大规模移民、流行病、环境挑战和气候变化。在每个话题的结尾，我们为未来的研究提供了有希望的方向。基于此，我们得出结论，社会物理学的未来是光明的。研究社会现象的物理学家们不再只是一群好奇的人，而成为了一股不可忽视的力量。尽管如此， 最重要的是，我们要继续促进在不同的科学学科之间的建设性交流和相互尊重。</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>近几十年来，人们越来越多地使用物理学方法来研究不同的社会现象。这一发展得益于物理学家在传统兴趣领域之外的大胆尝试，也得益于其他学科的科学家从物理学中汲取了在整个 19 世纪和 20 世纪被证明非常成功的方法。在这里，我们用“社会物理学”一词来描述这一领域，并向那些将其发展到成熟的标新立异的学者致敬。我们通过回顾当前的技术水平来实现这一点。从一系列现代人类社会的核心主题开始，我们回顾了城市发展和交通系统、金融市场的运作机理、作为我们进化成功基础的合作行为、社会网络的结构以及将智能机器集成到这些网络中。然后，我们将注意力转移到一系列探讨社会潜在威胁的话题上。其中包括犯罪行为、大规模移民、流行病、环境挑战和气候变化。在每个话题的结尾，我们为未来的研究提供了有希望的方向。基于此，我们得出结论，社会物理学的未来是光明的。研究社会现象的物理学家们不再只是一群好奇的人，而成为了一股不可忽视的力量。尽管如此， 最重要的是，我们要继续促进在不同的科学学科之间的建设性交流和相互尊重。</p>
+<h1 id="序言：多学科的物理根基"><a href="#序言：多学科的物理根基" class="headerlink" title="序言：多学科的物理根基"></a>序言：多学科的物理根基</h1><p>本文似乎最适合被描述为，在一个已然方兴未艾、大放异彩，术语上被称为 “社会物理学”的研究领域之中的旅途。在感兴趣的读者与我们一起踏上这个旅程之前，理应清楚直接地告诉他们我们的动机和基本原理。要做到这一点，至少需要（i）定义社会物理学的定义（对我们来说），（ii）概述其重要性 ，以及（iii）阐述与今后所涵盖的主题相关的基本思路。</p>
+<p>概率论和统计方法首先在社会学家中兴起，他们寻求揭示社会内部运作的定量规律<sup><a href="#fn_1" id="reffn_1">1</a></sup> 。这启发了 19 世纪统计物理学的开创者们摆脱了牛顿决定论的影响，转而选择了对理想气体的概率描述。在当代，物理学家们却正在通过应用物理方法（通常是统计物理学的方法）来量化社会现象，这是一种理论上的循环<sup><a href="#fn_1" id="reffn_1">1</a></sup> 。出于我们在此的目的，我们决定对社会物理学采用一个广泛的、可操作的定义。具体而言，社会物理学是一组旨在解决社会问题的活跃研究课题，经过物理科班训练后的科学家对此已经作出了贡献，并将继续做出重大贡献。 尽管这样一个定义的精确性和严密性可能会受到质疑，但当我们以物理学家实际做的事情为依据来定义物理学<sup><a href="#fn_2" id="reffn_2">2</a></sup> (的一个方面)时，我们和他们是一致的。我们也相信，社会物理学的包容性和实践性，会使我们更加欣赏物理学在现代科学中的广泛地位。</p>
+<p>二十世纪经常被称为 “物理学的世纪”<sup><a href="#fn_3" id="reffn_3">3</a></sup> ，也是理由充分的。物理学家所实践的科学方法在现实的所有尺度上都取得了巨大的成功。在微观尺度，量子电动力学作为光与物质相互作用的理论，通过检验电子的无量纲磁矩是否与预测的精细结构常数相关，已经在十亿分之一（即$10^{-8}$）量级内被实验证实<sup><a href="#fn_4" id="reffn_4">4</a></sup> 。在宏观尺度，广义相对论作为万有引力的主流理论已经得到验证，其中包括将卫星送入太空后，测量大地测量效应的误差为 0.2%，测量地球自转引起的帧拖曳效应相对于预测值的误差约为 19%<sup><a href="#fn_5" id="reffn_5">5</a></sup> 。调查员 Francis Everitt 的指出，”1mas 就像是在 10 英里的距离上看到的人类头发的宽度”，而后者的误差仅仅达到了 37mas。对我们来说，重要的是物理学的这些巨大成功引起了其他学科科学家的注意，并导致人们试图使用类似物理学的定量方法来获得类似的成功。一些学科也明确承认这一点；例如，在生态学中，新陈代谢理论<sup><a href="#fn_6-9" id="reffn_6-9">6-9</a></sup> 和机械生态位模型<sup><a href="#fn_10，11" id="reffn_10，11">10，11</a></sup> 大量采用了热力学的知识。但更普遍的是，物理或数学模型在不同学科中的扩散最能反映出它们采用了类似物理学的定量方法，如流行病学<sup><a href="#fn_12，13" id="reffn_12，13">12，13</a></sup> 、病毒学<sup><a href="#fn_14，15" id="reffn_14，15">14，15</a></sup> 、神经科学<sup><a href="#fn_16，17" id="reffn_16，17">16，17</a></sup> 、医学<sup><a href="#fn_18，19" id="reffn_18，19">18，19</a></sup> 、心理学<sup><a href="#fn_20，21" id="reffn_20，21">20，21</a></sup> 、社会学<sup><a href="#fn_22，23" id="reffn_22，23">22，23</a></sup> ，以及无数其他学科。但是，如果最终目标是复制物理学的成功，让物理学家自己探索是最好的选择。所有这些在一定程度上解释了，为什么物理学是现代向多学科转变的源头，以及为什么物理学家发表的多学科物理学文章比物理学杂志上的文章更多<sup><a href="#fn_2" id="reffn_2">2</a></sup> 。</p>
+<p>尽管过去一百多年来物理学的成功是无可置疑的，但进步放缓的迹象<sup><a href="#fn_24，25" id="reffn_24，25">24，25</a></sup> 和对基本原理的不满<sup><a href="#fn_26，27" id="reffn_26，27">26，27</a></sup> 一直存在，因此学者们启动了对 “新物理学 “的多次搜索<sup><a href="#fn_28，29" id="reffn_28，29">28，29</a></sup> 。然而，许多年轻的物理学家在这种物理学被发现之前，可能会寻求在其他地方运用他们强大的定量技能。一个众所周知的例子是，物理学家试图通过在学术界的研究<sup><a href="#fn_30" id="reffn_30">30</a></sup> 和在华尔街的实践来丰富金融世界。</p>
+<p>上述状况将物理学完全置于多学科的根基之上。因此，物理学家所进行的多学科研究旨在解决社会问题，也就不足为奇了。我们把这种工作称为社会物理学，如果不这样做，我们就会削弱物理学在当今多学科运动中应有的作用。只要读者愿意同意我们的观点，或者哪怕相信一分，就会发现社会物理学的研究范围是庞大的。我们是如何为本文缩小相关主题的范围呢？</p>
+<p>我们关注的焦点有两个，是什么促成或构成了现代的生活方式，又是什么扰乱或威胁了它。由于有更多的医疗、教育和就业机会，现在的大多数人口在城市生活<sup><a href="#fn_31" id="reffn_31">31</a></sup> 。尽管城市有很多优势，但也存在很多问题，交通是其中比较突出的问题<sup><a href="#fn_32" id="reffn_32">32</a></sup> 。因此，我们首先概述了物理学家在城市动力学和交通流研究方面的贡献。城市的繁荣在很多方面都与市场有关，在过去的二十年里，金融市场尤其对城市生活、创新和规划产生了巨大的影响<sup><a href="#fn_33" id="reffn_33">33</a></sup> 。这就需要我们更好地理解金融市场，也正是经济物理学这一章的目的。城市生活，以及一般的文明生活，都是建立在广泛合作之上的。因此，合作的演变应该有自己的一章，尤其是考虑到这是一个物理学家特别活跃的研究领域<sup><a href="#fn_34" id="reffn_34">34</a></sup> 。此外，人类是在社会网络中组织起来的，其结构不仅与合作的进化动力学有关，而且还与许多其他社会相关的动力学过程纠缠在一起<sup><a href="#fn_35" id="reffn_35">35</a></sup> 。因此，不能忽视对网络结构及其社区划分的探索。在这种背景下，计算机越来越多地参与到塑造社会网络的事实，成为一个重要的认识，尤其是随着类人人工智能的出现。事实上，当前的状况和技术趋势需要对人机网络进行坦诚地交流。</p>
+<p>在扰乱或威胁现代生活的现象中，犯罪行为首当其冲，大到社会<sup><a href="#fn_36" id="reffn_36">36</a></sup> ，小到社区<sup><a href="#fn_37" id="reffn_37">37</a></sup> 都存在着它的影响。有趣的是，正如将要展示的犯罪学这一章那样，合作的进化动力学和网络结构分析都被证明有助于获得打击犯罪和犯罪组织的洞察力。与犯罪相比，移民也具有积极作用，如有助于缓解劳动力短缺和老龄化人口年龄结构失衡<sup><a href="#fn_38" id="reffn_38">38</a></sup> ，但也有许多需要注意的地方。例如，发展中国家本应从其有利的劳动力与受抚养人的比例中获得人口红利，但大量的价值却因人才外流，即受过高等教育的年轻成年人的移民而丧失<sup><a href="#fn_39" id="reffn_39">39</a></sup> 。当环境变化或地缘政治不稳定引发人口迁移时，影响就更大了；一方面，人们失去家园是一种人道主义危机，另一方面，民族主义和仇外心理会在吸收大量移民的国家中滋生<sup><a href="#fn_40，41" id="reffn_40，41">40，41</a></sup> 。人群的远距离移动，尤其是当今的快速移动，使人类容易受到传染病的影响<sup><a href="#fn_42" id="reffn_42">42</a></sup> 。关于传染现象的章节涵盖了全球和地方范围内的疾病传播，并概述了数字流行病学这一新兴的子领域。在结束这篇综述之前，首先我们把重点转移到支持人类生活的自然环境上。关于环境的章节强调了化学品的扩散，这些化学品的影响，尤其是协同作用，目前还没有被完全了解。<sup><a href="#fn_43" id="reffn_43">43</a></sup> 。更为关键的是全球气候变化<sup><a href="#fn_44-46" id="reffn_44-46">44-46</a></sup> 。在这种背景下，能使用网络科学来解开地球气候系统的错综复杂的问题有些令人惊讶。这只能说明物理学及其方法具有相当的普适性和通用性，我们希望这将激励物理学家进一步培育多学科性，以及其他学科的科学家在诉诸定量方法和工具时与物理学家保持交流。</p>
+<h1 id="城市动力学"><a href="#城市动力学" class="headerlink" title="城市动力学"></a>城市动力学</h1><p>城市是典型的复杂系统<sup><a href="#fn_47" id="reffn_47">47</a></sup> 。它们在某种程度上是自组织的。它们在有些方面是有计划的。它们需要层次分明、相互依赖的分配系统。它们存在于不同的尺度上。它们在复杂网络中相互作用。它们本身也由复杂网络组成。它们还是人们通过复杂网络相互作用而建造出来的。城市科学的许多方面并不适合物理学家的方法论。本节将讨论城市科学的现状<sup><a href="#fn_48" id="reffn_48">48</a></sup> ，特别是物理学家感兴趣的话题<sup><a href="#fn_49" id="reffn_49">49</a></sup> 。</p>
+<h2 id="城市的定义"><a href="#城市的定义" class="headerlink" title="城市的定义"></a>城市的定义</h2><p>假设我们知道任何人、任何建筑和基础设施在任何时候的位置，那么我们如何确定城市是什么?这远不是一个简单的问题，人们很快就会意识到，任何简单的解决方案都不会与现有的惯例完全重合。我们在这里介绍的大多数研究都使用了城市的行政定义。然而，我们将进行从人口分布来定义城市的尝试。</p>
+<p>即使从人口密度数据出发，通常也可以完全独立于预先确定的行政边界。例如，为此目的文献<sup><a href="#fn_50" id="reffn_50">50</a></sup> 使用了英国最细的分区（选区）的人口。实际的人口统计来自于人口普查中报告的家庭地址。</p>
+<p>以渗滤理论<sup><a href="#fn_51" id="reffn_51">51</a></sup> 做类比，其定义城市的原则是确定出人口密度$ρ$超过特定阈值$ρ_0$的区域。文献<sup><a href="#fn_50" id="reffn_50">50</a></sup> 就通过这个原则来定义城市。如果一个选区$k$被符合城市定义的选区包围着，即有$ρ_k&lt;ρ_0$，我们也认为它是城市的一部分。本算法应用于英格兰人口密度的结果如图 1 所示。</p>
+<p>另一种定义城市的方法是，如果至少有一小部分人往更大的城市通勤，则将小的城市划分到更大的城市里，并且没有更大的地区吸引更多的通勤者。为了使这种方法得到合理的结果，我们需要从一些人口多于给定阈值的种子城市开始递归计算，文献<sup><a href="#fn_50" id="reffn_50">50</a></sup> 将选区并入到至少有一部分人通勤前往的区域。如果有多个区域的通勤量超过阈值，那么该选区将被添加到吸引最多通勤者的区域。当递归过程收敛后，就会生成下一个如图 1C、D 的城市模式。</p>
+<h2 id="城市的规模"><a href="#城市的规模" class="headerlink" title="城市的规模"></a>城市的规模</h2><p>George Kingsley Zipf 在 1949 年的《最小努力原则》(The Principle of Least Effort)一书中指出，城市规模遵循幂律分布</p>
+<script type="math/tex; mode=display">
+P(m)=\text{const.}\times m^{-\nu}</script><p>Zipf 发现指数$\nu$为$1$，并假设它是一个普遍值，但最近的研究认为世界不同地区有不同的$\nu$<sup><a href="#fn_53-55" id="reffn_53-55">53-55</a></sup> .</p>
+<p>从 Zipf 自己的研究<sup><a href="#fn_52" id="reffn_52">52</a></sup> 开始，人们从 Zipf 的城市规模定律中发现了大量的机制。这些机制我们将从物理文献中提到一些。首先，Zanette 和 Manrubia 提出了一个运行在方形网格<sup><a href="#fn_53" id="reffn_53">53</a></sup> 上的乘法-扩散机制模型。从种群密度的初始均匀分布出发，将点 i 上的种群 m 随机地进行更新:</p>
+<script type="math/tex; mode=display">
+m_i(t)=\begin{cases}
+    (1-q)p^{-1}&\text{概率p}\\
+    q^{-1}(p-1)&\text{其他情况}
+\end{cases}</script><p>然后种群中的一部分$\alpha$被重新分配到周围的细胞中。该模型产生的涌现幂律与 Zipf 一致，参数值范围较广.</p>
+<p>文献<sup><a href="#fn_56" id="reffn_56">56</a></sup> 根据，提出了一个从规模为$m$的城市，存在出发的到达率$w_a$和出发率$w_d$的模型，它们依赖于$m$的关系为</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+    &w_a=\dfrac{m^2}{m_0}+m\\
+    &w_d=\mathrm{e}^{1/m^*}\left[\dfrac{m^2}{m_0}+a\right]
+\end{aligned}</script><p>其中$m^∗，m_0$和$a $是参数。这些规则随着城市数量的增长(不时增加人口为 1 的城市)不断地进行作用。这就给出了在一定参数范围内，城市规模的涌现分布律</p>
+<script type="math/tex; mode=display">
+\nu=\dfrac{1}{1+(a-a)m_0}</script><p>在上述两个模型中，都存在一种“富者更富”(rich-gets-richer)的现象(通常被称为“直布罗陀原理”(Gibrat principle)<sup><a href="#fn_57" id="reffn_57">57</a></sup> ，有时也被称为“马太效应”(Matthew effect)<sup><a href="#fn_58" id="reffn_58">58</a></sup> ，或“累积优势”(cumulative advantage)<sup><a href="#fn_59" id="reffn_59">59</a></sup> )，即大城市能够吸引更多的人，从而比小城市发展得更快。因此，许多作者引用 Herbert Simon 的涌现幂律分布模型<sup><a href="#fn_57" id="reffn_57">57</a></sup> 来解释城市规模的分布。在相对较新的经济学文献中，这一机理已被重现并契合了城市的增长现象。事实上我们知道，在所有存在幂律分布的机理中<sup><a href="#fn_61" id="reffn_61">61</a></sup> ，在那些专门试图解释城市增长的模型里，似乎都包含了一种富得更富的机理。也有一些直接的经验证据表明，城市增长存在富者更富现象<sup><a href="#fn_62" id="reffn_62">62</a></sup> 。</p>
+<h2 id="城市的增长"><a href="#城市的增长" class="headerlink" title="城市的增长"></a>城市的增长</h2><p>关于城市，空间增长是另一个让物理学家感兴趣的问题。事实上，Zanette-Manrubia 模型也作为城市空间增长的模型<sup><a href="#fn_63" id="reffn_63">63</a></sup> 被提出。这不足为奇，由于自相似结构的本质，一个城市的人口分布可能与一个包含许多城市的地区的人口分布相似。以图 2 为例显示了该模型结果。尽管该模型成功重现了真实城市增长的许多特征，当人们对比模型输出值与真实值时，差异立即显现了。最显著的区别是，Zanette–Manrubia 模型中最早的生成地区完全嵌入在新的建筑环境中。然而，在实际数据中，它们可以与不以土建的方式相连。</p>
+<p>除了反应-扩散型的城市增长模型外，有些模型与扩散-受限聚集(diffusion-limited aggregation， DLA)有些相似<sup><a href="#fn_64" id="reffn_64">64</a></sup> 。如文献<sup><a href="#fn_65" id="reffn_65">65</a></sup> 以遵循马尔可夫随机域为框架，还增加了许多城市规划文献或作者观测到的规律。该模型可以与地理数据或类似数据相结合，以提高其预测能力。受 DLA(或者更确切地说是其不足之处)启发，另一篇文献<sup><a href="#fn_66" id="reffn_66">66</a></sup> 在城市增长模型领域影响广泛。模型通过距离参数下的对数衰减概率分布，将节点依次添加到集群(代表一个城市)中来划分区域。</p>
+<p>最后，我们注意到，预测城市增长模型不仅让物理学家感兴趣。例如，最近的文献<sup><a href="#fn_67" id="reffn_67">67</a></sup> 就有由地理学家提出的土地利用和人口密度共同进化模型。</p>
+<h2 id="城市内部和城市之间的网络"><a href="#城市内部和城市之间的网络" class="headerlink" title="城市内部和城市之间的网络"></a>城市内部和城市之间的网络</h2><p>如前所述，要将城市与其周围环境划清界限并非易事。因此，许多适用于不同城市的原则也适用于城市本身的内部组织。早在物理学家转向这个问题之前，地理学家发明了简易模型来解释现状并解出了空间网络最优解(例如，见图 3)。我们推荐阅读文献<sup><a href="#fn_69" id="reffn_69">69</a></sup> ，虽然它是距出版至今五十余年的经典教材，但每位从业者都会为其中提出的空间结构、时间结构、更高阶的网络结构或者复杂的社会经济系统模型所体现的现代性感到惊讶。</p>
+<p>早期一个有影响力的城市网络模型是 Walter Christaller 在 1933 年提出的“中心地点理论”(central place theory)<sup><a href="#fn_70" id="reffn_70">70</a></sup> 。它假设了一个资源均匀分布下的根本性平凡景观(underlying featureless landscape)。在此设想下，大城市主要是以六角形晶格为组织结构。其次，较小的城市将填补中心地区的周围空白，以此类推。经济学家 August Lösch 在他 1940 年的《区域经济学》(The Economics of location)<sup><a href="#fn_71" id="reffn_71">71</a></sup> 中提出了一个比 Christaller 的更灵活、更经济学化的区域理论。Lösch 还得出结论：在一个无结构的世界，人类住区将以六边形的模式组成。此外，尽管并不是 Lösch 的直接目的，城市会有长尾分布<sup><a href="#fn_72" id="reffn_72">72</a></sup> 的结论正推导出 Zipf 定律。</p>
+<p>比起城市网络，物理学家花了更多的精力试图了解城市内部网络的演化<sup><a href="#fn_74,75" id="reffn_74,75">74,75</a></sup> 。例如 Barthélemy 和 Flammini 的街道增长模型<sup><a href="#fn_73" id="reffn_73">73</a></sup> 。这个模型通过添加“中心”来工作，然后根据以下规则连接：假设 A 和 B 是相邻的中心，而 M 是附近一条在建道路的端点。这条路从顶端 M 开始，向向量</p>
+<script type="math/tex; mode=display">
+\dfrac{\vec{MA}}{|MA|}+\dfrac{\vec{MB}}{|MB|}</script><p>的方向延伸，这样生成的公路网络从中心 A 和 B 到道路的累计距离是最小的(图 4)。当 M 路与 A 与 B 连线上的一点相交时，增加一条从 A 到 B 的直线路段。关于这个模型的更多细节,见文献<sup><a href="#fn_73" id="reffn_73">73</a></sup> 。</p>
+<p>其他空间网络模型通常也通过不断增加点并将这些点与现有网络连接来产生作用<sup><a href="#fn_76" id="reffn_76">76</a></sup> 。在文献<sup><a href="#fn_77" id="reffn_77">77</a></sup> 中，Gastner 和 Newman 提出了一个更一般的，可以作为道路网络的空间增长模型。该算法将成本关联到所有的连接，关联比率正比于</p>
+<script type="math/tex; mode=display">
+c_{ij} = \lambda \sqrt{N}d_{ij}+(1-\lambda)</script><p>其中，$d_{ij}$是点$i$和$j$之间的距离，$\lambda$是一个参数，它控制着连接到它存在的距离的相对成本。然后，该算法寻找一组最小连接$E$能够最小化</p>
+<script type="math/tex; mode=display">
+\sum_{(i,j)\in E}{d_{ij}}\text{ given}\sum_{(i,j)\in E}{c_{ij}}<C</script><p>以参数 C 为上界，表示为该项目的总预算。</p>
+<h2 id="种族隔离-Segregation"><a href="#种族隔离-Segregation" class="headerlink" title="种族隔离(Segregation)"></a>种族隔离(Segregation)</h2><p>物理学家对种族隔离的研究本质上等同于对 Schelling 模型的研究<sup><a href="#fn_79" id="reffn_79">79</a></sup> 。仅仅看一眼 Schelling 的论文就足以让读者理解为什么这个特定的模型在物理学家中广受欢迎(图 5)。这个模型的背景是 20 世纪 60 年代美国普遍存在的种族矛盾，特别是住区隔离现象。Schelling 利用这个模型论证，即使人们基本上宽容地对待住在一起的其他种族，空间限制也会加剧种族隔离。模型的工作原理如下：</p>
+<ol>
+<li>考虑一个$L×L$的方形网格，其中每个单元格都可以是空的，或者由两个种族之一的居民占据((图 5 中的’◯’或’#’)</li>
+<li>最初，在网格上随机分配$[fL^2/2] $个◯和同样多的#，其中占比率$0 &lt; f &lt; 1$。</li>
+<li>选择一个已占据的方格更新系统——如果它周围有超过$b$的相对种族，则将其随机移动到一个的未占据的方格。Schelling 考虑了八个方格的最近邻。</li>
+<li>重复前面的步骤，直到所有被占用的方格都低于阈值。如果$f$足够小，这个过程将收敛。否则，这个命题不确定。</li>
+</ol>
+<p>从本质上说，种族隔离的最终程度(由同种邻居的平均比例衡量)将远离阈值，而且这与阈值$b$和占用率$f$都呈非线性相关。</p>
+<p>在物理学文献中有许多论文都是关于这个模型的，但通常没有从种族隔离的角度来解释结论。例如，文献<sup><a href="#fn_80" id="reffn_80">80</a></sup> 将 Schelling 的模型重新解释为晶体生长的模型，而文献<sup><a href="#fn_81" id="reffn_81">81</a></sup> 则研究了突现团簇界面的尺度特性。参见参考文献<sup><a href="#fn_82" id="reffn_82">82</a></sup> ，Dietrich Stauffer 写了一篇有趣的文章。</p>
+<h2 id="城市尺度理论"><a href="#城市尺度理论" class="headerlink" title="城市尺度理论"></a>城市尺度理论</h2><p>小城市并不是大城市的小版本。正如前面提到的，关于自相似性和无标度的模型已经有了极为广泛的普及<sup><a href="#fn_83" id="reffn_83">83</a></sup> ，在某种程度上，它们推动了我们讨论过的模型发展。然而，一个城市的运行不只由幂律分布决定，还取依赖它的尺度。长期以来，事物对尺度的依赖性一直是生物学和生态学的一个共同主题。请注意统计物理中有限尺度标度的区别，统计物理的目标是将结果外推到无穷大的极限情况(以研究临界现象)。</p>
+<p>标度理论最近引起了物理学家的注意<sup><a href="#fn_84" id="reffn_84">84</a></sup> 。这种关注来自于名为异速生长尺度律(allometric scaling)的物理理论<sup><a href="#fn_85" id="reffn_85">85</a></sup> 。最有影响力的论文之一是文献<sup><a href="#fn_86" id="reffn_86">86</a></sup> ，它发现不同的经济部门对城市的规模有不同程度的依赖。例如，在需要人们合作的行业——比如研发行业——的规模与城市规模呈超线性关系。相比之下，那些空间内上相对封闭的设施，如加油站等，与城市规模成亚线性关系。文献<sup><a href="#fn_87" id="reffn_87">87</a></sup> 采用人口密度而不是城市规模作为标度分析的基础，在一个更符合的物理模型建模方式的框架中重现了这些结果。文献<sup><a href="#fn_88" id="reffn_88">88</a></sup> 提出了一种能够关联多个标度指数的模型，并找到了允许城市存在的参数空间域(the regions of parameter space)。</p>
+<h2 id="人类迁徙"><a href="#人类迁徙" class="headerlink" title="人类迁徙"></a>人类迁徙</h2><p>迁徙研究主要关注点在于在特定时间有多少人口在两个地点之间移动。我们可以从很多方面来分析这个话题。一方面可以根据年龄、性别或社会经济指标来划分人群。另一方面可以以一天中的不同时间、不同月份或长期趋势作划分。还可以考虑迁居、通勤和个人移动(moving of residence, work, or the individual<br>themself)</p>
+<p>人类迁移研究的开山之作是 Ernst Ravenstein 1885 年的《人类迁移定律》(The laws of human migration)<sup><a href="#fn_89" id="reffn_89">89</a></sup> 。Ravenstein 注意到，人们迁居的距离服从一个偏态分布——大多数人只迁居很短的距离。</p>
+<p>一个更定量化的迁徙定律是引力定律(gravity law)，它表示在两个地点$i$和$j$之间旅行的人数$T_{ij}$为</p>
+<script type="math/tex; mode=display">
+T_{ij}=c\dfrac{P_iP_j}{d_{ij}^\delta}</script><p>其中$c$和$\delta$为常数，$d_{ij}$为$i$和$j$之间的距离，$P_{i}$为$i$处的人口。这种关系最早由 Zipf<sup><a href="#fn_90" id="reffn_90">90</a></sup> 研究，当时他只考虑了指数$\delta=1$的情况。“引力定律”一词是后来在交通运输文献中创造出来的，所以牛顿力学在这一发展过程中并没有发挥更大的作用，只是提供了一个与之同名的概念。随后的研究试图测量和解释指数<sup><a href="#fn_91" id="reffn_91">91</a></sup> ，或者通过增加位置信息来改进引力定律<sup><a href="#fn_92" id="reffn_92">92</a></sup> 。</p>
+<p>最近，人类迁徙的辐射模型(radiation model)改进了引力定律，模型指出</p>
+<script type="math/tex; mode=display">
+T_{ij}=T_i\dfrac{P_iP_j}{(P_i+s_{ij})(P_i+P_j+s_{ij})}</script><p>其中$T_{i}=\sum_j{T_{ij}}$，$s_{ij}$是以$i$为圆心，$j$在圆周上的圆范围内的总人口。辐射模型的主要优点是它建立在一些简易力学假设之上，而引力模型仅仅是一种统计关系。实际上，辐射模型的假设让人想起 Stouffer 的介入机会理论(theory of intervening<br>opportunities)<sup><a href="#fn_93" id="reffn_93">93</a></sup> ，其中指出:</p>
+<blockquote>
+<p>移动一段距离的人数与该距离的机会数成正比，与介入的机会数成反比。</p>
+</blockquote>
+<p>当时 Stouffer 正想要换工作，而这里所说的机会就是工作机会。</p>
+<h2 id="轨迹分析"><a href="#轨迹分析" class="headerlink" title="轨迹分析"></a>轨迹分析</h2><p>随着过去几十年位置追踪技术的进步，研究人员已经获得了人群轨迹的大型数据集。研究人员使用来自手机的数据集，其中人们的位置由他们的手机连接的信号塔的位置来确定。这些通常包括成千上万个体的研究中，最重要的发现就是人是多么容易被预测<sup><a href="#fn_94-96" id="reffn_94-96">94-96</a></sup> 。在日常生活的大多数情况下，给定一个到达过的地点序列，就可以以大约 90%的概率猜测下一个到达地点[96] 。在灾难中，即使人们的日常习惯可能被迫完全改变，这种现象仍然被观测到。但人们还是被观测到了，他们适应了新的、高度可预测的移动模式中<sup><a href="#fn_97" id="reffn_97">97</a></sup> 。</p>
+<p>另一种类型的轨迹分析是基于车辆行驶路线的形状。最基本量是实际行进距离除以原点到终点的欧氏距离。这个量的平均值，通常作为欧式距离的函数来测量，在文献中有很多名字，这里我们以文献<sup><a href="#fn_98" id="reffn_98">98</a></sup> 为参考，称其为绕行指数(detour index)。对于非常短的行进距离，绕行指数可以在 2 以上(行进距离是直线距离的两倍以上)。随着距离的增加，绕行指数在$20-30km$后收敛，约为 1.3。许多城市地图生成模型都可以重现这一现象<sup><a href="#fn_99" id="reffn_99">99</a></sup> 。</p>
+<p>另一种基于车辆出行路线的研究是关注城市如何塑造轨迹。例如，文献<sup><a href="#fn_100" id="reffn_100">100</a></sup> 研究了在距离市中心同等距离的各点之间，车辆最快的行进路线是否倾向于先入后出，或者反之亦然。这种趋势可以用 inness 来量化，inness 是指从起点到终点在城市中心同一侧的轨迹和最短路径所围成的面积，减去另一侧相应的面积。以高速公路环形路为主的城市往往有负的 inness，因为人们往外走环城高速，沿着环城路走，然后再往市中心走，最后达到目的地。文献<sup><a href="#fn_100" id="reffn_100">100</a></sup> 测量了全球近百个城市的 inness，并将其与社会经济指标联系起来。</p>
+<h2 id="可航性-Navigability"><a href="#可航性-Navigability" class="headerlink" title="可航性(Navigability)"></a>可航性(Navigability)</h2><p>物理学家们不仅对城市车辆行进的实际轨迹结构感兴趣，而且还对如何在没有充分信息的情况下找到目的地感兴趣。人们对周围环境的导航方式是认知科学中一个活跃的领域<sup><a href="#fn_103" id="reffn_103">103</a></sup> ，人们普遍认为，一些城市或建筑比其他城市或建筑更容易迷路。</p>
+<p>任何对城市或建筑的可航性进行量化的尝试都必须建立在人们如何利用环境信息的模型之上。例如，文献<sup><a href="#fn_102" id="reffn_102">102</a></sup> 使用了一种名为贪婪导航者(greedy navigators)的框架，在该框架中，个体对目的地的方向有概念。在每个十字路口，一个贪婪导航者会选择以前没有走过的、最直接指向目标的街道。在图 6 中，我们证明了贪婪导航者在花园迷宫中（设计成难以导航）是如何找不到一条短路径的。使用贪婪导航者，我们可以得到一个类似于绕行指数的可航性指数——由贪婪导航者找到的平均距离除以实际平均最短距离。</p>
+<h2 id="未来的前景"><a href="#未来的前景" class="headerlink" title="未来的前景"></a>未来的前景</h2><p>到目前为止，城市系统的物理学没有被一个元问题所驱动。相反，它是建立在物理学家能够并且确实试图解释的观测数据的收集之上的。然而，从多学科的角度来看，城市科学<sup><a href="#fn_48" id="reffn_48">48</a></sup> 具有一定的发展方向。从工程的角度来看，人们希望城市能够可持续发展和节能；从社会科学的角度来看，由于我们星球上正在进行的城市化，人们可能希望通过空间-社会语义分析框架(the spatio-socio-semantic analysis framework)来预见这些问题，并利用越来越大的大都市的机遇<sup><a href="#fn_104" id="reffn_104">104</a></sup> 。<sup><a href="#fn_译1" id="reffn_译1">译1</a></sup></p>
+<blockquote id="fn_译1">
+<sup>译1</sup>. one would like to make cities sustainable and energy-efficient; whereas seen from social science—because of the ongoing urbanisation of our planet — one would like to foresee the problems and tap into the opportunities of ever-larger metropolises, perhaps via the spatio-socio-semantic analysis framework.<a href="#reffn_译1" title="Jump back to footnote [译1] in the text."> &#8617;</a>
+</blockquote>
+<h1 id="交通流-Traffic-flows"><a href="#交通流-Traffic-flows" class="headerlink" title="交通流(Traffic flows)"></a>交通流(Traffic flows)</h1><p>了解和预测交通流对社会工程，尤其是城市规划非常重要<sup><a href="#fn_105,106" id="reffn_105,106">105,106</a></sup>。因此，工程科学中对交通流的研究由来已久，可以追溯到二十世纪三十年代<sup><a href="#fn_107" id="reffn_107">107</a></sup>。然而，在工程科学之外，科学家们最近才发现车辆交通是一个有趣的复杂系统，也许可以用一些简单的规律来描述，因此值得用科学方法来研究。<sup><a href="#fn_108–110" id="reffn_108–110">108–110</a></sup>。</p>
+<p>对于物理学家来说，交通流模型在二十世纪九十年代成为了一个主题。近十年来，这一主题有所降温，但仍然是物理学和其他领域的一个活跃研究领域，例如在机器学习领域<sup><a href="#fn_111" id="reffn_111">111</a></sup>。可以说，物理学家的主要目的从来不是为城市规划者提供实用的建议。相反，吸引物理学家的是，车辆交通展示了几种自组织的集体现象，这些现象在统计物理学中也可以看到。交通流物理学研究的创立时代是在二十世纪九十年代，这并非巧合。当时有一种流行的观点认为，自然界和社会中的许多现象都与普遍存在的组织法则有关，比如自组织临界性<sup><a href="#fn_83" id="reffn_83">83</a></sup>，它由许多遵循幂律的量表现出来。即使这种观点最近已经过时<sup><a href="#fn_61" id="reffn_61">61</a></sup>，认为车辆交通是一个自组织、分散的典型复杂系统，并且具有连接短期和长期空间和时间尺度的突变性行为的特征，这样的观点仍然盛行。</p>
+<p>研究交通流的另一个原因是模型本身很有趣。它们是非平衡系统中突变现象的最简单的可能模型之一。此外，它们兼具了几个不同的建模框架（尽管最初它们都不来自于物理学）<sup><a href="#fn_112" id="reffn_112">112</a></sup>——从交通密度的连续模型<sup><a href="#fn_113" id="reffn_113">113</a></sup>，到离散粒子模型（在本文中称为“跟驰理论”(car-following theories)<sup><a href="#fn_114" id="reffn_114">114</a></sup>）再到元胞自动机<sup><a href="#fn_115" id="reffn_115">115</a></sup>。</p>
+<h2 id="观测到的现象"><a href="#观测到的现象" class="headerlink" title="观测到的现象"></a>观测到的现象</h2><p>如前所述，对交通流建模感兴趣的物理学家的主要焦点不是做出准确的预测，而是定性地解释突变现象。那么，模型可以研究哪些现象呢？在本节中，我们将介绍其中一些观测结果。除非另有说明，我们将只讨论连续路段上的现象。</p>
+<ul>
+<li>_占用流量关系(Occupancy-flow relations)_ 如果交通量很小，车辆密度越高，流量就越大。如果车辆以大约相同的速度行驶，那么两倍的车辆意味着两倍的流量。然而，随着交通变得更加拥挤，平均速度会降低。最终，流量也开始减少。半个多世纪以来，人们都了解这些量之间的关系并不平稳。自文献<sup><a href="#fn_116" id="reffn_116">116</a></sup>以来，它被认为是帐篷状（图 7）或倒$\lambda$形。这表明存在两个动力学相态——自由流动态和堵塞态<sup><a href="#fn_108" id="reffn_108">108</a></sup>，其间存在着最大流量值<sup><a href="#fn_109" id="reffn_109">109</a></sup>。<br>有时，堵塞状态可以被分为<em>同步流动(synchronised flow)</em>和<em>停停走走(stop-and-go)</em>（这个名字解释了这个概念），前者表示车辆以相对恒定的速度相互跟随，后者表示更高的车辆密度<sup><a href="#fn_117" id="reffn_117">117</a></sup>。一些作者进一步根据车辆的速度和间隔是否静止来划分同步流动[118]。</li>
+<li>_幽灵堵车(Phantom traffic jams)_ 对于几乎所有的交通密度，其速度分布都可以用高斯分布很好地描述（图 8）。熟悉临界现象<sup><a href="#fn_119" id="reffn_119">119</a></sup>的物理学家可能会为对中速区段（图 8 中为 40 km/h）存在的异常产生一股既视感。但是请注意，此时的速度分布不是无标度的（无标度或幂律分布通常是相变的标志<sup><a href="#fn_61" id="reffn_61">61</a></sup>）。尽管如此，存在一种被认为是自组织的、突变的现象，即反常的幽灵堵车现象——这种堵塞似乎不由外界因素而起。图 9 展示了一个经典图像，该图用 1967 年澳大利亚航空摄影<sup><a href="#fn_120" id="reffn_120">120</a></sup>的数据展示了幽灵堵车，并在几乎每一篇关于该主题的评论性论文或书籍<sup><a href="#fn_108,109,121" id="reffn_108,109,121">108,109,121</a></sup>以及原始研究论文<sup><a href="#fn_122" id="reffn_122">122</a></sup>中重现。除了幽灵堵车外，该图还展示堵塞点的移动方向与车流前进方向相反，这一发现已通过其他观测得到证实<sup><a href="#fn_123" id="reffn_123">123</a></sup>。</li>
+<li>_迟滞现象(Hysteresis)_ 交通迟滞现象是指，当交通量减少时和交通量变密集时平均速度不沿着相同的曲线变化。在前一种情况下，平均速度更小。文献<sup><a href="#fn_120" id="reffn_120">120</a></sup>首次对这一点进行了严肃的研究（尽管在早期著作中提到过）。</li>
+<li>_箍缩效应(Pinch effect)_。有证据表明，道路上的一些特殊地点会引发走走停停型拥堵塞波，这些地方形成小型堵塞后，会合并形成更大的堵塞(图 10)。这被称为箍缩效应，更大的堵塞被称为宽广移动堵塞(wide moving jams)(尽管从司机的角度来看，堵塞是长的而不是宽的)。</li>
+</ul>
+<h2 id="交通流模型"><a href="#交通流模型" class="headerlink" title="交通流模型"></a>交通流模型</h2><p>接下来，我们将介绍几种用于解释观测现象的交通流模型。其中一些模型有实在的物理起源，而另一些模型，尽管它们的起源在别处(例如，计算机科学和数学)，同样在物理学家中流行起来。</p>
+<h3 id="流体力学模型"><a href="#流体力学模型" class="headerlink" title="流体力学模型"></a>流体力学模型</h3><p>交通中宏观或流体力学模型只使用交通密度$\rho$、流量$Q$和平均速度$v$作为描述系统的变量。根据定义，它们是相关的</p>
+<script type="math/tex; mode=display">
+Q(x,t)=\rho(x,t)v(x,t)</script><p>其中$x$是路程上的位置，$t$是时间。假设车辆遵循连续性定理(道路上没有车辆凭空产生或消失)，我们得到“质量”守恒的方程</p>
+<script type="math/tex; mode=display">
+\dfrac{\partial{\rho}}{\partial{t}}+\dfrac{\partial{Q}}{\partial{x}}=0</script><p>所有流体力学的交通流理论都应该包含式 Eq(30)，但我们还需要一个方程使其成为完整的理论。最老的方法是假设$Q$只是关于$\rho$函数，函数关系是由数据推断出来的</p>
+<script type="math/tex; mode=display">
+Q(x,t)=Q[\rho(x,t)]</script><p>即</p>
+<script type="math/tex; mode=display">
+\dfrac{\partial{\rho}}{\partial{t}}+C(\rho)\dfrac{\partial{\rho}}{\partial{x}}=0</script><p>$C(\rho)$由数据确定。这个 Lighthill-Whitham 理论<sup><a href="#fn_113" id="reffn_113">113</a></sup>描述了与车流方向相反的运动波(据观测)。在 Lighthill-Whitham 方程的解中，出现了无限密度的冲击波。这被解释为堵塞的出现，在数学上这么处理需要接受检验，但在概念理解上没有问题。继 Lighthill 和 Whitham 之后，还有几个更复杂的理论。它们都用一个更复杂的方程来代替式 Eq(32)。</p>
+<h3 id="动力学模型"><a href="#动力学模型" class="headerlink" title="动力学模型"></a>动力学模型</h3><p>交通流动力学模型的灵感来自于气体动力学理论。他们使用车辆速度的分布作为描述系统状态的主要变量。最初的车辆交通动力学理论是由 Prigogine 和他的同事在 20 世纪 70 年代<sup><a href="#fn_125" id="reffn_125">125</a></sup>创立的。最初它与物理模型非常相似，但令人惊讶的是，它出现了许多与实际交通的不同之处(例如，所有的车辆都以相同的平均速度行驶)。后来 Paveri-Fontana 对模型进行了大量修改<sup><a href="#fn_126" id="reffn_126">126</a></sup>。与上面相似，文献<sup><a href="#fn_108,109" id="reffn_108,109">108,109</a></sup>总结了这些理论。</p>
+<h3 id="跟驰理论-Car-following-theories"><a href="#跟驰理论-Car-following-theories" class="headerlink" title="跟驰理论(Car-following theories)"></a>跟驰理论(Car-following theories)</h3><p>我们提到过交通流理论是由流体动力学和气体动力学理论启发的，理所应当的是，也有一些理论是由牛顿力学启发的。这样，跟驰理论是基于个体驾驶员以及他们对前一辆车行为的反应的方程式。Reuschel<sup><a href="#fn_114" id="reffn_114">114</a></sup>提出的最简单的汽车跟随方程是</p>
+<script type="math/tex; mode=display">
+\tau \ddot{x}_n(t)=\dot{x}_{n+1}(t)-\dot{x}_{n}(t)</script><p>这个方程是根据一个假设推导出来的，即司机想要开得和前一辆车一样快，但又不想离得比安全距离更近。后来，经过改进的汽车跟随理论假设，每辆车都有一个内在的期望速度，在避免碰撞的前提下，它会紧紧跟随前车。这些更复杂的理论可以解释反射-$λ$形状的流密度曲线和迟滞效应。</p>
+<h3 id="耦合映像格模型-Coupled-map-lattice-models"><a href="#耦合映像格模型-Coupled-map-lattice-models" class="headerlink" title="耦合映像格模型(Coupled-map lattice models)"></a>耦合映像格模型(Coupled-map lattice models)</h3><p>到目前为止，我们所看到的模型在时间和空间上都是连续的。所谓的耦合映射格模型与跟驰理论有许多相同的假设，但使用的是离散化的时间。一般来说，这样的模型具有这样的形式</p>
+<script type="math/tex; mode=display">
+v_n(t+1)=\text{Map}_n(v_n(t),v_{n,des},\Delta x_n)\\
+x_n(t+1)=v_n(t)+x_n(t)</script><p>其中$\text{Map}_n$是第$n$辆车的动态地图，其中包括车的速度$v_n$和位置$x_n$的，第$n$辆车的期望速度$v_{n,des}$以及与(n+ 1)辆车的车头距$\Delta x_n$。这个框架足够通用，可以适应不同性格的司机，不同类型的车辆等。交通流的几个经验特征(如流量-密度关系)都可以用耦合映射格模型重现。正在流行的这类模型包括 Yukawa 和 Kikuchi 的模型<sup><a href="#fn_127" id="reffn_127">127</a></sup>以及 Krauss、Wagner 和 Gawron 的模型<sup><a href="#fn_128" id="reffn_128">128</a></sup>。</p>
+<h3 id="元胞自动机模型-Cellular-automata-models"><a href="#元胞自动机模型-Cellular-automata-models" class="headerlink" title="元胞自动机模型(Cellular automata models)"></a>元胞自动机模型(Cellular automata models)</h3><p>从耦合映射格模型更进一步的抽象是将空间和时间离散化。这就导致了所谓的元胞自动机模型。这是物理学文献中研究得最充分的一类模型，让人感到惊讶的是，它是一种源自计算机科学和数学而非物理学的模型(而上面的动力学模型和跟驰理论具有更浓的物理气息)。对此的解释可能是，物理学家开始对复杂系统的备受关注的一部分——交通模型开始感兴趣作为，而其中人工智能的元胞自动机模型是最具代表性的理论之一。<br>研究最充分的交通流元胞自动机模型是 Nagel-Schreckenberg 模型<sup><a href="#fn_115" id="reffn_115">115</a></sup>。在该模型中，道路用一维离散格表示，这条路上有$N$辆车，道路的每个单元格最大限度被一辆车占据，所有车辆均按以下规则(按顺序)并行更新:</p>
+<ol>
+<li>_加速_ 如果$v_n&lt;v_{max}$，则车辆$n$的速度增加一个单位，否则速度不变:</li>
+</ol>
+<script type="math/tex; mode=display">
+v_{n}(t+1)=\min{(v_n(t)+1,v_{max})}</script><ol>
+<li>_减速_ 如果$x_{n+1}≤x_n+v_n$，即前面的车辆非常接近，使得车辆$n$将到达(或超过)下一个车辆的位置，则第$n$辆车辆会刹车:</li>
+</ol>
+<script type="math/tex; mode=display">
+v_n(t+1)=\min{(v_n(t),x_{n+1}-x_n-1)}</script><ol>
+<li>_随机_ 偶然情况下，即某些车的速度降低，概率为$p$:</li>
+</ol>
+<script type="math/tex; mode=display">
+v_n(t+1)=\max{(v_n(t)-1,0)}</script><ol>
+<li>_车辆运动_ 每辆车按照新的速度前进:</li>
+</ol>
+<script type="math/tex; mode=display">
+x_n(t+1)=x_n(t)+v_n(t)</script><p>Nagel-Schreckenberg 规则的图解见图 11。<br>Nagel-Schreckenberg 模型虽然简单，但可以重现真实交通的许多特征，如流密度曲线和幽灵堵车。以这个模型为起点，研究已经扩展到许多方向。一些研究努力包含更多的现实性<sup><a href="#fn_129,130" id="reffn_129,130">129,130</a></sup>，而另一些研究<sup><a href="#fn_131" id="reffn_131">131</a></sup>表明，只需稍加修改就可以将其变为自组织临界模型(Nagel-Schreckenberg 模型本身并不具有必然的亚稳定状态)。还有一些人，如下面所讨论的，研究了进一步简化的模型，尽管这些简化的模型无法全部重现上述的流量统计特征。</p>
+<h3 id="与非线性统计力学的联系"><a href="#与非线性统计力学的联系" class="headerlink" title="与非线性统计力学的联系"></a>与非线性统计力学的联系</h3><p>如果有人放弃了尝试重现公路交通的所有统计特征，那么他可以进一步简化模型，比如 Nagel-Schreckenberg 元胞自动机。这通常会将模型简化为非平衡统计力学的标准模型，如完全非对称简单互斥过程(TASEP)<sup><a href="#fn_132" id="reffn_132">132</a></sup>或 Burgers’方程<sup><a href="#fn_133" id="reffn_133">133</a></sup> (特别是其噪声版本<sup><a href="#fn_134" id="reffn_134">134</a></sup>)。这些更风格化的研究通常集中于寻找将系统的规模与其动力学联系起来的动态临界指数和区分自由流动相和拥挤相的临界点(一个典型的例子见文献<sup><a href="#fn_135" id="reffn_135">135</a></sup>)。</p>
+<h2 id="行人交通流"><a href="#行人交通流" class="headerlink" title="行人交通流"></a>行人交通流</h2><p>与车辆流相比，行人交通只能说和社会-物理系统相关，远算不上与之等效。它也可以被认为是半智能粒子的自组织粒状流，主要研究问题涉及开放景观中步道的形成<sup><a href="#fn_136" id="reffn_136">136</a></sup>、密集步行交通中车道的形成<sup><a href="#fn_137" id="reffn_137">137</a></sup>和逃避恐慌行为<sup><a href="#fn_138" id="reffn_138">138</a></sup>。</p>
+<p>大多数行人流模型都从物理学中获得灵感，将个体建模为受外力驱动的粒子<sup><a href="#fn_139" id="reffn_139">139</a></sup>。有几个特征不同于真实气体，例如不存在动量守恒。通常情况下，人们会假设相互排斥的两种力;一种是社会力，即不希望与另一个人靠得太近;另一种是物理力，即拥挤的环境使得人们不得不进行身体接触<sup><a href="#fn_109" id="reffn_109">109</a></sup>。为了准确地模拟逃离恐慌，必须将物理力分解成切向和径向分量。</p>
+<h2 id="未来的前景-1"><a href="#未来的前景-1" class="headerlink" title="未来的前景"></a>未来的前景</h2><p>从物理学的角度来看，在撰写本文时，交通流建模领域似乎已经冷却下来了。但在其他领域，这是依旧一个引人关注的话题。特别是，最近对自动驾驶汽车的研究热潮重新燃起了这些主题在机器学习应用的兴趣<sup><a href="#fn_111" id="reffn_111">111</a></sup>。目前，对自动驾驶汽车的兴趣派生了大量的数据。虽然大部分数据对这类研究可证明是无帮助的，但最终可能积累到足以发现车辆交通的新统计规律。即使不作为汽车行业的副产品接收数据，如今收集数据依旧变更容易、也更便宜。为此，已经有一些项目依赖于无人机<sup><a href="#fn_140" id="reffn_140">140</a></sup>或塔式摄像机<sup><a href="#fn_141" id="reffn_141">141</a></sup>。在图 12 中，我们绘制了这些数据集中的一些记录的个别轨迹<sup><a href="#fn_140" id="reffn_140">140</a></sup>。</p>
+<p>当我们通过新数据集的新观测，创造出新的定性统计法则来取代当前的定性观测时，问题再次变为了找到重现观测结果的最小模型。特别是，有了堵塞期开始时的高质量数据，我们可以测量幽灵堵车实际发生的频率，以及证实当前的这些机制模型是否可以解释观测到的情况，又或是我们是否需要从头开始分析这一切。</p>
+<h1 id="经济学"><a href="#经济学" class="headerlink" title="经济学"></a>经济学</h1><p>与建立在理性人模型基础上的传统经济学不同，经济物理学借用了统计物理学中的粒子模型来解释主体的行为。这种模型假设代理人(agent)的品味和偏好不是固定的，而是取决于与其他代理人的交互作用<sup><a href="#fn_142" id="reffn_142">142</a></sup>。换句话说，经济物理学更强调主体的社会环境<sup><a href="#fn_143" id="reffn_143">143</a></sup>。其他一些常用于经济学的物理模型和概念包括气体动力学理论、混沌理论、渗流理论和自组织临界理论。</p>
+<p>经济物理学的实证工作主要集中在分析企业增长和竞争、行业进入和退出率、资金流动、金融市场和国际贸易<sup><a href="#fn_144–150" id="reffn_144–150">144–150</a></sup>，也就是说，在有大量数据集的领域，统计物理的工具和方法的应用被证明是有用的。稀缺的数据可得性的经济学领域，例如数据集不足且有噪音的宏观经济学，并没有引起经济物理学家的太多关注。然而，随着主流经济学越来越融入互联网，经济物理学在宏观经济学的未来发展中仍可能发挥重要作用<sup><a href="#fn_143" id="reffn_143">143</a></sup>。</p>
+<h2 id="经济物理学的出现"><a href="#经济物理学的出现" class="headerlink" title="经济物理学的出现"></a>经济物理学的出现</h2><p>1991 年，Mantegna 在物理学杂志 Physica A<sup><a href="#fn_151" id="reffn_151">151</a></sup>上发表了一篇论文，分析了每日金融市场价格的时间序列，并显示价格变化遵循幂律分布。当时，幂律分布和标度关系是统计物理学家在二十世纪八十年代初的分形领域大繁荣<sup><a href="#fn_152–154" id="reffn_152–154">152–154</a></sup>和八十年代末的自组织临界<sup><a href="#fn_83,155" id="reffn_83,155">83,155</a></sup>之后关注的关键话题。物理学家感兴趣的研究对象被广泛扩展到自然界的一般复杂性，从而跨越了研究领域之间的传统界限。市场价格变化是这一扩展的一部分，并被视为表现出幂律行为的物理有趣现象之一。</p>
+<p>下一篇开创性的跨学科论文由 H.Takayasu 等人于 1992 年发表在同一期刊上<sup><a href="#fn_156" id="reffn_156">156</a></sup>。提出了一个简单的市场人工模型，由一维价格空间中的动态粒子形式的数学定义的交易商组成。该模型的非线性动力学导致混沌时间演化，导致几乎随机的价格波动（详情见下一小节）。</p>
+<p>1995 年，Mantegna 和 Stanley 分析了以一分钟为间隔记录的股票市场价格的时间序列，发现不同时间尺度下的价格变化分布在重新缩放后，符合具有对称幂律尾的函数<sup><a href="#fn_157" id="reffn_157">157</a></sup>。这种数据分析方法在涉及相变的临界现象研究中很常见。由于他们的论文发表在一份高影响的期刊上，金融市场的新物理学方法引起了广泛关注。同年，斯坦利创造了“经济物理学”一词，去代表从物理学角度研究经济现象的跨学科研究领域。他在印度加尔各答举行的统计物理会议上介绍了这一术语。</p>
+<p>1997 年，在匈牙利布达佩斯举行了第一次题为“经济物理学”的国际会议。尽管有来自高能实验等不同领域大牛的参与，大多数聚集在一起的研究人员都是统计物理方面的专家。同年，《物理评论快报》杂志也为经济物理学打开了大门，发表了一篇解释金融市场幂律分布生成机制的理论论文<sup><a href="#fn_158" id="reffn_158">158</a></sup>。在此之前，该杂志拒绝接收经济物理学手稿，理由是该主题超出了接收范围。因此，这一认可标志着经济物理学在包含生物物理学或地球物理学等的应用物理学领域中的地位全面上升。随后，研究经济物理学的人数增加了，研究主题也开始超出金融市场的范畴，变得越来越多样。</p>
+<p>1999 年，第一本关于经济物理学的专著出版<sup><a href="#fn_159" id="reffn_159">159</a></sup>，随后又出版了从物理学的角度编写关于金融市场的教科书<sup><a href="#fn_160,161" id="reffn_160,161">160,161</a></sup>。此后，每年都会举办多个关于经济物理学的研讨会和会议，许多经济学家和金融研究人员在会上讨论实际问题<sup><a href="#fn_162–164" id="reffn_162–164">162–164</a></sup>。</p>
+<p>本章其余部分的重点是基于上述金融市场简单物理模型的经济物理学研究的发展史<sup><a href="#fn_156" id="reffn_156">156</a></sup>。我们首先介绍了交易商模式的历史背景，并展示更先进的交易商模式是如何出现的。然后，我们介绍了一个根据经验衍生的时间序列模型，称为 PUCK 模型，并继续展示多个交易商模型之间的关系。我们还概述了最近对综合市场数据的分析，其中包括外汇市场上出现的所有以毫秒的间隔的微观订单。将金融布朗运动的机理与胶体布朗运动的物理现象进行了比较，并应用经典动力学理论求解了从直接数据中重构出的最先进的交易商模型。我们在结束这一章时讨论了一种新的新兴视角，即战略交易商生态系统。</p>
+<h2 id="基于代理的建模：交易商模型-Agent-based-modelling-The-dealer-model"><a href="#基于代理的建模：交易商模型-Agent-based-modelling-The-dealer-model" class="headerlink" title="基于代理的建模：交易商模型(Agent-based modelling: The dealer model)"></a>基于代理的建模：交易商模型(Agent-based modelling: The dealer model)</h2><p>Mandelbrot 引入分形概念的灵感，即自然界复杂形状的尺度不变性，源于对不同时间尺度的历史棉花价格图表的研究。市场价格因此成为分形的第一个例子。在一定程度上，通过与 Mandelbrot 的相互交流，H.Takayasu 和物理学家兼经济学家 Hamada 联手创造了一个金融市场模型，该模型将解释市场价格为何以尺度不变的方式波动<sup><a href="#fn_156,165,166" id="reffn_156,165,166">156,165,166</a></sup>。当时经济学的一个普遍观点是，如果所有的市场交易商都是理性的，并且拥有足够的信息，那么市场价格将是唯一确定和稳定的。然而，这种观点与现实世界的价格波动相差甚远，这促使 H.Takayasu 和 Hamada 借鉴物理学的思想构建了他们的模型。因此，该模型必须以一种尽可能简单而非繁琐的方式将基本的潜在机制和过程结合起来。</p>
+<p>让我们设想一个由买卖股票等金融工具的$N$个交易商组成的人工金融市场。假设每个交易商都试图低进高出来赚取差价。第$i$个交易商在时间$t$的交易行为通过引入两个阈值价格来描述，即买入价$b_i(t)$和卖出价$s_i(t)$。交易商希望以前一种价格或更低的价格购买，以后一种价格或更高的价格出售。差值$L_i(t)=s_i(t)-b_i(t)&gt;0$称为价差，代表交易商的贪婪，在最简单的情况下，它被设置为一个常数$L$。所有交易商的买卖价格都被收集起来，形成市场订单。如果条件$s_i(t)\le b_j(t)$成立，则一次交易会在一对交易商$i$和$j$之间发生，在这种情况下，交易商$i$向交易商$j$销售，或同等地说，交易商$j$从交易商$i$购买。有趣的一点是，如果所有交易商的购买价格都在最低购买价格的$L$范围内，就不会发生交易。只有当一对交易商之间的买卖差价等于或超过$L$时，才能（在这对交易商之间）达成交易。因此，交易代表了一种强大的、非线性的、有吸引力的相互作用，使一组交易商在价格空间中紧密合作。</p>
+<p>通过假设交易商一次最多只能持有一只股票进一步简化模型。如果一个交易商持有一只股票，他们就是只报卖出价的卖家。如果交易商没有股票，那么他们就是只报买入价的买家。卖方希望以高价出售，但如果没有买方的购买价格等于或高于此价格，则卖方应通过降低价格进行妥协，直到交易成为可能。这种情况用微分方程来描述</p>
+<script type="math/tex; mode=display">
+\dfrac{\mathrm{d}b_i(t)}{\mathrm{d}t}=\sigma_i(t)c_i</script><p>式中$\sigma_i(t)=1(\sigma_i(t)=-1)$表示交易商$i$的买方（卖方）状态，而$c_i&gt;0$表示交易商（最初随机）的仓促程度。当$s_i(t)=b_i(t)+L\le b_j(t)$时，卖方$i$和买方$j$之间发生交易，即刻，状态函数$\sigma_i(t)$和$\sigma_j(t)$符号改变。由此产生的市场价格$P(t)$，即最新交易的价值，在时间上具有确切地演变。该模型的初始设定是，所有交易商以相同的购买价格开始，一些交易商以买家的身份开始，另一些交易商以卖家的身份开始。</p>
+<p>当$N=2$个交易商、一个卖家和一个买家时，市场价格的时间演变程度微乎其微。两个交易商定期交替其状态，由此产生的市场价格定期波动。当$N\ge 3$个交易商，市场价格的时间演化变得高度非线性。事实上，有一种潜在的混沌效应会放大微小的初始差异。因此，我们从这个简单的模型中了解到，即使是完全确定的交易商行为也可能造成噪声动力学。然而，该模型不足以解释市场价格的分形特性。</p>
+<p>对所描述的模型进行最小的修改就可以产生一种称为趋势跟踪(trend following)的效果。跟踪趋势的交易商会预计价格走势将保持与过去相同的方向。这可以从数学上用长度$T$的移动平均数来表示</p>
+<script type="math/tex; mode=display">
+\left\langle \Delta P(t)\right\rangle=\int_0^T{w(u)\dfrac{\mathrm{d}}{\mathrm{d}t}P(t-u)\mathrm{d}u}</script><p>其中$w(u)$是一个满足$\int_0^T{w(u)\mathrm{d}}=1$的函数。Eq 之后增加一个附加项</p>
+<script type="math/tex; mode=display">
+\dfrac{\mathrm{d}b_i(t)}{\mathrm{d}t}=\sigma_i(t)c_i+d_i\left\langle \Delta P(t)\right\rangle</script><p>系数$d_i$量化了趋势跟踪的程度。对于趋势跟踪的交易商来说，它们通常是积极的，但对于被称为逆向思维的交易商来说，它们也可能是消极的。假设所有交易商都是相同系数$d&gt;0$的趋势跟随者，可以得到该模型最简单的可能变量。尽管这种假设过于简单，但仍有巨大的作用，它生成了一种确定价格动力学，类似于随机游走的尺度不变波动<sup><a href="#fn_156" id="reffn_156">156</a></sup> 。因此，该模型确定了两种可能对现实市场价格时间序列的一些关键特征依赖的机制。也就是说，由于交易商之间的非线性、混沌吸引的相互作用，市场价格几乎是随机波动的，而跟随趋势的交易商的价格趋势产生了标度不变性。</p>
+<p>由 Eq 定义的带有趋势跟踪的交易商模型在一定程度上可以被分析研究。交易商“重心”的动力学遵循朗格文方程<sup><a href="#fn_165" id="reffn_165">165</a></sup> ，这是一个在胶体布朗运动学中的著名方程。市场价格变化的分布服从幂律，其指数取决于参数$d$的值<sup><a href="#fn_167" id="reffn_167">167</a></sup> ，与已知的经验事实<sup><a href="#fn_151,159" id="reffn_151,159">151,159</a></sup> 和以前的理论分析<sup><a href="#fn_158" id="reffn_158">158</a></sup> 相一致。交易商模型也可以作为推导 Engle 的自回归条件异方差（ARCH）模型的基础<sup><a href="#fn_168" id="reffn_168">168</a></sup> ，从而为金融市场中观察到的波动性聚类的起源提供了机理上的解释<sup><a href="#fn_169" id="reffn_169">169</a></sup> 。最后，通过调整参数值，该模型重现了异常扩散的现象，以及交易时间间隔的统计特性<sup><a href="#fn_166" id="reffn_166">166</a></sup>。</p>
+<p>2009 年，交易商模型引入了一个随机变量<sup><a href="#fn_170" id="reffn_170">170</a></sup>。在该模型中，函数$\sigma_i(t)$是随机的，例如，在时间$t$的每个时刻，$\sigma_i(t)=1$或$\sigma_i(t)=-1$都有$0.5$的概率。这种修改改善了交易商模型，即使在$N=2$的情况下，也很容易用分析和数学方法解决。例如，随机交易商模型可以产生类似泡沫的行为，即如果趋势跟踪系数$d$超过一定值，就会导致市场价格呈指数增长。</p>
+<p>对随机交易商模型的进一步概括使我们能够捕捉到日本银行对美元和日元之间的外汇市场进行干预的特征<sup><a href="#fn_171" id="reffn_171">171</a></sup>。除了负责一般市场价格波动的普通交易商外，该模型还包括一个扮演日本银行角色的特殊交易商。根据对市场数据的经验分析，特殊交易商可以引起巨大的市场价格变化，并伴随着规避风险的反应，如买卖价差扩大、减少损失和预订利润。模型中的普通交易商，经过一些调整，可以模仿规避风险的反应，从而在模拟中产生上述经验现象。现实性的提高使得将金融时间序列数据吸收到模型中成为可能。这为干预策略的规划，以及预测后续的市场反应打开了大门。</p>
+<p>最近对随机交易商模型的扩展有助于澄清美元、日元和欧元之间的跨货币相关性<sup><a href="#fn_172" id="reffn_172">172</a></sup> 。模型中引入了一种新型的交易商，他们追求所谓的三角套利。这种交易商通过快速的循环交易赚取利润，例如，从美元到日元到欧元，再回到美元。有趣的是，货币市场的三角套利在 2002 年的一项经济物理学研究中首次被刊登<sup><a href="#fn_173" id="reffn_173">173</a></sup> 。新的证据表明，在目前自动交易系统占主导地位的金融市场中，这种套利仍然存在<sup><a href="#fn_174" id="reffn_174">174</a></sup> 。随机交易商模型阐明了事实上是少数三角套利的交易商以符合经验观察的方式提高了跨货币的相关性。</p>
+<h2 id="时间序列模型：PUCK-模型"><a href="#时间序列模型：PUCK-模型" class="headerlink" title="时间序列模型：PUCK 模型"></a>时间序列模型：PUCK 模型</h2><p>在交易商模型中引入的趋势跟踪是基于这样的想法：交易商参照最新的市场数据，利用移动平均线做出决定。将类似的想法应用于交易间隔的时间序列，以其时间上的聚类行为而闻名<sup><a href="#fn_175" id="reffn_175">175</a></sup> ，发现市场上交易的发生被一个具有随时间变化的平均值的泊松过程很好地模拟了。这个值是由一个时间段$T$的最新交易间隔的移动平均值给出的，其中$T=150s$的最佳估计是由当时的美元-日元汇率市场数据得到的。这一发现阐明了交易间隔的时间聚类的机制。当随机波动导致少数短间隔重复出现时，移动平均值就会变小，使短间隔更有可能出现在泊松过程中。随之而来的是一个密集的短交易间隔期。当随机波动导致一些长间隔重复出现时，情况正好相反。所描述的随时间变化的泊松过程是一个自调制过程，其波动具有介于静止和非静止过程之间的$1/f$功率谱<sup><a href="#fn_176" id="reffn_176">176</a></sup> 。</p>
+<p>使用移动平均线的想法也被扩展到市场价格的时间序列分析中<sup><a href="#fn_177,178" id="reffn_177,178">177,178</a></sup>。对于一个给定的具有固定采样间隔的实际市场价格的时间序列$\{p(t)\}$，定义了以下时间演化模型</p>
+<script type="math/tex; mode=display">
+p(t+1)-p(t)=-\dfrac{b(t)}{M-1}\left[p(t)-p_M(t)\right]+g(t)</script><p>其中$M$是移动平均线的长度，$p_M(t)=\dfrac{1}{M}\sum_{k=0}^{M-1}{p(t-k)}$，$g(t)$是均值为零的独立噪声。系数$b(t)$表示从时间序列数据中估计的缓慢变化的参数。$b(t)=0$的情况对应于普通随机游走。在$b(t)&gt;0$的情况下，未来的市场价格$p(t+1)$很可能被最新的移动平均价格$p_M(t)$所吸引，意味着稳定的市场价格运动。在$b(t)&lt;0$的情况下，未来的市场价格可能会被移动平均价格所排斥，意味着不稳定的市场价格运动。</p>
+<p>所述模型可以用一个随时间变化的市场潜力函数$\varPhi_M(t)$来概括，具体如下</p>
+<script type="math/tex; mode=display">
+p(t+1)-p(t)=-\left.\dfrac{\partial{}}{\partial{p}}{\varPhi_M(t)}\right|_{p=\frac{p(t)-p_M(t)}{M-1}}+g(t)</script><p>这就是不平衡复合动力学的潜力（PUCK）模型。公式是 PUCK 模型的一个特例，它的二次潜力$\varPhi_M(t)=\frac{1}{2}b(t)p^2$。具有二次潜力函数的 PUCK 模型已被证明适用于各种金融市场，成功地再现了大多数经验性的典型事实，如价格变化的幂律分布，短时间范围内的异常扩散，以及波动性的聚类<sup><a href="#fn_179" id="reffn_179">179</a></sup>。</p>
+<p>市场潜力函数对任何市场价格时间序列都是可以估计的，包括那些由第 4.2 节中描述的交易商模型人为产生的时间序列。对于逆向思维交易商$(d<0)$可以得到一个稳定的二次势，对于趋势跟踪交易商$(d>0)$可以得到一个不稳定的二次势，当趋势跟踪不对称时，会出现一个不对称的高阶势（图 13）。此外，市场潜力系数$b(t)$的值可以从理论上推导出交易商模型，从而证明 Eq 中市场势能函数的起源来自交易商的趋势跟踪行为。</p>
+<p>PUCK 模型的一个优点是其广泛的适用性；该模型描述了各种情况下的市场价格时间序列。这包括正常市场条件下的近似随机游走，泡沫或崩溃情况下的指数背离，甚至是双指数背离或超通胀情况下的有限时间奇异点<sup><a href="#fn_180,181" id="reffn_180,181">180,181</a></sup> 。正常随机游走和异常随机游走之间的临界点是二次潜力系数的值$b(t)=-2$；也就是说，当$b(t)&lt;-2$时，公式 Eq 变得线性不稳定。Eq 变得线性不稳定，导致价格波动以指数形式增长或下降，正如在泡沫或崩溃中所观察到的那样。如果检测到一个立方势函数，它通常对应于不对称的价格运动<sup><a href="#fn_182" id="reffn_182">182</a></sup> 。</p>
+<p>在短时标的限制下，Eq 可简化为布朗运动的 Langevin 方程，其中包含质量项和粘度项<sup><a href="#fn_180" id="reffn_180">180</a></sup> 。有趣的是，质量项与$-b(t)$成正比，表明趋势跟踪与惯性有关。另外，当$b(t)&lt;-2$时，粘度项变成了负值，这表明泡沫、崩溃和通货膨胀应被视为负粘度现象，也就是说，这是施加了加速而不是减速的力。</p>
+<h2 id="订单建模：金融布朗运动"><a href="#订单建模：金融布朗运动" class="headerlink" title="订单建模：金融布朗运动"></a>订单建模：金融布朗运动</h2><p>物理学家为金融市场带来的另一种方法是对订单进行数据分析和建模。这种订单列出了市场上收集的买单（出价）和卖单（要价）。文献<sup><a href="#fn_183" id="reffn_183">183</a></sup> 介绍了一个理论模型，其中出价和要价被随机地注入到价格轴上。当一个新的买入价等于或高于最低的卖出价，或反之，当一个新的卖出价等于或低于最高的买入价，就会发生交易。交易标志着相应的一对订单湮灭形成最新的市场价格。否则，注入的订单在订单的价格轴上累积。该机制被指出类似于一个一维的,反应沿随机游走的催化化学反应。文献<sup><a href="#fn_184" id="reffn_184">184</a></sup>描述了股票市场订单的细节，记录了关于出价和要价以及取消订单的经验统计规律。提出了一个简单的数学模型，称为 “零智慧”(Zero Intelligence)，以总结经验发现，该模型的名字源于不需要智慧的交易商策略的事实。</p>
+<p>文献<sup><a href="#fn_185" id="reffn_185">185</a></sup>介绍了一种新的订单数据分析，重点在于将胶体随机游走和金融市场价格运动之间进行类比。在这个分析中，累积的买入和卖出订单被视为水分子，而一个假想的胶体粒子被假定存在于买入和卖出之间的空隙中，正好位于最高买入和最低卖出之间（图 14）。这种胶体粒子图在以下意义上是直观的。随着粒子的移动，比如说，向右移动（即向更高的价格移动），在它后面打开的空间很快被来自更后面的水分子（即出价）填满，因为那里的分子数量减少了（图 14B，C）。相比之下，在胶体粒子的前面，水分子被推到前面，在粒子旁边的水分子数量减少，但在更远的地方数量增加（图 14B, C）。这种直观的图景与交易商模式和趋势跟踪完全一致，通过这种模式，成对的买入和卖出订单与市场价格一起移动。</p>
+<p>一个更传统的绘景将所有的买入订单（和单独的所有卖出订单）放在一个平等的地位上，但这是不正确的。正如胶体粒子图所示，买单和卖单应该被分为行为相反的内层和外层。如果内层的出价（或要价）增加，外层就会减少，反之亦然。内层订单进一步发挥了市场价格变动的驱动力，正如价格变动速度和内层订单变化率之间的高度正相关所显示的那样（图 15）。有趣的是，外层订单在价格变动速度和订单变化率之间表现出负的交叉关系，因此可以被认为是市场价格变动的阻力（图 15）。所有这些都意味着胶体粒子的波动-耗散关系，这是用 Langevin 方程来模拟的。然后可以从市场价格数据中估计出归一化胶体粒子质量的阻力系数值<sup><a href="#fn_185" id="reffn_185">185</a></sup>。</p>
+<p>在使用连续价格模型（如 Langevin 方程）对金融市场进行建模时，一个经常被忽视的方面是连续价格假设是否可以被证明。为此，文献<sup><a href="#fn_186" id="reffn_186">186</a></sup>使用市场订单和分子流体之间的类比来估计金融 Knudsen 数。因为 Knudsen 数通常被定义为平均自由路径与系统代表性长度尺度的比率，在金融市场的情况下，前者由一个方向的价格运动的平均距离给出，而后者是胶体粒子的直径，以买入和卖出双方的内层宽度计算（图 14）。如果 Knudsen 数小于 0.01，连续价格假设是有效的，而如果 Knudsen 数大于 0.1，则需要进行离散时间描述（中间有过渡性制度）。美元兑日元和美元兑欧元市场的 Knudsen 数的估计值在大多数时候都在 0.05 左右波动，在市场动荡的时候变得大于 0.1。这一结果表明，连续价格假设对于金融市场的建模是有问题的，特别是在市场价格发生大幅波动时。</p>
+<h2 id="金融市场微观结构的动力学方法"><a href="#金融市场微观结构的动力学方法" class="headerlink" title="金融市场微观结构的动力学方法"></a>金融市场微观结构的动力学方法</h2><p>我们回顾了交易商模型，它是一个描述个体代理人层面决策过程的微观金融模型。这个模型的优点是：(i)它可以捕捉到单个交易商的战略决策过程（如趋势跟踪），(ii)它可以简化为 PUCK 模型，作为 N=2 的宏观动力学，因此可以复制价格时间序列中的经验事实。然而，交易商微观模型有一个缺点，即它无法从数据中直接验证，因为它需要真正的微观数据来跟踪所有交易者的决策动力学。事实上，在模型中，趋势跟踪机制在理论上被假定为个体交易者的策略，这无法直接得到证实。此外，该模型需要买卖价差分布的标度。这种情况与其他介观模型形成对比，例如纯粹随机订单模型<sup><a href="#fn_183,184,187,188" id="reffn_183,184,187,188">183,184,187,188</a></sup>（参见文献<sup><a href="#fn_189,190" id="reffn_189,190">189,190</a></sup>），尽管它们无法捕捉单个交易者的战略决策过程，但只需要更少的标度参数。</p>
+<p>最近，数据可用性方面的情况发生了巨大变化；由于大数据革命，真正的微观数据变得可用，这使得能够确认交易商模型的各种理论假设，例如趋势跟踪机制和买卖价差分布。在下文中，我们回顾了文献<sup><a href="#fn_191–193" id="reffn_191–193">191–193</a></sup>中进行的一些微观实证分析的结果，总结出了真实高频交易者采用的交易策略。特别是，我们关注由做市商实施的趋势跟踪策略，这些策略通过微观数据直接验证交易商模型。</p>
+<p><em>微观数据：个体交易者的交易记录</em> 这里我们在文献<sup><a href="#fn_191–193" id="reffn_191–193">191–193</a></sup>中介绍了分析中使用的微观数据。. 交易日志数据来自电子经纪服务市场，该市场是 CME 集团管理的全球最大外汇市场之一。这些数据包括交易员的决策过程，如订单提交、取消和执行，以及匿名交易员标识符和匿名银行代码。这里我们特别关注 2016 年 6 月 5 日 GMT18:00 至 6 月 10 日 GMT22:00 期间美元（USD）和日元（JPY）之间的汇兑市场，最小交易量单位为 100 万美元，最小价格精度（称为刻度大小）为 0.005 日元，最小时间精度为 1 毫秒。为简洁起见，将 0.001 日元用作称为十点或简称 t 点的价格单位。<br>我们的注意力集中在高频交易员（HFT）上，通常是根据某种策略算法频繁提交和取消订单的机器。HFT 是根据提交的限额订单总数定义的。具体而言，每周提交 2500 份以上订单的交易员符合 HFT 资格。该定义与之前对电子经纪服务市场的研究<sup><a href="#fn_194" id="reffn_194">194</a></sup>中的定义类似。有许多可能的替代定义可以考虑，但我们的定义清晰且易于实现。考虑到这一定义，我们在考虑的一周内确定了 134 例 HFT。交易员总数为 1015 人。</p>
+<p><em>HFT 作为流动性提供者</em> 通过绘制 HFT 的三个样本轨迹（按照它们的极限顺序）（图 16），我们观察到 HFT 通常保持双边（低买高卖）报价。一般来说，双边报价试图从买卖价差中获利，但也受到可能超过交易费用的流动性回扣的影响，从而允许高频交易以零边际成本进行交易<sup><a href="#fn_195" id="reffn_195">195</a></sup>。 在我们的案例中，高频交易行为实际上被理解为应平台经营者的要求的流动性供应<sup><a href="#fn_196" id="reffn_196">196</a></sup>，高频交易有动机去扮演流动性提供者的角色。<br>这里，我们分别用$\hat{b}_i$和$\hat{a}_i$表示第$i$个 HFT 的最佳出价和要价，其中指数$i$根据一周内提交的数量进行分配。任何带帽的变量（如$\hat{A}$）都意味着一个随机变量，以区别于实数（如 A）。最佳出价与要价之差$\hat{L}_i=\hat{b}_i-\hat{a}_i$被称为第$i$个 HFT 的买入-卖出价差。买卖价差$\hat{L}_i$可以在我们的数据集中以单个 HFT 的水平直接测量（参见图 16 中的插图）。此外，我们可以将第$i$个 HFT 的中间价格定义为$\hat{z}_i=\dfrac{1}{2}(\hat{b}_i+\hat{a}_i)$。中间价$\hat{z}_i$可以被解释为第$i$个 HFT 当时认为的合适价格，而$\hat{L}_i$可以被解释为往返交易的利润估计，或者是针对逆向选择的风险估计（即 HFT 遗漏某些信息的可能性）。</p>
+<p><em>趋势跟踪行为</em> 如第 4.2 节所述，交易商模型最初是在考虑交易商的趋势跟踪行为的假设下构建的。我们通过直接观察验证了这一理论假设，也就是说，通过确定微观数据中的统计相关性，可以解释为单个 HFT 水平上的趋势跟踪。这方面的分析框架可以描述如下。<br>首先，让我们将瞬时时间$T$作为事件执行时增加 1 的单位时间（参见图 17A）。我们注意到，瞬时时间可以通过$t=\hat{t}[T]$映射到物理时间，方括号强调随机变量的参数基于瞬时时间。在瞬时时间$T$，第$i$个 HFT 的中间价格用$\hat{z}_i[T]$表示，市场交易价格用$p[T]$表示。<br>然后，让我们研究一下第$i$个 HFT 中间价的未来一瞬变化，即$\Delta\hat{z}_i[T]=\hat{z}_i[T+1]-\hat{z}_i[T]$，和市场价格的过去一瞬变化，即$\Delta\hat{p}[T-1]=\hat{p}[T]-\hat{p}[T-1]$（参见图 17A）之间的相关性。平均$\Delta \hat{z}_i[T]$依赖于$\Delta\hat{p}[T-1]$，用$\left\langle \nabla\hat{z}_i\right\rangle_{\Delta p}$表示，对于两个样本 HFT（图 17B，左）而言，其相关性在$\Delta p\rightarrow 0$为线性，但在$\Delta p\rightarrow \infty $饱和。这表明，在平均意义上呈一个双曲正切比例关系。</p>
+<script type="math/tex; mode=display">
+\left\langle \Delta \hat{z}_i[T]\right\rangle_{\Delta p}\approx c_i\tanh{\dfrac{\Delta p}{\Delta p_i^*}}</script><p>参数 $c_i$ 和 $\Delta p_i^*$ 是第 $i$ 个 HFT 独有的。</p>
+<p>这里，括号$\hat{\left\langle A\right\rangle}_{\Delta p}=\hat{\left\langle A\right\rangle}_{\Delta \hat{p}[T-1]=\Delta p}$，表示$\hat{A}$的集合平均值，前提是之前的价格变化固定$\Delta \hat{p}[T-1]=\Delta p$，以及在 HFT 处于活动状态时，$\Delta \hat{z}_i[T]\not ={0}$。实际上，通过将水平轴重新缩放到$\Delta p/\Delta p_i^*$和垂直轴$\left\langle \Delta\hat{z}_i/c_i\right\rangle_{\Delta p}$、 我们观察到前 20 名 HFT 中有一条清晰的主曲线（图 17B，右面板），表明公式（25）在所研究市场中对前 20 名 HFT 的普遍有效性。</p>
+<p>也有证据表明，另一种标度关系适用于 HFT 一个刻度的未来中间价方差，前提是历史市场价格变化为$\Delta p$（图 17C）。特别有</p>
+<script type="math/tex; mode=display">
+V_{\Delta p}[\Delta \hat{z}_i[T]]=\left\langle (\Delta\hat{z}_i[T]-\left\langle \hat{z}_i[T]        \right\rangle_{\Delta p})^2\right\rangle_{\Delta p}\approx \sigma_i^2</script><p>其中，$\sigma_i^2$是第 i 个 HFT 所特有的常数。这种关系表明，与平均值不同，方差与历史市场价格变化$\Delta p$无关；HFT 遵循这一趋势，但他们在这样做时调整中间价的幅度完全取决于他们的固有属性。</p>
+<p>这里描述的标度关系是统计规律，揭示了战略交易行为，超出了前面提到的零智能模型。这种行为适用于作为做市商的 HFT，但它与低频交易者（LFT）的行为有何不同？</p>
+<p><em>基于微观证据的建模</em> 再次关注 HFT，我们在此构建了一个数学模型，该模型反映了迄今为止描述的微观经验证据。让$N\gg 1$表示 HFT 的数量。该模型的假设如下：</p>
+<ol>
+<li>_订单和数量_ 每个 HFT 单位时间提交单位订单，数量为一个单位 (图 18A, B).</li>
+<li>_流动性供应_ 每个 HFT 都保留买卖订单，以扮演流动性提供者的角色 (图 16).</li>
+<li>_频繁更新价格_ HFT 经常通过连续提交订单和取消订单来更新其价格。这意味着价格轨迹在交易时几乎是连续的。价格轨迹的连续马尔可夫随机过程被建模为 Itô 过程（即高斯随机过程）<sup><a href="#fn_197" id="reffn_197">197</a></sup></li>
+<li>_趋势跟踪_ 根据（25）和（26）（另见图 17）等式中的经验法则，HFT 表现出趋势跟踪行为。为简单起见，我们假设这些方程中模型参数的一致性，即$c_i=c,\ \Delta_i^<em>=\Delta p^</em>,\ \sigma_i^2=\sigma^2$。</li>
+<li>_传播_ 第 i 个 HFT 的买卖价差由$\hat{L}_i=\hat{a}_i-\hat{b}_i$定义。由于买卖价差的概率密度函数有一个单峰（图 16A-C 中的插图），因此假定价差是 HFT 独有的且为常数，$\hat{L}_i=L_i$。该假设意味着中间价格$\hat{z}_i=\dfrac{1}{2}(\hat{b}_i+\hat{a})$足以描述第 i 个 HFT。买卖价差$\rho(L)$的经验概率密度函数可通过可用数据集使用关系$\rho(L)=\dfrac{1}{N}\sum_{i=1}^N{\delta (L-L_i)}$进行测量，从而描述了订单分发。</li>
+</ol>
+<p>基于所列假设，我们将无交易的微观 HFT 动态建模为趋势跟随随机游动（图 19A）</p>
+<script type="math/tex; mode=display">
+\dfrac{\mathrm{d}\hat{z}_i}{\mathrm{d}t}=c\tanh{\dfrac{\Delta \hat{p}}{\Delta p_i^*}}+\sigma\hat{\eta}_i^R</script><p>其中，噪声$\hat{\eta}_i^R$独立于$\hat{\eta}_j^R,j\not = i$。这是满足我们迄今为止描述的经验关系的最小 Itô 过程<sup><a href="#fn_197" id="reffn_197">197</a></sup><br>在价格匹配的瞬间（图 19B）</p>
+<script type="math/tex; mode=display">
+\hat{a}_j=\hat{b}_i,i\not ={j}</script><p>HFTi 和 j 重新提交的价格远离交易价格（图 19C）</p>
+<script type="math/tex; mode=display">
+\hat{a}_j^\text{pst}=\hat{a}_j+\dfrac{L_j}{2},\ \hat{b}^\text{pst}_i=\hat{b}_i-\dfrac{L_i}{2}</script><p>其中，$\hat{a}_j^{\text{pst}}$和$\hat{b}^\text{pst}_i$是交易后的更新价格。这些交易条件可以重写为</p>
+<script type="math/tex; mode=display">
+|\hat{z}_i-\hat{z}_j|=\dfrac{L_i+L_j}{2}\Rightarrow \hat{z}^\text{pst}_i=\hat{z}_i-\dfrac{L_i}{2}\text{sgn}(\hat{z}_i-\hat{z}_j)</script><p>其中，符号函数$\text{sgn}(x)=\begin{cases}<br>    1,&amp;x&gt;1\\<br>    0,&amp;x=0\\<br>    -1,&amp;x&lt;0<br>\end{cases}$。市场价格$\hat{p}$和趋势信号$\Delta \hat{p}$在交易瞬间更新为交易后的值。</p>
+<script type="math/tex; mode=display">
+\hat{p}^\text{pst}=\hat{z}_i-\dfrac{L_i}{2}\text{sgn}(\hat{z}_i-\hat{z}_j),\ \Delta \hat{p}^\text{pst}=\hat{p}^\text{pst}-\hat{p}</script><p>我们注意到，式（27d）中的交易条件和式（27e）中的重新提交规则分别与数学中的接触条件和传统动力学理论中的和动量交换规则相似。稍后将再次讨论这一类比，以制定金融市场的统计物理描述。我们还注意到，一对一事务是 HFT 之间的基本交互模式（图 18D），这与二元碰撞(binary collisions)是一致的。</p>
+<p>在统计物理学中，时空尺度的适当分割通常创造出成功的微观-宏观理论；Haken 的 synergistics 中的奴役原则就是一个例子<sup><a href="#fn_198" id="reffn_198">198</a></sup>。这里我们引入质心作为一个关键的宏观变量</p>
+<script type="math/tex; mode=display">
+\hat{z}_{CM}=\dfrac{1}{N}\sum_{i=1}^N{\hat{z}_i}</script><p>其在“热力学极限$N\rightarrow \infty$”中扮演慢变量的角色。事实上，质心的扩散速度很慢（即在没有趋势跟踪 <sup><a href="#fn_192" id="reffn_192">192</a></sup> 的情况下与$N^{-1}$成正比，证实了选择此特定变量的合理性）<br>一组完备的系统变量如下所示：$\hat{\varGamma}=(\hat{z}_1,\cdots,\hat{z}_N;\hat{z}_{CM},\hat{p},\Delta\hat{p})$，$\hat{Z}=(\hat{z}_{CM},\hat{p},\Delta\hat{p})$作为宏观变量的子集。$\hat{\varGamma}$<br>可以作为$\mathcal{S}$空间的相变，如$\hat{\varGamma}\in\mathcal{S}=\prod_{i=1}^{N+3}{(-\infty,\infty)}$。因此，我们定义了一个马尔可夫随机过程，其动力学特征是式（27）。</p>
+<p>与所述微观模型（图 19A–C）相关的订单动态将趋势跟踪行为与文献<sup><a href="#fn_185" id="reffn_185">185</a></sup>中的分层订单结构相关联。具体而言，趋势跟踪导致订单的集体运动（图 19D），这反过来又解释了订单集的分层结构（图 19E）。</p>
+<h2 id="用动力学理论求解微观模型"><a href="#用动力学理论求解微观模型" class="headerlink" title="用动力学理论求解微观模型"></a>用动力学理论求解微观模型</h2><p>在提出了一个基于经验微观证据的 HFT 决策过程模型之后，我们着手解决这个微观模型，以了解其宏观行为。在数学上，我们处理的是一个高维随机动力系统，其结构类似于哈密顿动力学。因此，我们一般依靠统计物理学的方法，特别是动力学理论来解决这个问题。</p>
+<p><em>金融 Liouville 方程</em> 在这里，我们首先简要回顾了传统的动力学理论，其目标是将原来由 N 个粒子组成的高维动力系统简化为少数维动力系统。微观动力学(图 20A)通常以 6N 维牛顿运动方程为特征，该方程在数学上等同于分析力学中的 Liouville 方程<sup><a href="#fn_199,200" id="reffn_199,200">199,200</a></sup> 。Liouville 方程通过 Bogoliubov–Born–Green–Kirkwood–Yvon(BBGKY)层次结构简化为 Boltzmann 方程<sup><a href="#fn_201" id="reffn_201">201</a></sup> ，通过应用称为分子混沌的平均场近似，从而提供了系统的介观描述(图 20B)。从原始 6N 维动力学近似为 6 维动力学的意义上讲，这种简化非常有效。动力学的进一步简化产生示踪粒子的布朗运动<sup><a href="#fn_202,203" id="reffn_202,203">202,203</a></sup> ，作为系统的宏观描述(图 20C)。</p>
+<p>我们在考虑金融市场和高频交易行为的情况下，回顾了传统动力学理论的步骤。在 Eq(27)中，我们推导了金融 Liouville 方程(相当于 Chapman-Kolmogorov 方程<sup><a href="#fn_197" id="reffn_197">197</a></sup> 或主方程<sup><a href="#fn_202" id="reffn_202">202</a></sup> )，作为 N 体概率密度函数 $P_t(\varGamma)$的时间演化方程</p>
+<script type="math/tex; mode=display">
+\partial_t{P_t(\varGamma)}=\mathcal{L}P_t(\varGamma)</script><p>用一个合适的线性算子$\mathcal{L}$称为 Liouville 算子。我们注意到，该方程是作为恒等式导出的，没有任何近似，并且等价于由 Eq(27)描述的原始随机模型。这是我们统计物理理论的一个确切起点。</p>
+<p><em>金融 BBGKY 层次结构</em> 虽然金融 Liouville 方程（28）是精确的，但它无法解析求解，因为它描述了复杂系统的真实多体动力学。在这里，我们按照 BBGKY 层次结构背后的思想简化了这个动力学方程，BBGKY 层次结构在历史上是为了从微观粒子动力学系统推导 Boltzmann 方程而发明的。推导的基础是通过整合除少数主导变量外的所有变量来降低原始高维动力学的维数。</p>
+<p>由于 BBGKY 层次结构之后的推导是冗长而专业的[192] ，我们仅给出最终结果。让我们首先定义相对于重心的价格，$\hat{r}_i=\hat{z}_i-\hat{z}_{CM}$，以及相应的单体和双体分布$\phi_L(r)$和$\phi_{LL}(r,r’)$。这里，$\phi_L(r)$是具有利差$L$的 HFT 的相对中间价格$r$的概率密度函数，而$\phi_{LL}(r,r’)$是具有利差$L$和$L’$的 HFT 对的联合概率密度函数。</p>
+<p>通过将式（28）中除某个变量外的所有变量积分，我们得到了最低阶 BBGKY 层次方程</p>
+<script type="math/tex; mode=display">
+\partial_t{\phi_{L}(r)}\approx \dfrac{\sigma^2}{2}\partial^2_{r^2}{\phi_{L}(r)}+N\sum_{s=\pm 1}{\int_0^\infty{\mathrm{d}L'\rho[L'](J^s_{LL'}(r+sL/2)-J_{LL'}^s(r))}}</script><script type="math/tex; mode=display">
+J_{LL'}^s(r)=\dfrac{\sigma^2}{2}|\bar{\partial}_{rr'}|\left.\phi_{LL'}(r,r')\right|_{r-r'=s(L+L')/2}</script><p>其中$|\bar{\partial}_{rr’}|f=|\partial_r{f}|+|\partial_{r’}{f}|$。等式（29a）右侧的第二项表示交易的影响（$s=+1$表示出价，$s=−1$个要价）对应于物理动力学理论中的碰撞积分。三体“碰撞”积分独立存在，因为它与 N 无关。</p>
+<p><em>金融 Boltzmann 方程</em> BBGKY 层次结构方程（29）是一种需要截断(closure)的形式体系，也就是说，需要进一步近似才能找到解。我们应用“分子混沌”假设，一种动力学理论中的标准平均场近似理论</p>
+<script type="math/tex; mode=display">
+\phi_{LL'}(r,r')\approx \phi_L(r)\phi_{L'}(r')</script><p>获得金融 Boltzmann 方程</p>
+<script type="math/tex; mode=display">
+\partial_t{\phi_{L}(r)}\approx \dfrac{\sigma^2}{2}\partial^2_{r^2}{\phi_{L}(r)}+N\sum_{s=\pm 1}{\int_0^\infty{\mathrm{d}L'\rho[L'](J^s_{LL'}(r+sL/2)-J_{LL'}^s(r))}}</script><script type="math/tex; mode=display">
+J_{LL'}^s(r)=\dfrac{\sigma^2}{2}|\bar{\partial}_{rr'}|\left.\phi_L(r)\phi_{L'}(r')\right|_{r-r'=s(L+L')/2}</script><p>其中$\phi_L(r)$是闭合的。该方程可以在适当的边界条件下在极大 N 时进行解析求解。实际上，leading-order 稳态解是由帐篷形函数给出的</p>
+<script type="math/tex; mode=display">
+\lim_{N\rightarrow \infty }{\phi_L(r)}=\dfrac{4}{L^2}\max\{\dfrac{L}{2}-|r|,0\}</script><p>值得注意的是，即使是 next-to-leading order 的解也是可以可解释的，这对于细致的平均场分析是必要的。</p>
+<p>平均订单集根据金融 Boltzmann 方程通过公式得出</p>
+<script type="math/tex; mode=display">
+f^{\wedge}(r)=\dfrac{1}{N}\left\langle \sum_{i=1}^N{\delta (r-\hat{r}_i)}\right\rangle\approx \int_0^\infty{\mathrm{d}L\rho(L)\phi_L(r-L/2)}</script><p>其中，求和用所有利差 L 上的积分来近似。值得注意的是，book profile 可通过任何扩散分布$\rho(L)$解析推导得出，这表明 HFT 行为的微观模型是一个分析上易于处理的模型。</p>
+<p><em>金融 Langevin 方程</em> 通过额外的粗粒化，我们得到了金融 Langevin 方程</p>
+<script type="math/tex; mode=display">
+\Delta\hat{p}[T+1]\approx c\hat{\tau}\tanh{\dfrac{\Delta \hat{p}[T]}{\Delta p^*}}+\hat{\zeta}[T]</script><p>适用于所研究系统的宏观动力学。这里，$\hat{\tau}[T]=\hat{t}[T+1]-\hat{t}[T]$是瞬时$t$和$t+1$之间的时间间隔，而$\hat{\zeta}[T]$是随机噪声项。平均场近似允许通过分析获得$\hat{\tau}$和$\hat{\zeta}$的所有统计数据。时间间隔$\hat{\tau}$呈指数分布，拥有平均时间间隔</p>
+<script type="math/tex; mode=display">
+\tau^*\approx L_\rho^*/(2N\sigma^2)</script><p>和$L_\rho^*=1/\int_0^\infty{\rho(L)\mathrm{d}L}$，表示泊松统计量渐近。</p>
+<p>金融 Langevin 方程（34）的动力学特征取决于两个无量纲参数，</p>
+<script type="math/tex; mode=display">
+\tilde{c}=cL_\rho^*/(\sigma^2\sqrt{2N})</script><p>和</p>
+<script type="math/tex; mode=display">
+\Delta \tilde{p}^*=\Delta p^*/(c\tau^*)</script><p>，专注于一种 regime 有$\tilde{c}\ge 1$和 $\Delta \tilde{p}^* \le 1$，称为价格变化统计数据之后的边际到强势趋势<sup><a href="#fn_192" id="reffn_192">192</a></sup>，价格变动统计$\Delta \tilde{p}$渐近服从指数定律</p>
+<script type="math/tex; mode=display">
+P(\ge |\Delta p|;\kappa)\sim \mathrm{e}^{-|\Delta p|/\kappa}\ \text{对于极大的$|\Delta p|$}</script><p>其中$P(\ge |\Delta p|;\kappa)$是衰减长度$\kappa$的互补累积分布函数。</p>
+<p><em>数字确认</em> 所述分析预测的有效性，如式（33）中的订单集 profile 和式（35）中的指数价格变化分布，可直接通过数值模拟平均进行检查<sup><a href="#fn_192" id="reffn_192">192</a></sup> 。结果令人鼓舞；尤其是式（33）中的订单集 profile 公式与数值结果非常精确地一致。</p>
+<p>这种精确的一致可能有点违反直觉，因为平均场近似通常只对高维空间有效，而价格空间是一维的。从“碰撞规则”的角度可以理解这一违反直觉的结果：低维空间对于物理系统来说是特殊的，因为几何结构限制了碰撞后粒子的运动。因为同一对粒子多次碰撞，而两体关联仍然存在，平均场近似失败随之失效。在我们的微观模型中，“碰撞规则”将一对 HFT 的极限订单价格推到远离市场价格的地方，使得同一对 HFT 之间的连续“碰撞”在大 N 下极不可能发生。因此，两体关联迅速衰减，这在很大程度上验证了我们动力学公式中分子混沌的假设。事实上，动力学公式可能对某些社会系统比物理系统更有效，因为路径的连续性在社会动力学中通常是不必要的，但在物理动力学中却是严格要求的。</p>
+<h1 id="传染现象"><a href="#传染现象" class="headerlink" title="传染现象"></a>传染现象</h1><p>在撰写本文时， Covid-19 大流行已经在世界各地肆虐了近两年，而这场大流行的起因 SARS-CoV-2 病毒已经感染了 2 亿多人。在这种规模上，该流行病当然是一个全球公共卫生问题，普通民众对此有着深刻的认识。然而，尽管病毒疫情反复发生并具有致命的潜在性，但往往没有得到如此广泛的关注。为了了解病毒爆发的频率和危险程度，可以考虑以下示例。甲型 H1N1 流感于 2009 年在墨西哥爆发，随后蔓延到 214 个国家和地区，造成 18500 人死亡<sup><a href="#fn_879" id="reffn_879">879</a></sup> 。禽流感 A（H7N9）于 2013 年在中国大陆爆发，由于没有持续的人-人传播，仅导致 419 例病例，但由于人类的高毒力，仍导致 127 例死亡<sup><a href="#fn_880" id="reffn_880">880</a></sup> 。埃博拉 病毒病于 2014 年在西非出现，随后感染了 25000 多人，导致 11000 多人死亡，然而实际病死率怀疑超过 70%<sup><a href="#fn_881" id="reffn_881">881</a></sup> 。最后，MERS 冠状病毒疫情于 2012 年在中东爆发，导致 1350 多人感染，死亡人数超过 500 人，影响 26 个国家<sup><a href="#fn_882" id="reffn_882">882</a></sup> 。</p>
+<p>近 100 年来，疾病暴发研究的主要内容一直是舱室流行病学模型。1927 年，Kermack 和 McKendrick 提出了流行病学舱室模型的数学框架<sup><a href="#fn_883" id="reffn_883">883</a></sup> 。此外，同一时间 Reed 和 Frost 也进行了研究工作，后来才被众人发现<sup><a href="#fn_884" id="reffn_884">884</a></sup> ，这是第一个引入二元链(chain-binomial)模型的工作，该模型具有可识别的易感-传染性-恢复（SIR）结构。在 SIR 模型中，暴露于活性病原体的种群分为三个部分。健康个体（S）对病原体敏感，感染个体（I）传播病原体，而恢复的个体（R）由于获得性免疫力不再对病原体作出反应。因此，最简单的 SIR 模型如下所示：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+    \dot{S}&=-\beta SI\\
+    \dot{I}&=\beta SI-\gamma I\\
+    \dot{R}&=\gamma I
+\end{align*}</script><p>其中$\beta$和$\gamma$分别为感染率和恢复率。如果$\dot{I}\le 0$，病原体不会传播，这导出条件$R_0=\frac{\beta S(0)}{\gamma}\le 1$，$R_0$称为基础再生数，代表完全易感人群中单个病例传染的预期病例数。一旦疫情爆发，其下降取决于条件$R_e=\frac{\beta S(t)}{\gamma}$，在这种情况下，我们谈论的是有效再生数，因为人口不再完全是易感态。该模型的常见扩展是添加人口增长率$\varLambda$，以及每个舱室的不同死亡率$d_i,i\in\{S，I，R\}$。然后，模型将改写成</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+    \dot{S}&=\varLambda-\beta SI-d_SS\\
+    \dot{I}&=\beta SI-\gamma I-d_II\\
+    \dot{R}&=\gamma I-d_RR
+\end{align*}</script><p>SIR 模型的另一个直接扩展是考虑人口网络（如城市）。然后模型变为</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+    \dot{S}&=\varLambda-\beta SI-d_SS+\sum_{i=1}^n{a_{ij}S_j}-S_i\sum_{i=1}^{n}{a_{ji}}\\
+    \dot{I}&=\beta SI-\gamma I-d_II+\sum_{i=1}^n{b_{ij}I_j}-I_i\sum_{i=1}^{n}{b_{ji}}\\
+    \dot{R}&=\gamma I-d_RR+\sum_{i=1}^n{c_{ij}R_j}-R_i\sum_{i=1}^{n}{c_{ji}}
+\end{align*}</script><p>其中矩阵$A=[a_{ij}],B=[b_{ij}],C=[c_{ij}]$量化了群体$i$和$j$之间的流动率<sup><a href="#fn_885" id="reffn_885">885</a></sup> 。这类模型通常被称为集合种群流行病学模型。自 20 世纪 80 年代以来，基于全球航空运输网络数据建立的集合种群模型<sup><a href="#fn_886" id="reffn_886">886</a></sup> 已成为研究新兴流行病全球传播的主要工具之一。这也是本章后续章节的重点所在。</p>
+<h2 id="数据驱动的集合种群模型"><a href="#数据驱动的集合种群模型" class="headerlink" title="数据驱动的集合种群模型"></a>数据驱动的集合种群模型</h2><p>集合种群流行病学模型被构建为一个种群网络，从而在两个尺度上发生传播动力学。较小的尺度描述了疾病在每个当地人口内的传播，而较大的尺度描述了由于感染个体的移动而导致的疾病在人口之间的传播。</p>
+<p><em>疾病在人群中传播</em> 让我们考虑一种可以用 SIR 舱室模型描述的疾病，例如流感或麻疹。易感个体 S 在遇到感染个体 I 后以 $\beta$ 的速率感染，而每个感染个体以 $\mu$ 的速率恢复或死亡。假设易感个体和感染个体之间的接触具有频率依赖性，我们可以在单位时间$\Delta t$内模拟群体 $i$ 从易感个体到感染个体以及从感染个体到恢复个体的转变，使用以下方程式</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+     S_i(t+\Delta t)=&S_i(t)-\Delta S_i(t),\\
+    I_i(t+\Delta t)=&I_i(t)+\Delta S_i(t)-\Delta I_i(t),\\
+    R_i(t+\Delta t)=&R_i(t)+\Delta I_i(t),\\
+    \Delta S_i(t)\sim &\mathcal{B}(S_i(t),\beta\dfrac{I_i(t)}{N_i}\Delta t)\\
+    \Delta I_i(t)\sim &\mathcal{B}(I_i(t),\mu\Delta t)
+\end{align*}</script><p>其中，$\mathcal{B}(n,p)$表示二项分布随机变量，$n$表示试验次数，$p$表示成功概率，而$N_i=S_i(t)+I_i(t)+R_i(t)$表示第$i$个种群的大小。对于倍增时间相对较短的病原体（如 SARS-CoV-2、MERS-CoV、甲型 H1N1 流感、埃博拉、麻疹等），宜设置较短的单位时间段（如$\Delta t=0.05d$）。</p>
+<p><em>疾病在人群之间传播</em> 在集合种群模型中，假设个体使用运输网络在种群之间跳跃。最简单的情况是考虑到个体的移动是随机的，这非常接近传染病的国际传播<sup><a href="#fn_887-890" id="reffn_887-890">887-890</a></sup> 。为了解释更复杂的人类流动模式，集合人口模型也得到了扩展，以解决个人流动（如每日通勤）的记忆效应<sup><a href="#fn_891-893" id="reffn_891-893">891-893</a></sup> 、社会经济分层导致的不同社会混合模式<sup><a href="#fn_894" id="reffn_894">894</a></sup> 和年龄相关因素<sup><a href="#fn_895" id="reffn_895">895</a></sup> 。以$G$个种群最简单的集合种群流行病学模型为例，可以使用</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+    X_i(t)=\{X_{i1}(t),\dots,X_{iG}(t)\}&\sim\mathcal{M}(S_i(t),w_{i1}\Delta t,\dots,w_{iG}\Delta t)\\
+    Y_i(t)=\{Y_{i1}(t),\dots,Y_{iG}(t)\}&\sim\mathcal{M}(I_i(t),w_{i1}\Delta t,\dots,w_{iG}\Delta t)\\
+    Z_i(t)=\{Z_{i1}(t),\dots,Z_{iG}(t)\}&\sim\mathcal{M}(R_i(t),w_{i1}\Delta t,\dots,w_{iG}\Delta t)
+\end{align*}</script><p>其中$\mathcal{M}$表示多项分布随机变量，$w_{ij}$表示种群$i$和$j$之间的迁移率，$X_i(t),Y_i(t),Z_i(t)$分别表示在$t$和$t+\Delta t$之间从种群$i$到种群$j$的易感、感染和恢复个体的数量。</p>
+<p><em>对数据的需求</em> 为了建立集合种群流行病学模型来研究现实世界的流行病，必须对基础交通网络的连通性以及该网络沿线的人口流动进行参数化。数字数据收集和存储的最新进展使这成为可能（见第 7 章）。合适的数据源示例包括：</p>
+<ul>
+<li>Official Aviation Guide，一项涵盖全球航班预订数据库的数据订阅服务，该数据库以前用于构建最先进的全球流行病模拟程序（如 GLEAM）<sup><a href="#fn_893" id="reffn_893">893</a></sup> 。</li>
+<li>移动服务提供商（如 Telenor Group 或 Orange），其数据订阅服务提供匿名呼叫详细记录（CDR）的访问，从而可以量化城市间的总人口流动<sup><a href="#fn_896,897" id="reffn_896,897">896,897</a></sup> 。</li>
+<li>搜索引擎和社交媒体公司（如谷歌、百度、脸书、腾讯等），其开放访问数据门户或数据订阅服务提供来自移动定位服务（LBS）的人口移动信息<sup><a href="#fn_898,899" id="reffn_898,899">898,899</a></sup> 。</li>
+</ul>
+<p>与 CDR 数据相比，LBS 数据允许按兴趣点或交通方式对人口流动进行分层。例如，谷歌的 Covid-19 社区流动性报告提供了六个数据流，称为“杂货店和药店”、“公园”、“中转站”、“零售和娱乐”、“住宅”和“工作场所”<sup><a href="#fn_900" id="reffn_900">900</a></sup> 。腾讯的迁移数据门户将飞机、铁路或公路旅行分离开来<sup><a href="#fn_901" id="reffn_901">901</a></sup> 。总的来说，流行病学中可用的数字数据的现代来源变得如此丰富，以至于“数字流行病学”一词现在被用来描述流行病学家对这些数据来源的依赖程度。这是我们下一节的主题。</p>
+<h2 id="数字流行病学"><a href="#数字流行病学" class="headerlink" title="数字流行病学"></a>数字流行病学</h2><p><em>定义</em> 与传统流行病学相比，数字流行病学使用公共卫生系统生成的数据来了解疾病的发生率、分布和可能的控制方式以及其他健康相关因素，也使用其他机构生成的数字数据<sup><a href="#fn_902" id="reffn_902">902</a></sup> 。其中一个主要原因是，诊所、医院和实验室的专业人员收集的数据虽然准确，但在后勤、时间、劳动力和材料方面花费高昂。因此，开发可替代和合算的获取源似乎是大势所趋的 <sup><a href="#fn_903" id="reffn_903">903</a></sup> 。</p>
+<p>互联网和移动电话的使用导致了数以十亿计的数字通信记录，记录了与健康相关的行为，如症状报告或对疫苗的态度。例如，谷歌搜索以近乎实时的方式提供流感活动的估计值<sup><a href="#fn_530" id="reffn_530">530</a></sup> ，而手机数据则能够跟踪疾病爆发期间的人口流动<sup><a href="#fn_904" id="reffn_904">904</a></sup> 。这些能力导致了数字流行病学在监测和预测空气传播和媒介传播病毒、寄生虫和其他病原体传播方面的应用。</p>
+<p><em>数据源</em> Google Trends 是一项免费服务，根据用户指定的地理区域和时间框架，提供搜索活动的标准化趋势。文献<sup><a href="#fn_530,905" id="reffn_530,905">530,905</a></sup> 发现，关于流感的某些查询的相对频率与美国公共卫生机构报告的流感病例密切相关。因此，这些开创性的工作为使用搜索查询检测近实时流感疫情打开了大门。</p>
+<p>文献中的原始算法<sup><a href="#fn_530,905" id="reffn_530,905">530,905</a></sup> 后来被证明受到一些主要限制，导致估计不准确<sup><a href="#fn_906,907" id="reffn_906,907">906,907</a></sup> 。其算法是静态的，无法考虑时间序列特性，如流感活动的季节性，而将多个查询词聚合到单个变量中会忽略互联网搜索行为随时间的变化。为了回应此问题，文献<sup><a href="#fn_908" id="reffn_908">908</a></sup> 提出了谷歌搜索数据自回归（ARGO）模型，以解决上述缺陷。文献<sup><a href="#fn_909" id="reffn_909">909</a></sup> 基于 ARGO 模型，通过结合美国各州历史流感活动的时空同步性，进一步改进了流感的预测性。</p>
+<p>除了来自数据丰富的美国等发达国家的成功案例外，Google Trends 证明了在数据环境较差的发展中国家对传染病的实时播报和预测依然很有价值。例如，文献<sup><a href="#fn_910" id="reffn_910">910</a></sup> 证明了ARGO模型在改善8个拉丁美洲国家（阿根廷、玻利维亚、巴西、智利、墨西哥、巴拉圭、秘鲁和乌拉圭）流感预测方面的能力。</p>
+<p>除了监测流感样疾病外，互联网搜索查询还应用于热带和温带中低收入国家的登革热、疟疾和恰加斯病等媒介传播疾病<sup><a href="#fn_911-915" id="reffn_911-915">911-915</a></sup> 。由于互联网的可用性不断增加，而传统流行病学数据收集能力相对有限<sup><a href="#fn_916" id="reffn_916">916</a></sup>，基于互联网的监测方法有可能极大地补充公共卫生机构在预防媒介传播疾病方面的工作。两项独立研究<sup><a href="#fn_911,912" id="reffn_911,912">911,912</a></sup> 表明，网络搜索查询数据与玻利维亚、巴西、印度、印度尼西亚和新加坡的登革热活动具有高度的相关性，从0.82到0.99不等。之后，谷歌开发了一个名为谷歌登革热趋势的预测工具，为墨西哥<sup><a href="#fn_917" id="reffn_917">917</a></sup> 、台湾<sup><a href="#fn_918" id="reffn_918">918</a></sup> 、委内瑞拉<sup><a href="#fn_919" id="reffn_919">919</a></sup> 和菲律宾<sup><a href="#fn_920" id="reffn_920">920</a></sup> 的公共卫生机构及时提供信息。</p>
+<p>推特是公共卫生研究人员感兴趣的另一个大数据源，因为内容的实时性、精确的地理标记位置和公开可用的信息。基于推特的疾病监测和预测利用健康相关关键词量的时间序列趋势作为回归模型中的预测变量，这在概念上类似于谷歌趋势的使用方式。然而，由于大多数推特使用日常语言来描述症状组合，而不是诊断，因此需要自然语言处理来识别相关信息。文献<sup><a href="#fn_921" id="reffn_921">921</a></sup> 发现，推特上提及的流感趋势与美国传统监测系统识别的类流感疾病之间存在很大的相关系数。文献<sup><a href="#fn_922" id="reffn_922">922</a></sup> 对国家或城市尺度（如纽约市）的流感流行率每周变化进行了较高预测精度（85%）水平的记录。</p>
+<p>在媒介传播疾病方面，推特在国家、地区和城市范围内对巴西登革热的调查和预测方面被证明是有用的<sup><a href="#fn_923" id="reffn_923">923</a></sup> 。最好的表现是对观察全国范围内的观察工作，预测结果与登革热活动之间的相关系数高达0.98。</p>
+<p>推特也是评估健康相关行为的重要数据来源，如对疾病爆发的担忧和对公共卫生措施的态度<sup><a href="#fn_924,925" id="reffn_924,925">924,925</a></sup> 。文献<sup><a href="#fn_926" id="reffn_926">926</a></sup> 依赖公开的推特数据来解决2009年对新型甲型H1N1流感疫苗的时空情绪。该研究发现，在线情绪与按地区估计的疫苗接种率之间存在着很强的相关性。随后的数据驱动的疾病传播模拟发现，疫苗的负面情绪簇(clusters)往往与疾病爆发的可能性趋同增长。文献<sup><a href="#fn_927" id="reffn_927">927</a></sup> 还发现，情绪本身具有传染性。消极情绪比积极情绪更具传染性。</p>
+<p>为了挖掘推特数据的潜力，还必须考虑以下两个应用程序。推特提供了一个讨论毒品使用的机会，这或许可以用来检测毒品相关的不良事件，从而提高毒品警惕性。文献<sup><a href="#fn_928" id="reffn_928">928</a></sup> 分析了 20 亿条推特，搜索与 5 种不同癌症毒品相关的不良事件。分析确定了 239 名潜在吸毒者。然后，两位专家对每个潜在病例进行了检查，结果有 72 例明确阳性。从这些阳性结果中，检测到 27 例毒品相关不良事件，从而为基于推特数据提高毒品安全监视水平提供了可验证的解决概念方案。另一个应用是推文可以具有定位信息。这意味着捕捉人类的运动模式成为可能，以此来跟踪和控制传染病。推特纪录了对每时每刻（从每天开始）和世界各地（从地方到国家再到国际）尺度上的运动的地理坐标<sup><a href="#fn_929,930" id="reffn_929,930">929,930</a></sup> 。</p>
+<p>TODO:translating-start</p>
+<p>Facebook 是世界上访问量最大的网站之一，但过去由于数据访问权限的限制，它在公共卫生领域的应用还不多。最近的项目 Facebook Data for Good 为了增进社会福祉定向的扩大访问权限范围<sup><a href="#fn_931" id="reffn_931">931</a></sup> 。Facebook 数据的主要优势之一是社交信息。尽管这些联系是在在线环境中建立的，但与健康相关活动的地理位置密切相关。文献[932] 因此发现，正如脸书所示，新冠病毒-19 倾向于在社交网络联系更多的地区之间传播。这表明，在线社交网络的数据可用于根据数字互动得出的接近度指标预测空气传播疾病的传播。</p>
+<p>将人类活动的信息整合到流行病学模型中，可以深入了解疾病的传播，以及控制传播的最佳资源分配。文献[933] 试图利用Facebook的移动数据来评估意大利各个地区解除封锁的替代方案的经济后果。结果表明，疾病传播和工人流动之间存在权衡，因此，国家规模的特定经济损失会导致不同地区的损失。此外，人道主义组织需要知道在哪里分配资源，以帮助受疾病爆发或其他灾害影响最大的人。文献[934] 显示了如何在受此类事件影响的地区汇总Facebook使用情况，以生成灾难地图，概述人口疏散和长期流离失所情况</p>
+<p><em>集合估计</em>  尽管依靠数字数据源监测和预测传染病取得了明显的成功，但这种方法受到了批评，并引起了关注<sup><a href="#fn_906,907,935–937" id="reffn_906,907,935–937">906,907,935–937</a></sup> 。集成模型是针对这种批评而开发的，其思想是组合多个数字数据源可以避免任何单个数据源可能存在的弱点。<br>文献<sup><a href="#fn_938" id="reffn_938">938</a></sup> 概述了一个集成机器学习模型，该模型通过利用谷歌趋势、推特数据、你身边的流感<sup><a href="#fn_939" id="reffn_939">939</a></sup> 和CDC关于流感样疾病的数据来预测美国的流感活动。结果表明，将来自多个数据源的信息组合在一起，可以在未来四周内改善实时预测。拉丁美洲的中等收入国家也取得了令人鼓舞的成果，因为这些国家的可用数据较少[940] 。同样，文献[941] 结合了谷歌搜索、推特、健康地图[942] 和2015-2016年拉丁美洲疫情期间的疑似病例中关于寨卡病毒疾病的信息，以预测未来三周内每周出现的新病例。</p>
+<p>细化空间分辨率会降低数字监控系统的预测与公共卫生系统的估计之间的相关性<sup><a href="#fn_943" id="reffn_943">943</a></sup> 。在这方面，集成模型是一种很有前途的方法。例如，文献<sup><a href="#fn_944" id="reffn_944">944</a></sup> 结合了官方健康报告、百度上的网络搜索、新闻媒体以及基于代理的流行病学模型的结果，在中国省级范围内提前两天做出准确预测。另一个类似的例子是文献<sup><a href="#fn_945" id="reffn_945">945</a></sup> ，它结合了谷歌搜索、推特数据、电子健康记录和你附近的流感<sup><a href="#fn_939" id="reffn_939">939</a></sup> ，预测了波士顿大都会区提前一周的流感爆发（图 55）。</p>
+<p>这一简要概述绝不会耗尽所有可能用于流行病学的数字数据来源。此外，在中短期内，此类来源的种类势必会增加。然而，一个关键的发展将是将它们与模型结合起来，以提供对流行病的机械洞察。当然，这包括本章详细讨论的最先进的集合种群模型。</p>
+<p>TODO:translating-end</p>
+<h2 id="集合人群模型的分析结果"><a href="#集合人群模型的分析结果" class="headerlink" title="集合人群模型的分析结果"></a>集合人群模型的分析结果</h2><p>从统计物理学的观点来看，传染病阈值是受临界现象和相变研究启发的一个重要概念<sup><a href="#fn_946" id="reffn_946">946</a></sup> 。传染病阈值描述了传染病在参数空间的何处减弱，以及传染病在参数空间的何处加剧。有趣的是，对计算机病毒在互联网上传播的研究表明，如果网络的节点度分布具有很强的异质性，那么传染阈值可以忽略不计，无标度网络就是如此<sup><a href="#fn_947,948" id="reffn_947,948">947,948</a></sup> 。这在当时是一个令人惊讶的发现，激起了人们对新公共卫生政策的各类尝试。例如，在网络中制定疫苗接种有效策略的尝试主要集中在为枢纽节点(即拥有最多连接的节点)接种疫苗<sup><a href="#fn_949" id="reffn_949">949</a></sup> 。</p>
+<p>传染病阈值的研究最终扩展到集合人群传染病学模型。以文献<sup><a href="#fn_950,951" id="reffn_950,951">950,951</a></sup> 为例，其中介绍了一个平均场推导，该推导导出了多人群网络的传染病阈值的封闭形式表达式，在模型里个体在人群之间随机移动。研究发现，随着网络节点度的异质程度增加，阈值会降低。文献<sup><a href="#fn_952,953" id="reffn_952,953">952,953</a></sup> 考虑了周期性的流动模式，扩展了这项工作。</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://s2.loli.net/2022/06/01/eNuUXlPq92Dt83y.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;"> <b>图55</b>&nbsp2012年9月至2017年5月波士顿大都会区类流感疾病的实时预报和一周预测(存在误差)。BPHC 为波士顿公共卫生委员会。AR52为使用52周的过去数据进行预测的自回归基线模型。ARGO为一般在线信息的自回归，在线信息的来源是athenahealth(athena),Google Trend(Google),和Flu Near You(FNY)<br>
+    资料来源：文献[^945]中的再版数据(CC BY 4.0)
+</div>
+</center>
+
+<p>除了传染病阈值之外，还有一个有趣的概念是传染病到达时间(EAT)。在疫情从城市(例如武汉之于新冠肺炎)爆发后，该疾病可以通过个人旅行传播到其他城市。每个下游城市$j$的 EAT 是感染病例输入该城市的时刻。EAT 检测疾病的传播速度，并编码相对可靠的信息，用于推断新型传染病早期的关键传染病学参数<sup><a href="#fn_890,954–956" id="reffn_890,954–956">890,954–956</a></sup> 。</p>
+<p>尽管几项有影响的研究<sup><a href="#fn_957-959" id="reffn_957-959">957-959</a></sup> 已经探索了开发一种简单的总结统计来近似 EAT 的可能性，但可以直接导出 EAT 概率分布的封闭表达式的一般分析框架仍然难以捉摸。为了填补这一知识空白，文献<sup><a href="#fn_890" id="reffn_890">890</a></sup> 推导出了在复杂增长的网络结构下三种元人群模型中 EAT 的概率分布:(i)最简单的两人群模型;(ii)世界范围内航空运输网络的最短路径树;(iii)整个世界范围内航空运输网络。</p>
+<p>_两人群模型_ 两人群是最简单的问题，它的 EAT 分布可以直接用解析法找到。假定一种传染病起源于人群 $i$，同时只与人群 $j$ 有关(图 56A)。这种情况与传染病的初始阶段相对应，即起源人群中出现新的感染，</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://s2.loli.net/2022/06/01/phyZaP53RAxGNLH.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;"><b>图56</b> 两人群传染病学模型, <b>A.</b> 模型示意图显示了起源人群i仅与人群j相连的情况。<b>B–D</b>，Q-Q图显示了随机变量T^1_{ij}、T^5_{ij}和T^10_{ij}的分析和模拟分位数。插图显示了E[T^n_{ij}]中误差百分比的相应直方图。模拟需要从以下参数空间中使用Latin-hypercube抽样对100个传染病情景进行抽样。倍增和生成时间均在3至30天之间，种子大小s_i在1至100之间，迁移率w_{ij}在10^{−6}和10^{−3}，N_i的人群规模在10万到1000万之间。后两个参数分别根据官方航空公司指南(OAG)空中交通数据和世界数据集的网格人群(第4版)选择。这100个情景中的每个情景的模拟分位数都是从10000个随机实现中计算出来的。对角线上的点表明，解析计算的到达时间分位数与数值模拟的到达时间分位数相同。蓝点和黄点区分P(X_{ij}≥ n)=1和P(X_{ij}≥ n)<1，其中X_{ij}是外溢数量。<p>
+    资料来源：文献[^945] 中的再版数据(CC BY 4.0)
+    </div>
+</center>
+
+<p>而所有其他人群聚集成一个暂时不受疾病影响的单一人群<sup><a href="#fn_889" id="reffn_889">889</a></sup> 。此时提出的两个关键数学假设<sup><a href="#fn_890,957,958" id="reffn_890,957,958">890,957,958</a></sup> 是：</p>
+<ol>
+<li>从人群$i$到$j$的感染输入是一个非齐次泊松过程<sup><a href="#fn_960" id="reffn_960">960</a></sup>，其强度函数(即，$t$时从人群$i$到人群$j$的感染输入的预期数量)由$w_{ij}I_{i}(t)$给出，其中$I_{i}(t)$是时间$t$时人群$i$中的感染人数(即疾病确诊)，$w_{ij}$是从人群$i$到人群口$j$的人均迁徙率。</li>
+<li>新传染病在起源人群$i$中形成后，当在人群$i$向人群$j$的前几次外溢的疾病传播初期，起源人群$i$中$I_{i}(t)$仍保持指数增长，即$I_i(t)=s_i \exp(\lambda_it)$，其中$s_i$是起源人群$i$在$t=0$时的初始种子大小，$\lambda_i$是当地传染病增长率。</li>
+</ol>
+<p>在上述假设下，总体$j$中的第$n$个 EAT 表示为$T^n_{ij}$，是一个随机变量，其概率密度函数可以用封闭形式表示</p>
+<script type="math/tex; mode=display">
+f_n(t|\lambda_i,\alpha_{ij})=\left(\dfrac{\mathrm{e}^{\lambda_i t}-1}{\lambda_i}\right)^{n-1}\dfrac{\alpha_{ij}^n}{(n-1)!}\exp\left(\lambda_it-\alpha_{ij}\dfrac{\mathrm{e}^{\lambda_it}-1}{\lambda_i}\right)</script><p>其中$\alpha_{ij}=s_iw_{ij}$是调整后的迁移率。最后一个表达式可以通过数值验证。为此，分析和模拟 EATs 在各种传染情景下进行了比较(图 56)。除其他外，倍增和生成时间在 3 至 30 天之间变化，足以涵盖当今许多传染病。新冠病毒的倍增时间为 5-7 天，而埃博拉病毒的倍增时间超过 20 天。</p>
+<p>公式(92)可用于推导出许多推论：</p>
+<ol>
+<li>前$n$次感染的外溢是一个强度函数为$\alpha_{ij}\exp(\lambda_it)$的非齐次泊松过程。</li>
+<li>第$n$个 EAT 的累积分布函数为<script type="math/tex; mode=display">
+F_n(t|\lambda_i,\alpha_{ij})=\varGamma\left[n,\dfrac{\alpha_{ij}}{\lambda_i}\left(\mathrm{e}^{\lambda_it}-1\right)\right]</script>式中，$\varGamma$表示低阶不完全 Gamma 函数。</li>
+<li>第一个 EAT 的期望值<script type="math/tex; mode=display">
+E[T_{ij}^1]=\dfrac{1}{\lambda_i}\exp\left(\dfrac{\alpha_{ij}}{\lambda_i}\right)\mathbf{E}_1\left(\dfrac{\alpha_{ij}}{\lambda_i}\right)</script>式中，$\mathbf{E}_m(x)=x^{m-1}\int_x^\infty{\mu^{-m}\mathrm{e}^{-\mu}\mathrm{d}\mu}$是指数积分。</li>
+<li>如果$\alpha_{ij}\ll \lambda_i$和$\gamma$表示 Euler–Mascheroni 常数，那么第一个 EAT 预期值可以表示为<script type="math/tex; mode=display">
+E[T_{ij}^1]=\dfrac{1}{\lambda_i}\left[\ln\left(\dfrac{\lambda_i}{\alpha_{ij}}\right)-\gamma\right]</script>与文献<sup><a href="#fn_957" id="reffn_957">957</a></sup> 中的第一个 EAT 统计数据相同。</li>
+</ol>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://s2.loli.net/2022/06/01/x8ryYkGh6bapAvO.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;"><b>图57</b> 枢纽人群的网络属性 <b>A</b> 直方图显示了全球航空运输网络中所有人群的节点度分布。给定总体的节点度等于该总体直接连接到的总体数。插图说明了旅游中心人群i与多个人群相关，包括人群j.<b>B</b>，世界各地几个主要中心城市的列表。显示的是节点度、每日离开交通量和每日人均离开流动率。
+</div>
+</center>
+
+<p>这些推论将有助于将双人群模型扩展到全球航空运输网络和整个全球航空运输网络最短路径树中传染病到达过程的分析。</p>
+<p>_对最短路径树进行建模_ 全球航空运输网络的一个主要子网络是其最短路径树。在这个子网络中，每个下游人群只通过一条路径与传染源相连。文献<sup><a href="#fn_959" id="reffn_959">959</a></sup> 表明，新出现的传染病主要通过最短路径树从始发人群传播到其他人群，即在最短路径树上的基础设施推动疾病在全球航空运输网络中的全球传播。文献<sup><a href="#fn_890" id="reffn_890">890</a></sup> 表明，最短路径树中从起源人群 i 到任何人群 k 的第 n 个 EAT $T_{ik}^n$由等式(92)精确表征，但需要重新参数化局部传染病增长率$\lambda_i$和调整后的迁移率$\alpha_i$，以说明所谓的枢纽效应(hub effect)(图 57)和连续传播效应(continuous-seeding effect)(图 58)。</p>
+<p>香港、伦敦和巴黎等旅行枢纽的特点是有直飞多个地点的航线。在网络科学术语中，旅游枢纽的节点度远大于其他节点度。这为感染外溢创造了许多机会，可能会导致疾病确诊$I_i(t)$的局部增长显著减少。如果确实有相当比例的感染随着疫情的发展向外传播，那么当地疫情增长率$\lambda_i$需要调整。</p>
+<p>假设中心人群$i$直接连接到两个或多个人群，其中一个是人群$j$(图57A)。在最短路径树中，所有从人群$i$扩散到人群$j$以外的人群的感染个体不再导致疾病向人群$j$的传播。其结果是，第$n$个EAT的概率密度函数仍然</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://s2.loli.net/2022/06/01/ufnXaPdD35kJ8mY.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;"><b>图58</b> 连续传播效应 <b>A</b>.通过人群j连接起源人群i和人群k的非循环路径上的传染病到达过程(数学上为非齐次泊松过程)(i.e. phi:i\rightarrowj\rightarrowk)  <b>B</b>.在本例中，在人群j从源头输入三种感染后，传染病到达人群k，即T^3_ ij<T^1_ik<T^4_ij。在没有连续传播调整的情况下，忽略人群j中第二次和后续导入所产生的感染树。</div>
+</center>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://s2.loli.net/2022/06/01/fIDABi9cHSPob3n.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;"><b>图59</b> 全球航空运输网络最短路径树分析的数值验证。所示为Q–Q图，比较了最短路径树中下游人群不同EAT的分析和模拟分位数。插图显示了预期EATs中错误百分比的相应直方图。该传染病的起源被认为是在香港。使用了与图56相同的100种传染病情景。符号Dc代表与传染源分离度为c的所有人群的集合 <b>A</b>.调整枢纽效应之前(红色)和之后(蓝色)D1组的结果  <b>B</b>.调整枢纽效应和连续传播之前(红色)和之后(蓝色)D2组的结果 <b>C</b>.调整枢纽效应和连续传播并缩减路径后，D3和D4组的结果。</div>
+</center>
+
+<p>由公式(92)给出，但从人群$j$的角度来看，枢纽人群$i$的当地传染病增长率必须调整为</p>
+<script type="math/tex; mode=display">
+\lambda_{ij}=\lambda_i-\sum_{k\not ={j}}{w_{ik}}</script><p>因此，随机变量$T^n_{ij}$具有概率密度函数$f_n(T|\lambda_{ij},\alpha_{ij})$，这意味着中心人群$i$中的疾病流行以呈有效增长率$\lambda_{ij}$的指数增长，同时$T$时从人群$i$到人群$j$的外溢感染人数保持不变，即$w_{ij}I_i(t)$。所述调整的必要性可通过双人群模型等类似的方式进行数值验证(图59A)。</p>
+<p>一个单一的传播事件会将疾病传播给起源人群，而后上游人群外溢的感染病例会持续传播到最短路径树中的所有其他人群(图58)。佛罗里达州的寨卡病毒来自加勒比海<sup><a href="#fn_961" id="reffn_961">961</a></sup>，英国的SARS-CoV-2来自欧洲<sup><a href="#fn_962" id="reffn_962">962</a></sup>，都记录了这种持续的传播。</p>
+<p>设$D_c$为最短路径树中与起源人群$c$度分离的人群集。此外，让$D_2$中的人群$k$通过人群$j$沿路径$\psi:i\rightarrow j\rightarrow k$连接到起源人群。在疫情于$T^1_{ij}$到达人群$j$后$T^1_{ik}$到达人群$k$之前，人群$i$继续向人群$j$外溢感染(图58)。根据双人群模型，每个输入性感染在$T^1_{ij},T^2_{ij}\cdots$到达，产生了以增长率$\lambda_{ik}$的新指数传播。因此，在$t$时，人群$j$中的总体疾病确诊$I_j(t)$是所有指数增长的疾病确诊之和</p>
+<script type="math/tex; mode=display">
+I_j(t)=\sum_{m=1}^{\infty}{\mathbf{I}\{t>T_{ij}^m\}\mathrm{e}^{\lambda_{jk}(t-T_{ij}^m)}}</script><p>其中$T_{ij}^m$是人群$j$的第$m$个EAT，$\mathbf{I}\{\cdot\}$是指示函数。</p>
+<p>基于双人群模型，感染从人群$j$向人群$k$的外溢是一个具有强度函数$w_{ij}I_j(t)$的非齐次泊松过程，因为它依赖于随机变量$T^1_{ij},T^2_{ij}\cdots$，其本身是一个复杂的随机过程。这致使了随机变量$T^n_{ik},n=1,2,\ldots$的概率密度函数，它以确诊$I_j(t)$(以及$T^1_{ij},T^2_{ij}\cdots$)为条件，有形式</p>
+<script type="math/tex; mode=display">
+g_n(t|w_{jk}I_j)=f_{\text{Poisson}}\left[n-1,w_{jk}\int_0^t{I_j(u)\mathrm{d}u}\right]w_{jk}I_j(t)</script><p>其中，$f_{\text{Poisson}}(\cdot,\mu)$是平均值为$\mu$的泊松随机变量的概率密度函数。因此，随机变量$T_{ik}^n$的无条件概率密度函数为</p>
+<script type="math/tex; mode=display">
+E_{T^1_{ij},T^2_{ij}\cdots}[g_n(t|w_{jk}I_j)]</script><p>其中积分在联合概率密度函数$T^1_{ij}=t_1,T^2_{ij}=t_2\cdots$上进行。在用$\lambda_{ij}$代替$\lambda_{i}$以表示枢纽效应后，联合概率密度函数由公式(98)给出。</p>
+<p>文献<sup><a href="#fn_890" id="reffn_890">890</a></sup> 进一步证明$T^1_{ij}=t_1,T^2_{ij}=t_2\cdots$可以简化，但精度略有降低。为此，进行以下确定性等效近似(CEA)：对于所有$m&gt;1$，$T^m_{ij}\approx E[T^m_{ij}|T^1_{ij}]$。直观的解释是，人群$t$中第$m$个EAT的大部分不确定性是由该人群中第一个EAT的不确定性决定，其中后者的不确定性的特征是在插入$n=1$并用$\lambda_{ij}$替换$lambda_{i}$表示枢纽效应后，等式(92)中的概率密度函数。确诊$I_j(t)$变为</p>
+<script type="math/tex; mode=display">
+I_j^\text{CEA}(t)=\sum_{m=1}^{\infty}{\mathbf{I}\{t>E[T_{ij}^m|T_{ij}^1]\}\mathrm{e}^{\lambda_{ik}(t-E[T_{ij}^m|T_{ij}^1])}}=\sum_{m=1}^{\infty}{\mathbf{I}\{t>T_{ij}^1-\Delta T_{ij}^m\}\mathrm{e}^{\lambda_{ik}(t-T_{ij}^1-\Delta T_{ij}^m}}</script><p>其中如式(99)</p>
+<script type="math/tex; mode=display">
+\Delta T_{ij}^m=E[T_{ij}^m|T_{ij}^1]-T_{ij}^1=\dfrac{1}{\lambda_{ij}}\exp\left(\dfrac{\alpha_{ij}}{\lambda_{ij}}\right)\sum_{q=1}^{m-1}{\mathbf{E}_q\left(\dfrac{\alpha_{ij}}{\lambda_{ij}}\mathrm{e}^{\lambda_{ij}T_{ij}^1}\right)}</script><p>最后，$T_{ik}^n$的无条件概率密度函数由下式给出</p>
+<script type="math/tex; mode=display">
+E_{T_{ij}^1}[g_n(t|w_{jk}I_j^\text{CEA})]</script><p>最后一个表达式非常适合处理$D_2$组中全体的EAT，但仍需要额外的近似来处理$D_c,c\ge3$。其中一种近似是路径约化<sup><a href="#fn_890" id="reffn_890">890</a></sup> ，通过该约化，路径$\psi：i\rightarrow j\rightarrow k$被视为直接路径$\psi’：i\rightarrow k$ 这允许我们在$n=1$的情况下，用式(92)中的概率密度函数替换式(106)中的概率密度函数，但要使用适当的参数$f_1(t |\lambda_\psi,\alpha_\psi)$校正。校正参数$\lambda_\psi$和$\alpha_\psi$是最小化路径$\psi$的第一次EAT通过最小化Kullback–Leibler散度(即相对熵)<sup><a href="#fn_890,963" id="reffn_890,963">890,963</a></sup> 获得的</p>
+<script type="math/tex; mode=display">
+D_{KL}=\int_0^\infty{E_{T_{ij}^1}[g_1(t|w_{jk}I_j^\text{CEA})]\ln{\dfrac{E_{T_{ij}^1}[g_n(t|w_{jk}I_j)]}{f_1(t |\lambda_\psi,\alpha_\psi)}}}</script><p>$D_{KL}$可以理解为一个概率分布与另一个概率分布(参考概率分布)之间的差异量。因此，通过最小化$D_{KL}$，我们将双边路径$\psi$简化为单边路径$\psi’$，而使人群$k$中第一次EAT的概率分布保持不变。从起源人群$i$到$D_2$中任何人群$k$的传染病传播都可以被视为一个两人群问题，并具有局部传染病增长率$\lambda_\psi$和调整后的流动率$\alpha_\psi$。如果现在有一条更长的路径，$i\rightarrow j\rightarrow k\rightarrow m(\phi\in D_3)$，我们首先将路径简化为一个双边路径$i\rightarrow j\rightarrow k$，然后用处理$D_2$的方法处理剩余部分(图59B、C)</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://s2.loli.net/2022/06/03/wioa4IhNPUjpgmn.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;"><b>图60</b> 全世界航空运输网络的数值解析验证 <b>A</b> 多条非循环路径可能将下游人群k连接到起源人群i。<b>B</b> Q–Q图比较了整个全球航空运输网络中下游人群各EAT的理论值和模拟值。插图展示了期望EATs中误差百分比的对应直方图。该传染病同样被认定在是在香港起源。其使用了与图56相同的100种传染病情景。255个D1的数据点用蓝色表示，1839个D2的数据点用黄色表示，207个D3和7个D4的数据点用红色表示。
+</div>
+</center>
+
+<p><em>模拟整个全球航空运输网络</em> 为了寻找全球航空运输网络的EAT，有必要考虑以下事实：每个下游人群$k$可以通过多条路径连接到起源人群$i$(图60A)。此外，路径可能包括循环，可能彼此相交，这意味着它们之间存在一些度依赖性。我们可以自然地假设把循环相当于较大的滞迟效应，致使循环路径在很大程度上与非循环路径不相关。如果非循环路径之间的依赖性足够弱，则可以将它们视为是相对独立的，那么接下来的计算就变得合理了。首先，所有连接起源人群$i$和下游人群$k$的路径分解为一个“独立”的非循环路径的集合$\varPsi_{ik}$。然后，所有这些伪独立路径都被充分化简，直到它们由参数$\lambda_\psi$和$\alpha_\psi$表征。最后，人群$k$的EATs可以通过非齐次泊松过程的叠加来近似<sup><a href="#fn_960" id="reffn_960">960</a></sup> ，此叠加过程的强度函数为$\sum_{\psi\in\varPsi_{ik}}\alpha_\psi\exp{(\lambda_\psi t)}$。数值结果表明，结合两人群分析、枢纽效应修正、连续传播修正、路径简化和路径叠加的整个分析框架准确估计了全球航空运输网络中几乎所有人群的EAT(图60B)。</p>
+<h2 id="传染病学参量的-Bayes-推断"><a href="#传染病学参量的-Bayes-推断" class="headerlink" title="传染病学参量的 Bayes 推断"></a>传染病学参量的 Bayes 推断</h2><p>Bayes 推断是一种基于Bayes定理的数据分析和参数估计的统计方法<sup><a href="#fn_964" id="reffn_964">964</a></sup> 。设$P(A)$和$P(B)$分别为事件$A$和$B$的概率。设$P(A|B)$为事件$B$发生前提下的事件$A$发生的条件概率，$P(B|A)$为事件$A$发生前提下的事件$B$发生的条件概率。Bayes定理指出，这两个条件概率之间的关系为</p>
+<script type="math/tex; mode=display">
+P(A|B)=\dfrac{P(B|A)P(A)}{P(B)}</script><p>将类似的关系把数据关联到模型参数上。$D$表示观测数据，$\theta$表示数据生成过程的模型参数，等式(108)可以改写为</p>
+<script type="math/tex; mode=display">
+P(\theta|D)=\dfrac{P(D|\theta)P(\theta)}{\int{P(D|\theta)P(\theta)\mathrm{d}\theta}}</script><p>先验概率$P(\theta)$表示在任何数据分析之前对模型参数的初始信度。似然函数$P(D|\theta)$表示在给定参数$\theta$的情况下观察数据$D$的条件概率。后验概率$P(\theta|D)$为先验值与观测数据结合后有关参数的更新值。</p>
+<p>公式(109)的分母要求对模型参数的所有$\theta$进行积分，这通常非常复杂且难以分析。随着参数数量的增加，数值积分也可能变得难以计算。然而，分母只起到归一化常数的作用。比例关系已经足够用于推断</p>
+<script type="math/tex; mode=display">
+P(\theta|D)\propto P(D|\theta)P(\theta)</script><p>因此， Bayes 推断主要包括两个步骤；(i) 使用背景知识和文献综述，形式化模型每个参数的先验分布；(ii)通过使用概率模型设计似然函数，以描述实际数据的生成过程。</p>
+<p>指定先验分布是一项非常重要的工作<sup><a href="#fn_964" id="reffn_964">964</a></sup> 。传染病建模、网络理论、生物信息学和统计物理学领域的现有研究倾向于使用非信息平坦先验或扩散先验<sup><a href="#fn_965" id="reffn_965">965</a></sup> 进行研究。这种简化的主要目的是评估似然模型拟合观测数据的能力。尽管在解决低维问题时的一些参数可以有效地推断，但平坦先验或扩散先验不能被当做拟合的通用工具。特别是，对于具有大量可推断参数的高维问题，使用平坦先验或扩散先验可能导致有偏估计或收敛失败<sup><a href="#fn_964" id="reffn_964">964</a></sup> 。  Bayes 推断领域的最新进展表明，即使信息量较弱的先验知识可能也是更好的选择。文献<sup><a href="#fn_966,967" id="reffn_966,967">966,967</a></sup> 详细说明了如何指定先验分布。</p>
+<p>为了估计模型参数， Bayes 方法通常使用概率模型来表示似然函数。此类模型的目的是描述观测数据背后的数据生成过程。在本节中，我们将概述两个传染病学案例研究，解释如何使用概率模型得出 Bayes 推断的似然函数。</p>
+<p><em>推断2009年大墨西哥城甲型H1N1流感的基本再生数字$R_0$</em> 正如本节开头简单讨论的那样，基本再生数$R_0$是一个重要的传染病学参量，它给出了在充分易感人群中由感染者引发的二次感染的期望数量。在疫情早期估计$R_0$是关键在于，能够了解该疾病人际传播的潜力、找到实现群体免疫的疫苗要求以及清楚控制疫情的非药物干预程度。</p>
+<p>在这里，我们看看2009年大墨西哥城甲型H1N1流感疫情中$R_0$的估计值。文献<sup><a href="#fn_968" id="reffn_968">968</a></sup> 以提出一种最大似然法而闻名，该方法用于在这种特殊情况下估计$R_0$。该方法通过庞大的计算机模拟来探寻参数空间，所以计算量非常大，需要使用超级计算机来完成。文献<sup><a href="#fn_890" id="reffn_890">890</a></sup> 通过使用 Bayes 推断以及文献<sup><a href="#fn_968" id="reffn_968">968</a></sup> 中总结的墨西哥向12个国家的疾病外溢记录相结合，减轻了计算负担。该推论将公式(92)中的两人群模型与公式(100)中的枢纽效应修正相结合。</p>
+<p>使用高性能计算支持的GLEAM模拟器<sup><a href="#fn_968" id="reffn_968">968</a></sup> 对2009年甲型H1N1流感基本再生数$R_0$的估计值等于1.65，95%置信区间(CI)<sup><a href="#fn_1.54，1.77" id="reffn_1.54，1.77">1.54，1.77</a></sup> ，1.75，95%置信区间(CI)<sup><a href="#fn_1.64，1.88" id="reffn_1.64，1.88">1.64，1.88</a></sup> ，或1.89，95%置信区间(CI)<sup><a href="#fn_1.77，2.01" id="reffn_1.77，2.01">1.77，2.01</a></sup> ，这取决于墨西哥拉格洛里亚的疫情分别始于2009年2月11日、18日或25日。贝叶斯推断依赖于一个似然函数，该函数可以写成一个只依赖于基本再生数$R_0$的封闭形式</p>
+<script type="math/tex; mode=display">
+L(R_0)=\prod_{j\in A}{f_1(t_j|\lambda_{ij},\alpha_{ij})}\prod_{j\in B}{F_1(t_j|\lambda_{ij},\alpha_{ij})}</script><p>其中，人群$i$表示大墨西哥城为传染源，$t_j$表示观察到的人群$j$的首次EAT，可以是精确的(集合A)或左删失的(集合B)，$\lambda_{ij}=\lambda_i−\sum_{k\not ={j}}w_{ik}$表示枢纽修正后的传染病增长率，$\alpha_{ij}$表示修正后的传播率。文献认为$R_0=1+λ_iZ$，其中$Z$是平均感染期。该似然函数得出的$R_0$估计值与GLEAM模拟相同，但不依赖于高性能计算(图61)。这种计算复杂性和资源需求的大幅降低预计未来将大大提高传染预测的效率和及时性。</p>
+<p><em>估计武汉至中国其他城市的新冠肺炎传播风险</em> 新冠病毒是由SARS-CoV-2病毒引起的。由于这种病毒在全球迅速蔓延，死亡人数不断上升，动物储存宿主不明，人际传播的证据不断增多<sup><a href="#fn_969" id="reffn_969">969</a></sup> ，世界卫生组织(WHO)于2020年1月30日宣布新冠病毒疫情为国际关注的突发公共卫生事件。在当时，新增病例从武汉传播到其他地方的风险受到了密切的关注。文献<sup><a href="#fn_955" id="reffn_955">955</a></sup> 在2020年初使用文献<sup><a href="#fn_890" id="reffn_890">890</a></sup> 中提出的方法进行了快速案例研究从而解决了关切问题。</p>
+<p>从传染病学模型出发估计新增病例从起源人群向外传播的风险。$\Delta I_W(t)$是2019年12月1日至2020年1月22日期间武汉每日新增感染人数。根据截至2020年1月22日在武汉确认的首批425例新冠肺炎病例的传染病学数据<sup><a href="#fn_969" id="reffn_969">969</a></sup> ，假设疫情呈指数增长</p>
+<script type="math/tex; mode=display">
+\Delta I_W(t)=i_0\exp(\lambda t)</script><p>式中，$i_0$是2019年12月1日的初始病例数，$\lambda$是2019年12月1日至2020年1月22日期间的当地传染病增长率。新冠病毒病例确诊的普遍延迟时间平均为$D=10$天<sup><a href="#fn_970" id="reffn_970">970</a></sup> ，其中潜伏期为5-6天<sup><a href="#fn_969" id="reffn_969">969</a></sup> ，从症状出现到检测的延迟时间为4-5天 。考虑到这一点后，$t$时的感染病例数由下式得出：</p>
+<script type="math/tex; mode=display">
+I_W(t)=\sum_{u=t-D}^t{\Delta I_W(u)}</script><center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://s2.loli.net/2022/06/03/9jAyEdO2hCzZu8R.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;"><b>图61</b> 推断2009年大墨西哥城甲型H1N1流感大流行的基本再生数R0 如文献[^968] 所述，R0的值是使用墨西哥前12个传播到的国家的首位EATs推断出来的。红色曲线和红色阴影区分别表示后中位和95%可信区间。蓝点和误差线分别显示文献[^968] 中的平均值和95%置信区间，这取决于甲型H1N1流感大流行是于2009年2月11日、18日还是25日在墨西哥拉格洛里亚开始的。
+</div>
+</center>
+
+<p>而传染病的确诊率为</p>
+<script type="math/tex; mode=display">
+\eta(t)=I_W(t)/N_W</script><p>$N_W=11.1 \text{m}$表示武汉的人口规模。</p>
+<p>估计新病例从起源人群向外传播的风险的过程中下一步需要做的是确认传播模型。假设到武汉的游客和武汉的居民每天都有相同的感染风险，可以使用非齐次泊松过程来估计从武汉外溢新冠病毒感染的风险<sup><a href="#fn_890,957,958" id="reffn_890,957,958">890,957,958</a></sup> 。设$W_j(t)$为第$t$天前往$j$市的武汉居民人数，$M_j(t)$为当天从$j$市返回武汉的游客人数。非齐次泊松过程的强度函数为$η(t)[W_j(t)+M_j(t)] $，到$t$时，将至少一个新冠肺炎病例从武汉引入$j$市的概率为</p>
+<script type="math/tex; mode=display">
+1-\exp\left(-\int_{t_0}^t{\eta(u)[W_j(u)+M_j(u)] }\mathrm{d}u\right)</script><p>其中研究从$t_0$开始，即2019年12月1日。</p>
+<p>为了估计未知参数，如初始病例数$i_0$和局部传染病增长率$\lambda$，就需要一个似然函数，其功能应该包含各种信息，即使风险水平在中国城市被量化，也会包括关于中国境外疾病外溢的信息。文献<sup><a href="#fn_955" id="reffn_955">955</a></sup> 特别使用了2020年1月22日之前前往中国境外11个城市的19名武汉居民的首次EATs数据。</p>
+<p>设$N_j$为在中国境外$j$地点检测到的感染的武汉居民人数，$t^i_j$为第$i$次检测发生的时间。此外，$t^0_j$表示2020年1月1日，即开始对来自武汉的受感染旅行者进行国际检测的日期。最后，$t_e$表示2020年1月22日，即研究期结束。如上所述，武汉受感染居民在时间$t$到达地点$j$的速率为$\eta(t)W_j(t)$。因此，到2020年1月22日，19名武汉居民在中国境外旅行时，观察EATs的似然函数为</p>
+<script type="math/tex; mode=display">
+\prod_{j=0}^{11}{\exp{\left(-\int_{t_j^{N_j}}^{t_e}{\eta(t)W_j(t)\mathrm{d}t}\right)}}\prod_{i=1}^{N_j}{\eta(t_j^i)W_j(t_j^i)\exp\left(-\int_{t_j^{i-1}}^{t_j^i}{\eta(t)W_j(t)\mathrm{d}t}\right)}</script><p>第一项连乘量化了在$j$处从第$N_j$次外溢到研究结束期间未发现任何外溢的概率。第二项连乘量化了在时间$t_j^i$的$j$处看到第$i$个外溢的概率密度。在2020年1月22日之前，所有纳入研究但未观察到新冠肺炎病例的城市被视为单一地点，序号为$j=0$。</p>
+<p>利用等式(116)中的似然函数，可以估计2019年12月1日的初始病例数$i_0$以及2019年12月1日至2020年1月22日之间的当地传染病增长率$\lambda$。文献<sup><a href="#fn_955" id="reffn_955">955</a></sup> 使用了马尔可夫链蒙特卡罗方法以及哈密顿蒙特卡罗抽样和非信息平坦先验。假设潜伏期以指数分布，平均$L$为3-6天，感染期也以指数形式分布，平均$Z$为2-7天，基本再生数为$R_0=(1+\lambda L)(1+\lambda Z)$。</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://s2.loli.net/2022/06/04/XJbtEvOHfRqiwPx.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;"><b>图62</b> 2020年1月23日封锁前从中国武汉出口新冠肺炎的风险。<b>A</b> 每天往返武汉的交通流量。<b>B</b> 武汉市累计估计和确诊的新冠肺炎病例。绿线和灰色阴影区域表示自2019年12月1日以来估计的累积真实感染的平均值和95%可信区间。黑点表示2020年1月1日至22日期间的累计确诊病例数。1月10日标志着中国春节旅游季的开始。<b>C</b> 到2020年1月22日，中国城市从武汉输入一例以上新冠肺炎病例的可能性。131个城市(橙色和红色圆圈)表现出超过50%的高风险。
+</div>
+</center>
+
+<p>在估算所有参数的情况下，公式(115)计算了2020年1月23日武汉封锁之前，将至少一个病例从武汉外溢到下游城市$j$的风险(图62)。</p>
+<p>文献<sup><a href="#fn_955" id="reffn_955">955</a></sup> 估计新冠病毒病例倍增时间$(=\ln(2)/\lambda)$为7.31天，95%可信区间[6.26，9.66] 天。其他使用类似方法的研究得出了一致的结果；例如，文献<sup><a href="#fn_956" id="reffn_956">956</a></sup> 估计了6.4天的倍增时间(95%可信区间[5.8，7.1]天)，以及2.7的基本再生数$R_0$(95%可信区间[2.5，2.9])。文献<sup><a href="#fn_971" id="reffn_971">971</a></sup> 提出了一个涵盖375个中国城市的集合人口网络模型，并利用腾讯的迁徙数据来捕捉2021中国春节期间的人口流动。通过将该模型与2020年1月23日武汉封锁后中国各地报告的801例新冠肺炎病例进行拟合，基本再生数$R_0$估计为2.38，95%可信区间[2.03，2.77] 。有趣的是，文献<sup><a href="#fn_972" id="reffn_972">972</a></sup> 估计中国大陆第一波新冠肺炎期间的基本繁殖数为$R_0=5.7$，95%置信区间[3.8，8.9] ，这与其他研究不一致。然而，这种极端的结果可能是由于对发生初期单一感染的不恰当假设造成的。</p>
+<h2 id="挑战和未来工作"><a href="#挑战和未来工作" class="headerlink" title="挑战和未来工作"></a>挑战和未来工作</h2><p>我们已经了解了传染病学建模的最新进展，以及它与萌芽的数字传染病学领域的关系。在此，我们概述了一些紧迫问题和能够取得进一步进展的想法。</p>
+<p>本文描述的集合种群方法认为每个种群（即城市）中的混合是同质的。然而，仅在城市间尺度上观察流动模式，就隐藏了发生在城市内尺度上的重要传染病学现象<sup><a href="#fn_973,974" id="reffn_973,974">973,974</a></sup> 。例如，参考文献<sup><a href="#fn_975" id="reffn_975">975</a></sup> 描述了一种集合人群易感-暴露-感染-清除（SEIR）模型，该模型结合了城市内的流动性，用以研究新冠病毒在美国十个大都市地区的传播动力学。这项改进帮助人们确认了，因为流动性的差异，弱势的种族或经济群体中存在较高的感染率。具体而言，对弱势群体减少其流动性和接触传染病的控制相对较少。</p>
+<p>除了流动模式外，接触模式在传染病学上的重要性不容忽视。后者已被证明与年龄高度相关；尤其是学龄儿童和年轻人往往与年龄相近的人交往[976-978] 。这使得年轻人群可能更容易感染传染病，除非存在像SARS-CoV-2（早期变体）的情况一样存在生物体衰弱环境<sup><a href="#fn_979" id="reffn_979">979</a></sup> 。<br>传染病学中的另一个关键因素是传染病传播能力的个体异质性。例如，在麻疹、流感、风疹、天花、埃博拉、猴痘、SARS和新冠病毒爆发期间，超级传播者导致继发病例数量不成比例。在新冠肺炎病例中，约19%的感染者造就了80%的本地传播<sup><a href="#fn_980" id="reffn_980">980</a></sup> 。事实上，最近已经证明，SARS-CoV和SARS-CoV-2病毒会导致继发感染的数量呈厚尾分布，这突出了个体间传播能力的巨大异质性<sup><a href="#fn_981" id="reffn_981">981</a></sup> 。对于解释这种异质性，传染病学模型得出的结果与基于平均数的方法得出的结果有巨大差异，这样特征的疫情更罕见，并且更具爆炸性<sup><a href="#fn_982" id="reffn_982">982</a></sup>。因此，未来的模型不仅应考虑接触网络的异质性，还应考虑传染性的异质性以及其他可能的传染病学参数。</p>
+<p>自2019年12月新冠肺炎大流行以来，非药物干预研究的数量激增<sup><a href="#fn_983" id="reffn_983">983</a></sup> 。这种兴趣激增的一个重要原因是，非药物干预是减少新病原体传播的唯一手段，并且非常有效。例如，事实证明，仅社交距离就足以控制中国的新冠病毒<sup><a href="#fn_984 " id="reffn_984 ">984 </a></sup>。对感染个体的快速隔离进一步缩短了传播链中连续感染的间隔时间（即序列间隔），thus signalling effectiveness in preventing multiple secondary infections that would have arisen without isolation <sup><a href="#fn_985" id="reffn_985">985</a></sup>。这些例子表明，在特定情况下确定非药物干预的最佳组合可能挽救许多生命，应成为传染病学建模的一个主要组成部分。</p>
+<p>本章有希望证明传染病学需要多少数据。使用数字数据源（如谷歌趋势、推特和脸书）的一个主要限制是，这些数据源都没有从传染病学出发。通过建立类似于HealthMap<sup><a href="#fn_942" id="reffn_942">942</a></sup> 和InflufzaNet<sup><a href="#fn_986" id="reffn_986">986</a></sup> 的数据标准和专业系统，可以克服这一限制，证明这些系统对公共卫生机构能够产生作用。实现这一目标并非易事，因为复杂的数据分析和建模方法对于原本忙碌的公共卫生官员来说往往要求太高。在这种情况下，依靠称为视觉分析的易于使用的交互界面可能会有所帮助。例如，文献<sup><a href="#fn_988" id="reffn_988">988</a></sup> 展示了如何将数据挖掘和基于代理的传染病建模与可视化分析环境有效地结合起来，以促进人类在控制传染病方面的决策。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>UynajGI
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://uynajgi.github.io/2022/06/04/SocialPhy/" title="社会物理学">https://uynajgi.github.io/2022/06/04/SocialPhy/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/BY-NC-SA/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%9F%A9%E9%98%B5/" rel="tag"># 矩阵</a>
+              <a href="/tags/%E5%A4%8D%E6%9D%82%E7%A7%91%E5%AD%A6/" rel="tag"># 复杂科学</a>
+              <a href="/tags/%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86/" rel="tag"># 统计物理</a>
+              <a href="/tags/%E7%A4%BE%E4%BC%9A%E7%B3%BB%E7%BB%9F/" rel="tag"># 社会系统</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/05/24/LA/" rel="prev" title="线性代数">
+      <i class="fa fa-chevron-left"></i> 线性代数
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%8F%E8%A8%80%EF%BC%9A%E5%A4%9A%E5%AD%A6%E7%A7%91%E7%9A%84%E7%89%A9%E7%90%86%E6%A0%B9%E5%9F%BA"><span class="nav-number">2.</span> <span class="nav-text">序言：多学科的物理根基</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%8E%E5%B8%82%E5%8A%A8%E5%8A%9B%E5%AD%A6"><span class="nav-number">3.</span> <span class="nav-text">城市动力学</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%8E%E5%B8%82%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">3.1.</span> <span class="nav-text">城市的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%8E%E5%B8%82%E7%9A%84%E8%A7%84%E6%A8%A1"><span class="nav-number">3.2.</span> <span class="nav-text">城市的规模</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%8E%E5%B8%82%E7%9A%84%E5%A2%9E%E9%95%BF"><span class="nav-number">3.3.</span> <span class="nav-text">城市的增长</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%8E%E5%B8%82%E5%86%85%E9%83%A8%E5%92%8C%E5%9F%8E%E5%B8%82%E4%B9%8B%E9%97%B4%E7%9A%84%E7%BD%91%E7%BB%9C"><span class="nav-number">3.4.</span> <span class="nav-text">城市内部和城市之间的网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%8D%E6%97%8F%E9%9A%94%E7%A6%BB-Segregation"><span class="nav-number">3.5.</span> <span class="nav-text">种族隔离(Segregation)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%8E%E5%B8%82%E5%B0%BA%E5%BA%A6%E7%90%86%E8%AE%BA"><span class="nav-number">3.6.</span> <span class="nav-text">城市尺度理论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%BA%E7%B1%BB%E8%BF%81%E5%BE%99"><span class="nav-number">3.7.</span> <span class="nav-text">人类迁徙</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%A8%E8%BF%B9%E5%88%86%E6%9E%90"><span class="nav-number">3.8.</span> <span class="nav-text">轨迹分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E8%88%AA%E6%80%A7-Navigability"><span class="nav-number">3.9.</span> <span class="nav-text">可航性(Navigability)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AA%E6%9D%A5%E7%9A%84%E5%89%8D%E6%99%AF"><span class="nav-number">3.10.</span> <span class="nav-text">未来的前景</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%A4%E9%80%9A%E6%B5%81-Traffic-flows"><span class="nav-number">4.</span> <span class="nav-text">交通流(Traffic flows)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%82%E6%B5%8B%E5%88%B0%E7%9A%84%E7%8E%B0%E8%B1%A1"><span class="nav-number">4.1.</span> <span class="nav-text">观测到的现象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%A4%E9%80%9A%E6%B5%81%E6%A8%A1%E5%9E%8B"><span class="nav-number">4.2.</span> <span class="nav-text">交通流模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%81%E4%BD%93%E5%8A%9B%E5%AD%A6%E6%A8%A1%E5%9E%8B"><span class="nav-number">4.2.1.</span> <span class="nav-text">流体力学模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%A8%A1%E5%9E%8B"><span class="nav-number">4.2.2.</span> <span class="nav-text">动力学模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B7%9F%E9%A9%B0%E7%90%86%E8%AE%BA-Car-following-theories"><span class="nav-number">4.2.3.</span> <span class="nav-text">跟驰理论(Car-following theories)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%80%A6%E5%90%88%E6%98%A0%E5%83%8F%E6%A0%BC%E6%A8%A1%E5%9E%8B-Coupled-map-lattice-models"><span class="nav-number">4.2.4.</span> <span class="nav-text">耦合映像格模型(Coupled-map lattice models)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%83%E8%83%9E%E8%87%AA%E5%8A%A8%E6%9C%BA%E6%A8%A1%E5%9E%8B-Cellular-automata-models"><span class="nav-number">4.2.5.</span> <span class="nav-text">元胞自动机模型(Cellular automata models)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8E%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BB%9F%E8%AE%A1%E5%8A%9B%E5%AD%A6%E7%9A%84%E8%81%94%E7%B3%BB"><span class="nav-number">4.2.6.</span> <span class="nav-text">与非线性统计力学的联系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E4%BA%BA%E4%BA%A4%E9%80%9A%E6%B5%81"><span class="nav-number">4.3.</span> <span class="nav-text">行人交通流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AA%E6%9D%A5%E7%9A%84%E5%89%8D%E6%99%AF-1"><span class="nav-number">4.4.</span> <span class="nav-text">未来的前景</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%8F%E6%B5%8E%E5%AD%A6"><span class="nav-number">5.</span> <span class="nav-text">经济学</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%8F%E6%B5%8E%E7%89%A9%E7%90%86%E5%AD%A6%E7%9A%84%E5%87%BA%E7%8E%B0"><span class="nav-number">5.1.</span> <span class="nav-text">经济物理学的出现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E4%BB%A3%E7%90%86%E7%9A%84%E5%BB%BA%E6%A8%A1%EF%BC%9A%E4%BA%A4%E6%98%93%E5%95%86%E6%A8%A1%E5%9E%8B-Agent-based-modelling-The-dealer-model"><span class="nav-number">5.2.</span> <span class="nav-text">基于代理的建模：交易商模型(Agent-based modelling: The dealer model)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B%EF%BC%9APUCK-%E6%A8%A1%E5%9E%8B"><span class="nav-number">5.3.</span> <span class="nav-text">时间序列模型：PUCK 模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A2%E5%8D%95%E5%BB%BA%E6%A8%A1%EF%BC%9A%E9%87%91%E8%9E%8D%E5%B8%83%E6%9C%97%E8%BF%90%E5%8A%A8"><span class="nav-number">5.4.</span> <span class="nav-text">订单建模：金融布朗运动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%91%E8%9E%8D%E5%B8%82%E5%9C%BA%E5%BE%AE%E8%A7%82%E7%BB%93%E6%9E%84%E7%9A%84%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%96%B9%E6%B3%95"><span class="nav-number">5.5.</span> <span class="nav-text">金融市场微观结构的动力学方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E5%8A%A8%E5%8A%9B%E5%AD%A6%E7%90%86%E8%AE%BA%E6%B1%82%E8%A7%A3%E5%BE%AE%E8%A7%82%E6%A8%A1%E5%9E%8B"><span class="nav-number">5.6.</span> <span class="nav-text">用动力学理论求解微观模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%A0%E6%9F%93%E7%8E%B0%E8%B1%A1"><span class="nav-number">6.</span> <span class="nav-text">传染现象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%A9%B1%E5%8A%A8%E7%9A%84%E9%9B%86%E5%90%88%E7%A7%8D%E7%BE%A4%E6%A8%A1%E5%9E%8B"><span class="nav-number">6.1.</span> <span class="nav-text">数据驱动的集合种群模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E6%B5%81%E8%A1%8C%E7%97%85%E5%AD%A6"><span class="nav-number">6.2.</span> <span class="nav-text">数字流行病学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E4%BA%BA%E7%BE%A4%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%88%86%E6%9E%90%E7%BB%93%E6%9E%9C"><span class="nav-number">6.3.</span> <span class="nav-text">集合人群模型的分析结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%A0%E6%9F%93%E7%97%85%E5%AD%A6%E5%8F%82%E9%87%8F%E7%9A%84-Bayes-%E6%8E%A8%E6%96%AD"><span class="nav-number">6.4.</span> <span class="nav-text">传染病学参量的 Bayes 推断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%91%E6%88%98%E5%92%8C%E6%9C%AA%E6%9D%A5%E5%B7%A5%E4%BD%9C"><span class="nav-number">6.5.</span> <span class="nav-text">挑战和未来工作</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="UynajGI"
+      src="/images/U_avatar.jpg">
+  <p class="site-author-name" itemprop="name">UynajGI</p>
+  <div class="site-description" itemprop="description">如果你想走到高处，就要使用自己的两条腿！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/UynajGI" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;UynajGI" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/suquan12148@outlook.com" title="E-Mail → suquan12148@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备2022065599号 </a>
+      <img src="/images/beian.png" style="display: inline-block;">
+  </div>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">UynajGI</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://fastly.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'BVSKnFeCrNqm2fxuRQDNrGSi-gzGzoHsz',
+      appKey     : '4yBhrsfCH97K6kIiNBRxlFqM',
+      placeholder: "留下你的想法吧！",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
