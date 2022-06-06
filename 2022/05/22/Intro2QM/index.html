@@ -759,6 +759,7 @@ f(\theta)\approx-\dfrac{2mq_1q_2}{4\pi\varepsilon_0\hbar^2\kappa^2}=-\dfrac{q_1q
 
           </div>
           
+    <div class="comments" id="utterances-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -986,6 +987,21 @@ f(\theta)\approx-\dfrac{2mq_1q_2}{4\pi\varepsilon_0\hbar^2\kappa^2}=-\dfrac{q_1q
     
 
   
+
+<script>
+NexT.utils.loadComments(document.querySelector('#utterances-container'), () => {
+    // if (typeof parcelRequire === 'function') { return; }
+    var js = document.createElement('script');
+    js.type = 'text/javascript';
+    js.src = 'https://utteranc.es/client.js';
+    js.async = true;
+    js.crossorigin = 'anonymous';
+    js.setAttribute('repo', 'UynajGI/UynajGI-s-Comment');
+    js.setAttribute('issue-term', 'pathname');
+    js.setAttribute('theme', 'github-light');
+    document.getElementById('utterances-container').appendChild(js);
+});
+</script>
 
 </body>
 </html>

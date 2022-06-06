@@ -601,6 +601,7 @@ f(x_1,x_2,\cdots,x_n)=\mathbf{X}^T\mathbf{A}\mathbf{X}</script></li>
 
           </div>
           
+    <div class="comments" id="utterances-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -828,6 +829,21 @@ f(x_1,x_2,\cdots,x_n)=\mathbf{X}^T\mathbf{A}\mathbf{X}</script></li>
     
 
   
+
+<script>
+NexT.utils.loadComments(document.querySelector('#utterances-container'), () => {
+    // if (typeof parcelRequire === 'function') { return; }
+    var js = document.createElement('script');
+    js.type = 'text/javascript';
+    js.src = 'https://utteranc.es/client.js';
+    js.async = true;
+    js.crossorigin = 'anonymous';
+    js.setAttribute('repo', 'UynajGI/UynajGI-s-Comment');
+    js.setAttribute('issue-term', 'pathname');
+    js.setAttribute('theme', 'github-light');
+    document.getElementById('utterances-container').appendChild(js);
+});
+</script>
 
 </body>
 </html>

@@ -1177,6 +1177,7 @@ P(t')=\dfrac{1}{4\pi\varepsilon_0c^2}\dfrac{2}{3}\dfrac{e^2\dot{\mathbf{v}}^2}{c
 
           </div>
           
+    <div class="comments" id="utterances-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -1404,6 +1405,21 @@ P(t')=\dfrac{1}{4\pi\varepsilon_0c^2}\dfrac{2}{3}\dfrac{e^2\dot{\mathbf{v}}^2}{c
     
 
   
+
+<script>
+NexT.utils.loadComments(document.querySelector('#utterances-container'), () => {
+    // if (typeof parcelRequire === 'function') { return; }
+    var js = document.createElement('script');
+    js.type = 'text/javascript';
+    js.src = 'https://utteranc.es/client.js';
+    js.async = true;
+    js.crossorigin = 'anonymous';
+    js.setAttribute('repo', 'UynajGI/UynajGI-s-Comment');
+    js.setAttribute('issue-term', 'pathname');
+    js.setAttribute('theme', 'github-light');
+    document.getElementById('utterances-container').appendChild(js);
+});
+</script>
 
 </body>
 </html>

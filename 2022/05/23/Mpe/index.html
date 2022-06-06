@@ -751,6 +751,7 @@ n\mathrm{L}_{n-1}+(n+1)\mathrm{L}_{n+1}(x)=(2n-x+1)\mathrm{L}\_n(x),\quad n\ge1<
 
           </div>
           
+    <div class="comments" id="utterances-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -978,6 +979,21 @@ n\mathrm{L}_{n-1}+(n+1)\mathrm{L}_{n+1}(x)=(2n-x+1)\mathrm{L}\_n(x),\quad n\ge1<
     
 
   
+
+<script>
+NexT.utils.loadComments(document.querySelector('#utterances-container'), () => {
+    // if (typeof parcelRequire === 'function') { return; }
+    var js = document.createElement('script');
+    js.type = 'text/javascript';
+    js.src = 'https://utteranc.es/client.js';
+    js.async = true;
+    js.crossorigin = 'anonymous';
+    js.setAttribute('repo', 'UynajGI/UynajGI-s-Comment');
+    js.setAttribute('issue-term', 'pathname');
+    js.setAttribute('theme', 'github-light');
+    document.getElementById('utterances-container').appendChild(js);
+});
+</script>
 
 </body>
 </html>
