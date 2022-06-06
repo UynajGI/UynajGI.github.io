@@ -209,6 +209,20 @@
             </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2022/05/23/Mpe/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/05/23/Mpe/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <div class="post-description">数学物理方程的基本公式及推导。</div>
 
         </div>
@@ -753,7 +767,9 @@ n\mathrm{L}_{n-1}+(n+1)\mathrm{L}_{n+1}(x)=(2n-x+1)\mathrm{L}\_n(x),\quad n\ge1<
           
     
   <div class="comments">
-    <div id="lv-container" data-id="city" data-uid="MTAyMC81NjU1Mi8zMzAxNQ"></div>
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
   </div>
   
 
@@ -985,19 +1001,34 @@ n\mathrm{L}_{n-1}+(n+1)\mathrm{L}_{n+1}(x)=(2n-x+1)\mathrm{L}\_n(x),\quad n\ge1<
   
 
 <script>
-NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
-  window.livereOptions = {
-    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
-  };
-  (function(d, s) {
-    var j, e = d.getElementsByTagName(s)[0];
-    if (typeof LivereTower === 'function') { return; }
-    j = d.createElement(s);
-    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-    j.async = true;
-    e.parentNode.insertBefore(j, e);
-  })(document, 'script');
-});
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://uynajgi.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://uynajgi.github.io/2022/05/23/Mpe/";
+    this.page.identifier = "2022/05/23/Mpe/";
+    this.page.title = "数学物理方程";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://uynajgi.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
 </script>
 
 </body>
