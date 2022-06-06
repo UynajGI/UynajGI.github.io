@@ -214,20 +214,6 @@
             </span>
 
           
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2022/05/22/Intro2QM/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/05/22/Intro2QM/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
             <div class="post-description">本篇主要是本科阶段学习的量子力学笔记。</div>
 
         </div>
@@ -773,7 +759,6 @@ f(\theta)\approx-\dfrac{2mq_1q_2}{4\pi\varepsilon_0\hbar^2\kappa^2}=-\dfrac{q_1q
 
           </div>
           
-    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -1001,35 +986,6 @@ f(\theta)\approx-\dfrac{2mq_1q_2}{4\pi\varepsilon_0\hbar^2\kappa^2}=-\dfrac{q_1q
     
 
   
-
-
-<script>
-NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
-    var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item => {
-      return GUEST.includes(item);
-    });
-    new Valine({
-      el         : '#valine-comments',
-      verify     : false,
-      notify     : true,
-      appId      : 'G4Xr342Hc6qTXbrt73X1swE0-gzGzoHsz',
-      appKey     : 'wQ0br4mhh5lX4eevolJ6E25C',
-      placeholder: "留下你的想法吧！",
-      avatar     : 'mm',
-      meta       : guest,
-      pageSize   : '10' || 10,
-      visitor    : false,
-      lang       : 'zh-cn' || 'zh-cn',
-      path       : location.pathname,
-      recordIP   : false,
-      serverURLs : ''
-    });
-  }, window.Valine);
-});
-</script>
 
 </body>
 </html>
