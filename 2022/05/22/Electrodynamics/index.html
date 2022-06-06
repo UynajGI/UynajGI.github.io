@@ -215,6 +215,20 @@
             </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/05/22/Electrodynamics/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/05/22/Electrodynamics/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <div class="post-description">本篇主要是本科阶段学习的电动力学笔记，简单部分使用了公式书记录法，难点重点兴趣点部分记录了学习推导过程。</div>
 
         </div>
@@ -1177,13 +1191,7 @@ P(t')=\dfrac{1}{4\pi\varepsilon_0c^2}\dfrac{2}{3}\dfrac{e^2\dot{\mathbf{v}}^2}{c
 
           </div>
           
-    
-  <div class="comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-    </div>
-  </div>
-  
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -1412,20 +1420,32 @@ P(t')=\dfrac{1}{4\pi\varepsilon_0c^2}\dfrac{2}{3}\dfrac{e^2\dot{\mathbf{v}}^2}{c
 
   
 
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/disqusjs@3.0/dist/browser/styles/disqusjs.css">
 
 <script>
-NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
-  NexT.utils.getScript('https://fastly.jsdelivr.net/npm/disqusjs@3.0/dist/browser/disqusjs.es2015.umd.min.js', () => {
-    window.dsqjs = new DisqusJS({
-      api       : 'https://disqus.skk.moe/disqus/' || 'https://disqus.com/api/',
-      apikey    : 'c87vmwqAVjX4kWgvw2M4QiV3ZmrxNXcxgWnSYfYeG4AR5Ht63JdxRGlMVUHP08bb',
-      shortname : 'uynajgi',
-      url       : "https://uynajgi.github.io/2022/05/22/Electrodynamics/",
-      identifier: "2022/05/22/Electrodynamics/",
-      title     : "经典电动力学",
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
     });
-  }, window.DisqusJS);
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : '0XaN6xaogcnAmpmXwgXv8qgC-gzGzoHsz',
+      appKey     : 'UbnEeBH1PSr8KS5zYKyjI7pw',
+      placeholder: "留下你的想法吧！",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
 });
 </script>
 
