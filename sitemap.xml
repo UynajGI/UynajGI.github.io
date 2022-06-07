@@ -212,13 +212,6 @@
   </url>
   
   <url>
-    <loc>https://www.uynajgi.com/tags/%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86/</loc>
-    <lastmod>2022-06-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.uynajgi.com/tags/%E5%A4%8D%E6%9D%82%E7%A7%91%E5%AD%A6/</loc>
     <lastmod>2022-06-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -234,6 +227,13 @@
   
   <url>
     <loc>https://www.uynajgi.com/tags/%E7%BD%91%E7%BB%9C%E7%A7%91%E5%AD%A6/</loc>
+    <lastmod>2022-06-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.uynajgi.com/tags/%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86/</loc>
     <lastmod>2022-06-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
