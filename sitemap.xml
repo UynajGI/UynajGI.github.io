@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://uynajgi.github.io/2022/06/07/Hexo-install/</loc>
+    <loc>https://uynajgi.github.io/919906d6.html</loc>
     
     <lastmod>2022-06-07</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://uynajgi.github.io/2022/06/04/SocialPhy/</loc>
+    <loc>https://uynajgi.github.io/dbfe7e6e.html</loc>
     
     <lastmod>2022-06-06</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://uynajgi.github.io/2022/05/22/Electrodynamics/</loc>
+    <loc>https://uynajgi.github.io/4921feac.html</loc>
     
     <lastmod>2022-06-05</lastmod>
     
@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://uynajgi.github.io/2022/05/22/TDynamics-SPhysics-cookbook/</loc>
+    <loc>https://uynajgi.github.io/7f5cac98.html</loc>
     
     <lastmod>2022-06-04</lastmod>
     
@@ -74,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://uynajgi.github.io/2022/05/22/Intro2QM/</loc>
+    <loc>https://uynajgi.github.io/15b75fd6.html</loc>
     
     <lastmod>2022-05-30</lastmod>
     
@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://uynajgi.github.io/2022/05/24/LA/</loc>
+    <loc>https://uynajgi.github.io/c23efd5b.html</loc>
     
     <lastmod>2022-05-24</lastmod>
     
@@ -92,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://uynajgi.github.io/2022/05/23/CDG/</loc>
+    <loc>https://uynajgi.github.io/ea609da9.html</loc>
     
     <lastmod>2022-05-23</lastmod>
     
@@ -101,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://uynajgi.github.io/2022/05/23/Mpe/</loc>
+    <loc>https://uynajgi.github.io/10b6d0b4.html</loc>
     
     <lastmod>2022-05-23</lastmod>
     
@@ -110,7 +110,7 @@
   </url>
   
   <url>
-    <loc>https://uynajgi.github.io/2022/05/22/NetLogo/</loc>
+    <loc>https://uynajgi.github.io/b8cbe38d.html</loc>
     
     <lastmod>2022-05-22</lastmod>
     
@@ -157,6 +157,27 @@
   
   <url>
     <loc>https://uynajgi.github.io/tags/%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2022-06-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://uynajgi.github.io/tags/%E9%BA%A6%E5%85%8B%E6%96%AF%E9%9F%A6%E6%96%B9%E7%A8%8B%E7%BB%84/</loc>
+    <lastmod>2022-06-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://uynajgi.github.io/tags/%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA/</loc>
+    <lastmod>2022-06-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://uynajgi.github.io/tags/%E7%94%B5%E7%A3%81%E5%9C%BA/</loc>
     <lastmod>2022-06-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -213,27 +234,6 @@
   
   <url>
     <loc>https://uynajgi.github.io/tags/%E5%9F%BA/</loc>
-    <lastmod>2022-06-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://uynajgi.github.io/tags/%E9%BA%A6%E5%85%8B%E6%96%AF%E9%9F%A6%E6%96%B9%E7%A8%8B%E7%BB%84/</loc>
-    <lastmod>2022-06-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://uynajgi.github.io/tags/%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA/</loc>
-    <lastmod>2022-06-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://uynajgi.github.io/tags/%E7%94%B5%E7%A3%81%E5%9C%BA/</loc>
     <lastmod>2022-06-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
