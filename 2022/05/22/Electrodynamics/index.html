@@ -85,7 +85,37 @@
   </style>
 </noscript>
 
-</head>
+<style type="text/css">
+.spoiler {
+  display: inline-flex;
+}
+p.spoiler {
+  display: flex;
+}
+.spoiler a {
+  pointer-events: none;
+}
+.spoiler-blur, .spoiler-blur > * {
+  transition: text-shadow .5s ease;
+}
+.spoiler .spoiler-blur, .spoiler .spoiler-blur > * {
+  color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  text-shadow: 0 0 10px grey;
+  cursor: pointer;
+}
+.spoiler .spoiler-blur:hover, .spoiler .spoiler-blur:hover > * {
+  text-shadow: 0 0 5px grey;
+}
+.spoiler-box, .spoiler-box > * {
+  transition: color .5s ease,
+  background-color .5s ease;
+}
+.spoiler .spoiler-box, .spoiler .spoiler-box > * {
+  color: black;
+  background-color: black;
+  text-shadow: none;
+}</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -235,13 +265,13 @@
 
       
         <blockquote>
-<p>$\mathrm{d}l$为线元,$\mathrm{d}a$为面元,$\mathrm{d}\tau$为体积元.</p>
+<p>$\mathrm {d} l$ 为线元，$\mathrm {d} a$ 为面元，$\mathrm {d}\tau$ 为体积元.</p>
 <p>$L\rightarrow S,\Omega\rightarrow V$</p>
 </blockquote>
-<div STYLE="page-break-after: always;"></div>
+<div style="page-break-after: always;"></div>
 
-<h1 id="矢量分析和场论基础"><a href="#矢量分析和场论基础" class="headerlink" title="矢量分析和场论基础"></a>矢量分析和场论基础</h1><h2 id="矢量代数的基本公式"><a href="#矢量代数的基本公式" class="headerlink" title="矢量代数的基本公式"></a>矢量代数的基本公式</h2><p>交换律、结合律、分配律<br><strong>直角坐标系</strong><br>正交性：$\mathbf{e}_i\cdot\mathbf{e}_j=\delta_{ij}$</p>
-<p>标量积：$\mathbf{A}\cdot\mathbf{B}=AB\cos{\theta}=\mathbf{A}_i\cdot\mathbf{B}_i$</p>
+<h1 id="矢量分析和场论基础"><a href="#矢量分析和场论基础" class="headerlink" title="矢量分析和场论基础"></a>矢量分析和场论基础</h1><h2 id="矢量代数的基本公式"><a href="#矢量代数的基本公式" class="headerlink" title="矢量代数的基本公式"></a>矢量代数的基本公式</h2><p>交换律、结合律、分配律<br><strong>直角坐标系</strong><br>正交性：$\mathbf {e}_i\cdot\mathbf {e}_j=\delta_{ij}$</p>
+<p>标量积：$\mathbf {A}\cdot\mathbf {B}=AB\cos {\theta}=\mathbf {A}_i\cdot\mathbf {B}_i$</p>
 <p>矢量积：</p>
 <script type="math/tex; mode=display">
 \mathbf{A}\times\mathbf{B} = \mathbf{A}_i\mathbf{B}_i\sin{\theta}=\left|
@@ -249,16 +279,16 @@
     \mathbf{i}&&\mathbf{j}&&\mathbf{k}\\
     A_x&&A_y&&A_z\\
     B_x&&B_y&&B_z
-\end{matrix}\right|</script><p>不满足交换律，有$\mathbf{A}\times\mathbf{B}=-\mathbf{B}\times\mathbf{A}$</p>
-<p>混合积：$\mathbf{A}\cdot(\mathbf{B}\times\mathbf{C})=\mathbf{B}\cdot(\mathbf{C}\times\mathbf{A})=\mathbf{C}\cdot(\mathbf{A}\times\mathbf{B})$</p>
-<p>双重矢量积：$\mathbf{A} \times (\mathbf{B}\times\mathbf{C})=\mathbf{B}(\mathbf{A}\cdot\mathbf{C})-\mathbf{C}(\mathbf{A}\cdot\mathbf{B})$</p>
+\end{matrix}\right|</script><p>不满足交换律，有 $\mathbf {A}\times\mathbf {B}=-\mathbf {B}\times\mathbf {A}$</p>
+<p>混合积：$\mathbf {A}\cdot (\mathbf {B}\times\mathbf {C})=\mathbf {B}\cdot (\mathbf {C}\times\mathbf {A})=\mathbf {C}\cdot (\mathbf {A}\times\mathbf {B})$</p>
+<p>双重矢量积：$\mathbf {A} \times (\mathbf {B}\times\mathbf {C})=\mathbf {B}(\mathbf {A}\cdot\mathbf {C})-\mathbf {C}(\mathbf {A}\cdot\mathbf {B})$</p>
 <h2 id="张量积与并矢及其运算规则"><a href="#张量积与并矢及其运算规则" class="headerlink" title="张量积与并矢及其运算规则"></a>张量积与并矢及其运算规则</h2><p>二阶张量可以由两个矢量的张量积构成</p>
 <script type="math/tex; mode=display">
-\vec{\mathcal{T}}=\mathbf{A}\mathbf{B}=(A^ie_i)(B^ie_i)</script><p>一般情况下，$\mathbf{A}\mathbf{B}$不可互换<br>并矢与矢量的点乘为</p>
+\vec{\mathcal{T}}=\mathbf{A}\mathbf{B}=(A^ie_i)(B^ie_i)</script><p>一般情况下，$\mathbf {A}\mathbf {B}$ 不可互换<br>并矢与矢量的点乘为</p>
 <script type="math/tex; mode=display">
 (\mathbf{A}\mathbf{B})\cdot\mathbf{C}=\mathbf{A}(\mathbf{B}\cdot\mathbf{C})\\
 \mathbf{C}\cdot(\mathbf{A}\mathbf{B})=(\mathbf{C}\cdot\mathbf{A})\mathbf{B}</script><p>叉乘同理</p>
-<h2 id="梯度、散度和旋度"><a href="#梯度、散度和旋度" class="headerlink" title="梯度、散度和旋度"></a>梯度、散度和旋度</h2><h2 id="nabla-算符的运算规则"><a href="#nabla-算符的运算规则" class="headerlink" title="$\nabla$算符的运算规则"></a>$\nabla$算符的运算规则</h2><p>$\nabla$算符：$\nabla=\mathbf{i}\dfrac{\partial{}}{\partial{x}}+\mathbf{j}\dfrac{\partial{}}{\partial{y}}+\mathbf{k}\dfrac{\partial{}}{\partial{z}}$<br>基本运算方式：</p>
+<h2 id="梯度、散度和旋度"><a href="#梯度、散度和旋度" class="headerlink" title="梯度、散度和旋度"></a>梯度、散度和旋度</h2><h2 id="nabla-算符的运算规则"><a href="#nabla-算符的运算规则" class="headerlink" title="$\nabla$算符的运算规则"></a>$\nabla$ 算符的运算规则</h2><p>$\nabla$ 算符：$\nabla=\mathbf {i}\dfrac {\partial {}}{\partial {x}}+\mathbf {j}\dfrac {\partial {}}{\partial {y}}+\mathbf {k}\dfrac {\partial {}}{\partial {z}}$<br>基本运算方式：</p>
 <script type="math/tex; mode=display">
 \nabla(\phi\psi)=\phi_c\nabla\psi+\psi_c\nabla\phi</script><ul>
 <li>例子<script type="math/tex; mode=display">
@@ -277,42 +307,42 @@ r=\left|\mathbf{R}-\mathbf{R}'\right|\\
 \nabla\cdot\mathbf{A}\left[u(r)\right]=\dfrac{\mathrm{d}\mathbf{A}}{\mathrm{d}u}\cdot\nabla u\\
 \nabla\times\mathbf{A}\left[u(r)\right]=-\dfrac{\mathrm{d}\mathbf{A}}{\mathrm{d}u}\times\nabla u</script></li>
 </ul>
-<h2 id="积分变换公式"><a href="#积分变换公式" class="headerlink" title="积分变换公式"></a>积分变换公式</h2><h3 id="散度定理——高斯定理"><a href="#散度定理——高斯定理" class="headerlink" title="散度定理——高斯定理"></a>散度定理——高斯定理</h3><script type="math/tex; mode=display">
-\oint_\Omega{\mathbf{A}\cdot\mathrm{d}\mathbf{a}}=\int_V{\nabla\cdot\mathbf{A}\mathrm{d}\tau}</script><h3 id="旋度定理——斯托克斯公式"><a href="#旋度定理——斯托克斯公式" class="headerlink" title="旋度定理——斯托克斯公式"></a>旋度定理——斯托克斯公式</h3><script type="math/tex; mode=display">
+<h2 id="积分变换公式"><a href="#积分变换公式" class="headerlink" title="积分变换公式"></a>积分变换公式</h2><h3 id="散度定理——高斯定理"><a href="#散度定理——高斯定理" class="headerlink" title="散度定理——高斯定理"></a>散度定理 —— 高斯定理</h3><script type="math/tex; mode=display">
+\oint_\Omega{\mathbf{A}\cdot\mathrm{d}\mathbf{a}}=\int_V{\nabla\cdot\mathbf{A}\mathrm{d}\tau}</script><h3 id="旋度定理——斯托克斯公式"><a href="#旋度定理——斯托克斯公式" class="headerlink" title="旋度定理——斯托克斯公式"></a>旋度定理 —— 斯托克斯公式</h3><script type="math/tex; mode=display">
 \oint_L{\mathbf{A}\cdot\mathrm{d}\mathbf{l}}=\int_S{\nabla\times\mathbf{A}\cdot\mathrm{d}\mathbf{a}}</script><h3 id="格林公式"><a href="#格林公式" class="headerlink" title="格林公式"></a>格林公式</h3><h3 id="积分的一般规则"><a href="#积分的一般规则" class="headerlink" title="积分的一般规则"></a>积分的一般规则</h3><script type="math/tex; mode=display">
 \oint_\Omega{\mathrm{d}\mathbf{a}}\rightleftharpoons\int_V{\mathrm{d}\tau\nabla}\\
-\oint_L{\mathrm{d}\mathbf{l}}\rightleftharpoons\int_S{\mathrm{d}\mathbf{a}\times\nabla}</script><h2 id="δ-函数及其基本性质"><a href="#δ-函数及其基本性质" class="headerlink" title="$δ$函数及其基本性质"></a>$δ$函数及其基本性质</h2><h2 id="矢量场的分类和基本性质"><a href="#矢量场的分类和基本性质" class="headerlink" title="矢量场的分类和基本性质"></a>矢量场的分类和基本性质</h2><p>对于场$\mathbf{F}$来说，有</p>
+\oint_L{\mathrm{d}\mathbf{l}}\rightleftharpoons\int_S{\mathrm{d}\mathbf{a}\times\nabla}</script><h2 id="δ-函数及其基本性质"><a href="#δ-函数及其基本性质" class="headerlink" title="$δ$函数及其基本性质"></a>$δ$ 函数及其基本性质</h2><h2 id="矢量场的分类和基本性质"><a href="#矢量场的分类和基本性质" class="headerlink" title="矢量场的分类和基本性质"></a>矢量场的分类和基本性质</h2><p>对于场 $\mathbf {F}$ 来说，有</p>
 <script type="math/tex; mode=display">
 \nabla \times \mathbf{F}=\mathbf{J},\qquad \nabla \cdot\mathbf{F}=\rho</script><p>有三种情况</p>
 <ol>
-<li>$\mathbf{J}=0,\rho\not ={0},\mathbf{F}$称为无旋有源场，例如静电场</li>
-<li>$\mathbf{J}\not=0,\rho={0},\mathbf{F}$称为有旋无源场，例如稳定电流磁场</li>
-<li>$\mathbf{J}\not=0,\rho\not ={0},\mathbf{F}$称为有旋有源场，例如变化电磁场</li>
+<li>$\mathbf {J}=0,\rho\not ={0},\mathbf {F}$ 称为无旋有源场，例如静电场</li>
+<li> $\mathbf {J}\not=0,\rho={0},\mathbf {F}$ 称为有旋无源场，例如稳定电流磁场</li>
+<li> $\mathbf {J}\not=0,\rho\not ={0},\mathbf {F}$ 称为有旋有源场，例如变化电磁场</li>
 </ol>
 <p>矢量场重要性质</p>
 <ol>
-<li>任一无旋场$\mathbf{F}$,可用一标量场$\phi$的梯度表示，即$\mathbf{F}=\nabla\phi$</li>
-<li>任一无源场$\mathbf{F}$,可用另一矢量场$\mathbf{A}$的旋度表示，即$\mathbf{F}=\nabla\times\mathbf{A}$</li>
-<li>亥姆霍兹定理<br>任一有旋有源场$\mathbf{F}$,可分解为无旋场$\mathbf{F}_1$和无源场$\mathbf{F}_2$之和，即$\mathbf{F}=\mathbf{F}_1+\mathbf{F}_2$,而$\mathbf{F}_1,\mathbf{F}_2$各满足$\nabla\times\mathbf{F}_1=0,\quad\nabla\cdot\mathbf{F}_2=0$</li>
+<li>任一无旋场 $\mathbf {F}$, 可用一标量场 $\phi$ 的梯度表示，即 $\mathbf {F}=\nabla\phi$</li>
+<li> 任一无源场 $\mathbf {F}$, 可用另一矢量场 $\mathbf {A}$ 的旋度表示，即 $\mathbf {F}=\nabla\times\mathbf {A}$</li>
+<li> 亥姆霍兹定理<br>任一有旋有源场 $\mathbf {F}$, 可分解为无旋场 $\mathbf {F}_1$ 和无源场 $\mathbf {F}_2$ 之和，即 $\mathbf {F}=\mathbf {F}_1+\mathbf {F}_2$, 而 $\mathbf {F}_1,\mathbf {F}_2$ 各满足 $\nabla\times\mathbf {F}_1=0,\quad\nabla\cdot\mathbf {F}_2=0$</li>
 </ol>
-<div STYLE="page-break-after: always;"></div>
+<div style="page-break-after: always;"></div>
 
 <h1 id="电磁现象的基本规律"><a href="#电磁现象的基本规律" class="headerlink" title="电磁现象的基本规律"></a>电磁现象的基本规律</h1><h2 id="库仑定律-静电场的散度和旋度"><a href="#库仑定律-静电场的散度和旋度" class="headerlink" title="库仑定律 静电场的散度和旋度"></a>库仑定律 静电场的散度和旋度</h2><h3 id="库仑定律-电场强度"><a href="#库仑定律-电场强度" class="headerlink" title="库仑定律 电场强度"></a>库仑定律 电场强度</h3><script type="math/tex; mode=display">
-\mathbf{F}=q\mathbf{E}</script><p>式中$\mathbf{F}$是力,$\mathbf{E}$是电场强度,$q$是电荷.<br>库仑定律：</p>
+\mathbf{F}=q\mathbf{E}</script><p>式中 $\mathbf {F}$ 是力，$\mathbf {E}$ 是电场强度，$q$ 是电荷.<br>库仑定律：</p>
 <script type="math/tex; mode=display">
-\mathbf{F}=kq_1q_2\dfrac{\mathbf{r}}{r^3}</script><p>注意:$q_1$和$q_2$是可正可负的代数量.<br>位于$\mathbf{R}’$点的点电荷$q_1$,在$\mathbf{R}$点所产生的电场强度,</p>
+\mathbf{F}=kq_1q_2\dfrac{\mathbf{r}}{r^3}</script><p>注意:$q_1$ 和 $q_2$ 是可正可负的代数量.<br>位于 $\mathbf {R}’$ 点的点电荷 $q_1$, 在 $\mathbf {R}$ 点所产生的电场强度，</p>
 <script type="math/tex; mode=display">
 \mathbf{E}(\mathbf{r})=kq_1\dfrac{\mathbf{r}}{r^3}</script><p>如果电荷分在一个薄层，可以写作</p>
 <script type="math/tex; mode=display">
 \mathbf{E}=k\int_S{\dfrac{\sigma \mathbf{r}}{r^3}\mathrm{d}a'}</script><h3 id="高斯定理和静电场的散度"><a href="#高斯定理和静电场的散度" class="headerlink" title="高斯定理和静电场的散度"></a>高斯定理和静电场的散度</h3><script type="math/tex; mode=display">
-\oint_\Omega{\mathbf{E}\cdot\mathrm{d}\mathbf{a}}=4\pi k\int_V{\rho(\mathbf{R})\mathrm{d}\tau}=4\pi kQ</script><p>式中$\Omega$是$V$的界面,$\rho$是$V$内电荷体密度,$Q$是$V$内的总电量.<br>高斯定律的微分形式</p>
+\oint_\Omega{\mathbf{E}\cdot\mathrm{d}\mathbf{a}}=4\pi k\int_V{\rho(\mathbf{R})\mathrm{d}\tau}=4\pi kQ</script><p>式中 $\Omega$ 是 $V$ 的界面，$\rho$ 是 $V$ 内电荷体密度，$Q$ 是 $V$ 内的总电量.<br>高斯定律的微分形式</p>
 <script type="math/tex; mode=display">
 \nabla\cdot{\mathbf{E}}=4\pi k\rho</script><h3 id="静电场的旋度"><a href="#静电场的旋度" class="headerlink" title="静电场的旋度"></a>静电场的旋度</h3><script type="math/tex; mode=display">
-\nabla\times\mathbf{E}=\mathbf{0}</script><h2 id="毕奥-萨伐尔定律-静磁场的散度和旋度"><a href="#毕奥-萨伐尔定律-静磁场的散度和旋度" class="headerlink" title="毕奥-萨伐尔定律 静磁场的散度和旋度"></a>毕奥-萨伐尔定律 静磁场的散度和旋度</h2><p>电流密度$\mathbf{J}$的定义：</p>
+\nabla\times\mathbf{E}=\mathbf{0}</script><h2 id="毕奥-萨伐尔定律-静磁场的散度和旋度"><a href="#毕奥-萨伐尔定律-静磁场的散度和旋度" class="headerlink" title="毕奥-萨伐尔定律 静磁场的散度和旋度"></a>毕奥 - 萨伐尔定律 静磁场的散度和旋度</h2><p>电流密度 $\mathbf {J}$ 的定义：</p>
 <script type="math/tex; mode=display">
 I=\int_S{\mathbf{J}\cdot\mathrm{d}\mathbf{a}}</script><p>对于稳定电流</p>
 <script type="math/tex; mode=display">
-\nabla\cdot\mathbf{J}=0</script><h3 id="毕奥-萨法尔定律"><a href="#毕奥-萨法尔定律" class="headerlink" title="毕奥-萨法尔定律"></a>毕奥-萨法尔定律</h3><script type="math/tex; mode=display">
+\nabla\cdot\mathbf{J}=0</script><h3 id="毕奥-萨法尔定律"><a href="#毕奥-萨法尔定律" class="headerlink" title="毕奥-萨法尔定律"></a>毕奥 - 萨法尔定律</h3><script type="math/tex; mode=display">
 \mathrm{d}\mathbf{B}=\dfrac{\mu_0}{4\pi}\dfrac{I\mathrm{d}\mathbf{l}\times\mathbf{r}}{r^3}=\dfrac{\mu_0}{4\pi}\dfrac{\mathbf{J}\mathrm{d}\tau\times\mathbf{r}}{r^3}\\
 \mathbf{B}(\mathbf{R})=\dfrac{\mu_0}{4\pi}\int_V{\dfrac{\mathbf{J}(\mathbf{R}')\times\mathbf{r}}{r^3}\mathrm{d}\tau'}</script><h3 id="安培作用力定律"><a href="#安培作用力定律" class="headerlink" title="安培作用力定律"></a>安培作用力定律</h3><script type="math/tex; mode=display">
 \mathrm{d}\mathbf{F}=I\mathrm{d}\mathbf{l}\times\mathbf{B}=\mathbf{J}\times\mathbf{B}\mathrm{d}\tau</script><h3 id="磁场的环量和旋度"><a href="#磁场的环量和旋度" class="headerlink" title="磁场的环量和旋度"></a>磁场的环量和旋度</h3><script type="math/tex; mode=display">
@@ -322,7 +352,7 @@ I=\int_S{\mathbf{J}\cdot\mathrm{d}\mathbf{a}}</script><p>对于稳定电流</p>
 \mathcal{E}=-\dfrac{\mathrm{d}\phi}{\mathrm{d}t}</script><p>有</p>
 <script type="math/tex; mode=display">
 \oint_L{\mathbf{E}_b\cdot\mathrm{d}\mathbf{l}}=-\int_S{\dfrac{\partial{\mathbf{B}}}{\partial{t}}\cdot\mathrm{d}\mathbf{a}}\\\Rightarrow
-\nabla\times\mathbf{E}_b=-\dfrac{\partial{\mathbf{B}}}{\partial{t}}</script><h2 id="真空中电磁现象的基本方程"><a href="#真空中电磁现象的基本方程" class="headerlink" title="真空中电磁现象的基本方程"></a>真空中电磁现象的基本方程</h2><h3 id="电荷守恒定律"><a href="#电荷守恒定律" class="headerlink" title="电荷守恒定律"></a>电荷守恒定律</h3><p>对于任一封闭曲面，单位时间流出的电流是减少的电量是相同的,即</p>
+\nabla\times\mathbf{E}_b=-\dfrac{\partial{\mathbf{B}}}{\partial{t}}</script><h2 id="真空中电磁现象的基本方程"><a href="#真空中电磁现象的基本方程" class="headerlink" title="真空中电磁现象的基本方程"></a>真空中电磁现象的基本方程</h2><h3 id="电荷守恒定律"><a href="#电荷守恒定律" class="headerlink" title="电荷守恒定律"></a>电荷守恒定律</h3><p>对于任一封闭曲面，单位时间流出的电流是减少的电量是相同的，即</p>
 <script type="math/tex; mode=display">
 \nabla\cdot\mathbf{J}=-\dfrac{\partial{\rho}}{\partial{t}}</script><h3 id="麦克斯韦方程组"><a href="#麦克斯韦方程组" class="headerlink" title="麦克斯韦方程组"></a>麦克斯韦方程组</h3><script type="math/tex; mode=display">
 \begin{aligned}
@@ -331,7 +361,7 @@ I=\int_S{\mathbf{J}\cdot\mathrm{d}\mathbf{a}}</script><p>对于稳定电流</p>
     \nabla\cdot{\mathbf{B}}=0\qquad
     &\nabla\times{\mathbf{B}}=\mu_0\mathbf{J}+\mu_0\varepsilon_0\dfrac{\partial\mathbf{E}}{\partial{t}}
 \end{aligned}</script><h3 id="洛伦兹力公式"><a href="#洛伦兹力公式" class="headerlink" title="洛伦兹力公式"></a>洛伦兹力公式</h3><script type="math/tex; mode=display">
-\mathbf{F}=q(\mathbf{E}+\mathbf{v}\times\mathbf{B})</script><h2 id="介质中电磁现象的基本方程"><a href="#介质中电磁现象的基本方程" class="headerlink" title="介质中电磁现象的基本方程"></a>介质中电磁现象的基本方程</h2><p>极化强度$\mathbf{P}$的定义为</p>
+\mathbf{F}=q(\mathbf{E}+\mathbf{v}\times\mathbf{B})</script><h2 id="介质中电磁现象的基本方程"><a href="#介质中电磁现象的基本方程" class="headerlink" title="介质中电磁现象的基本方程"></a>介质中电磁现象的基本方程</h2><p>极化强度 $\mathbf {P}$ 的定义为</p>
 <script type="math/tex; mode=display">
 \mathbf{P}=\lim_{\Delta V\rightarrow0}{\dfrac{\sum_i{\mathbf{p}_i}}{\Delta V}}</script><h3 id="束缚电荷密度与极化强度的关系"><a href="#束缚电荷密度与极化强度的关系" class="headerlink" title="束缚电荷密度与极化强度的关系"></a>束缚电荷密度与极化强度的关系</h3><script type="math/tex; mode=display">
 \rho_p=-\nabla\cdot\mathbf{P}</script><h3 id="分子电流密度与磁化强度的关系"><a href="#分子电流密度与磁化强度的关系" class="headerlink" title="分子电流密度与磁化强度的关系"></a>分子电流密度与磁化强度的关系</h3><script type="math/tex; mode=display">
@@ -343,7 +373,7 @@ I=\int_S{\mathbf{J}\cdot\mathrm{d}\mathbf{a}}</script><p>对于稳定电流</p>
     &\nabla\times{\mathbf{E}}=-\dfrac{\partial{\mathbf{B}}}{\partial{t}}\\
     \nabla\cdot{\mathbf{B}}=0\qquad
     &\nabla\times{\mathbf{H}}=\mathbf{J}+\dfrac{\partial\mathbf{D}}{\partial{t}}
-\end{aligned}</script><p>其中$\mathbf{D}=\varepsilon_0 \mathbf{E}+\mathbf{P};\mathbf{H}=\dfrac{1}{\mu_0}\mathbf{B}-\mathbf{M}$</p>
+\end{aligned}</script><p>其中 $\mathbf {D}=\varepsilon_0 \mathbf {E}+\mathbf {P};\mathbf {H}=\dfrac {1}{\mu_0}\mathbf {B}-\mathbf {M}$</p>
 <h3 id="介质的电磁性质方程"><a href="#介质的电磁性质方程" class="headerlink" title="介质的电磁性质方程"></a>介质的电磁性质方程</h3><script type="math/tex; mode=display">
 \mathbf{P}=\chi_p\varepsilon_0\mathbf{E}\\
 \Rightarrow\mathbf{D}=\varepsilon_0 \mathbf{E}+\mathbf{P}=\varepsilon_0(1+\chi_p)\mathbf{E}=\varepsilon_0\varepsilon^*\mathbf{E}=\varepsilon\mathbf{E}
@@ -353,7 +383,7 @@ I=\int_S{\mathbf{J}\cdot\mathrm{d}\mathbf{a}}</script><p>对于稳定电流</p>
 \mathbf{J}=\sigma\mathbf{E}</script><p>若各向异性，可以写为</p>
 <script type="math/tex; mode=display">
 \mathbf{D}=\vec{\varepsilon}\cdot\mathbf{E}\\
-\mathbf{B}=\vec{\mu}\cdot\mathbf{H}</script><h2 id="介质分界面上的电磁场方程——边界条件"><a href="#介质分界面上的电磁场方程——边界条件" class="headerlink" title="介质分界面上的电磁场方程——边界条件"></a>介质分界面上的电磁场方程——边界条件</h2><script type="math/tex; mode=display">
+\mathbf{B}=\vec{\mu}\cdot\mathbf{H}</script><h2 id="介质分界面上的电磁场方程——边界条件"><a href="#介质分界面上的电磁场方程——边界条件" class="headerlink" title="介质分界面上的电磁场方程——边界条件"></a>介质分界面上的电磁场方程 —— 边界条件</h2><script type="math/tex; mode=display">
 \begin{aligned}
     \mathbf{n}\cdot(\mathbf{D}_2-\mathbf{D}_2)&=\sigma\\
     \mathbf{n}\times(\mathbf{H}_2-\mathbf{H}_1)&=\mathbf{J}_m\\
@@ -362,18 +392,18 @@ I=\int_S{\mathbf{J}\cdot\mathrm{d}\mathbf{a}}</script><p>对于稳定电流</p>
     \mathbf{n}\cdot(\mathbf{P}_2-\mathbf{P}_1)&=-\sigma_p\\
     \mathbf{n}\times(\mathbf{M}_2-\mathbf{M}_1)&=\mathbf{J}_m\\
     \mathbf{n}\cdot(\mathbf{J}_2-\mathbf{J}_1)&=-\dfrac{\partial{\sigma}}{\partial{t}}\\
-\end{aligned}</script><h2 id="电磁场的能量-能量密度-能流密度矢量"><a href="#电磁场的能量-能量密度-能流密度矢量" class="headerlink" title="电磁场的能量 能量密度 能流密度矢量"></a>电磁场的能量 能量密度 能流密度矢量</h2><p>麦克斯韦第四式与电场强度$\mathbf{E}$点乘后，我们得到</p>
+\end{aligned}</script><h2 id="电磁场的能量-能量密度-能流密度矢量"><a href="#电磁场的能量-能量密度-能流密度矢量" class="headerlink" title="电磁场的能量 能量密度 能流密度矢量"></a>电磁场的能量 能量密度 能流密度矢量</h2><p>麦克斯韦第四式与电场强度 $\mathbf {E}$ 点乘后，我们得到</p>
 <script type="math/tex; mode=display">
-\mathbf{E}\cdot(\nabla\times{\mathbf{H}})=\mathbf{E}\cdot\mathbf{J}+\mathbf{E}\cdot\dfrac{\partial\mathbf{D}}{\partial{t}}</script><p>再将方程组中的第二式与磁感应强度$\mathbf{H}$点乘后，我们又得到</p>
+\mathbf{E}\cdot(\nabla\times{\mathbf{H}})=\mathbf{E}\cdot\mathbf{J}+\mathbf{E}\cdot\dfrac{\partial\mathbf{D}}{\partial{t}}</script><p>再将方程组中的第二式与磁感应强度 $\mathbf {H}$ 点乘后，我们又得到</p>
 <script type="math/tex; mode=display">
 \mathbf{H}\cdot(\nabla\times\mathbf{E})=-\mathbf{H}\cdot\dfrac{\partial\mathbf{B}}{\partial{t}}</script><p>两式相减后给出</p>
 <script type="math/tex; mode=display">
 \mathbf{E}\cdot(\nabla\times{\mathbf{H}})-\mathbf{H}\cdot(\nabla\times\mathbf{E})
 \\=\mathbf{E}\cdot\mathbf{J}+\mathbf{E}\cdot\dfrac{\partial\mathbf{D}}{\partial{t}}+\mathbf{H}\cdot\dfrac{\partial\mathbf{B}}{\partial{t}}
-\\\Rightarrow\nabla\cdot(\mathbf{E}\times\mathbf{H})+\mathbf{J}\cdot\mathbf{E}+\mathbf{E}\cdot\dfrac{\partial\mathbf{D}}{\partial{t}}+\mathbf{H}\cdot\dfrac{\partial\mathbf{B}}{\partial{t}}=0</script><p>令$\dfrac{\partial\mathcal{U}}{\partial{t}}=\mathbf{E}\cdot\dfrac{\partial\mathbf{D}}{\partial{t}}+\mathbf{H}\cdot\dfrac{\partial\mathbf{B}}{\partial{t}}$，$\mathbf{S}=\mathbf{E}\times\mathbf{H}$，得</p>
+\\\Rightarrow\nabla\cdot(\mathbf{E}\times\mathbf{H})+\mathbf{J}\cdot\mathbf{E}+\mathbf{E}\cdot\dfrac{\partial\mathbf{D}}{\partial{t}}+\mathbf{H}\cdot\dfrac{\partial\mathbf{B}}{\partial{t}}=0</script><p>令 $\dfrac {\partial\mathcal {U}}{\partial {t}}=\mathbf {E}\cdot\dfrac {\partial\mathbf {D}}{\partial {t}}+\mathbf {H}\cdot\dfrac {\partial\mathbf {B}}{\partial {t}}$，$\mathbf {S}=\mathbf {E}\times\mathbf {H}$，得</p>
 <script type="math/tex; mode=display">
-\dfrac{\partial\mathcal{U}}{\partial{t}}+\nabla\cdot\mathbf{S}+\mathbf{J}\cdot\mathbf{E}=0</script><p>由玻印亭于 1884 年得到，称为玻印亭定理，$\mathbf{S}$称为玻印亭矢量.</p>
-<div STYLE="page-break-after: always;"></div>
+\dfrac{\partial\mathcal{U}}{\partial{t}}+\nabla\cdot\mathbf{S}+\mathbf{J}\cdot\mathbf{E}=0</script><p>由玻印亭于 1884 年得到，称为玻印亭定理，$\mathbf {S}$ 称为玻印亭矢量.</p>
+<div style="page-break-after: always;"></div>
 
 <h1 id="静电场-静磁场"><a href="#静电场-静磁场" class="headerlink" title="静电场 静磁场"></a>静电场 静磁场</h1><h2 id="静电场的基本方程"><a href="#静电场的基本方程" class="headerlink" title="静电场的基本方程"></a>静电场的基本方程</h2><p>麦克斯韦方程退化为</p>
 <script type="math/tex; mode=display">
@@ -418,38 +448,38 @@ F_i=\left(\dfrac{\partial{W}}{\partial{\eta_i}}\right)_\phi</script><p>固定电
 <script type="math/tex; mode=display">
 F_i=-\left(\dfrac{\partial{W}}{\partial{\eta_i}}\right)_q</script><p>电容器能量</p>
 <script type="math/tex; mode=display">
-W=\dfrac{C}{2}V^2=\dfrac{q^2}{2C}</script><div STYLE="page-break-after: always;"></div>
+W=\dfrac{C}{2}V^2=\dfrac{q^2}{2C}</script><div style="page-break-after: always;"></div>
 
-<h1 id="稳定电磁场与似稳电磁场"><a href="#稳定电磁场与似稳电磁场" class="headerlink" title="稳定电磁场与似稳电磁场"></a>稳定电磁场与似稳电磁场</h1><h2 id="稳定电磁场的基本方程"><a href="#稳定电磁场的基本方程" class="headerlink" title="稳定电磁场的基本方程"></a>稳定电磁场的基本方程</h2><p>稳定=定态<br>麦克斯韦方程退化为</p>
+<h1 id="稳定电磁场与似稳电磁场"><a href="#稳定电磁场与似稳电磁场" class="headerlink" title="稳定电磁场与似稳电磁场"></a>稳定电磁场与似稳电磁场</h1><h2 id="稳定电磁场的基本方程"><a href="#稳定电磁场的基本方程" class="headerlink" title="稳定电磁场的基本方程"></a>稳定电磁场的基本方程</h2><p>稳定 = 定态<br>麦克斯韦方程退化为</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
     \nabla\cdot{\mathbf{D}}=\rho\qquad
     &\nabla\times{\mathbf{E}}=0\\
     \nabla\cdot{\mathbf{B}}=0\qquad
     &\nabla\times{\mathbf{H}}=\mathbf{J}
-\end{aligned}</script><h2 id="稳定电流的矢势"><a href="#稳定电流的矢势" class="headerlink" title="稳定电流的矢势"></a>稳定电流的矢势</h2><h3 id="稳定电流磁场的基本方程"><a href="#稳定电流磁场的基本方程" class="headerlink" title="稳定电流磁场的基本方程"></a>稳定电流磁场的基本方程</h3><p>假如$\nabla\cdot\mathbf{B}=0$处处成立，那$\mathbf{B}$一定是某矢量场$\mathbf{A}$的旋度，$\mathbf{A}$叫做矢势：</p>
+\end{aligned}</script><h2 id="稳定电流的矢势"><a href="#稳定电流的矢势" class="headerlink" title="稳定电流的矢势"></a>稳定电流的矢势</h2><h3 id="稳定电流磁场的基本方程"><a href="#稳定电流磁场的基本方程" class="headerlink" title="稳定电流磁场的基本方程"></a>稳定电流磁场的基本方程</h3><p>假如 $\nabla\cdot\mathbf {B}=0$ 处处成立，那 $\mathbf {B}$ 一定是某矢量场 $\mathbf {A}$ 的旋度，$\mathbf {A}$ 叫做矢势：</p>
 <script type="math/tex; mode=display">
-\mathbf{B}=\nabla\times\mathbf{A}</script><p>附加的任意标函数$\Psi$的梯度表明，对于一个给定的磁感应强度$\mathbf{B}$来说，矢势可以按</p>
+\mathbf{B}=\nabla\times\mathbf{A}</script><p>附加的任意标函数 $\Psi$ 的梯度表明，对于一个给定的磁感应强度 $\mathbf {B}$ 来说，矢势可以按</p>
 <script type="math/tex; mode=display">
-\mathbf{A}\rightarrow\mathbf{A}+\nabla\Psi</script><p>任意变换。这种变换叫做<strong>规范变换</strong>。因为只确定$\mathbf{A}$的旋度，所以对$\mathbf{A}$作这种变换是可能的。规范变换这种任意性，使我们可以把$\nabla\cdot\mathbf{A}$写成所需要的任何方便的函数形式，我们取$\nabla\cdot\mathbf{A}=0$，此时有</p>
+\mathbf{A}\rightarrow\mathbf{A}+\nabla\Psi</script><p>任意变换。这种变换叫做<strong>规范变换</strong>。因为只确定 $\mathbf {A}$ 的旋度，所以对 $\mathbf {A}$ 作这种变换是可能的。规范变换这种任意性，使我们可以把 $\nabla\cdot\mathbf {A}$ 写成所需要的任何方便的函数形式，我们取 $\nabla\cdot\mathbf {A}=0$，此时有</p>
 <script type="math/tex; mode=display">
-\nabla^2\mathbf{A}=-\mu_0\mathbf{J}</script><p>矢势$\mathbf{A}$的方程解为<br>由$(5.16)$得</p>
+\nabla^2\mathbf{A}=-\mu_0\mathbf{J}</script><p>矢势 $\mathbf {A}$ 的方程解为<br>由 $(5.16)$ 得</p>
 <script type="math/tex; mode=display">
-\mathbf{A}(\mathbf{R})=\dfrac{\mu}{4\pi}\int{\dfrac{\mathbf{J}(\mathbf{R}')}{r}\mathrm{d}\tau'}+\nabla\Psi</script><h3 id="矢势-mathbf-A-的边界条件"><a href="#矢势-mathbf-A-的边界条件" class="headerlink" title="矢势$\mathbf{A}$的边界条件"></a>矢势$\mathbf{A}$的边界条件</h3><p>在$\nabla\cdot \mathbf{A}=0$的库仑规范下</p>
+\mathbf{A}(\mathbf{R})=\dfrac{\mu}{4\pi}\int{\dfrac{\mathbf{J}(\mathbf{R}')}{r}\mathrm{d}\tau'}+\nabla\Psi</script><h3 id="矢势-mathbf-A-的边界条件"><a href="#矢势-mathbf-A-的边界条件" class="headerlink" title="矢势$\mathbf{A}$的边界条件"></a>矢势 $\mathbf {A}$ 的边界条件</h3><p>在 $\nabla\cdot \mathbf {A}=0$ 的库仑规范下</p>
 <script type="math/tex; mode=display">
-\mathbf{n}\times(\mathbf{A}_1-\mathbf{A}_2)=0</script><h3 id="矢量泊松方程解的唯一性定理"><a href="#矢量泊松方程解的唯一性定理" class="headerlink" title="矢量泊松方程解的唯一性定理"></a>矢量泊松方程解的唯一性定理</h3><h2 id="稳定磁场的标势"><a href="#稳定磁场的标势" class="headerlink" title="稳定磁场的标势"></a>稳定磁场的标势</h2><p>在$\nabla\times\mathbf{H}=0$的情况下,定义标势$-\nabla\phi_m=\mathbf{M}$</p>
+\mathbf{n}\times(\mathbf{A}_1-\mathbf{A}_2)=0</script><h3 id="矢量泊松方程解的唯一性定理"><a href="#矢量泊松方程解的唯一性定理" class="headerlink" title="矢量泊松方程解的唯一性定理"></a>矢量泊松方程解的唯一性定理</h3><h2 id="稳定磁场的标势"><a href="#稳定磁场的标势" class="headerlink" title="稳定磁场的标势"></a>稳定磁场的标势</h2><p>在 $\nabla\times\mathbf {H}=0$ 的情况下，定义标势 $-\nabla\phi_m=\mathbf {M}$</p>
 <h2 id="稳定磁场的多极展开法"><a href="#稳定磁场的多极展开法" class="headerlink" title="稳定磁场的多极展开法"></a>稳定磁场的多极展开法</h2><script type="math/tex; mode=display">
 \mathbf{A}(\mathbf{R})=\dfrac{\mu}{4\pi}\int{\dfrac{\mathbf{J}(\mathbf{R}')}{r}\mathrm{d}\tau'}</script><p>展开得</p>
 <script type="math/tex; mode=display">
 \mathbf{A}^{(0)}=0\\
-\mathbf{A}^{(1)}=\dfrac{\mu_0}{4\pi}\mathbf{m}\times\dfrac{\mathbf{R}}{R^3}</script><p>其中$\mathbf{m}=I\mathbf{S}$</p>
+\mathbf{A}^{(1)}=\dfrac{\mu_0}{4\pi}\mathbf{m}\times\dfrac{\mathbf{R}}{R^3}</script><p>其中 $\mathbf {m}=I\mathbf {S}$</p>
 <p>磁偶极矩产生的磁场</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
     \mathbf{B}^{(1)}&=\nabla\times\mathbf{A}^{(1)}\\&=
 \dfrac{\mu_0}{4\pi}\nabla\times\left(\mathbf{m}\times\dfrac{\mathbf{R}}{R^3}\right)\\
 &=\dfrac{\mu_0}{4\pi}\left[\dfrac{3(\mathbf{m}\cdot\mathbf{R})\mathbf{R}}{R^5}-\dfrac{\mathbf{m}}{R^3}\right]
-\end{aligned}</script><p>由$\mathbf{B}=\mu_0\mathbf{H}$，得</p>
+\end{aligned}</script><p>由 $\mathbf {B}=\mu_0\mathbf {H}$，得</p>
 <script type="math/tex; mode=display">
 \mathbf{H}^{(1)}=\dfrac{1}{4\pi}\nabla\left(\mathbf{m}\cdot\dfrac{\mathbf{R}}{R^3}\right)=-\nabla\phi_m</script><p>式中</p>
 <script type="math/tex; mode=display">
@@ -460,9 +490,9 @@ W=\dfrac{1}{2}\int{\mathbf{B}\cdot\mathbf{H}\mathrm{d}\tau}\\=\dfrac{1}{2}\int{\
 <script type="math/tex; mode=display">
 F_i=\left(\dfrac{\partial{W_I}}{\partial{\eta}}\right)_{I_i}</script><p>固定磁感应通量</p>
 <script type="math/tex; mode=display">
-F_i=-\left(\dfrac{\partial{W}}{\partial{\eta}}\right)_{\Phi_i}</script><h2 id="似稳电磁场荷似稳电路方程"><a href="#似稳电磁场荷似稳电路方程" class="headerlink" title="似稳电磁场荷似稳电路方程"></a>似稳电磁场荷似稳电路方程</h2><div STYLE="page-break-after: always;"></div>
+F_i=-\left(\dfrac{\partial{W}}{\partial{\eta}}\right)_{\Phi_i}</script><h2 id="似稳电磁场荷似稳电路方程"><a href="#似稳电磁场荷似稳电路方程" class="headerlink" title="似稳电磁场荷似稳电路方程"></a>似稳电磁场荷似稳电路方程</h2><div style="page-break-after: always;"></div>
 
-<div STYLE="page-break-after: always;"></div>
+<div style="page-break-after: always;"></div>
 
 <h1 id="电磁波的辐射"><a href="#电磁波的辐射" class="headerlink" title="电磁波的辐射"></a>电磁波的辐射</h1><h2 id="变化电磁场的矢势和标势"><a href="#变化电磁场的矢势和标势" class="headerlink" title="变化电磁场的矢势和标势"></a>变化电磁场的矢势和标势</h2><script type="math/tex; mode=display">
 \begin{aligned}
@@ -479,10 +509,10 @@ F_i=-\left(\dfrac{\partial{W}}{\partial{\eta}}\right)_{\Phi_i}</script><h2 id="�
     &\nabla\times{(\nabla\times \mathbf{A})}=\mu_0\mathbf{J}+\mu_0\varepsilon_0\dfrac{\partial\mathbf{E}}{\partial{t}}\\
     &\Rightarrow\nabla(\nabla\cdot\mathbf{A})-\nabla^2\mathbf{A}=\mu_0\mathbf{J}+\mu_0\varepsilon_0\left(-\dfrac{\partial^2{\mathbf{A}}}{\partial{t^2}}-\nabla\dfrac{\partial\phi}{\partial{t}}\right)\\
     &\Rightarrow\nabla^2\mathbf{A}-\mu_0\varepsilon_0\dfrac{\partial^2{\mathbf{A}}}{\partial{t^2}}-\nabla\left(\mu_0\varepsilon_0\dfrac{\partial\phi}{\partial{t}}+\nabla\cdot\mathbf{A}\right)=-\mu_0\mathbf{J}
-    \end{aligned}</script><p>矢势可以任意地加上标量函数$\Lambda$的梯度，标势可以加上任意标量函数$\Lambda$，为了使等式恒成立，有变化</p>
+    \end{aligned}</script><p>矢势可以任意地加上标量函数 $\Lambda$ 的梯度，标势可以加上任意标量函数 $\Lambda$，为了使等式恒成立，有变化</p>
 <script type="math/tex; mode=display">
 \mathbf{A}'=\mathbf{A}+\nabla\Lambda\\
-\phi'=\phi-\dfrac{\partial\Lambda}{\partial{t}}</script><p>我们可以选择$\mu_0\varepsilon_0\dfrac{\partial\phi’}{\partial{t}}+\nabla\cdot\mathbf{A}’=0$，得</p>
+\phi'=\phi-\dfrac{\partial\Lambda}{\partial{t}}</script><p>我们可以选择 $\mu_0\varepsilon_0\dfrac {\partial\phi’}{\partial {t}}+\nabla\cdot\mathbf {A}’=0$，得</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
     &\nabla^2\phi-\mu_0\varepsilon_0\dfrac{\partial^2\phi}{\partial{t^2}}=-\dfrac{1}{\varepsilon_0}\rho\\
@@ -492,8 +522,8 @@ F_i=-\left(\dfrac{\partial{W}}{\partial{\eta}}\right)_{\Phi_i}</script><h2 id="�
 \begin{aligned}
     &\nabla^2\phi+\dfrac{\partial}{\partial{t}}({\nabla\cdot\mathbf{A}})=-\dfrac{1}{\varepsilon_0}\rho\\
     &\nabla^2\mathbf{A}-\mu_0\varepsilon_0\dfrac{\partial^2{\mathbf{A}}}{\partial{t^2}}-\nabla\left(\mu_0\varepsilon_0\dfrac{\partial\phi}{\partial{t}}+\nabla\cdot\mathbf{A}\right)=-\mu_0\mathbf{J}
-    \end{aligned}</script><p>$({\nabla\cdot\mathbf{A}})=0$是库仑规范，$\left(\mu_0\varepsilon_0\dfrac{\partial\phi}{\partial{t}}+\nabla\cdot\mathbf{A}\right)=0$是洛伦兹规范.</p>
-<h2 id="达朗贝尔方程的解及推迟势"><a href="#达朗贝尔方程的解及推迟势" class="headerlink" title="达朗贝尔方程的解及推迟势"></a>达朗贝尔方程的解及推迟势</h2><p>选取洛伦兹规范,有方程</p>
+    \end{aligned}</script><p>$({\nabla\cdot\mathbf {A}})=0$ 是库仑规范，$\left (\mu_0\varepsilon_0\dfrac {\partial\phi}{\partial {t}}+\nabla\cdot\mathbf {A}\right)=0$ 是洛伦兹规范.</p>
+<h2 id="达朗贝尔方程的解及推迟势"><a href="#达朗贝尔方程的解及推迟势" class="headerlink" title="达朗贝尔方程的解及推迟势"></a>达朗贝尔方程的解及推迟势</h2><p>选取洛伦兹规范，有方程</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 &\nabla^2\phi-\mu_0\varepsilon_0\dfrac{\partial^2\phi}{\partial{t^2}}=-\dfrac{1}{\varepsilon_0}\rho\\
@@ -512,9 +542,9 @@ F_i=-\left(\dfrac{\partial{W}}{\partial{\eta}}\right)_{\Phi_i}</script><h2 id="�
 <script type="math/tex; mode=display">
 \phi=\dfrac{c^2}{\mathrm{i}\omega}\nabla\cdot\mathbf{A}</script><p>真空中场方程有</p>
 <script type="math/tex; mode=display">
-\mathbf{E}=\dfrac{\mathrm{i}c^2}{\omega}\nabla\times\mathbf{B}</script><p>说明通过矢势$\mathbf{A}$可以求出一切所需量.<br>根据矢势推迟势可以得</p>
+\mathbf{E}=\dfrac{\mathrm{i}c^2}{\omega}\nabla\times\mathbf{B}</script><p>说明通过矢势 $\mathbf {A}$ 可以求出一切所需量.<br>根据矢势推迟势可以得</p>
 <script type="math/tex; mode=display">
-\mathbf{A}(\mathbf{R},t)=\mathbf{A}(\mathbf{R})\mathrm{e}^{-\mathrm{i}\omega t}</script><p>其中$\mathbf{A}(\mathbf{R})=\dfrac{\mu_0}{4\pi}\int_V{\dfrac{\mathbf{J}(\mathbf{R}’,t-\frac{r}{c})}{r}\mathrm{e}^{\mathrm{i}k r}\mathrm{d}\tau’}\left(k=\frac{\omega}{c}\right)$<br>当实际问题中的电流分布在一个小区域内时，可用多极展开方法来计算矢势。</p>
+\mathbf{A}(\mathbf{R},t)=\mathbf{A}(\mathbf{R})\mathrm{e}^{-\mathrm{i}\omega t}</script><p>其中 $\mathbf {A}(\mathbf {R})=\dfrac {\mu_0}{4\pi}\int_V {\dfrac {\mathbf {J}(\mathbf {R}’,t-\frac {r}{c})}{r}\mathrm {e}^{\mathrm {i} k r}\mathrm {d}\tau’}\left (k=\frac {\omega}{c}\right)$<br>当实际问题中的电流分布在一个小区域内时，可用多极展开方法来计算矢势。</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
     \mathbf{A}^{(0)}=&\dfrac{\mu_0}{4\pi}\dfrac{\mathrm{e}^{\mathrm{i}kR}}{R}\int{\mathbf{J}(\mathbf{R}')\mathrm{d}\tau'}\\
@@ -523,9 +553,9 @@ F_i=-\left(\dfrac{\partial{W}}{\partial{\eta}}\right)_{\Phi_i}</script><h2 id="�
 <script type="math/tex; mode=display">
 \mathbf{R}'\cdot\left(\dfrac{-\mathbf{R}}{R^2}+\mathrm{i}k\dfrac{\mathbf{R}}{R}\right)</script><p>当此式远小于 1 时，只取第一项即可</p>
 <script type="math/tex; mode=display">
-\mathbf{A}^{(0)}=\dfrac{\mu_0}{4\pi}\dfrac{\mathrm{e}^{\mathrm{i}kR}}{R}\dot{\mathbf{p}}</script><p>其中$\dot{\mathbf{p}}=-\mathrm{i}\omega\mathbf{p}$，由$\mathbf{B}=\nabla\times \mathbf{A}$得</p>
+\mathbf{A}^{(0)}=\dfrac{\mu_0}{4\pi}\dfrac{\mathrm{e}^{\mathrm{i}kR}}{R}\dot{\mathbf{p}}</script><p>其中 $\dot {\mathbf {p}}=-\mathrm {i}\omega\mathbf {p}$，由 $\mathbf {B}=\nabla\times \mathbf {A}$ 得</p>
 <script type="math/tex; mode=display">
-\mathbf{B}=\dfrac{\mu_0}{4\pi}\left(\dfrac{-1}{R^2}+\mathrm{i}k\dfrac{1}{R}\right)\mathrm{e}^{\mathrm{i}kR}\dfrac{\mathbf{R}}{R}\times(-\mathrm{i}\omega\mathbf{p})</script><p>令$\dfrac{\mathbf{R}}{R}=\mathbf{e}_r$，得</p>
+\mathbf{B}=\dfrac{\mu_0}{4\pi}\left(\dfrac{-1}{R^2}+\mathrm{i}k\dfrac{1}{R}\right)\mathrm{e}^{\mathrm{i}kR}\dfrac{\mathbf{R}}{R}\times(-\mathrm{i}\omega\mathbf{p})</script><p>令 $\dfrac {\mathbf {R}}{R}=\mathbf {e}_r$，得</p>
 <script type="math/tex; mode=display">
 \mathbf{B}=\dfrac{\mu_0}{4\pi}\left(\dfrac{\mathrm{i}\omega}{R^2}+\omega k\dfrac{1}{R}\right)\mathrm{e}^{\mathrm{i}kR}\mathbf{e}_r\times\mathbf{p}\\
 \mathbf{E}=\dfrac{\mathrm{i}c^2}{\omega}\nabla\times\mathbf{B}</script><p>当近场情况，$kR\approx0$</p>
@@ -539,7 +569,7 @@ F_i=-\left(\dfrac{\partial{W}}{\partial{\eta}}\right)_{\Phi_i}</script><h2 id="�
 \mathbf{E}=\dfrac{1}{4\pi c^2\varepsilon_0}\dfrac{\mathrm{e}^{\mathrm{i}kR}}{R}\mathbf{e}_r\times(\mathbf{e}_r\times\ddot{\mathbf{p}})\\
 \mathbf{B}=\dfrac{\mu_0}{4\pi c}\dfrac{\mathrm{e}^{\mathrm{i}kR}}{R}\ddot{\mathbf{p}}\times\mathbf{e}_r</script><h2 id="线状天线系统的辐射"><a href="#线状天线系统的辐射" class="headerlink" title="线状天线系统的辐射"></a>线状天线系统的辐射</h2><h3 id="元天线的辐射和天线的基本参数"><a href="#元天线的辐射和天线的基本参数" class="headerlink" title="元天线的辐射和天线的基本参数"></a>元天线的辐射和天线的基本参数</h3><p>设天线沿 z 轴，天线上的电流为</p>
 <script type="math/tex; mode=display">
-I = I(z)\mathrm{e}^{-\mathrm{i}\omega t}</script><p>在$z$处的元天线长为$\Delta z$，与元天线对应的电偶极矩为</p>
+I = I(z)\mathrm{e}^{-\mathrm{i}\omega t}</script><p>在 $z$ 处的元天线长为 $\Delta z$，与元天线对应的电偶极矩为</p>
 <script type="math/tex; mode=display">
 \dot{p}=\int{\rho\dot{x}\mathrm{d}x}\Rightarrow \mathrm{d}\dot{p}=I(z)\Delta z\mathrm{e}^{-\mathrm{i}\omega t}\\
 \mathrm{d}\ddot{p}=-\mathrm{i}\omega I(z)\Delta z\mathrm{e}^{-\mathrm{i}\omega t}</script><p>根据</p>
@@ -554,34 +584,34 @@ I = I(z)\mathrm{e}^{-\mathrm{i}\omega t}</script><p>在$z$处的元天线长为$
 \mathrm{d}\bar{S}=\dfrac{1}{2}(\mathbf{E}^*\times\mathbf{H})=\dfrac{c}{2\mu_0}|\mathbf{B}|^2\mathbf{e}_r=\dfrac{(\omega I(z)\alpha_r\sin{\theta}\Delta z)^2}{2\mu_0c}\mathbf{e}_r\\
 \mathrm{d}W=\oint{|\bar{S}|r^2\mathrm{d}\Omega}=\dfrac{\mu_0}{4\pi}\dfrac{|\ddot{p}|^2}{3c}=\dfrac{\mu_0}{4\pi }\dfrac{(\omega I(z)\Delta z)^2}{3c}</script><ol>
 <li>辐射方向图<br><a target="_blank" rel="noopener" href="https://postimg.cc/pphMTPx4"><img src="https://i.postimg.cc/rFgVfpHV/1.png" alt="1.png"></a></li>
-<li>辐射电阻<br>辐射电阻定义为$W=\dfrac{1}{2}R_rI^2$，得<script type="math/tex; mode=display">
+<li>辐射电阻<br>辐射电阻定义为 $W=\dfrac {1}{2} R_rI^2$，得<script type="math/tex; mode=display">
      R_r=\dfrac{2W}{I}=\dfrac{\mu_0}{4\pi }\dfrac{2(\omega \Delta z)^2}{3c}=80\pi^2\left(\dfrac{\Delta z}{\lambda}\right)^2\approx 0</script></li>
 </ol>
-<h3 id="长天线的辐射"><a href="#长天线的辐射" class="headerlink" title="长天线的辐射"></a>长天线的辐射</h3><p>设天线长为$2l$，激励电源加在天线中点，有</p>
+<h3 id="长天线的辐射"><a href="#长天线的辐射" class="headerlink" title="长天线的辐射"></a>长天线的辐射</h3><p>设天线长为 $2l$，激励电源加在天线中点，有</p>
 <script type="math/tex; mode=display">
 I(z)=I_0\sin{\dfrac{2\pi}{\lambda}(l-|z|)}=I_0\sin{k(l-|z|)}</script><p>有电场（忽略时间因子）</p>
 <script type="math/tex; mode=display">
-\mathrm{d}\mathbf{E}=-\mathrm{i}\omega I(z)\alpha_r\sin{\theta}\mathrm{d} z\mathbf{e}_\theta</script><p>对于远场情况，可以近似$r=R-z\cos{\theta}\rightarrow \alpha_r\approx \alpha\mathrm{e}^{-\mathrm{i}kz\cos{\theta}}$</p>
+\mathrm{d}\mathbf{E}=-\mathrm{i}\omega I(z)\alpha_r\sin{\theta}\mathrm{d} z\mathbf{e}_\theta</script><p>对于远场情况，可以近似 $r=R-z\cos {\theta}\rightarrow \alpha_r\approx \alpha\mathrm {e}^{-\mathrm {i} kz\cos {\theta}}$</p>
 <script type="math/tex; mode=display">
 \mathrm{d}\mathbf{E}=-\mathrm{i}\omega \alpha\sin{\theta}I(z)\mathrm{e}^{-\mathrm{i}kz\cos{\theta}}\mathrm{d} z\mathbf{e}_\theta</script><p>得</p>
 <script type="math/tex; mode=display">
 \mathbf{E}=-\mathrm{i}\omega \alpha\sin{\theta}\int_l^l{I(z)\mathrm{e}^{-\mathrm{i}kz\cos{\theta}}\mathrm{d} z}=-2\mathrm{i}c\alpha I_0\dfrac{\cos(kl\cos{\theta})-\cos(kl)}{\sin{\theta}}\mathbf{e}_\theta\\
 \mathbf{B}=\dfrac{1}{c}\mathbf{e}_R\times E=-2\mathrm{i}\alpha I_0\dfrac{\cos(kl\cos{\theta})-\cos(kl)}{\sin{\theta}}\mathbf{e}_\varphi\\
 ----\\
-\mathrm{d}\bar{S}=\dfrac{1}{2}(\mathbf{E}^*\times\mathbf{H})=\dfrac{c}{2\mu_0}|\mathbf{B}|^2\mathbf{e}_R=\dfrac{c}{2\mu_0}\left[2\alpha I_0\dfrac{\cos(kl\cos{\theta})-\cos(kl)}{\sin{\theta}}\right]^2</script><p>当$2l=\dfrac{\lambda}{2}$时，</p>
+\mathrm{d}\bar{S}=\dfrac{1}{2}(\mathbf{E}^*\times\mathbf{H})=\dfrac{c}{2\mu_0}|\mathbf{B}|^2\mathbf{e}_R=\dfrac{c}{2\mu_0}\left[2\alpha I_0\dfrac{\cos(kl\cos{\theta})-\cos(kl)}{\sin{\theta}}\right]^2</script><p>当 $2l=\dfrac {\lambda}{2}$ 时，</p>
 <script type="math/tex; mode=display">
 \mathrm{d}\bar{S}=\dfrac{1}{2}(\mathbf{E}^*\times\mathbf{H})=\dfrac{c}{2\mu_0}|\mathbf{B}|^2\mathbf{e}_R=\dfrac{c}{2\mu_0}\left[2\alpha I_0\dfrac{\cos(\frac{\pi}{2}\cos{\theta})}{\sin{\theta}}\right]^2</script><p>有以下情况<br><a target="_blank" rel="noopener" href="https://postimg.cc/mt55HX7t"><img src="https://i.postimg.cc/FHr5wwRg/2.png" alt="2.png"></a></p>
-<h3 id="天线阵的辐射"><a href="#天线阵的辐射" class="headerlink" title="天线阵的辐射"></a>天线阵的辐射</h3><p>等间距$d$排列，$r_m=r_0-md\cos{\varphi}$，有$E^{(m)}=E^{(0)}\mathrm{e}^{-\mathrm{i}mkd\cos{\varphi}}$<br>总的电场强度矢量应为</p>
+<h3 id="天线阵的辐射"><a href="#天线阵的辐射" class="headerlink" title="天线阵的辐射"></a>天线阵的辐射</h3><p>等间距 $d$ 排列，$r_m=r_0-md\cos {\varphi}$，有 $E^{(m)}=E^{(0)}\mathrm {e}^{-\mathrm {i} mkd\cos {\varphi}}$<br>总的电场强度矢量应为</p>
 <script type="math/tex; mode=display">
-\mathbf{E}=\sum_{m=0}^{N-1}{\mathbf{E}^{(m)}}=\mathbf{E}^{(0)}\dfrac{1-\mathrm{e}^{\mathrm{i}Nkd\cos{\varphi}}}{1-\mathrm{e}^{-\mathrm{i}kd\cos{\varphi}}}=\mathbf{E}^{(0)}F(\varphi)</script><h2 id="电四极矩的辐射"><a href="#电四极矩的辐射" class="headerlink" title="电四极矩的辐射"></a>电四极矩的辐射</h2><p>$\theta$表示仰角，$\varphi$表示周角</p>
+\mathbf{E}=\sum_{m=0}^{N-1}{\mathbf{E}^{(m)}}=\mathbf{E}^{(0)}\dfrac{1-\mathrm{e}^{\mathrm{i}Nkd\cos{\varphi}}}{1-\mathrm{e}^{-\mathrm{i}kd\cos{\varphi}}}=\mathbf{E}^{(0)}F(\varphi)</script><h2 id="电四极矩的辐射"><a href="#电四极矩的辐射" class="headerlink" title="电四极矩的辐射"></a>电四极矩的辐射</h2><p>$\theta$ 表示仰角，$\varphi$ 表示周角</p>
 <script type="math/tex; mode=display">
-\mathbf{A}=\dfrac{\mu_0}{4\pi}\dfrac{}{}\int_V{\dfrac{\mathbf{J}(\mathbf{R}')}{r}\mathrm{e}^{\mathrm{i}kr}\mathrm{d}\tau'}</script><p>在远场辐射区，$r\gg \lambda$，有$\dfrac{1}{r}=\dfrac{1}{|\mathbf{R}’|}$<br>同时有</p>
+\mathbf{A}=\dfrac{\mu_0}{4\pi}\dfrac{}{}\int_V{\dfrac{\mathbf{J}(\mathbf{R}')}{r}\mathrm{e}^{\mathrm{i}kr}\mathrm{d}\tau'}</script><p>在远场辐射区，$r\gg \lambda$，有 $\dfrac {1}{r}=\dfrac {1}{|\mathbf {R}’|}$<br>同时有</p>
 <script type="math/tex; mode=display">
-\nabla\leftrightarrow\mathrm{i}k\mathbf{e}_R\qquad \dfrac{\partial{}}{\partial{t}}\leftrightarrow-\mathrm{i}\omega</script><p>多极展开有，$\mathrm{e}^{\mathrm{i}kr}=\mathrm{e}^{\mathrm{i}kR}(1-\mathrm{i}k\mathbf{e}_R\cdot\mathbf{R}’+\cdots)$</p>
+\nabla\leftrightarrow\mathrm{i}k\mathbf{e}_R\qquad \dfrac{\partial{}}{\partial{t}}\leftrightarrow-\mathrm{i}\omega</script><p>多极展开有，$\mathrm {e}^{\mathrm {i} kr}=\mathrm {e}^{\mathrm {i} kR}(1-\mathrm {i} k\mathbf {e}_R\cdot\mathbf {R}’+\cdots)$</p>
 <p>取前两项，代入原式有</p>
 <script type="math/tex; mode=display">
-\mathbf{A}=\dfrac{\mu_0}{4\pi}\dfrac{\mathrm{e}^{\mathrm{i}kR}}{R}\left[\int_V{\mathbf{J}(\mathbf{R}')\mathrm{d}\tau'}-\int_V{\mathbf{J}(\mathbf{R}')\mathrm{i}k\mathbf{e}_R\cdot\mathbf{R}'\mathrm{d}\tau'}\right]</script><p>第一项对电偶极矩，第二项对应磁偶极矩、电四极矩，令$\dfrac{\mu_0}{4\pi}\dfrac{\mathrm{e}^{\mathrm{i}kR}}{R}=\alpha$</p>
-<p>第一项<br>可以证明$\int_V{\mathbf{J}(\mathbf{R}’)\mathrm{d}\tau’}=\dot{\mathbf{p}}$</p>
+\mathbf{A}=\dfrac{\mu_0}{4\pi}\dfrac{\mathrm{e}^{\mathrm{i}kR}}{R}\left[\int_V{\mathbf{J}(\mathbf{R}')\mathrm{d}\tau'}-\int_V{\mathbf{J}(\mathbf{R}')\mathrm{i}k\mathbf{e}_R\cdot\mathbf{R}'\mathrm{d}\tau'}\right]</script><p>第一项对电偶极矩，第二项对应磁偶极矩、电四极矩，令 $\dfrac {\mu_0}{4\pi}\dfrac {\mathrm {e}^{\mathrm {i} kR}}{R}=\alpha$</p>
+<p>第一项<br>可以证明 $\int_V {\mathbf {J}(\mathbf {R}’)\mathrm {d}\tau’}=\dot {\mathbf {p}}$</p>
 <script type="math/tex; mode=display">
 \mathbf{A}_{(1)}=\alpha\int_V{\mathbf{J}(\mathbf{R}')\mathrm{d}\tau'}=\alpha\dot{\mathbf{p}}\\
 \mathbf{B}=\nabla\times\mathbf{A}=\mathrm{i}k\alpha\mathbf{e}_R\times\dot{\mathbf{p}}=\dfrac{\alpha}{c}\ddot{\mathbf{p}}\times\mathbf{e}_R\\
@@ -596,7 +626,7 @@ I(z)=I_0\sin{\dfrac{2\pi}{\lambda}(l-|z|)}=I_0\sin{k(l-|z|)}</script><p>有电�
 \quad\\
 \text{第二项：}\mathbf{e}_R\cdot\left[\mathbf{R}'\mathbf{J}(\mathbf{R}')-\mathbf{J}(\mathbf{R}')\mathbf{R}'\right]=-\mathbf{e}_R\times(\mathbf{R}'\times\mathbf{J}(\mathbf{R}'))\\
 -\mathbf{e}_R\times(\int_V{\dfrac{1}{2}\mathbf{R}'\times\mathbf{J}(\mathbf{R}')\mathrm{d}\tau'})=-\mathbf{e}_R\times\mathbf{m}</script><script type="math/tex; mode=display">
-\mathbf{A}_{(2)}=-\mathrm{i}k\alpha\left(-\mathbf{e}_R\times\mathbf{m}+\dfrac{1}{6}\mathbf{e}_R\cdot\dot{\overleftrightarrow{\mathcal{D}}}\right)</script><p>只考虑电四极辐射$\left[\vec{\mathcal{D}}(\mathbf{e}_R)=\mathbf{e}_R\cdot\overleftrightarrow{\mathcal{D}}\right]$</p>
+\mathbf{A}_{(2)}=-\mathrm{i}k\alpha\left(-\mathbf{e}_R\times\mathbf{m}+\dfrac{1}{6}\mathbf{e}_R\cdot\dot{\overleftrightarrow{\mathcal{D}}}\right)</script><p>只考虑电四极辐射 $\left [\vec {\mathcal {D}}(\mathbf {e}_R)=\mathbf {e}_R\cdot\overleftrightarrow {\mathcal {D}}\right]$</p>
 <script type="math/tex; mode=display">
 \mathbf{A}_{(2)e}=-\dfrac{\mathrm{i}k\alpha}{6}\mathbf{e}_R\cdot\dot{\overleftrightarrow{\mathcal{D}}}=-\dfrac{\mathrm{i}k\alpha}{6}\dot{\vec{\mathcal{D}}}=-\dfrac{\mathrm{i}\omega\alpha}{6c}\dot{\vec{\mathcal{D}}}=\dfrac{\alpha}{6c}\ddot{\vec{\mathcal{D}}}
 \\
@@ -605,7 +635,7 @@ I(z)=I_0\sin{\dfrac{2\pi}{\lambda}(l-|z|)}=I_0\sin{k(l-|z|)}</script><p>有电�
 <script type="math/tex; mode=display">
 \bar{S}=\dfrac{1}{2}(\mathbf{E}^*\times\mathbf{H})=\dfrac{c}{2\mu_0}(\mathbf{B}\times\mathbf{e}_R)^*\times\mathbf{B}=\dfrac{c}{2\mu_0}|\mathbf{B}|^2\mathbf{e}_R\\
 \bar{f}(\theta,\varphi)=\dfrac{\bar{\mathbf{S}}\cdot\mathrm{d}\mathbf{a}}{\mathrm{d}\Omega}=R^2\mathbf{S}\cdot \mathbf{e}_R\\
-\bar{p}=\oint_S{|\bar{\mathbf{S}}|\mathrm{d}a}=\oint_S{|\bar{\mathbf{S}}|R^2\mathrm{d}\Omega}</script><div STYLE="page-break-after: always;"></div>
+\bar{p}=\oint_S{|\bar{\mathbf{S}}|\mathrm{d}a}=\oint_S{|\bar{\mathbf{S}}|R^2\mathrm{d}\Omega}</script><div style="page-break-after: always;"></div>
 
 <h1 id="电磁波的传播"><a href="#电磁波的传播" class="headerlink" title="电磁波的传播"></a>电磁波的传播</h1><h2 id="电磁波传播问题中的基本方程"><a href="#电磁波传播问题中的基本方程" class="headerlink" title="电磁波传播问题中的基本方程"></a>电磁波传播问题中的基本方程</h2><h3 id="电磁波在介质中传播的基本方程"><a href="#电磁波在介质中传播的基本方程" class="headerlink" title="电磁波在介质中传播的基本方程"></a>电磁波在介质中传播的基本方程</h3><p>在真空或者不导电介质中，麦克斯韦方程退化为</p>
 <script type="math/tex; mode=display">
@@ -619,7 +649,7 @@ I(z)=I_0\sin{\dfrac{2\pi}{\lambda}(l-|z|)}=I_0\sin{k(l-|z|)}</script><p>有电�
 \begin{aligned}
     &\nabla^2\mathbf{E}-\mu_0\varepsilon_0\dfrac{\partial^2\mathbf{E}}{\partial{t^2}}=0\\
     &\nabla^2\mathbf{B}-\mu_0\varepsilon_0\dfrac{\partial^2{\mathbf{B}}}{\partial{t^2}}=0
-\end{aligned}</script><p>其中$c=\dfrac{1}{\sqrt{\mu_0\varepsilon_0}}$<br>这是典型的波动方程，可以分类变量为$\mathbf{E}=\mathbf{E}_\omega\mathrm{e}^{\mathrm{i}(-\omega t)}$<br>我们探讨单色波的传播方程$(\omega=\text{常数})$.<br>为了推导$\mathbf{E}_\omega$所满足的方程，我们仍从麦克斯韦方程组出发，将第二式的两边取旋度后，我们有</p>
+\end{aligned}</script><p>其中 $c=\dfrac {1}{\sqrt {\mu_0\varepsilon_0}}$<br>这是典型的波动方程，可以分类变量为 $\mathbf {E}=\mathbf {E}_\omega\mathrm {e}^{\mathrm {i}(-\omega t)}$<br>我们探讨单色波的传播方程 $(\omega=\text {常数})$.<br>为了推导 $\mathbf {E}_\omega$ 所满足的方程，我们仍从麦克斯韦方程组出发，将第二式的两边取旋度后，我们有</p>
 <script type="math/tex; mode=display">
 \nabla\times(\nabla\times\mathbf{E})=\nabla\times(\nabla\times\mathbf{E}_\omega)\mathrm{e}^{\mathrm{i}(-\omega t)}\\=\nabla\times\left(-\dfrac{\partial\mathbf{B}}{\partial{t}}\right)=\nabla\times\mathbf{B}_\omega(\mathrm{i}\omega)\mathrm{e}^{\mathrm{i}(-\omega t)}\\
 =\mathrm{i}\omega\mu(\omega)\nabla\times\mathbf{H}_\omega\mathrm{e}^{\mathrm{i}(-\omega t)}</script><p>整理得</p>
@@ -628,17 +658,17 @@ I(z)=I_0\sin{\dfrac{2\pi}{\lambda}(l-|z|)}=I_0\sin{k(l-|z|)}</script><p>有电�
 <script type="math/tex; mode=display">
 \nabla\times\mathbf{H}=\dfrac{\partial\mathbf{D}}{\partial{t}}=-\mathrm{i}\omega\varepsilon(\omega)\mathbf{E}_\omega\mathrm{e}^{\mathrm{i}(-\omega t)}</script><p>再整理得</p>
 <script type="math/tex; mode=display">
-\nabla^2\mathbf{E}_\omega+\omega^2\mu(\omega)\varepsilon(\omega)\mathbf{E}_\omega=0</script><p>令$k^2(\omega)=\omega^2\mu(\omega)\varepsilon(\omega)$，得</p>
+\nabla^2\mathbf{E}_\omega+\omega^2\mu(\omega)\varepsilon(\omega)\mathbf{E}_\omega=0</script><p>令 $k^2 (\omega)=\omega^2\mu (\omega)\varepsilon (\omega)$，得</p>
 <script type="math/tex; mode=display">
-\nabla^2\mathbf{E}_\omega+k^2\mathbf{E}_\omega=0</script><p>称为<strong>亥姆霍兹方程</strong>,磁感应强度同理,查阅《数学物理方法》.</p>
-<h3 id="电磁波在导体中传播的基本方程"><a href="#电磁波在导体中传播的基本方程" class="headerlink" title="电磁波在导体中传播的基本方程"></a>电磁波在导体中传播的基本方程</h3><p>在良导体假设$[\rho(t)=\rho_0\exp{\left(-\dfrac{\sigma}{\varepsilon}T\right)}(T\gg\tau)]$下，导体内部的麦克斯韦方程组可以写作</p>
+\nabla^2\mathbf{E}_\omega+k^2\mathbf{E}_\omega=0</script><p>称为<strong>亥姆霍兹方程</strong> , 磁感应强度同理，查阅《数学物理方法》.</p>
+<h3 id="电磁波在导体中传播的基本方程"><a href="#电磁波在导体中传播的基本方程" class="headerlink" title="电磁波在导体中传播的基本方程"></a>电磁波在导体中传播的基本方程</h3><p>在良导体假设 $[\rho (t)=\rho_0\exp {\left (-\dfrac {\sigma}{\varepsilon} T\right)}(T\gg\tau)]$ 下，导体内部的麦克斯韦方程组可以写作</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 &\nabla\cdot{\mathbf{D}}=0\qquad
 &\nabla\times{\mathbf{E}}=-\dfrac{\partial{\mathbf{B}}}{\partial{t}}\\
 &\nabla\cdot{\mathbf{B}}=0\qquad
 &\nabla\times{\mathbf{H}}=\sigma\mathbf{E}+\dfrac{\partial\mathbf{D}}{\partial{t}}
-\end{aligned}</script><p>其中$\mathbf{D}=\varepsilon \mathbf{E}+\mathbf{P};\mathbf{H}=\dfrac{1}{\mu}\mathbf{B}-\mathbf{M}$<br>对于单色波，我们可以化简为</p>
+\end{aligned}</script><p>其中 $\mathbf {D}=\varepsilon \mathbf {E}+\mathbf {P};\mathbf {H}=\dfrac {1}{\mu}\mathbf {B}-\mathbf {M}$<br>对于单色波，我们可以化简为</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 &\nabla\cdot{\mathbf{E}_\omega}=0,\qquad
@@ -646,7 +676,7 @@ I(z)=I_0\sin{\dfrac{2\pi}{\lambda}(l-|z|)}=I_0\sin{k(l-|z|)}</script><p>有电�
 \omega\mu(\omega)\mathbf{H}_\omega\\
 &\nabla\cdot{\mathbf{H}_\omega}=0,\qquad
 &\nabla\times{\mathbf{H}_\omega}=-\mathrm{i}\omega\varepsilon'(\omega)\mathbf{E}_\omega
-\end{aligned}</script><p>令$-\mathrm{i}\omega\varepsilon’(\omega)=\sigma-\mathrm{i}\omega\varepsilon(\omega)$为所谓“复介电常数”.</p>
+\end{aligned}</script><p>令 $-\mathrm {i}\omega\varepsilon’(\omega)=\sigma-\mathrm {i}\omega\varepsilon (\omega)$ 为所谓 “复介电常数”.</p>
 <h3 id="在介质或导体分界面处的边界条件"><a href="#在介质或导体分界面处的边界条件" class="headerlink" title="在介质或导体分界面处的边界条件"></a>在介质或导体分界面处的边界条件</h3><p>现已知</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
@@ -660,7 +690,7 @@ I(z)=I_0\sin{\dfrac{2\pi}{\lambda}(l-|z|)}=I_0\sin{k(l-|z|)}</script><p>有电�
 \mathbf{n}\cdot(\varepsilon_2'\mathbf{E}_2-\varepsilon_1'\mathbf{E}_1)=0</script><h2 id="平面单色电磁波在均匀介质中的传播"><a href="#平面单色电磁波在均匀介质中的传播" class="headerlink" title="平面单色电磁波在均匀介质中的传播"></a>平面单色电磁波在均匀介质中的传播</h2><p>平面单色波方程解为</p>
 <script type="math/tex; mode=display">
 \mathbf{E}(\mathbf{R},t)=\mathbf{E}_0\mathrm{e}^{-\mathrm{i}(\omega t-\mathbf{k}\cdot\mathbf{R})}\\
-\mathbf{B}(\mathbf{R},t)=\mathbf{B}_0\mathrm{e}^{-\mathrm{i}(\omega t-\mathbf{k}\cdot\mathbf{R})}</script><p>根据麦克斯韦方程可得,电磁波是横波,则有</p>
+\mathbf{B}(\mathbf{R},t)=\mathbf{B}_0\mathrm{e}^{-\mathrm{i}(\omega t-\mathbf{k}\cdot\mathbf{R})}</script><p>根据麦克斯韦方程可得，电磁波是横波，则有</p>
 <script type="math/tex; mode=display">
 \mathbf{k}\times\mathbf{E}_0=\omega\mathbf{B}_0\\
 \mathbf{B}_0=\sqrt{\mu\varepsilon}\mathbf{e}_k\times\mathbf{E}_0</script><h2 id="电磁波在介质分界面上的反射和折射"><a href="#电磁波在介质分界面上的反射和折射" class="headerlink" title="电磁波在介质分界面上的反射和折射"></a>电磁波在介质分界面上的反射和折射</h2><p>现已知</p>
@@ -672,7 +702,7 @@ I(z)=I_0\sin{\dfrac{2\pi}{\lambda}(l-|z|)}=I_0\sin{k(l-|z|)}</script><p>有电�
 \end{aligned}</script><p>实际上，这四个方程中仅有两个是独立的，一般取为</p>
 <script type="math/tex; mode=display">
 \mathbf{n}\times(\mathbf{E}_2-\mathbf{E}_1)=\mathbf{0},\quad
-\mathbf{n}\times(\mathbf{H}_2-\mathbf{H}_1)=\mathbf{\alpha}</script><p>若有一单色电磁波从介质 1 射，其波矢$\mathbf{k}$与轴的夹角取作$\theta$（入射角），又假设反射波和折射电磁波亦为单色平面波，波矢分别为$\mathbf{k}’$和$\mathbf{k}’’$,即我们有</p>
+\mathbf{n}\times(\mathbf{H}_2-\mathbf{H}_1)=\mathbf{\alpha}</script><p>若有一单色电磁波从介质 1 射，其波矢 $\mathbf {k}$ 与轴的夹角取作 $\theta$（入射角），又假设反射波和折射电磁波亦为单色平面波，波矢分别为 $\mathbf {k}’$ 和 $\mathbf {k}’’$, 即我们有</p>
 <script type="math/tex; mode=display">
 \mathbf{E}_{incident}=\mathbf{E}_0\mathrm{e}^{\mathrm{i}(\mathbf{k}\cdot\mathbf{r}-\omega t)}\\
 \mathbf{E}_{reflect}=\mathbf{E}'_0\mathrm{e}^{\mathrm{i}(\mathbf{k}'\cdot\mathbf{r}-\omega t)}\\
@@ -680,11 +710,11 @@ I(z)=I_0\sin{\dfrac{2\pi}{\lambda}(l-|z|)}=I_0\sin{k(l-|z|)}</script><p>有电�
 <script type="math/tex; mode=display">
 \mathbf{E}_{1}=\mathbf{E}_0\mathrm{e}^{\mathrm{i}(\mathbf{k}\cdot\mathbf{r}-\omega t)}+\mathbf{E}'_0\mathrm{e}^{\mathrm{i}(\mathbf{k}'\cdot\mathbf{r}-\omega t)}</script><p>而在介质 2 中，电场强度矢量为</p>
 <script type="math/tex; mode=display">
-\mathbf{E}_{2}=\mathbf{E}_0''\mathrm{e}^{\mathrm{i}(\mathbf{k}''\cdot\mathbf{r}-\omega t)}</script><p>由$\mathbf{n}\times(\mathbf{E}_2-\mathbf{E}_1)=\mathbf{0}$得，</p>
+\mathbf{E}_{2}=\mathbf{E}_0''\mathrm{e}^{\mathrm{i}(\mathbf{k}''\cdot\mathbf{r}-\omega t)}</script><p>由 $\mathbf {n}\times (\mathbf {E}_2-\mathbf {E}_1)=\mathbf {0}$ 得，</p>
 <script type="math/tex; mode=display">
-(\mathbf{n}\times\mathbf{E}_0)\mathrm{e}^{\mathrm{i}(k_xx+k_yy)}+(\mathbf{n}\times\mathbf{E}_0')\mathrm{e}^{\mathrm{i}(k_x'x+k_y'y)}=(\mathbf{n}\times\mathbf{E}_0'')\mathrm{e}^{\mathrm{i}(k_x''x+k_y''y)}</script><p>考虑到$x$和$y$坐标的任意性，我们要求</p>
+(\mathbf{n}\times\mathbf{E}_0)\mathrm{e}^{\mathrm{i}(k_xx+k_yy)}+(\mathbf{n}\times\mathbf{E}_0')\mathrm{e}^{\mathrm{i}(k_x'x+k_y'y)}=(\mathbf{n}\times\mathbf{E}_0'')\mathrm{e}^{\mathrm{i}(k_x''x+k_y''y)}</script><p>考虑到 $x$ 和 $y$ 坐标的任意性，我们要求</p>
 <script type="math/tex; mode=display">
-k_x=k_x'=k_x''\qquad k_y=k_y'=k_y''</script><p>又根据入射角的定义，我们有$k=k\sin{\theta}$,并可同理定义反射角和折射角，即</p>
+k_x=k_x'=k_x''\qquad k_y=k_y'=k_y''</script><p>又根据入射角的定义，我们有 $k=k\sin {\theta}$, 并可同理定义反射角和折射角，即</p>
 <script type="math/tex; mode=display">
 k\sin{\theta}=k'\sin{\theta'}=k''\sin{\theta''}</script><p>先看第一个等式，我们有</p>
 <script type="math/tex; mode=display">
@@ -692,36 +722,36 @@ k\sin{\theta}=k'\sin{\theta'}=k''\sin{\theta''}</script><p>先看第一个等式
 <script type="math/tex; mode=display">
 \dfrac{\sin{\theta''}}{\sin{\theta'}}=\dfrac{k'}{k''}=\dfrac{n_1}{n_2}</script><p>现在，我们将边值关系重新写作</p>
 <script type="math/tex; mode=display">
-\mathbf{n}\times\mathbf{E}_0+\mathbf{n}\times\mathbf{E}_0'=\mathbf{n}\times\mathbf{E}_0''</script><p>为了求解$\mathbf{E}’$和$\mathbf{E}’’$,我们还需要利用第二个边值条件，首先，利用麦克斯韦方程$\nabla\times\mathbf{E}=-\dfrac{\partial{\mathbf{B}}}{\partial{t}}$得到</p>
+\mathbf{n}\times\mathbf{E}_0+\mathbf{n}\times\mathbf{E}_0'=\mathbf{n}\times\mathbf{E}_0''</script><p>为了求解 $\mathbf {E}’$ 和 $\mathbf {E}’’$, 我们还需要利用第二个边值条件，首先，利用麦克斯韦方程 $\nabla\times\mathbf {E}=-\dfrac {\partial {\mathbf {B}}}{\partial {t}}$ 得到</p>
 <script type="math/tex; mode=display">
-\mathbf{n}\times\left(\dfrac{1}{\mu_1(\omega)}\mathbf{k}\times\mathbf{E}_0\right)+\mathbf{n}\times\left(\dfrac{1}{\mu_1(\omega)}\mathbf{k}'\times\mathbf{E}'_0\right)=\mathbf{n}\times\left(\dfrac{1}{\mu_2(\omega)}\mathbf{k}''\times\mathbf{E}''_0\right)</script><p>我们现在可以求解$\mathbf{E}_0’$和$\mathbf{E}_0’’$了<br>(i)当$\mathbf{E}_0$垂直于入射面时，边值一我们有</p>
+\mathbf{n}\times\left(\dfrac{1}{\mu_1(\omega)}\mathbf{k}\times\mathbf{E}_0\right)+\mathbf{n}\times\left(\dfrac{1}{\mu_1(\omega)}\mathbf{k}'\times\mathbf{E}'_0\right)=\mathbf{n}\times\left(\dfrac{1}{\mu_2(\omega)}\mathbf{k}''\times\mathbf{E}''_0\right)</script><p>我们现在可以求解 $\mathbf {E}_0’$ 和 $\mathbf {E}_0’’$ 了<br>(i) 当 $\mathbf {E}_0$ 垂直于入射面时，边值一我们有</p>
 <script type="math/tex; mode=display">
 E_0+E_0'=E_0''</script><p>而边值二化简为</p>
 <script type="math/tex; mode=display">
 \dfrac{1}{\mu_1(\omega)}(k\cos{\theta}E_0-k'\cos{\theta}E_0')=\dfrac{1}{\mu_2(\omega)}k''\cos{\theta''}E_0''\\
-\Rightarrow\sqrt{\dfrac{\varepsilon_1}{\mu_1}}(E_0-E_0')\cos{\theta}=\sqrt{\dfrac{\varepsilon_2}{\mu_2}}E_0''\cos{\theta''}</script><p>令$\mu(\omega)\approx\mu_0$，有</p>
+\Rightarrow\sqrt{\dfrac{\varepsilon_1}{\mu_1}}(E_0-E_0')\cos{\theta}=\sqrt{\dfrac{\varepsilon_2}{\mu_2}}E_0''\cos{\theta''}</script><p>令 $\mu (\omega)\approx\mu_0$，有</p>
 <script type="math/tex; mode=display">
 E_0'=\dfrac{\sin{(\theta''-\theta)}}{\sin{(\theta''+\theta)}}E_0\\
-E_0''=\dfrac{2\sin{\theta''}\cos{\theta}}{\sin{(\theta''+\theta)}}E_0</script><p>(ii)接下来，我们讨论$\mathbf{E}_0$平行于入射面，边值条件$\mathbf{n}\times\mathbf{E}_0+\mathbf{n}\times\mathbf{E}_0’=\mathbf{n}\times\mathbf{E}_0’’$化为</p>
+E_0''=\dfrac{2\sin{\theta''}\cos{\theta}}{\sin{(\theta''+\theta)}}E_0</script><p>(ii) 接下来，我们讨论 $\mathbf {E}_0$ 平行于入射面，边值条件 $\mathbf {n}\times\mathbf {E}_0+\mathbf {n}\times\mathbf {E}_0’=\mathbf {n}\times\mathbf {E}_0’’$ 化为</p>
 <script type="math/tex; mode=display">
-E_0\cos{\theta}-E_0'\cos{\theta}=E_0''\cos{\theta''}</script><p>而边值条件二可化为,</p>
+E_0\cos{\theta}-E_0'\cos{\theta}=E_0''\cos{\theta''}</script><p>而边值条件二可化为，</p>
 <script type="math/tex; mode=display">
 \sqrt{\varepsilon_1}(E_0+E_0')=\sqrt{\varepsilon_2}E_0''</script><p>联立求解，并再次利用折射定律后，我们有</p>
 <script type="math/tex; mode=display">
-E_0'=\dfrac{\tan{(\theta-\theta'')}}{\tan{(\theta+\theta'')}}E_0,\qquad E_0''=\dfrac{2\cos{\theta}\sin{\theta''}}{\sin{(\theta+\theta'')}\cos{(\theta-\theta'')}}E_0</script><p>上面四式称为菲涅尔公式，$\theta+\theta’’=\dfrac{\pi}{2}$称为布鲁斯特角.</p>
-<p>增透膜：$T=1$时，$d=\dfrac{\lambda}{4n_2}$，$n_2=\sqrt{n_3}$</p>
-<h2 id="电磁波在导体中的传播及在导体表面的反射和折射"><a href="#电磁波在导体中的传播及在导体表面的反射和折射" class="headerlink" title="电磁波在导体中的传播及在导体表面的反射和折射"></a>电磁波在导体中的传播及在导体表面的反射和折射</h2><p>现在的$\mathbf{k}’=\mathbf{k}+\mathrm{i}\mathbf{\tau}$<br>比较上式两边的实部和虚部部后，我们得到</p>
+E_0'=\dfrac{\tan{(\theta-\theta'')}}{\tan{(\theta+\theta'')}}E_0,\qquad E_0''=\dfrac{2\cos{\theta}\sin{\theta''}}{\sin{(\theta+\theta'')}\cos{(\theta-\theta'')}}E_0</script><p>上面四式称为菲涅尔公式，$\theta+\theta’’=\dfrac {\pi}{2}$ 称为布鲁斯特角.</p>
+<p>增透膜：$T=1$ 时，$d=\dfrac {\lambda}{4n_2}$，$n_2=\sqrt {n_3}$</p>
+<h2 id="电磁波在导体中的传播及在导体表面的反射和折射"><a href="#电磁波在导体中的传播及在导体表面的反射和折射" class="headerlink" title="电磁波在导体中的传播及在导体表面的反射和折射"></a>电磁波在导体中的传播及在导体表面的反射和折射</h2><p>现在的 $\mathbf {k}’=\mathbf {k}+\mathrm {i}\mathbf {\tau}$<br>比较上式两边的实部和虚部部后，我们得到</p>
 <script type="math/tex; mode=display">
-\omega\mu(\omega)\varepsilon(\omega)=k^2-\tau^2,\qquad\dfrac{1}{2}\omega\mu(\omega)\sigma=\mathbf{k}\cdot\mathbf{\tau}</script><p>.<br>在下面的讨论中，我们仅考虑垂直入射的情况，即$\theta=0$，解得</p>
+\omega\mu(\omega)\varepsilon(\omega)=k^2-\tau^2,\qquad\dfrac{1}{2}\omega\mu(\omega)\sigma=\mathbf{k}\cdot\mathbf{\tau}</script><p>.<br>在下面的讨论中，我们仅考虑垂直入射的情况，即 $\theta=0$，解得</p>
 <script type="math/tex; mode=display">
 k_z=\omega\sqrt{\mu(\omega)\varepsilon(\omega)}\left[\dfrac{1}{2}\left(\sqrt{1+\dfrac{\sigma^2}{\omega^2\varepsilon^2(\omega)}}+1\right)\right]^{1/2}\\
-\tau_z=\omega\sqrt{\mu(\omega)\varepsilon(\omega)}\left[\dfrac{1}{2}\left(\sqrt{1+\dfrac{\sigma^2}{\omega^2\varepsilon^2(\omega)}}-1\right)\right]^{1/2}</script><p>当满足良导体条件$\dfrac{\sigma}{\varepsilon\omega}\gg 1$时，有</p>
+\tau_z=\omega\sqrt{\mu(\omega)\varepsilon(\omega)}\left[\dfrac{1}{2}\left(\sqrt{1+\dfrac{\sigma^2}{\omega^2\varepsilon^2(\omega)}}-1\right)\right]^{1/2}</script><p>当满足良导体条件 $\dfrac {\sigma}{\varepsilon\omega}\gg 1$ 时，有</p>
 <script type="math/tex; mode=display">
-k_z\approx\tau_z\approx\sqrt{\dfrac{\omega\mu(\omega)\sigma}{2}}</script><p>现在在导体内部的电场强度$\mathbf{E}’’$为</p>
+k_z\approx\tau_z\approx\sqrt{\dfrac{\omega\mu(\omega)\sigma}{2}}</script><p>现在在导体内部的电场强度 $\mathbf {E}’’$ 为</p>
 <script type="math/tex; mode=display">
-\mathbf{E}''=\mathbf{E}_0''\mathrm{e}^{-\tau_z z}\mathrm{e}^{\mathrm{i}(k_z z-\omega t)}</script><p>我们将满足条件$\tau_z z_c=1$或是</p>
+\mathbf{E}''=\mathbf{E}_0''\mathrm{e}^{-\tau_z z}\mathrm{e}^{\mathrm{i}(k_z z-\omega t)}</script><p>我们将满足条件 $\tau_z z_c=1$ 或是</p>
 <script type="math/tex; mode=display">
-z_c=\tau_z^{-1}</script><p>定义为穿透深度.<br>接下来我们考虑金属表面处的反射波$\mathbf{E}’$和$\mathbf{H}’$</p>
+z_c=\tau_z^{-1}</script><p>定义为穿透深度.<br>接下来我们考虑金属表面处的反射波 $\mathbf {E}’$ 和 $\mathbf {H}’$</p>
 <script type="math/tex; mode=display">
 \mathbf{H}=\dfrac{1}{\omega\mu(\omega)}\mathbf{k}\times\mathbf{E}</script><p>代入关系式得</p>
 <script type="math/tex; mode=display">
@@ -729,26 +759,26 @@ z_c=\tau_z^{-1}</script><p>定义为穿透深度.<br>接下来我们考虑金属
 <script type="math/tex; mode=display">
 E_0'=-\dfrac{(1+\mathrm{i})-\sqrt{\frac{2\omega\varepsilon_0}{\sigma}}}{(1+\mathrm{i})+\sqrt{\frac{2\omega\varepsilon_0}{\sigma}}}E_0</script><p>电磁波的反射系数定义为</p>
 <script type="math/tex; mode=display">
-\mathcal{R}=\left|\dfrac{E_0'}{E_0}\right|\approx1-2\sqrt{\dfrac{2\omega\varepsilon_0}{\sigma}}</script><p>因此，电导率$σ$越大，则反射系数越接近于 1.</p>
+\mathcal{R}=\left|\dfrac{E_0'}{E_0}\right|\approx1-2\sqrt{\dfrac{2\omega\varepsilon_0}{\sigma}}</script><p>因此，电导率 $σ$ 越大，则反射系数越接近于 1.</p>
 <ul>
 <li>高频电磁波照射下导体的表面电阻<script type="math/tex; mode=display">
 \mathbf{\alpha}=\int_0^\infty{\mathbf{J}\mathrm{d}z}\\
 =\sigma\mathbf{E}_0''\dfrac{-\exp{(-\mathrm{i}\omega t)}}{\mathrm{i}k_z-\tau_z}\\
-=\sigma\mathbf{E}_0''\exp{(-\mathrm{i}\omega t)}\dfrac{1}{\sqrt{k_z^2+\tau_z^2}}\exp{(\mathrm{i}\varphi)}</script>这里，$\tan{\varphi}=k_z/\tau_z$.<br>取其实部后，我们得到<script type="math/tex; mode=display">
-\mathbf{\alpha}_{real}=\sigma\mathbf{E}_0''\dfrac{1}{\sqrt{k_z^2+\tau_z^2}}\cos{(\omega t-\varphi)}\\=\alpha_0\cos{(\omega t-\varphi)}\mathbf{e}_{\mathbf{E}_0''}</script>其中，$\alpha_0=\frac{\sigma E_0’’}{\sqrt{k_z^2+\tau_z^2}}$.<script type="math/tex; mode=display">
+=\sigma\mathbf{E}_0''\exp{(-\mathrm{i}\omega t)}\dfrac{1}{\sqrt{k_z^2+\tau_z^2}}\exp{(\mathrm{i}\varphi)}</script>这里，$\tan {\varphi}=k_z/\tau_z$.<br>取其实部后，我们得到<script type="math/tex; mode=display">
+\mathbf{\alpha}_{real}=\sigma\mathbf{E}_0''\dfrac{1}{\sqrt{k_z^2+\tau_z^2}}\cos{(\omega t-\varphi)}\\=\alpha_0\cos{(\omega t-\varphi)}\mathbf{e}_{\mathbf{E}_0''}</script>其中，$\alpha_0=\frac {\sigma E_0’’}{\sqrt {k_z^2+\tau_z^2}}$.<script type="math/tex; mode=display">
 \begin{aligned}
 P_L&=\dfrac{1}{2}RI^2\\
 &=\int_0^\infty{\dfrac{1}{T}\int_0^T{\omega(\mathbf{r},t)\mathrm{d}t\mathrm{d}z}}=\dfrac{\sigma}{4\tau_z}E_0''^2\\
 &=\dfrac{k_z^2+\tau_z^2}{4\sigma\tau_z}\alpha_0^2
 \end{aligned}</script>做比较后，我们可以将<script type="math/tex; mode=display">
-\tilde{R}=\dfrac{k_z^2+\tau_z^2}{2\sigma\tau_z}</script>视作导体在高频情况下出现的厚度为$z_c$的薄层内的电阻，又利用关系式$k_z\approx\tau_z\approx\dfrac{1}{z_c}$，得到<script type="math/tex; mode=display">
+\tilde{R}=\dfrac{k_z^2+\tau_z^2}{2\sigma\tau_z}</script>视作导体在高频情况下出现的厚度为 $z_c$ 的薄层内的电阻，又利用关系式 $k_z\approx\tau_z\approx\dfrac {1}{z_c}$，得到<script type="math/tex; mode=display">
 \tilde{R}=\dfrac{1}{\sigma z_c}</script></li>
 </ul>
 <h2 id="电磁波在等离子体中的传播"><a href="#电磁波在等离子体中的传播" class="headerlink" title="电磁波在等离子体中的传播"></a>电磁波在等离子体中的传播</h2><p>在等离子体中的运动电流密度</p>
 <script type="math/tex; mode=display">
 \mathbf{J}_m=Ne\mathbf{v}</script><p>电子运动方程为</p>
 <script type="math/tex; mode=display">
-m\dfrac{\mathrm{d}\mathbf{v}}{\mathrm{d}t}=e(\mathbf{E}+\mathbf{v}\times B)\approx e\mathbf{E}=e\mathbf{E}_0\exp{[-\mathrm{i}(\omega t - \mathbf{k}\cdot\mathbf{R})]}</script><p>对$t$积分得</p>
+m\dfrac{\mathrm{d}\mathbf{v}}{\mathrm{d}t}=e(\mathbf{E}+\mathbf{v}\times B)\approx e\mathbf{E}=e\mathbf{E}_0\exp{[-\mathrm{i}(\omega t - \mathbf{k}\cdot\mathbf{R})]}</script><p>对 $t$ 积分得</p>
 <script type="math/tex; mode=display">
 \mathbf{v}=\dfrac{\mathrm{i}e}{m\omega}\mathbf{E}</script><p>故运动电流密度为</p>
 <script type="math/tex; mode=display">
@@ -764,19 +794,19 @@ m\dfrac{\mathrm{d}\mathbf{v}}{\mathrm{d}t}=e(\mathbf{E}+\mathbf{v}\times B)\appr
 \begin{aligned}
     \nabla\times\mathbf{E}=&\mathrm{i}\omega\mu_0\mathbf{H}\\
     \nabla\times\mathbf{H}=&\mathrm{i}\dfrac{Ne^2}{m\omega}\mathbf{E}-\mathrm{i}\omega\varepsilon_0\mathbf{E}\\=&-\mathrm{i}\omega\left(1-\dfrac{Ne^2}{\varepsilon_0m\omega^2}\right)\varepsilon_0\mathbf{E}\\=&-\mathrm{i}\omega\left(1-\dfrac{\omega_p^2}{\omega^2}\right)\varepsilon_0\mathbf{E}\\=&-\mathrm{i}\omega\varepsilon\mathbf{E}
-\end{aligned}</script><p>$\omega_p$为等离子体频率</p>
+\end{aligned}</script><p>$\omega_p$ 为等离子体频率</p>
 <h2 id="电磁波在波导中的传播"><a href="#电磁波在波导中的传播" class="headerlink" title="电磁波在波导中的传播"></a>电磁波在波导中的传播</h2><h3 id="传输线"><a href="#传输线" class="headerlink" title="传输线"></a>传输线</h3><p>基本方程为</p>
 <script type="math/tex; mode=display">
 \nabla^2\mathbf{E}+k^2\mathbf{E}=0,\qquad \nabla\cdot\mathbf{E}=0,\qquad k^2=\omega^2\varepsilon\mu</script><p>边值条件为</p>
 <script type="math/tex; mode=display">
-\mathbf{n}\times\mathbf{E}=0\qquad\mathbf{n}\times\mathbf{H}=\mathbf{\alpha}</script><h3 id="传输线中电磁波的一般性质"><a href="#传输线中电磁波的一般性质" class="headerlink" title="传输线中电磁波的一般性质"></a>传输线中电磁波的一般性质</h3><h2 id="传输线中电磁波的一般性质-1"><a href="#传输线中电磁波的一般性质-1" class="headerlink" title="传输线中电磁波的一般性质"></a>传输线中电磁波的一般性质</h2><p>设$z$方向为传播方向，有</p>
+\mathbf{n}\times\mathbf{E}=0\qquad\mathbf{n}\times\mathbf{H}=\mathbf{\alpha}</script><h3 id="传输线中电磁波的一般性质"><a href="#传输线中电磁波的一般性质" class="headerlink" title="传输线中电磁波的一般性质"></a>传输线中电磁波的一般性质</h3><h2 id="传输线中电磁波的一般性质-1"><a href="#传输线中电磁波的一般性质-1" class="headerlink" title="传输线中电磁波的一般性质"></a>传输线中电磁波的一般性质</h2><p>设 $z$ 方向为传播方向，有</p>
 <script type="math/tex; mode=display">
 \mathbf{E}(x,y,z)=\mathbf{E}(x,y)\mathrm{e}^{\mathrm{i}k_zz}</script><p>代入亥姆霍兹方程有</p>
 <script type="math/tex; mode=display">
 \nabla_l^2\mathbf{E}(x,y)+(k^2-k_z^2)\mathbf{E}(x,y)=0</script><p>有两种情况</p>
 <ol>
-<li>$\nabla_l^2\mathbf{E}(x,y)=0\quad(k^2-k_z^2)=0$，称之为 TEM 波，$E_z=H_z=0$</li>
-<li>反之有$k_c^2=k^2-k_z^2=\left(\frac{\omega_c}{c^2}\right)^2$，$v=\dfrac{\omega}{k_z}=\dfrac{\omega}{\sqrt{\omega^2\mu\varepsilon-\frac{\omega^2_c}{c^2}}}$，称之为 TE，TM 波</li>
+<li>$\nabla_l^2\mathbf {E}(x,y)=0\quad (k^2-k_z^2)=0$，称之为 TEM 波，$E_z=H_z=0$</li>
+<li> 反之有 $k_c^2=k^2-k_z^2=\left (\frac {\omega_c}{c^2}\right)^2$，$v=\dfrac {\omega}{k_z}=\dfrac {\omega}{\sqrt {\omega^2\mu\varepsilon-\frac {\omega^2_c}{c^2}}}$，称之为 TE，TM 波</li>
 </ol>
 <p>对于第二种情况，有</p>
 <script type="math/tex; mode=display">
@@ -788,17 +818,17 @@ m\dfrac{\mathrm{d}\mathbf{v}}{\mathrm{d}t}=e(\mathbf{E}+\mathbf{v}\times B)\appr
 \begin{aligned}
     \mathbf{E}&=\left[\dfrac{i}{k^2-k_z^2}\left(\omega\mu\partial_y H_z+k_z\partial_x E_z\right),\dfrac{i}{k^2-k_z^2}\left(-\omega\mu\partial_x H_z+k_z\partial_y E_z\right),E_z\right]\\
     \mathbf{H}&=\left[\dfrac{i}{k^2-k_z^2}\left(-\omega\varepsilon\partial_y E_z+k_z\partial_x H_z\right),\dfrac{i}{k^2-k_z^2}\left(\omega\varepsilon\partial_x E_z+k_z\partial_y H_z\right),H_z\right]
-\end{aligned}</script><p>TE波</p>
+\end{aligned}</script><p>TE 波</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
     \mathbf{E}&=\left[\dfrac{i}{k^2-k_z^2}\left(\omega\mu\partial_y H_z\right),\dfrac{i}{k^2-k_z^2}\left(-\omega\mu\partial_x H_z\right),0\right]\\
     \mathbf{H}&=\left[\dfrac{i}{k^2-k_z^2}\left(k_z\partial_x H_z\right),\dfrac{i}{k^2-k_z^2}\left(k_z\partial_y H_z\right),H_z\right]
-\end{aligned}</script><p>TM波</p>
+\end{aligned}</script><p>TM 波</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
     \mathbf{E}&=\left[\dfrac{i}{k^2-k_z^2}\left(k_z\partial_x E_z\right),\dfrac{i}{k^2-k_z^2}\left(k_z\partial_y E_z\right),E_z\right]\\
     \mathbf{H}&=\left[\dfrac{i}{k^2-k_z^2}\left(-\omega\varepsilon\partial_y E_z\right),\dfrac{i}{k^2-k_z^2}\left(\omega\varepsilon\partial_x E_z\right),0\right]
-\end{aligned}</script><h2 id="矩形波导"><a href="#矩形波导" class="headerlink" title="矩形波导"></a>矩形波导</h2><p>对于$\mathbf{E},\mathbf{H}$的任意一个分量都有分离变量</p>
+\end{aligned}</script><h2 id="矩形波导"><a href="#矩形波导" class="headerlink" title="矩形波导"></a>矩形波导</h2><p>对于 $\mathbf {E},\mathbf {H}$ 的任意一个分量都有分离变量</p>
 <script type="math/tex; mode=display">
 u(x,y)=(C_1\cos{k_xx}+D_1\sin{k_xx})((C_2\cos{k_yy}+D_2\sin{k_yy}))</script><p>对于 TE 波有边界条件</p>
 <script type="math/tex; mode=display">
@@ -814,14 +844,14 @@ H_z=A\cos{\dfrac{m\pi}{a}x}\cos{\dfrac{n\pi}{b}y}</script><p>其余分量</p>
     \mathbf{H}&=\left[\dfrac{i}{k^2-k_z^2}\left(k_z\partial_x H_z\right),\dfrac{i}{k^2-k_z^2}\left(k_z\partial_y H_z\right),H_z\right]
 \end{aligned}</script><p>有本征谐振频率</p>
 <script type="math/tex; mode=display">
-\omega_{n_1,n_2,n_3}=\dfrac{1}{\sqrt{\mu(\omega)\varepsilon(\omega)}}\sqrt{\left(\dfrac{m\pi}{a}\right)^2+\left(\dfrac{n\pi}{b}\right)^2+k_z^2}</script><p>最低$TE_{10}$波的本征频率为</p>
+\omega_{n_1,n_2,n_3}=\dfrac{1}{\sqrt{\mu(\omega)\varepsilon(\omega)}}\sqrt{\left(\dfrac{m\pi}{a}\right)^2+\left(\dfrac{n\pi}{b}\right)^2+k_z^2}</script><p>最低 $TE_{10}$ 波的本征频率为</p>
 <script type="math/tex; mode=display">
-\omega_{min}=\dfrac{\pi}{\sqrt{\mu(\omega)\varepsilon(\omega)}}\dfrac{1}{a}</script><h2 id="谐振腔"><a href="#谐振腔" class="headerlink" title="谐振腔"></a>谐振腔</h2><p>要求$z$方向上有$d=l\dfrac{\lambda}{2},\quad l=0,1,2\cdots$，或$k_zd=l\pi$</p>
+\omega_{min}=\dfrac{\pi}{\sqrt{\mu(\omega)\varepsilon(\omega)}}\dfrac{1}{a}</script><h2 id="谐振腔"><a href="#谐振腔" class="headerlink" title="谐振腔"></a>谐振腔</h2><p>要求 $z$ 方向上有 $d=l\dfrac {\lambda}{2},\quad l=0,1,2\cdots$，或 $k_zd=l\pi$</p>
 <p>在矩形波导内有</p>
 <script type="math/tex; mode=display">
-k^2=\left(\dfrac{m\pi}{a}\right)^2+\left(\dfrac{n\pi}{b}\right)^2+\left(\dfrac{l\pi}{d}\right)^2</script><p><strong>例</strong> $TE_{101}$谐振腔电磁场分布</p>
+k^2=\left(\dfrac{m\pi}{a}\right)^2+\left(\dfrac{n\pi}{b}\right)^2+\left(\dfrac{l\pi}{d}\right)^2</script><p><strong>例</strong> $TE_{101}$ 谐振腔电磁场分布</p>
 <script type="math/tex; mode=display">
-H_z=\left(A\mathrm{e}^{\mathrm{i}k_zz}+B\mathbf{e}^{-\mathrm{i}k_zz}\right)\cos{\dfrac{\pi x}{a}}</script><p>由驻波边界条件$E_y=0(z=0,d)$<br>解得</p>
+H_z=\left(A\mathrm{e}^{\mathrm{i}k_zz}+B\mathbf{e}^{-\mathrm{i}k_zz}\right)\cos{\dfrac{\pi x}{a}}</script><p>由驻波边界条件 $E_y=0 (z=0,d)$<br>解得</p>
 <script type="math/tex; mode=display">
 H_z=2\mathrm{i}A\cos{\dfrac{\pi x}{a}}\sin{\dfrac{\pi z}{d}}</script><p>其余分量</p>
 <script type="math/tex; mode=display">
@@ -833,7 +863,7 @@ H_z=2\mathrm{i}A\cos{\dfrac{\pi x}{a}}\sin{\dfrac{\pi z}{d}}</script><p>其余�
 <script type="math/tex; mode=display">
 \mathbf{f}=\rho\mathbf{E}+\mathbf{J}\times\mathbf{B}</script><p>代入场方程得</p>
 <script type="math/tex; mode=display">
-\mathbf{f}=-\partial_t{(\mathbf{D}\times\mathbf{B})}+\nabla\cdot\left[(\mathbf{D}\mathbf{E}+\mathbf{B}\mathbf{H})-\dfrac{1}{2}\vec{\mathcal{J}}(\mathbf{D}\cdot\mathbf{E}+\mathbf{B}\cdot\mathbf{H})\right]</script><p>令$\mathbf{T}=(\mathbf{D}\mathbf{E}+\mathbf{B}\mathbf{H})-\dfrac{1}{2}\vec{\mathcal{J}}(\mathbf{D}\cdot\mathbf{E}+\mathbf{B}\cdot\mathbf{H})$</p>
+\mathbf{f}=-\partial_t{(\mathbf{D}\times\mathbf{B})}+\nabla\cdot\left[(\mathbf{D}\mathbf{E}+\mathbf{B}\mathbf{H})-\dfrac{1}{2}\vec{\mathcal{J}}(\mathbf{D}\cdot\mathbf{E}+\mathbf{B}\cdot\mathbf{H})\right]</script><p>令 $\mathbf {T}=(\mathbf {D}\mathbf {E}+\mathbf {B}\mathbf {H})-\dfrac {1}{2}\vec {\mathcal {J}}(\mathbf {D}\cdot\mathbf {E}+\mathbf {B}\cdot\mathbf {H})$</p>
 <p>原式化为</p>
 <script type="math/tex; mode=display">
 \mathbf{f}=-\partial_t{(\mathbf{D}\times\mathbf{B})}+\nabla\cdot\mathbf{T}\\
@@ -842,21 +872,21 @@ H_z=2\mathrm{i}A\cos{\dfrac{\pi x}{a}}\sin{\dfrac{\pi z}{d}}</script><p>其余�
 \mathbf{G}_e=\dfrac{\mathrm{d}}{\mathrm{d}t}\int{\mathbf{D}\times\mathbf{B}\mathrm{d}\tau}\\
 \mathbf{g}=\mathbf{D}\times\mathbf{B}</script><p>考虑有限面积，有</p>
 <script type="math/tex; mode=display">
-\mathrm{d}\mathbf{f}=\mathrm{d}\mathbf{a}\cdot\mathbf{T}</script><p>$\mathbf{T}$称为电磁场的应力张量，取相反数得到动量流密度张量$\vec{\mathcal{D}}=-\vec{\mathcal{T}}$</p>
+\mathrm{d}\mathbf{f}=\mathrm{d}\mathbf{a}\cdot\mathbf{T}</script><p>$\mathbf {T}$ 称为电磁场的应力张量，取相反数得到动量流密度张量 $\vec {\mathcal {D}}=-\vec {\mathcal {T}}$</p>
 <p>平面波的动量密度为</p>
 <script type="math/tex; mode=display">
-\mathbf{g}=\dfrac{w}{c}\mathbf{e}_R</script><div STYLE="page-break-after: always;"></div>
+\mathbf{g}=\dfrac{w}{c}\mathbf{e}_R</script><div style="page-break-after: always;"></div>
 
-<h1 id="狭义相对论"><a href="#狭义相对论" class="headerlink" title="狭义相对论"></a>狭义相对论</h1><h2 id="1900-年以前的情况；爱因斯坦的两条假设"><a href="#1900-年以前的情况；爱因斯坦的两条假设" class="headerlink" title="1900 年以前的情况；爱因斯坦的两条假设"></a>1900 年以前的情况；爱因斯坦的两条假设</h2><p>(1)相对性原理：物理定律在所有的惯性参照系都是等价的，因此，有关的运动方程应该具有相同的形式<br>(2)光速不变原理：在所有的参照系中，光在真空中传播的速率皆为$c$,而任何粒子在惯性参照系中的运动速率皆小于或等于光速</p>
-<h2 id="一些近代的实验"><a href="#一些近代的实验" class="headerlink" title="一些近代的实验"></a>一些近代的实验</h2><h2 id="洛伦兹变换和狭义相对论的基本的运动学结果"><a href="#洛伦兹变换和狭义相对论的基本的运动学结果" class="headerlink" title="洛伦兹变换和狭义相对论的基本的运动学结果"></a>洛伦兹变换和狭义相对论的基本的运动学结果</h2><p>我们考虑两个惯性参照系$S$和$S’$,假设$S’$系相对于$S$系做匀速直线运动，速度为$\mathbf{V}$.设在$t=t’=0$时刻，两个参照系的原点$O$和$O’$重合，并从该处发射一个光脉冲信号，因此，在时刻$t$时，这个脉冲在$S$系中走过的距离为</p>
+<h1 id="狭义相对论"><a href="#狭义相对论" class="headerlink" title="狭义相对论"></a>狭义相对论</h1><h2 id="1900-年以前的情况；爱因斯坦的两条假设"><a href="#1900-年以前的情况；爱因斯坦的两条假设" class="headerlink" title="1900 年以前的情况；爱因斯坦的两条假设"></a>1900 年以前的情况；爱因斯坦的两条假设</h2><p>(1) 相对性原理：物理定律在所有的惯性参照系都是等价的，因此，有关的运动方程应该具有相同的形式<br>(2) 光速不变原理：在所有的参照系中，光在真空中传播的速率皆为 $c$, 而任何粒子在惯性参照系中的运动速率皆小于或等于光速</p>
+<h2 id="一些近代的实验"><a href="#一些近代的实验" class="headerlink" title="一些近代的实验"></a>一些近代的实验</h2><h2 id="洛伦兹变换和狭义相对论的基本的运动学结果"><a href="#洛伦兹变换和狭义相对论的基本的运动学结果" class="headerlink" title="洛伦兹变换和狭义相对论的基本的运动学结果"></a>洛伦兹变换和狭义相对论的基本的运动学结果</h2><p>我们考虑两个惯性参照系 $S$ 和 $S’$, 假设 $S’$ 系相对于 $S$ 系做匀速直线运动，速度为 $\mathbf {V}$. 设在 $t=t’=0$ 时刻，两个参照系的原点 $O$ 和 $O’$ 重合，并从该处发射一个光脉冲信号，因此，在时刻 $t$ 时，这个脉冲在 $S$ 系中走过的距离为</p>
 <script type="math/tex; mode=display">
-L=\sqrt{x^2+y^2+z^2}=ct</script><p>同理，它在$S’$系中走过的距离为</p>
+L=\sqrt{x^2+y^2+z^2}=ct</script><p>同理，它在 $S’$ 系中走过的距离为</p>
 <script type="math/tex; mode=display">
-L'=\sqrt{x'^2+y'^2+z'^2}=c't'</script><p>根据光速不变假设，我们有$c=c’$,因此，联合上面两式，我们得到</p>
+L'=\sqrt{x'^2+y'^2+z'^2}=c't'</script><p>根据光速不变假设，我们有 $c=c’$, 因此，联合上面两式，我们得到</p>
 <script type="math/tex; mode=display">
-x'^2+y'^2+z'^2-(ct')^2=x^2+y^2+z^2-(ct)^2=0</script><p>对于这个恒等式，我们可以给出如下的几何解释，引入一个假想的四维空间，令沿着它的四个互相垂直方向的单位向量为$\mathbf{e}_x,\mathbf{e}_y,\mathbf{e}_z$和$\mathbf{e}_t$,并且，我们将这个四维空问中任何一点的位置向量写作</p>
+x'^2+y'^2+z'^2-(ct')^2=x^2+y^2+z^2-(ct)^2=0</script><p>对于这个恒等式，我们可以给出如下的几何解释，引入一个假想的四维空间，令沿着它的四个互相垂直方向的单位向量为 $\mathbf {e}_x,\mathbf {e}_y,\mathbf {e}_z$ 和 $\mathbf {e}_t$, 并且，我们将这个四维空问中任何一点的位置向量写作</p>
 <script type="math/tex; mode=display">
-\mathbf{R}=x\mathbf{e}_x+y\mathbf{e}_y+z\mathbf{e}_z+\mathrm{i}ct\mathbf{e}_t</script><p>为了简单起见，我们假设$S$系相对于$S’$系的运动速度是沿$\mathbf{e}_x$方向的，此时，我们可以取$y=y’$和$z=z’$,也就是说，我们假设，四维空间的旋转是发生在$x-\mathrm{i}ct$平面内的，因此，四维空间中任一点$P$的坐标变换可以写作.</p>
+\mathbf{R}=x\mathbf{e}_x+y\mathbf{e}_y+z\mathbf{e}_z+\mathrm{i}ct\mathbf{e}_t</script><p>为了简单起见，我们假设 $S$ 系相对于 $S’$ 系的运动速度是沿 $\mathbf {e}_x$ 方向的，此时，我们可以取 $y=y’$ 和 $z=z’$, 也就是说，我们假设，四维空间的旋转是发生在 $x-\mathrm {i} ct$ 平面内的，因此，四维空间中任一点 $P$ 的坐标变换可以写作.</p>
 <script type="math/tex; mode=display">
 \left(\begin{matrix}
 x'\\
@@ -875,9 +905,9 @@ x\\
 y\\
 z\\
 \mathrm{i}ct
-\end{matrix}\right)</script><p>现在，我们来看如何通过已知条件定出的值。为此，我们考虑$S’$参照系原点$O’$在$S$系中的运动。首先，点在$S’$系的坐标为$x’=y’=z’=0$,而在 S 参考系中，在时刻$t$时，其空间坐标为</p>
+\end{matrix}\right)</script><p>现在，我们来看如何通过已知条件定出的值。为此，我们考虑 $S’$ 参照系原点 $O’$ 在 $S$ 系中的运动。首先，点在 $S’$ 系的坐标为 $x’=y’=z’=0$, 而在 S 参考系中，在时刻 $t$ 时，其空间坐标为</p>
 <script type="math/tex; mode=display">
-x=Vt,y=0,z=0</script><p>因此，对于$O’$点而言，我们有如下的坐标变换关系</p>
+x=Vt,y=0,z=0</script><p>因此，对于 $O’$ 点而言，我们有如下的坐标变换关系</p>
 <script type="math/tex; mode=display">
 \left(\begin{matrix}
 0\\
@@ -906,7 +936,7 @@ x\\
 \end{matrix}\right)</script><p>即</p>
 <script type="math/tex; mode=display">
 x'=\dfrac{x-Vt}{\sqrt{1-\frac{V^2}{c^2}}}\\
-t'=\dfrac{t-x\frac{V}{c^2}}{\sqrt{1-\frac{V^2}{c^2}}}</script><p>令$\gamma=\left(1-\frac{V^2}{c^2}\right)^{-1/2},\mathbf{\beta}=\dfrac{\mathbf{V}}{c}$<br>我们得到任意一个符合协变性的四维矢量的洛伦兹变换为</p>
+t'=\dfrac{t-x\frac{V}{c^2}}{\sqrt{1-\frac{V^2}{c^2}}}</script><p>令 $\gamma=\left (1-\frac {V^2}{c^2}\right)^{-1/2},\mathbf {\beta}=\dfrac {\mathbf {V}}{c}$<br>我们得到任意一个符合协变性的四维矢量的洛伦兹变换为</p>
 <script type="math/tex; mode=display">
 \left(\begin{matrix}
 u_1'\\
@@ -932,7 +962,7 @@ u_4
 \left(\begin{matrix}
 u_1'\\
 u_4'
-\end{matrix}\right)</script><p>在任意方向的$v$下，有平行于速度的$r_p$和垂直于速度的$r_t$，对于$\mathbf{r}_p=r\cos\theta \mathbf{e}_p;\mathbf{r}_p’=\alpha_{\mu\nu}\mathbf{r}_p$有洛伦兹变换，$\mathbf{r}_t=\mathbf{r}_t’=\mathbf{r}-\mathbf{r}_p$不变，故有</p>
+\end{matrix}\right)</script><p>在任意方向的 $v$ 下，有平行于速度的 $r_p$ 和垂直于速度的 $r_t$，对于 $\mathbf {r}_p=r\cos\theta \mathbf {e}_p;\mathbf {r}_p’=\alpha_{\mu\nu}\mathbf {r}_p$ 有洛伦兹变换，$\mathbf {r}_t=\mathbf {r}_t’=\mathbf {r}-\mathbf {r}_p$ 不变，故有</p>
 <script type="math/tex; mode=display">
 \begin{align*}
     &\left(\begin{matrix}
@@ -949,26 +979,26 @@ u_4'
     \end{matrix}\right)
     \\
     &\mathbf{r}'=\mathbf{r}-\mathbf{r}_p+\mathbf{r}_p'\\
-\end{align*}</script><p>从上式出发，对$t$求导有</p>
+\end{align*}</script><p>从上式出发，对 $t$ 求导有</p>
 <script type="math/tex; mode=display">
-\dfrac{\mathrm{d}t'}{\mathrm{d}t}=\gamma\left(1-\beta\frac{v_x}{c}\right)</script><p>由此，我们可以导出同一个运动的质点在$S$系和$S’$系中速度之间的变换关系。例如，我们有</p>
+\dfrac{\mathrm{d}t'}{\mathrm{d}t}=\gamma\left(1-\beta\frac{v_x}{c}\right)</script><p>由此，我们可以导出同一个运动的质点在 $S$ 系和 $S’$ 系中速度之间的变换关系。例如，我们有</p>
 <script type="math/tex; mode=display">
 v_x'=\dfrac{\mathrm{d}x'}{\mathrm{d}t'}=\dfrac{\mathrm{d}x'}{\mathrm{d}t}\dfrac{\mathrm{d}t}{\mathrm{d}t'}=(v_x-V)\left(1-\beta\frac{v_x}{c}\right)^{-1}</script><p>同理有</p>
 <script type="math/tex; mode=display">
 v_y'=\dfrac{\mathrm{d}y'}{\mathrm{d}t'}=\dfrac{\mathrm{d}y'}{\mathrm{d}t}\dfrac{\mathrm{d}t}{\mathrm{d}t'}=v_y\left[\gamma\left(1-\beta\frac{v_x}{c}\right)\right]^{-1}\\
-v_z'=\dfrac{\mathrm{d}z'}{\mathrm{d}t'}=\dfrac{\mathrm{d}z'}{\mathrm{d}t}\dfrac{\mathrm{d}t}{\mathrm{d}t'}=v_z\left[\gamma\left(1-\beta\frac{v_x}{c}\right)\right]^{-1}</script><h2 id="多普勒效应-时钟佯谬问题"><a href="#多普勒效应-时钟佯谬问题" class="headerlink" title="多普勒效应 时钟佯谬问题"></a>多普勒效应 时钟佯谬问题</h2><h3 id="多普勒效应"><a href="#多普勒效应" class="headerlink" title="多普勒效应"></a>多普勒效应</h3><p><strong>非相对论情况</strong><br>设$v_r=-v\cos\theta$为视速度，有</p>
+v_z'=\dfrac{\mathrm{d}z'}{\mathrm{d}t'}=\dfrac{\mathrm{d}z'}{\mathrm{d}t}\dfrac{\mathrm{d}t}{\mathrm{d}t'}=v_z\left[\gamma\left(1-\beta\frac{v_x}{c}\right)\right]^{-1}</script><h2 id="多普勒效应-时钟佯谬问题"><a href="#多普勒效应-时钟佯谬问题" class="headerlink" title="多普勒效应 时钟佯谬问题"></a>多普勒效应 时钟佯谬问题</h2><h3 id="多普勒效应"><a href="#多普勒效应" class="headerlink" title="多普勒效应"></a>多普勒效应</h3><p><strong>非相对论情况</strong><br>设 $v_r=-v\cos\theta$ 为视速度，有</p>
 <script type="math/tex; mode=display">
 \begin{align*}
     T&=\left(1+\beta_{v_r}\right)T_A\\
     \nu&=\dfrac{\nu_A}{1+\beta_{v_r}}
-\end{align*}</script><p>即远离时$v_r&gt;0,\nu&lt;\nu_A$，靠近时$v_r<0,\nu>\nu_A$<br><strong>相对论情况</strong><br>由于钟慢效应$T_A=T_0/\gamma$</p>
+\end{align*}</script><p>即远离时 $v_r&gt;0,\nu&lt;\nu_A$，靠近时 $v_r&lt;0,\nu&gt;\nu_A$<br><strong>相对论情况</strong><br>由于钟慢效应 $T_A=T_0/\gamma$</p>
 <script type="math/tex; mode=display">
 \begin{align*}
     T&=\gamma\left(1+\beta_{v_r}\right)T_0\\
     \nu&=\dfrac{\nu_0}{\gamma(1+\beta_{v_r})}
 \end{align*}</script><h2 id="粒子的相对论动量和能量"><a href="#粒子的相对论动量和能量" class="headerlink" title="粒子的相对论动量和能量"></a>粒子的相对论动量和能量</h2><p>在三维空间中，一个质点的动量被定义为</p>
 <script type="math/tex; mode=display">
-\mathbf{p}=m_0\mathbf{v}=m_0\dfrac{\mathrm{d}\mathbf{r}}{\mathrm{d}t}</script><p>这里，$m_0$应被理解为质点的固有质量，即它在与其一起运动的参照系中的静止质量由于时问间隔$t$不是一个洛伦兹交换下的不交量，我们必须找一个具有时间量纲的洛伦兹变换下的不变量来替換它，以构成一个洛伦兹协变的四维动量（即其内积在洛伦兹变换下不变），实际上，我们可以去如下的量来代替$\Delta t$</p>
+\mathbf{p}=m_0\mathbf{v}=m_0\dfrac{\mathrm{d}\mathbf{r}}{\mathrm{d}t}</script><p>这里，$m_0$ 应被理解为质点的固有质量，即它在与其一起运动的参照系中的静止质量由于时问间隔 $t$ 不是一个洛伦兹交换下的不交量，我们必须找一个具有时间量纲的洛伦兹变换下的不变量来替換它，以构成一个洛伦兹协变的四维动量（即其内积在洛伦兹变换下不变），实际上，我们可以去如下的量来代替 $\Delta t$</p>
 <script type="math/tex; mode=display">
 \Delta \tau=\dfrac{1}{c}\Delta s=\dfrac{1}{c}\sqrt{c^2(\Delta t)^2-(\Delta x)^2-(\Delta y^2)-(\Delta z)^2}</script><p>我们得到新的四维速度分量</p>
 <script type="math/tex; mode=display">
@@ -978,7 +1008,7 @@ v_z'=\dfrac{\mathrm{d}z'}{\mathrm{d}t'}=\dfrac{\mathrm{d}z'}{\mathrm{d}t}\dfrac{
 <script type="math/tex; mode=display">
 p_x=m_0\dfrac{\mathrm{d}x}{\mathrm{d}\tau}=\gamma m_0v_x</script><p>其他两个坐标同理，特别的，我们有</p>
 <script type="math/tex; mode=display">
-p_4=m_0\dfrac{\mathrm{d}(\mathrm{i}ct)}{\mathrm{d}\tau}=\mathrm{i}\gamma m_0c\equiv\mathrm{i}\dfrac{E}{c}</script><p>其中$E=\gamma m_0c^2\equiv mc^2$，称为质点的能量<br>即四维动量</p>
+p_4=m_0\dfrac{\mathrm{d}(\mathrm{i}ct)}{\mathrm{d}\tau}=\mathrm{i}\gamma m_0c\equiv\mathrm{i}\dfrac{E}{c}</script><p>其中 $E=\gamma m_0c^2\equiv mc^2$，称为质点的能量<br>即四维动量</p>
 <script type="math/tex; mode=display">
 \mathbf{P}=[m\mathbf{v},\mathrm{i}\dfrac{E}{c}](m=\gamma m_0;\ E= mc^2)</script><p>同样的有四维力</p>
 <script type="math/tex; mode=display">
@@ -990,31 +1020,31 @@ p_4=m_0\dfrac{\mathrm{d}(\mathrm{i}ct)}{\mathrm{d}\tau}=\mathrm{i}\gamma m_0c\eq
     \mathbf{v}&=\dfrac{\mathbf{p}c^2}{E}\\
     E^2&=(pc)^2+(m_0c^2)^2\\
     \mathbf{F}\cdot\mathbf{v}&=\dfrac{\mathrm{d}E}{\mathrm{d}t}
-\end{align*}</script><h2 id="电荷的不变性；电动力学的协变性"><a href="#电荷的不变性；电动力学的协变性" class="headerlink" title="电荷的不变性；电动力学的协变性"></a>电荷的不变性；电动力学的协变性</h2><p>(i)若一个体系中的电场强度$\mathbf{E}$与磁感应强度$\mathbf{B}$在一个惯性系中是彼此垂直的则它们在任何一个惯性系中都是垂直的<br>(ii)若在一个惯性系中，电场强度$\mathbf{E}$与磁感应强度$\mathbf{B}$的夹角是锐角（或钝角），则在其它惯性系中，这一夹角仍为锐角（或钝角）<br>(iii)若在一个惯性系中，$\mathbf{E}\cdot\mathbf{B}=0$,那么考虑到$B^2-\dfrac{1}{c^2}E^2$也是一个洛伦兹变换下的不变量，我们总可以找到另外一个惯性参照系，在其中$\mathbf{E}=0$或是$\mathbf{B}=0$成立（取决于$B^2-\dfrac{1}{c^2}E^2&gt;0$还是$B^2-\dfrac{1}{c^2}E^2&lt;0$成立）<br>(iv)反之，着在某一惯性参照系中，$\mathbf{E}=0$或是$\mathbf{B}=0$成立，那么在其它惯性系中的电场强度矢量和感应强度矢量总是彼此垂直的</p>
+\end{align*}</script><h2 id="电荷的不变性；电动力学的协变性"><a href="#电荷的不变性；电动力学的协变性" class="headerlink" title="电荷的不变性；电动力学的协变性"></a>电荷的不变性；电动力学的协变性</h2><p>(i) 若一个体系中的电场强度 $\mathbf {E}$ 与磁感应强度 $\mathbf {B}$ 在一个惯性系中是彼此垂直的则它们在任何一个惯性系中都是垂直的<br>(ii) 若在一个惯性系中，电场强度 $\mathbf {E}$ 与磁感应强度 $\mathbf {B}$ 的夹角是锐角（或钝角），则在其它惯性系中，这一夹角仍为锐角（或钝角）<br>(iii) 若在一个惯性系中，$\mathbf {E}\cdot\mathbf {B}=0$, 那么考虑到 $B^2-\dfrac {1}{c^2} E^2$ 也是一个洛伦兹变换下的不变量，我们总可以找到另外一个惯性参照系，在其中 $\mathbf {E}=0$ 或是 $\mathbf {B}=0$ 成立（取决于 $B^2-\dfrac {1}{c^2} E^2&gt;0$ 还是 $B^2-\dfrac {1}{c^2} E^2&lt;0$ 成立）<br>(iv) 反之，着在某一惯性参照系中，$\mathbf {E}=0$ 或是 $\mathbf {B}=0$ 成立，那么在其它惯性系中的电场强度矢量和感应强度矢量总是彼此垂直的</p>
 <h2 id="在外电磁场中一个相对论性带电粒子的拉格朗日函数和哈密顿函数"><a href="#在外电磁场中一个相对论性带电粒子的拉格朗日函数和哈密顿函数" class="headerlink" title="在外电磁场中一个相对论性带电粒子的拉格朗日函数和哈密顿函数"></a>在外电磁场中一个相对论性带电粒子的拉格朗日函数和哈密顿函数</h2><p>最小作用量</p>
 <script type="math/tex; mode=display">
-S=\int_a^b{\alpha\mathrm{d}\tau}</script><p>这里，$\alpha$为一个待定常数，$a$和$b$为自由粒子在一段时间间隔内运动的出发时的初始时空点和最后到达的终止时空点，$\tau$为粒子的原时（或固有时）<br>可被写为</p>
+S=\int_a^b{\alpha\mathrm{d}\tau}</script><p>这里，$\alpha$ 为一个待定常数，$a$ 和 $b$ 为自由粒子在一段时间间隔内运动的出发时的初始时空点和最后到达的终止时空点，$\tau$ 为粒子的原时（或固有时）<br>可被写为</p>
 <script type="math/tex; mode=display">
-L(x,y,z,\dot{x},\dot{y},\dot{z})=\alpha\sqrt{1-\frac{v^2}{c^2}}=\alpha\sqrt{1-\frac{\dot{x}^2+\dot{y}^2+\dot{z}^2}{c^2}}</script><p>称为粒子在实验室参照系中的拉格朗日量.<br>接下来，我们要决定常数$\alpha$,根据广义动量的定义，我们知道</p>
+L(x,y,z,\dot{x},\dot{y},\dot{z})=\alpha\sqrt{1-\frac{v^2}{c^2}}=\alpha\sqrt{1-\frac{\dot{x}^2+\dot{y}^2+\dot{z}^2}{c^2}}</script><p>称为粒子在实验室参照系中的拉格朗日量.<br>接下来，我们要决定常数 $\alpha$, 根据广义动量的定义，我们知道</p>
 <script type="math/tex; mode=display">
-p_i=\dfrac{\partial L}{\partial \dot{q}_i}</script><p>以$p_x$为例</p>
+p_i=\dfrac{\partial L}{\partial \dot{q}_i}</script><p>以 $p_x$ 为例</p>
 <script type="math/tex; mode=display">
 p_x=-\gamma \alpha v_x/c^2</script><p>另一方面，我们已知</p>
 <script type="math/tex; mode=display">
-p_x=\gamma m_0 v_x</script><p>比较以上两式，我们得到$\alpha=-m_0c^2$，因此，粒子的作用量$S$可以被重新写作</p>
+p_x=\gamma m_0 v_x</script><p>比较以上两式，我们得到 $\alpha=-m_0c^2$，因此，粒子的作用量 $S$ 可以被重新写作</p>
 <script type="math/tex; mode=display">
-S=-m_0c^2\int_{t_a}^{t_b}{\sqrt{1-\frac{v^2}{c^2}}\mathrm{d}t}</script><p>有了粒子的拉格朗日量之后，我们即可写出其哈密顿量$H$。我们有</p>
+S=-m_0c^2\int_{t_a}^{t_b}{\sqrt{1-\frac{v^2}{c^2}}\mathrm{d}t}</script><p>有了粒子的拉格朗日量之后，我们即可写出其哈密顿量 $H$。我们有</p>
 <script type="math/tex; mode=display">
 H=\sum_i{p_i\dot q_i}-L=\gamma m_0c^2</script><p>我们看到，这恰恰是粒子的能量</p>
 <h2 id="在均匀静电场和静磁场的并合场中的运动"><a href="#在均匀静电场和静磁场的并合场中的运动" class="headerlink" title="在均匀静电场和静磁场的并合场中的运动"></a>在均匀静电场和静磁场的并合场中的运动</h2><p>接下来，我们看如何用拉格朗日形式来描述一个带电粒子和外加电磁场之间的相互作用，我们将相应的作用量写作</p>
 <script type="math/tex; mode=display">
-S=S_m+S_{mf}</script><p>其中$S_{mf}=\beta\int_a^b{A_idx^i},(n=4),\mathbf{A}=A_x\mathbf{i}+A_y\mathbf{j}+A_z\mathbf{k}+\dfrac{\mathrm{i}\phi}{c}\mathbf{w}$<br>利用变分法得</p>
+S=S_m+S_{mf}</script><p>其中 $S_{mf}=\beta\int_a^b {A_idx^i},(n=4),\mathbf {A}=A_x\mathbf {i}+A_y\mathbf {j}+A_z\mathbf {k}+\dfrac {\mathrm {i}\phi}{c}\mathbf {w}$<br>利用变分法得</p>
 <script type="math/tex; mode=display">
 m_0\dfrac{\mathrm{d}u^i}{\mathrm{d}\tau}=\beta\left( {\partial^i} A_k-{\partial^k} A_i\right)u^k</script><p>若我们令</p>
 <script type="math/tex; mode=display">
 F_{ik}\equiv {\partial^i} A_k-{\partial^k} A_i</script><p>则上式又可被写作</p>
 <script type="math/tex; mode=display">
-m_0\dfrac{\mathrm{d}u^i}{\mathrm{d}\tau}=\beta F_{ik}u^k</script><p>其中，$u^i=\gamma v_i$，特别的$v_4=\mathrm{i}c$<br>根据定义，矩阵元$F_{ik}$是反对称的，即</p>
+m_0\dfrac{\mathrm{d}u^i}{\mathrm{d}\tau}=\beta F_{ik}u^k</script><p>其中，$u^i=\gamma v_i$，特别的 $v_4=\mathrm {i} c$<br>根据定义，矩阵元 $F_{ik}$ 是反对称的，即</p>
 <script type="math/tex; mode=display">
 F_{ik}=-F_{ki}</script><p>整理得</p>
 <script type="math/tex; mode=display">
@@ -1022,7 +1052,7 @@ F_{ik}=-F_{ki}</script><p>整理得</p>
 <script type="math/tex; mode=display">
 \dfrac{\mathrm{d}\mathbf{p}}{\mathrm{d}t}=q\left(\mathbf{v}\times\mathbf{B}+\mathbf{E}\right)</script><p>代入，得到拉格朗日量</p>
 <script type="math/tex; mode=display">
-L=-m_0c^2\sqrt{1-\frac{v^2}{c^2}}+q\mathbf{A}\cdot\mathbf{v}-q\phi</script><p>最后，我们再来看一下$i=4$的情况，我们有</p>
+L=-m_0c^2\sqrt{1-\frac{v^2}{c^2}}+q\mathbf{A}\cdot\mathbf{v}-q\phi</script><p>最后，我们再来看一下 $i=4$ 的情况，我们有</p>
 <script type="math/tex; mode=display">
 \dfrac{\mathrm{d}}{\mathrm{d}t}{\gamma m_0c^2}=q\mathbf{E}\cdot\mathbf{v}</script><p>即单位时间内粒子能量的改变等于外加电磁场作功的功率。这一结论显然是合理的（磁场不做功）.</p>
 <h2 id="两个惯性参照系间电磁场强度矢量的变换关系"><a href="#两个惯性参照系间电磁场强度矢量的变换关系" class="headerlink" title="两个惯性参照系间电磁场强度矢量的变换关系"></a>两个惯性参照系间电磁场强度矢量的变换关系</h2><script type="math/tex; mode=display">
@@ -1032,27 +1062,27 @@ L=-m_0c^2\sqrt{1-\frac{v^2}{c^2}}+q\mathbf{A}\cdot\mathbf{v}-q\phi</script><p>�
 -B_z&0&B_x&-\frac{\mathrm{i}E_y}{c}\\
 B_y&-B_x&0&-\frac{\mathrm{i}E_z}{c}\\
 \frac{\mathrm{i}E_x}{c}&\frac{\mathrm{i}E_y}{c}&\frac{\mathrm{i}E_z}{c}&0
-\end{matrix}\right)</script><h2 id="麦克斯韦方程组的推导"><a href="#麦克斯韦方程组的推导" class="headerlink" title="麦克斯韦方程组的推导"></a>麦克斯韦方程组的推导</h2><p>首先，我们注意到矩阵$\mathcal{F}$的矩阵元满足如下的恒等式</p>
+\end{matrix}\right)</script><h2 id="麦克斯韦方程组的推导"><a href="#麦克斯韦方程组的推导" class="headerlink" title="麦克斯韦方程组的推导"></a>麦克斯韦方程组的推导</h2><p>首先，我们注意到矩阵 $\mathcal {F}$ 的矩阵元满足如下的恒等式</p>
 <script type="math/tex; mode=display">
-\dfrac{\partial F_{ij}}{\partial x_k}+\dfrac{\partial F_{jk}}{\partial x_i}+\dfrac{\partial F_{ki}}{\partial x_j}\equiv 0</script><p>现在恒等式中取$i=1,j=2,k=3$,则我们有</p>
+\dfrac{\partial F_{ij}}{\partial x_k}+\dfrac{\partial F_{jk}}{\partial x_i}+\dfrac{\partial F_{ki}}{\partial x_j}\equiv 0</script><p>现在恒等式中取 $i=1,j=2,k=3$, 则我们有</p>
 <script type="math/tex; mode=display">
-\nabla\cdot\mathbf{B}=0</script><p>又若我们恒等式中取$i=1,j=2,k=4/i=1,j=3,k=4/i=2,j=3,k=4$,则得到</p>
+\nabla\cdot\mathbf{B}=0</script><p>又若我们恒等式中取 $i=1,j=2,k=4/i=1,j=3,k=4/i=2,j=3,k=4$, 则得到</p>
 <script type="math/tex; mode=display">
-\nabla\times\mathbf{E}=-\dfrac{\partial{\mathbf{B}}}{\partial{t}}</script><h2 id="四维张量和对偶张量"><a href="#四维张量和对偶张量" class="headerlink" title="四维张量和对偶张量"></a>四维张量和对偶张量</h2><p>为了写出另外两个麦克斯韦方程，我们需要引进电磁场自身的作用量$S_f$</p>
+\nabla\times\mathbf{E}=-\dfrac{\partial{\mathbf{B}}}{\partial{t}}</script><h2 id="四维张量和对偶张量"><a href="#四维张量和对偶张量" class="headerlink" title="四维张量和对偶张量"></a>四维张量和对偶张量</h2><p>为了写出另外两个麦克斯韦方程，我们需要引进电磁场自身的作用量 $S_f$</p>
 <script type="math/tex; mode=display">
 \mathcal{F}\cdot\mathcal{F}=2(B^2-\dfrac{E^2}{c^2})</script><h2 id="电磁场的拉格朗日函数"><a href="#电磁场的拉格朗日函数" class="headerlink" title="电磁场的拉格朗日函数"></a>电磁场的拉格朗日函数</h2><p>在做了这些准备之后，我们现在可以考虑如何写出电磁场的作用量了。由于电磁场强度矢量唯一地由四维二阶张量 F 决定，而其作用量应该由一个洛伦兹变换下的标量给出，故我们取</p>
 <script type="math/tex; mode=display">
-S_f=\gamma'\int_{R_4}{[F_{ij}]^2\mathrm{d}x\mathrm{d}y\mathrm{d}z\mathrm{d}(\mathrm{i}ct)}</script><p>我们将电荷$q$四维矢量展开</p>
+S_f=\gamma'\int_{R_4}{[F_{ij}]^2\mathrm{d}x\mathrm{d}y\mathrm{d}z\mathrm{d}(\mathrm{i}ct)}</script><p>我们将电荷 $q$ 四维矢量展开</p>
 <script type="math/tex; mode=display">
-q\mathrm{d}x_i=\rho\mathrm{d}V\mathrm{d}x_i=(\rho\mathrm{d}x_i)\mathrm{d}V=\left(\rho\dfrac{\mathrm{d}x_i}{\mathrm{d}t}\right)\mathrm{d}x\mathrm{d}y\mathrm{d}z\mathrm{d}t</script><p>令$J_i=\rho\dfrac{\mathrm{d}x_i}{\mathrm{d}t}$，我们所熟悉的连续性方程现在可以被改写作</p>
+q\mathrm{d}x_i=\rho\mathrm{d}V\mathrm{d}x_i=(\rho\mathrm{d}x_i)\mathrm{d}V=\left(\rho\dfrac{\mathrm{d}x_i}{\mathrm{d}t}\right)\mathrm{d}x\mathrm{d}y\mathrm{d}z\mathrm{d}t</script><p>令 $J_i=\rho\dfrac {\mathrm {d} x_i}{\mathrm {d} t}$，我们所熟悉的连续性方程现在可以被改写作</p>
 <script type="math/tex; mode=display">
 {\partial^i}J_i=0</script><p>代入原式，利用变分法得到</p>
 <script type="math/tex; mode=display">
-\dfrac{1}{\mathrm{i}c}J_j-4\gamma'{\partial^i} F_{ij}=0</script><p>取$j=1,2,3$，有</p>
+\dfrac{1}{\mathrm{i}c}J_j-4\gamma'{\partial^i} F_{ij}=0</script><p>取 $j=1,2,3$，有</p>
 <script type="math/tex; mode=display">
 \nabla\times\mathbf{B}=\mu_0\mathbf{J}+\mu_0\varepsilon_0\dfrac{\partial\mathbf{E}}{\partial{t}}</script><p>对比得到</p>
 <script type="math/tex; mode=display">
-\gamma'=\dfrac{\mathrm{i}}{4\mu_0c}=\dfrac{\mathrm{i}}{4}\sqrt{\dfrac{\varepsilon_0}{\mu_0}}</script><p>取$j=4$，有</p>
+\gamma'=\dfrac{\mathrm{i}}{4\mu_0c}=\dfrac{\mathrm{i}}{4}\sqrt{\dfrac{\varepsilon_0}{\mu_0}}</script><p>取 $j=4$，有</p>
 <script type="math/tex; mode=display">
 \nabla\cdot\mathbf{E}=\dfrac{1}{\varepsilon_0}\rho</script><p>综上所述，N 个带电粒子的总作用量可以写作</p>
 <script type="math/tex; mode=display">
@@ -1069,13 +1099,13 @@ j_i=\sum{q_nv_{ni}(t)\delta(x-x_n(t))\delta(y-y_n(t))\delta(z-z_n(t))}\\
 \rho=\sum{q_n\delta(x-x_n(t))\delta(y-y_n(t))\delta(z-z_n(t))}</script><p>依赖于这些记号，我们可以重新将麦克斯韦方程组写作</p>
 <script type="math/tex; mode=display">
 \dfrac{\partial F_{ij}}{\partial x_k}+\dfrac{\partial F_{jk}}{\partial x_i}+\dfrac{\partial F_{ki}}{\partial x_j}\equiv 0\\
-\dfrac{1}{\mathrm{i}c}J_j-4\gamma'{\partial^i} F_{ij}=0</script><p>洛伦兹规范$\mu_0\varepsilon_0\dfrac{\partial\phi}{\partial{t}}+\nabla\cdot\mathbf{A}=0$可写为</p>
+\dfrac{1}{\mathrm{i}c}J_j-4\gamma'{\partial^i} F_{ij}=0</script><p>洛伦兹规范 $\mu_0\varepsilon_0\dfrac {\partial\phi}{\partial {t}}+\nabla\cdot\mathbf {A}=0$ 可写为</p>
 <script type="math/tex; mode=display">
 {\partial^i}A_i=0</script><h1 id="带电粒子和电磁场的相互作用"><a href="#带电粒子和电磁场的相互作用" class="headerlink" title="带电粒子和电磁场的相互作用"></a>带电粒子和电磁场的相互作用</h1><h2 id="运动带电粒子的势"><a href="#运动带电粒子的势" class="headerlink" title="运动带电粒子的势"></a>运动带电粒子的势</h2><ul>
-<li><p>$S$系</p>
+<li><p>$S$ 系</p>
 <script type="math/tex; mode=display">
 r=\sqrt{(x-x^*)^2+(y-y^*)^2+(z-z^*)^2}=c(t-t^*)</script></li>
-<li><p>$S’$系<br>$t=t^*$</p>
+<li><p>$S’$ 系<br>$t=t^*$</p>
 <script type="math/tex; mode=display">
 r'=c(t'-{t^*}')</script><script type="math/tex; mode=display">
 \mathbf{A}'=0\quad \phi'=\dfrac{1}{4\pi\varepsilon_0}\dfrac{e}{r'}</script></li>
@@ -1085,7 +1115,7 @@ r'=c(t'-{t^*}')</script><script type="math/tex; mode=display">
 \begin{align*}
     \mathbf{r}'&=\mathbf{r}-\mathbf{v}t+(\gamma-1)\dfrac{\mathbf{v}}{v^2}(\mathbf{v}\cdot\mathbf{r}-v^2t)\\
     t'&=\gamma \left[t-\dfrac{1}{c^2}(\mathbf{v}\cdot\mathbf{r})\right]
-\end{align*}</script><p>$\mathbf{A}$的逆变换为</p>
+\end{align*}</script><p>$\mathbf {A}$ 的逆变换为</p>
 <script type="math/tex; mode=display">
 \begin{align*}
     \mathbf{A}&=\mathbf{A}'-\dfrac{\mathrm{i}\mathbf{v}}{c}A_4'-(\gamma-1)\dfrac{\mathbf{v}}{v^2}(-\mathbf{v}\cdot\mathbf{A}+\dfrac{\mathrm{i}v^2}{c}A_4')\\
@@ -1095,7 +1125,7 @@ r'=c(t'-{t^*}')</script><script type="math/tex; mode=display">
 \begin{align*}
     \mathbf{A}=\dfrac{\gamma}{4\pi\varepsilon_0}\dfrac{ e\mathbf{v}}{c^2r'}=\dfrac{1}{4\pi\varepsilon_0}\dfrac{ e\mathbf{v}}{c^2\left(r-\frac{\mathbf{v}\cdot \mathbf{r}}{c}\right)}\\
     \phi=\dfrac{\gamma}{4\pi\varepsilon_0}\dfrac{ e}{r'}=\dfrac{1}{4\pi\varepsilon_0}\dfrac{ e}{\left(r-\frac{\mathbf{v}\cdot \mathbf{r}}{c}\right)}
-\end{align*}</script><h2 id="运动带电粒子的场"><a href="#运动带电粒子的场" class="headerlink" title="运动带电粒子的场"></a>运动带电粒子的场</h2><p>根据$\mathbf{E}=-\nabla \phi-\partial_t\mathbf{A},\quad \mathbf{B}=\nabla\times \mathbf{A}$，并令$s=r-\mathbf{v}\cdot \mathbf{r}/c=r(1-\beta_r)$</p>
+\end{align*}</script><h2 id="运动带电粒子的场"><a href="#运动带电粒子的场" class="headerlink" title="运动带电粒子的场"></a>运动带电粒子的场</h2><p>根据 $\mathbf {E}=-\nabla \phi-\partial_t\mathbf {A},\quad \mathbf {B}=\nabla\times \mathbf {A}$，并令 $s=r-\mathbf {v}\cdot \mathbf {r}/c=r (1-\beta_r)$</p>
 <script type="math/tex; mode=display">
 \begin{align*}
     \phi=\dfrac{1}{4\pi\varepsilon_0}\dfrac{ e}{s}\\
@@ -1115,7 +1145,7 @@ r'=c(t'-{t^*}')</script><script type="math/tex; mode=display">
 \begin{align*}
     \mathbf{E}_2&=\dfrac{e}{4\pi\varepsilon_0}\dfrac{1}{s^3c^2}\mathbf{r}\times\left[\left(\mathbf{r}-\frac{r}{c}\mathbf{v}\right)\times\dot{\mathbf{v}}\right]\\
     \mathbf{B}_2&=\dfrac{1}{c}\mathbf{n}\times\mathbf{E}_2
-\end{align*}</script><p>以上为$t’=t-r/c$时刻的值，替换为$t$时刻为</p>
+\end{align*}</script><p>以上为 $t’=t-r/c$ 时刻的值，替换为 $t$ 时刻为</p>
 <script type="math/tex; mode=display">
 \begin{align*}
     \mathbf{E}&=\dfrac{e}{4\pi\varepsilon_0}\dfrac{\gamma\mathbf{R}}{\left[R^2+\frac{\gamma^2}{c^2}(\mathbf{R}\cdot\mathbf{v})^2\right]^{3/2}}\\
@@ -1128,9 +1158,9 @@ r'=c(t'-{t^*}')</script><script type="math/tex; mode=display">
 <script type="math/tex; mode=display">
 \mathbf{S}=\mathbf{E}\times\mathbf{H}=c\varepsilon_0E^2\mathbf{n}=c\varepsilon_0\left\{\dfrac{e}{4\pi\varepsilon_0}\dfrac{1}{s^3c^2}\mathbf{r}\times\left[\left(\mathbf{r}-\frac{r}{c}\mathbf{v}\right)\times\dot{\mathbf{v}}\right]\right\}^2\mathbf{n}</script><p>得到辐射能量为</p>
 <script type="math/tex; mode=display">
-\dfrac{\mathrm{d}P(t')}{\mathrm{d}\Omega}=\dfrac{\mathrm{d}W(\theta)}{\mathrm{d}t'}=S\left(1-\beta_r\right)r^2</script><p>当$\beta\approx 0$<br>有拉莫尔公式</p>
+\dfrac{\mathrm{d}P(t')}{\mathrm{d}\Omega}=\dfrac{\mathrm{d}W(\theta)}{\mathrm{d}t'}=S\left(1-\beta_r\right)r^2</script><p>当 $\beta\approx 0$<br>有拉莫尔公式</p>
 <script type="math/tex; mode=display">
-P(t')=\dfrac{1}{4\pi\varepsilon_0c^2}\dfrac{2}{3}\dfrac{e^2\dot{\mathbf{v}}^2}{c}</script><p>当$\beta\approx 1$，若$\theta\approx 0$则有$\beta_r\approx \beta(1-\dfrac{1}{2}\theta^2)=\beta-\dfrac{1}{2}\theta^2;\ \gamma^{-2}\approx2(1-\beta)$<br>那么有近似$(1-\beta_r)\approx\dfrac{1}{2}\left(\gamma^{-2}+\theta^2\right)$<br>得到</p>
+P(t')=\dfrac{1}{4\pi\varepsilon_0c^2}\dfrac{2}{3}\dfrac{e^2\dot{\mathbf{v}}^2}{c}</script><p>当 $\beta\approx 1$，若 $\theta\approx 0$ 则有 $\beta_r\approx \beta (1-\dfrac {1}{2}\theta^2)=\beta-\dfrac {1}{2}\theta^2;\ \gamma^{-2}\approx2 (1-\beta)$<br>那么有近似 $(1-\beta_r)\approx\dfrac {1}{2}\left (\gamma^{-2}+\theta^2\right)$<br>得到</p>
 <script type="math/tex; mode=display">
 \dfrac{\mathrm{d}P}{\mathrm{d}\Omega}=\dfrac{32I_0}{\theta^2+\gamma^{-2}}</script><h2 id="轫致辐射与同步辐射"><a href="#轫致辐射与同步辐射" class="headerlink" title="轫致辐射与同步辐射"></a>轫致辐射与同步辐射</h2><h2 id="切仑科夫辐射"><a href="#切仑科夫辐射" class="headerlink" title="切仑科夫辐射"></a>切仑科夫辐射</h2>
     </div>
@@ -1214,7 +1244,7 @@ P(t')=\dfrac{1}{4\pi\varepsilon_0c^2}\dfrac{2}{3}\dfrac{e^2\dot{\mathbf{v}}^2}{c
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A2%E9%87%8F%E5%88%86%E6%9E%90%E5%92%8C%E5%9C%BA%E8%AE%BA%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">矢量分析和场论基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A2%E9%87%8F%E4%BB%A3%E6%95%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%85%AC%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">矢量代数的基本公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%A0%E9%87%8F%E7%A7%AF%E4%B8%8E%E5%B9%B6%E7%9F%A2%E5%8F%8A%E5%85%B6%E8%BF%90%E7%AE%97%E8%A7%84%E5%88%99"><span class="nav-number">1.2.</span> <span class="nav-text">张量积与并矢及其运算规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E3%80%81%E6%95%A3%E5%BA%A6%E5%92%8C%E6%97%8B%E5%BA%A6"><span class="nav-number">1.3.</span> <span class="nav-text">梯度、散度和旋度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nabla-%E7%AE%97%E7%AC%A6%E7%9A%84%E8%BF%90%E7%AE%97%E8%A7%84%E5%88%99"><span class="nav-number">1.4.</span> <span class="nav-text">$\nabla$算符的运算规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%AF%E5%88%86%E5%8F%98%E6%8D%A2%E5%85%AC%E5%BC%8F"><span class="nav-number">1.5.</span> <span class="nav-text">积分变换公式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%A3%E5%BA%A6%E5%AE%9A%E7%90%86%E2%80%94%E2%80%94%E9%AB%98%E6%96%AF%E5%AE%9A%E7%90%86"><span class="nav-number">1.5.1.</span> <span class="nav-text">散度定理——高斯定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%8B%E5%BA%A6%E5%AE%9A%E7%90%86%E2%80%94%E2%80%94%E6%96%AF%E6%89%98%E5%85%8B%E6%96%AF%E5%85%AC%E5%BC%8F"><span class="nav-number">1.5.2.</span> <span class="nav-text">旋度定理——斯托克斯公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%BC%E6%9E%97%E5%85%AC%E5%BC%8F"><span class="nav-number">1.5.3.</span> <span class="nav-text">格林公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%AF%E5%88%86%E7%9A%84%E4%B8%80%E8%88%AC%E8%A7%84%E5%88%99"><span class="nav-number">1.5.4.</span> <span class="nav-text">积分的一般规则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%CE%B4-%E5%87%BD%E6%95%B0%E5%8F%8A%E5%85%B6%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8"><span class="nav-number">1.6.</span> <span class="nav-text">$δ$函数及其基本性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A2%E9%87%8F%E5%9C%BA%E7%9A%84%E5%88%86%E7%B1%BB%E5%92%8C%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8"><span class="nav-number">1.7.</span> <span class="nav-text">矢量场的分类和基本性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E7%8E%B0%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%BE%8B"><span class="nav-number">2.</span> <span class="nav-text">电磁现象的基本规律</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%93%E4%BB%91%E5%AE%9A%E5%BE%8B-%E9%9D%99%E7%94%B5%E5%9C%BA%E7%9A%84%E6%95%A3%E5%BA%A6%E5%92%8C%E6%97%8B%E5%BA%A6"><span class="nav-number">2.1.</span> <span class="nav-text">库仑定律 静电场的散度和旋度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%93%E4%BB%91%E5%AE%9A%E5%BE%8B-%E7%94%B5%E5%9C%BA%E5%BC%BA%E5%BA%A6"><span class="nav-number">2.1.1.</span> <span class="nav-text">库仑定律 电场强度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E6%96%AF%E5%AE%9A%E7%90%86%E5%92%8C%E9%9D%99%E7%94%B5%E5%9C%BA%E7%9A%84%E6%95%A3%E5%BA%A6"><span class="nav-number">2.1.2.</span> <span class="nav-text">高斯定理和静电场的散度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E7%94%B5%E5%9C%BA%E7%9A%84%E6%97%8B%E5%BA%A6"><span class="nav-number">2.1.3.</span> <span class="nav-text">静电场的旋度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%95%E5%A5%A5-%E8%90%A8%E4%BC%90%E5%B0%94%E5%AE%9A%E5%BE%8B-%E9%9D%99%E7%A3%81%E5%9C%BA%E7%9A%84%E6%95%A3%E5%BA%A6%E5%92%8C%E6%97%8B%E5%BA%A6"><span class="nav-number">2.2.</span> <span class="nav-text">毕奥-萨伐尔定律 静磁场的散度和旋度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AF%95%E5%A5%A5-%E8%90%A8%E6%B3%95%E5%B0%94%E5%AE%9A%E5%BE%8B"><span class="nav-number">2.2.1.</span> <span class="nav-text">毕奥-萨法尔定律</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E5%9F%B9%E4%BD%9C%E7%94%A8%E5%8A%9B%E5%AE%9A%E5%BE%8B"><span class="nav-number">2.2.2.</span> <span class="nav-text">安培作用力定律</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A3%81%E5%9C%BA%E7%9A%84%E7%8E%AF%E9%87%8F%E5%92%8C%E6%97%8B%E5%BA%A6"><span class="nav-number">2.2.3.</span> <span class="nav-text">磁场的环量和旋度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A3%81%E5%9C%BA%E7%9A%84%E6%95%A3%E5%BA%A6"><span class="nav-number">2.2.4.</span> <span class="nav-text">磁场的散度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%95%E6%8B%89%E7%AC%AC%E7%94%B5%E7%A3%81%E6%84%9F%E5%BA%94%E5%AE%9A%E5%BE%8B"><span class="nav-number">2.3.</span> <span class="nav-text">法拉第电磁感应定律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9C%9F%E7%A9%BA%E4%B8%AD%E7%94%B5%E7%A3%81%E7%8E%B0%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B"><span class="nav-number">2.4.</span> <span class="nav-text">真空中电磁现象的基本方程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B5%E8%8D%B7%E5%AE%88%E6%81%92%E5%AE%9A%E5%BE%8B"><span class="nav-number">2.4.1.</span> <span class="nav-text">电荷守恒定律</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BA%A6%E5%85%8B%E6%96%AF%E9%9F%A6%E6%96%B9%E7%A8%8B%E7%BB%84"><span class="nav-number">2.4.2.</span> <span class="nav-text">麦克斯韦方程组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B4%9B%E4%BC%A6%E5%85%B9%E5%8A%9B%E5%85%AC%E5%BC%8F"><span class="nav-number">2.4.3.</span> <span class="nav-text">洛伦兹力公式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E8%B4%A8%E4%B8%AD%E7%94%B5%E7%A3%81%E7%8E%B0%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B"><span class="nav-number">2.5.</span> <span class="nav-text">介质中电磁现象的基本方程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%9F%E7%BC%9A%E7%94%B5%E8%8D%B7%E5%AF%86%E5%BA%A6%E4%B8%8E%E6%9E%81%E5%8C%96%E5%BC%BA%E5%BA%A6%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">2.5.1.</span> <span class="nav-text">束缚电荷密度与极化强度的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%AD%90%E7%94%B5%E6%B5%81%E5%AF%86%E5%BA%A6%E4%B8%8E%E7%A3%81%E5%8C%96%E5%BC%BA%E5%BA%A6%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">2.5.2.</span> <span class="nav-text">分子电流密度与磁化强度的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8B%E8%B4%A8%E4%B8%AD%E7%9A%84%E7%94%B5%E7%A3%81%E5%9C%BA%E6%96%B9%E7%A8%8B"><span class="nav-number">2.5.3.</span> <span class="nav-text">介质中的电磁场方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8B%E8%B4%A8%E7%9A%84%E7%94%B5%E7%A3%81%E6%80%A7%E8%B4%A8%E6%96%B9%E7%A8%8B"><span class="nav-number">2.5.4.</span> <span class="nav-text">介质的电磁性质方程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E8%B4%A8%E5%88%86%E7%95%8C%E9%9D%A2%E4%B8%8A%E7%9A%84%E7%94%B5%E7%A3%81%E5%9C%BA%E6%96%B9%E7%A8%8B%E2%80%94%E2%80%94%E8%BE%B9%E7%95%8C%E6%9D%A1%E4%BB%B6"><span class="nav-number">2.6.</span> <span class="nav-text">介质分界面上的电磁场方程——边界条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E5%9C%BA%E7%9A%84%E8%83%BD%E9%87%8F-%E8%83%BD%E9%87%8F%E5%AF%86%E5%BA%A6-%E8%83%BD%E6%B5%81%E5%AF%86%E5%BA%A6%E7%9F%A2%E9%87%8F"><span class="nav-number">2.7.</span> <span class="nav-text">电磁场的能量 能量密度 能流密度矢量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%99%E7%94%B5%E5%9C%BA-%E9%9D%99%E7%A3%81%E5%9C%BA"><span class="nav-number">3.</span> <span class="nav-text">静电场 静磁场</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%99%E7%94%B5%E5%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B"><span class="nav-number">3.1.</span> <span class="nav-text">静电场的基本方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%8A%E6%9D%BE%E6%96%B9%E7%A8%8B%E8%A7%A3%E7%9A%84%E5%94%AF%E4%B8%80%E6%80%A7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E7%9A%84%E7%A7%AF%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="nav-number">3.2.</span> <span class="nav-text">泊松方程解的唯一性问题与解的积分形式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%94%AF%E4%B8%80%E6%80%A7%E5%AE%9A%E7%90%86"><span class="nav-number">3.2.1.</span> <span class="nav-text">唯一性定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%8A%E6%9D%BE%E6%96%B9%E7%A8%8B%E8%A7%A3%E7%9A%84%E7%A7%AF%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="nav-number">3.2.2.</span> <span class="nav-text">泊松方程解的积分形式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%9D%99%E7%94%B5%E9%97%AE%E9%A2%98%E7%9A%84%E7%94%B5%E5%83%8F%E6%B3%95"><span class="nav-number">3.3.</span> <span class="nav-text">解静电问题的电像法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%9D%99%E7%94%B5%E9%97%AE%E9%A2%98%E7%9A%84%E5%88%86%E7%A6%BB%E5%8F%98%E9%87%8F%E6%B3%95"><span class="nav-number">3.4.</span> <span class="nav-text">解静电问题的分离变量法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%9D%99%E7%94%B5%E9%97%AE%E9%A2%98%E7%9A%84%E6%A0%BC%E6%9E%97%E5%87%BD%E6%95%B0%E6%B3%95"><span class="nav-number">3.5.</span> <span class="nav-text">解静电问题的格林函数法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%9D%99%E7%94%B5%E9%97%AE%E9%A2%98%E7%9A%84%E5%A4%9A%E6%9E%81%E5%B1%95%E5%BC%80%E6%B3%95"><span class="nav-number">3.6.</span> <span class="nav-text">解静电问题的多极展开法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%99%E7%94%B5%E5%9C%BA%E7%9A%84%E8%83%BD%E9%87%8F%E4%B8%8E%E9%9D%99%E7%94%B5%E4%BD%9C%E7%94%A8%E5%8A%9B"><span class="nav-number">3.7.</span> <span class="nav-text">静电场的能量与静电作用力</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E7%94%B5%E5%9C%BA%E7%9A%84%E8%83%BD%E9%87%8F"><span class="nav-number">3.7.1.</span> <span class="nav-text">静电场的能量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B5%E5%A4%9A%E6%9E%81%E5%AD%90%E4%B8%8E%E5%A4%96%E7%94%B5%E5%9C%BA%E7%9A%84%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E8%83%BD"><span class="nav-number">3.7.2.</span> <span class="nav-text">电多极子与外电场的相互作用能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B1%E9%9D%99%E7%94%B5%E8%83%BD%E9%87%8F%E8%AE%A1%E7%AE%97%E9%9D%99%E7%94%B5%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E5%8A%9B"><span class="nav-number">3.7.3.</span> <span class="nav-text">由静电能量计算静电相互作用力</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E7%94%B5%E7%A3%81%E5%9C%BA%E4%B8%8E%E4%BC%BC%E7%A8%B3%E7%94%B5%E7%A3%81%E5%9C%BA"><span class="nav-number">4.</span> <span class="nav-text">稳定电磁场与似稳电磁场</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E7%94%B5%E7%A3%81%E5%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B"><span class="nav-number">4.1.</span> <span class="nav-text">稳定电磁场的基本方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E7%94%B5%E6%B5%81%E7%9A%84%E7%9F%A2%E5%8A%BF"><span class="nav-number">4.2.</span> <span class="nav-text">稳定电流的矢势</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E7%94%B5%E6%B5%81%E7%A3%81%E5%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B"><span class="nav-number">4.2.1.</span> <span class="nav-text">稳定电流磁场的基本方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A2%E5%8A%BF-mathbf-A-%E7%9A%84%E8%BE%B9%E7%95%8C%E6%9D%A1%E4%BB%B6"><span class="nav-number">4.2.2.</span> <span class="nav-text">矢势$\mathbf{A}$的边界条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A2%E9%87%8F%E6%B3%8A%E6%9D%BE%E6%96%B9%E7%A8%8B%E8%A7%A3%E7%9A%84%E5%94%AF%E4%B8%80%E6%80%A7%E5%AE%9A%E7%90%86"><span class="nav-number">4.2.3.</span> <span class="nav-text">矢量泊松方程解的唯一性定理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E7%A3%81%E5%9C%BA%E7%9A%84%E6%A0%87%E5%8A%BF"><span class="nav-number">4.3.</span> <span class="nav-text">稳定磁场的标势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E7%A3%81%E5%9C%BA%E7%9A%84%E5%A4%9A%E6%9E%81%E5%B1%95%E5%BC%80%E6%B3%95"><span class="nav-number">4.4.</span> <span class="nav-text">稳定磁场的多极展开法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E7%A3%81%E5%9C%BA%E7%9A%84%E8%83%BD%E9%87%8F%E4%B8%8E%E7%A3%81%E4%BD%9C%E7%94%A8%E5%8A%9B"><span class="nav-number">4.5.</span> <span class="nav-text">稳定磁场的能量与磁作用力</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E7%A3%81%E5%9C%BA%E7%9A%84%E8%83%BD%E9%87%8F"><span class="nav-number">4.5.1.</span> <span class="nav-text">稳定磁场的能量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%94%B5%E6%B5%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%A3%81%E5%9C%BA%E8%83%BD%E9%87%8F"><span class="nav-number">4.5.2.</span> <span class="nav-text">线电流系统的磁场能量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B1%E7%A3%81%E5%9C%BA%E8%83%BD%E9%87%8F%E8%AE%A1%E7%AE%97%E7%A3%81%E4%BD%9C%E7%94%A8%E5%8A%9B"><span class="nav-number">4.5.3.</span> <span class="nav-text">由磁场能量计算磁作用力</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%BC%E7%A8%B3%E7%94%B5%E7%A3%81%E5%9C%BA%E8%8D%B7%E4%BC%BC%E7%A8%B3%E7%94%B5%E8%B7%AF%E6%96%B9%E7%A8%8B"><span class="nav-number">4.6.</span> <span class="nav-text">似稳电磁场荷似稳电路方程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E7%9A%84%E8%BE%90%E5%B0%84"><span class="nav-number">5.</span> <span class="nav-text">电磁波的辐射</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E5%8C%96%E7%94%B5%E7%A3%81%E5%9C%BA%E7%9A%84%E7%9F%A2%E5%8A%BF%E5%92%8C%E6%A0%87%E5%8A%BF"><span class="nav-number">5.1.</span> <span class="nav-text">变化电磁场的矢势和标势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%BE%E6%9C%97%E8%B4%9D%E5%B0%94%E6%96%B9%E7%A8%8B%E7%9A%84%E8%A7%A3%E5%8F%8A%E6%8E%A8%E8%BF%9F%E5%8A%BF"><span class="nav-number">5.2.</span> <span class="nav-text">达朗贝尔方程的解及推迟势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E5%81%B6%E6%9E%81%E5%AD%90%E7%9A%84%E7%94%B5%E7%A3%81%E5%9C%BA"><span class="nav-number">5.3.</span> <span class="nav-text">电偶极子的电磁场</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%8A%B6%E5%A4%A9%E7%BA%BF%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%BE%90%E5%B0%84"><span class="nav-number">5.4.</span> <span class="nav-text">线状天线系统的辐射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%83%E5%A4%A9%E7%BA%BF%E7%9A%84%E8%BE%90%E5%B0%84%E5%92%8C%E5%A4%A9%E7%BA%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8F%82%E6%95%B0"><span class="nav-number">5.4.1.</span> <span class="nav-text">元天线的辐射和天线的基本参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%95%BF%E5%A4%A9%E7%BA%BF%E7%9A%84%E8%BE%90%E5%B0%84"><span class="nav-number">5.4.2.</span> <span class="nav-text">长天线的辐射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A9%E7%BA%BF%E9%98%B5%E7%9A%84%E8%BE%90%E5%B0%84"><span class="nav-number">5.4.3.</span> <span class="nav-text">天线阵的辐射</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E5%9B%9B%E6%9E%81%E7%9F%A9%E7%9A%84%E8%BE%90%E5%B0%84"><span class="nav-number">5.5.</span> <span class="nav-text">电四极矩的辐射</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E7%9A%84%E4%BC%A0%E6%92%AD"><span class="nav-number">6.</span> <span class="nav-text">电磁波的传播</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B"><span class="nav-number">6.1.</span> <span class="nav-text">电磁波传播问题中的基本方程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E5%9C%A8%E4%BB%8B%E8%B4%A8%E4%B8%AD%E4%BC%A0%E6%92%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B"><span class="nav-number">6.1.1.</span> <span class="nav-text">电磁波在介质中传播的基本方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E5%9C%A8%E5%AF%BC%E4%BD%93%E4%B8%AD%E4%BC%A0%E6%92%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B"><span class="nav-number">6.1.2.</span> <span class="nav-text">电磁波在导体中传播的基本方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E4%BB%8B%E8%B4%A8%E6%88%96%E5%AF%BC%E4%BD%93%E5%88%86%E7%95%8C%E9%9D%A2%E5%A4%84%E7%9A%84%E8%BE%B9%E7%95%8C%E6%9D%A1%E4%BB%B6"><span class="nav-number">6.1.3.</span> <span class="nav-text">在介质或导体分界面处的边界条件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E9%9D%A2%E5%8D%95%E8%89%B2%E7%94%B5%E7%A3%81%E6%B3%A2%E5%9C%A8%E5%9D%87%E5%8C%80%E4%BB%8B%E8%B4%A8%E4%B8%AD%E7%9A%84%E4%BC%A0%E6%92%AD"><span class="nav-number">6.2.</span> <span class="nav-text">平面单色电磁波在均匀介质中的传播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E5%9C%A8%E4%BB%8B%E8%B4%A8%E5%88%86%E7%95%8C%E9%9D%A2%E4%B8%8A%E7%9A%84%E5%8F%8D%E5%B0%84%E5%92%8C%E6%8A%98%E5%B0%84"><span class="nav-number">6.3.</span> <span class="nav-text">电磁波在介质分界面上的反射和折射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E5%9C%A8%E5%AF%BC%E4%BD%93%E4%B8%AD%E7%9A%84%E4%BC%A0%E6%92%AD%E5%8F%8A%E5%9C%A8%E5%AF%BC%E4%BD%93%E8%A1%A8%E9%9D%A2%E7%9A%84%E5%8F%8D%E5%B0%84%E5%92%8C%E6%8A%98%E5%B0%84"><span class="nav-number">6.4.</span> <span class="nav-text">电磁波在导体中的传播及在导体表面的反射和折射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E5%9C%A8%E7%AD%89%E7%A6%BB%E5%AD%90%E4%BD%93%E4%B8%AD%E7%9A%84%E4%BC%A0%E6%92%AD"><span class="nav-number">6.5.</span> <span class="nav-text">电磁波在等离子体中的传播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E5%9C%A8%E6%B3%A2%E5%AF%BC%E4%B8%AD%E7%9A%84%E4%BC%A0%E6%92%AD"><span class="nav-number">6.6.</span> <span class="nav-text">电磁波在波导中的传播</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E8%BE%93%E7%BA%BF"><span class="nav-number">6.6.1.</span> <span class="nav-text">传输线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E8%BE%93%E7%BA%BF%E4%B8%AD%E7%94%B5%E7%A3%81%E6%B3%A2%E7%9A%84%E4%B8%80%E8%88%AC%E6%80%A7%E8%B4%A8"><span class="nav-number">6.6.2.</span> <span class="nav-text">传输线中电磁波的一般性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%A0%E8%BE%93%E7%BA%BF%E4%B8%AD%E7%94%B5%E7%A3%81%E6%B3%A2%E7%9A%84%E4%B8%80%E8%88%AC%E6%80%A7%E8%B4%A8-1"><span class="nav-number">6.7.</span> <span class="nav-text">传输线中电磁波的一般性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E5%BD%A2%E6%B3%A2%E5%AF%BC"><span class="nav-number">6.8.</span> <span class="nav-text">矩形波导</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%90%E6%8C%AF%E8%85%94"><span class="nav-number">6.9.</span> <span class="nav-text">谐振腔</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E7%9A%84%E8%A1%8D%E5%B0%84"><span class="nav-number">6.10.</span> <span class="nav-text">电磁波的衍射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E5%9C%BA%E7%9A%84%E5%8A%A8%E9%87%8F"><span class="nav-number">6.11.</span> <span class="nav-text">电磁场的动量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E7%9A%84%E5%8A%A8%E9%87%8F"><span class="nav-number">6.12.</span> <span class="nav-text">电磁波的动量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA"><span class="nav-number">7.</span> <span class="nav-text">狭义相对论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1900-%E5%B9%B4%E4%BB%A5%E5%89%8D%E7%9A%84%E6%83%85%E5%86%B5%EF%BC%9B%E7%88%B1%E5%9B%A0%E6%96%AF%E5%9D%A6%E7%9A%84%E4%B8%A4%E6%9D%A1%E5%81%87%E8%AE%BE"><span class="nav-number">7.1.</span> <span class="nav-text">1900 年以前的情况；爱因斯坦的两条假设</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E8%BF%91%E4%BB%A3%E7%9A%84%E5%AE%9E%E9%AA%8C"><span class="nav-number">7.2.</span> <span class="nav-text">一些近代的实验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B4%9B%E4%BC%A6%E5%85%B9%E5%8F%98%E6%8D%A2%E5%92%8C%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9A%84%E8%BF%90%E5%8A%A8%E5%AD%A6%E7%BB%93%E6%9E%9C"><span class="nav-number">7.3.</span> <span class="nav-text">洛伦兹变换和狭义相对论的基本的运动学结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E6%99%AE%E5%8B%92%E6%95%88%E5%BA%94-%E6%97%B6%E9%92%9F%E4%BD%AF%E8%B0%AC%E9%97%AE%E9%A2%98"><span class="nav-number">7.4.</span> <span class="nav-text">多普勒效应 时钟佯谬问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E6%99%AE%E5%8B%92%E6%95%88%E5%BA%94"><span class="nav-number">7.4.1.</span> <span class="nav-text">多普勒效应</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B2%92%E5%AD%90%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%AE%BA%E5%8A%A8%E9%87%8F%E5%92%8C%E8%83%BD%E9%87%8F"><span class="nav-number">7.5.</span> <span class="nav-text">粒子的相对论动量和能量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E8%8D%B7%E7%9A%84%E4%B8%8D%E5%8F%98%E6%80%A7%EF%BC%9B%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6%E7%9A%84%E5%8D%8F%E5%8F%98%E6%80%A7"><span class="nav-number">7.6.</span> <span class="nav-text">电荷的不变性；电动力学的协变性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E5%A4%96%E7%94%B5%E7%A3%81%E5%9C%BA%E4%B8%AD%E4%B8%80%E4%B8%AA%E7%9B%B8%E5%AF%B9%E8%AE%BA%E6%80%A7%E5%B8%A6%E7%94%B5%E7%B2%92%E5%AD%90%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%87%BD%E6%95%B0%E5%92%8C%E5%93%88%E5%AF%86%E9%A1%BF%E5%87%BD%E6%95%B0"><span class="nav-number">7.7.</span> <span class="nav-text">在外电磁场中一个相对论性带电粒子的拉格朗日函数和哈密顿函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E5%9D%87%E5%8C%80%E9%9D%99%E7%94%B5%E5%9C%BA%E5%92%8C%E9%9D%99%E7%A3%81%E5%9C%BA%E7%9A%84%E5%B9%B6%E5%90%88%E5%9C%BA%E4%B8%AD%E7%9A%84%E8%BF%90%E5%8A%A8"><span class="nav-number">7.8.</span> <span class="nav-text">在均匀静电场和静磁场的并合场中的运动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A4%E4%B8%AA%E6%83%AF%E6%80%A7%E5%8F%82%E7%85%A7%E7%B3%BB%E9%97%B4%E7%94%B5%E7%A3%81%E5%9C%BA%E5%BC%BA%E5%BA%A6%E7%9F%A2%E9%87%8F%E7%9A%84%E5%8F%98%E6%8D%A2%E5%85%B3%E7%B3%BB"><span class="nav-number">7.9.</span> <span class="nav-text">两个惯性参照系间电磁场强度矢量的变换关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%BA%A6%E5%85%8B%E6%96%AF%E9%9F%A6%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E6%8E%A8%E5%AF%BC"><span class="nav-number">7.10.</span> <span class="nav-text">麦克斯韦方程组的推导</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E7%BB%B4%E5%BC%A0%E9%87%8F%E5%92%8C%E5%AF%B9%E5%81%B6%E5%BC%A0%E9%87%8F"><span class="nav-number">7.11.</span> <span class="nav-text">四维张量和对偶张量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E5%9C%BA%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%87%BD%E6%95%B0"><span class="nav-number">7.12.</span> <span class="nav-text">电磁场的拉格朗日函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%A6%E7%94%B5%E7%B2%92%E5%AD%90%E5%92%8C%E7%94%B5%E7%A3%81%E5%9C%BA%E7%9A%84%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8"><span class="nav-number">8.</span> <span class="nav-text">带电粒子和电磁场的相互作用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E5%8A%A8%E5%B8%A6%E7%94%B5%E7%B2%92%E5%AD%90%E7%9A%84%E5%8A%BF"><span class="nav-number">8.1.</span> <span class="nav-text">运动带电粒子的势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E5%8A%A8%E5%B8%A6%E7%94%B5%E7%B2%92%E5%AD%90%E7%9A%84%E5%9C%BA"><span class="nav-number">8.2.</span> <span class="nav-text">运动带电粒子的场</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E5%8A%A8%E5%B8%A6%E7%94%B5%E7%B2%92%E5%AD%90%E7%9A%84%E8%BE%90%E5%B0%84"><span class="nav-number">8.3.</span> <span class="nav-text">运动带电粒子的辐射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AB%E8%87%B4%E8%BE%90%E5%B0%84%E4%B8%8E%E5%90%8C%E6%AD%A5%E8%BE%90%E5%B0%84"><span class="nav-number">8.4.</span> <span class="nav-text">轫致辐射与同步辐射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E4%BB%91%E7%A7%91%E5%A4%AB%E8%BE%90%E5%B0%84"><span class="nav-number">8.5.</span> <span class="nav-text">切仑科夫辐射</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A2%E9%87%8F%E5%88%86%E6%9E%90%E5%92%8C%E5%9C%BA%E8%AE%BA%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">矢量分析和场论基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A2%E9%87%8F%E4%BB%A3%E6%95%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%85%AC%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">矢量代数的基本公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%A0%E9%87%8F%E7%A7%AF%E4%B8%8E%E5%B9%B6%E7%9F%A2%E5%8F%8A%E5%85%B6%E8%BF%90%E7%AE%97%E8%A7%84%E5%88%99"><span class="nav-number">1.2.</span> <span class="nav-text">张量积与并矢及其运算规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E3%80%81%E6%95%A3%E5%BA%A6%E5%92%8C%E6%97%8B%E5%BA%A6"><span class="nav-number">1.3.</span> <span class="nav-text">梯度、散度和旋度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nabla-%E7%AE%97%E7%AC%A6%E7%9A%84%E8%BF%90%E7%AE%97%E8%A7%84%E5%88%99"><span class="nav-number">1.4.</span> <span class="nav-text">$\nabla$ 算符的运算规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%AF%E5%88%86%E5%8F%98%E6%8D%A2%E5%85%AC%E5%BC%8F"><span class="nav-number">1.5.</span> <span class="nav-text">积分变换公式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%A3%E5%BA%A6%E5%AE%9A%E7%90%86%E2%80%94%E2%80%94%E9%AB%98%E6%96%AF%E5%AE%9A%E7%90%86"><span class="nav-number">1.5.1.</span> <span class="nav-text">散度定理 —— 高斯定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%8B%E5%BA%A6%E5%AE%9A%E7%90%86%E2%80%94%E2%80%94%E6%96%AF%E6%89%98%E5%85%8B%E6%96%AF%E5%85%AC%E5%BC%8F"><span class="nav-number">1.5.2.</span> <span class="nav-text">旋度定理 —— 斯托克斯公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%BC%E6%9E%97%E5%85%AC%E5%BC%8F"><span class="nav-number">1.5.3.</span> <span class="nav-text">格林公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%AF%E5%88%86%E7%9A%84%E4%B8%80%E8%88%AC%E8%A7%84%E5%88%99"><span class="nav-number">1.5.4.</span> <span class="nav-text">积分的一般规则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%CE%B4-%E5%87%BD%E6%95%B0%E5%8F%8A%E5%85%B6%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8"><span class="nav-number">1.6.</span> <span class="nav-text">$δ$ 函数及其基本性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A2%E9%87%8F%E5%9C%BA%E7%9A%84%E5%88%86%E7%B1%BB%E5%92%8C%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8"><span class="nav-number">1.7.</span> <span class="nav-text">矢量场的分类和基本性质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E7%8E%B0%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%BE%8B"><span class="nav-number">2.</span> <span class="nav-text">电磁现象的基本规律</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%93%E4%BB%91%E5%AE%9A%E5%BE%8B-%E9%9D%99%E7%94%B5%E5%9C%BA%E7%9A%84%E6%95%A3%E5%BA%A6%E5%92%8C%E6%97%8B%E5%BA%A6"><span class="nav-number">2.1.</span> <span class="nav-text">库仑定律 静电场的散度和旋度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%93%E4%BB%91%E5%AE%9A%E5%BE%8B-%E7%94%B5%E5%9C%BA%E5%BC%BA%E5%BA%A6"><span class="nav-number">2.1.1.</span> <span class="nav-text">库仑定律 电场强度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E6%96%AF%E5%AE%9A%E7%90%86%E5%92%8C%E9%9D%99%E7%94%B5%E5%9C%BA%E7%9A%84%E6%95%A3%E5%BA%A6"><span class="nav-number">2.1.2.</span> <span class="nav-text">高斯定理和静电场的散度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E7%94%B5%E5%9C%BA%E7%9A%84%E6%97%8B%E5%BA%A6"><span class="nav-number">2.1.3.</span> <span class="nav-text">静电场的旋度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%95%E5%A5%A5-%E8%90%A8%E4%BC%90%E5%B0%94%E5%AE%9A%E5%BE%8B-%E9%9D%99%E7%A3%81%E5%9C%BA%E7%9A%84%E6%95%A3%E5%BA%A6%E5%92%8C%E6%97%8B%E5%BA%A6"><span class="nav-number">2.2.</span> <span class="nav-text">毕奥 - 萨伐尔定律 静磁场的散度和旋度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AF%95%E5%A5%A5-%E8%90%A8%E6%B3%95%E5%B0%94%E5%AE%9A%E5%BE%8B"><span class="nav-number">2.2.1.</span> <span class="nav-text">毕奥 - 萨法尔定律</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E5%9F%B9%E4%BD%9C%E7%94%A8%E5%8A%9B%E5%AE%9A%E5%BE%8B"><span class="nav-number">2.2.2.</span> <span class="nav-text">安培作用力定律</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A3%81%E5%9C%BA%E7%9A%84%E7%8E%AF%E9%87%8F%E5%92%8C%E6%97%8B%E5%BA%A6"><span class="nav-number">2.2.3.</span> <span class="nav-text">磁场的环量和旋度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A3%81%E5%9C%BA%E7%9A%84%E6%95%A3%E5%BA%A6"><span class="nav-number">2.2.4.</span> <span class="nav-text">磁场的散度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%95%E6%8B%89%E7%AC%AC%E7%94%B5%E7%A3%81%E6%84%9F%E5%BA%94%E5%AE%9A%E5%BE%8B"><span class="nav-number">2.3.</span> <span class="nav-text">法拉第电磁感应定律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9C%9F%E7%A9%BA%E4%B8%AD%E7%94%B5%E7%A3%81%E7%8E%B0%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B"><span class="nav-number">2.4.</span> <span class="nav-text">真空中电磁现象的基本方程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B5%E8%8D%B7%E5%AE%88%E6%81%92%E5%AE%9A%E5%BE%8B"><span class="nav-number">2.4.1.</span> <span class="nav-text">电荷守恒定律</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BA%A6%E5%85%8B%E6%96%AF%E9%9F%A6%E6%96%B9%E7%A8%8B%E7%BB%84"><span class="nav-number">2.4.2.</span> <span class="nav-text">麦克斯韦方程组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B4%9B%E4%BC%A6%E5%85%B9%E5%8A%9B%E5%85%AC%E5%BC%8F"><span class="nav-number">2.4.3.</span> <span class="nav-text">洛伦兹力公式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E8%B4%A8%E4%B8%AD%E7%94%B5%E7%A3%81%E7%8E%B0%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B"><span class="nav-number">2.5.</span> <span class="nav-text">介质中电磁现象的基本方程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%9F%E7%BC%9A%E7%94%B5%E8%8D%B7%E5%AF%86%E5%BA%A6%E4%B8%8E%E6%9E%81%E5%8C%96%E5%BC%BA%E5%BA%A6%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">2.5.1.</span> <span class="nav-text">束缚电荷密度与极化强度的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%AD%90%E7%94%B5%E6%B5%81%E5%AF%86%E5%BA%A6%E4%B8%8E%E7%A3%81%E5%8C%96%E5%BC%BA%E5%BA%A6%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">2.5.2.</span> <span class="nav-text">分子电流密度与磁化强度的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8B%E8%B4%A8%E4%B8%AD%E7%9A%84%E7%94%B5%E7%A3%81%E5%9C%BA%E6%96%B9%E7%A8%8B"><span class="nav-number">2.5.3.</span> <span class="nav-text">介质中的电磁场方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8B%E8%B4%A8%E7%9A%84%E7%94%B5%E7%A3%81%E6%80%A7%E8%B4%A8%E6%96%B9%E7%A8%8B"><span class="nav-number">2.5.4.</span> <span class="nav-text">介质的电磁性质方程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E8%B4%A8%E5%88%86%E7%95%8C%E9%9D%A2%E4%B8%8A%E7%9A%84%E7%94%B5%E7%A3%81%E5%9C%BA%E6%96%B9%E7%A8%8B%E2%80%94%E2%80%94%E8%BE%B9%E7%95%8C%E6%9D%A1%E4%BB%B6"><span class="nav-number">2.6.</span> <span class="nav-text">介质分界面上的电磁场方程 —— 边界条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E5%9C%BA%E7%9A%84%E8%83%BD%E9%87%8F-%E8%83%BD%E9%87%8F%E5%AF%86%E5%BA%A6-%E8%83%BD%E6%B5%81%E5%AF%86%E5%BA%A6%E7%9F%A2%E9%87%8F"><span class="nav-number">2.7.</span> <span class="nav-text">电磁场的能量 能量密度 能流密度矢量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%99%E7%94%B5%E5%9C%BA-%E9%9D%99%E7%A3%81%E5%9C%BA"><span class="nav-number">3.</span> <span class="nav-text">静电场 静磁场</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%99%E7%94%B5%E5%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B"><span class="nav-number">3.1.</span> <span class="nav-text">静电场的基本方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%8A%E6%9D%BE%E6%96%B9%E7%A8%8B%E8%A7%A3%E7%9A%84%E5%94%AF%E4%B8%80%E6%80%A7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E7%9A%84%E7%A7%AF%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="nav-number">3.2.</span> <span class="nav-text">泊松方程解的唯一性问题与解的积分形式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%94%AF%E4%B8%80%E6%80%A7%E5%AE%9A%E7%90%86"><span class="nav-number">3.2.1.</span> <span class="nav-text">唯一性定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%8A%E6%9D%BE%E6%96%B9%E7%A8%8B%E8%A7%A3%E7%9A%84%E7%A7%AF%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="nav-number">3.2.2.</span> <span class="nav-text">泊松方程解的积分形式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%9D%99%E7%94%B5%E9%97%AE%E9%A2%98%E7%9A%84%E7%94%B5%E5%83%8F%E6%B3%95"><span class="nav-number">3.3.</span> <span class="nav-text">解静电问题的电像法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%9D%99%E7%94%B5%E9%97%AE%E9%A2%98%E7%9A%84%E5%88%86%E7%A6%BB%E5%8F%98%E9%87%8F%E6%B3%95"><span class="nav-number">3.4.</span> <span class="nav-text">解静电问题的分离变量法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%9D%99%E7%94%B5%E9%97%AE%E9%A2%98%E7%9A%84%E6%A0%BC%E6%9E%97%E5%87%BD%E6%95%B0%E6%B3%95"><span class="nav-number">3.5.</span> <span class="nav-text">解静电问题的格林函数法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%9D%99%E7%94%B5%E9%97%AE%E9%A2%98%E7%9A%84%E5%A4%9A%E6%9E%81%E5%B1%95%E5%BC%80%E6%B3%95"><span class="nav-number">3.6.</span> <span class="nav-text">解静电问题的多极展开法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%99%E7%94%B5%E5%9C%BA%E7%9A%84%E8%83%BD%E9%87%8F%E4%B8%8E%E9%9D%99%E7%94%B5%E4%BD%9C%E7%94%A8%E5%8A%9B"><span class="nav-number">3.7.</span> <span class="nav-text">静电场的能量与静电作用力</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E7%94%B5%E5%9C%BA%E7%9A%84%E8%83%BD%E9%87%8F"><span class="nav-number">3.7.1.</span> <span class="nav-text">静电场的能量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B5%E5%A4%9A%E6%9E%81%E5%AD%90%E4%B8%8E%E5%A4%96%E7%94%B5%E5%9C%BA%E7%9A%84%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E8%83%BD"><span class="nav-number">3.7.2.</span> <span class="nav-text">电多极子与外电场的相互作用能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B1%E9%9D%99%E7%94%B5%E8%83%BD%E9%87%8F%E8%AE%A1%E7%AE%97%E9%9D%99%E7%94%B5%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E5%8A%9B"><span class="nav-number">3.7.3.</span> <span class="nav-text">由静电能量计算静电相互作用力</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E7%94%B5%E7%A3%81%E5%9C%BA%E4%B8%8E%E4%BC%BC%E7%A8%B3%E7%94%B5%E7%A3%81%E5%9C%BA"><span class="nav-number">4.</span> <span class="nav-text">稳定电磁场与似稳电磁场</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E7%94%B5%E7%A3%81%E5%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B"><span class="nav-number">4.1.</span> <span class="nav-text">稳定电磁场的基本方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E7%94%B5%E6%B5%81%E7%9A%84%E7%9F%A2%E5%8A%BF"><span class="nav-number">4.2.</span> <span class="nav-text">稳定电流的矢势</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E7%94%B5%E6%B5%81%E7%A3%81%E5%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B"><span class="nav-number">4.2.1.</span> <span class="nav-text">稳定电流磁场的基本方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A2%E5%8A%BF-mathbf-A-%E7%9A%84%E8%BE%B9%E7%95%8C%E6%9D%A1%E4%BB%B6"><span class="nav-number">4.2.2.</span> <span class="nav-text">矢势 $\mathbf {A}$ 的边界条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A2%E9%87%8F%E6%B3%8A%E6%9D%BE%E6%96%B9%E7%A8%8B%E8%A7%A3%E7%9A%84%E5%94%AF%E4%B8%80%E6%80%A7%E5%AE%9A%E7%90%86"><span class="nav-number">4.2.3.</span> <span class="nav-text">矢量泊松方程解的唯一性定理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E7%A3%81%E5%9C%BA%E7%9A%84%E6%A0%87%E5%8A%BF"><span class="nav-number">4.3.</span> <span class="nav-text">稳定磁场的标势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E7%A3%81%E5%9C%BA%E7%9A%84%E5%A4%9A%E6%9E%81%E5%B1%95%E5%BC%80%E6%B3%95"><span class="nav-number">4.4.</span> <span class="nav-text">稳定磁场的多极展开法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E7%A3%81%E5%9C%BA%E7%9A%84%E8%83%BD%E9%87%8F%E4%B8%8E%E7%A3%81%E4%BD%9C%E7%94%A8%E5%8A%9B"><span class="nav-number">4.5.</span> <span class="nav-text">稳定磁场的能量与磁作用力</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E7%A3%81%E5%9C%BA%E7%9A%84%E8%83%BD%E9%87%8F"><span class="nav-number">4.5.1.</span> <span class="nav-text">稳定磁场的能量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%94%B5%E6%B5%81%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%A3%81%E5%9C%BA%E8%83%BD%E9%87%8F"><span class="nav-number">4.5.2.</span> <span class="nav-text">线电流系统的磁场能量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B1%E7%A3%81%E5%9C%BA%E8%83%BD%E9%87%8F%E8%AE%A1%E7%AE%97%E7%A3%81%E4%BD%9C%E7%94%A8%E5%8A%9B"><span class="nav-number">4.5.3.</span> <span class="nav-text">由磁场能量计算磁作用力</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%BC%E7%A8%B3%E7%94%B5%E7%A3%81%E5%9C%BA%E8%8D%B7%E4%BC%BC%E7%A8%B3%E7%94%B5%E8%B7%AF%E6%96%B9%E7%A8%8B"><span class="nav-number">4.6.</span> <span class="nav-text">似稳电磁场荷似稳电路方程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E7%9A%84%E8%BE%90%E5%B0%84"><span class="nav-number">5.</span> <span class="nav-text">电磁波的辐射</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E5%8C%96%E7%94%B5%E7%A3%81%E5%9C%BA%E7%9A%84%E7%9F%A2%E5%8A%BF%E5%92%8C%E6%A0%87%E5%8A%BF"><span class="nav-number">5.1.</span> <span class="nav-text">变化电磁场的矢势和标势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%BE%E6%9C%97%E8%B4%9D%E5%B0%94%E6%96%B9%E7%A8%8B%E7%9A%84%E8%A7%A3%E5%8F%8A%E6%8E%A8%E8%BF%9F%E5%8A%BF"><span class="nav-number">5.2.</span> <span class="nav-text">达朗贝尔方程的解及推迟势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E5%81%B6%E6%9E%81%E5%AD%90%E7%9A%84%E7%94%B5%E7%A3%81%E5%9C%BA"><span class="nav-number">5.3.</span> <span class="nav-text">电偶极子的电磁场</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%8A%B6%E5%A4%A9%E7%BA%BF%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%BE%90%E5%B0%84"><span class="nav-number">5.4.</span> <span class="nav-text">线状天线系统的辐射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%83%E5%A4%A9%E7%BA%BF%E7%9A%84%E8%BE%90%E5%B0%84%E5%92%8C%E5%A4%A9%E7%BA%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8F%82%E6%95%B0"><span class="nav-number">5.4.1.</span> <span class="nav-text">元天线的辐射和天线的基本参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%95%BF%E5%A4%A9%E7%BA%BF%E7%9A%84%E8%BE%90%E5%B0%84"><span class="nav-number">5.4.2.</span> <span class="nav-text">长天线的辐射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A9%E7%BA%BF%E9%98%B5%E7%9A%84%E8%BE%90%E5%B0%84"><span class="nav-number">5.4.3.</span> <span class="nav-text">天线阵的辐射</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E5%9B%9B%E6%9E%81%E7%9F%A9%E7%9A%84%E8%BE%90%E5%B0%84"><span class="nav-number">5.5.</span> <span class="nav-text">电四极矩的辐射</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E7%9A%84%E4%BC%A0%E6%92%AD"><span class="nav-number">6.</span> <span class="nav-text">电磁波的传播</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B"><span class="nav-number">6.1.</span> <span class="nav-text">电磁波传播问题中的基本方程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E5%9C%A8%E4%BB%8B%E8%B4%A8%E4%B8%AD%E4%BC%A0%E6%92%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B"><span class="nav-number">6.1.1.</span> <span class="nav-text">电磁波在介质中传播的基本方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E5%9C%A8%E5%AF%BC%E4%BD%93%E4%B8%AD%E4%BC%A0%E6%92%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B"><span class="nav-number">6.1.2.</span> <span class="nav-text">电磁波在导体中传播的基本方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E4%BB%8B%E8%B4%A8%E6%88%96%E5%AF%BC%E4%BD%93%E5%88%86%E7%95%8C%E9%9D%A2%E5%A4%84%E7%9A%84%E8%BE%B9%E7%95%8C%E6%9D%A1%E4%BB%B6"><span class="nav-number">6.1.3.</span> <span class="nav-text">在介质或导体分界面处的边界条件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E9%9D%A2%E5%8D%95%E8%89%B2%E7%94%B5%E7%A3%81%E6%B3%A2%E5%9C%A8%E5%9D%87%E5%8C%80%E4%BB%8B%E8%B4%A8%E4%B8%AD%E7%9A%84%E4%BC%A0%E6%92%AD"><span class="nav-number">6.2.</span> <span class="nav-text">平面单色电磁波在均匀介质中的传播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E5%9C%A8%E4%BB%8B%E8%B4%A8%E5%88%86%E7%95%8C%E9%9D%A2%E4%B8%8A%E7%9A%84%E5%8F%8D%E5%B0%84%E5%92%8C%E6%8A%98%E5%B0%84"><span class="nav-number">6.3.</span> <span class="nav-text">电磁波在介质分界面上的反射和折射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E5%9C%A8%E5%AF%BC%E4%BD%93%E4%B8%AD%E7%9A%84%E4%BC%A0%E6%92%AD%E5%8F%8A%E5%9C%A8%E5%AF%BC%E4%BD%93%E8%A1%A8%E9%9D%A2%E7%9A%84%E5%8F%8D%E5%B0%84%E5%92%8C%E6%8A%98%E5%B0%84"><span class="nav-number">6.4.</span> <span class="nav-text">电磁波在导体中的传播及在导体表面的反射和折射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E5%9C%A8%E7%AD%89%E7%A6%BB%E5%AD%90%E4%BD%93%E4%B8%AD%E7%9A%84%E4%BC%A0%E6%92%AD"><span class="nav-number">6.5.</span> <span class="nav-text">电磁波在等离子体中的传播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E5%9C%A8%E6%B3%A2%E5%AF%BC%E4%B8%AD%E7%9A%84%E4%BC%A0%E6%92%AD"><span class="nav-number">6.6.</span> <span class="nav-text">电磁波在波导中的传播</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E8%BE%93%E7%BA%BF"><span class="nav-number">6.6.1.</span> <span class="nav-text">传输线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E8%BE%93%E7%BA%BF%E4%B8%AD%E7%94%B5%E7%A3%81%E6%B3%A2%E7%9A%84%E4%B8%80%E8%88%AC%E6%80%A7%E8%B4%A8"><span class="nav-number">6.6.2.</span> <span class="nav-text">传输线中电磁波的一般性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%A0%E8%BE%93%E7%BA%BF%E4%B8%AD%E7%94%B5%E7%A3%81%E6%B3%A2%E7%9A%84%E4%B8%80%E8%88%AC%E6%80%A7%E8%B4%A8-1"><span class="nav-number">6.7.</span> <span class="nav-text">传输线中电磁波的一般性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E5%BD%A2%E6%B3%A2%E5%AF%BC"><span class="nav-number">6.8.</span> <span class="nav-text">矩形波导</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%90%E6%8C%AF%E8%85%94"><span class="nav-number">6.9.</span> <span class="nav-text">谐振腔</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E7%9A%84%E8%A1%8D%E5%B0%84"><span class="nav-number">6.10.</span> <span class="nav-text">电磁波的衍射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E5%9C%BA%E7%9A%84%E5%8A%A8%E9%87%8F"><span class="nav-number">6.11.</span> <span class="nav-text">电磁场的动量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E7%9A%84%E5%8A%A8%E9%87%8F"><span class="nav-number">6.12.</span> <span class="nav-text">电磁波的动量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA"><span class="nav-number">7.</span> <span class="nav-text">狭义相对论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1900-%E5%B9%B4%E4%BB%A5%E5%89%8D%E7%9A%84%E6%83%85%E5%86%B5%EF%BC%9B%E7%88%B1%E5%9B%A0%E6%96%AF%E5%9D%A6%E7%9A%84%E4%B8%A4%E6%9D%A1%E5%81%87%E8%AE%BE"><span class="nav-number">7.1.</span> <span class="nav-text">1900 年以前的情况；爱因斯坦的两条假设</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E8%BF%91%E4%BB%A3%E7%9A%84%E5%AE%9E%E9%AA%8C"><span class="nav-number">7.2.</span> <span class="nav-text">一些近代的实验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B4%9B%E4%BC%A6%E5%85%B9%E5%8F%98%E6%8D%A2%E5%92%8C%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9A%84%E8%BF%90%E5%8A%A8%E5%AD%A6%E7%BB%93%E6%9E%9C"><span class="nav-number">7.3.</span> <span class="nav-text">洛伦兹变换和狭义相对论的基本的运动学结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E6%99%AE%E5%8B%92%E6%95%88%E5%BA%94-%E6%97%B6%E9%92%9F%E4%BD%AF%E8%B0%AC%E9%97%AE%E9%A2%98"><span class="nav-number">7.4.</span> <span class="nav-text">多普勒效应 时钟佯谬问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E6%99%AE%E5%8B%92%E6%95%88%E5%BA%94"><span class="nav-number">7.4.1.</span> <span class="nav-text">多普勒效应</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B2%92%E5%AD%90%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%AE%BA%E5%8A%A8%E9%87%8F%E5%92%8C%E8%83%BD%E9%87%8F"><span class="nav-number">7.5.</span> <span class="nav-text">粒子的相对论动量和能量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E8%8D%B7%E7%9A%84%E4%B8%8D%E5%8F%98%E6%80%A7%EF%BC%9B%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6%E7%9A%84%E5%8D%8F%E5%8F%98%E6%80%A7"><span class="nav-number">7.6.</span> <span class="nav-text">电荷的不变性；电动力学的协变性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E5%A4%96%E7%94%B5%E7%A3%81%E5%9C%BA%E4%B8%AD%E4%B8%80%E4%B8%AA%E7%9B%B8%E5%AF%B9%E8%AE%BA%E6%80%A7%E5%B8%A6%E7%94%B5%E7%B2%92%E5%AD%90%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%87%BD%E6%95%B0%E5%92%8C%E5%93%88%E5%AF%86%E9%A1%BF%E5%87%BD%E6%95%B0"><span class="nav-number">7.7.</span> <span class="nav-text">在外电磁场中一个相对论性带电粒子的拉格朗日函数和哈密顿函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E5%9D%87%E5%8C%80%E9%9D%99%E7%94%B5%E5%9C%BA%E5%92%8C%E9%9D%99%E7%A3%81%E5%9C%BA%E7%9A%84%E5%B9%B6%E5%90%88%E5%9C%BA%E4%B8%AD%E7%9A%84%E8%BF%90%E5%8A%A8"><span class="nav-number">7.8.</span> <span class="nav-text">在均匀静电场和静磁场的并合场中的运动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A4%E4%B8%AA%E6%83%AF%E6%80%A7%E5%8F%82%E7%85%A7%E7%B3%BB%E9%97%B4%E7%94%B5%E7%A3%81%E5%9C%BA%E5%BC%BA%E5%BA%A6%E7%9F%A2%E9%87%8F%E7%9A%84%E5%8F%98%E6%8D%A2%E5%85%B3%E7%B3%BB"><span class="nav-number">7.9.</span> <span class="nav-text">两个惯性参照系间电磁场强度矢量的变换关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%BA%A6%E5%85%8B%E6%96%AF%E9%9F%A6%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E6%8E%A8%E5%AF%BC"><span class="nav-number">7.10.</span> <span class="nav-text">麦克斯韦方程组的推导</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E7%BB%B4%E5%BC%A0%E9%87%8F%E5%92%8C%E5%AF%B9%E5%81%B6%E5%BC%A0%E9%87%8F"><span class="nav-number">7.11.</span> <span class="nav-text">四维张量和对偶张量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E5%9C%BA%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%87%BD%E6%95%B0"><span class="nav-number">7.12.</span> <span class="nav-text">电磁场的拉格朗日函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%A6%E7%94%B5%E7%B2%92%E5%AD%90%E5%92%8C%E7%94%B5%E7%A3%81%E5%9C%BA%E7%9A%84%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8"><span class="nav-number">8.</span> <span class="nav-text">带电粒子和电磁场的相互作用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E5%8A%A8%E5%B8%A6%E7%94%B5%E7%B2%92%E5%AD%90%E7%9A%84%E5%8A%BF"><span class="nav-number">8.1.</span> <span class="nav-text">运动带电粒子的势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E5%8A%A8%E5%B8%A6%E7%94%B5%E7%B2%92%E5%AD%90%E7%9A%84%E5%9C%BA"><span class="nav-number">8.2.</span> <span class="nav-text">运动带电粒子的场</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E5%8A%A8%E5%B8%A6%E7%94%B5%E7%B2%92%E5%AD%90%E7%9A%84%E8%BE%90%E5%B0%84"><span class="nav-number">8.3.</span> <span class="nav-text">运动带电粒子的辐射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AB%E8%87%B4%E8%BE%90%E5%B0%84%E4%B8%8E%E5%90%8C%E6%AD%A5%E8%BE%90%E5%B0%84"><span class="nav-number">8.4.</span> <span class="nav-text">轫致辐射与同步辐射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E4%BB%91%E7%A7%91%E5%A4%AB%E8%BE%90%E5%B0%84"><span class="nav-number">8.5.</span> <span class="nav-text">切仑科夫辐射</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1230,20 +1260,20 @@ P(t')=\dfrac{1}{4\pi\varepsilon_0c^2}\dfrac{2}{3}\dfrac{e^2\dot{\mathbf{v}}^2}{c
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-count">28</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

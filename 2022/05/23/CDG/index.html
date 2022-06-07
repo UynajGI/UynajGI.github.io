@@ -82,7 +82,37 @@
   </style>
 </noscript>
 
-</head>
+<style type="text/css">
+.spoiler {
+  display: inline-flex;
+}
+p.spoiler {
+  display: flex;
+}
+.spoiler a {
+  pointer-events: none;
+}
+.spoiler-blur, .spoiler-blur > * {
+  transition: text-shadow .5s ease;
+}
+.spoiler .spoiler-blur, .spoiler .spoiler-blur > * {
+  color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  text-shadow: 0 0 10px grey;
+  cursor: pointer;
+}
+.spoiler .spoiler-blur:hover, .spoiler .spoiler-blur:hover > * {
+  text-shadow: 0 0 5px grey;
+}
+.spoiler-box, .spoiler-box > * {
+  transition: color .5s ease,
+  background-color .5s ease;
+}
+.spoiler .spoiler-box, .spoiler .spoiler-box > * {
+  color: black;
+  background-color: black;
+  text-shadow: none;
+}</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -224,54 +254,54 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h1><h2 id="向量函数"><a href="#向量函数" class="headerlink" title="向量函数"></a>向量函数</h2><p><strong>定理 2.1</strong> 假定$\mathbf{a}(t),\mathbf{b}(t),\mathbf{c}(t)$是三个可微的向量函数，则他们的内积、向量积和混合积有下面的公式</p>
+        <h1 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h1><h2 id="向量函数"><a href="#向量函数" class="headerlink" title="向量函数"></a>向量函数</h2><p><strong>定理 2.1</strong> 假定 $\mathbf {a}(t),\mathbf {b}(t),\mathbf {c}(t)$ 是三个可微的向量函数，则他们的内积、向量积和混合积有下面的公式</p>
 <ol>
 <li>$(\mathbf{a}(t)\cdot\mathbf{b}(t))’=\mathbf{a}’(t)\cdot\mathbf{b}(t)+\mathbf{a}(t)\cdot\mathbf{b}’(t)$</li>
 <li>$(\mathbf{a}(t)\times\mathbf{b}(t))’=\mathbf{a}’(t)\times\mathbf{b}(t)+\mathbf{a}(t)\times\mathbf{b}’(t)$</li>
 <li>$(\mathbf{a}(t),\mathbf{b}(t),\mathbf{c}(t))’=(\mathbf{a}’(t),\mathbf{b}(t),\mathbf{c}(t))+(\mathbf{a}(t),\mathbf{b}’(t),\mathbf{c}(t))+(\mathbf{a}(t),\mathbf{b}(t),\mathbf{c}’(t))$</li>
 </ol>
-<p><strong>定理 2.2</strong> 设$\mathbf{a}(t)$是一个处处非零的连续可微的向量函数，则</p>
+<p><strong>定理 2.2</strong> 设 $\mathbf {a}(t)$ 是一个处处非零的连续可微的向量函数，则</p>
 <ol>
 <li>$\text{Vector function } \mathbf{a}(t) \equiv C_0\ ,\text{if and only if }\mathbf{a}’(t)\cdot\mathbf{a}(t) \equiv 0.$</li>
 <li>$The\ direction\ of\ the\ Vector\ function\ \mathbf{a}(t)\ remains\ unchanged\ ,\ if\ and\ only\ if\  \mathbf{a}’(t)\times\mathbf{a}(t) \equiv 0.$</li>
 <li>$(\mathbf{a}(t),\mathbf{a}’(t),\mathbf{a}’’(t)),\ \ when\ Vector\ function\ \mathbf{a}(t)\ is\ perpendicular\ to\ a\ fixed\ direction.$</li>
 </ol>
 <hr>
-<h1 id="曲线论"><a href="#曲线论" class="headerlink" title="曲线论"></a>曲线论</h1><h2 id="正则参数曲线"><a href="#正则参数曲线" class="headerlink" title="正则参数曲线"></a>正则参数曲线</h2><p>我们所研究的参数曲线 $\mathbf{r}(t)$ 要满足下面两个条件:</p>
+<h1 id="曲线论"><a href="#曲线论" class="headerlink" title="曲线论"></a>曲线论</h1><h2 id="正则参数曲线"><a href="#正则参数曲线" class="headerlink" title="正则参数曲线"></a>正则参数曲线</h2><p>我们所研究的参数曲线 $\mathbf {r}(t)$ 要满足下面两个条件:</p>
 <ol>
-<li>$\mathbf{r}(t)$ 至少是自变量 $t$ 的三次以上连续可微的向量函数；</li>
-<li>处处是正则点，即对于任意 $t$ 有 $\mathbf{r}’(t)\not ={\mathbf{0}}.$<br>这样的参数曲线称为<strong>正则参数曲线</strong>.我们还把参数增大的方向称为该曲线的<strong>正向</strong>,因此 $\mathbf{r}’(t)$ 刚好指向曲线的正向.</li>
+<li>$\mathbf {r}(t)$ 至少是自变量 $t$ 的三次以上连续可微的向量函数；</li>
+<li>处处是正则点，即对于任意 $t$ 有 $\mathbf {r}’(t)\not ={\mathbf {0}}.$<br>这样的参数曲线称为<strong>正则参数曲线</strong>. 我们还把参数增大的方向称为该曲线的<strong>正向</strong> , 因此 $\mathbf {r}’(t)$ 刚好指向曲线的正向.</li>
 </ol>
-<h2 id="曲线的弧长"><a href="#曲线的弧长" class="headerlink" title="曲线的弧长"></a>曲线的弧长</h2><p>假设 $E^3$中的一条正则曲线 $C$ 的参数方程是 $\mathbf{r}=\mathbf{r}’(t), a&lt;=t&lt;=b.$命</p>
+<h2 id="曲线的弧长"><a href="#曲线的弧长" class="headerlink" title="曲线的弧长"></a>曲线的弧长</h2><p>假设 $E^3$ 中的一条正则曲线 $C$ 的参数方程是 $\mathbf {r}=\mathbf {r}’(t), a&lt;=t&lt;=b.$ 命</p>
 <script type="math/tex; mode=display">
 \mathbf{s}=\int_a^b{|\mathbf{r}'(t)|\mathrm{d}t}</script><p>则 $s$ 是该曲线的一个不变量，即它与空间 $E^3$ 中的笛卡尔直角坐标系的选取无关.</p>
 <ul>
-<li>弧长参数: $\mathrm{d}s = \left|\mathbf{r}’(t)\right|\mathrm{d}t$</li>
+<li>弧长参数: $\mathrm {d} s = \left|\mathbf {r}’(t)\right|\mathrm {d} t$</li>
 </ul>
-<p><strong>定理 2.1</strong> 设 $\mathbf{r}=\mathbf{r}’(t)(a&lt;=t&lt;=b)$ 是 $E^3$ 中的一条正则曲线，则 $t$ 是它的弧长参数的充分必要条件是 $|\mathbf{r}’(t)|\equiv1$.</p>
+<p><strong>定理 2.1</strong> 设 $\mathbf {r}=\mathbf {r}’(t)(a&lt;=t&lt;=b)$ 是 $E^3$ 中的一条正则曲线，则 $t$ 是它的弧长参数的充分必要条件是 $|\mathbf {r}’(t)|\equiv1$.</p>
 <h2 id="曲线的曲率和-Frenet-框架"><a href="#曲线的曲率和-Frenet-框架" class="headerlink" title="曲线的曲率和 Frenet 框架"></a>曲线的曲率和 Frenet 框架</h2><p>命</p>
 <script type="math/tex; mode=display">
-\mathbf{\alpha}(s)=\mathbf{r}'(s)</script><p><strong>定理 3.1</strong> 设$\mathbf{\alpha}(s)$是曲线$\mathbf{r}(s)$的单位切向量场，$s$是弧长参数， 用$\Delta \theta$表示切向量$\mathbf{\alpha}(s+\Delta s)$和$\mathbf{\alpha}(s)$之间的夹角，则</p>
+\mathbf{\alpha}(s)=\mathbf{r}'(s)</script><p><strong>定理 3.1</strong> 设 $\mathbf {\alpha}(s)$ 是曲线 $\mathbf {r}(s)$ 的单位切向量场，$s$ 是弧长参数， 用 $\Delta \theta$ 表示切向量 $\mathbf {\alpha}(s+\Delta s)$ 和 $\mathbf {\alpha}(s)$ 之间的夹角，则</p>
 <script type="math/tex; mode=display">
-\lim_{\Delta s\to0}{\left|\dfrac{\Delta \theta}{\Delta s}\right|}=\left|\dfrac{\mathrm{d}\mathbf{\alpha}}{\mathrm{d}s}\right|</script><p><strong>定义 3.1</strong> 设曲线$C$的方程是$\mathbf{r}(s)$，其中$s$是曲线的弧长参数，命</p>
+\lim_{\Delta s\to0}{\left|\dfrac{\Delta \theta}{\Delta s}\right|}=\left|\dfrac{\mathrm{d}\mathbf{\alpha}}{\mathrm{d}s}\right|</script><p><strong>定义 3.1</strong> 设曲线 $C$ 的方程是 $\mathbf {r}(s)$，其中 $s$ 是曲线的弧长参数，命</p>
 <script type="math/tex; mode=display">
-\kappa(s)=\left|\dfrac{\mathrm{d}\mathbf{\alpha}}{\mathrm{d}s}\right|=\left|\mathbf{r}''(s)\right|</script><p>称$\kappa(s)$为曲线$\mathbf{r}(s)$在$s$处的<strong>曲率</strong>，并且称$\dfrac{\mathrm{d}\mathbf{\alpha}}{\mathrm{d}s}$为该曲线的曲率向量.<br><strong>定理 3.2</strong> 曲线$C$是一条直线当且仅当它的曲率$\kappa(s)\equiv0$.<br>把曲线$C$的单位切向量$\mathbf{\alpha}(s)$平行移动到原点$O$，其端点所描绘出的曲线称为曲线$C$的<strong>切线像</strong>，它的参数方程是</p>
+\kappa(s)=\left|\dfrac{\mathrm{d}\mathbf{\alpha}}{\mathrm{d}s}\right|=\left|\mathbf{r}''(s)\right|</script><p>称 $\kappa (s)$ 为曲线 $\mathbf {r}(s)$ 在 $s$ 处的<strong>曲率</strong>，并且称 $\dfrac {\mathrm {d}\mathbf {\alpha}}{\mathrm {d} s}$ 为该曲线的曲率向量.<br><strong>定理 3.2</strong> 曲线 $C$ 是一条直线当且仅当它的曲率 $\kappa (s)\equiv0$.<br>把曲线 $C$ 的单位切向量 $\mathbf {\alpha}(s)$ 平行移动到原点 $O$，其端点所描绘出的曲线称为曲线 $C$ 的<strong>切线像</strong>，它的参数方程是</p>
 <script type="math/tex; mode=display">
-\mathbf{r}=\mathbf{\alpha}(s)</script><p>一般来说，$s$不再是曲线的切线像的弧长，而切线像的弧长元素是</p>
+\mathbf{r}=\mathbf{\alpha}(s)</script><p>一般来说，$s$ 不再是曲线的切线像的弧长，而切线像的弧长元素是</p>
 <script type="math/tex; mode=display">
 \mathrm{d}\tilde{s}=\left|\dfrac{\mathrm{d}\mathbf{\alpha}}{\mathrm{d}s}\right|\mathrm{s}=\kappa(s)\mathrm{d}s</script><p>所以，</p>
 <script type="math/tex; mode=display">
-\kappa(s)=\dfrac{\mathrm{d}\tilde{s}}{\mathrm{d}s}</script><p>这就是说，曲线的曲率$\kappa(s)$是曲线的切线像的弧长元素与曲线的弧长元素之比.<br>因为$\left|\mathbf{\alpha}(s)\right|=1$，又有$\mathbf{\alpha}(s)\cdot\mathbf{\alpha}’(s)=0$，即$\mathbf{\alpha}(s)\perp\mathbf{\alpha}’(s)$，所以$\mathbf{\alpha}’(s)$是曲线$C$的一个法向量.如果</p>
+\kappa(s)=\dfrac{\mathrm{d}\tilde{s}}{\mathrm{d}s}</script><p>这就是说，曲线的曲率 $\kappa (s)$ 是曲线的切线像的弧长元素与曲线的弧长元素之比.<br>因为 $\left|\mathbf {\alpha}(s)\right|=1$，又有 $\mathbf {\alpha}(s)\cdot\mathbf {\alpha}’(s)=0$，即 $\mathbf {\alpha}(s)\perp\mathbf {\alpha}’(s)$，所以 $\mathbf {\alpha}’(s)$ 是曲线 $C$ 的一个法向量。如果</p>
 <script type="math/tex; mode=display">
-\kappa(s)\not ={0},</script><p>则向量$\mathbf{\alpha}’(s)$有完全确定的方向，将这个方向的单位向量记为$\mathbf{\beta}(s)$，称其为曲线$C$的<strong>主法向量</strong>. 于是曲率向量$\mathbf{\alpha}’(s)$可以表示为</p>
+\kappa(s)\not ={0},</script><p>则向量 $\mathbf {\alpha}’(s)$ 有完全确定的方向，将这个方向的单位向量记为 $\mathbf {\beta}(s)$，称其为曲线 $C$ 的<strong>主法向量</strong>. 于是曲率向量 $\mathbf {\alpha}’(s)$ 可以表示为</p>
 <script type="math/tex; mode=display">
-\mathbf{\alpha}'(s)=\kappa(s)\mathbf{\beta}(s).</script><p>曲线的单位切向量$\mathbf{\alpha}(s)$和主法向量$\mathbf{\beta}(s)$唯一确定了曲线的第二个法向量</p>
+\mathbf{\alpha}'(s)=\kappa(s)\mathbf{\beta}(s).</script><p>曲线的单位切向量 $\mathbf {\alpha}(s)$ 和主法向量 $\mathbf {\beta}(s)$ 唯一确定了曲线的第二个法向量</p>
 <script type="math/tex; mode=display">
 \mathbf{\gamma}(s)=\mathbf{\alpha}(s)\times\mathbf{\beta}(s),</script><p>称其为曲线的<strong>次法向量</strong>.</p>
 <ul>
-<li>法平面:$(\mathbf{X}-\mathbf{r}(s))\cdot\mathbf{\alpha}(s)=0 $</li>
-<li>从切平面:$(\mathbf{X}-\mathbf{r}(s))\cdot\mathbf{\beta}(s)=0 $</li>
-<li>密切平面:$(\mathbf{X}-\mathbf{r}(s))\cdot\mathbf{\gamma}(s)=0 $</li>
+<li>法平面:$(\mathbf {X}-\mathbf {r}(s))\cdot\mathbf {\alpha}(s)=0 $</li>
+<li> 从切平面:$(\mathbf {X}-\mathbf {r}(s))\cdot\mathbf {\beta}(s)=0 $</li>
+<li> 密切平面:$(\mathbf {X}-\mathbf {r}(s))\cdot\mathbf {\gamma}(s)=0 $</li>
 </ul>
 <h3 id="代换公式"><a href="#代换公式" class="headerlink" title="代换公式"></a>代换公式</h3><script type="math/tex; mode=display">
 \begin{array}{clr}
@@ -279,7 +309,7 @@
     \kappa(s)=\left|\mathbf{\alpha}'(s)\right|=\left|\mathbf{r}''(s)\right|\\
     \text{if }\kappa(s)\not ={0},\mathbf{\beta}(s)=\dfrac{\mathbf{r}''(s)}{\left|\mathbf{r}''(s)\right|},\\
     \mathbf{\gamma}(s)=\mathbf{\alpha}(s)\times\mathbf{\beta}(s)
-\end{array}</script><p>如果曲线的方程是$\mathbf{r}=\mathbf{r}(t)$，$t$不是弧长参数，则</p>
+\end{array}</script><p>如果曲线的方程是 $\mathbf {r}=\mathbf {r}(t)$，$t$ 不是弧长参数，则</p>
 <script type="math/tex; mode=display">
 \dfrac{\mathrm{d}s}{\mathrm{d}t}=\left|\mathbf{r}'(t)\right|,</script><p>故</p>
 <script type="math/tex; mode=display">
@@ -293,7 +323,7 @@
 \kappa (t)=\dfrac{\left|\mathbf{r}'(t)\times\mathbf{r}''(t)\right|}{\left|\mathbf{r}'(t)\right|^3},\\
 \gamma(t)=\dfrac{\mathbf{r}'(t)\times\mathbf{r}''(t)}{\left|\mathbf{r}'(t)\times\mathbf{r}''(t)\right|},\\
 \beta(t)=\dfrac{\left|\mathbf{r}'(t)\right|}{\left|\mathbf{r}'(t)\times\mathbf{r}''(t)\right|}\mathbf{r}''(t)-\dfrac{\mathbf{r}'(t)\cdot\mathbf{r}''(t)}{\left|\mathbf{r}'(t)\right|\cdot\left|\mathbf{r}'(t)\times\mathbf{r}''(t)\right|}\mathbf{r}'(t).
-\end{array}</script><h2 id="曲线的挠率和Frenet公式"><a href="#曲线的挠率和Frenet公式" class="headerlink" title="曲线的挠率和Frenet公式"></a>曲线的挠率和Frenet公式</h2><p><strong>定义 4.1</strong> 设$\mathbf{\beta}(s)$和$\gamma(s)$分别是曲线$C$的主法向量和次法向量，其中$s$是弧长参数，则$\tau(s)=-\mathbf{\gamma}’(s)\cdot\mathbf{\beta}(s)$称为曲线$C$的<strong>挠率</strong>》<br><strong>定理 4.1</strong> 设曲线$C$不是直线，则它是平面曲线当且仅当它的挠率为零.</p>
+\end{array}</script><h2 id="曲线的挠率和Frenet公式"><a href="#曲线的挠率和Frenet公式" class="headerlink" title="曲线的挠率和Frenet公式"></a>曲线的挠率和 Frenet 公式</h2><p><strong>定义 4.1</strong> 设 $\mathbf {\beta}(s)$ 和 $\gamma (s)$ 分别是曲线 $C$ 的主法向量和次法向量，其中 $s$ 是弧长参数，则 $\tau (s)=-\mathbf {\gamma}’(s)\cdot\mathbf {\beta}(s)$ 称为曲线 $C$ 的<strong>挠率</strong>》<br><strong>定理 4.1</strong> 设曲线 $C$ 不是直线，则它是平面曲线当且仅当它的挠率为零.</p>
 <script type="math/tex; mode=display">
 \left(\begin{matrix}
 \mathbf{\alpha}'(s)\\
@@ -309,72 +339,72 @@
 \mathbf{\alpha}(s)\\
 \mathbf{\beta}(s)\\
 \mathbf{\gamma}(s)
-\end{matrix}\right)</script><p>称为<strong>Frenet公式</strong>.<br><strong>定理 4.2</strong> 设曲线$\mathbf{r}=\mathbf{r}(s)$的曲率$\kappa(s)$和挠率$\tau(s)$都不为零，其中$s$是弧长参数，如果该曲线落在一个球面上，则球面的球心是$\mathbf{r}_0$，半径是$a$，则有关系式</p>
+\end{matrix}\right)</script><p>称为 <strong>Frenet 公式</strong>.<br><strong>定理 4.2</strong> 设曲线 $\mathbf {r}=\mathbf {r}(s)$ 的曲率 $\kappa (s)$ 和挠率 $\tau (s)$ 都不为零，其中 $s$ 是弧长参数，如果该曲线落在一个球面上，则球面的球心是 $\mathbf {r}_0$，半径是 $a$，则有关系式</p>
 <script type="math/tex; mode=display">
 \left(\dfrac{1}{\kappa(s)}\right)+\left(\dfrac{1}{\tau(s)}\dfrac{\mathrm{d}}{\mathrm{d}s}\left(\dfrac{1}{\kappa(s)}\right)\right)^2=a^2.</script><ul>
 <li>注记<script type="math/tex; mode=display">
-\dfrac{\tau(s)}{\kappa(s)}+\dfrac{\mathrm{d}}{\mathrm{d}s}\left(\dfrac{1}{\tau(s)}\dfrac{\mathrm{d}}{\mathrm{d}s}\left(\dfrac{1}{\kappa(s)}\right)\right)=0.</script><strong>定理 4.3</strong> 曲线$\mathbf{r}=\mathbf{r}(t)$是一条平面曲线的充分必要条件是<script type="math/tex; mode=display">
+\dfrac{\tau(s)}{\kappa(s)}+\dfrac{\mathrm{d}}{\mathrm{d}s}\left(\dfrac{1}{\tau(s)}\dfrac{\mathrm{d}}{\mathrm{d}s}\left(\dfrac{1}{\kappa(s)}\right)\right)=0.</script><strong>定理 4.3</strong> 曲线 $\mathbf {r}=\mathbf {r}(t)$ 是一条平面曲线的充分必要条件是<script type="math/tex; mode=display">
 \left(\mathbf{r}'(t),\mathbf{r}''(t),\mathbf{r}'''(t)\right)\equiv0.</script></li>
 </ul>
-<h2 id="曲线的参数方程在一点的标准展开"><a href="#曲线的参数方程在一点的标准展开" class="headerlink" title="曲线的参数方程在一点的标准展开"></a>曲线的参数方程在一点的标准展开</h2><p>曲线在$s=0$处附近的参数方程称为</p>
+<h2 id="曲线的参数方程在一点的标准展开"><a href="#曲线的参数方程在一点的标准展开" class="headerlink" title="曲线的参数方程在一点的标准展开"></a>曲线的参数方程在一点的标准展开</h2><p>曲线在 $s=0$ 处附近的参数方程称为</p>
 <script type="math/tex; mode=display">
 \begin{cases}
 x=s-\dfrac{\kappa_0^2}{6}s^3+o(s^3),\\
 y=\dfrac{\kappa_0}{2}s^2+\dfrac{\kappa_0'}{6}s^3+o(s^3),\\
 z=\dfrac{\kappa_0\tau_0}{6}s^3+o(s^3).
-\end{cases}</script><p><strong>定理 6.1</strong> 设曲线$\mathbf{r}_1(s)$和$\mathbf{r}_(s)$都以$s$为它们的弧长参数，且$\mathbf{r}_1(0)=\mathbf{r}_2(0)$，则它们在$s=0$处有$n$阶切触的充分必要条件是</p>
+\end{cases}</script><p><strong>定理 6.1</strong> 设曲线 $\mathbf {r}_1 (s)$ 和 $\mathbf {r}_(s)$ 都以 $s$ 为它们的弧长参数，且 $\mathbf {r}_1 (0)=\mathbf {r}_2 (0)$，则它们在 $s=0$ 处有 $n$ 阶切触的充分必要条件是</p>
 <script type="math/tex; mode=display">
-\mathbf{r}_1^{(i)}(0)=\mathbf{r}_2^{(i)}(0),\qquad\forall1\le i\le n;\qquad\mathbf{r}_1^{(n+1)}(0)\not ={\mathbf{r}_2^NaN(0)}.</script><p><strong>定理 6.2</strong> $C$：$\mathbf{r}=\mathbf{r}(s)$是曲率和挠率都不为零的正则参数曲线，其中$s$是弧长参数，则在$a$处与曲线$C$有三阶以上的切触的球面$\Sigma$的球心是</p>
+\mathbf{r}_1^{(i)}(0)=\mathbf{r}_2^{(i)}(0),\qquad\forall1\le i\le n;\qquad\mathbf{r}_1^{(n+1)}(0)\not ={\mathbf{r}_2^NaN(0)}.</script><p><strong>定理 6.2</strong> $C$：$\mathbf {r}=\mathbf {r}(s)$ 是曲率和挠率都不为零的正则参数曲线，其中 $s$ 是弧长参数，则在 $a$ 处与曲线 $C$ 有三阶以上的切触的球面 $\Sigma$ 的球心是</p>
 <script type="math/tex; mode=display">
-\mathbf{r}(s)+\dfrac{1}{\kappa(s)}\mathbf{\beta}(s)+\dfrac{1}{\tau(s)}\left(\dfrac{1}{\kappa(s)}\right)'\mathbf{\gamma}(s),\\\text{半径是}\sqrt{\left(\dfrac{1}{\kappa(s)}\right)^2+\left(\dfrac{1}{\tau(s)}\left(\dfrac{1}{\kappa(s)}\right)'\right)^2}.</script><p>该球面称为曲线$C$在$s$处的<strong>密切球面</strong>，其球心所在的直线</p>
+\mathbf{r}(s)+\dfrac{1}{\kappa(s)}\mathbf{\beta}(s)+\dfrac{1}{\tau(s)}\left(\dfrac{1}{\kappa(s)}\right)'\mathbf{\gamma}(s),\\\text{半径是}\sqrt{\left(\dfrac{1}{\kappa(s)}\right)^2+\left(\dfrac{1}{\tau(s)}\left(\dfrac{1}{\kappa(s)}\right)'\right)^2}.</script><p>该球面称为曲线 $C$ 在 $s$ 处的<strong>密切球面</strong>，其球心所在的直线</p>
 <script type="math/tex; mode=display">
-\mathbf{r}=\mathbf{r}(s)+\dfrac{1}{\kappa(s)}\mathbf{\beta}(s)+\lambda\mathbf{\gamma}(s)</script><p>是通过曲线$C$的曲率中心、垂直于密切平面的直线，称为曲线$C$在$s$处的<strong>曲率轴</strong></p>
-<h2 id="存在对应关系的曲线偶"><a href="#存在对应关系的曲线偶" class="headerlink" title="存在对应关系的曲线偶"></a>存在对应关系的曲线偶</h2><p><strong>定义 7.1</strong> 如果在互不重合的曲线$C_1$和$C_2$之间存在一个对应，使得它们在每一对对应点有公共的主法线，则称这两条曲线为<strong>Bertrand 曲线偶</strong>，其中每一条曲线称为另一条曲线的<strong>侣线</strong>，或<strong>共轭曲线</strong>.</p>
+\mathbf{r}=\mathbf{r}(s)+\dfrac{1}{\kappa(s)}\mathbf{\beta}(s)+\lambda\mathbf{\gamma}(s)</script><p>是通过曲线 $C$ 的曲率中心、垂直于密切平面的直线，称为曲线 $C$ 在 $s$ 处的<strong>曲率轴</strong></p>
+<h2 id="存在对应关系的曲线偶"><a href="#存在对应关系的曲线偶" class="headerlink" title="存在对应关系的曲线偶"></a>存在对应关系的曲线偶</h2><p><strong>定义 7.1</strong> 如果在互不重合的曲线 $C_1$ 和 $C_2$ 之间存在一个对应，使得它们在每一对对应点有公共的主法线，则称这两条曲线为 <strong>Bertrand 曲线偶</strong>，其中每一条曲线称为另一条曲线的<strong>侣线</strong>，或<strong>共轭曲线</strong>.</p>
 <script type="math/tex; mode=display">
-\mathbf{r}''(s)=\kappa(s)\mathbf{n}(s),</script><p>这里$\mathbf{n}(s)$是沿曲线定义的法向量场.命</p>
+\mathbf{r}''(s)=\kappa(s)\mathbf{n}(s),</script><p>这里 $\mathbf {n}(s)$ 是沿曲线定义的法向量场。命</p>
 <script type="math/tex; mode=display">
-\mathbf{r}_1(s)=\mathbf{r}(s)+\lambda\mathbf{n}(s),</script><p>其中$\lambda$是任意给定的一个非零实数，则</p>
+\mathbf{r}_1(s)=\mathbf{r}(s)+\lambda\mathbf{n}(s),</script><p>其中 $\lambda$ 是任意给定的一个非零实数，则</p>
 <script type="math/tex; mode=display">
 \mathbf{r}'_1(s)=\mathbf{r}'(s)+\lambda\mathbf{n}'(s),</script><p>因此</p>
 <script type="math/tex; mode=display">
-\mathbf{r}_1'(s)\cdot\mathbf{n}(s)=\mathbf{r}'(s)\cdot\mathbf{n}(s)+\lambda\mathbf{n}'(s)\cdot\mathbf{n}(s)=0,</script><p><strong>定理 7.1</strong> 设曲线$C_1$和$C_2$是Bertrand曲线偶，则$C_1$和$C_2$的对应点之间的距离应该是常数，并且$C_1$和$C_2$在对应点的切线成定角.<br><strong>定理 7.2</strong> 设正则参数曲线$C$的曲率$\kappa$和挠率$\tau$都不是零，则存在另一条正则参数曲线$C_1$，使得曲线$C_1$和$C$成为Bertrand曲线偶的充分必要条件是，存在常数$\lambda\not ={0}$和$\mu$，使得</p>
+\mathbf{r}_1'(s)\cdot\mathbf{n}(s)=\mathbf{r}'(s)\cdot\mathbf{n}(s)+\lambda\mathbf{n}'(s)\cdot\mathbf{n}(s)=0,</script><p><strong>定理 7.1</strong> 设曲线 $C_1$ 和 $C_2$ 是 Bertrand 曲线偶，则 $C_1$ 和 $C_2$ 的对应点之间的距离应该是常数，并且 $C_1$ 和 $C_2$ 在对应点的切线成定角.<br><strong>定理 7.2</strong> 设正则参数曲线 $C$ 的曲率 $\kappa$ 和挠率 $\tau$ 都不是零，则存在另一条正则参数曲线 $C_1$，使得曲线 $C_1$ 和 $C$ 成为 Bertrand 曲线偶的充分必要条件是，存在常数 $\lambda\not ={0}$ 和 $\mu$，使得</p>
 <script type="math/tex; mode=display">
-\lambda\kappa+\mu\tau=1.</script><p><strong>定义 7.2</strong> 如果在曲线$C_1$和$C_2$之间存在一个对应，使得曲线$C_1$在任意一点的切线恰好是曲线$C_2$在对应点的法线，则称曲线$C_2$是$C_1$的<strong>渐伸线</strong>，同时称曲线$C_1$是$C_2$<strong>渐缩线</strong>.<br><strong>定理 7.3</strong> 设正则参数曲线$C$的参数方程是$\mathbf{r}(s)$,$s$是弧长参数，则$C$的渐伸线的参数方程是</p>
+\lambda\kappa+\mu\tau=1.</script><p><strong>定义 7.2</strong> 如果在曲线 $C_1$ 和 $C_2$ 之间存在一个对应，使得曲线 $C_1$ 在任意一点的切线恰好是曲线 $C_2$ 在对应点的法线，则称曲线 $C_2$ 是 $C_1$ 的<strong>渐伸线</strong>，同时称曲线 $C_1$ 是 $C_2$ <strong>渐缩线</strong>.<br><strong>定理 7.3</strong> 设正则参数曲线 $C$ 的参数方程是 $\mathbf {r}(s)$,$s$ 是弧长参数，则 $C$ 的渐伸线的参数方程是</p>
 <script type="math/tex; mode=display">
-\mathbf{r}=\mathbf{r}(s)+(c-s)\mathbf{\alpha},</script><p>其中$c$是任意常数.<br><strong>定理 7.4</strong> 设正则参数曲线$C$的参数曲线是$\mathbf{r}(s)$，$s$是弧长参数，则$C$的渐缩线的参数方程是</p>
+\mathbf{r}=\mathbf{r}(s)+(c-s)\mathbf{\alpha},</script><p>其中 $c$ 是任意常数.<br><strong>定理 7.4</strong> 设正则参数曲线 $C$ 的参数曲线是 $\mathbf {r}(s)$，$s$ 是弧长参数，则 $C$ 的渐缩线的参数方程是</p>
 <script type="math/tex; mode=display">
 \mathbf{r}=\mathbf{r}(s)+\dfrac{1}{\kappa(s)}\mathbf{\beta}(s)-\dfrac{1}{\kappa(s)}\left(\tan{\int{\tau(s)\mathrm{d}s}}\right)\mathbf{\gamma}(s).</script><h2 id="平面曲线"><a href="#平面曲线" class="headerlink" title="平面曲线"></a>平面曲线</h2><hr>
-<h1 id="曲面的第一基本形式"><a href="#曲面的第一基本形式" class="headerlink" title="曲面的第一基本形式"></a>曲面的第一基本形式</h1><h2 id="正则参数曲面"><a href="#正则参数曲面" class="headerlink" title="正则参数曲面"></a>正则参数曲面</h2><p>如果$\mathbf{r}_u(u_0,v_0),\mathbf{r}_v(u_0,v_0)$是线性无关的，即$\left.\mathbf{r}_u\times\mathbf{r}_v\right|_(u_0,v_0)\not ={\mathbf{0}}$，则称曲面$S$在点$p_0$是<strong>正则的</strong>.<br>我们还规定，向量$\mathbf{r}_u\times\mathbf{r}_v$所指的一侧为曲面的正侧.<br><strong>定义 1.1</strong> 正则曲面</p>
+<h1 id="曲面的第一基本形式"><a href="#曲面的第一基本形式" class="headerlink" title="曲面的第一基本形式"></a>曲面的第一基本形式</h1><h2 id="正则参数曲面"><a href="#正则参数曲面" class="headerlink" title="正则参数曲面"></a>正则参数曲面</h2><p>如果 $\mathbf {r}_u (u_0,v_0),\mathbf {r}_v (u_0,v_0)$ 是线性无关的，即 $\left.\mathbf {r}_u\times\mathbf {r}_v\right|_(u_0,v_0)\not ={\mathbf {0}}$，则称曲面 $S$ 在点 $p_0$ 是<strong>正则的</strong>.<br>我们还规定，向量 $\mathbf {r}_u\times\mathbf {r}_v$ 所指的一侧为曲面的正侧.<br><strong>定义 1.1</strong> 正则曲面</p>
 <ul>
 <li>圆柱面<script type="math/tex; mode=display">
 \mathbf{r}=\mathbf{r}(u,v)=(a\cos u,a\sin u ,bv),</script></li>
 <li>球面<script type="math/tex; mode=display">
 \mathbf{r}=\mathbf{r}(\theta,\varphi)=(a\cos \varphi\cos\theta,a\cos\varphi\sin\theta,a\sin\varphi),</script></li>
 <li>旋转面<script type="math/tex; mode=display">
-\mathbf{r}=\mathbf{r}(u,v)=(f(v)\cos u,f(v) \sin u,g(v)),</script>按照习惯，我们把旋转面上的$u-$曲线称为<strong>纬线</strong>（平行圆），把$v-$曲线称为<strong>经线</strong>.<br>$$</li>
-<li>直纹面<script type="math/tex; mode=display">
-\mathbf{r}=\mathbf{r}(u,v)=\mathbf{a}(u)+v\mathbf{l}(v)</script>曲线$\mathbf{r}=\mathbf{a}(u)$称为直纹面的<strong>准线</strong>，而$v-$曲线（直线）称为直纹面的<strong>直母线</strong><ul>
-<li>如果方向向量$\mathbf{l}(u)$有固定的指向，即所有的直母线互相平行，此时$\mathbf{l}(u)$满足条件<script type="math/tex; mode=display">
+\mathbf{r}=\mathbf{r}(u,v)=(f(v)\cos u,f(v) \sin u,g(v)),</script>按照习惯，我们把旋转面上的 $u-$ 曲线称为<strong>纬线</strong>（平行圆），把 $v-$ 曲线称为<strong>经线</strong>.<br>$$</li>
+<li> 直纹面<script type="math/tex; mode=display">
+\mathbf{r}=\mathbf{r}(u,v)=\mathbf{a}(u)+v\mathbf{l}(v)</script>曲线 $\mathbf {r}=\mathbf {a}(u)$ 称为直纹面的<strong>准线</strong>，而 $v-$ 曲线（直线）称为直纹面的<strong>直母线</strong><ul>
+<li>如果方向向量 $\mathbf {l}(u)$ 有固定的指向，即所有的直母线互相平行，此时 $\mathbf {l}(u)$ 满足条件<script type="math/tex; mode=display">
 \mathbf{l}(u)\times\mathbf{l}'(s)=\mathbf{0}</script>则对应的直纹面称为<strong>柱面</strong>.</li>
-<li>当所有的直母线都通过一个定点，即存在连续可微函数$\lambda(u)$，使得<script type="math/tex; mode=display">
+<li> 当所有的直母线都通过一个定点，即存在连续可微函数 $\lambda (u)$，使得<script type="math/tex; mode=display">
 \mathbf{a}(u)+\lambda(u)\mathbf{l}(u)=\mathbf{r}_0(\text{常向量}),</script>则对应的直纹面称为<strong>锥面</strong>.</li>
 </ul>
 </li>
 </ul>
-<h2 id="切平面和法线"><a href="#切平面和法线" class="headerlink" title="切平面和法线"></a>切平面和法线</h2><p><strong>定义 2.1</strong> 曲面$S$上经过点$p$的任意一条连续可微曲线在改点的切向称为曲面$S$在点$p$的<strong>切向量</strong>.<br>在空间$E^3$中经过点$p$、由切向量$\mathbf{r}_u,\mathbf{r}_v$张成的二维平面称为曲面$S$在点$p$的<strong>切平面</strong>，它的参数方程是</p>
+<h2 id="切平面和法线"><a href="#切平面和法线" class="headerlink" title="切平面和法线"></a>切平面和法线</h2><p><strong>定义 2.1</strong> 曲面 $S$ 上经过点 $p$ 的任意一条连续可微曲线在改点的切向称为曲面 $S$ 在点 $p$ 的<strong>切向量</strong>.<br>在空间 $E^3$ 中经过点 $p$、由切向量 $\mathbf {r}_u,\mathbf {r}_v$ 张成的二维平面称为曲面 $S$ 在点 $p$ 的<strong>切平面</strong>，它的参数方程是</p>
 <script type="math/tex; mode=display">
-\mathbf{X}(\lambda,\mu)=\mathbf{r}(u,v)+\lambda\mathbf{r}_r(u,v)+\mu\mathbf{r}_v(u,v),</script><p>其中$\lambda,\mu$是切平面上动点的参数.很明显，该切平面的法向量是</p>
+\mathbf{X}(\lambda,\mu)=\mathbf{r}(u,v)+\lambda\mathbf{r}_r(u,v)+\mu\mathbf{r}_v(u,v),</script><p>其中 $\lambda,\mu$ 是切平面上动点的参数。很明显，该切平面的法向量是</p>
 <script type="math/tex; mode=display">
-\mathbf{n}(u,v)=\dfrac{\mathbf{r}_u(u,v)\times\mathbf{r}_v(u,v)}{\left|\mathbf{r}_u(u,v)\times\mathbf{r}_v(u,v)\right|}</script><p>在空间$E^3$中经过点$p$、以法向量$\mathbf{n}(u,v)$为方向向量的直线称为曲面$S$在点$p$的<strong>法线</strong>，它的参数是</p>
+\mathbf{n}(u,v)=\dfrac{\mathbf{r}_u(u,v)\times\mathbf{r}_v(u,v)}{\left|\mathbf{r}_u(u,v)\times\mathbf{r}_v(u,v)\right|}</script><p>在空间 $E^3$ 中经过点 $p$、以法向量 $\mathbf {n}(u,v)$ 为方向向量的直线称为曲面 $S$ 在点 $p$ 的<strong>法线</strong>，它的参数是</p>
 <script type="math/tex; mode=display">
-\mathbf{X}(t)=\mathbf{r}(u,v)+t\mathbf{n}(u,v),</script><p>$t$是法线上动点的参数.</p>
+\mathbf{X}(t)=\mathbf{r}(u,v)+t\mathbf{n}(u,v),</script><p>$t$ 是法线上动点的参数.</p>
 <h2 id="第一基本形式"><a href="#第一基本形式" class="headerlink" title="第一基本形式"></a>第一基本形式</h2><p>命</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 &E(u,v)=\mathbf{r}_u(u,v)\cdot\mathbf{r}_u(u,v)\\
 &F(u,v)=\mathbf{r}_u(u,v)\cdot\mathbf{r}_v(u,v)=\mathbf{r}_v(u,v)\cdot\mathbf{r}_u(u,v)\\
 &G(u,v)=\mathbf{r}_v(u,v)\cdot\mathbf{r}_v(u,v)
-\end{aligned}</script><p>它们就是基底$\{\mathbf{r}_u(u,v),\mathbf{r}_v(u,v)\}$的度量系数，称为曲面$S$的<strong>第一类基本量</strong>，通常把它们写成一个对称矩阵的形式</p>
+\end{aligned}</script><p>它们就是基底 $\{\mathbf {r}_u (u,v),\mathbf {r}_v (u,v)\}$ 的度量系数，称为曲面 $S$ 的<strong>第一类基本量</strong>，通常把它们写成一个对称矩阵的形式</p>
 <script type="math/tex; mode=display">
 \left(
 \begin{matrix}
@@ -397,14 +427,14 @@ z=\dfrac{\kappa_0\tau_0}{6}s^3+o(s^3).
     \mathrm{d}u\\
     \mathrm{d}v
 \end{matrix}\right)
-\end{aligned}</script><p>则二次微分式$\mathrm{I}$与正则参数曲面$S$的参数的选取是无关的，称其为曲面$S$的<strong>第一基本形式</strong>.<br><strong>定理 3.1</strong> 在正则参数曲面$S:\ \mathbf{r}=\mathbf{r}(u,v)$上参数曲线网是正交曲线网的充分必要条件是$F(u,v)\equiv0$.</p>
+\end{aligned}</script><p>则二次微分式 $\mathrm {I}$ 与正则参数曲面 $S$ 的参数的选取是无关的，称其为曲面 $S$ 的<strong>第一基本形式</strong>.<br><strong>定理 3.1</strong> 在正则参数曲面 $S:\ \mathbf {r}=\mathbf {r}(u,v)$ 上参数曲线网是正交曲线网的充分必要条件是 $F (u,v)\equiv0$.</p>
 <ul>
-<li><p>曲面上的弧长<br>假定正则参数曲面$S:\ \mathbf{r}=\mathbf{r}(u,v)$上的一条连续可微曲线的方程是</p>
+<li><p>曲面上的弧长<br>假定正则参数曲面 $S:\ \mathbf {r}=\mathbf {r}(u,v)$ 上的一条连续可微曲线的方程是</p>
 <script type="math/tex; mode=display">
   u=u(t),\qquad v=v(t),\qquad a\let\le b,</script><p>得到弧长为</p>
 <script type="math/tex; mode=display">
   L=\int_a^b{\sqrt{E\dot{u}^2\left(t\right)+2F\dot{u}\left(t\right)\dot{v}\left(t\right)+G\dot{v}^2\left(t\right)}}</script></li>
-<li><p>曲面上的面积<br>称$\mathrm{d}\sigma$为曲面$S$的<strong>面积元素</strong>，那么曲面$S$的面积是</p>
+<li><p>曲面上的面积<br>称 $\mathrm {d}\sigma$ 为曲面 $S$ 的<strong>面积元素</strong>，那么曲面 $S$ 的面积是</p>
 <script type="math/tex; mode=display">
   A=\int{\int_D{\mathrm{d}\sigma}}=\int{\int_D{\sqrt{EG-F^2}\mathrm{d}u\mathrm{d}v}}.</script></li>
 </ul>
@@ -413,7 +443,7 @@ z=\dfrac{\kappa_0\tau_0}{6}s^3+o(s^3).
 \begin{array}{crl}
 \mathbf{e}_1=\dfrac{\mathbf{r}_u}{\sqrt{E}}\\
 \mathbf{e}_2=\dfrac{1}{\sqrt{EG-F^2}}\left(-\dfrac{F}{\sqrt{E}}\mathbf{r}_u+\sqrt{E}\mathbf{r}_v\right)
-\end{array}</script><h2 id="保长对应和保角对应"><a href="#保长对应和保角对应" class="headerlink" title="保长对应和保角对应"></a>保长对应和保角对应</h2><p><strong>定理 5.2</strong> 假定正则参数曲面$S_1$和$S_2$的第一基本形式分别是$\mathrm{I}_1$和$\mathrm{I}_2$，则$\sigma\ :\ S_1\to S_2$保长对应的充分必要条件是</p>
+\end{array}</script><h2 id="保长对应和保角对应"><a href="#保长对应和保角对应" class="headerlink" title="保长对应和保角对应"></a>保长对应和保角对应</h2><p><strong>定理 5.2</strong> 假定正则参数曲面 $S_1$ 和 $S_2$ 的第一基本形式分别是 $\mathrm {I}_1$ 和 $\mathrm {I}_2$，则 $\sigma\ :\ S_1\to S_2$ 保长对应的充分必要条件是</p>
 <script type="math/tex; mode=display">
 \sigma^{*}\mathrm{I}_2=\mathrm{I}_1</script><p>换言之，下面的公式成立：</p>
 <script type="math/tex; mode=display">
@@ -431,20 +461,20 @@ J=\left(
 \begin{matrix}
     \dfrac{\partial u_2}{\partial u_1}&\dfrac{\partial v_2}{\partial u_1}\\
     \dfrac{\partial u_2}{\partial v_1}&\dfrac{\partial v_2}{\partial v_1}
-\end{matrix}\right)</script><p><strong>定理 5.3</strong> 假定正则参数曲面$S_1$和$S_2$的第一基本形式分别是$\mathrm{I}_1$和$\mathrm{I}_2$，则$\sigma\ :\ S_1\to S_2$保长对应的充分必要条件是</p>
+\end{matrix}\right)</script><p><strong>定理 5.3</strong> 假定正则参数曲面 $S_1$ 和 $S_2$ 的第一基本形式分别是 $\mathrm {I}_1$ 和 $\mathrm {I}_2$，则 $\sigma\ :\ S_1\to S_2$ 保长对应的充分必要条件是</p>
 <script type="math/tex; mode=display">
-E_1(u,v)=E_2(u,v)\qquad F_1(u,v)=F_2(u,v)\qquad G_1(u,v)=G_2(u,v)</script><p><strong>定理 5.4</strong> 假定正则参数曲面$S_1$和$S_2$的第一基本形式分别是$\mathrm{I}_1$和$\mathrm{I}_2$，则$\sigma\ :\ S_1\to S_2$保角对应的充分必要条件是，在曲面$S_1$存在正的连续函数$\lambda$，使得</p>
+E_1(u,v)=E_2(u,v)\qquad F_1(u,v)=F_2(u,v)\qquad G_1(u,v)=G_2(u,v)</script><p><strong>定理 5.4</strong> 假定正则参数曲面 $S_1$ 和 $S_2$ 的第一基本形式分别是 $\mathrm {I}_1$ 和 $\mathrm {I}_2$，则 $\sigma\ :\ S_1\to S_2$ 保角对应的充分必要条件是，在曲面 $S_1$ 存在正的连续函数 $\lambda$，使得</p>
 <script type="math/tex; mode=display">
-\sigma^*\mathrm{I}_2=\lambda^2\mathrm{I}_1</script><p><strong>定理 5.5</strong> 任意一个正则参数曲面$S$的每一点$p$，都有一个领域$U$可以和平面上的一个开区域建立保角对应.换言之，任意两个正则参数曲面在局部上都可以建立保角对应.</p>
-<h2 id="可展曲面"><a href="#可展曲面" class="headerlink" title="可展曲面"></a>可展曲面</h2><p><strong>定义 6.1</strong> 设$S$是直纹面. 如果曲面$S$的切平面沿每一条直母线是不变的，则称该直纹面是<strong>可展曲面</strong>.<br><strong>定理 6.1</strong> 设直纹面$S$的参数方程是$\mathbf{r}=\mathbf{a}(u)+v\mathbf{l}(u)$，则$S$是可展曲面的充分必要条件是，向量函数$\mathbf{a}(u),\mathbf{l}(u)$满足方程</p>
+\sigma^*\mathrm{I}_2=\lambda^2\mathrm{I}_1</script><p><strong>定理 5.5</strong> 任意一个正则参数曲面 $S$ 的每一点 $p$，都有一个领域 $U$ 可以和平面上的一个开区域建立保角对应。换言之，任意两个正则参数曲面在局部上都可以建立保角对应.</p>
+<h2 id="可展曲面"><a href="#可展曲面" class="headerlink" title="可展曲面"></a>可展曲面</h2><p><strong>定义 6.1</strong> 设 $S$ 是直纹面。如果曲面 $S$ 的切平面沿每一条直母线是不变的，则称该直纹面是<strong>可展曲面</strong>.<br><strong>定理 6.1</strong> 设直纹面 $S$ 的参数方程是 $\mathbf {r}=\mathbf {a}(u)+v\mathbf {l}(u)$，则 $S$ 是可展曲面的充分必要条件是，向量函数 $\mathbf {a}(u),\mathbf {l}(u)$ 满足方程</p>
 <script type="math/tex; mode=display">
-(\mathbf{a}'(u),\mathbf{l}(u),\mathbf{l}'(u))=0</script><p><strong>定理 6.2</strong> 可展曲面在局部上是柱面、锥面和一条空间曲线的切线面，或者是用这三种曲面以充分连续可微的方式沿直母线拼接的结果.<br><strong>定理 6.3</strong> 可展曲面在局部上可以和平面建立保长对应.<br><strong>定义 6.2</strong> 设$\left\{S_\alpha\right\}$是依赖参数$\alpha$的一族正则曲面.如果有一个正则曲面$S$，使得$S$上的每一点必定是曲面族$\left\{S_\alpha\right\}$中的某个曲面$S_\alpha$上的一点，并且曲面$S$和$S_\alpha$在该点有相同的切平面；反过来，曲面族$\left\{S_\alpha\right\}$中的每一个成员必定与曲面$S$在某一点有相同的切平面，则称为曲面$S$是单参数曲面族$\left\{S_\alpha\right\}$的<strong>包络</strong>.</p>
+(\mathbf{a}'(u),\mathbf{l}(u),\mathbf{l}'(u))=0</script><p><strong>定理 6.2</strong> 可展曲面在局部上是柱面、锥面和一条空间曲线的切线面，或者是用这三种曲面以充分连续可微的方式沿直母线拼接的结果.<br><strong>定理 6.3</strong> 可展曲面在局部上可以和平面建立保长对应.<br><strong>定义 6.2</strong> 设 $\left\{S_\alpha\right\}$ 是依赖参数 $\alpha$ 的一族正则曲面。如果有一个正则曲面 $S$，使得 $S$ 上的每一点必定是曲面族 $\left\{S_\alpha\right\}$ 中的某个曲面 $S_\alpha$ 上的一点，并且曲面 $S$ 和 $S_\alpha$ 在该点有相同的切平面；反过来，曲面族 $\left\{S_\alpha\right\}$ 中的每一个成员必定与曲面 $S$ 在某一点有相同的切平面，则称为曲面 $S$ 是单参数曲面族 $\left\{S_\alpha\right\}$ 的<strong>包络</strong>.</p>
 <ul>
 <li>求解包络面<script type="math/tex; mode=display">
 \begin{cases}
   F(x,y,z,\alpha)&=0\\
   F(x,y,z,\alpha)_\alpha&=0
-\end{cases}</script>消去$\alpha$可得判别曲面$\Phi(x,y,z)=0$.</li>
+\end{cases}</script>消去 $\alpha$ 可得判别曲面 $\Phi (x,y,z)=0$.</li>
 </ul>
 <hr>
 <h1 id="曲面的第二基本形式"><a href="#曲面的第二基本形式" class="headerlink" title="曲面的第二基本形式"></a>曲面的第二基本形式</h1><h2 id="第二基本形式"><a href="#第二基本形式" class="headerlink" title="第二基本形式"></a>第二基本形式</h2><p>二次微分式</p>
@@ -456,9 +486,9 @@ E_1(u,v)=E_2(u,v)\qquad F_1(u,v)=F_2(u,v)\qquad G_1(u,v)=G_2(u,v)</script><p><st
   M=\mathbf{r}_{uv}\cdot\mathbf{n}=-\mathbf{r}_u\cdot\mathbf{n}_v=-\mathbf{r}_v\cdot\mathbf{n}_u\\
   N=\mathbf{r}_{vv}\cdot\mathbf{n}=-\mathbf{r}_v\cdot\mathbf{n}_v
 \end{cases}</script><p><strong>定理 1.1</strong> 一块正则曲面是平面的一部分，当且仅当它的第二基本形式恒等于零.<br><strong>定理 1.2</strong> 一块正则曲面是球面的一部分，当且仅当在曲面上的每一点，它的第二基本形式是第一基本形式的非零倍数.</p>
-<h2 id="法曲率"><a href="#法曲率" class="headerlink" title="法曲率"></a>法曲率</h2><p><strong>定义 2.1</strong> 设正则参数曲面$S$的参数方程是$\mathbf{r}=\mathbf{r}(u,v)$，$\mathrm{I}$和$\mathrm{II}$分别是它的第一基本形式和第二基本形式，则</p>
+<h2 id="法曲率"><a href="#法曲率" class="headerlink" title="法曲率"></a>法曲率</h2><p><strong>定义 2.1</strong> 设正则参数曲面 $S$ 的参数方程是 $\mathbf {r}=\mathbf {r}(u,v)$，$\mathrm {I}$ 和 $\mathrm {II}$ 分别是它的第一基本形式和第二基本形式，则</p>
 <script type="math/tex; mode=display">
-\kappa_n=\dfrac{\mathrm{II}}{\mathrm{I}}=\dfrac{L(\mathrm{d}u)^2+2M\mathrm{d}u\mathrm{d}v+N(\mathrm{d}v)^2}{E(\mathrm{d}u)^2+2F\mathrm{d}u\mathrm{d}v+G(\mathrm{d}v)^2}</script><p>称为曲面$S$在点$(u,v)$处沿切方向$(\mathrm{d}u,\mathrm{d}v)$的<strong>法曲率</strong>.<br><strong>定理 2.1</strong> 曲面$S$在点$(u,v)$处沿切方向$(\mathrm{d}u,\mathrm{d}v)$的法曲率$\kappa_n$，等于以曲面$S$在该点处由切方向$(\mathrm{d}u,\mathrm{d}v)$确定的法截线作为相应的有向法截面上的平面曲线的相对曲率$\kappa_r$.<br><strong>定理 2.2</strong> 正则参数曲面在任意一个固定的点，其法曲率必定在哪个彼此正交的切方向上分别取最大值的最小值.</p>
+\kappa_n=\dfrac{\mathrm{II}}{\mathrm{I}}=\dfrac{L(\mathrm{d}u)^2+2M\mathrm{d}u\mathrm{d}v+N(\mathrm{d}v)^2}{E(\mathrm{d}u)^2+2F\mathrm{d}u\mathrm{d}v+G(\mathrm{d}v)^2}</script><p>称为曲面 $S$ 在点 $(u,v)$ 处沿切方向 $(\mathrm {d} u,\mathrm {d} v)$ 的<strong>法曲率</strong>.<br><strong>定理 2.1</strong> 曲面 $S$ 在点 $(u,v)$ 处沿切方向 $(\mathrm {d} u,\mathrm {d} v)$ 的法曲率 $\kappa_n$，等于以曲面 $S$ 在该点处由切方向 $(\mathrm {d} u,\mathrm {d} v)$ 确定的法截线作为相应的有向法截面上的平面曲线的相对曲率 $\kappa_r$.<br><strong>定理 2.2</strong> 正则参数曲面在任意一个固定的点，其法曲率必定在哪个彼此正交的切方向上分别取最大值的最小值.</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 \kappa_n(\theta)=&\dfrac{1}{2}\left(\dfrac{L}{E}+\dfrac{N}{G}\right)+A(\cos{2\theta}\cos{2\theta_0}+\sin{2\theta\sin{2\theta_0}})\\
@@ -469,72 +499,72 @@ E_1(u,v)=E_2(u,v)\qquad F_1(u,v)=F_2(u,v)\qquad G_1(u,v)=G_2(u,v)</script><p><st
 \end{cases},&A\not ={0}\\
 \dfrac{1}{2}\left(\dfrac{L}{E}+\dfrac{N}{G}\right)，&A=0
 \end{cases}
-\end{aligned}</script><p>其中，$A=\sqrt{\left[\dfrac{1}{2}\left(\dfrac{L}{E}-\dfrac{N}{G}\right)\right]^2+\left(\dfrac{M}{\sqrt{EG}}\right)^2}\\\cos{2\theta_0}=\dfrac{1}{2A}\left(\dfrac{L}{E}-\dfrac{N}{G}\right),\qquad\sin{2\theta_0}=\dfrac{M}{A\sqrt{EG}}$<br><strong>定义 2.2</strong> 正则参数曲面在任意一个固定点，其法曲率取最大值和最小值的方向称为曲面在该点的<strong>主方向</strong>，相应的法曲率称为曲面在该点的<strong>主曲率</strong>.<br>用主曲率$\kappa_1,\kappa_2$表示上式得</p>
+\end{aligned}</script><p>其中，$A=\sqrt {\left [\dfrac {1}{2}\left (\dfrac {L}{E}-\dfrac {N}{G}\right)\right]^2+\left (\dfrac {M}{\sqrt {EG}}\right)^2}\\\cos {2\theta_0}=\dfrac {1}{2A}\left (\dfrac {L}{E}-\dfrac {N}{G}\right),\qquad\sin {2\theta_0}=\dfrac {M}{A\sqrt {EG}}$<br><strong>定义 2.2</strong> 正则参数曲面在任意一个固定点，其法曲率取最大值和最小值的方向称为曲面在该点的<strong>主方向</strong>，相应的法曲率称为曲面在该点的<strong>主曲率</strong>.<br>用主曲率 $\kappa_1,\kappa_2$ 表示上式得</p>
 <script type="math/tex; mode=display">
-\kappa_n(\theta)=\kappa_1\cos^2{(\theta-\theta_0)}+\kappa_2\sin^2{(\theta-\theta_0)}</script><p>称为关于法曲率的<strong>Euler公式</strong>.<br><strong>定义 2.3</strong> 在曲面$S$上的一点，其法曲率为零的切方向称为曲面$S$在该点的<strong>渐进方向</strong>. 如果曲面$S$上的一条曲线在每一点的切方向都是曲面在该点的渐进方向，则称该点是曲面$S$上的<strong>渐进曲线</strong>.<br><strong>定理 2.3</strong> 曲面上的参数曲线网是渐进曲线网的充分必要条件是$L=N=0$.<br><strong>定理 2.4</strong> 曲面上的一条曲线是渐进曲线，当且仅当或者它是一条直线，或者它的密切平面恰好是曲面的切平面.</p>
-<h2 id="Weingarten-映射和主曲率"><a href="#Weingarten-映射和主曲率" class="headerlink" title="Weingarten 映射和主曲率"></a>Weingarten 映射和主曲率</h2><p>设$\mathbf{r}=\mathbf{r}(u,v)$是一块正则参数曲面，它在每一点处有一个确定的的单位法向量$\mathbf{n}(u,v)$. 将$\mathbf{n}(u,v)$在空间$E^3$中平行移动到坐标原点$O$，那么它的终点便落在$E^3$中的单位球面$\Sigma$上，于是得到从$S$到$\Sigma$的一个可微映射$g:\ S\to\Sigma$，使得</p>
+\kappa_n(\theta)=\kappa_1\cos^2{(\theta-\theta_0)}+\kappa_2\sin^2{(\theta-\theta_0)}</script><p>称为关于法曲率的 <strong>Euler 公式</strong>.<br><strong>定义 2.3</strong> 在曲面 $S$ 上的一点，其法曲率为零的切方向称为曲面 $S$ 在该点的<strong>渐进方向</strong>. 如果曲面 $S$ 上的一条曲线在每一点的切方向都是曲面在该点的渐进方向，则称该点是曲面 $S$ 上的<strong>渐进曲线</strong>.<br><strong>定理 2.3</strong> 曲面上的参数曲线网是渐进曲线网的充分必要条件是 $L=N=0$.<br><strong>定理 2.4</strong> 曲面上的一条曲线是渐进曲线，当且仅当或者它是一条直线，或者它的密切平面恰好是曲面的切平面.</p>
+<h2 id="Weingarten-映射和主曲率"><a href="#Weingarten-映射和主曲率" class="headerlink" title="Weingarten 映射和主曲率"></a>Weingarten 映射和主曲率</h2><p>设 $\mathbf {r}=\mathbf {r}(u,v)$ 是一块正则参数曲面，它在每一点处有一个确定的的单位法向量 $\mathbf {n}(u,v)$. 将 $\mathbf {n}(u,v)$ 在空间 $E^3$ 中平行移动到坐标原点 $O$，那么它的终点便落在 $E^3$ 中的单位球面 $\Sigma$ 上，于是得到从 $S$ 到 $\Sigma$ 的一个可微映射 $g:\ S\to\Sigma$，使得</p>
 <script type="math/tex; mode=display">
-g(\mathbf{r}(u,v))=\mathbf{n}(u,v).</script><p>这个映射称为<strong>Gauss 映射</strong>.</p>
-<p>Gauss 映射$g$把曲面$S$映射到单位球面$\Sigma$，因此，它诱导的切映射$g_*$把$S$在点$p$的切空间$T_pS$线性的映到切空间$T_{g(p)}\Sigma$.<br>即</p>
+g(\mathbf{r}(u,v))=\mathbf{n}(u,v).</script><p>这个映射称为 <strong>Gauss 映射</strong>.</p>
+<p>Gauss 映射 $g$ 把曲面 $S$ 映射到单位球面 $\Sigma$，因此，它诱导的切映射 $g_*$ 把 $S$ 在点 $p$ 的切空间 $T_pS$ 线性的映到切空间 $T_{g (p)}\Sigma$.<br>即</p>
 <script type="math/tex; mode=display">
-g_*(\mathbf{r}_u)=\mathbf{n}_u,\qquad g_*(\mathbf{r}_v)=\mathbf{n}_v</script><p>由于$\mathbf{n}$是球面$\Sigma$的向径,因此它本身也是球面$\Sigma$的法向量，这就是说曲面$S$在点$p$的切平面和球面$\Sigma$在点$g(p)$的切平面是彼此平行的，特别是切空间$T_pS$和切空间$T_{g(p)}\Sigma$可以自然地等同起来，于是球面$\Sigma$的切向量$\mathbf{n}_u,\mathbf{u}_v$。可以看作曲面$S$的切向量.<br>这样，切映射$g_*$成为从切空间$T_pS$到它自身的线性映射，命</p>
+g_*(\mathbf{r}_u)=\mathbf{n}_u,\qquad g_*(\mathbf{r}_v)=\mathbf{n}_v</script><p>由于 $\mathbf {n}$ 是球面 $\Sigma$ 的向径，因此它本身也是球面 $\Sigma$ 的法向量，这就是说曲面 $S$ 在点 $p$ 的切平面和球面 $\Sigma$ 在点 $g (p)$ 的切平面是彼此平行的，特别是切空间 $T_pS$ 和切空间 $T_{g (p)}\Sigma$ 可以自然地等同起来，于是球面 $\Sigma$ 的切向量 $\mathbf {n}_u,\mathbf {u}_v$。可以看作曲面 $S$ 的切向量.<br>这样，切映射 $g_*$ 成为从切空间 $T_pS$ 到它自身的线性映射，命</p>
 <script type="math/tex; mode=display">
-W=-g_*:\ T_pS\to T_pS</script><p>称$W$为曲面$S$在点$p$的<strong>Weingarten映射</strong>.</p>
-<p><strong>定理 3.1</strong> 曲面$S$的第二基本形式$\mathrm{II}$可以用Weingarten映射表示成</p>
+W=-g_*:\ T_pS\to T_pS</script><p>称 $W$ 为曲面 $S$ 在点 $p$ 的 <strong>Weingarten 映射</strong>.</p>
+<p><strong>定理 3.1</strong> 曲面 $S$ 的第二基本形式 $\mathrm {II}$ 可以用 Weingarten 映射表示成</p>
 <script type="math/tex; mode=display">
-\mathrm{II}=W(\mathrm{d}\mathbf{r})\cdot\mathrm{d}\mathbf{r}</script><p><strong>定理 3.2</strong> Weingarten映射$W$是从切空间$T_pS$到它自身的共轭映射，即对于曲面$S$在点$(u,v)$的任意两个切方向$\mathrm{d}\mathbf{r}$和$\delta\mathbf{r}$，下面的公式</p>
+\mathrm{II}=W(\mathrm{d}\mathbf{r})\cdot\mathrm{d}\mathbf{r}</script><p><strong>定理 3.2</strong> Weingarten 映射 $W$ 是从切空间 $T_pS$ 到它自身的共轭映射，即对于曲面 $S$ 在点 $(u,v)$ 的任意两个切方向 $\mathrm {d}\mathbf {r}$ 和 $\delta\mathbf {r}$，下面的公式</p>
 <script type="math/tex; mode=display">
-W(\mathrm{d}\mathbf{r})\cdot\delta\mathbf{r}=\mathrm{d}\mathbf{r}\cdot W(\delta\mathbf{r})</script><p>成立.<br><strong>定理 3.3</strong> 正则参数曲面在每一点的Weingarten映射的两个特征值恰好是该曲面在这一点的主曲率，对应的特征方向是曲面的主方向.<br><strong>定理 3.4（Euler公式）</strong> 设$\mathbf{e}_1,\ \mathbf{e}_2$是曲面$S$在点$p$处的两个彼此正交的主方向单位向量，对应的主曲率是$\kappa_1\ \kappa_2$，则曲面$S$在点$p$处沿任意一个切向量$\mathbf{e}=\cos{\theta}\mathbf{e}_1+\sin{\theta}\mathbf{e}_2$的法曲率是</p>
+W(\mathrm{d}\mathbf{r})\cdot\delta\mathbf{r}=\mathrm{d}\mathbf{r}\cdot W(\delta\mathbf{r})</script><p>成立.<br><strong>定理 3.3</strong> 正则参数曲面在每一点的 Weingarten 映射的两个特征值恰好是该曲面在这一点的主曲率，对应的特征方向是曲面的主方向.<br><strong>定理 3.4（Euler 公式）</strong> 设 $\mathbf {e}_1,\ \mathbf {e}_2$ 是曲面 $S$ 在点 $p$ 处的两个彼此正交的主方向单位向量，对应的主曲率是 $\kappa_1\ \kappa_2$，则曲面 $S$ 在点 $p$ 处沿任意一个切向量 $\mathbf {e}=\cos {\theta}\mathbf {e}_1+\sin {\theta}\mathbf {e}_2$ 的法曲率是</p>
 <script type="math/tex; mode=display">
-\kappa_n(\theta)=\kappa_1\cos^2{\theta}+\kappa_2\sin^2{\theta}.</script><p>当$\kappa_1=\kappa_2$时，对任意的切方向$\theta$都有$\kappa_n(\theta)=\kappa_1=\kappa_2$，这正是主方向不确定的情形. 我们把这样的点称为曲面的<strong>脐点</strong>，在该点有</p>
+\kappa_n(\theta)=\kappa_1\cos^2{\theta}+\kappa_2\sin^2{\theta}.</script><p>当 $\kappa_1=\kappa_2$ 时，对任意的切方向 $\theta$ 都有 $\kappa_n (\theta)=\kappa_1=\kappa_2$，这正是主方向不确定的情形。我们把这样的点称为曲面的<strong>脐点</strong>，在该点有</p>
 <script type="math/tex; mode=display">
 \dfrac{L}{E}=\dfrac{M}{F}=\dfrac{N}{G}.</script><p>如果这个比是零，则称该脐点是<strong>平点</strong>；如果这个比不是零，则称该脐点是<strong>圆点</strong>.</p>
-<p><strong>定义 3.1</strong> 设$C$是正则曲面$S$上的一条曲线. 如果曲线$C$在每一点的切向量都是曲面$S$在该点的主方向，则称曲线$C$是曲面$S$上的一条<strong>曲率线</strong>.<br><strong>定理 3.5（Rodriques定理）</strong> 曲面$S:\ \mathbf{r}=\mathbf{r}(u,v)$上的一条曲线$C:\ u=u(t),v=v(t)$是曲率线的充分必要条件是，曲面$S$沿曲线$C$的法向量场$\mathbf{n}(u(t),v(t))$沿曲线$C$的导数与曲线$C$相切，即</p>
+<p><strong>定义 3.1</strong> 设 $C$ 是正则曲面 $S$ 上的一条曲线。如果曲线 $C$ 在每一点的切向量都是曲面 $S$ 在该点的主方向，则称曲线 $C$ 是曲面 $S$ 上的一条<strong>曲率线</strong>.<br><strong>定理 3.5（Rodriques 定理）</strong> 曲面 $S:\ \mathbf {r}=\mathbf {r}(u,v)$ 上的一条曲线 $C:\ u=u (t),v=v (t)$ 是曲率线的充分必要条件是，曲面 $S$ 沿曲线 $C$ 的法向量场 $\mathbf {n}(u (t),v (t))$ 沿曲线 $C$ 的导数与曲线 $C$ 相切，即</p>
 <script type="math/tex; mode=display">
-\dfrac{\mathrm{d}\mathbf{n}(u(t),v(t))}{\mathrm{d}t}\parallel\dfrac{\mathrm{d}\mathbf{r}(u(t),v(t))}{\mathrm{d}t}</script><p><strong>定理 3.6</strong> 曲面$S$上的曲线$C$是曲率线的充分必要条件是，曲面$S$沿曲线$C$的法线构成一个可展曲面.</p>
-<h2 id="主方向和主曲率的计算"><a href="#主方向和主曲率的计算" class="headerlink" title="主方向和主曲率的计算"></a>主方向和主曲率的计算</h2><p>设曲面$S$的方程是$\mathbf{r}=\mathbf{r}(u,v)$. 假定$\delta\mathbf{r}=\mathbf{r}_u\delta u+\mathbf{r}_v\delta v$是曲面在点$(u,v)$的一个主方向，即$(\delta u,\delta v)\not ={\mathbf{0}}$，并且有实数$\lambda$使得</p>
+\dfrac{\mathrm{d}\mathbf{n}(u(t),v(t))}{\mathrm{d}t}\parallel\dfrac{\mathrm{d}\mathbf{r}(u(t),v(t))}{\mathrm{d}t}</script><p><strong>定理 3.6</strong> 曲面 $S$ 上的曲线 $C$ 是曲率线的充分必要条件是，曲面 $S$ 沿曲线 $C$ 的法线构成一个可展曲面.</p>
+<h2 id="主方向和主曲率的计算"><a href="#主方向和主曲率的计算" class="headerlink" title="主方向和主曲率的计算"></a>主方向和主曲率的计算</h2><p>设曲面 $S$ 的方程是 $\mathbf {r}=\mathbf {r}(u,v)$. 假定 $\delta\mathbf {r}=\mathbf {r}_u\delta u+\mathbf {r}_v\delta v$ 是曲面在点 $(u,v)$ 的一个主方向，即 $(\delta u,\delta v)\not ={\mathbf {0}}$，并且有实数 $\lambda$ 使得</p>
 <script type="math/tex; mode=display">
 W(\delta\mathbf{r})=\lambda\delta\mathbf{r}</script><p>解得</p>
 <script type="math/tex; mode=display">
 \kappa_1+\kappa_2=2H=\dfrac{LG-2MF+NE}{EG-F^2}</script><script type="math/tex; mode=display">
-\kappa_1\kappa_2=K=\dfrac{LN-M^2}{EG-F^2}</script><p>我们把$H=\dfrac{1}{2}(\kappa_1+\kappa)$称为曲面的<strong>平均曲率</strong>，把$K=\kappa_1\kappa_2$称为曲面的<strong>Gauss曲率</strong>或<strong>总曲率</strong>.于是</p>
+\kappa_1\kappa_2=K=\dfrac{LN-M^2}{EG-F^2}</script><p>我们把 $H=\dfrac {1}{2}(\kappa_1+\kappa)$ 称为曲面的<strong>平均曲率</strong>，把 $K=\kappa_1\kappa_2$ 称为曲面的 <strong>Gauss 曲率</strong>或<strong>总曲率</strong>. 于是</p>
 <script type="math/tex; mode=display">
-\kappa_1=H+\sqrt{H^2-K},\qquad \kappa_2=H-\sqrt{H^2-K}</script><p><strong>定理 4.1</strong> 曲面的主曲率$\kappa_1,\kappa_2$是定义在曲面上的连续函数，并且在每一个非脐点的一个领域内，主曲率$\kappa_1,\kappa_2$是连续可微的函数.</p>
+\kappa_1=H+\sqrt{H^2-K},\qquad \kappa_2=H-\sqrt{H^2-K}</script><p><strong>定理 4.1</strong> 曲面的主曲率 $\kappa_1,\kappa_2$ 是定义在曲面上的连续函数，并且在每一个非脐点的一个领域内，主曲率 $\kappa_1,\kappa_2$ 是连续可微的函数.</p>
 <script type="math/tex; mode=display">
 \left|\begin{matrix}
   (\mathrm{d}v)^2&-\mathrm{d}u\mathrm{d}v&(\mathrm{d}u)^2\\
   E&F&G\\
   L&M&N
-\end{matrix}\right|=0</script><p>对于固定的点$(u,v)$，上式是求主方向$(\mathrm{d}u,\mathrm{d}v)$的方程，如果把$(u,v)$看作动点，则上式是曲面上的曲率线所满足的微分方程.<br><strong>定理 4.2</strong> 在曲面$S:\ \mathbf{r}=\mathbf{r}(u,v)$上的任意一个固定点$(u,v)$，参数曲线的方向是彼此正交的主方向当且仅当在该点有$F=M=0$.此时，$u-$曲线方向的主曲率是$\kappa_1=L/E$，$v-$曲线方向的主曲率是$\kappa_2=N/G$.<br><strong>定理 4.3</strong> 在曲面$S$上，参数曲线网是正交的曲率线网的充分必要条件是$F=M\equiv0$，并且此时曲面的两个基本形式分别是</p>
+\end{matrix}\right|=0</script><p>对于固定的点 $(u,v)$，上式是求主方向 $(\mathrm {d} u,\mathrm {d} v)$ 的方程，如果把 $(u,v)$ 看作动点，则上式是曲面上的曲率线所满足的微分方程.<br><strong>定理 4.2</strong> 在曲面 $S:\ \mathbf {r}=\mathbf {r}(u,v)$ 上的任意一个固定点 $(u,v)$，参数曲线的方向是彼此正交的主方向当且仅当在该点有 $F=M=0$. 此时，$u-$ 曲线方向的主曲率是 $\kappa_1=L/E$，$v-$ 曲线方向的主曲率是 $\kappa_2=N/G$.<br><strong>定理 4.3</strong> 在曲面 $S$ 上，参数曲线网是正交的曲率线网的充分必要条件是 $F=M\equiv0$，并且此时曲面的两个基本形式分别是</p>
 <script type="math/tex; mode=display">
 \mathrm{I}=E(\mathrm{d}u)^2+G(\mathrm{d}v)^2\\
-\mathrm{II}=\kappa_1E(\mathrm{d}u)^2+\kappa_2G(\mathrm{d}v)^2</script><p>其中$\kappa_1,\kappa_2$是曲面的主曲率.<br><strong>定理 4.4</strong> 在正则曲面$S$上的每一个非脐点的一个领域内存在参数系$(u,v)$，使得参数曲线构成彼此正交的曲率线网.</p>
-<p>如果用$\mathrm{I}_0$表示单位球面$\Sigma$上的第一基本形式，那么通过 Gauss 映射$g:\  S\to\Sigma$拉回到曲面$S$上所得到的二次微分形式称为曲面$S$的<strong>第三基本形式</strong>，记为</p>
+\mathrm{II}=\kappa_1E(\mathrm{d}u)^2+\kappa_2G(\mathrm{d}v)^2</script><p>其中 $\kappa_1,\kappa_2$ 是曲面的主曲率.<br><strong>定理 4.4</strong> 在正则曲面 $S$ 上的每一个非脐点的一个领域内存在参数系 $(u,v)$，使得参数曲线构成彼此正交的曲率线网.</p>
+<p>如果用 $\mathrm {I}_0$ 表示单位球面 $\Sigma$ 上的第一基本形式，那么通过 Gauss 映射 $g:\  S\to\Sigma$ 拉回到曲面 $S$ 上所得到的二次微分形式称为曲面 $S$ 的<strong>第三基本形式</strong>，记为</p>
 <script type="math/tex; mode=display">
 \mathrm{III}=g^*\mathrm{I}_0=\mathrm{d}\mathbf{n}\cdot\mathrm{d}\mathbf{n}=e(\mathrm{d}u)^2+2f\mathrm{d}u\mathrm{d}v+g(\mathrm{d}v)^2\\
-e=\mathbf{n}_u\cdot\mathbf{n}_v,\quad f=\mathbf{n}_u\cdot\mathbf{n}_v,\quad g=\mathbf{n}_v\cdot\mathbf{n}_v</script><p><strong>定理 4.5</strong> 曲面$S$上的三个基本形式满足关系式</p>
+e=\mathbf{n}_u\cdot\mathbf{n}_v,\quad f=\mathbf{n}_u\cdot\mathbf{n}_v,\quad g=\mathbf{n}_v\cdot\mathbf{n}_v</script><p><strong>定理 4.5</strong> 曲面 $S$ 上的三个基本形式满足关系式</p>
 <script type="math/tex; mode=display">
-\mathrm{III}-2H\mathrm{II}+K\mathrm{I}=0</script><h2 id="Dupin-标形和曲面参数方程在一点的标准展开"><a href="#Dupin-标形和曲面参数方程在一点的标准展开" class="headerlink" title="Dupin 标形和曲面参数方程在一点的标准展开"></a>Dupin 标形和曲面参数方程在一点的标准展开</h2><p>设曲面$S:\ \mathbf{r}=\mathbf{r}(u,v)$在点$p$的两个主曲率是$\kappa_1,\kappa_2$，其对应的两个彼此正交的主方向单位向量是$\mathbf{e}_1,\mathbf{e}_2$，则 Euler 公式说，曲面$S$在点$p$沿任意一个切方向</p>
+\mathrm{III}-2H\mathrm{II}+K\mathrm{I}=0</script><h2 id="Dupin-标形和曲面参数方程在一点的标准展开"><a href="#Dupin-标形和曲面参数方程在一点的标准展开" class="headerlink" title="Dupin 标形和曲面参数方程在一点的标准展开"></a>Dupin 标形和曲面参数方程在一点的标准展开</h2><p>设曲面 $S:\ \mathbf {r}=\mathbf {r}(u,v)$ 在点 $p$ 的两个主曲率是 $\kappa_1,\kappa_2$，其对应的两个彼此正交的主方向单位向量是 $\mathbf {e}_1,\mathbf {e}_2$，则 Euler 公式说，曲面 $S$ 在点 $p$ 沿任意一个切方向</p>
 <script type="math/tex; mode=display">
 \mathbf{e}=\cos{\theta}\mathbf{e}_1+\sin{\theta}\mathbf{e}_2</script><p>的法曲率是</p>
 <script type="math/tex; mode=display">
-\kappa_n=\kappa_1\cos^2\theta+\kappa_2\sin^2\theta</script><p>自然，$\{p;\mathbf{e}_1,\mathbf{e}_2\}$给出曲面$S$在点$p$处的切平面$\Pi$上的直角坐标系.假定沿切方向$\mathbf{e}$的法曲率$\kappa_n(\theta)\not ={0}$，则在该方向的射线上可以取一点$q$，使得线段$pq$的长度是</p>
+\kappa_n=\kappa_1\cos^2\theta+\kappa_2\sin^2\theta</script><p>自然，$\{p;\mathbf {e}_1,\mathbf {e}_2\}$ 给出曲面 $S$ 在点 $p$ 处的切平面 $\Pi$ 上的直角坐标系。假定沿切方向 $\mathbf {e}$ 的法曲率 $\kappa_n (\theta)\not ={0}$，则在该方向的射线上可以取一点 $q$，使得线段 $pq$ 的长度是</p>
 <script type="math/tex; mode=display">
-\left|pq\right|=\dfrac{1}{\sqrt{|\kappa_n(\theta)|}},</script><p>那么在上述直角坐标系下点$q$的坐标是</p>
+\left|pq\right|=\dfrac{1}{\sqrt{|\kappa_n(\theta)|}},</script><p>那么在上述直角坐标系下点 $q$ 的坐标是</p>
 <script type="math/tex; mode=display">
-x=\dfrac{1}{\sqrt{|\kappa_n(\theta)|}}\cos\theta,\quad y=\dfrac{1}{\sqrt{|\kappa_n(\theta)|}}\sin{\theta}.</script><p>根据Euler公式，点$q$的坐标$x,y$所满足的方程是</p>
+x=\dfrac{1}{\sqrt{|\kappa_n(\theta)|}}\cos\theta,\quad y=\dfrac{1}{\sqrt{|\kappa_n(\theta)|}}\sin{\theta}.</script><p>根据 Euler 公式，点 $q$ 的坐标 $x,y$ 所满足的方程是</p>
 <script type="math/tex; mode=display">
-\kappa_1x^2+\kappa_2y^2=\text{sign}(\kappa_n(\theta)).</script><p>这是一条二次曲线.<br>当$K=\kappa_1\kappa_2&gt;0$时，$\kappa_n(\theta)$与$\kappa_1,\kappa_2$同号，所以上式成为</p>
+\kappa_1x^2+\kappa_2y^2=\text{sign}(\kappa_n(\theta)).</script><p>这是一条二次曲线.<br>当 $K=\kappa_1\kappa_2&gt;0$ 时，$\kappa_n (\theta)$ 与 $\kappa_1,\kappa_2$ 同号，所以上式成为</p>
 <script type="math/tex; mode=display">
-|\kappa_1|x^2+|\kappa_2|y^2=1</script><p>这是一个椭圆.<br>当$K=\kappa_1\kappa_2&lt;0$时，$\kappa_n(\theta)$与$\kappa_1,\kappa_2$异号，所以上式成为</p>
+|\kappa_1|x^2+|\kappa_2|y^2=1</script><p>这是一个椭圆.<br>当 $K=\kappa_1\kappa_2&lt;0$ 时，$\kappa_n (\theta)$ 与 $\kappa_1,\kappa_2$ 异号，所以上式成为</p>
 <script type="math/tex; mode=display">
-|\kappa_1|x^2-|\kappa_2|y^2=\pm 1,</script><p>这是两对彼此共轭的双曲线.<br>如果$K=\kappa_1\kappa_2=0$，但是$\kappa_1,\kappa2$不全为零，不妨设$\kappa_2\not ={0}$，则上式成为</p>
+|\kappa_1|x^2-|\kappa_2|y^2=\pm 1,</script><p>这是两对彼此共轭的双曲线.<br>如果 $K=\kappa_1\kappa_2=0$，但是 $\kappa_1,\kappa2$ 不全为零，不妨设 $\kappa_2\not ={0}$，则上式成为</p>
 <script type="math/tex; mode=display">
-|\kappa_2|y^2=1</script><p>这是与渐进方向$\mathbf{e}_1$平行的一对直线.<br>当$\kappa_1=\kappa_2=0$时，相应的图不再存在.<br>上述轨迹称为曲面$S$在点$p$的<strong>Dupin</strong>流形.</p>
+|\kappa_2|y^2=1</script><p>这是与渐进方向 $\mathbf {e}_1$ 平行的一对直线.<br>当 $\kappa_1=\kappa_2=0$ 时，相应的图不再存在.<br>上述轨迹称为曲面 $S$ 在点 $p$ 的 <strong>Dupin</strong> 流形.</p>
 <h2 id="某些特殊曲面"><a href="#某些特殊曲面" class="headerlink" title="某些特殊曲面"></a>某些特殊曲面</h2><blockquote>
 <p>Gauss 曲率为常数和平均曲率为零的曲面</p>
 </blockquote>
-<h3 id="Gauss-曲率为常数"><a href="#Gauss-曲率为常数" class="headerlink" title="Gauss 曲率为常数"></a>Gauss 曲率为常数</h3><p>旋转曲面$S$的方程</p>
+<h3 id="Gauss-曲率为常数"><a href="#Gauss-曲率为常数" class="headerlink" title="Gauss 曲率为常数"></a>Gauss 曲率为常数</h3><p>旋转曲面 $S$ 的方程</p>
 <script type="math/tex; mode=display">
 r=(u\cos v,u\sin v,f(u))</script><p>得</p>
 <script type="math/tex; mode=display">
@@ -543,36 +573,36 @@ f(u)=\begin{cases}
 au+b,\left(a=\sqrt{\dfrac{1-c}{c}},0<c<1\right),&K=0\\
 \pm\int{\sqrt{\dfrac{a^2(1-c)+u^2}{ca^2-u^2}}\mathrm{d}u},&K=\dfrac{1}{a^2}\\
 \pm\int{\sqrt{\dfrac{a^2(1-c)-u^2}{ca^2+u^2}}\mathrm{d}u},&K=-\dfrac{1}{a^2}
-\end{cases}</script><p>当$c=0$时</p>
+\end{cases}</script><p>当 $c=0$ 时</p>
 <script type="math/tex; mode=display">
 \text{令}u=\cos\varphi,\ f(\varphi)=\pm a((\log{\sec{\varphi}+\tan{\varphi}})-\sin{\varphi}),0\le\varphi\le\pi/2</script><p>曲面称为<strong>伪球面</strong>.</p>
 <h3 id="平均曲率为零"><a href="#平均曲率为零" class="headerlink" title="平均曲率为零"></a>平均曲率为零</h3><p>称为<strong>极小曲面</strong><br><strong>悬链面</strong></p>
 <script type="math/tex; mode=display">
 \mathbf{r}=\left(a\cosh{\dfrac{r}{a}}\cos{\theta},a\cosh\dfrac{r}{a}\sin\theta,r\right).</script><hr>
 <h1 id="曲面论基本定理"><a href="#曲面论基本定理" class="headerlink" title="曲面论基本定理"></a>曲面论基本定理</h1><h2 id="自然标架的运动公式"><a href="#自然标架的运动公式" class="headerlink" title="自然标架的运动公式"></a>自然标架的运动公式</h2><ul>
-<li>张量标记：<br>曲面的参数记成带上指标的量，如$u^1,u^2$，代替原来的$u,v$，要注意的是，在新的几号系统中，$\mathrm{d}u^2$是参数$u^2$的微分，而不是微分$du$的平方.这样，曲面$S$的参数方程标记为<script type="math/tex; mode=display">
+<li>张量标记：<br>曲面的参数记成带上指标的量，如 $u^1,u^2$，代替原来的 $u,v$，要注意的是，在新的几号系统中，$\mathrm {d} u^2$ 是参数 $u^2$ 的微分，而不是微分 $du$ 的平方。这样，曲面 $S$ 的参数方程标记为<script type="math/tex; mode=display">
 \mathbf{r}=\mathbf{r}(u^1,u^2),</script>并且命<script type="math/tex; mode=display">
 \mathbf{r}_\alpha=\dfrac{\partial\mathbf{r}(u^1,u^2)}{\partial u^\alpha},\ \alpha=1,2</script></li>
 </ul>
 <blockquote>
-<p>从现在开始$\mathbf{r}_1,\mathbf{r}_2$只表示上式所定义的两个切向量</p>
+<p>从现在开始 $\mathbf {r}_1,\mathbf {r}_2$ 只表示上式所定义的两个切向量</p>
 </blockquote>
-<p>于是，曲面$S$的单位法向量是</p>
-<script type="math/tex; mode=display">\mathbf{n}=\dfrac{\mathbf{r}_1\times\mathbf{r}_2}{|\mathbf{r}_1\times\mathbf{r}_2|}</script><p>这样，参数方程$\mathbf{r}=\mathbf{r}(u^1,u^2)$的微分是</p>
+<p>于是，曲面 $S$ 的单位法向量是</p>
+<script type="math/tex; mode=display">\mathbf{n}=\dfrac{\mathbf{r}_1\times\mathbf{r}_2}{|\mathbf{r}_1\times\mathbf{r}_2|}</script><p>这样，参数方程 $\mathbf {r}=\mathbf {r}(u^1,u^2)$ 的微分是</p>
 <script type="math/tex; mode=display">
-\mathrm{d}\mathbf{r}=\mathrm{d}\mathbf{r}(u^1,u^2)=\sum_{\alpha=1}^2{\mathbf{r}_\alpha(u^1,u^2)\mathrm{d}u^\alpha}=\mathbf{r}_\alpha(u^1,u^2)\mathrm{d}u^\alpha</script><p>最后一式为Einsten的<strong>和式约定</strong>.<br>我们用$g_{\alpha\beta}$和$b_{\alpha\beta}$分别表示曲面$S$的第一类基本量和第二类基本量，即</p>
+\mathrm{d}\mathbf{r}=\mathrm{d}\mathbf{r}(u^1,u^2)=\sum_{\alpha=1}^2{\mathbf{r}_\alpha(u^1,u^2)\mathrm{d}u^\alpha}=\mathbf{r}_\alpha(u^1,u^2)\mathrm{d}u^\alpha</script><p>最后一式为 Einsten 的<strong>和式约定</strong>.<br>我们用 $g_{\alpha\beta}$ 和 $b_{\alpha\beta}$ 分别表示曲面 $S$ 的第一类基本量和第二类基本量，即</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 &g_{\alpha\beta}=\mathbf{r}_\alpha\cdot\mathbf{r}_\beta,\\
 &b_{\alpha\beta}=\mathbf{r}_{\alpha\beta}\cdot\mathbf{n}=-\mathbf{r}_\alpha\cdot\mathbf{n}_\beta=-\mathbf{r}_\beta\cdot\mathbf{n}_\alpha
 \end{aligned}</script><p>其中</p>
 <script type="math/tex; mode=display">
-\mathbf{r}_{\alpha\beta}=\dfrac{\partial}{\partial u^\beta}\left(\dfrac{\partial\mathbf{(u^1,u^2)}}{\partial u^\alpha}\right)</script><p>这样，曲面$S$的两个基形式是</p>
+\mathbf{r}_{\alpha\beta}=\dfrac{\partial}{\partial u^\beta}\left(\dfrac{\partial\mathbf{(u^1,u^2)}}{\partial u^\alpha}\right)</script><p>这样，曲面 $S$ 的两个基形式是</p>
 <script type="math/tex; mode=display">
 \mathrm{I}=g_{\alpha\beta}\mathrm{d}u^\alpha\mathrm{d}u^\beta,\quad\mathrm{II}=b_{\alpha\beta}\mathrm{d}u^\alpha\mathrm{d}u^\beta</script><p>另外，记</p>
 <script type="math/tex; mode=display">
 g=\det(g_{\alpha\beta})=g_{11}g_{22}-(g_{12})^2,\\
-b=\det(b_{\alpha\beta})=b_{11}b_{22}-(b_{12})^2.</script><p>既然矩阵$(g_{\alpha\beta})$是正定的，故它有逆矩阵，记为$g^{\alpha\beta}$，于是</p>
+b=\det(b_{\alpha\beta})=b_{11}b_{22}-(b_{12})^2.</script><p>既然矩阵 $(g_{\alpha\beta})$ 是正定的，故它有逆矩阵，记为 $g^{\alpha\beta}$，于是</p>
 <script type="math/tex; mode=display">
 g^{\alpha\beta}g_{\beta\gamma}=\delta^\alpha_\gamma=\begin{cases}
   1,&\alpha=\gamma\\
@@ -592,8 +622,8 @@ g_{22}&-g_{12}\\
 <table>
 <thead>
 <tr>
-<th style="text-align:center">Gauss记号</th>
-<th style="text-align:center">$u$</th>
+<th style="text-align:center"> Gauss 记号</th>
+<th style="text-align:center"> $u$</th>
 <th style="text-align:center">$v$</th>
 <th style="text-align:center">$\mathbf{r}_u$</th>
 <th style="text-align:center">$\mathbf{r}_v$</th>
@@ -607,8 +637,8 @@ g_{22}&-g_{12}\\
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">张量记号</td>
-<td style="text-align:center">$u^1$</td>
+<td style="text-align:center"> 张量记号</td>
+<td style="text-align:center"> $u^1$</td>
 <td style="text-align:center">$u^2$</td>
 <td style="text-align:center">$\mathbf{r}_1$</td>
 <td style="text-align:center">$\mathbf{r}_2$</td>
@@ -634,14 +664,14 @@ D_\beta^\gamma g_{\gamma\xi}=-b_{\beta\xi},\quad D_\beta^\gamma=-b_{\beta\xi}g^{
 <script type="math/tex; mode=display">
 b_\beta^\gamma=b_{\beta\xi}g^{\xi\gamma}</script><p>得</p>
 <script type="math/tex; mode=display">
-D_\beta^\gamma=-b^\gamma_\beta.</script><p>由于$\mathbf{n}$是单位向量场，故$D_\beta=0$.<br>综上所述，原式成为</p>
+D_\beta^\gamma=-b^\gamma_\beta.</script><p>由于 $\mathbf {n}$ 是单位向量场，故 $D_\beta=0$.<br>综上所述，原式成为</p>
 <script type="math/tex; mode=display">
 \begin{cases}
   \dfrac{\partial\mathbf{r_\alpha}}{\partial u^\beta}=\Gamma^\gamma_{\alpha\beta}\mathbf{r}_\gamma+b_{\alpha\beta}\mathbf{n},\\
   \dfrac{\partial\mathbf{n}}{\partial u^\beta}=-b_\beta^\gamma\mathbf{r}_\gamma.
 \end{cases}</script><p>其中</p>
 <script type="math/tex; mode=display">
-\Gamma_{\alpha\beta}^\gamma=g^{\gamma\xi}\Gamma_{\xi\alpha\beta}=\dfrac{1}{2}g^{\gamma\xi}\left(\dfrac{g_{\alpha\xi}}{\partial u^\beta}+\dfrac{g_{\beta\xi}}{\partial u^\alpha}+\dfrac{g_{\alpha\beta}}{\partial u^\xi}\right)</script><p>通常把$\Gamma_{\alpha\beta}^\gamma$称为由曲面$S$的度量矩阵$(g_{\alpha\beta})$决定的<strong>Christoffel 记号</strong>.</p>
+\Gamma_{\alpha\beta}^\gamma=g^{\gamma\xi}\Gamma_{\xi\alpha\beta}=\dfrac{1}{2}g^{\gamma\xi}\left(\dfrac{g_{\alpha\xi}}{\partial u^\beta}+\dfrac{g_{\beta\xi}}{\partial u^\alpha}+\dfrac{g_{\alpha\beta}}{\partial u^\xi}\right)</script><p>通常把 $\Gamma_{\alpha\beta}^\gamma$ 称为由曲面 $S$ 的度量矩阵 $(g_{\alpha\beta})$ 决定的 <strong>Christoffel 记号</strong>.</p>
 <ul>
 <li><strong>运动公式</strong><script type="math/tex; mode=display">
 \begin{cases}
@@ -650,31 +680,31 @@ D_\beta^\gamma=-b^\gamma_\beta.</script><p>由于$\mathbf{n}$是单位向量场�
   \dfrac{\partial\mathbf{n}}{\partial u^\beta}=-b_\beta^\gamma\mathbf{r}_\gamma,&\text{Weingarten公式}.
 \end{cases}</script></li>
 </ul>
-<h2 id="曲面的唯一性定理"><a href="#曲面的唯一性定理" class="headerlink" title="曲面的唯一性定理"></a>曲面的唯一性定理</h2><p><strong>定理 2.1</strong> 设$S_1,S_2$是定义在同一参数区域$D\subset E^2$上的两个正则参数曲面.若在每一点$(u^1,u^2)\in D$，曲面$S_1$和$S_2$都有相同的第一基本形式 和第二基本形式，则曲面$S_1$和$S_2$在空间$E^3$的一个刚体运动下是彼此重合的.</p>
-<p><strong>定理 2.2</strong> 设$S_i,i=1,2$，是空间$E^3$中的两个正则参数曲面，其第一基本形式和第二基本形式分别是$\mathrm{I}_i$和$\mathrm{II}_i$.如果有光滑映射$\sigma:\ S_1\to S_2$，使得</p>
+<h2 id="曲面的唯一性定理"><a href="#曲面的唯一性定理" class="headerlink" title="曲面的唯一性定理"></a>曲面的唯一性定理</h2><p><strong>定理 2.1</strong> 设 $S_1,S_2$ 是定义在同一参数区域 $D\subset E^2$ 上的两个正则参数曲面。若在每一点 $(u^1,u^2)\in D$，曲面 $S_1$ 和 $S_2$ 都有相同的第一基本形式 和第二基本形式，则曲面 $S_1$ 和 $S_2$ 在空间 $E^3$ 的一个刚体运动下是彼此重合的.</p>
+<p><strong>定理 2.2</strong> 设 $S_i,i=1,2$，是空间 $E^3$ 中的两个正则参数曲面，其第一基本形式和第二基本形式分别是 $\mathrm {I}_i$ 和 $\mathrm {II}_i$. 如果有光滑映射 $\sigma:\ S_1\to S_2$，使得</p>
 <script type="math/tex; mode=display">
-\sigma^*\mathrm{I}_2=\mathrm{I}_1,\ \sigma^*\mathrm{II}_2=\mathrm{II}_1</script><p>则在空间$E^3$中存在刚体运动$\tilde{\sigma}:\ E^3\to E^3$，使得</p>
+\sigma^*\mathrm{I}_2=\mathrm{I}_1,\ \sigma^*\mathrm{II}_2=\mathrm{II}_1</script><p>则在空间 $E^3$ 中存在刚体运动 $\tilde {\sigma}:\ E^3\to E^3$，使得</p>
 <script type="math/tex; mode=display">
-\sigma=\tilde{\sigma}|_{S_{1}}</script><p>即曲面$S_1$和$S_2$经过$E^3$的一个刚体运动的彼此重合的.</p>
+\sigma=\tilde{\sigma}|_{S_{1}}</script><p>即曲面 $S_1$ 和 $S_2$ 经过 $E^3$ 的一个刚体运动的彼此重合的.</p>
 <h2 id="曲面论基本方程"><a href="#曲面论基本方程" class="headerlink" title="曲面论基本方程"></a>曲面论基本方程</h2><script type="math/tex; mode=display">
 R^{\delta}_{\alpha\beta\gamma}=\dfrac{\partial}{\partial u^\gamma}\Gamma_{\alpha\beta}^\delta-\dfrac{\partial}{\partial u^\beta}\Gamma_{\alpha\gamma}^\delta+\Gamma^\eta_{\alpha\beta}\Gamma^\delta_{\eta\gamma}-\Gamma^\eta_{\alpha\gamma}\Gamma^\delta_{\eta\beta}=\beta_{\alpha\beta}b^\delta_\gamma-b_{\alpha\gamma}b^\delta_\beta\\
-R_{\alpha\delta\beta\gamma}=b_{\alpha\beta}b_{\delta\gamma}-b_{\alpha\gamma}b_{\delta\beta}</script><p>称$R_{\alpha\beta\gamma}^\delta$为曲面$S$的第一类基本量的<strong>Riemann记号</strong>.上面的方程称为<strong>Gauss方程</strong>.</p>
+R_{\alpha\delta\beta\gamma}=b_{\alpha\beta}b_{\delta\gamma}-b_{\alpha\gamma}b_{\delta\beta}</script><p>称 $R_{\alpha\beta\gamma}^\delta$ 为曲面 $S$ 的第一类基本量的 <strong>Riemann 记号</strong>. 上面的方程称为 <strong>Gauss 方程</strong>.</p>
 <script type="math/tex; mode=display">
-\dfrac{\partial b_{\alpha\beta}}{\partial u^\gamma}-\dfrac{\partial b_{\alpha\gamma}}{\partial u^\beta}=\Gamma_{\alpha\gamma}^\delta b_{\delta\beta}-\Gamma^\delta_{\alpha\beta}b_{\delta\gamma}</script><p>称为<strong>Codazzi方程</strong>.</p>
+\dfrac{\partial b_{\alpha\beta}}{\partial u^\gamma}-\dfrac{\partial b_{\alpha\gamma}}{\partial u^\beta}=\Gamma_{\alpha\gamma}^\delta b_{\delta\beta}-\Gamma^\delta_{\alpha\beta}b_{\delta\gamma}</script><p>称为 <strong>Codazzi 方程</strong>.</p>
 <ul>
-<li>Riemann记号有对称性<script type="math/tex; mode=display">
+<li>Riemann 记号有对称性<script type="math/tex; mode=display">
 R_{\alpha\delta\beta\gamma}=R_{\beta\gamma\alpha\delta}=-R_{\delta\alpha\beta\gamma}=-R_{\alpha\delta\gamma\beta}</script>所以方程实质上只包含一个方程<script type="math/tex; mode=display">
 R_{1212}=b_{11}b_{22}-(b_{12})^2</script></li>
 <li>正交参数曲线网下<script type="math/tex; mode=display">
 R_{1212}=-\sqrt{EG}\left(\left(\dfrac{(\sqrt{E})_v}{\sqrt{G}}\right)_v+\left(\dfrac{(\sqrt{G})_u}{\sqrt{E}}\right)_u\right),\\
 \dfrac{\partial L}{\partial v}=H\dfrac{\partial E}{\partial v},\quad \dfrac{\partial N}{\partial u}=H\dfrac{\partial G}{\partial u}.</script></li>
 </ul>
-<h2 id="曲面的存在性定理"><a href="#曲面的存在性定理" class="headerlink" title="曲面的存在性定理"></a>曲面的存在性定理</h2><h2 id="Gauss定理"><a href="#Gauss定理" class="headerlink" title="Gauss定理"></a>Gauss定理</h2><blockquote>
+<h2 id="曲面的存在性定理"><a href="#曲面的存在性定理" class="headerlink" title="曲面的存在性定理"></a>曲面的存在性定理</h2><h2 id="Gauss定理"><a href="#Gauss定理" class="headerlink" title="Gauss定理"></a>Gauss 定理</h2><blockquote>
 <script type="math/tex; mode=display">K=\kappa_1\kappa_2=\dfrac{R_{1212}}{g_{11}g_{22}-(g_{12})^2}</script></blockquote>
-<p><strong>定理 5.1</strong> 曲面的Gauss曲率是曲面在保长变换下的不变量.<br><strong>定理 5.2</strong> 空间$E^3$中的一块无脐点的曲面$S$是可展平面的充分必要条件是，它的Gauss曲率$K$恒等于0.<br><strong>定理 5.3</strong> 无脐点的曲面$S$是可展曲面的充分必要条件是它能够与一块平面建立保长对应.<br><strong>定理 5.4</strong> 设$\sigma:\ S_1\to S_2$是从曲面$S_1$到$S_2$的连续可微映射，其中曲面$S_1$没有脐点，并且它的Gauss曲率$K$不为零.如果曲面$S_1$和$S_2$在设有的对应点、沿所有的对应切方向的法曲率保持不变，则有空间$E^3$中的一个刚体运动$\tilde{\sigma}:\ E^3\to E^3$使得</p>
+<p><strong>定理 5.1</strong> 曲面的 Gauss 曲率是曲面在保长变换下的不变量.<br><strong>定理 5.2</strong> 空间 $E^3$ 中的一块无脐点的曲面 $S$ 是可展平面的充分必要条件是，它的 Gauss 曲率 $K$ 恒等于 0.<br><strong>定理 5.3</strong> 无脐点的曲面 $S$ 是可展曲面的充分必要条件是它能够与一块平面建立保长对应.<br><strong>定理 5.4</strong> 设 $\sigma:\ S_1\to S_2$ 是从曲面 $S_1$ 到 $S_2$ 的连续可微映射，其中曲面 $S_1$ 没有脐点，并且它的 Gauss 曲率 $K$ 不为零。如果曲面 $S_1$ 和 $S_2$ 在设有的对应点、沿所有的对应切方向的法曲率保持不变，则有空间 $E^3$ 中的一个刚体运动 $\tilde {\sigma}:\ E^3\to E^3$ 使得</p>
 <script type="math/tex; mode=display">
 \sigma=\tilde{\sigma}|_{S_{1}}.</script><hr>
-<h1 id="测地曲率和测地线"><a href="#测地曲率和测地线" class="headerlink" title="测地曲率和测地线"></a>测地曲率和测地线</h1><h2 id="测地曲率和测地挠率"><a href="#测地曲率和测地挠率" class="headerlink" title="测地曲率和测地挠率"></a>测地曲率和测地挠率</h2><p>沿曲线$C$建立一个新的正交标架场${\mathbf{r};\mathbf{e}_1,\mathbf{e}_2,\mathbf{e}_3}$，使得它兼顾曲线$C$和曲面$S$的其定义是</p>
+<h1 id="测地曲率和测地线"><a href="#测地曲率和测地线" class="headerlink" title="测地曲率和测地线"></a>测地曲率和测地线</h1><h2 id="测地曲率和测地挠率"><a href="#测地曲率和测地挠率" class="headerlink" title="测地曲率和测地挠率"></a>测地曲率和测地挠率</h2><p>沿曲线 $C$ 建立一个新的正交标架场 ${\mathbf {r};\mathbf {e}_1,\mathbf {e}_2,\mathbf {e}_3}$，使得它兼顾曲线 $C$ 和曲面 $S$ 的其定义是</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
   &\mathbf{e}_1=\dfrac{\mathrm{d}\mathbf{r}(s)}{\mathrm{d}s}=\mathbf{\alpha}(s),\\
@@ -690,47 +720,47 @@ R_{1212}=-\sqrt{EG}\left(\left(\dfrac{(\sqrt{E})_v}{\sqrt{G}}\right)_v+\left(\df
 \end{cases}</script><p>其中</p>
 <script type="math/tex; mode=display">
 \kappa_n=\dfrac{\mathrm{d}\mathbf{e}_1(s)}{\mathrm{d}s}\cdot\mathbf{e}_3=\mathbf{r}''(s)\cdot\mathbf{n},\\
-\kappa_g=\dfrac{\mathrm{d}^2\mathbf{r}(s)}{\mathrm{d}s^3}\cdot\mathbf{e}_2=\mathbf{r}''(s)\cdot(\mathbf{n}(s)\times\mathbf{r}'(s))=(\mathbf{n}(s),\mathbf{r}'(s),\mathbf{r}''(s))</script><p>称$\kappa_g$为曲面$S$上的曲线$C$的<strong>测地曲率</strong>.另外</p>
+\kappa_g=\dfrac{\mathrm{d}^2\mathbf{r}(s)}{\mathrm{d}s^3}\cdot\mathbf{e}_2=\mathbf{r}''(s)\cdot(\mathbf{n}(s)\times\mathbf{r}'(s))=(\mathbf{n}(s),\mathbf{r}'(s),\mathbf{r}''(s))</script><p>称 $\kappa_g$ 为曲面 $S$ 上的曲线 $C$ 的<strong>测地曲率</strong>. 另外</p>
 <script type="math/tex; mode=display">
-\tau_g=\dfrac{\mathrm{d}\mathbf{e}_2}{\mathrm{d}s}\cdot\mathbf{n}=\dfrac{\mathrm{d}(\mathbf{n}\times\mathbf{r}'(s)))}{\mathrm{d}s}\cdot\mathbf{n}=(\mathbf{n}'(s)\times\mathbf{r}'(s))\cdot\mathbf{n}=(\mathbf{n}(s),\mathbf{n}'(s),\mathbf{r}'(s)),</script><p>称$\tau_g$为曲面$S$上的曲线$C$的<strong>测地挠率</strong>.<br><strong>定理 1.1</strong> 设$C$是在曲面$S$上的一条正则曲线，则曲线$C$在点$p$的测地曲率等于把曲线$C$投影到曲面$S$在点$p$的切平面上所得的曲线$\tilde{C}$在该点的相对曲率，其中切平面的正向由曲面$S$在点$p$的法向量$\mathbf{n}$给出.</p>
-<p><strong>定理 1.2</strong> 曲面$S$上的任意一条曲线$C$的测地曲率$\kappa_g$在曲面$S$作保长对应时是保持不变的，即曲面上曲线的测地曲率是属于曲面内蕴几何学的量.</p>
-<p><strong>定理 1.3</strong> 设$(u,v)$是曲面$S$上的正交参数系，因而曲面$S$的第一基本形式是$\mathrm{I}=E(\mathrm{d}u)^2+G(\mathrm{d}v)^2$.设$C:\ u=u(s),v=v(s)$是曲面$S$上的一条曲线，其中$s$是弧长参数.假定曲线$C$与$u-$曲线的夹角是$\theta$，则曲线$C$的测地曲率是</p>
+\tau_g=\dfrac{\mathrm{d}\mathbf{e}_2}{\mathrm{d}s}\cdot\mathbf{n}=\dfrac{\mathrm{d}(\mathbf{n}\times\mathbf{r}'(s)))}{\mathrm{d}s}\cdot\mathbf{n}=(\mathbf{n}'(s)\times\mathbf{r}'(s))\cdot\mathbf{n}=(\mathbf{n}(s),\mathbf{n}'(s),\mathbf{r}'(s)),</script><p>称 $\tau_g$ 为曲面 $S$ 上的曲线 $C$ 的<strong>测地挠率</strong>.<br><strong>定理 1.1</strong> 设 $C$ 是在曲面 $S$ 上的一条正则曲线，则曲线 $C$ 在点 $p$ 的测地曲率等于把曲线 $C$ 投影到曲面 $S$ 在点 $p$ 的切平面上所得的曲线 $\tilde {C}$ 在该点的相对曲率，其中切平面的正向由曲面 $S$ 在点 $p$ 的法向量 $\mathbf {n}$ 给出.</p>
+<p><strong>定理 1.2</strong> 曲面 $S$ 上的任意一条曲线 $C$ 的测地曲率 $\kappa_g$ 在曲面 $S$ 作保长对应时是保持不变的，即曲面上曲线的测地曲率是属于曲面内蕴几何学的量.</p>
+<p><strong>定理 1.3</strong> 设 $(u,v)$ 是曲面 $S$ 上的正交参数系，因而曲面 $S$ 的第一基本形式是 $\mathrm {I}=E (\mathrm {d} u)^2+G (\mathrm {d} v)^2$. 设 $C:\ u=u (s),v=v (s)$ 是曲面 $S$ 上的一条曲线，其中 $s$ 是弧长参数。假定曲线 $C$ 与 $u-$ 曲线的夹角是 $\theta$，则曲线 $C$ 的测地曲率是</p>
 <script type="math/tex; mode=display">
 \kappa_g=\dfrac{\mathrm{d}\theta}{\mathrm{d}s}-\dfrac{1}{2\sqrt{G}}\dfrac{\partial\log{E}}{\partial v}\cos{\theta}+\dfrac{1}{2\sqrt{E}}\dfrac{\partial\log{G}}{\partial{u}}\sin{\theta}</script><script type="math/tex; mode=display">
 \text{对于 u-曲线: } \kappa_{g1}=-\dfrac{1}{2\sqrt{G}}\dfrac{\partial{\log{E}}}{\partial{v}}.</script><script type="math/tex; mode=display">
 \text{对于 v-曲线: } \kappa_{g2}=\dfrac{1}{2\sqrt{E}}\dfrac{\partial{\log{G}}}{\partial{u}}.</script><script type="math/tex; mode=display">
-\kappa_g=\dfrac{\mathrm{d}\theta}{\mathrm{d}s}+\kappa_{g1}\cos{\theta}+\kappa_{g2}\sin{\theta}.</script><p>称为<strong>Liouville公式</strong>.</p>
-<p><strong>定理 1.4</strong> 在曲面$S$上非直线的渐近曲线$C$的挠率是曲面$S$沿曲线$C$的切方向的测地挠率.</p>
-<h2 id="测地线"><a href="#测地线" class="headerlink" title="测地线"></a>测地线</h2><p><strong>定义 2.1</strong> 在曲面$S$上测地曲率恒等于零的曲线称为曲面$S$上的<strong>测地线</strong>.<br><strong>定理 2.1</strong> 曲面$S$上的一条曲线$C$是测地线，当且仅当它或者是一条直线，或者它的主法向量处处是曲面$S$的法向量.</p>
+\kappa_g=\dfrac{\mathrm{d}\theta}{\mathrm{d}s}+\kappa_{g1}\cos{\theta}+\kappa_{g2}\sin{\theta}.</script><p>称为 <strong>Liouville 公式</strong>.</p>
+<p><strong>定理 1.4</strong> 在曲面 $S$ 上非直线的渐近曲线 $C$ 的挠率是曲面 $S$ 沿曲线 $C$ 的切方向的测地挠率.</p>
+<h2 id="测地线"><a href="#测地线" class="headerlink" title="测地线"></a>测地线</h2><p><strong>定义 2.1</strong> 在曲面 $S$ 上测地曲率恒等于零的曲线称为曲面 $S$ 上的<strong>测地线</strong>.<br><strong>定理 2.1</strong> 曲面 $S$ 上的一条曲线 $C$ 是测地线，当且仅当它或者是一条直线，或者它的主法向量处处是曲面 $S$ 的法向量.</p>
 <script type="math/tex; mode=display">
-\dfrac{\mathrm{d}^2u^\gamma}{\mathrm{d}s^2}+\Gamma_{\alpha\beta}^\gamma\dfrac{\mathrm{d}u^\alpha}{\mathrm{d}s}\dfrac{u^\beta}{\mathrm{d}s}=0,\quad\gamma=1,2.</script><p>这就是曲面$S$上的测地线所满足的微分方程.<br><strong>定理 2.2</strong> 对于曲面$S$上的任意一点$p$和曲面$S$在点$p$的任意一个单位切向量$\mathbf{v}$，在曲面$S$上必存在唯一的一条以弧长为参数的测地线$C$通过点$p$，并且在点$p$以$\mathbf{v}$为它的切向量.</p>
+\dfrac{\mathrm{d}^2u^\gamma}{\mathrm{d}s^2}+\Gamma_{\alpha\beta}^\gamma\dfrac{\mathrm{d}u^\alpha}{\mathrm{d}s}\dfrac{u^\beta}{\mathrm{d}s}=0,\quad\gamma=1,2.</script><p>这就是曲面 $S$ 上的测地线所满足的微分方程.<br><strong>定理 2.2</strong> 对于曲面 $S$ 上的任意一点 $p$ 和曲面 $S$ 在点 $p$ 的任意一个单位切向量 $\mathbf {v}$，在曲面 $S$ 上必存在唯一的一条以弧长为参数的测地线 $C$ 通过点 $p$，并且在点 $p$ 以 $\mathbf {v}$ 为它的切向量.</p>
 <blockquote>
-<p>如果在曲面$S$上取正交参数系$(u,v)$，利用测地曲率的 Lioibille 公式，测地线的微分方程组还可以写成</p>
+<p>如果在曲面 $S$ 上取正交参数系 $(u,v)$，利用测地曲率的 Lioibille 公式，测地线的微分方程组还可以写成</p>
 </blockquote>
 <script type="math/tex; mode=display">
 \begin{cases}
   \dfrac{\mathrm{d}u}{\mathrm{d}s}=\dfrac{1}{\sqrt{E}}\cos{\theta},\\
   \dfrac{\mathrm{d}v}{\mathrm{d}s}=\dfrac{1}{\sqrt{G}}\sin{\theta},\\
   \dfrac{\mathrm{d}\theta}{\mathrm{d}s}=\dfrac{1}{2\sqrt{G}}\dfrac{\partial{\log{E}}}{\partial{v}}\cos{\theta}-\dfrac{1}{2\sqrt{E}}\dfrac{\partial{\log{G}}}{\partial{u}}\sin{\theta}.
-\end{cases}</script><p><strong>定理 2.3</strong> 设$C$是曲面$S$上的一条曲线，则$C$的弧长在它的任意一个有固定端点的变分$C_t$中达到临界值的充分必要条件是，曲线$C$是曲面$S$上的测地线.<br><strong>推论</strong> 设$p,q$是曲面$S$上的任意两点，如果曲线$C$是在曲面$S$上连接$p,q$两点的最短线，则$C$必是曲面$S$上的测地线.</p>
+\end{cases}</script><p><strong>定理 2.3</strong> 设 $C$ 是曲面 $S$ 上的一条曲线，则 $C$ 的弧长在它的任意一个有固定端点的变分 $C_t$ 中达到临界值的充分必要条件是，曲线 $C$ 是曲面 $S$ 上的测地线.<br><strong>推论</strong> 设 $p,q$ 是曲面 $S$ 上的任意两点，如果曲线 $C$ 是在曲面 $S$ 上连接 $p,q$ 两点的最短线，则 $C$ 必是曲面 $S$ 上的测地线.</p>
 <h2 id="测地坐标系和法坐标系"><a href="#测地坐标系和法坐标系" class="headerlink" title="测地坐标系和法坐标系"></a>测地坐标系和法坐标系</h2><blockquote>
-<p>曲面$S$的第一基本形式在$U$上的限制成为</p>
+<p>曲面 $S$ 的第一基本形式在 $U$ 上的限制成为</p>
 </blockquote>
 <script type="math/tex; mode=display">
-\mathrm{I}=\mathrm{d}\tilde{u}^2+\tilde{G}(\tilde{u},\tilde{v})\mathrm{d}\tilde{v}^2.\\</script><p>其中$\tilde{u}=\int_{u_0}^{u}{\sqrt{E(u)}\mathrm{d}u},\quad\tilde{v}=v$.</p>
-<p><strong>定理 3.1</strong> 设$\Sigma$是曲面$S$上覆盖了区域$D$的测地线族，$\Sigma_1$是由在区域$D$内与$\Sigma$中曲线正交的轨线构成的曲线族，则$\Sigma_1$中的任意两条曲线在测地线族$\Sigma$中各条测地线上截出的曲线段的长度都相等.<br><strong>定理 3.2</strong> 设$C$是曲面$S$上连接$p,q$两点的一条测地线. 如果曲线$C$能够嵌入到一个覆盖了区域$D$的测地线族$\Sigma$中去，并且$p,q\in D$，则曲线$C$是在区域$D$内连接$p,q$两点的最短线.<br><strong>定理 3.3</strong> 在曲面$S$的每一点$p$的一个充分小的领域$U$内必定存在参数系$(u,v)$，使得点$p$对应于$u=0,v=0$，而曲面$S$的第一基本形式成为</p>
+\mathrm{I}=\mathrm{d}\tilde{u}^2+\tilde{G}(\tilde{u},\tilde{v})\mathrm{d}\tilde{v}^2.\\</script><p>其中 $\tilde {u}=\int_{u_0}^{u}{\sqrt {E (u)}\mathrm {d} u},\quad\tilde {v}=v$.</p>
+<p><strong>定理 3.1</strong> 设 $\Sigma$ 是曲面 $S$ 上覆盖了区域 $D$ 的测地线族，$\Sigma_1$ 是由在区域 $D$ 内与 $\Sigma$ 中曲线正交的轨线构成的曲线族，则 $\Sigma_1$ 中的任意两条曲线在测地线族 $\Sigma$ 中各条测地线上截出的曲线段的长度都相等.<br><strong>定理 3.2</strong> 设 $C$ 是曲面 $S$ 上连接 $p,q$ 两点的一条测地线。如果曲线 $C$ 能够嵌入到一个覆盖了区域 $D$ 的测地线族 $\Sigma$ 中去，并且 $p,q\in D$，则曲线 $C$ 是在区域 $D$ 内连接 $p,q$ 两点的最短线.<br><strong>定理 3.3</strong> 在曲面 $S$ 的每一点 $p$ 的一个充分小的领域 $U$ 内必定存在参数系 $(u,v)$，使得点 $p$ 对应于 $u=0,v=0$，而曲面 $S$ 的第一基本形式成为</p>
 <script type="math/tex; mode=display">
-\mathrm{I}=(\mathrm{d}u)^2+G(u,v)(\mathrm{d}v)^2,</script><p>其中函数$G(u,v)$满足条件</p>
+\mathrm{I}=(\mathrm{d}u)^2+G(u,v)(\mathrm{d}v)^2,</script><p>其中函数 $G (u,v)$ 满足条件</p>
 <script type="math/tex; mode=display">
-G(0,v)=1,\quad \dfrac{\partial{G}}{\partial{u}}(0,v)=0.</script><p>这样的参数系$(u,v)$称为曲面$S$在点$p$附近的<strong>测地平行坐标系</strong>.<br><strong>定理 3.4</strong> 曲面$S$在任意一点$p$的附近必有法坐标系$(v^1,v^2)$，在此坐标系下从点$p$出发、以$(v_0^1,v_0^2)$为切向量的测地线的参数方程是</p>
+G(0,v)=1,\quad \dfrac{\partial{G}}{\partial{u}}(0,v)=0.</script><p>这样的参数系 $(u,v)$ 称为曲面 $S$ 在点 $p$ 附近的<strong>测地平行坐标系</strong>.<br><strong>定理 3.4</strong> 曲面 $S$ 在任意一点 $p$ 的附近必有法坐标系 $(v^1,v^2)$，在此坐标系下从点 $p$ 出发、以 $(v_0^1,v_0^2)$ 为切向量的测地线的参数方程是</p>
 <script type="math/tex; mode=display">
-v^1(t)=tv_0^1,\quad v^2(t)=tv_0^2;</script><p>并且曲面$S$的第一类基本量$\tilde{g}_{\alpha\beta}$满足</p>
+v^1(t)=tv_0^1,\quad v^2(t)=tv_0^2;</script><p>并且曲面 $S$ 的第一类基本量 $\tilde {g}_{\alpha\beta}$ 满足</p>
 <script type="math/tex; mode=display">
 \tilde{g}_{11}(p)=\tilde{g}_{22}(p)=1,\quad \tilde{g}_{12}=\tilde{g}_{21}=0,\quad \tilde{\Gamma}_{\alpha\beta}^\gamma(p)=0,</script><p>因此</p>
 <script type="math/tex; mode=display">
-\dfrac{\partial{\tilde{g}_{\alpha\beta}}}{\partial{v^\gamma}}(p)=\tilde{g}_{\alpha\delta}\tilde{\Gamma}^\delta_{\beta\gamma}(p)+\tilde{g}_{\beta\delta}\tilde{\Gamma}_{\alpha\gamma}^\delta(p)=0,\quad \alpha,\beta,\gamma=1,2.</script><p><strong>定理 3.5</strong> 在曲面$S$的每一点$p$的领域内，除去从点$p$出发的一条测地线外，必存在测地极坐标系$(s,\theta)$，使得曲面$S$的第一基本形式成为</p>
+\dfrac{\partial{\tilde{g}_{\alpha\beta}}}{\partial{v^\gamma}}(p)=\tilde{g}_{\alpha\delta}\tilde{\Gamma}^\delta_{\beta\gamma}(p)+\tilde{g}_{\beta\delta}\tilde{\Gamma}_{\alpha\gamma}^\delta(p)=0,\quad \alpha,\beta,\gamma=1,2.</script><p><strong>定理 3.5</strong> 在曲面 $S$ 的每一点 $p$ 的领域内，除去从点 $p$ 出发的一条测地线外，必存在测地极坐标系 $(s,\theta)$，使得曲面 $S$ 的第一基本形式成为</p>
 <script type="math/tex; mode=display">
-\mathrm{I}=\mathrm{d}s^2+G(s,\theta)\mathrm{d}\theta^2,</script><p>其中函数$G(s,\theta)$满足条件</p>
+\mathrm{I}=\mathrm{d}s^2+G(s,\theta)\mathrm{d}\theta^2,</script><p>其中函数 $G (s,\theta)$ 满足条件</p>
 <script type="math/tex; mode=display">
 \lim_{s\to 0}{\sqrt{G(s,\theta)}}=0,\quad \lim_{s\to 0}\dfrac{\partial}{\partial{s}}{\sqrt{G(s,\theta)}}=1.</script><h2 id="常曲率曲面"><a href="#常曲率曲面" class="headerlink" title="常曲率曲面"></a>常曲率曲面</h2><p>取测地平行坐标系，Gauss 曲率为</p>
 <script type="math/tex; mode=display">
@@ -740,27 +770,27 @@ K=-\dfrac{1}{\sqrt{EG}}\left(\left(\dfrac{(\sqrt{E})_v}{\sqrt{G}}\right)_v+\left
 (\mathrm{d}u)^2+\cos^2{\sqrt{K}u}(\mathrm{d}v)^2,&K>0\\
 (\mathrm{d}u)^2+(\mathrm{d}v)^2,&K=0\\
 (\mathrm{d}u)^2+\cosh^2(\sqrt{-K}u)(\mathrm{d}v)^2,&K<0.
-\end{cases}</script><p><strong>定理 4.1</strong> 有相同常数Gauss曲率$K$的任意两块常曲率曲面在局部上必定可以建立保长对应.</p>
+\end{cases}</script><p><strong>定理 4.1</strong> 有相同常数 Gauss 曲率 $K$ 的任意两块常曲率曲面在局部上必定可以建立保长对应.</p>
 <h2 id="曲面上切向量的平行移动"><a href="#曲面上切向量的平行移动" class="headerlink" title="曲面上切向量的平行移动"></a>曲面上切向量的平行移动</h2><p><strong>定义 5.1</strong> 命</p>
 <script type="math/tex; mode=display">
-\mathrm{D}\mathbf{X}(u^1,u^2)=(\mathrm{d}\mathbf{X}(u^1,u^2))^{\mathrm{T}}=(\mathrm{d}x^\alpha+x^\beta\Gamma_{\beta\gamma}^\alpha\mathrm{d}u^\gamma)\mathbf{r}_\alpha,</script><p>其中$\mathrm{T}$表示将$E^3$中的向量向曲面$S$在$(u^1,u^2)$的切空间作正交投影. 称$\mathrm{D}\mathbf{X}(u^1,u^2)$为曲面$S$上的切向量场$\mathbf{X}(u^1,u^2)$的<strong>协变微分</strong>.<br>记</p>
+\mathrm{D}\mathbf{X}(u^1,u^2)=(\mathrm{d}\mathbf{X}(u^1,u^2))^{\mathrm{T}}=(\mathrm{d}x^\alpha+x^\beta\Gamma_{\beta\gamma}^\alpha\mathrm{d}u^\gamma)\mathbf{r}_\alpha,</script><p>其中 $\mathrm {T}$ 表示将 $E^3$ 中的向量向曲面 $S$ 在 $(u^1,u^2)$ 的切空间作正交投影。称 $\mathrm {D}\mathbf {X}(u^1,u^2)$ 为曲面 $S$ 上的切向量场 $\mathbf {X}(u^1,u^2)$ 的<strong>协变微分</strong>.<br>记</p>
 <script type="math/tex; mode=display">
 \mathrm{D}x^\alpha=\mathrm{d}x^\alpha+x^\beta\Gamma_{\beta\gamma}^\alpha\mathrm{d}u^\gamma,</script><p>则，原式变为</p>
 <script type="math/tex; mode=display">
-\mathrm{D}\mathbf{X}(u^1,u^2)=\mathrm{D}x^\alpha\mathbf{r}_\alpha.</script><p><strong>定理 5.1</strong> 曲面$S$上的切向量场$\mathbf{X}$的协变微分在曲面$S$的保长变换下是保持不变的，即：如果$\sigma:\ S\to \tilde{S}$是保长对应，则对曲面$S$上的任意一个可微的切向量场$\mathbf{X}$下式成立：</p>
+\mathrm{D}\mathbf{X}(u^1,u^2)=\mathrm{D}x^\alpha\mathbf{r}_\alpha.</script><p><strong>定理 5.1</strong> 曲面 $S$ 上的切向量场 $\mathbf {X}$ 的协变微分在曲面 $S$ 的保长变换下是保持不变的，即：如果 $\sigma:\ S\to \tilde {S}$ 是保长对应，则对曲面 $S$ 上的任意一个可微的切向量场 $\mathbf {X}$ 下式成立：</p>
 <script type="math/tex; mode=display">
-\sigma_\_(\mathrm{D}\mathbf{X})=\mathrm{D}(\sigma_\_\mathbf{X}).</script><p><strong>定理 5.2</strong> 曲面$S$上的可微切向量场的协变微分有下列运算法则：</p>
+\sigma_\_(\mathrm{D}\mathbf{X})=\mathrm{D}(\sigma_\_\mathbf{X}).</script><p><strong>定理 5.2</strong> 曲面 $S$ 上的可微切向量场的协变微分有下列运算法则：</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 &(1)\mathrm{D}(\mathbf{X}+\mathbf{Y})=\mathrm{D}\mathbf{X}+\mathrm{D}\mathbf{Y},\\
 &(2)\mathrm{D}(f\cdot\mathbf{X})=\mathrm{d}f\cdot\mathbf{X}+f\cdot\mathrm{D}\mathbf{X},\\
 &(3)\mathrm{d}(\mathbf{X}\cdot\mathbf{Y})=\mathrm{D}\mathbf{X}\cdot\mathbf{Y}+\mathbf{X}\cdot\mathrm{D}\mathbf{Y}.
-\end{aligned}</script><p>其中$\mathbf{X},\mathbf{Y}$是曲面$S$上的可切向量场，$f$是定义在曲面$S$上的可微函数.</p>
+\end{aligned}</script><p>其中 $\mathbf {X},\mathbf {Y}$ 是曲面 $S$ 上的可切向量场，$f$ 是定义在曲面 $S$ 上的可微函数.</p>
 <p><strong>定义 5.2</strong> 命</p>
 <script type="math/tex; mode=display">
-\dfrac{\mathrm{D}\mathbf{X}(t)}{\mathrm{d}t}=\left(\dfrac{\mathrm{d}\mathbf{X}(t)}{\mathrm{d}t}\right)^{\mathrm{T}}=\left(\dfrac{\mathrm{d}x^\alpha}{\mathrm{d}t}+\Gamma_{\beta\gamma}^\alpha x^\beta(t)\dfrac{\mathrm{d}u^\gamma(t)}{\mathrm{d}t}\right)\mathbf{r}_\alpha=\dfrac{\mathrm{D}x^\alpha(t)}{\mathrm{d}t}\mathbf{r}_\alpha,</script><p>我们把$\dfrac{\mathrm{D}\mathbf{X}(t)}{\mathrm{d}t}$称为曲面$S$上沿曲线$C$定义的切向量场$\mathbf{X}(t)$沿曲线$C$的<strong>协变导数</strong>.<br><strong>定义 5.3</strong> 设$\mathbf{X}(t)$是曲面$S$上沿曲线$C:\ u^\gamma=u^\gamma(t)$定义的可微切向量场.如果</p>
+\dfrac{\mathrm{D}\mathbf{X}(t)}{\mathrm{d}t}=\left(\dfrac{\mathrm{d}\mathbf{X}(t)}{\mathrm{d}t}\right)^{\mathrm{T}}=\left(\dfrac{\mathrm{d}x^\alpha}{\mathrm{d}t}+\Gamma_{\beta\gamma}^\alpha x^\beta(t)\dfrac{\mathrm{d}u^\gamma(t)}{\mathrm{d}t}\right)\mathbf{r}_\alpha=\dfrac{\mathrm{D}x^\alpha(t)}{\mathrm{d}t}\mathbf{r}_\alpha,</script><p>我们把 $\dfrac {\mathrm {D}\mathbf {X}(t)}{\mathrm {d} t}$ 称为曲面 $S$ 上沿曲线 $C$ 定义的切向量场 $\mathbf {X}(t)$ 沿曲线 $C$ 的<strong>协变导数</strong>.<br><strong>定义 5.3</strong> 设 $\mathbf {X}(t)$ 是曲面 $S$ 上沿曲线 $C:\ u^\gamma=u^\gamma (t)$ 定义的可微切向量场。如果</p>
 <script type="math/tex; mode=display">
-\dfrac{\mathrm{D}\mathbf{X}(t)}{\mathrm{d}t}=\mathbf{0},</script><p>则称切向量场$\mathbf{X}(t)$沿曲线$C$是<strong>平行的</strong>.<br>沿曲线$C$平行的充分必要条件是，它的分量$x^\alpha(t)$满足常微分方程组</p>
+\dfrac{\mathrm{D}\mathbf{X}(t)}{\mathrm{d}t}=\mathbf{0},</script><p>则称切向量场 $\mathbf {X}(t)$ 沿曲线 $C$ 是<strong>平行的</strong>.<br>沿曲线 $C$ 平行的充分必要条件是，它的分量 $x^\alpha (t)$ 满足常微分方程组</p>
 <script type="math/tex; mode=display">
 \dfrac{\mathrm{d}x^\alpha}{\mathrm{d}t}+\Gamma_{\beta\gamma}^\alpha x^\beta(t)\dfrac{\mathrm{d}u^\gamma(t)}{\mathrm{d}t}=0,\quad \alpha=1,2</script><h2 id="黎曼几何"><a href="#黎曼几何" class="headerlink" title="黎曼几何"></a>黎曼几何</h2><blockquote>
 <p>略，以后详细学了黎曼几何再说，不做记录.</p>
@@ -772,7 +802,7 @@ K=-\dfrac{1}{\sqrt{EG}}\left(\left(\dfrac{(\sqrt{E})_v}{\sqrt{G}}\right)_v+\left
 <script type="math/tex; mode=display">
 f\otimes g(x_1,\cdots,x_{r+s})=f(x_1,\cdots,x_r)\cdot g(x_{r+1},\cdots,x_{r+s}).</script><p><strong>定义 1.1</strong> 设</p>
 <script type="math/tex; mode=display">
-f\in\wedge^rV^*,g\in\wedge^sV^*</script><p>则$f$ 和$g$ 的<strong>外积</strong>$f\wedge g$是一个$(r+s)$次外形式，定义为</p>
+f\in\wedge^rV^*,g\in\wedge^sV^*</script><p>则 $f$ 和 $g$ 的<strong>外积</strong> $f\wedge g$ 是一个 $(r+s)$ 次外形式，定义为</p>
 <script type="math/tex; mode=display">
 f\wedge g=\dfrac{(r+s)!}{r!s!}[f\otimes g].</script><p><strong>定理 1.1</strong> 外积运算遵循下列运算法则：</p>
 <script type="math/tex; mode=display">
@@ -780,47 +810,47 @@ f\wedge g=\dfrac{(r+s)!}{r!s!}[f\otimes g].</script><p><strong>定理 1.1</stron
   &(1)\text{分配律}:(f_1+f_2)\wedge g=f_1\wedge g+f_2\wedge g;\\
 &(2)\text{反交换律}:\text{设}f\in \wedge^rV^*,g\in \wedge^sV^*,\text{则}f\wedge g=(-1)^{rs}g\wedge f;\\
 &(3)\text{结合律}:f\wedge (g\wedge h)=(f\wedge g)\wedge h.
-\end{aligned}</script><p><strong>定理 1.2</strong> 设$\{e^1,\cdots,e^n\}$是对偶向量空间$V^*$的一个基地，则</p>
+\end{aligned}</script><p><strong>定理 1.2</strong> 设 $\{e^1,\cdots,e^n\}$ 是对偶向量空间 $V^*$ 的一个基地，则</p>
 <script type="math/tex; mode=display">
-\{e^{j_1}\wedge\cdots\wedge e^{j_r},1\le j_1<\cdots<j_r\le n\}</script><p>是$r$次外形式空间</p>
+\{e^{j_1}\wedge\cdots\wedge e^{j_r},1\le j_1<\cdots<j_r\le n\}</script><p>是 $r$ 次外形式空间</p>
 <script type="math/tex; mode=display">
-\wedge^{r}V^{*}</script><p>的基地. 特别是，空间</p>
+\wedge^{r}V^{*}</script><p>的基地。特别是，空间</p>
 <script type="math/tex; mode=display">
 \wedge^rV^{*}</script><p>的维数是</p>
 <script type="math/tex; mode=display">
-\text{dim}\wedge^rV^*=C^r_n</script><p>当$r&gt;n$时，</p>
+\text{dim}\wedge^rV^*=C^r_n</script><p>当 $r&gt;n$ 时，</p>
 <script type="math/tex; mode=display">
-\wedge^rV^*=\{0\}</script><p><strong>定理 1.3(Cartan 引理)</strong> 设$\omega^1,\cdots,\omega^r,\theta_1,\cdots,\theta_r$是$n$维向量空间$V$上的$2r$个一次形式，其中$\omega^1,\cdots,\omega^r$是线性无关的.如果恒等式</p>
+\wedge^rV^*=\{0\}</script><p><strong>定理 1.3 (Cartan 引理)</strong> 设 $\omega^1,\cdots,\omega^r,\theta_1,\cdots,\theta_r$ 是 $n$ 维向量空间 $V$ 上的 $2r$ 个一次形式，其中 $\omega^1,\cdots,\omega^r$ 是线性无关的。如果恒等式</p>
 <script type="math/tex; mode=display">
-\sum_{\alpha=1}^r{\omega^\alpha\wedge\theta_\alpha}=0</script><p>成立，则每一个$\theta_\alpha$必定是$\omega^1,\cdots,\omega^r$的线性组合，即</p>
+\sum_{\alpha=1}^r{\omega^\alpha\wedge\theta_\alpha}=0</script><p>成立，则每一个 $\theta_\alpha$ 必定是 $\omega^1,\cdots,\omega^r$ 的线性组合，即</p>
 <script type="math/tex; mode=display">
-\omega_\alpha=\sum_{\beta=1}^r{a_{\alpha\beta}\omega^\beta},</script><p>并且组合系数$a_{\alpha\beta}$是对称的，即$a_{\alpha\beta}=a_{\beta\alpha}$.</p>
-<h2 id="外微分式和外微分"><a href="#外微分式和外微分" class="headerlink" title="外微分式和外微分"></a>外微分式和外微分</h2><p><strong>定义 2.1</strong> 设$D$是$n$维欧式空间$E^n$中的一个区域，$(u^1,\cdots,u^n)$是区域$D$上的曲纹坐标系. 如果以连续可微的方式在每一点$p=(u^1,\cdots,u^n)\in D$给定了一个$r$次外形式</p>
+\omega_\alpha=\sum_{\beta=1}^r{a_{\alpha\beta}\omega^\beta},</script><p>并且组合系数 $a_{\alpha\beta}$ 是对称的，即 $a_{\alpha\beta}=a_{\beta\alpha}$.</p>
+<h2 id="外微分式和外微分"><a href="#外微分式和外微分" class="headerlink" title="外微分式和外微分"></a>外微分式和外微分</h2><p><strong>定义 2.1</strong> 设 $D$ 是 $n$ 维欧式空间 $E^n$ 中的一个区域，$(u^1,\cdots,u^n)$ 是区域 $D$ 上的曲纹坐标系。如果以连续可微的方式在每一点 $p=(u^1,\cdots,u^n)\in D$ 给定了一个 $r$ 次外形式</p>
 <script type="math/tex; mode=display">
-\varphi(p)=\dfrac{1}{r!}\varphi_{i_1\cdots i_r}(u^1,\cdots,u^n)\mathrm{d}u^{i_1}\wedge\cdots\wedge\mathrm{d}u^{i_r}\\=\sum_{1\le i_1<\cdots<i_r\le n}{\varphi_{i_1\cdots i_r}(u^1,\cdots,u^n)\mathrm{d}u^{i_1}\wedge\cdots\wedge\mathrm{d}u^{i_r}},</script><p>其中假定系数$\varphi_{i_1\cdots i_r}(u^1,\cdots,u^n)$对于下指标$i_1,\cdots,i_r$是反对称的，则称$\varphi$是定义在$D$上的$r$次<strong>外微分式</strong>.<br><strong>定义 2.2</strong> 设</p>
+\varphi(p)=\dfrac{1}{r!}\varphi_{i_1\cdots i_r}(u^1,\cdots,u^n)\mathrm{d}u^{i_1}\wedge\cdots\wedge\mathrm{d}u^{i_r}\\=\sum_{1\le i_1<\cdots<i_r\le n}{\varphi_{i_1\cdots i_r}(u^1,\cdots,u^n)\mathrm{d}u^{i_1}\wedge\cdots\wedge\mathrm{d}u^{i_r}},</script><p>其中假定系数 $\varphi_{i_1\cdots i_r}(u^1,\cdots,u^n)$ 对于下指标 $i_1,\cdots,i_r$ 是反对称的，则称 $\varphi$ 是定义在 $D$ 上的 $r$ 次<strong>外微分式</strong>.<br><strong>定义 2.2</strong> 设</p>
 <script type="math/tex; mode=display">
-\varphi =\dfrac{1}{r!}\varphi_{i_1\cdots i_r}\mathrm{d}u^{i_1}\wedge\cdots\wedge\mathrm{d}u^{i_r}</script><p>是定义在区域$D$上的一个$r$次外微分式.用如下的方式定义$r+1$次外微分式:</p>
+\varphi =\dfrac{1}{r!}\varphi_{i_1\cdots i_r}\mathrm{d}u^{i_1}\wedge\cdots\wedge\mathrm{d}u^{i_r}</script><p>是定义在区域 $D$ 上的一个 $r$ 次外微分式。用如下的方式定义 $r+1$ 次外微分式:</p>
 <script type="math/tex; mode=display">
-\mathrm{d}\varphi=\dfrac{1}{r!}\mathrm{d}\varphi_{i_1\cdots i_r}\wedge \mathrm{d}u^{i_1}\wedge\cdots\wedge\mathrm{d}u^{i_r}\\=\dfrac{1}{r!}\mathrm{d}\dfrac{\partial{\varphi_{i_1\cdots i_r}}}{\partial{u^j}}\mathrm{d}u^j\wedge \mathrm{d}u^{i_1}\wedge\cdots\wedge\mathrm{d}u^{i_r}</script><p>称为$\varphi$的<strong>外微分</strong>.<br><strong>定理 2.1</strong> 外微分运算$\mathrm{d}$遵循下面的运算法则:<br>(1)$\mathrm{d}$是线性算子，即对于任意的外微分式$\varphi^1,\varphi^2$，有</p>
+\mathrm{d}\varphi=\dfrac{1}{r!}\mathrm{d}\varphi_{i_1\cdots i_r}\wedge \mathrm{d}u^{i_1}\wedge\cdots\wedge\mathrm{d}u^{i_r}\\=\dfrac{1}{r!}\mathrm{d}\dfrac{\partial{\varphi_{i_1\cdots i_r}}}{\partial{u^j}}\mathrm{d}u^j\wedge \mathrm{d}u^{i_1}\wedge\cdots\wedge\mathrm{d}u^{i_r}</script><p>称为 $\varphi$ 的<strong>外微分</strong>.<br><strong>定理 2.1</strong> 外微分运算 $\mathrm {d}$ 遵循下面的运算法则:<br>(1)$\mathrm {d}$ 是线性算子，即对于任意的外微分式 $\varphi^1,\varphi^2$，有</p>
 <script type="math/tex; mode=display">
-\mathrm{d}(\varphi^1+\varphi^2)=\mathrm{d}\varphi^1+\mathrm{\varphi^2}\qquad \mathrm{d}(c\cdot\varphi^1)=c\cdot\mathrm{d}\varphi^1,\forall c\in\mathbb{R};</script><p>(2)$\mathrm{d}\circ\mathrm{d}=0$，即对于任意一个外微分式$\varphi$，有</p>
+\mathrm{d}(\varphi^1+\varphi^2)=\mathrm{d}\varphi^1+\mathrm{\varphi^2}\qquad \mathrm{d}(c\cdot\varphi^1)=c\cdot\mathrm{d}\varphi^1,\forall c\in\mathbb{R};</script><p>(2)$\mathrm {d}\circ\mathrm {d}=0$，即对于任意一个外微分式 $\varphi$，有</p>
 <script type="math/tex; mode=display">
-\mathrm{d}(\mathrm{d}\varphi)=0;</script><p>(3)若$\varphi$是$r$次外微分式，则对于任意一个外微分式$\psi$，有</p>
+\mathrm{d}(\mathrm{d}\varphi)=0;</script><p>(3) 若 $\varphi$ 是 $r$ 次外微分式，则对于任意一个外微分式 $\psi$，有</p>
 <script type="math/tex; mode=display">
-\mathrm{d}(\varphi\wedge\psi)=\mathrm{d}\varphi\wedge\psi+(-1)^r\varphi\wedge\mathrm{d}\psi.</script><p><strong>定理 2.2</strong> 设$\varphi$是定义在$n$维区域$D$上的一个$r$次外微分式，它在曲纹坐标系$(u^1,\cdots,u^n)$下的表示是</p>
+\mathrm{d}(\varphi\wedge\psi)=\mathrm{d}\varphi\wedge\psi+(-1)^r\varphi\wedge\mathrm{d}\psi.</script><p><strong>定理 2.2</strong> 设 $\varphi$ 是定义在 $n$ 维区域 $D$ 上的一个 $r$ 次外微分式，它在曲纹坐标系 $(u^1,\cdots,u^n)$ 下的表示是</p>
 <script type="math/tex; mode=display">
-\varphi = \dfrac{1}{r!}\varphi_{i_1\cdots i_r}(u^1,\cdots,u^n)\mathrm{d}u^{i_1}\wedge\cdots\wedge\mathrm{d}u^{i_r},</script><p>在另一个曲纹坐标系$(\tilde{u}^1,\cdots,\tilde{u}^n)$下的表示是</p>
+\varphi = \dfrac{1}{r!}\varphi_{i_1\cdots i_r}(u^1,\cdots,u^n)\mathrm{d}u^{i_1}\wedge\cdots\wedge\mathrm{d}u^{i_r},</script><p>在另一个曲纹坐标系 $(\tilde {u}^1,\cdots,\tilde {u}^n)$ 下的表示是</p>
 <script type="math/tex; mode=display">
 \varphi  = \dfrac{1}{r!}\tilde{\varphi}_{i_1\cdots i_r}(\tilde{u}^1,\cdots,\tilde{u}^n)\mathrm{d}\tilde{u}^{i_1}\wedge\cdots\wedge\mathrm{d}\tilde{u}^{i_r},</script><p>则有</p>
 <script type="math/tex; mode=display">
-\varphi_{i_1\cdots i_r}\wedge\mathrm{d}u^{i_1}\wedge\cdots\wedge\mathrm{d}u^{i_r}=\tilde{\varphi}_{i_1\cdots i_r}\wedge\mathrm{d}\tilde{u}^{i_1}\wedge\cdots\wedge\mathrm{d}\tilde{u}^{i_r}.</script><p><strong>定理 2.3</strong> 设$\sigma:\ \tilde{D}\to D$是连续可微映射，则对区域$\tilde{D}$上任意的外微分式$\tilde{\varphi},\tilde{\psi}$有下面的等式:</p>
+\varphi_{i_1\cdots i_r}\wedge\mathrm{d}u^{i_1}\wedge\cdots\wedge\mathrm{d}u^{i_r}=\tilde{\varphi}_{i_1\cdots i_r}\wedge\mathrm{d}\tilde{u}^{i_1}\wedge\cdots\wedge\mathrm{d}\tilde{u}^{i_r}.</script><p><strong>定理 2.3</strong> 设 $\sigma:\ \tilde {D}\to D$ 是连续可微映射，则对区域 $\tilde {D}$ 上任意的外微分式 $\tilde {\varphi},\tilde {\psi}$ 有下面的等式:</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 &(1)\sigma^*(\varphi+\psi)=\sigma^*\varphi+\sigma^*\psi\\
 &(2)\sigma^*(\varphi\wedge\psi)=\sigma^*\varphi\wedge\sigma^*\psi\\
 &(3)\sigma^*(\mathrm{d}\varphi)=\mathrm{d}(\sigma^*\varphi).
 \end{aligned}</script><blockquote>
-<p><strong>Stokes公式</strong>:<script type="math/tex">\int_{\partial G}{\omega}=\int_{G}{\mathrm{d}\omega}.</script></p>
+<p><strong>Stokes 公式</strong>:<script type="math/tex">\int_{\partial G}{\omega}=\int_{G}{\mathrm{d}\omega}.</script></p>
 </blockquote>
 <h2 id=""><a href="#" class="headerlink" title="~"></a>~</h2><blockquote>
 <p>未完</p>
@@ -910,7 +940,7 @@ f\wedge g=\dfrac{(r+s)!}{r!s!}[f\otimes g].</script><p><strong>定理 1.1</stron
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86"><span class="nav-number">1.</span> <span class="nav-text">预备知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.</span> <span class="nav-text">向量函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B2%E7%BA%BF%E8%AE%BA"><span class="nav-number">2.</span> <span class="nav-text">曲线论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E5%8F%82%E6%95%B0%E6%9B%B2%E7%BA%BF"><span class="nav-number">2.1.</span> <span class="nav-text">正则参数曲线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E7%BA%BF%E7%9A%84%E5%BC%A7%E9%95%BF"><span class="nav-number">2.2.</span> <span class="nav-text">曲线的弧长</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%9B%B2%E7%8E%87%E5%92%8C-Frenet-%E6%A1%86%E6%9E%B6"><span class="nav-number">2.3.</span> <span class="nav-text">曲线的曲率和 Frenet 框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E6%8D%A2%E5%85%AC%E5%BC%8F"><span class="nav-number">2.3.1.</span> <span class="nav-text">代换公式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%8C%A0%E7%8E%87%E5%92%8CFrenet%E5%85%AC%E5%BC%8F"><span class="nav-number">2.4.</span> <span class="nav-text">曲线的挠率和Frenet公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E7%BA%BF%E7%9A%84%E5%8F%82%E6%95%B0%E6%96%B9%E7%A8%8B%E5%9C%A8%E4%B8%80%E7%82%B9%E7%9A%84%E6%A0%87%E5%87%86%E5%B1%95%E5%BC%80"><span class="nav-number">2.5.</span> <span class="nav-text">曲线的参数方程在一点的标准展开</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E5%9C%A8%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB%E7%9A%84%E6%9B%B2%E7%BA%BF%E5%81%B6"><span class="nav-number">2.6.</span> <span class="nav-text">存在对应关系的曲线偶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E9%9D%A2%E6%9B%B2%E7%BA%BF"><span class="nav-number">2.7.</span> <span class="nav-text">平面曲线</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B2%E9%9D%A2%E7%9A%84%E7%AC%AC%E4%B8%80%E5%9F%BA%E6%9C%AC%E5%BD%A2%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">曲面的第一基本形式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E5%8F%82%E6%95%B0%E6%9B%B2%E9%9D%A2"><span class="nav-number">3.1.</span> <span class="nav-text">正则参数曲面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E5%B9%B3%E9%9D%A2%E5%92%8C%E6%B3%95%E7%BA%BF"><span class="nav-number">3.2.</span> <span class="nav-text">切平面和法线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E5%9F%BA%E6%9C%AC%E5%BD%A2%E5%BC%8F"><span class="nav-number">3.3.</span> <span class="nav-text">第一基本形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E9%9D%A2%E4%B8%8A%E6%AD%A3%E4%BA%A4%E5%8F%82%E6%95%B0%E6%9B%B2%E7%BA%BF%E7%BD%91%E7%9A%84%E5%AD%98%E5%9C%A8%E6%80%A7"><span class="nav-number">3.4.</span> <span class="nav-text">曲面上正交参数曲线网的存在性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%9D%E9%95%BF%E5%AF%B9%E5%BA%94%E5%92%8C%E4%BF%9D%E8%A7%92%E5%AF%B9%E5%BA%94"><span class="nav-number">3.5.</span> <span class="nav-text">保长对应和保角对应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E5%B1%95%E6%9B%B2%E9%9D%A2"><span class="nav-number">3.6.</span> <span class="nav-text">可展曲面</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B2%E9%9D%A2%E7%9A%84%E7%AC%AC%E4%BA%8C%E5%9F%BA%E6%9C%AC%E5%BD%A2%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">曲面的第二基本形式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E5%9F%BA%E6%9C%AC%E5%BD%A2%E5%BC%8F"><span class="nav-number">4.1.</span> <span class="nav-text">第二基本形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%95%E6%9B%B2%E7%8E%87"><span class="nav-number">4.2.</span> <span class="nav-text">法曲率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Weingarten-%E6%98%A0%E5%B0%84%E5%92%8C%E4%B8%BB%E6%9B%B2%E7%8E%87"><span class="nav-number">4.3.</span> <span class="nav-text">Weingarten 映射和主曲率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E6%96%B9%E5%90%91%E5%92%8C%E4%B8%BB%E6%9B%B2%E7%8E%87%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-number">4.4.</span> <span class="nav-text">主方向和主曲率的计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dupin-%E6%A0%87%E5%BD%A2%E5%92%8C%E6%9B%B2%E9%9D%A2%E5%8F%82%E6%95%B0%E6%96%B9%E7%A8%8B%E5%9C%A8%E4%B8%80%E7%82%B9%E7%9A%84%E6%A0%87%E5%87%86%E5%B1%95%E5%BC%80"><span class="nav-number">4.5.</span> <span class="nav-text">Dupin 标形和曲面参数方程在一点的标准展开</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%90%E4%BA%9B%E7%89%B9%E6%AE%8A%E6%9B%B2%E9%9D%A2"><span class="nav-number">4.6.</span> <span class="nav-text">某些特殊曲面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Gauss-%E6%9B%B2%E7%8E%87%E4%B8%BA%E5%B8%B8%E6%95%B0"><span class="nav-number">4.6.1.</span> <span class="nav-text">Gauss 曲率为常数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B3%E5%9D%87%E6%9B%B2%E7%8E%87%E4%B8%BA%E9%9B%B6"><span class="nav-number">4.6.2.</span> <span class="nav-text">平均曲率为零</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B2%E9%9D%A2%E8%AE%BA%E5%9F%BA%E6%9C%AC%E5%AE%9A%E7%90%86"><span class="nav-number">5.</span> <span class="nav-text">曲面论基本定理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E7%84%B6%E6%A0%87%E6%9E%B6%E7%9A%84%E8%BF%90%E5%8A%A8%E5%85%AC%E5%BC%8F"><span class="nav-number">5.1.</span> <span class="nav-text">自然标架的运动公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E9%9D%A2%E7%9A%84%E5%94%AF%E4%B8%80%E6%80%A7%E5%AE%9A%E7%90%86"><span class="nav-number">5.2.</span> <span class="nav-text">曲面的唯一性定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E9%9D%A2%E8%AE%BA%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B"><span class="nav-number">5.3.</span> <span class="nav-text">曲面论基本方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E9%9D%A2%E7%9A%84%E5%AD%98%E5%9C%A8%E6%80%A7%E5%AE%9A%E7%90%86"><span class="nav-number">5.4.</span> <span class="nav-text">曲面的存在性定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gauss%E5%AE%9A%E7%90%86"><span class="nav-number">5.5.</span> <span class="nav-text">Gauss定理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%8B%E5%9C%B0%E6%9B%B2%E7%8E%87%E5%92%8C%E6%B5%8B%E5%9C%B0%E7%BA%BF"><span class="nav-number">6.</span> <span class="nav-text">测地曲率和测地线</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E5%9C%B0%E6%9B%B2%E7%8E%87%E5%92%8C%E6%B5%8B%E5%9C%B0%E6%8C%A0%E7%8E%87"><span class="nav-number">6.1.</span> <span class="nav-text">测地曲率和测地挠率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E5%9C%B0%E7%BA%BF"><span class="nav-number">6.2.</span> <span class="nav-text">测地线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E5%9C%B0%E5%9D%90%E6%A0%87%E7%B3%BB%E5%92%8C%E6%B3%95%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="nav-number">6.3.</span> <span class="nav-text">测地坐标系和法坐标系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E6%9B%B2%E7%8E%87%E6%9B%B2%E9%9D%A2"><span class="nav-number">6.4.</span> <span class="nav-text">常曲率曲面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E9%9D%A2%E4%B8%8A%E5%88%87%E5%90%91%E9%87%8F%E7%9A%84%E5%B9%B3%E8%A1%8C%E7%A7%BB%E5%8A%A8"><span class="nav-number">6.5.</span> <span class="nav-text">曲面上切向量的平行移动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95"><span class="nav-number">6.6.</span> <span class="nav-text">黎曼几何</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B4%BB%E5%8A%A8%E6%A0%87%E6%9E%B6%E5%92%8C%E5%A4%96%E5%BE%AE%E5%88%86%E6%B3%95"><span class="nav-number">7.</span> <span class="nav-text">活动标架和外微分法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E5%BD%A2%E5%BC%8F"><span class="nav-number">7.1.</span> <span class="nav-text">外形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E5%BE%AE%E5%88%86%E5%BC%8F%E5%92%8C%E5%A4%96%E5%BE%AE%E5%88%86"><span class="nav-number">7.2.</span> <span class="nav-text">外微分式和外微分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">7.3.</span> <span class="nav-text">~</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86"><span class="nav-number">1.</span> <span class="nav-text">预备知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.</span> <span class="nav-text">向量函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B2%E7%BA%BF%E8%AE%BA"><span class="nav-number">2.</span> <span class="nav-text">曲线论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E5%8F%82%E6%95%B0%E6%9B%B2%E7%BA%BF"><span class="nav-number">2.1.</span> <span class="nav-text">正则参数曲线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E7%BA%BF%E7%9A%84%E5%BC%A7%E9%95%BF"><span class="nav-number">2.2.</span> <span class="nav-text">曲线的弧长</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%9B%B2%E7%8E%87%E5%92%8C-Frenet-%E6%A1%86%E6%9E%B6"><span class="nav-number">2.3.</span> <span class="nav-text">曲线的曲率和 Frenet 框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E6%8D%A2%E5%85%AC%E5%BC%8F"><span class="nav-number">2.3.1.</span> <span class="nav-text">代换公式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%8C%A0%E7%8E%87%E5%92%8CFrenet%E5%85%AC%E5%BC%8F"><span class="nav-number">2.4.</span> <span class="nav-text">曲线的挠率和 Frenet 公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E7%BA%BF%E7%9A%84%E5%8F%82%E6%95%B0%E6%96%B9%E7%A8%8B%E5%9C%A8%E4%B8%80%E7%82%B9%E7%9A%84%E6%A0%87%E5%87%86%E5%B1%95%E5%BC%80"><span class="nav-number">2.5.</span> <span class="nav-text">曲线的参数方程在一点的标准展开</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E5%9C%A8%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB%E7%9A%84%E6%9B%B2%E7%BA%BF%E5%81%B6"><span class="nav-number">2.6.</span> <span class="nav-text">存在对应关系的曲线偶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E9%9D%A2%E6%9B%B2%E7%BA%BF"><span class="nav-number">2.7.</span> <span class="nav-text">平面曲线</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B2%E9%9D%A2%E7%9A%84%E7%AC%AC%E4%B8%80%E5%9F%BA%E6%9C%AC%E5%BD%A2%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">曲面的第一基本形式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E5%8F%82%E6%95%B0%E6%9B%B2%E9%9D%A2"><span class="nav-number">3.1.</span> <span class="nav-text">正则参数曲面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E5%B9%B3%E9%9D%A2%E5%92%8C%E6%B3%95%E7%BA%BF"><span class="nav-number">3.2.</span> <span class="nav-text">切平面和法线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E5%9F%BA%E6%9C%AC%E5%BD%A2%E5%BC%8F"><span class="nav-number">3.3.</span> <span class="nav-text">第一基本形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E9%9D%A2%E4%B8%8A%E6%AD%A3%E4%BA%A4%E5%8F%82%E6%95%B0%E6%9B%B2%E7%BA%BF%E7%BD%91%E7%9A%84%E5%AD%98%E5%9C%A8%E6%80%A7"><span class="nav-number">3.4.</span> <span class="nav-text">曲面上正交参数曲线网的存在性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%9D%E9%95%BF%E5%AF%B9%E5%BA%94%E5%92%8C%E4%BF%9D%E8%A7%92%E5%AF%B9%E5%BA%94"><span class="nav-number">3.5.</span> <span class="nav-text">保长对应和保角对应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E5%B1%95%E6%9B%B2%E9%9D%A2"><span class="nav-number">3.6.</span> <span class="nav-text">可展曲面</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B2%E9%9D%A2%E7%9A%84%E7%AC%AC%E4%BA%8C%E5%9F%BA%E6%9C%AC%E5%BD%A2%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">曲面的第二基本形式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E5%9F%BA%E6%9C%AC%E5%BD%A2%E5%BC%8F"><span class="nav-number">4.1.</span> <span class="nav-text">第二基本形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%95%E6%9B%B2%E7%8E%87"><span class="nav-number">4.2.</span> <span class="nav-text">法曲率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Weingarten-%E6%98%A0%E5%B0%84%E5%92%8C%E4%B8%BB%E6%9B%B2%E7%8E%87"><span class="nav-number">4.3.</span> <span class="nav-text">Weingarten 映射和主曲率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E6%96%B9%E5%90%91%E5%92%8C%E4%B8%BB%E6%9B%B2%E7%8E%87%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-number">4.4.</span> <span class="nav-text">主方向和主曲率的计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dupin-%E6%A0%87%E5%BD%A2%E5%92%8C%E6%9B%B2%E9%9D%A2%E5%8F%82%E6%95%B0%E6%96%B9%E7%A8%8B%E5%9C%A8%E4%B8%80%E7%82%B9%E7%9A%84%E6%A0%87%E5%87%86%E5%B1%95%E5%BC%80"><span class="nav-number">4.5.</span> <span class="nav-text">Dupin 标形和曲面参数方程在一点的标准展开</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%90%E4%BA%9B%E7%89%B9%E6%AE%8A%E6%9B%B2%E9%9D%A2"><span class="nav-number">4.6.</span> <span class="nav-text">某些特殊曲面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Gauss-%E6%9B%B2%E7%8E%87%E4%B8%BA%E5%B8%B8%E6%95%B0"><span class="nav-number">4.6.1.</span> <span class="nav-text">Gauss 曲率为常数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B3%E5%9D%87%E6%9B%B2%E7%8E%87%E4%B8%BA%E9%9B%B6"><span class="nav-number">4.6.2.</span> <span class="nav-text">平均曲率为零</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B2%E9%9D%A2%E8%AE%BA%E5%9F%BA%E6%9C%AC%E5%AE%9A%E7%90%86"><span class="nav-number">5.</span> <span class="nav-text">曲面论基本定理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E7%84%B6%E6%A0%87%E6%9E%B6%E7%9A%84%E8%BF%90%E5%8A%A8%E5%85%AC%E5%BC%8F"><span class="nav-number">5.1.</span> <span class="nav-text">自然标架的运动公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E9%9D%A2%E7%9A%84%E5%94%AF%E4%B8%80%E6%80%A7%E5%AE%9A%E7%90%86"><span class="nav-number">5.2.</span> <span class="nav-text">曲面的唯一性定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E9%9D%A2%E8%AE%BA%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B"><span class="nav-number">5.3.</span> <span class="nav-text">曲面论基本方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E9%9D%A2%E7%9A%84%E5%AD%98%E5%9C%A8%E6%80%A7%E5%AE%9A%E7%90%86"><span class="nav-number">5.4.</span> <span class="nav-text">曲面的存在性定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gauss%E5%AE%9A%E7%90%86"><span class="nav-number">5.5.</span> <span class="nav-text">Gauss 定理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%8B%E5%9C%B0%E6%9B%B2%E7%8E%87%E5%92%8C%E6%B5%8B%E5%9C%B0%E7%BA%BF"><span class="nav-number">6.</span> <span class="nav-text">测地曲率和测地线</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E5%9C%B0%E6%9B%B2%E7%8E%87%E5%92%8C%E6%B5%8B%E5%9C%B0%E6%8C%A0%E7%8E%87"><span class="nav-number">6.1.</span> <span class="nav-text">测地曲率和测地挠率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E5%9C%B0%E7%BA%BF"><span class="nav-number">6.2.</span> <span class="nav-text">测地线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E5%9C%B0%E5%9D%90%E6%A0%87%E7%B3%BB%E5%92%8C%E6%B3%95%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="nav-number">6.3.</span> <span class="nav-text">测地坐标系和法坐标系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E6%9B%B2%E7%8E%87%E6%9B%B2%E9%9D%A2"><span class="nav-number">6.4.</span> <span class="nav-text">常曲率曲面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E9%9D%A2%E4%B8%8A%E5%88%87%E5%90%91%E9%87%8F%E7%9A%84%E5%B9%B3%E8%A1%8C%E7%A7%BB%E5%8A%A8"><span class="nav-number">6.5.</span> <span class="nav-text">曲面上切向量的平行移动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95"><span class="nav-number">6.6.</span> <span class="nav-text">黎曼几何</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B4%BB%E5%8A%A8%E6%A0%87%E6%9E%B6%E5%92%8C%E5%A4%96%E5%BE%AE%E5%88%86%E6%B3%95"><span class="nav-number">7.</span> <span class="nav-text">活动标架和外微分法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E5%BD%A2%E5%BC%8F"><span class="nav-number">7.1.</span> <span class="nav-text">外形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E5%BE%AE%E5%88%86%E5%BC%8F%E5%92%8C%E5%A4%96%E5%BE%AE%E5%88%86"><span class="nav-number">7.2.</span> <span class="nav-text">外微分式和外微分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">7.3.</span> <span class="nav-text">~</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -926,20 +956,20 @@ f\wedge g=\dfrac{(r+s)!}{r!s!}[f\otimes g].</script><p><strong>定理 1.1</stron
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-count">28</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
