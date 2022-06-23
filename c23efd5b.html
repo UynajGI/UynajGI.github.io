@@ -31,7 +31,7 @@
 <meta property="og:description" content="线性代数笔记，包括考研用，学习用，以及深入了解记录，持续更新中">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-24T15:12:26.000Z">
-<meta property="article:modified_time" content="2022-06-07T08:59:03.453Z">
+<meta property="article:modified_time" content="2022-06-23T16:04:55.592Z">
 <meta property="article:author" content="結凪">
 <meta property="article:tag" content="古典">
 <meta property="article:tag" content="记录">
@@ -237,7 +237,7 @@ p.spoiler {
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-06-07 16:59:03" itemprop="dateModified" datetime="2022-06-07T16:59:03+08:00">2022-06-07</time>
+                <time title="修改时间：2022-06-24 00:04:55" itemprop="dateModified" datetime="2022-06-24T00:04:55+08:00">2022-06-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -267,7 +267,7 @@ p.spoiler {
 </font>
 </center>
 
-<h2 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a>行列式</h2><p>行列式的计算是按照行列式的性质进行的。低阶行列式的计算主要有两个思路：转化为上（下）三角行列式和降阶，但一般是把两种思路相结合；n 阶行列式的计算主要有数学归纳法、递推法、升阶法、转化为上（下）三角行列式法.</p>
+<h2 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a>行列式</h2><p>行列式的计算是按照行列式的性质进行的。低阶行列式的计算主要有两个思路：转化为上（下）三角行列式和降阶，但一般是把两种思路相结合；n 阶行列式的计算主要有数学归纳法、递推法、升阶法、转化为上（下）三角行列式法。</p>
 <h3 id="行列式的基本概念与性质"><a href="#行列式的基本概念与性质" class="headerlink" title="行列式的基本概念与性质"></a>行列式的基本概念与性质</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><ol>
 <li>逆序</li>
 <li>逆序数 $\tau (421635)=3+1+0+2+0=6$</li>
@@ -277,7 +277,7 @@ p.spoiler {
 </ol>
 <h4 id="几个特殊的高阶行列式"><a href="#几个特殊的高阶行列式" class="headerlink" title="几个特殊的高阶行列式"></a>几个特殊的高阶行列式</h4><h5 id="对角、上（下）三角行列式"><a href="#对角、上（下）三角行列式" class="headerlink" title="对角、上（下）三角行列式"></a>对角、上（下）三角行列式</h5><ol>
 <li>对角、上（下）三角矩阵的行列式为 $\prod_{n}{a_{ii}}$</li>
-<li> 反对角矩阵的行列式为 $(-1)^{\frac {n (n-1)}{2}}\prod_{n}{l_{i}}$，$l$ 为反对角线上的元素.</li>
+<li> 反对角矩阵的行列式为 $(-1)^{\frac {n (n-1)}{2}}\prod_{n}{l_{i}}$，$l$ 为反对角线上的元素。</li>
 </ol>
 <h5 id="范德蒙行列式"><a href="#范德蒙行列式" class="headerlink" title="范德蒙行列式"></a>范德蒙行列式</h5><script type="math/tex; mode=display">
 \left|\begin{matrix}
@@ -453,8 +453,8 @@ k_1\alpha_1+k_2\alpha_2+\cdots k_n\alpha_n</script><p>称为 $\alpha_1+\alpha_2+
 \beta = k_1\alpha_1+k_2\alpha_2+\cdots k_n\alpha_n</script><p>称为 $\beta$ 可由 $\alpha_1+\alpha_2+\cdots+\alpha_n$ 的线性表示</p>
 <h4 id="向量组相关性与线性表示的基本概念"><a href="#向量组相关性与线性表示的基本概念" class="headerlink" title="向量组相关性与线性表示的基本概念"></a>向量组相关性与线性表示的基本概念</h4><ol>
 <li>相关性<script type="math/tex; mode=display">
-   k_1\alpha_1+k_2\alpha_2+\cdots k_n\alpha_n = \mathbf{0}</script>若只有零解，则称 $\alpha_1+\alpha_2+\cdots+\alpha_n$ 线性无关，反之线性相关.</li>
-<li> 线性表示</li>
+   k_1\alpha_1+k_2\alpha_2+\cdots k_n\alpha_n = \mathbf{0}</script>若只有零解，则称 $\alpha_1+\alpha_2+\cdots+\alpha_n$ 线性无关，反之线性相关。</li>
+<li>线性表示</li>
 </ol>
 <h4 id="向量组相关性与线性表示的性质"><a href="#向量组相关性与线性表示的性质" class="headerlink" title="向量组相关性与线性表示的性质"></a>向量组相关性与线性表示的性质</h4><p><strong>性质 1</strong> 向量组 $\alpha_1+\alpha_2+\cdots+\alpha_n$ 线性相关的充分必要条件是向量组 $\alpha_1+\alpha_2+\cdots+\alpha_n$ 中至少有一个向量可由其余向量线性表示</p>
 <p><strong>性质 2</strong></p>
@@ -570,7 +570,7 @@ f(x_1,x_2,\cdots,x_n)=\mathbf{X}^T\mathbf{A}\mathbf{X}</script></li>
 <li><p><strong>标准二次型</strong> 只含有平方项不含交叉项的二次型称为标准二次型</p>
 </li>
 <li><strong>二次型的标准化</strong> $f(\mathbf{X})=\mathbf{X}^T\mathbf{AX}=\mathbf{Y}^T(\mathbf{P}^T\mathbf{AP})\mathbf{Y}$</li>
-<li><strong> 规范二次型</strong> 系数为 1 和 - 1 的标准形，称为二次型的规范形</li>
+<li><strong> 规范二次型</strong> 系数为 1 和 -1 的标准形，称为二次型的规范形</li>
 <li><strong>可逆的坐标变换</strong> $\mathbf{X}=\mathbf{PY},|\mathbf{P}|\not = 0$</li>
 <li><strong> 矩阵合同</strong> $\mathbf {P}^T\mathbf {AP}=\mathbf {B}$，称矩阵 $\mathbf {A}$ 与 $\mathbf {B}$ 合同，记为 $\mathbf {A}\approx\mathbf {B}$</li>
 </ol>
@@ -734,7 +734,7 @@ f(x_1,x_2,\cdots,x_n)=\mathbf{X}^T\mathbf{A}\mathbf{X}</script></li>
         
 
         
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备2022065599号 </a>
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤 ICP 备 2022065599 号 </a>
       <img src="/images/beian.png" style="display: inline-block;">
   </div>
 
