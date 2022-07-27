@@ -31,7 +31,7 @@
 <meta property="og:description" content="本篇主要是本科阶段学习的电动力学习题和解答，持续更新中.......">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-23T09:33:03.000Z">
-<meta property="article:modified_time" content="2022-07-23T09:33:03.982Z">
+<meta property="article:modified_time" content="2022-07-27T04:02:36.730Z">
 <meta property="article:author" content="結凪">
 <meta property="article:tag" content="记录">
 <meta property="article:tag" content="电动力学">
@@ -236,6 +236,13 @@ p.spoiler {
 
               <time title="创建时间：2022-07-23 17:33:03" itemprop="dateCreated datePublished" datetime="2022-07-23T17:33:03+08:00">2022-07-23</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-27 12:02:36" itemprop="dateModified" datetime="2022-07-27T12:02:36+08:00">2022-07-27</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -328,7 +335,7 @@ p.spoiler {
 <script type="math/tex; mode=display">
 \mathbf{J}_m=\nabla\times \mathbf{M}=0</script><p>磁化电流面密度</p>
 <script type="math/tex; mode=display">
-\mathbf{a}_m=\mathbf{n}\times(\mathbf{M}_2\equiv0-\mathbf{M}_1\equiv\mathbf{M} )=\mathbf{M}\times\mathbf{n}=M\sin\theta\mathbf{e}_\phi</script><h3 id="思考题与习题二"><a href="#思考题与习题二" class="headerlink" title="思考题与习题二"></a>思考题与习题二</h3><ol>
+\mathbf{a}_m=\mathbf{n}\times(\mathbf{M}_2\equiv0-\mathbf{M}_1\equiv\mathbf{M} )=\mathbf{M}\times\mathbf{n}=M\sin\theta\mathbf{e}_\phi</script><h2 id="思考题与习题二"><a href="#思考题与习题二" class="headerlink" title="思考题与习题二"></a>思考题与习题二</h2><ol>
 <li><p>库仑定律的适用条件是什么？它能否作为述静电场的基本规律？<br>1）真空中；2）电荷相对静止；3）电荷为点电荷<br>只能描述符合上述条件的静电场，介质静电场，非点电荷静电场不能描述</p>
 </li>
 <li><p>从库仑定律可以推出高斯定理，从高斯定理是否可以推出库仑定律？<br>二者等价</p>
@@ -565,398 +572,923 @@ D_1=\dfrac{\varepsilon-\varepsilon_0}{\varepsilon+\varepsilon_0}E_0a^2,\quad B_1
 \begin{align*}
     &\phi_1=\dfrac{-2\varepsilon_0}{\varepsilon+\varepsilon_0}E_0r\cos{\theta}\\
     &\phi_2=-E_0r\cos\theta+\dfrac{\varepsilon-\varepsilon_0}{\varepsilon+\varepsilon_0}E_0a^2r^{-1}\cos{\theta}
-\end{align*}</script><p></p><div id="3.3.3"></div><br><strong>例 3</strong> 一半径为 $a$ 均匀介质球，电常数为 $\varepsilon_1$，介质球内带均匀自由电荷，电荷密度为 $\rho$，介质球沉浸在介电常数为 $\varepsilon_2$ 的无限大均匀介质中在 $z$ 方向加一均匀电场 $E_0$，求球内外的电势<p></p>
-<p>球内</p>
-<script type="math/tex; mode=display">
-\nabla^2\phi_1=\dfrac{-\rho}{\varepsilon_1}</script><p>球外</p>
-<script type="math/tex; mode=display">
-\nabla^2\phi_2=0</script><p>用球坐标分离变量，与 $\phi$ 无关，故 $\theta$ 的本征函数为勒让德函数，$r$ 的本征函数为 $r^n,r^{-(n+1)}$，通解为</p>
-<script type="math/tex; mode=display">
-\phi=\sum_{n=0}^\infty{[A_nr^n+B_nr^{-(n+1)}]P_n(\cos\theta)}</script><p>根据边界条件 $r=0,\phi_1=0;r\rightarrow\infty,\phi_2=-E_0r\cos\theta+C$ 和特解 $-\dfrac {\rho r^2}{6\varepsilon_2}$，有</p>
-<script type="math/tex; mode=display">
+\end{align*}</script><div id="3.3.3"></div>
+**例 3** 一半径为 $a$ 均匀介质球，电常数为 $\varepsilon_1$，介质球内带均匀自由电荷，电荷密度为 $\rho$，介质球沉浸在介电常数为 $\varepsilon_2$ 的无限大均匀介质中在 $z$ 方向加一均匀电场 $E_0$，求球内外的电势
+
+球内
+$$
+\nabla^2\phi_1=\dfrac{-\rho}{\varepsilon_1}
+$$
+球外
+$$
+\nabla^2\phi_2=0
+$$
+用球坐标分离变量，与$\phi$无关，故$\theta$的本征函数为勒让德函数，$r$的本征函数为$r^n,r^{-(n+1)}$，通解为
+$$
+\phi=\sum_{n=0}^\infty{[A_nr^n+B_nr^{-(n+1)}]P_n(\cos\theta)}
+$$
+根据边界条件$r=0,\phi_1=0;r\rightarrow\infty,\phi_2=-E_0r\cos\theta+C$和特解$-\dfrac{\rho r^2}{6\varepsilon_2}$，有
+$$
 \begin{align*}
-    &\phi_1=-\dfrac{\rho r^2}{6\varepsilon_2}+\sum_{n=0}^\infty{A_nr^nP_n(\cos\theta)}\\
-    &\phi_2=-E_0r\cos\theta+\sum_{n=0}^\infty{\dfrac{B_n}{r^{n+1}}P_n(\cos\theta)}+C
-\end{align*}</script><p>再由边界条件得到</p>
-<script type="math/tex; mode=display">
-A_1=-E_0\dfrac{3\varepsilon_1}{\varepsilon_1+2\varepsilon_2},\quad B_0=\dfrac{\rho a^3}{3\varepsilon_2},\quad B_1=\dfrac{\varepsilon_1-\varepsilon_2}{2\varepsilon_2+\varepsilon_1}a^3E_0,\quad C=-\dfrac{\rho a^2}{6\varepsilon_1}-\dfrac{\rho a^2}{3\varepsilon_2}</script><p>解得</p>
-<script type="math/tex; mode=display">
+    &amp;\phi_1=-\dfrac{\rho r^2}{6\varepsilon_2}+\sum_{n=0}^\infty{A_nr^nP_n(\cos\theta)}\\
+    &amp;\phi_2=-E_0r\cos\theta+\sum_{n=0}^\infty{\dfrac{B_n}{r^{n+1}}P_n(\cos\theta)}+C
+\end{align*}
+$$
+再由边界条件得到
+$$
+A_1=-E_0\dfrac{3\varepsilon_1}{\varepsilon_1+2\varepsilon_2},\quad B_0=\dfrac{\rho a^3}{3\varepsilon_2},\quad B_1=\dfrac{\varepsilon_1-\varepsilon_2}{2\varepsilon_2+\varepsilon_1}a^3E_0,\quad C=-\dfrac{\rho a^2}{6\varepsilon_1}-\dfrac{\rho a^2}{3\varepsilon_2}
+$$
+
+解得
+
+$$
 \begin{align*}
-    &\phi_1=-\dfrac{\rho r^2}{6\varepsilon_2}-\dfrac{3\varepsilon_1}{\varepsilon_1+2\varepsilon_2}E_0r\cos\theta\\
-    &\phi_2=-E_0r\cos\theta+\dfrac{\rho a^3}{3\varepsilon_2r}+\dfrac{\varepsilon_1-\varepsilon_2}{2\varepsilon_2+\varepsilon_1}\dfrac{a^3}{r^2}E_0\cos\theta-\dfrac{\rho a^2}{6\varepsilon_1}-\dfrac{\rho a^2}{3\varepsilon_2}
-\end{align*}</script><p><strong>例 4</strong> 一不带电导体球，半径为 $a$，在 $b&gt;a$ 处有一点电荷，电量为 $q$，求空间的电势分布</p>
-<p>令点电荷在 $z$ 轴上，有</p>
-<script type="math/tex; mode=display">
-\nabla^2\phi_2=-\dfrac{q}{\varepsilon_0}\delta(\mathbf{r}-b\mathbf{e}_z)</script><p>化为通解 + 特解形式有</p>
-<script type="math/tex; mode=display">
-\phi_2=\dfrac{q}{4\pi\varepsilon_0\sqrt{b^2+r^2-2rb\cos\theta}}+\phi\equiv\left[\sum_{n=0}^\infty{}\left(A_nr^n+\dfrac{B_n}{r^{n+1}}\right)P_n(\cos\theta)\right]</script><h2 id="解静电问题的格林函数方法"><a href="#解静电问题的格林函数方法" class="headerlink" title="解静电问题的格林函数方法"></a>解静电问题的格林函数方法</h2><h2 id="计算静电场的多极展开方法"><a href="#计算静电场的多极展开方法" class="headerlink" title="计算静电场的多极展开方法"></a>计算静电场的多极展开方法</h2><p><strong>例 1</strong> 计算一个半径为 $a$，体电荷密度为的均匀带电球的电偶极矩和电四极矩。</p>
-<script type="math/tex; mode=display">
+    &amp;\phi_1=-\dfrac{\rho r^2}{6\varepsilon_2}-\dfrac{3\varepsilon_1}{\varepsilon_1+2\varepsilon_2}E_0r\cos\theta\\
+    &amp;\phi_2=-E_0r\cos\theta+\dfrac{\rho a^3}{3\varepsilon_2r}+\dfrac{\varepsilon_1-\varepsilon_2}{2\varepsilon_2+\varepsilon_1}\dfrac{a^3}{r^2}E_0\cos\theta-\dfrac{\rho a^2}{6\varepsilon_1}-\dfrac{\rho a^2}{3\varepsilon_2}
+\end{align*}
+$$
+
+**例 4** 一不带电导体球，半径为$a$，在 $b&gt;a$ 处有一点电荷，电量为 $q$，求空间的电势分布
+
+令点电荷在$z$轴上，有
+$$
+\nabla^2\phi_2=-\dfrac{q}{\varepsilon_0}\delta(\mathbf{r}-b\mathbf{e}_z)
+$$
+化为通解 + 特解形式有
+$$
+\phi_2=\dfrac{q}{4\pi\varepsilon_0\sqrt{b^2+r^2-2rb\cos\theta}}+\phi\equiv\left[\sum_{n=0}^\infty{}\left(A_nr^n+\dfrac{B_n}{r^{n+1}}\right)P_n(\cos\theta)\right]
+$$
+
+## 解静电问题的格林函数方法
+
+## 计算静电场的多极展开方法
+
+**例 1** 计算一个半径为$a$，体电荷密度为的均匀带电球的电偶极矩和电四极矩。
+
+$$
 \begin{align*}
-    \mathbf{p}&=\int_V{\rho\mathbf{R}'\mathrm{d}V'}=0\\
-    \mathcal{Q}&=\int_V{(3\mathbf{R}'\mathbf{R}'-\mathbf{R}'^2\vec{\mathcal{J}})\rho\mathrm{d}V'}\\
-    Q_{11}&=Q_{22}=Q_{33}=0\\
-    Q_{12}&=\rho\int_V{3x'y'\mathrm{d}V'}=Q_{13}=Q_{23}=0
-\end{align*}</script><p><strong>例 2</strong> 有一均匀带的回转椭球体，回转半径为 $a$，轴半径长为 $c$，总电量为 $q$，计算其电偶极矩、电四极矩以及远处的电势</p>
-<script type="math/tex; mode=display">
+    \mathbf{p}&amp;=\int_V{\rho\mathbf{R}'\mathrm{d}V'}=0\\
+    \mathcal{Q}&amp;=\int_V{(3\mathbf{R}'\mathbf{R}'-\mathbf{R}'^2\vec{\mathcal{J}})\rho\mathrm{d}V'}\\
+    Q_{11}&amp;=Q_{22}=Q_{33}=0\\
+    Q_{12}&amp;=\rho\int_V{3x'y'\mathrm{d}V'}=Q_{13}=Q_{23}=0
+\end{align*}
+$$
+
+**例 2** 有一均匀带的回转椭球体，回转半径为 $a$，轴半径长为 $c$，总电量为 $q$，计算其电偶极矩、电四极矩以及远处的电势
+
+$$
 \begin{align*}
-    \mathbf{p}&=\int_V{\rho\mathbf{R}'\mathrm{d}V'}=0\\
-    \mathcal{Q}&=\int_V{(3\mathbf{R}'\mathbf{R}'-\mathbf{R}'^2\vec{\mathcal{J}})\rho\mathrm{d}V'}\\
-    Q_{11}&=\int_V{(\rho x'x'-R'^2)\mathrm{d}V'}=\dfrac{q}{5}(a^2-c^2)=Q_{22}\\
-    Q_{33}&=-Q_{11}=-\dfrac{2q}{5}(a^2-c^2)\\
-    Q_{12}&=\rho\int_V{3x'y'\mathrm{d}V'}=Q_{13}=Q_{23}=0
-\end{align*}</script><h2 id="静电场的能量与静电作用力"><a href="#静电场的能量与静电作用力" class="headerlink" title="静电场的能量与静电作用力"></a>静电场的能量与静电作用力</h2><p><strong>例 1</strong> 求真空中 n 个点电荷系统的静电能量</p>
-<script type="math/tex; mode=display">
-\rho(\mathbf{R}')=\sum_{i=1}^n{q_i\delta(\mathbf{R'}-\mathbf{R})}</script><script type="math/tex; mode=display">
+    \mathbf{p}&amp;=\int_V{\rho\mathbf{R}'\mathrm{d}V'}=0\\
+    \mathcal{Q}&amp;=\int_V{(3\mathbf{R}'\mathbf{R}'-\mathbf{R}'^2\vec{\mathcal{J}})\rho\mathrm{d}V'}\\
+    Q_{11}&amp;=\int_V{(\rho x'x'-R'^2)\mathrm{d}V'}=\dfrac{q}{5}(a^2-c^2)=Q_{22}\\
+    Q_{33}&amp;=-Q_{11}=-\dfrac{2q}{5}(a^2-c^2)\\
+    Q_{12}&amp;=\rho\int_V{3x'y'\mathrm{d}V'}=Q_{13}=Q_{23}=0
+\end{align*}
+$$
+
+## 静电场的能量与静电作用力
+
+**例 1** 求真空中 n 个点电荷系统的静电能量
+$$
+\rho(\mathbf{R}')=\sum_{i=1}^n{q_i\delta(\mathbf{R'}-\mathbf{R})}
+$$
+
+$$
 \begin{align*}
-    W&=\dfrac{1}{2}\int{\rho\phi\mathrm{d}V}\\
-    &=\dfrac{1}{2}\sum_{i=1}^n{q_i\int\phi\delta(\mathbf{R'}-\mathbf{R})}\mathrm{d}V'\\
-    &=\dfrac{1}{2}\sum_i{q_i\phi_i}\\
-    &=\dfrac{1}{2}\sum_i{q_i\dfrac{1}{4\pi\varepsilon_0}\int{\dfrac{1}{r}\rho(\mathbf{R}')\mathrm{d}V'}}\\
-    &=\dfrac{1}{2}\sum_i{q_i\dfrac{1}{4\pi\varepsilon_0}\sum_{j\not ={i}}^n{\dfrac{q_j}{r_{ij}}}}\\
-    &=\dfrac{1}{8\pi\varepsilon_0}\sum_{ij}{\dfrac{q_iq_j}{r_{ij}}}
-\end{align*}</script><p><strong>例 2</strong> 求真空中带电导体球的静电能量</p>
-<script type="math/tex; mode=display">
+    W&amp;=\dfrac{1}{2}\int{\rho\phi\mathrm{d}V}\\
+    &amp;=\dfrac{1}{2}\sum_{i=1}^n{q_i\int\phi\delta(\mathbf{R'}-\mathbf{R})}\mathrm{d}V'\\
+    &amp;=\dfrac{1}{2}\sum_i{q_i\phi_i}\\
+    &amp;=\dfrac{1}{2}\sum_i{q_i\dfrac{1}{4\pi\varepsilon_0}\int{\dfrac{1}{r}\rho(\mathbf{R}')\mathrm{d}V'}}\\
+    &amp;=\dfrac{1}{2}\sum_i{q_i\dfrac{1}{4\pi\varepsilon_0}\sum_{j\not ={i}}^n{\dfrac{q_j}{r_{ij}}}}\\
+    &amp;=\dfrac{1}{8\pi\varepsilon_0}\sum_{ij}{\dfrac{q_iq_j}{r_{ij}}}
+\end{align*}
+$$
+
+**例 2** 求真空中带电导体球的静电能量
+
+$$
 \begin{align*}
-    &\phi=\dfrac{1}{4\pi\varepsilon_0}\dfrac{Q}{a}\\
-    &W=\dfrac{1}{2}\oint\sigma\phi\mathrm{d}S=\dfrac{1}{2}Q\phi=\dfrac{1}{8\pi\varepsilon_0}\dfrac{Q^2}{a}
-\end{align*}</script><p><strong>例 3</strong> 计算电偶极矩为 $p$ 的电偶极子在外电场 $E$ 中受的作用力与力矩<br>电偶极子在外电场 $E$ 中的势能为</p>
-<script type="math/tex; mode=display">
-W=-\mathbf{p}\cdot\mathbf{E}</script><p>力矩 $L$ 为</p>
-<script type="math/tex; mode=display">
-L=-\dfrac{\partial{W}}{\partial{\theta}}=-pE\sin\theta</script><p>力矩的方向是使 $p$ 与 $E$ 的夹角 $\theta$ 减少，故可改写成矢量形式</p>
-<script type="math/tex; mode=display">
-\mathbf{L}=\mathbf{p}\times\mathbf{E}</script><p>作用在偶极矩上的力为</p>
-<script type="math/tex; mode=display">
-\mathbf{F}=-\nabla W=\nabla(\mathbf{p}\cdot\mathbf{E})=\mathbf{p}\times(\nabla\times\mathbf{E}\equiv0)+\mathbf{p}\cdot\nabla \mathbf{E}=\mathbf{p}\cdot\nabla \mathbf{E}</script><p><strong>例 4</strong> 两同心导体球壳的内、外半径分别为 $R_1,R_2$，内球带电 $q$，外球接地，球壳间充满介电常数为 $\varepsilon$ 的均匀介质，求内外球面每单位面积上的力</p>
-<script type="math/tex; mode=display">
-W=\dfrac{1}{2}\int{\sigma\phi\mathrm{d}S}=\dfrac{1}{2}q\Delta\phi=\dfrac{1}{2}q\left(\dfrac{q}{4\pi\varepsilon}\left(\dfrac{1}{R_1}-\dfrac{1}{R_2}\right)\right)=\dfrac{q^2}{8\pi\varepsilon}\left(\dfrac{1}{R_1}-\dfrac{1}{R_2}\right)</script><p>求内球面上的广义力 $F_1$ 时</p>
-<script type="math/tex; mode=display">
-F_1=-\dfrac{\partial{W}}{\partial{V_1}}=-\dfrac{q^2}{8\pi\varepsilon}\dfrac{1}{4\pi R_1^2}\dfrac{\partial{}}{\partial{R_1}}\left(\dfrac{1}{R_1}-\dfrac{1}{R_2}\right)=\dfrac{q^2}{32\pi^2\varepsilon R_1^4}</script><p>同理 $F_2$ 为</p>
-<script type="math/tex; mode=display">
-F_2=-\dfrac{q^2}{32\pi^2\varepsilon R_2^4}</script><p><strong>例 4</strong> 一平行板电容器，板长为 $l$，宽为 $b$，板间距离 $d$。从板的左部插入一块介质，其介电常数为 $\varepsilon$，插入深度为 $x$，介质和平板之间无空隙，求介质板上受的力略去平板电容器的边缘效应，两板间保持电位差为 $V$</p>
-<script type="math/tex; mode=display">
+    &amp;\phi=\dfrac{1}{4\pi\varepsilon_0}\dfrac{Q}{a}\\
+    &amp;W=\dfrac{1}{2}\oint\sigma\phi\mathrm{d}S=\dfrac{1}{2}Q\phi=\dfrac{1}{8\pi\varepsilon_0}\dfrac{Q^2}{a}
+\end{align*}
+$$
+
+**例 3** 计算电偶极矩为 $p$ 的电偶极子在外电场 $E$ 中受的作用力与力矩
+电偶极子在外电场 $E$ 中的势能为
+$$
+W=-\mathbf{p}\cdot\mathbf{E}
+$$
+力矩$L$为
+$$
+L=-\dfrac{\partial{W}}{\partial{\theta}}=-pE\sin\theta
+$$
+力矩的方向是使 $p$ 与 $E$ 的夹角 $\theta$ 减少，故可改写成矢量形式
+$$
+\mathbf{L}=\mathbf{p}\times\mathbf{E}
+$$
+作用在偶极矩上的力为
+$$
+\mathbf{F}=-\nabla W=\nabla(\mathbf{p}\cdot\mathbf{E})=\mathbf{p}\times(\nabla\times\mathbf{E}\equiv0)+\mathbf{p}\cdot\nabla \mathbf{E}=\mathbf{p}\cdot\nabla \mathbf{E}
+$$
+
+**例 4** 两同心导体球壳的内、外半径分别为 $R_1,R_2$，内球带电 $q$，外球接地，球壳间充满介电常数为$\varepsilon$的均匀介质，求内外球面每单位面积上的力
+
+$$
+W=\dfrac{1}{2}\int{\sigma\phi\mathrm{d}S}=\dfrac{1}{2}q\Delta\phi=\dfrac{1}{2}q\left(\dfrac{q}{4\pi\varepsilon}\left(\dfrac{1}{R_1}-\dfrac{1}{R_2}\right)\right)=\dfrac{q^2}{8\pi\varepsilon}\left(\dfrac{1}{R_1}-\dfrac{1}{R_2}\right)
+$$
+求内球面上的广义力 $F_1$ 时
+$$
+F_1=-\dfrac{\partial{W}}{\partial{V_1}}=-\dfrac{q^2}{8\pi\varepsilon}\dfrac{1}{4\pi R_1^2}\dfrac{\partial{}}{\partial{R_1}}\left(\dfrac{1}{R_1}-\dfrac{1}{R_2}\right)=\dfrac{q^2}{32\pi^2\varepsilon R_1^4}
+$$
+同理$F_2$为
+$$
+F_2=-\dfrac{q^2}{32\pi^2\varepsilon R_2^4}
+$$
+
+**例 4** 一平行板电容器，板长为 $l$，宽为 $b$，板间距离 $d$。从板的左部插入一块介质，其介电常数为$\varepsilon$，插入深度为 $x$，介质和平板之间无空隙，求介质板上受的力略去平板电容器的边缘效应，两板间保持电位差为 $V$
+
+$$
 \begin{align*}
-    &W=\dfrac{V^2}{2}C\\
-    &C_1=\dfrac{\varepsilon_0(l-x)b}{d},\quad C_2=\dfrac{\varepsilon xb}{d},\quad C=C_1+C_2\\
-    &F_x=\dfrac{\partial{W}}{\partial{x}}=\dfrac{V^2}{2}\dfrac{\partial{C}}{\partial{x}}=\dfrac{V^2}{2}\dfrac{b}{d}(\varepsilon-\varepsilon_0)\\
-    &f_x=\dfrac{F_x}{db}=\dfrac{1}{2}\left(\dfrac{V}{d}\right)^2(\varepsilon-\varepsilon_0)=\dfrac{E^2}{2}(\varepsilon-\varepsilon_0)
-\end{align*}</script><h3 id="思考题与习题三"><a href="#思考题与习题三" class="headerlink" title="思考题与习题三"></a>思考题与习题三</h3><ol>
-<li>静电场有哪些基本性质？导体和介质在静电场中的性质有些什么不同？<br>静电场的基本性质是它对放于其中的电荷有作用力，因此在静电场中移动电荷，静电场力要做功；<br>导体中的自由电子会做定向运动，使得导体中的电荷重新分布；<br>电介质中的电子处于被束缚状态，不能自由运动。所以，当电介质放到外电场中时，电子只能在电场力作用下做微观的相对位移。这种在外电场作用下，电介质分子正、负电荷中心不重合而显示出电性的现象，称为极化。</li>
-<li>静电场中的基本问题是什么？如何由电势 $\phi$ 求 $\mathbf {E},\mathbf {D},\mathbf {P},\rho,\rho_p,\sigma,\sigma_p$？<br>求出在所有边界上满足边值关系或给定边界条件的泊松方程的解<script type="math/tex; mode=display">
-\begin{align*}
- &\mathbf{E}=-\nabla\phi,\quad\mathbf{D}=-\varepsilon \nabla\phi,\quad \mathbf{P}=-(\varepsilon-\varepsilon_0)\nabla\phi\\
- &\rho=-\varepsilon \nabla^2\phi,\quad \rho_p=(\varepsilon-\varepsilon_0)\nabla^2\phi\\
- &\sigma=-\varepsilon \nabla\phi|_S,\quad \sigma_p=(\varepsilon-\varepsilon_0)\nabla\phi|_S
-\end{align*}</script></li>
-<li>当区域内有导体存在时，唯一确定静电场的条件是什么？并证明之<br>设区域 $V$ 内有一些导体，给定导体之外的电荷分布 $\rho$，给各导体上的总电荷 $Q_i$ 以及 $V$ 的边界上的 $\phi$ 或者 $\partial\phi/\partial n$ 值。则 $V$ 内的电场唯一确定。</li>
-<li>用唯一性定理解释一下为什么金属壳可以屏蔽壳外静电场对壳内的影响？能否屏蔽球内电荷对壳外电场的影响？<br>$q_{in},q_{out}, \phi|_{S_{in}}, \phi|_{S_{out}}$ 给定，在这些情况下，壳内 / 外电场分布是唯一确定，壳外 / 内状态对的场没有影响。</li>
-<li>证明静电场中不在电荷处的电势没有极值，而且其电势等于以该点为中心，$r$ 为半径的球面上电势的平均值<script type="math/tex; mode=display">
-\begin{align*}
- \phi=\dfrac{1}{4\pi\varepsilon_0}\dfrac{q}{R}\Rightarrow \nabla \phi=-\dfrac{1}{4\pi\varepsilon_0}\dfrac{q}{R^2}\text{ 函数单调}
-\end{align*}</script>不会</li>
-<li>电偶极矩和电四极矩的定义是什么？它们是否与坐标原点的选择有关？分析一下电多极展开各项的物理意义<br>$\mathbf{p}=\int{\rho(\mathbf{R’})\mathbf{R’}\mathrm{d}V’},\quad \mathcal{Q}=\int{(3\mathbf{R’}\mathbf{R’}-R’^2\vec{\mathcal{J}})\rho(\mathbf{R’})\mathrm{d}V’}$；<br>第一项：把带电区域视为点电荷，总带电量处于电荷中心位置时（类似于质心）对空间各点电场或电势造成的影响。<br>第二项的意义：忽略带电体总电荷，余下的正负电荷分布，也就是电偶极矩，对空间待求量造成的影响。电偶极矩本身是矢量，本质上影响方式为正负电荷不重合造成的宏观影响。<br>第三项的意义：忽略总电荷、总电偶极矩后，所剩下的 “电偶极距所形成的极矩”，也就是电四极矩。电四极矩对电势的影响方式是在电偶极距的影响方式的基础上，形成一个 “偶极矩的极矩”。</li>
-<li>静电场能量有几种表达形式？它们所表示的意义有何差别？<script type="math/tex; mode=display">
-W=\dfrac{1}{2}\dfrac{1}{4\pi\varepsilon_0}\sum_{ij}{\dfrac{q_iq_j}{r_{ij}}}=\dfrac{1}{2}\sum_{i}{q_i\phi_i}=\dfrac{1}{2}\int{\rho\phi\mathrm{d}V}=\dfrac{1}{2}\varepsilon E^2</script>点电荷相互作用能，点电荷与场的作用能，带电体和场的作用能，场本身的能</li>
-<li>计算静电作用力有几种方法？<br>库仑定律，静电能量</li>
-<li>两块平行的无限大导体平板，相距为 $l$，在 $(0,0,z_0)$ 处有一点电荷 $Q$，两导体板接地，求电势分布<br> 原电荷 + 象电荷有<script type="math/tex; mode=display">
- \begin{align*}
-     -Q&:-z_0,2l-z_0,\cdots, 2nl-z_0\\
-     Q&:z_0,2l+z_0,\cdots, 2nl+z_0\\
-     \phi&=\dfrac{Q}{4\pi\varepsilon_0}\sum_{-\infty}^{\infty}{\left[\dfrac{1}{\sqrt{(z-(2nl-z_0))^2+y^2+x^2}}-\dfrac{1}{\sqrt{(z-(2nl+z_0))^2+y^2+x^2}}\right]}
- \end{align*}</script></li>
-<li>导体平球壳接地，壳内距球心为 $\rho$ 处有一点电荷 $Q$，球的半径为 $R_0$，求空间电势分布<br>扩展到全空间，有象电荷<script type="math/tex; mode=display">
- \begin{align*}
-  &q_1=-Q,\quad \rho_1=-\rho\\
-  &q_2=-\dfrac{R_0 Q}{\rho},\quad \rho_2=\dfrac{R_0^2}{\rho}\\
-  &q_3=-q_2,\quad \rho_3=-\rho\\
-  &\Rightarrow \phi=\dfrac{Q}{4\pi\varepsilon_0}\left(\dfrac{1}{\sqrt{r^2+\rho^2-2r\rho\cos\theta_1}}-\dfrac{1}{\sqrt{r^2+\rho^2+2r\rho\cos\theta_1}}+\dfrac{-\frac{R_0}{\rho}}{\sqrt{r^2+\left(\frac{R_0^2}{\rho}\right)^2-2r\left(\frac{R_0^2}{\rho}\right)\cos\theta_2}}-\dfrac{-\frac{R_0}{\rho}}{\sqrt{r^2+\left(\frac{R_0^2}{\rho}\right)^2+2r\left(\frac{R_0^2}{\rho}\right)\cos\theta_2}}\right)
- \end{align*}</script></li>
-<li>两无限大的接地导体平板，互成直角围成一个空间，在这空间内有一点电荷 $Q$，距平面为 $a,b$，求空间电势<br>做象电荷有<script type="math/tex; mode=display">
-\begin{align*}
-  &q_1=-q,\quad (x_1,y_1)=(-a,b)\\
-  &q_2=q,\quad (x_2,y_2)=(-a,-b)\\
-  &q_3=-q,\quad (x_3,y_3)=(a,-b)\\
-  &\Rightarrow \phi=\dfrac{q}{4\pi\varepsilon_0}\left(\dfrac{1}{\sqrt{(x-a)^2+(y-b)^2+z^2}}-\dfrac{1}{\sqrt{(x+a)^2+(y-b)^2+z^2}}+\dfrac{1}{\sqrt{(x+a)^2+(y+b)^2+z^2}}-\dfrac{1}{\sqrt{(x-a)^2+(y+b)^2+z^2}}\right)
-\end{align*}</script></li>
-<li>有一个电矩为 $\mathbf {p}$ 的电偶极子，与接地导体球的球心相距为 $D$，偶矩方向沿着半径的方向，求空间电势<script type="math/tex; mode=display">
-\begin{align*}
-  &q_+'=\dfrac{-Rq}{D+l/2},\quad d_+'=\dfrac{R^2}{D+l/2}\\
-  &q_-'=\dfrac{Rq}{D-l/2},\quad,d_-'=\dfrac{R^2}{D-l/2}\\
-  &\bar{d}'=\lim_{l\rightarrow 0}\dfrac{d_+'|q_+'|+d_-'|q_-'|}{|q_+'|+|q_-'|}=\dfrac{R^2}{D}\\
-  &Q=\lim_{l\rightarrow 0}q_+'+q_-'=\dfrac{Rp}{D^2}\\
-  &p'=\lim_{l\rightarrow 0}q_+'d_+'+q_-'d_-'=\dfrac{2R^3p}{D^3}=\left[q'\Delta l'=\dfrac{R^3p}{D^3}\right]\\
-  &\Rightarrow\phi=\dfrac{1}{4\pi\varepsilon_0}\left(\dfrac{\mathbf{p}\cdot\mathbf{R}_1}{R_1^3}+\dfrac{\mathbf{p'}\cdot\mathbf{R}_2}{R_2^3}+\dfrac{Q}{R_2}\right)\\
-  &\left[\mathbf{R}_1=\mathbf{r}-D\mathbf{k},\quad\mathbf{R}_2=\mathbf{r}-\dfrac{R^2}{D}\mathbf{k}\right]
-\end{align*}</script>TODO:$Q$</li>
-<li> 一导体球半径为 $a$，球内有一不同心球洞，洞的半径为 $b$，整个球的球心位于两介质的交界上，在球洞内距洞心为 $c$ 处有一点电荷 $Q$，导体球带电 $q$<ol>
-<li> 求洞中点电荷 $Q$ 受的力 $F$;<script type="math/tex; mode=display">
-\begin{align*}
-  &q'=\dfrac{-bQ}{c},\quad d'=\dfrac{b^2}{c}\\
-  &F=\dfrac{1}{4\pi\varepsilon_0}\dfrac{\frac{-bQ}{c}\cdot Q}{\left(\dfrac{b^2}{c}-c\right)^2}=-\dfrac{1}{4\pi\varepsilon_0}\dfrac{Q^2bc}{(b^2-c^2)^2}
-\end{align*}</script></li>
-<li>求空间的自由电荷与束缚电荷的分布情况<script type="math/tex; mode=display">
-\begin{align*}
-  &\mathbf{E}=\dfrac{q+Q}{2\pi(\varepsilon_1+\varepsilon_2)a^2}\mathbf{e}_r\\
-  &\sigma_1=\dfrac{\varepsilon_1(q+Q)}{2\pi(\varepsilon_1+\varepsilon_2)a^2},\quad \sigma_2=\dfrac{\varepsilon_2(q+Q)}{2\pi(\varepsilon_1+\varepsilon_2)a^2}\\
-  &\sigma_{1p}=\dfrac{(\varepsilon_0-\varepsilon_1)(q+Q)}{2\pi(\varepsilon_1+\varepsilon_2)a^2},\quad \sigma_{2p}=\dfrac{(\varepsilon_0-\varepsilon_2)(q+Q)}{2\pi(\varepsilon_1+\varepsilon_2)a^2}\\
-  &\sigma'=\text{TODO:}
-\end{align*}</script></li>
-</ol>
-</li>
-<li><p>一半径为 $a$ 的介质球的介电常为 $\varepsilon$，在球外包一层导体，导体层的外半径为 $b$，介质球均匀带电，其密度为 $\rho$，导体上带电量 $Q$，求整个空间的电势分布和导体上的电荷密度以及介质球的总偶极矩</p>
-<script type="math/tex; mode=display">
-\begin{align*}
-  &\phi_1=\dfrac{1}{4\pi\varepsilon_0}\dfrac{Q+q}{r},\quad r>b,[q=\dfrac{4}{3}\pi a^3\rho]\\
-  &\phi_2=\phi_1|_{r=b}=\dfrac{1}{4\pi\varepsilon_0}\dfrac{Q+q}{b}\\
-  &\phi_3=\int_r^\infty{E\mathrm{d}r}=\int_r^a{E\mathrm{d}r}+\phi_2=-\dfrac{\rho r^2}{6\varepsilon}+\dfrac{\rho a^2}{6\varepsilon}+\dfrac{1}{4\pi\varepsilon_0}\dfrac{Q+q}{b}\\
-  &\left[E=\dfrac{1}{4\pi\varepsilon}\dfrac{\dfrac{4}{3}\pi r^3\rho}{r^2}=\dfrac{\rho r}{3\varepsilon}\right]\\
-  &\sigma_1=\dfrac{1}{4\pi}\dfrac{Q+q}{b^2},\quad \sigma_2=-\dfrac{\rho a}{3},\quad \sigma_p=(1-\dfrac{\varepsilon_0}{\varepsilon})\dfrac{\rho a}{3}\\
-  &\because \text{对称性:} \mathbf{P}=0
-\end{align*}</script></li>
-<li><p>均匀介质球介电常数为 $\varepsilon_1$，半径为 $ a$，放在一无限大介电常数为 $\varepsilon_2$ 的均匀介质中，在球内离球心为 $b (b&lt;a)$ 处有一电量为 $Q$ 的点电荷，求空间的电场强度和球面上的束缚电荷面密度<br>由题可得</p>
-<script type="math/tex; mode=display">
-\begin{align*}
-  &\nabla^2\phi_1=-\dfrac{Q\delta(\mathbf{R}-b\mathbf{k})}{\varepsilon_1}\\
-  &\nabla^2\phi_2=0\\
-  &\Rightarrow \phi=\sum_{n=0}{\left(A_nR^n+\dfrac{B_n}{R^{n+1}}\right)P_n(\cos\theta)}\\
-  &\phi_1=\dfrac{1}{4\pi\varepsilon_1}\dfrac{Q}{r}\left[\equiv\dfrac{Q}{4\pi\varepsilon_1}\sum_{n=0}{\dfrac{b^n}{R^{n+1}}P_n(\cos\theta)}\right]+\sum_{n=0}{A_nR^nP_n(\cos\theta)}\\
-  &\phi_2=\sum_{n=0}{\dfrac{B_n}{R^{n+1}}P_n(\cos\theta)}\\
-  &1:\quad \dfrac{Q}{4\pi\varepsilon_1}\dfrac{b^n}{R^{n+1}}+A_nR^n,\quad 2:\quad\dfrac{B_n}{R^{n+1}}\\
-  &\Rightarrow r=a,\quad \phi_1=\phi_2,\quad \varepsilon_1\dfrac{\partial{\phi_1}}{\partial{R}}=\varepsilon_2\dfrac{\partial{\phi_2}}{\partial{R}}\\
-  &\Rightarrow A_n=\dfrac{Q(n+1)b^n(\varepsilon_1-\varepsilon_2)}{4\pi\varepsilon_1 a^{2n+1}[n\varepsilon_1+(n+1)\varepsilon_2]},\quad B_n=\dfrac{Qb^n(2n+1)}{4\pi[n\varepsilon_1+(n+1)\varepsilon_2]}\\
-  &\sigma_p=\varepsilon_0\left(\dfrac{\partial{\phi_1}}{\partial{R}}-\dfrac{\partial{\phi_2}}{\partial{R}}\right)|_{R=a}
-\end{align*}</script></li>
-<li>均匀介质球的介电常数 $\varepsilon_1$，在球中心放一电偶 $p_f$，球外充满介电常数 $\varepsilon_2$ 的介质，求空间的电势和极化电荷分布<script type="math/tex; mode=display">
-  \begin{align*}
-     &\phi_1=\dfrac{1}{4\pi\varepsilon_1}\dfrac{p_f}{R^2}P_1+\sum_{n=0}{A_nR^nP_n(\cos\theta)}\\
-     &\phi_2=\sum_{n=0}{\dfrac{B_n}{R^{n+1}}P_n(\cos\theta)}\\
-     &\Rightarrow r=a,\quad \phi_1=\phi_2,\quad \varepsilon_1\dfrac{\partial{\phi_1}}{\partial{R}}=\varepsilon_2\dfrac{\partial{\phi_2}}{\partial{R}}\\
-     &\Rightarrow A_1=\dfrac{1}{4\pi\varepsilon_1}\dfrac{p_f}{a^3}\dfrac{2(\varepsilon_1-\varepsilon_2)}{2\varepsilon_2+\varepsilon_1},\quad B_1=\dfrac{3p_f}{4\pi(2\varepsilon_2+\varepsilon_1)}\\
-     &\rho_p = 0\\
-     &r\rightarrow 0:\quad \mathbf{P}=\left(\dfrac{\varepsilon_0}{\varepsilon_1}-1 \right)\mathbf{P}_f\\
-     &r=a,\quad \sigma_p=\dfrac{3(\varepsilon_1-\varepsilon_2)\varepsilon_0p_f}{2\pi\varepsilon_1(\varepsilon_1+2\varepsilon_2)a^3}\cos\theta
-  \end{align*}</script></li>
-<li>平行板电容器的平板间相距为 $d$，两极间加直流电压 $V$，下板电势高，在下板内侧面上有一很小的半球突起，球半径为 $a$，求电容器内的电场和半球上的电荷密度<script type="math/tex; mode=display">
-\begin{align*}
-  &\phi=V-\dfrac{V}{d}R\cos\theta+\sum_{n=0}\left(A_nR^n+\dfrac{B_n}{R^{n+1}}\right)P_n\\
-  &\phi(a)=V,\quad \phi(\infty)\rightarrow\text{ lim}(r_0\cos\theta_0=d)\\
-  &\Rightarrow \quad A_n=0,\quad \dfrac{V}{d}a=\dfrac{B_1}{a^2}\rightarrow B_1=a^3\dfrac{V}{d}\\
-  &\Rightarrow \phi=V-\dfrac{V}{d}R\cos\theta+\dfrac{a^3}{R^2}\dfrac{V}{d}\cos\theta\\
-  &E=-\nabla\phi=\nabla\left[\left(1-\dfrac{a^3}{R^3}\right)\mathbf{E}_0\cdot\mathbf{R}\right]=\mathbf{E}_0+a^3\left[\dfrac{3(\mathbf{E}_0\cdot\mathbf{R})\mathbf{R}}{R^5}-\dfrac{\mathbf{E}_0}{R^3}\right]\\
-  &\sigma=\varepsilon_0E|_a=3\varepsilon_0E_0\cos\theta
-\end{align*}</script></li>
-<li>一无限长的均匀导体圆柱，半径为 $a$，处在真空中，在柱外平行柱轴有一无限长的直导线，距柱轴为 $b$，导线均匀带电，其线电荷密度为 $\eta$，求空间电势分布<br>TODO:</li>
-<li> 求点电荷 $q$ 与半径为 $a$ 的接地导体球间的相互作用 $u$ 和相互作用力 $F$，电荷与球心的距离为 $d$，整个系统位于介电常数为 $\varepsilon$ 的均匀电介质内<script type="math/tex; mode=display">
-\begin{align*}
-  &q'=\dfrac{-aq}{d},\quad d'=\dfrac{a^2}{d}\\
-  &u=\dfrac{1}{2}\dfrac{\frac{-aq^2}{d}}{4\pi\varepsilon\left(d-\frac{a^2}{d}\right)}=\dfrac{-q^2a}{8\pi\varepsilon(d^2-a^2)}\\
-  &F=-\dfrac{\partial{u}}{\partial{d}}=\dfrac{-q^2ad}{4\pi\varepsilon(d^2-a^2)^2}
-\end{align*}</script></li>
-<li>有一平板电容器，浸在不可压缩的液体中，并使平板竖直放置，液体的介电常数为 $\varepsilon$，密度为 $\tau$，两板间距离为 $d$，电势差为 $V$，求电容器内液体上升的高度<script type="math/tex; mode=display">
-\begin{align*}
-  &W=\dfrac{V^2}{2}C\\
-  &C_1=\dfrac{\varepsilon_0(l-x)b}{d},\quad C_2=\dfrac{\varepsilon xb}{d},\quad C=C_1+C_2\\
-  &F_x=\dfrac{\partial{W}}{\partial{x}}=\dfrac{V^2}{2}\dfrac{\partial{C}}{\partial{x}}=\dfrac{V^2}{2}\dfrac{b}{d}(\varepsilon-\varepsilon_0)\\
-  &f_x=\dfrac{F_x}{db}=\dfrac{1}{2}\left(\dfrac{V}{d}\right)^2(\varepsilon-\varepsilon_0)=\tau gh\\
-  &\Rightarrow h=\dfrac{1}{2g\tau}\left(\dfrac{V}{d}\right)^2(\varepsilon-\varepsilon_0)
-\end{align*}</script></li>
-<li>有一个半径为 $R$ 的未带电导体球浮在液体上，球的质量为 $m$，液体的介电常数为 $\varepsilon$。开始导体球有四分之一体积浸在液体内，如果要导体球有一半浸在液体内，必须使导体球带多少电量？<script type="math/tex; mode=display">
-  \begin{align*}
-     &\tau g \dfrac{1}{3}\pi R^3=mg\\
-     &W=\dfrac{Q^2}{2C}
-  \end{align*}</script></li>
-<li>设有两个电偶极子，它们的偶极矩大小相等，并都指向 z 轴方向，其一位置在原点，另一位置在<ol>
-<li> $\theta=\dfrac{\pi}{2},R$</li>
-<li>$\theta=0,R$<script type="math/tex; mode=display">
-\begin{align*}
-&\phi=\dfrac{1}{4\pi\varepsilon_0}\dfrac{\mathbf{p}\cdot \mathbf{R}}{R^3}\\
-&\mathbf{E}=-\nabla\phi=\dfrac{1}{4\pi\varepsilon_0}\left(\dfrac{3(\mathbf{p}\cdot\mathbf{R})\mathbf{R}}{R^5}-\dfrac{\mathbf{p}}{R^3}\right)\\
-&W=-\mathbf{p}\cdot\mathbf{E}=-\dfrac{1}{4\pi\varepsilon_0}\left(\dfrac{3(\mathbf{p}\cdot\mathbf{R})^2}{R^5}-\dfrac{p^2}{R^3}\right)\\
-&\Rightarrow W_1=\dfrac{1}{4\pi\varepsilon_0}\dfrac{p^2}{R^3},\quad \mathbf{F}_1=-\nabla W=\dfrac{1}{4\pi\varepsilon_0}\dfrac{3p^2\mathbf{R}}{R^5}\\
-&\Rightarrow W_2=-\dfrac{1}{4\pi\varepsilon_0}\dfrac{3p^2}{R^3},\quad \mathbf{F}_2=-\nabla W=-\dfrac{1}{4\pi\varepsilon_0}\dfrac{9p^2\mathbf{R}}{R^5}
-\end{align*}</script></li>
-</ol>
-</li>
-<li>有一个电矩为 $p$ 的偶极子，位于距无限大导体平面为 $a$ 处，求偶极子所受的力</li>
-<li>平面四极子位于 y 平面内，每个点电荷的电量的数值为 $Q$，相距为 $l$，求四极矩和电势<script type="math/tex; mode=display">
-\begin{align*}
-  \mathcal{Q}&=\int(3\mathbf{R}'\mathbf{R}'-R'^2\mathcal{J})\rho(\mathbf{R}')\mathrm{d}  V'\\
-  &=Q\left(\begin{matrix}0&-3l^2&0\\-3l^2&0&0\\0&0&0\end{matrix}\right)\\
-  \phi&=\dfrac{1}{4\pi\varepsilon_0}\dfrac{1}{6}\mathcal{Q}:\dfrac{3\mathbf{R}\mathbf{R}-R^2\mathcal{J}}{R^5}\\
-  &=\dfrac{-3Ql^2}{4\pi\varepsilon_0R^5}xy
-\end{align*}</script></li>
-</ol>
-<h1 id="稳定电磁场与似稳电磁场"><a href="#稳定电磁场与似稳电磁场" class="headerlink" title="稳定电磁场与似稳电磁场"></a>稳定电磁场与似稳电磁场</h1><h2 id="稳定电磁场的基本方程"><a href="#稳定电磁场的基本方程" class="headerlink" title="稳定电磁场的基本方程"></a>稳定电磁场的基本方程</h2><script type="math/tex; mode=display">
-\begin{align*}
-    Q\rightarrow I,\quad \mathbf{D}\rightarrow\mathbf{J},\quad \varepsilon\rightarrow\sigma
-\end{align*}</script><p><strong>例 1</strong> 半径为 $a$ 的球形电极埋在无限的均匀导电介质中，电导率为 $\sigma$，已知电极上总电流为 $I$，试计算空间的电场分布</p>
-<script type="math/tex; mode=display">
-\begin{align*}
-    \phi&=\dfrac{1}{4\pi\sigma}\dfrac{I}{r}\\
-    \mathbf{E}&=\dfrac{I}{4\pi\sigma}\dfrac{\mathbf{r}}{r^3}
-\end{align*}</script><p><strong>例 2</strong> 以水平面为分界面，整个空间充满了电导率分别为 $\sigma_1$ 和 $\sigma_2$ 的均匀导电介质，在导电介质 1 中有一点电极 A，与界面相距为 $d$，已知电极上的总电流为 $I$，求空的电势分布。</p>
-<p>参考 <a href="#3.2.4">(3.2.4)</a>，将 $Q\rightarrow I,\quad \mathbf {D}\rightarrow\mathbf {J},\quad \varepsilon\rightarrow\sigma$</p>
-<script type="math/tex; mode=display">
-\begin{align*}
-    \phi_1=\dfrac{1}{4\pi\sigma_1}\left(\dfrac{I}{\sqrt{(x-d)^2+y^2+z^2}}+\dfrac{I'}{\sqrt{(x+d')^2+y^2+z^2}}\right)\\
-    \phi_2=\dfrac{1}{4\pi\sigma_2}\left(\dfrac{I}{\sqrt{(x-d)^2+y^2+z^2}}+\dfrac{I''}{\sqrt{(x-d')^2+y^2+z^2}}\right)
-\end{align*}</script><p>解得</p>
-<script type="math/tex; mode=display">
-d'=d,\quad I''=-I',\quad I'=\dfrac{\sigma_1-\sigma_2}{\sigma_1+\sigma_2}I</script><p><strong>例 3</strong> 将上题用分离变量法求解</p>
-<p>略，用到柱坐标分离变量的本征函数 —— 贝塞尔函数</p>
-<h2 id="稳定电流磁场的矢势"><a href="#稳定电流磁场的矢势" class="headerlink" title="稳定电流磁场的矢势"></a>稳定电流磁场的矢势</h2><p><strong>例 1</strong> 设 $x&gt;0$ 的半空间充满磁导率为 $\mu$ 的均匀介质，$x&lt;0$ 的半空间为真空，有线电流 $I$ 沿 $z$ 轴流动，求空间磁场和磁化电流分布</p>
-<script type="math/tex; mode=display">
-\begin{align*}
-    &\oint{\mathbf{H}\cdot\mathrm{d}\mathbf{l}}=\mathbf{H}_1\pi r+\mathbf{H}_2\pi r=\mathbf{I}\\
-    &\mathbf{B}\left(\dfrac{1}{\mu}+\dfrac{1}{\mu_0}\right)\pi r=\mathbf{I}\\
-    &\oint\mathbf{B}\cdot\mathrm{d}\mathbf{l}=\mu_0\int(\mathbf{J}+\mathbf{J}_m)\cdot\mathrm{d}\mathbf{S}\\
-    &2\pi r \dfrac{\mu\mu_0}{\mu_0+\mu}\dfrac{I}{\pi r}=\mu_0(I+I_m)\\
-    &\Rightarrow I_m=\dfrac{\mu-\mu_0}{\mu+\mu_0}I
-\end{align*}</script><p><strong>例 2</strong> 一半径为 $a$ 的均匀带电的导体球壳，绕自身某一直径以角速度 $\omega$ 转动，设球上的总电量为 $ Q$，球内外为真空，计算球内外的磁场</p>
-<script type="math/tex; mode=display">
-\begin{align*}
-    &\mathbf{a}=\sigma\omega \times a\mathbf{e}_r=\dfrac{Q\omega}{4\pi a}\sin\theta\mathbf{e}_\phi\\
-    &(\nabla^2\mathbf{A})_{\phi}=\nabla^2A-\dfrac{A}{r^2\sin^2\theta}=0\\
-    &\Rightarrow A=\sum_{n=0}^{\infty}\left(b_nr^n+\dfrac{a_n}{r^{n+1}}\right)P_n^{(1)}\\
-    &r=0,\text{lim};r\rightarrow\infty ,0;r=a,A_1=A_2,\nabla\times(\mathbf{H}_2-\mathbf{H}_2)=\mathbf{a}\\
-    &\nabla\times(\mathbf{H}_2-\mathbf{H}_2)=\mathbf{a}\Rightarrow a=\dfrac{\partial_r{A_1}}{\mu_1}-\dfrac{\partial_r{A_2}}{\mu_2}\left[r,\theta ,z\right]=\dfrac{\partial_r{rA_1}}{r\mu_1}-\dfrac{\partial_r{rA_2}}{r\mu_2}\left[r,\theta,\phi\right]\\
-    &a_n=d_n=0,b_1=\dfrac{\mu_0 Q \omega}{12\pi a},c_1=\dfrac{\mu_0 Q\omega }{12\pi}a^2\\
-    &A_1=\dfrac{\mu_0 Q \omega}{12\pi a}r\sin\theta,\quad A_2=\dfrac{\mu_0 Q\omega }{12\pi r^2}a^2\sin\theta
-\end{align*}</script><h2 id="稳定磁场的标势"><a href="#稳定磁场的标势" class="headerlink" title="稳定磁场的标势"></a>稳定磁场的标势</h2><p><strong>例 1</strong> 一无限长的磁导率为 $\mu_1$ 的介质圆柱，半径为 $ R_0$，置于磁导率为 $\mu_2$ 的磁介质中，在垂直于柱轴方向加一均匀静磁场 $H_0$，求柱内、外磁场分布<br>选柱坐标系，柱轴为 $\mathbf {e}_z$，加磁场 $H_0$ 沿 $\mathbf {e}_x$，</p>
-<script type="math/tex; mode=display">
-\begin{align*}
-    &\nabla^2\phi_m(r,\theta)=0\\
-    &\Rightarrow \phi_m=c_0\ln{r}+d_0+\sum_{n=1}^\infty{(a_n\cos{n\theta}+b_n\sin{n\theta})(c_nr^n+d_nr^{-n})}\\
-    &\phi_{1m}(r,\theta)=\phi_{1m}(r,-\theta);r=0,\phi_{1m}=0;r\rightarrow \infty,\phi_{2m}=-H_0r\cos\theta\\
-    &\Rightarrow \phi_{1m}=\sum{a_n\cos{n\theta}r^n},\quad\phi_{2m}=-H_0r\cos\theta+\sum{\dfrac{d_n}{r^n}\cos{n\theta}}\\
-    &r=R_0,\phi_{1m}=\phi_{2m},\mu_1\dfrac{\partial{\phi_{1m}}}{\partial{r}}=\mu_2\dfrac{\partial{\phi_{2m}}}{\partial{r}}\\
-    &a_1=\dfrac{-2H_0\mu_2}{\mu_1+\mu_2},\quad d_1=\dfrac{\mu_1-\mu_2}{\mu_1+\mu_2}H_0R_0^2
-\end{align*}</script><p><strong>例 2</strong> 估算中子星磁场的极限值</p>
-<script type="math/tex; mode=display">
-\begin{align*}
-    &\nabla^2\phi_m(r,\theta,\phi)=0\\
-    &\Rightarrow \phi_{1m}=\sum_{n=1}^\infty{a_nr^nP_n},\quad\phi_{2m}=\sum_{n=1}^\infty{\dfrac{b_n}{r^{n+1}}P_n}\\
-    &r=R_0,\quad\phi_{1m}=\phi_{2m},\quad-\mu_0\dfrac{\partial{\phi_{1m}}}{\partial{n}}+\mu_0M\cos\theta=-\mu_0\dfrac{\partial{\phi_{2m}}}{\partial{n}}\\
-    &\Rightarrow a_1=\dfrac{1}{3}M,b_1=\dfrac{1}{3} MR_0^3\\
-    &\phi_{1m}=\dfrac{1}{3}\mathbf{M}\cdot\mathbf{r},\phi_{2m}=\dfrac{1}{3}\dfrac{R_0^3}{r^3}\mathbf{M}\cdot\mathbf{r}\\
-    &\mathbf{B}=-\mu_0\nabla\phi_{1m}+\mu_0\mathbf{M}=\dfrac{2}{3}\mu_0\mathbf{M}
-\end{align*}</script><p><strong>例 3</strong> 有一内、外半径分别为 $R_1$ 和 $R_2$ 的空心球壳，放置在均匀磁场 $H_0$ 中，球壳介质的磁导率为 $\mu$，球壳外为真空，求球壳内部空间的磁场</p>
-<p>详细略</p>
-<script type="math/tex; mode=display">
-\begin{align*}
-    &\phi_{1m}=\sum{a_nr^nP_n}\\
-    &\phi_{2m}=\sum{(b_nr^n+\dfrac{c_n}{r^{n+1}})P_n}\\
-    &\phi_{3m}=\sum{\dfrac{d_n}{r^{n+1}P_n}}-H_0r\cos\theta\\
-    &r=R_1,\phi_{1m}=\phi_{2m},\mu_0\dfrac{\partial{\phi_{1m}}}{\partial{r}}=\mu\dfrac{\partial{\phi_{2m}}}{\partial{r}}\\
-    &r=R_2,\phi_{2m}=\phi_{3m},\mu_0\dfrac{\partial{\phi_{3m}}}{\partial{r}}=\mu\dfrac{\partial{\phi_{2m}}}{\partial{r}}
-\end{align*}</script><p>求解即可</p>
-<h2 id="计算稳定磁场的多极展开方法"><a href="#计算稳定磁场的多极展开方法" class="headerlink" title="计算稳定磁场的多极展开方法"></a>计算稳定磁场的多极展开方法</h2><p><strong>例 1</strong> 用磁标势法计算一无限长直线电流 $I$ 所产生的磁场</p>
-<p>取坐标系使 $I$ 沿 $z$ 轴，并令待求场点 $P$ 位于 $xy$ 平面内，把无限长直线电流看成电流圈，所围的磁偶层是 $x\ge 0,y=0$ 的半无限大平面，则它对 $P$ 点所张的立体角为 $\Omega=2 (\pi-\theta)$</p>
-<script type="math/tex; mode=display">
-\begin{align*}
-    \phi_{m}=\dfrac{I}{2\pi}(\pi-\theta),\Rightarrow \mathbf{H}=-\nabla\phi_m=\dfrac{I}{2\pi r}\mathbf{e}_\theta
-\end{align*}</script><p><strong>例 2</strong> 一半径为 $a$ 的均匀带电球壳，质量为 $M$，总电量为 $Q$，绕某一直径以角速度 $\omega$ 转动，求磁矩和旋磁比</p>
-<script type="math/tex; mode=display">
-\begin{align*}
-    \mathbf{a}&=\sigma\omega \times a\mathbf{e}_r=\dfrac{Q\omega}{4\pi a}\sin\theta\mathbf{e}_\phi\\
-    \mathbf{m}&=\dfrac{1}{2}\int{\mathbf{R}'\times\mathbf{a}\mathrm{d}V'}=\dfrac{1}{2}\dfrac{Q\omega}{4\pi a}\int{(-\mathbf{e}_\theta)a\cdot\sin\theta \cdot a^2\sin\theta\mathrm{d}\theta\mathrm{d}\varphi}\\
-    &=\dfrac{Q\omega}{8\pi }a^2\int{(\mathbf{e}_z\sin\theta-\mathbf{e}_\rho\cos\theta)\sin^2\theta\mathrm{d}\theta\mathrm{d}\varphi}\\
-    &=\dfrac{Q\omega}{3 }a^2\mathbf{e}_z
-\end{align*}</script><p>质量为 $M$ 绕直径以 $\omega$ 转动的球壳的动量矩为</p>
-<script type="math/tex; mode=display">
-\mathbf{L}=I\omega=\dfrac{2}{3}Ma^2\omega\mathbf{e}_z</script><p>磁矩和动量矩之比，称为旋磁比</p>
-<script type="math/tex; mode=display">
-\gamma=\dfrac{m}{L}=\dfrac{Q}{2M}</script><h2 id="稳定磁场的能量与磁作用力"><a href="#稳定磁场的能量与磁作用力" class="headerlink" title="稳定磁场的能量与磁作用力"></a>稳定磁场的能量与磁作用力</h2><p><strong>例 1</strong> 一半径为 $a$ 的均匀带电球壳，总电量为 $Q$，绕某一直径以角速度 $\omega$ 转动，求磁场总能量</p>
-<script type="math/tex; mode=display">
-\begin{align*}
-    &\mathbf{a}=\sigma\omega \times a\mathbf{e}_r=\dfrac{Q\omega}{4\pi a}\sin\theta\mathbf{e}_\phi\\
-    &A_1=\dfrac{\mu_0 Q \omega}{12\pi a}r\sin\theta,\quad A_2=\dfrac{\mu_0 Q\omega }{12\pi r^2}a^2\sin\theta\\
-    &W=\dfrac{1}{2}\int{\mathbf{A}\cdot\mathbf{a}\mathrm{d}S}=\dfrac{1}{2}\int_0^\pi{\dfrac{\mu_0 Q \omega}{12\pi }\sin\theta\cdot\dfrac{Q\omega}{4\pi a}\sin\theta\cdot 2\pi a^2 \sin\theta\mathrm{d}\theta}\\
-    &=\dfrac{\mu_0}{36\pi}Q^2\omega^2a
-\end{align*}</script><h2 id="思考题与习题四"><a href="#思考题与习题四" class="headerlink" title="思考题与习题四"></a>思考题与习题四</h2><ol>
-<li>试比较稳定电场和静电场，它们有何异同？<br><strong>两种电场的差异</strong><br>一、性质不同<br>1、稳恒电场：不随时间变化的电场。<br>2、静电场：观察者与电荷相对静止时所观察到的电场。<br>二、基本特征不同<br>1、稳恒电场基本特征：稳恒电场只要求电荷分布不随时间变化，并且允许在导体中不随时间变化的电流的存在。因此，在稳定电场中，导体内部的电场强度不能为零，导体内部两点之间可能存在电位差。在导体表面附近，电场通常不垂直于导体的表面。此外，稳恒电场总是伴随着稳恒磁场。<br>2、静电场基本特征：对置在其中的静电荷有很强的影响。根据循环定理，静电场中的循环等于零，这表明当电荷在静电场中沿任何闭合路径移动时，电场力所做的功为零，因此静电场是保守场。<br><strong>两种电场的共性</strong><br>（1）它们都是物质的一种客观存在形式，都储存着电能；<br>（2）它们对处于其中的电荷都有力的作用；<br>（3）在这两种电场中移动电荷时相应的电场力一般都要做功。</li>
-<li>在有稳定电流的导体中，导体内部电势是否是常数？导体内有无电荷？电荷分布在什么地方？<br>$\mathbf {J}=\sigma\mathbf {E}$，电势随着电流方向减小，有电荷，随着电流方向移动</li>
-<li>磁场不是势场，为什么还能引入磁标势？什么情况下用磁标势？什么情况下用矢势计算磁场比较方便？<br>$ \nabla\times \mathbf {H}=0$，所以在磁场无旋的地方就可以定义磁标势，恒稳电流时用矢势计算磁场比较方便</li>
-<li>比较磁多极展开与电多极展开的异同，磁偶极矩的定义是什么？为什么说一个线电流圈与一个磁偶层等效？<br>都是泰勒展开，磁多级第一项恒为零，磁多级展开是矢量，电多级展开是标量；磁偶极子是一圈封闭循环的电流；线电流圈产生的磁场与磁偶层产生的磁场相同</li>
-<li>稳定磁场的能量有几种表达式？它们所表示的意义有何差别？<script type="math/tex; mode=display">
-\begin{align*}
- &W=\dfrac{1}{2}\int{\mathbf{B}\cdot\mathbf{H}\mathrm{d}V}=\dfrac{1}{2}\int{\mathbf{A}\cdot\mathbf{J}\mathrm{d}V}=\dfrac{\mu}{8\pi}\int{\dfrac{1}{r}\mathbf{J}(\mathbf{R})\cdot\mathbf{J}(\mathbf{R}')\mathrm{d}V\mathrm{d}V'}\\
- &W=\dfrac{1}{2}\sum_{i=1}^{n}I_i\oint{\mathbf{A}\cdot\mathrm{d}\mathbf{l}_i}=\dfrac{1}{2}\sum_{i=1}^n{I_i\Phi_i}=\dfrac{1}{2}\mathbf{I}^TL\mathbf{L}\left[L_{ik}=\dfrac{\mu_0}{4\pi}\oint_i\oint_k\dfrac{\mathrm{d}\mathbf{l}_i\cdot\mathrm{d}\mathbf{l}_k}{r_{ik}}\right]
-\end{align*}</script>一式是从场的角度，二式是从宏观电流的角度</li>
-<li>如何由磁场能量计算作用力？电流固定不变和磁通量固定不变有什么不同？<script type="math/tex; mode=display">
-\begin{align*}
- &\sum_{i}{I_i\delta\Phi_i}=F\delta \eta+\delta W\\
- &F=\left(\dfrac{\partial{W}_I}{\partial{\eta}}\right)_{I}=-\left(\dfrac{\partial{W}}{\partial{\eta}}\right)_{\Phi}
-\end{align*}</script></li>
-<li>磁偶极子和外磁场的相互作用能与电偶极子和外电场的相互作用能相比差一符号，如何理解？<br>$W_I=\mathbf{m}\cdot \mathbf{B}_e$<br>这是由于电偶极和磁偶极根本别电场线从正电荷出发，终止负电荷；而磁场线则是闭合的曲线两者的场力线在外部区域相同，在内部则相反。相差的符号正是由于它们内部场强方向相反所造成的</li>
-<li>在什么条件下可以用电路方程来代替场方程？
+    &amp;W=\dfrac{V^2}{2}C\\
+    &amp;C_1=\dfrac{\varepsilon_0(l-x)b}{d},\quad C_2=\dfrac{\varepsilon xb}{d},\quad C=C_1+C_2\\
+    &amp;F_x=\dfrac{\partial{W}}{\partial{x}}=\dfrac{V^2}{2}\dfrac{\partial{C}}{\partial{x}}=\dfrac{V^2}{2}\dfrac{b}{d}(\varepsilon-\varepsilon_0)\\
+    &amp;f_x=\dfrac{F_x}{db}=\dfrac{1}{2}\left(\dfrac{V}{d}\right)^2(\varepsilon-\varepsilon_0)=\dfrac{E^2}{2}(\varepsilon-\varepsilon_0)
+\end{align*}
+$$
+
+## 思考题与习题三
+
+1. 静电场有哪些基本性质？导体和介质在静电场中的性质有些什么不同？
+   静电场的基本性质是它对放于其中的电荷有作用力，因此在静电场中移动电荷，静电场力要做功;
+   导体中的自由电子会做定向运动，使得导体中的电荷重新分布；
+   电介质中的电子处于被束缚状态，不能自由运动。所以，当电介质放到外电场中时，电子只能在电场力作用下做微观的相对位移。这种在外电场作用下，电介质分子正、负电荷中心不重合而显示出电性的现象，称为极化。
+2. 静电场中的基本问题是什么？如何由电势$\phi$求$\mathbf{E},\mathbf{D},\mathbf{P},\rho,\rho_p,\sigma,\sigma_p$？
+   求出在所有边界上满足边值关系或给定边界条件的泊松方程的解
+   $$
+   \begin{align*}
+    &amp;\mathbf{E}=-\nabla\phi,\quad\mathbf{D}=-\varepsilon \nabla\phi,\quad \mathbf{P}=-(\varepsilon-\varepsilon_0)\nabla\phi\\
+    &amp;\rho=-\varepsilon \nabla^2\phi,\quad \rho_p=(\varepsilon-\varepsilon_0)\nabla^2\phi\\
+    &amp;\sigma=-\varepsilon \nabla\phi|_S,\quad \sigma_p=(\varepsilon-\varepsilon_0)\nabla\phi|_S
+   \end{align*}
+   $$
+3. 当区域内有导体存在时，唯一确定静电场的条件是什么？并证明之
+   设区域 $V$ 内有一些导体，给定导体之外的电荷分布$\rho$，给各导体上的总电荷 $Q_i$ 以及 $V$ 的边界上的 $\phi$ 或者 $\partial\phi/\partial n$ 值。则 $V$内的电场唯一确定。
+4. 用唯一性定理解释一下为什么金属壳可以屏蔽壳外静电场对壳内的影响？能否屏蔽球内电荷对壳外电场的影响？
+   $q_{in},q_{out}, \phi|_{S_{in}}, \phi|_{S_{out}}$给定，在这些情况下，壳内/外电场分布是唯一确定，壳外/内状态对的场没有影响。
+5. 证明静电场中不在电荷处的电势没有极值，而且其电势等于以该点为中心，$r$ 为半径的球面上电势的平均值
+   $$
+   \begin{align*}
+    \phi=\dfrac{1}{4\pi\varepsilon_0}\dfrac{q}{R}\Rightarrow \nabla \phi=-\dfrac{1}{4\pi\varepsilon_0}\dfrac{q}{R^2}\text{ 函数单调}
+   \end{align*}
+   $$
+   不会
+6. 电偶极矩和电四极矩的定义是什么？它们是否与坐标原点的选择有关？分析一下电多极展开各项的物理意义
+   $\mathbf{p}=\int{\rho(\mathbf{R'})\mathbf{R'}\mathrm{d}V'},\quad \mathcal{Q}=\int{(3\mathbf{R'}\mathbf{R'}-R'^2\vec{\mathcal{J}})\rho(\mathbf{R'})\mathrm{d}V'}$；
+   第一项：把带电区域视为点电荷，总带电量处于电荷中心位置时（类似于质心）对空间各点电场或电势造成的影响。
+   第二项的意义：忽略带电体总电荷，余下的正负电荷分布，也就是电偶极矩，对空间待求量造成的影响。电偶极矩本身是矢量，本质上影响方式为正负电荷不重合造成的宏观影响。
+   第三项的意义：忽略总电荷、总电偶极矩后，所剩下的“电偶极距所形成的极矩”，也就是电四极矩。电四极矩对电势的影响方式是在电偶极距的影响方式的基础上，形成一个“偶极矩的极矩”。
+7. 静电场能量有几种表达形式？它们所表示的意义有何差别？
+   $$
+   W=\dfrac{1}{2}\dfrac{1}{4\pi\varepsilon_0}\sum_{ij}{\dfrac{q_iq_j}{r_{ij}}}=\dfrac{1}{2}\sum_{i}{q_i\phi_i}=\dfrac{1}{2}\int{\rho\phi\mathrm{d}V}=\dfrac{1}{2}\varepsilon E^2
+   $$
+   点电荷相互作用能，点电荷与场的作用能，带电体和场的作用能，场本身的能
+8. 计算静电作用力有几种方法？
+   库仑定律，静电能量
+9. 两块平行的无限大导体平板，相距为 $l$，在 $(0,0,z_0)$ 处有一点电荷 $Q$，两导体板接地，求电势分布
+    原电荷 + 象电荷有
+    $$
+    \begin{align*}
+        -Q&amp;:-z_0,2l-z_0,\cdots, 2nl-z_0\\
+        Q&amp;:z_0,2l+z_0,\cdots, 2nl+z_0\\
+        \phi&amp;=\dfrac{Q}{4\pi\varepsilon_0}\sum_{-\infty}^{\infty}{\left[\dfrac{1}{\sqrt{(z-(2nl-z_0))^2+y^2+x^2}}-\dfrac{1}{\sqrt{(z-(2nl+z_0))^2+y^2+x^2}}\right]}
+    \end{align*}
+    $$
+10. 导体平球壳接地，壳内距球心为 $\rho$ 处有一点电荷 $Q$，球的半径为$R_0$，求空间电势分布
+    扩展到全空间，有象电荷
+    $$
+     \begin{align*}
+      &amp;q_1=-Q,\quad \rho_1=-\rho\\
+      &amp;q_2=-\dfrac{R_0 Q}{\rho},\quad \rho_2=\dfrac{R_0^2}{\rho}\\
+      &amp;q_3=-q_2,\quad \rho_3=-\rho\\
+      &amp;\Rightarrow \phi=\dfrac{Q}{4\pi\varepsilon_0}\left(\dfrac{1}{\sqrt{r^2+\rho^2-2r\rho\cos\theta_1}}-\dfrac{1}{\sqrt{r^2+\rho^2+2r\rho\cos\theta_1}}+\dfrac{-\frac{R_0}{\rho}}{\sqrt{r^2+\left(\frac{R_0^2}{\rho}\right)^2-2r\left(\frac{R_0^2}{\rho}\right)\cos\theta_2}}-\dfrac{-\frac{R_0}{\rho}}{\sqrt{r^2+\left(\frac{R_0^2}{\rho}\right)^2+2r\left(\frac{R_0^2}{\rho}\right)\cos\theta_2}}\right)
+     \end{align*}
+    $$
+11. 两无限大的接地导体平板，互成直角围成一个空间，在这空间内有一点电荷 $Q$，距平面为 $a,b$，求空间电势
+    做象电荷有
+    $$
+    \begin{align*}
+      &amp;q_1=-q,\quad (x_1,y_1)=(-a,b)\\
+      &amp;q_2=q,\quad (x_2,y_2)=(-a,-b)\\
+      &amp;q_3=-q,\quad (x_3,y_3)=(a,-b)\\
+      &amp;\Rightarrow \phi=\dfrac{q}{4\pi\varepsilon_0}\left(\dfrac{1}{\sqrt{(x-a)^2+(y-b)^2+z^2}}-\dfrac{1}{\sqrt{(x+a)^2+(y-b)^2+z^2}}+\dfrac{1}{\sqrt{(x+a)^2+(y+b)^2+z^2}}-\dfrac{1}{\sqrt{(x-a)^2+(y+b)^2+z^2}}\right)
+    \end{align*}
+    $$
+12. 有一个电矩为$\mathbf{p}$的电偶极子，与接地导体球的球心相距为 $D$，偶矩方向沿着半径的方向，求空间电势
+    $$
+    \begin{align*}
+      &amp;q_+'=\dfrac{-Rq}{D+l/2},\quad d_+'=\dfrac{R^2}{D+l/2}\\
+      &amp;q_-'=\dfrac{Rq}{D-l/2},\quad,d_-'=\dfrac{R^2}{D-l/2}\\
+      &amp;\bar{d}'=\lim_{l\rightarrow 0}\dfrac{d_+'|q_+'|+d_-'|q_-'|}{|q_+'|+|q_-'|}=\dfrac{R^2}{D}\\
+      &amp;Q=\lim_{l\rightarrow 0}q_+'+q_-'=\dfrac{Rp}{D^2}\\
+      &amp;p'=\lim_{l\rightarrow 0}q_+'d_+'+q_-'d_-'=\dfrac{2R^3p}{D^3}=\left[q'\Delta l'=\dfrac{R^3p}{D^3}\right]\\
+      &amp;\Rightarrow\phi=\dfrac{1}{4\pi\varepsilon_0}\left(\dfrac{\mathbf{p}\cdot\mathbf{R}_1}{R_1^3}+\dfrac{\mathbf{p'}\cdot\mathbf{R}_2}{R_2^3}+\dfrac{Q}{R_2}\right)\\
+      &amp;\left[\mathbf{R}_1=\mathbf{r}-D\mathbf{k},\quad\mathbf{R}_2=\mathbf{r}-\dfrac{R^2}{D}\mathbf{k}\right]
+    \end{align*}
+    $$
+   TODO:$Q$
+13. 一导体球半径为 $a$，球内有一不同心球洞，洞的半径为 $b$，整个球的球心位于两介质的交界上，在球洞内距洞心为 $c$ 处有一点电荷 $Q$，导体球带电 $q$
+    1. 求洞中点电荷 $Q$ 受的力 $F$;
+      $$
+      \begin{align*}
+         &amp;q'=\dfrac{-bQ}{c},\quad d'=\dfrac{b^2}{c}\\
+         &amp;F=\dfrac{1}{4\pi\varepsilon_0}\dfrac{\frac{-bQ}{c}\cdot Q}{\left(\dfrac{b^2}{c}-c\right)^2}=-\dfrac{1}{4\pi\varepsilon_0}\dfrac{Q^2bc}{(b^2-c^2)^2}
+      \end{align*}
+      $$
+    2. 求空间的自由电荷与束缚电荷的分布情况
+      $$
+      \begin{align*}
+         &amp;\mathbf{E}=\dfrac{q+Q}{2\pi(\varepsilon_1+\varepsilon_2)a^2}\mathbf{e}_r\\
+         &amp;\sigma_1=\dfrac{\varepsilon_1(q+Q)}{2\pi(\varepsilon_1+\varepsilon_2)a^2},\quad \sigma_2=\dfrac{\varepsilon_2(q+Q)}{2\pi(\varepsilon_1+\varepsilon_2)a^2}\\
+         &amp;\sigma_{1p}=\dfrac{(\varepsilon_0-\varepsilon_1)(q+Q)}{2\pi(\varepsilon_1+\varepsilon_2)a^2},\quad \sigma_{2p}=\dfrac{(\varepsilon_0-\varepsilon_2)(q+Q)}{2\pi(\varepsilon_1+\varepsilon_2)a^2}\\
+         &amp;\sigma'=\text{TODO:}
+      \end{align*}
+      $$
+14. 一半径为 $a$ 的介质球的介电常为$\varepsilon$，在球外包一层导体，导体层的外半径为 $b$，介质球均匀带电，其密度为 $\rho$，导体上带电量 $Q$，求整个空间的电势分布和导体上的电荷密度以及介质球的总偶极矩
+   $$
+   \begin{align*}
+      &amp;\phi_1=\dfrac{1}{4\pi\varepsilon_0}\dfrac{Q+q}{r},\quad r&gt;b,[q=\dfrac{4}{3}\pi a^3\rho]\\
+      &amp;\phi_2=\phi_1|_{r=b}=\dfrac{1}{4\pi\varepsilon_0}\dfrac{Q+q}{b}\\
+      &amp;\phi_3=\int_r^\infty{E\mathrm{d}r}=\int_r^a{E\mathrm{d}r}+\phi_2=-\dfrac{\rho r^2}{6\varepsilon}+\dfrac{\rho a^2}{6\varepsilon}+\dfrac{1}{4\pi\varepsilon_0}\dfrac{Q+q}{b}\\
+      &amp;\left[E=\dfrac{1}{4\pi\varepsilon}\dfrac{\dfrac{4}{3}\pi r^3\rho}{r^2}=\dfrac{\rho r}{3\varepsilon}\right]\\
+      &amp;\sigma_1=\dfrac{1}{4\pi}\dfrac{Q+q}{b^2},\quad \sigma_2=-\dfrac{\rho a}{3},\quad \sigma_p=(1-\dfrac{\varepsilon_0}{\varepsilon})\dfrac{\rho a}{3}\\
+      &amp;\because \text{对称性:} \mathbf{P}=0
+   \end{align*}
+   $$
+
+15. 均匀介质球介电常数为 $\varepsilon_1$，半径为$ a$，放在一无限大介电常数为 $\varepsilon_2$ 的均匀介质中，在球内离球心为 $b(b<a)$ 处有一电量为="" $q$="" 的点电荷，求空间的电场强度和球面上的束缚电荷面密度="" 由题可得="" $$="" \begin{align*}="" &\nabla^2\phi_1="-\dfrac{Q\delta(\mathbf{R}-b\mathbf{k})}{\varepsilon_1}\\" &\nabla^2\phi_2="0\\" &\rightarrow="" \phi="\sum_{n=0}{\left(A_nR^n+\dfrac{B_n}{R^{n+1}}\right)P_n(\cos\theta)}\\" &\phi_1="\dfrac{1}{4\pi\varepsilon_1}\dfrac{Q}{r}\left[\equiv\dfrac{Q}{4\pi\varepsilon_1}\sum_{n=0}{\dfrac{b^n}{R^{n+1}}P_n(\cos\theta)}\right]+\sum_{n=0}{A_nR^nP_n(\cos\theta)}\\" &\phi_2="\sum_{n=0}{\dfrac{B_n}{R^{n+1}}P_n(\cos\theta)}\\" &1:\quad="" \dfrac{q}{4\pi\varepsilon_1}\dfrac{b^n}{r^{n+1}}+a_nr^n,\quad="" 2:\quad\dfrac{b_n}{r^{n+1}}\\="" r="a,\quad" \phi_1="\phi_2,\quad" \varepsilon_1\dfrac{\partial{\phi_1}}{\partial{r}}="\varepsilon_2\dfrac{\partial{\phi_2}}{\partial{R}}\\" a_n="\dfrac{Q(n+1)b^n(\varepsilon_1-\varepsilon_2)}{4\pi\varepsilon_1" a^{2n+1}[n\varepsilon_1+(n+1)\varepsilon_2]},\quad="" b_n="\dfrac{Qb^n(2n+1)}{4\pi[n\varepsilon_1+(n+1)\varepsilon_2]}\\" &\sigma_p="\varepsilon_0\left(\dfrac{\partial{\phi_1}}{\partial{R}}-\dfrac{\partial{\phi_2}}{\partial{R}}\right)|_{R=a}" \end{align*}="" 16.="" 均匀介质球的介电常数="" $\varepsilon_1$，在球中心放一电偶="" $p_f$，球外充满介电常数$\varepsilon_2$的介质，求空间的电势和极化电荷分布="" a_1="\dfrac{1}{4\pi\varepsilon_1}\dfrac{p_f}{a^3}\dfrac{2(\varepsilon_1-\varepsilon_2)}{2\varepsilon_2+\varepsilon_1},\quad" b_1="\dfrac{3p_f}{4\pi(2\varepsilon_2+\varepsilon_1)}\\" &\rho_p="0\\" &r\rightarrow="" 0:\quad="" \mathbf{p}="\left(\dfrac{\varepsilon_0}{\varepsilon_1}-1" \right)\mathbf{p}_f\\="" &r="a,\quad" \sigma_p="\dfrac{3(\varepsilon_1-\varepsilon_2)\varepsilon_0p_f}{2\pi\varepsilon_1(\varepsilon_1+2\varepsilon_2)a^3}\cos\theta" 17.="" 平行板电容器的平板间相距为="" $d$，两极间加直流电压="" $v$，下板电势高，在下板内侧面上有一很小的半球突起，球半径为="" $a$，求电容器内的电场和半球上的电荷密度="" &\phi="V-\dfrac{V}{d}R\cos\theta+\sum_{n=0}\left(A_nR^n+\dfrac{B_n}{R^{n+1}}\right)P_n\\" &\phi(a)="V,\quad" \phi(\infty)\rightarrow\text{="" lim}(r_0\cos\theta_0="d)\\" \quad="" \dfrac{v}{d}a="\dfrac{B_1}{a^2}\rightarrow" &e="-\nabla\phi=\nabla\left[\left(1-\dfrac{a^3}{R^3}\right)\mathbf{E}_0\cdot\mathbf{R}\right]=\mathbf{E}_0+a^3\left[\dfrac{3(\mathbf{E}_0\cdot\mathbf{R})\mathbf{R}}{R^5}-\dfrac{\mathbf{E}_0}{R^3}\right]\\" &\sigma="\varepsilon_0E|_a=3\varepsilon_0E_0\cos\theta" 18.="" 一无限长的均匀导体圆柱，半径为="" $a$，处在真空中，在柱外平行柱轴有一无限长的直导线，距柱轴为="" $b$，导线均匀带电，其线电荷密度为$\eta$，求空间电势分布="" todo:="" 19.="" 求点电荷="" 与半径为="" $a$="" 的接地导体球间的相互作用="" $u$="" 和相互作用力="" $f$，电荷与球心的距离为="" $d$，整个系统位于介电常数为="" $\varepsilon$="" 的均匀电介质内="" &q'="\dfrac{-aq}{d},\quad" d'="\dfrac{a^2}{d}\\" &u="\dfrac{1}{2}\dfrac{\frac{-aq^2}{d}}{4\pi\varepsilon\left(d-\frac{a^2}{d}\right)}=\dfrac{-q^2a}{8\pi\varepsilon(d^2-a^2)}\\" &f="-\dfrac{\partial{u}}{\partial{d}}=\dfrac{-q^2ad}{4\pi\varepsilon(d^2-a^2)^2}" 20.="" 有一平板电容器，浸在不可压缩的液体中，并使平板竖直放置，液体的介电常数为$\varepsilon$，密度为$\tau$，两板间距离为$d$，电势差为$v$，求电容器内液体上升的高度="" &w="\dfrac{V^2}{2}C\\" &c_1="\dfrac{\varepsilon_0(l-x)b}{d},\quad" c_2="\dfrac{\varepsilon" xb}{d},\quad="" c="C_1+C_2\\" &f_x="\dfrac{\partial{W}}{\partial{x}}=\dfrac{V^2}{2}\dfrac{\partial{C}}{\partial{x}}=\dfrac{V^2}{2}\dfrac{b}{d}(\varepsilon-\varepsilon_0)\\" gh\\="" h="\dfrac{1}{2g\tau}\left(\dfrac{V}{d}\right)^2(\varepsilon-\varepsilon_0)" 21.="" 有一个半径为="" $r$="" 的未带电导体球浮在液体上，球的质量为$m$，液体的介电常数为$\varepsilon$。开始导体球有四分之一体积浸在液体内，如果要导体球有一半浸在液体内，必须使导体球带多少电量？="" &\tau="" g="" \dfrac{1}{3}\pi="" r^3="mg\\" 22.="" 设有两个电偶极子，它们的偶极矩大小相等，并都指向="" z="" 轴方向，其一位置在原点，另一位置在="" 1.="" $\theta="\dfrac{\pi}{2},R$" 2.="" \mathbf{r}}{r^3}\\="" &\mathbf{e}="-\nabla\phi=\dfrac{1}{4\pi\varepsilon_0}\left(\dfrac{3(\mathbf{p}\cdot\mathbf{R})\mathbf{R}}{R^5}-\dfrac{\mathbf{p}}{R^3}\right)\\" w_1="\dfrac{1}{4\pi\varepsilon_0}\dfrac{p^2}{R^3},\quad" \mathbf{f}_1="-\nabla" w="\dfrac{1}{4\pi\varepsilon_0}\dfrac{3p^2\mathbf{R}}{R^5}\\" w_2="-\dfrac{1}{4\pi\varepsilon_0}\dfrac{3p^2}{R^3},\quad" \mathbf{f}_2="-\nabla" 23.="" 有一个电矩为$p$的偶极子，位于距无限大导体平面为$a$处，求偶极子所受的力="" 24.="" 平面四极子位于="" y="" 平面内，每个点电荷的电量的数值为$q$，相距为$l$，求四极矩和电势="" \mathcal{q}&="\int(3\mathbf{R}'\mathbf{R}'-R'^2\mathcal{J})\rho(\mathbf{R}')\mathrm{d}" v'\\="" &="Q\left(\begin{matrix}0&amp;-3l^2&amp;0\\-3l^2&amp;0&amp;0\\0&amp;0&amp;0\end{matrix}\right)\\" \phi&="\dfrac{1}{4\pi\varepsilon_0}\dfrac{1}{6}\mathcal{Q}:\dfrac{3\mathbf{R}\mathbf{R}-R^2\mathcal{J}}{R^5}\\" #="" 稳定电磁场与似稳电磁场="" ##="" 稳定电磁场的基本方程="" q\rightarrow="" i,\quad="" \mathbf{d}\rightarrow\mathbf{j},\quad="" \varepsilon\rightarrow\sigma="" **例="" 1**="" 半径为="" 的球形电极埋在无限的均匀导电介质中，电导率为$\sigma$，已知电极上总电流为="" $i$，试计算空间的电场分布="" \mathbf{e}&="\dfrac{I}{4\pi\sigma}\dfrac{\mathbf{r}}{r^3}" 2**="" 以水平面为分界面，整个空间充满了电导率分别为$\sigma_1$和$\sigma_2$的均匀导电介质，在导电介质="" 1="" 中有一点电极="" a，与界面相距为="" $d$，已知电极上的总电流为="" $i$，求空的电势分布。="" 参考[(3.2.4)](#3.2.4)，将$q\rightarrow="" \varepsilon\rightarrow\sigma$="" \phi_2="\dfrac{1}{4\pi\sigma_2}\left(\dfrac{I}{\sqrt{(x-d)^2+y^2+z^2}}+\dfrac{I''}{\sqrt{(x-d')^2+y^2+z^2}}\right)" 解得="" i''="-I',\quad" i'="\dfrac{\sigma_1-\sigma_2}{\sigma_1+\sigma_2}I" 3**="" 将上题用分离变量法求解="" 略，用到柱坐标分离变量的本征函数——贝塞尔函数="" 稳定电流磁场的矢势="" 设="" $x="">0$ 的半空间充满磁导率为 $\mu$ 的均匀介质，$x&lt;0$ 的半空间为真空，有线电流 $I$ 沿 $z$ 轴流动，求空间磁场和磁化电流分布
+
+$$
+\begin {align*}
+    &amp;\oint {\mathbf {H}\cdot\mathrm {d}\mathbf {l}}=\mathbf {H}_1\pi r+\mathbf {H}_2\pi r=\mathbf {I}\\
+    &amp;\mathbf {B}\left (\dfrac {1}{\mu}+\dfrac {1}{\mu_0}\right)\pi r=\mathbf {I}\\
+    &amp;\oint\mathbf {B}\cdot\mathrm {d}\mathbf {l}=\mu_0\int (\mathbf {J}+\mathbf {J}_m)\cdot\mathrm {d}\mathbf {S}\\
+    &amp;2\pi r \dfrac {\mu\mu_0}{\mu_0+\mu}\dfrac {I}{\pi r}=\mu_0 (I+I_m)\\
+    &amp;\Rightarrow I_m=\dfrac {\mu-\mu_0}{\mu+\mu_0} I
+\end {align*}
+$$
+
+** 例 2** 一半径为 $a$ 的均匀带电的导体球壳，绕自身某一直径以角速度 $\omega$ 转动，设球上的总电量为 $ Q$，球内外为真空，计算球内外的磁场
+
+$$
+\begin {align*}
+    &amp;\mathbf {a}=\sigma\omega \times a\mathbf {e}_r=\dfrac {Q\omega}{4\pi a}\sin\theta\mathbf {e}_\phi\\
+    &amp;(\nabla^2\mathbf {A})_{\phi}=\nabla^2A-\dfrac {A}{r^2\sin^2\theta}=0\\
+    &amp;\Rightarrow A=\sum_{n=0}^{\infty}\left (b_nr^n+\dfrac {a_n}{r^{n+1}}\right) P_n^{(1)}\\
+    &amp;r=0,\text {lim};r\rightarrow\infty ,0;r=a,A_1=A_2,\nabla\times (\mathbf {H}_2-\mathbf {H}_2)=\mathbf {a}\\
+    &amp;\nabla\times (\mathbf {H}_2-\mathbf {H}_2)=\mathbf {a}\Rightarrow a=\dfrac {\partial_r {A_1}}{\mu_1}-\dfrac {\partial_r {A_2}}{\mu_2}\left [r,\theta ,z\right]=\dfrac {\partial_r {rA_1}}{r\mu_1}-\dfrac {\partial_r {rA_2}}{r\mu_2}\left [r,\theta,\phi\right]\\
+    &amp;a_n=d_n=0,b_1=\dfrac {\mu_0 Q \omega}{12\pi a},c_1=\dfrac {\mu_0 Q\omega }{12\pi} a^2\\
+    &amp;A_1=\dfrac {\mu_0 Q \omega}{12\pi a} r\sin\theta,\quad A_2=\dfrac {\mu_0 Q\omega }{12\pi r^2} a^2\sin\theta
+\end {align*}
+$$
+
+## 稳定磁场的标势
+
+** 例 1** 一无限长的磁导率为 $\mu_1$ 的介质圆柱，半径为 $ R_0$，置于磁导率为 $\mu_2$ 的磁介质中，在垂直于柱轴方向加一均匀静磁场 $H_0$，求柱内、外磁场分布
+选柱坐标系，柱轴为 $\mathbf {e}_z$，加磁场 $H_0$ 沿 $\mathbf {e}_x$，
+$$
+\begin {align*}
+    &amp;\nabla^2\phi_m (r,\theta)=0\\
+    &amp;\Rightarrow \phi_m=c_0\ln {r}+d_0+\sum_{n=1}^\infty {(a_n\cos {n\theta}+b_n\sin {n\theta})(c_nr^n+d_nr^{-n})}\\
+    &amp;\phi_{1m}(r,\theta)=\phi_{1m}(r,-\theta);r=0,\phi_{1m}=0;r\rightarrow \infty,\phi_{2m}=-H_0r\cos\theta\\
+    &amp;\Rightarrow \phi_{1m}=\sum {a_n\cos {n\theta} r^n},\quad\phi_{2m}=-H_0r\cos\theta+\sum {\dfrac {d_n}{r^n}\cos {n\theta}}\\
+    &amp;r=R_0,\phi_{1m}=\phi_{2m},\mu_1\dfrac {\partial {\phi_{1m}}}{\partial {r}}=\mu_2\dfrac {\partial {\phi_{2m}}}{\partial {r}}\\
+    &amp;a_1=\dfrac {-2H_0\mu_2}{\mu_1+\mu_2},\quad d_1=\dfrac {\mu_1-\mu_2}{\mu_1+\mu_2} H_0R_0^2
+\end {align*}
+$$
+
+** 例 2** 估算中子星磁场的极限值
+$$
+\begin {align*}
+    &amp;\nabla^2\phi_m (r,\theta,\phi)=0\\
+    &amp;\Rightarrow \phi_{1m}=\sum_{n=1}^\infty {a_nr^nP_n},\quad\phi_{2m}=\sum_{n=1}^\infty {\dfrac {b_n}{r^{n+1}} P_n}\\
+    &amp;r=R_0,\quad\phi_{1m}=\phi_{2m},\quad-\mu_0\dfrac {\partial {\phi_{1m}}}{\partial {n}}+\mu_0M\cos\theta=-\mu_0\dfrac {\partial {\phi_{2m}}}{\partial {n}}\\
+    &amp;\Rightarrow a_1=\dfrac {1}{3} M,b_1=\dfrac {1}{3} MR_0^3\\
+    &amp;\phi_{1m}=\dfrac {1}{3}\mathbf {M}\cdot\mathbf {r},\phi_{2m}=\dfrac {1}{3}\dfrac {R_0^3}{r^3}\mathbf {M}\cdot\mathbf {r}\\
+    &amp;\mathbf {B}=-\mu_0\nabla\phi_{1m}+\mu_0\mathbf {M}=\dfrac {2}{3}\mu_0\mathbf {M}
+\end {align*}
+$$
+
+** 例 3** 有一内、外半径分别为 $R_1$ 和 $R_2$ 的空心球壳，放置在均匀磁场 $H_0$ 中，球壳介质的磁导率为 $\mu$，球壳外为真空，求球壳内部空间的磁场
+
+详细略
+$$
+\begin {align*}
+    &amp;\phi_{1m}=\sum {a_nr^nP_n}\\
+    &amp;\phi_{2m}=\sum {(b_nr^n+\dfrac {c_n}{r^{n+1}}) P_n}\\
+    &amp;\phi_{3m}=\sum {\dfrac {d_n}{r^{n+1} P_n}}-H_0r\cos\theta\\
+    &amp;r=R_1,\phi_{1m}=\phi_{2m},\mu_0\dfrac {\partial {\phi_{1m}}}{\partial {r}}=\mu\dfrac {\partial {\phi_{2m}}}{\partial {r}}\\
+    &amp;r=R_2,\phi_{2m}=\phi_{3m},\mu_0\dfrac {\partial {\phi_{3m}}}{\partial {r}}=\mu\dfrac {\partial {\phi_{2m}}}{\partial {r}}
+\end {align*}
+$$
+求解即可
+
+## 计算稳定磁场的多极展开方法
+
+** 例 1** 用磁标势法计算一无限长直线电流 $I$ 所产生的磁场
+
+取坐标系使 $I$ 沿 $z$ 轴，并令待求场点 $P$ 位于 $xy$ 平面内，把无限长直线电流看成电流圈，所围的磁偶层是 $x\ge 0,y=0$ 的半无限大平面，则它对 $P$ 点所张的立体角为 $\Omega=2 (\pi-\theta)$
+$$
+\begin {align*}
+    \phi_{m}=\dfrac {I}{2\pi}(\pi-\theta),\Rightarrow \mathbf {H}=-\nabla\phi_m=\dfrac {I}{2\pi r}\mathbf {e}_\theta
+\end {align*}
+$$
+
+** 例 2** 一半径为 $a$ 的均匀带电球壳，质量为 $M$，总电量为 $Q$，绕某一直径以角速度 $\omega$ 转动，求磁矩和旋磁比
+
+$$
+\begin {align*}
+    \mathbf {a}&amp;=\sigma\omega \times a\mathbf {e}_r=\dfrac {Q\omega}{4\pi a}\sin\theta\mathbf {e}_\phi\\
+    \mathbf {m}&amp;=\dfrac {1}{2}\int {\mathbf {R}'\times\mathbf {a}\mathrm {d} V'}=\dfrac {1}{2}\dfrac {Q\omega}{4\pi a}\int {(-\mathbf {e}_\theta) a\cdot\sin\theta \cdot a^2\sin\theta\mathrm {d}\theta\mathrm {d}\varphi}\\
+    &amp;=\dfrac {Q\omega}{8\pi } a^2\int {(\mathbf {e}_z\sin\theta-\mathbf {e}_\rho\cos\theta)\sin^2\theta\mathrm {d}\theta\mathrm {d}\varphi}\\
+    &amp;=\dfrac {Q\omega}{3 } a^2\mathbf {e}_z
+\end {align*}
+$$
+质量为 $M$ 绕直径以 $\omega$ 转动的球壳的动量矩为
+$$
+\mathbf {L}=I\omega=\dfrac {2}{3} Ma^2\omega\mathbf {e}_z
+$$
+磁矩和动量矩之比，称为旋磁比
+$$
+\gamma=\dfrac {m}{L}=\dfrac {Q}{2M}
+$$
+
+
+## 稳定磁场的能量与磁作用力
+
+** 例 1** 一半径为 $a$ 的均匀带电球壳，总电量为 $Q$，绕某一直径以角速度 $\omega$ 转动，求磁场总能量
+
+$$
+\begin {align*}
+    &amp;\mathbf {a}=\sigma\omega \times a\mathbf {e}_r=\dfrac {Q\omega}{4\pi a}\sin\theta\mathbf {e}_\phi\\
+    &amp;A_1=\dfrac {\mu_0 Q \omega}{12\pi a} r\sin\theta,\quad A_2=\dfrac {\mu_0 Q\omega }{12\pi r^2} a^2\sin\theta\\
+    &amp;W=\dfrac {1}{2}\int {\mathbf {A}\cdot\mathbf {a}\mathrm {d} S}=\dfrac {1}{2}\int_0^\pi {\dfrac {\mu_0 Q \omega}{12\pi }\sin\theta\cdot\dfrac {Q\omega}{4\pi a}\sin\theta\cdot 2\pi a^2 \sin\theta\mathrm {d}\theta}\\
+    &amp;=\dfrac {\mu_0}{36\pi} Q^2\omega^2a
+\end {align*}
+$$
+
+## 思考题与习题四
+
+1. 试比较稳定电场和静电场，它们有何异同？
+   ** 两种电场的差异 **
+   一、性质不同
+   1、稳恒电场：不随时间变化的电场。
+   2、静电场：观察者与电荷相对静止时所观察到的电场。
+   二、基本特征不同
+   1、稳恒电场基本特征：稳恒电场只要求电荷分布不随时间变化，并且允许在导体中不随时间变化的电流的存在。因此，在稳定电场中，导体内部的电场强度不能为零，导体内部两点之间可能存在电位差。在导体表面附近，电场通常不垂直于导体的表面。此外，稳恒电场总是伴随着稳恒磁场。
+   2、静电场基本特征：对置在其中的静电荷有很强的影响。根据循环定理，静电场中的循环等于零，这表明当电荷在静电场中沿任何闭合路径移动时，电场力所做的功为零，因此静电场是保守场。
+   ** 两种电场的共性 **
+   （1）它们都是物质的一种客观存在形式，都储存着电能；
+   （2）它们对处于其中的电荷都有力的作用；
+   （3）在这两种电场中移动电荷时相应的电场力一般都要做功。
+2. 在有稳定电流的导体中，导体内部电势是否是常数？导体内有无电荷？电荷分布在什么地方？
+   $\mathbf {J}=\sigma\mathbf {E}$，电势随着电流方向减小，有电荷，随着电流方向移动
+3. 磁场不是势场，为什么还能引入磁标势？什么情况下用磁标势？什么情况下用矢势计算磁场比较方便？
+   $ \nabla\times \mathbf {H}=0$，所以在磁场无旋的地方就可以定义磁标势，恒稳电流时用矢势计算磁场比较方便
+4. 比较磁多极展开与电多极展开的异同，磁偶极矩的定义是什么？为什么说一个线电流圈与一个磁偶层等效？
+   都是泰勒展开，磁多级第一项恒为零，磁多级展开是矢量，电多级展开是标量；磁偶极子是一圈封闭循环的电流；线电流圈产生的磁场与磁偶层产生的磁场相同
+5. 稳定磁场的能量有几种表达式？它们所表示的意义有何差别？
+   $$
+   \begin {align*}
+    &amp;W=\dfrac {1}{2}\int {\mathbf {B}\cdot\mathbf {H}\mathrm {d} V}=\dfrac {1}{2}\int {\mathbf {A}\cdot\mathbf {J}\mathrm {d} V}=\dfrac {\mu}{8\pi}\int {\dfrac {1}{r}\mathbf {J}(\mathbf {R})\cdot\mathbf {J}(\mathbf {R}')\mathrm {d} V\mathrm {d} V'}\\
+    &amp;W=\dfrac {1}{2}\sum_{i=1}^{n} I_i\oint {\mathbf {A}\cdot\mathrm {d}\mathbf {l}_i}=\dfrac {1}{2}\sum_{i=1}^n {I_i\Phi_i}=\dfrac {1}{2}\mathbf {I}^TL\mathbf {L}\left [L_{ik}=\dfrac {\mu_0}{4\pi}\oint_i\oint_k\dfrac {\mathrm {d}\mathbf {l}_i\cdot\mathrm {d}\mathbf {l}_k}{r_{ik}}\right]
+   \end {align*}
+   $$
+   一式是从场的角度，二式是从宏观电流的角度
+6. 如何由磁场能量计算作用力？电流固定不变和磁通量固定不变有什么不同？
+   $$
+   \begin {align*}
+    &amp;\sum_{i}{I_i\delta\Phi_i}=F\delta \eta+\delta W\\
+    &amp;F=\left (\dfrac {\partial {W}_I}{\partial {\eta}}\right)_{I}=-\left (\dfrac {\partial {W}}{\partial {\eta}}\right)_{\Phi}
+   \end {align*}
+   $$
+7. 磁偶极子和外磁场的相互作用能与电偶极子和外电场的相互作用能相比差一符号，如何理解？
+   $W_I=\mathbf {m}\cdot \mathbf {B}_e$
+   这是由于电偶极和磁偶极根本别电场线从正电荷出发，终止负电荷；而磁场线则是闭合的曲线两者的场力线在外部区域相同，在内部则相反。相差的符号正是由于它们内部场强方向相反所造成的
+8. 在什么条件下可以用电路方程来代替场方程？
+   
   <span class="spoiler" onclick="this.classList.toggle('spoiler')">
     <span class="spoiler-blur spoiler-1ffd9">不考捏</span>
-  </span></li>
-<li>设有两平面围成的直角形无穷容器，其内充满电导率为 $\sigma$ 的液体，取该两平面为 $xz$ 面和 $yz$ 面，在 $(x_0,y_0,z_0)$ 和 $(x_0,y_0,-z_0)$ 两点分別置正极并通流 $I$。求导电液体的势<script type="math/tex; mode=display">
- \begin{align*}
-     I:&\quad (x_0,y_0,z_0),(-x_0,-y_0,z_0),(x_0,-y_0,-z_0),(-x_0,y_0,-z_0)\\
-     -I:&\quad (x_0,y_0,-z_0),(-x_0,-y_0,-z_0),(x_0,-y_0,z_0),(-x_0,y_0,z_0)\\
-     \phi&=\dfrac{I}{4\pi\sigma}\sum_{i=1}^4\left(\dfrac{1}{r_{+i}}-\dfrac{1}{r_{-i}}\right)
- \end{align*}</script></li>
-<li>在一很大的电解槽中充满电导率为 $\sigma_2$ 的液体，使其中流着均匀的电流 $\mathbf {J}_{f0}$，今在液休中置入一个电导率为 $\sigma_1$ 的小球，求稳恒时电流分布和面电荷分布<br>参考 <a href="#3.3.3">(3.3.3)</a><br>用球坐标分离变量，与 $\phi$ 无关，故 $\theta$ 的本征函数为勒让德函数，$r$ 的本征函数为 $r^n,r^{-(n+1)}$，通解为<script type="math/tex; mode=display">
-\phi=\sum_{n=0}^\infty{[A_nr^n+B_nr^{-(n+1)}]P_n(\cos\theta)}</script>根据边界条件 $r=0,\phi_1=0;r\rightarrow\infty,\phi_2=-J_{f0} r\cos\theta$，有<script type="math/tex; mode=display">
-\begin{align*}
-    &\phi_1=\sum_{n=0}^\infty{A_nr^nP_n(\cos\theta)}\\
-    &\phi_2=-J_{f0}r\cos\theta+\sum_{n=0}^\infty{\dfrac{B_n}{r^{n+1}}P_n(\cos\theta)}
-\end{align*}</script>再由边界条件得到<script type="math/tex; mode=display">
-A_1=-J_{f0}\dfrac{3\sigma_1}{\sigma_1+2\sigma_2},\quad B_1=\dfrac{\sigma_1-\sigma_2}{2\sigma_2+\sigma_1}R_1^3J_{f0}</script>解得<script type="math/tex; mode=display">
-\begin{align*}
-    \mathbf{J}_1&=-\nabla\phi_1=\dfrac{3\sigma_1}{\sigma_1+2\sigma_2}\mathbf{J}_{f0}\\
-    \mathbf{J}_2&=-\nabla\phi_2=-\nabla\left(-\mathbf{J}_{f0}\cdot\mathbf{R}+\dfrac{\sigma_1-\sigma_2}{2\sigma_2+\sigma_1}R_1^3\dfrac{\mathbf{J}_{f0}\cdot\mathbf{R}}{R^3}\right)\\
-    &=\mathbf{J}_{f0}+\dfrac{\sigma_1-\sigma_2}{2\sigma_2+\sigma_1}R_1^3\left[\dfrac{3\left(\mathbf{J}_{f0}\cdot\mathbf{R}\right)\mathbf{R}}{R^5}-\dfrac{\mathbf{J}_{f0}}{R^3}\right]
-\end{align*}</script>面密度分布<script type="math/tex; mode=display">
-\begin{align*}
-\delta=D_2-D_1=\left(\varepsilon_2\dfrac{1}{\sigma_2}-\varepsilon_1\dfrac{1}{\sigma_1}\right)\dfrac{3\sigma_1}{\sigma_1+2\sigma_2}J_{f0}\cos\theta=\dfrac{3(\sigma_1-\sigma_2)\varepsilon_0}{\sigma_2(\sigma_1+2\sigma_2)}J_{f0}\cos\theta\left[\varepsilon_1\approx\varepsilon_2\approx\varepsilon_0\right]
-\end{align*}</script></li>
-<li>半径为 $a$ 的均匀带电球所带电量为 $Q$，球的质量也均匀分布，总质量为 $M$，以角速度 $\omega$ 绕其直径转动求磁矩与机械动量矩以及两者之比<br>磁矩公式为<script type="math/tex; mode=display">
-\begin{align*}
-    \mathbf{m}&=IS\\
-    &=\int{S\mathrm{d}I}\\
-    &=\int{\pi r^2\dfrac{\mathrm{d}q}{T}}=\int{\dfrac{\omega r^2}{2}}\mathrm{d}q\\
-    &=\int{\dfrac{\omega r^2}{2}}\dfrac{Q}{\frac{4}{3}\pi a^3}\mathrm{d}V\\
-    &=\int{\dfrac{\omega r^2}{2}}\dfrac{Q}{\frac{4}{3}\pi a^3}r^2\sin\theta\mathrm{d}r\mathrm{d}\theta\mathrm{d}\phi\\
-    &=\dfrac{Q\omega }{5}a^2
-\end{align*}</script>动量矩为<script type="math/tex; mode=display">
-\begin{align*}
-    l= I\omega=\omega\int{r^2\mathrm{d}m}=\dfrac{M}{\dfrac{4}{3}\pi a^3}\omega\int{r^2r^2\sin\theta\mathrm{d}r\mathrm{d}\theta\mathrm{d}\phi}=\dfrac{2}{5}M\omega a^2
-\end{align*}</script>得<script type="math/tex; mode=display">
-m/l=Q/2M</script></li>
-<li>有一个均匀带电的薄导体壳，其半径为 $a$，总电荷为 $Q$，球绕直径以角速度 $\omega$ 转动，用磁标势法求球内外的磁场<script type="math/tex; mode=display">
-\begin{align*}
-    &\phi_1=\sum{A_nr^nP_n}\\
-    &\phi_2=\dfrac{1}{4\pi}(\dfrac{\mathbf{m}\cdot\mathbf{R}}{R^3})\left[m=\dfrac{Q\omega}{3}a^2\right]\\
-    &\Rightarrow A_1=\dfrac{Q\omega}{12\pi a}\\
-    &\mathbf{B}_1=-\mu_0\nabla \phi_1+\mu_0 \dfrac{\mathbf{m}}{\dfrac{4}{3}\pi a^3}=\dfrac{\mu_0\omega Q\mathbf{e}_z}{6\pi a}\\
-    &\mathbf{B}_2=\dfrac{\mu_0}{4\pi}\left[\dfrac{3(\mathbf{m}\cdot\mathbf{R})\mathbf{R}}{R^5}-\dfrac{\mathbf{m}}{R^3}\right]
-\end{align*}</script></li>
-<li>设理想铁磁材料的磁化规律为 $\mathbf {B}=\mu\mathbf {H}+\mu_0\mathbf {M}_0$，是与 $\mathbf {H}$ 无关的常数。用这种材料做成永磁球，半径为 $a$，将球放在真空中，外加均匀磁场 $\mathbf {H}_0$ 求球内外的磁场<script type="math/tex; mode=display">
-\begin{align*}
-    &\phi_1=\sum{A_nR^nP_n}\\
-    &\phi_2=-H_0 R\cos\theta+\sum{\dfrac{B_n}{R^{n+1}}P_n}\\
-    &R=a:\qquad\phi_1=\phi_2,\qquad -\mu\dfrac{\partial{\phi_1}}{\partial{n}}+\mu_0 M_0=-\mu_0\dfrac{\partial{\phi_2}}{\partial{n}}\\
-    &\Rightarrow A_1=-\dfrac{3\mu_0}{\mu+2\mu_0}H_0+\dfrac{\mu_0}{2\mu_0+\mu}M_0,\quad B_1=\dfrac{a^3}{2\mu_0+\mu}\left(\mu_0M_0+(\mu-\mu_0)H_0\right)\\
-    &\phi_1=\left(-\dfrac{3\mu_0}{\mu+2\mu_0}H_0+\dfrac{\mu_0}{2\mu_0+\mu}M_0\right)R\cos\theta\\
-    &\phi_2=-H_0 R\cos\theta+\dfrac{a^3}{2\mu_0+\mu}\left(\mu_0M_0+(\mu-\mu_0)H_0\right)\dfrac{1}{R^{2}}\cos\theta\\
-    &\mathbf{B}_1=-\mu\nabla \phi_1+\mu_0 M_0=\dfrac{3\mu_0\mu}{2\mu_0+\mu}\mathbf{H}_0+\dfrac{2\mu_0^2}{2\mu_0+\mu}\mathbf{M}_0\\
-    &\text{令$\dfrac{a^3}{2\mu_0+\mu}\left(\mu_0M_0+(\mu-\mu_0)H_0\right)\dfrac{1}{R^{2}}\cos\theta=\mathbf{m}\cdot \mathbf{R}\dfrac{1}{R^{3}}$}\\
-    &\mathbf{B}_2=-\mu_0\dfrac{\partial{\phi_2}}{\partial{n}}=\mu_0\left(\mathbf{H}_0+\dfrac{3(\mathbf{m}\cdot \mathbf{R})\mathbf{R}}{R^{5}}-\dfrac{\mathbf{m}}{R^3}\right)
-\end{align*}</script></li>
-<li>两个相同的磁偶极子磁矩为 $\mathbf {m}$，互相反平行，相距为 $r$，计算它们之间的相互作用力<script type="math/tex; mode=display">
-    \begin{align*}
-        &\phi=\dfrac{1}{4\pi}\left(\dfrac{\mathbf{m}\cdot\mathbf{R}}{R^3}\right)\\
-        &U=\mathbf{m}'\cdot\mathbf{B}=-\mu_0\mathbf{m}'\cdot\nabla\phi=\dfrac{\mu_0}{4\pi}\mathbf{m}'\cdot\left(\dfrac{3(\mathbf{m}\cdot \mathbf{R})\mathbf{R}}{R^{5}}-\dfrac{\mathbf{m}}{R^3}\right)
-    \end{align*}</script>其中 $\mathbf {m}\cdot \mathbf {r}=mr\cos\theta,\mathbf {m}’\cdot\mathbf {r}=-mr\cos\theta=-\mathbf {m}\cdot \mathbf {R}$<br>故有<script type="math/tex; mode=display">
-U=\dfrac{\mu_0}{4\pi}\dfrac{m^2}{r^3}\\
-F=\nabla U_{m}=-\dfrac{3\mu_0}{4\pi}\dfrac{m^2\mathbf{r}}{r^5}</script></li>
-<li>两无限长直线电流所在平面内有一矩形线圈，电流分布与几何位形如图示，求线圈所受磁场力</li>
-</ol>
+  </span>
+9. 设有两平面围成的直角形无穷容器，其内充满电导率为 $\sigma$ 的液体，取该两平面为 $xz$ 面和 $yz$ 面，在 $(x_0,y_0,z_0)$ 和 $(x_0,y_0,-z_0)$ 两点分別置正极并通流 $I$。求导电液体的势
+    $$
+    \begin {align*}
+        I:&amp;\quad (x_0,y_0,z_0),(-x_0,-y_0,z_0),(x_0,-y_0,-z_0),(-x_0,y_0,-z_0)\\
+        -I:&amp;\quad (x_0,y_0,-z_0),(-x_0,-y_0,-z_0),(x_0,-y_0,z_0),(-x_0,y_0,z_0)\\
+        \phi&amp;=\dfrac {I}{4\pi\sigma}\sum_{i=1}^4\left (\dfrac {1}{r_{+i}}-\dfrac {1}{r_{-i}}\right)
+    \end {align*}
+    $$
+10. 在一很大的电解槽中充满电导率为 $\sigma_2$ 的液体，使其中流着均匀的电流 $\mathbf {J}_{f0}$，今在液休中置入一个电导率为 $\sigma_1$ 的小球，求稳恒时电流分布和面电荷分布
+    参考 [(3.3.3)](#3.3.3)
+    用球坐标分离变量，与 $\phi$ 无关，故 $\theta$ 的本征函数为勒让德函数，$r$ 的本征函数为 $r^n,r^{-(n+1)}$，通解为
+    $$
+    \phi=\sum_{n=0}^\infty {[A_nr^n+B_nr^{-(n+1)}] P_n (\cos\theta)}
+    $$
+    根据边界条件 $r=0,\phi_1=0;r\rightarrow\infty,\phi_2=-J_{f0} r\cos\theta$，有
+    $$
+    \begin {align*}
+        &amp;\phi_1=\sum_{n=0}^\infty {A_nr^nP_n (\cos\theta)}\\
+        &amp;\phi_2=-J_{f0} r\cos\theta+\sum_{n=0}^\infty {\dfrac {B_n}{r^{n+1}} P_n (\cos\theta)}
+    \end {align*}
+    $$
+    再由边界条件得到
+    $$
+    A_1=-J_{f0}\dfrac {3\sigma_1}{\sigma_1+2\sigma_2},\quad B_1=\dfrac {\sigma_1-\sigma_2}{2\sigma_2+\sigma_1} R_1^3J_{f0}
+    $$
+    解得
+    $$
+    \begin {align*}
+        \mathbf {J}_1&amp;=-\nabla\phi_1=\dfrac {3\sigma_1}{\sigma_1+2\sigma_2}\mathbf {J}_{f0}\\
+        \mathbf {J}_2&amp;=-\nabla\phi_2=-\nabla\left (-\mathbf {J}_{f0}\cdot\mathbf {R}+\dfrac {\sigma_1-\sigma_2}{2\sigma_2+\sigma_1} R_1^3\dfrac {\mathbf {J}_{f0}\cdot\mathbf {R}}{R^3}\right)\\
+        &amp;=\mathbf {J}_{f0}+\dfrac {\sigma_1-\sigma_2}{2\sigma_2+\sigma_1} R_1^3\left [\dfrac {3\left (\mathbf {J}_{f0}\cdot\mathbf {R}\right)\mathbf {R}}{R^5}-\dfrac {\mathbf {J}_{f0}}{R^3}\right]
+    \end {align*}
+    $$
+   面密度分布
+   $$
+   \begin {align*}
+    \delta=D_2-D_1=\left (\varepsilon_2\dfrac {1}{\sigma_2}-\varepsilon_1\dfrac {1}{\sigma_1}\right)\dfrac {3\sigma_1}{\sigma_1+2\sigma_2} J_{f0}\cos\theta=\dfrac {3 (\sigma_1-\sigma_2)\varepsilon_0}{\sigma_2 (\sigma_1+2\sigma_2)} J_{f0}\cos\theta\left [\varepsilon_1\approx\varepsilon_2\approx\varepsilon_0\right]
+   \end {align*}
+   $$
+11. 半径为 $a$ 的均匀带电球所带电量为 $Q$，球的质量也均匀分布，总质量为 $M$，以角速度 $\omega$ 绕其直径转动求磁矩与机械动量矩以及两者之比
+    磁矩公式为
+    $$
+    \begin {align*}
+        \mathbf {m}&amp;=IS\\
+        &amp;=\int {S\mathrm {d} I}\\
+        &amp;=\int {\pi r^2\dfrac {\mathrm {d} q}{T}}=\int {\dfrac {\omega r^2}{2}}\mathrm {d} q\\
+        &amp;=\int {\dfrac {\omega r^2}{2}}\dfrac {Q}{\frac {4}{3}\pi a^3}\mathrm {d} V\\
+        &amp;=\int {\dfrac {\omega r^2}{2}}\dfrac {Q}{\frac {4}{3}\pi a^3} r^2\sin\theta\mathrm {d} r\mathrm {d}\theta\mathrm {d}\phi\\
+        &amp;=\dfrac {Q\omega }{5} a^2
+    \end {align*}
+    $$
+    动量矩为
+    $$
+    \begin {align*}
+        l= I\omega=\omega\int {r^2\mathrm {d} m}=\dfrac {M}{\dfrac {4}{3}\pi a^3}\omega\int {r^2r^2\sin\theta\mathrm {d} r\mathrm {d}\theta\mathrm {d}\phi}=\dfrac {2}{5} M\omega a^2
+    \end {align*}
+    $$
+    得
+    $$
+    m/l=Q/2M
+    $$
+12. 有一个均匀带电的薄导体壳，其半径为 $a$，总电荷为 $Q$，球绕直径以角速度 $\omega$ 转动，用磁标势法求球内外的磁场
+    $$
+    \begin {align*}
+        &amp;\phi_1=\sum {A_nr^nP_n}\\
+        &amp;\phi_2=\dfrac {1}{4\pi}(\dfrac {\mathbf {m}\cdot\mathbf {R}}{R^3})\left [m=\dfrac {Q\omega}{3} a^2\right]\\
+        &amp;\Rightarrow A_1=\dfrac {Q\omega}{12\pi a}\\
+        &amp;\mathbf {B}_1=-\mu_0\nabla \phi_1+\mu_0 \dfrac {\mathbf {m}}{\dfrac {4}{3}\pi a^3}=\dfrac {\mu_0\omega Q\mathbf {e}_z}{6\pi a}\\
+        &amp;\mathbf {B}_2=\dfrac {\mu_0}{4\pi}\left [\dfrac {3 (\mathbf {m}\cdot\mathbf {R})\mathbf {R}}{R^5}-\dfrac {\mathbf {m}}{R^3}\right]
+    \end {align*}
+    $$
+13. 设理想铁磁材料的磁化规律为 $\mathbf {B}=\mu\mathbf {H}+\mu_0\mathbf {M}_0$，是与 $\mathbf {H}$ 无关的常数。用这种材料做成永磁球，半径为 $a$，将球放在真空中，外加均匀磁场 $\mathbf {H}_0$ 求球内外的磁场
+    $$
+    \begin {align*}
+        &amp;\phi_1=\sum {A_nR^nP_n}\\
+        &amp;\phi_2=-H_0 R\cos\theta+\sum {\dfrac {B_n}{R^{n+1}} P_n}\\
+        &amp;R=a:\qquad\phi_1=\phi_2,\qquad -\mu\dfrac {\partial {\phi_1}}{\partial {n}}+\mu_0 M_0=-\mu_0\dfrac {\partial {\phi_2}}{\partial {n}}\\
+        &amp;\Rightarrow A_1=-\dfrac {3\mu_0}{\mu+2\mu_0} H_0+\dfrac {\mu_0}{2\mu_0+\mu} M_0,\quad B_1=\dfrac {a^3}{2\mu_0+\mu}\left (\mu_0M_0+(\mu-\mu_0) H_0\right)\\
+        &amp;\phi_1=\left (-\dfrac {3\mu_0}{\mu+2\mu_0} H_0+\dfrac {\mu_0}{2\mu_0+\mu} M_0\right) R\cos\theta\\
+        &amp;\phi_2=-H_0 R\cos\theta+\dfrac {a^3}{2\mu_0+\mu}\left (\mu_0M_0+(\mu-\mu_0) H_0\right)\dfrac {1}{R^{2}}\cos\theta\\
+        &amp;\mathbf {B}_1=-\mu\nabla \phi_1+\mu_0 M_0=\dfrac {3\mu_0\mu}{2\mu_0+\mu}\mathbf {H}_0+\dfrac {2\mu_0^2}{2\mu_0+\mu}\mathbf {M}_0\\
+        &amp;\text {令 $\dfrac {a^3}{2\mu_0+\mu}\left (\mu_0M_0+(\mu-\mu_0) H_0\right)\dfrac {1}{R^{2}}\cos\theta=\mathbf {m}\cdot \mathbf {R}\dfrac {1}{R^{3}}$}\\
+        &amp;\mathbf {B}_2=-\mu_0\dfrac {\partial {\phi_2}}{\partial {n}}=\mu_0\left (\mathbf {H}_0+\dfrac {3 (\mathbf {m}\cdot \mathbf {R})\mathbf {R}}{R^{5}}-\dfrac {\mathbf {m}}{R^3}\right)
+    \end {align*}
+    $$
+15. 两个相同的磁偶极子磁矩为 $\mathbf {m}$，互相反平行，相距为 $r$，计算它们之间的相互作用力
+    $$
+        \begin {align*}
+            &amp;\phi=\dfrac {1}{4\pi}\left (\dfrac {\mathbf {m}\cdot\mathbf {R}}{R^3}\right)\\
+            &amp;U=\mathbf {m}'\cdot\mathbf {B}=-\mu_0\mathbf {m}'\cdot\nabla\phi=\dfrac {\mu_0}{4\pi}\mathbf {m}'\cdot\left (\dfrac {3 (\mathbf {m}\cdot \mathbf {R})\mathbf {R}}{R^{5}}-\dfrac {\mathbf {m}}{R^3}\right)
+        \end {align*}
+    $$
+    其中 $\mathbf {m}\cdot \mathbf {r}=mr\cos\theta,\mathbf {m}'\cdot\mathbf {r}=-mr\cos\theta=-\mathbf {m}\cdot \mathbf {R}$
+    故有
+    $$
+    \begin {align*}
+        U=\dfrac {\mu_0}{4\pi}\dfrac {m^2}{r^3}\\
+    F=\nabla U_{m}=-\dfrac {3\mu_0}{4\pi}\dfrac {m^2\mathbf {r}}{r^5}
+    \end {align*}
+    $$
+16. 两无限长直线电流所在平面内有一矩形线圈，电流分布与几何位形如图示，求线圈所受磁场力
 
+# 电磁波的辐射
+
+## 变化电磁场的矢势和标势
+
+## 达朗伯方程的解及推迟势
+
+## 多极子的电磁场
+
+$\theta$ 表示仰角，$\varphi$ 表示周角
+
+$$
+\mathbf {A}=\dfrac {\mu_0}{4\pi}\dfrac {}{}\int_V {\dfrac {\mathbf {J}(\mathbf {R}')}{r}\mathrm {e}^{\mathrm {i} kr}\mathrm {d}\tau'}
+$$
+
+在远场辐射区，$r\gg \lambda$，有 $\dfrac {1}{r}=\dfrac {1}{|\mathbf {R}'|}$
+同时有
+
+$$
+\nabla\leftrightarrow\mathrm {i} k\mathbf {e}_R\qquad \dfrac {\partial {}}{\partial {t}}\leftrightarrow-\mathrm {i}\omega
+$$
+
+多极展开有，$\mathrm {e}^{\mathrm {i} kr}=\mathrm {e}^{\mathrm {i} kR}(1-\mathrm {i} k\mathbf {e}_R\cdot\mathbf {R}'+\cdots)$
+
+取前两项，代入原式有
+
+$$
+\mathbf {A}=\dfrac {\mu_0}{4\pi}\dfrac {\mathrm {e}^{\mathrm {i} kR}}{R}\left [\int_V {\mathbf {J}(\mathbf {R}')\mathrm {d}\tau'}-\int_V {\mathbf {J}(\mathbf {R}')\mathrm {i} k\mathbf {e}_R\cdot\mathbf {R}'\mathrm {d}\tau'}\right]
+$$
+
+第一项对电偶极矩，第二项对应磁偶极矩、电四极矩，令 $\dfrac {\mu_0}{4\pi}\dfrac {\mathrm {e}^{\mathrm {i} kR}}{R}=\alpha$
+
+第一项
+可以证明 $\int_V {\mathbf {J}(\mathbf {R}')\mathrm {d}\tau'}=\dot {\mathbf {p}}$
+
+$$
+\begin {align*}
+    &amp;\mathbf {A}_{(1)}=\alpha\int_V {\mathbf {J}(\mathbf {R}')\mathrm {d}\tau'}=\alpha\dot {\mathbf {p}}\\
+    &amp;\mathbf {B}=\nabla\times\mathbf {A}=\mathrm {i} k\alpha\mathbf {e}_R\times\dot {\mathbf {p}}=\dfrac {\alpha}{c}\ddot {\mathbf {p}}\times\mathbf {e}_R\\
+    &amp;\mathbf {E}=\dfrac {\mathrm {i} c}{k}\nabla\times\mathbf {B}=c\mathbf {B}\times\mathbf {e}_R=\alpha (\ddot {\mathbf {p}}\times\mathbf {e}_R)\times\mathbf {e}_R
+\end {align*}
+$$
+
+第二项
+
+$$
+\mathbf {A}_{(2)}=-\mathrm {i} k\alpha\int_V {\mathbf {J}(\mathbf {R}')(\mathbf {e}_R\cdot\mathbf {R}')\mathrm {d}\tau'}
+$$
+
+$$
+\begin {align*}
+    &amp;(\mathbf {e}_R\cdot\mathbf {R}')\mathbf {J}(\mathbf {R}')=\mathbf {e}_R\cdot (\dfrac {1}{2}\left [\mathbf {R}'\mathbf {J}(\mathbf {R}')+\mathbf {J}(\mathbf {R}')\mathbf {R}'\right]+\dfrac {1}{2}\left [\mathbf {R}'\mathbf {J}(\mathbf {R}')-\mathbf {J}(\mathbf {R}')\mathbf {R}'\right])\\&amp;
+\quad\\&amp;
+\text {第一项：}\mathbf {e}_R\cdot\dfrac {1}{2}\left [\mathbf {R}'\mathbf {J}(\mathbf {R}')+\mathbf {J}(\mathbf {R}')\mathbf {R}'\right]=\dfrac {1}{2}\rho\mathbf {e}_R\cdot\left [\mathbf {R}'\dot {\mathbf {R}'}+\dot {\mathbf {R}'}\mathbf {R}'\right]=\dfrac {1}{2}\rho\mathbf {e}_R\cdot\dfrac {\mathrm {d}}{\mathrm {d} t}(\mathbf {R}'\mathbf {R}')\\&amp;
+\int_V {\dfrac {1}{2}\rho\mathbf {e}_R\cdot\dfrac {\mathrm {d}}{\mathrm {d} t}(\mathbf {R}'\mathbf {R}'))\mathrm {d}\tau'}=\sum_4 {\dfrac {1}{2} q_i\mathbf {e}_R\cdot\dfrac {\mathrm {d}}{\mathrm {d} t}(\mathbf {R}'_i\mathbf {R}'_i)}=\dfrac {1}{6}\mathbf {e}_R\cdot\dot {\overleftrightarrow {\mathcal {D}}}\left [\overleftrightarrow {\mathcal {D}}=\sum {3q_i\mathbf {R}'\mathbf {R}'}\right]
+\\&amp;
+\quad\\&amp;
+\text {第二项：}\mathbf {e}_R\cdot\left [\mathbf {R}'\mathbf {J}(\mathbf {R}')-\mathbf {J}(\mathbf {R}')\mathbf {R}'\right]=-\mathbf {e}_R\times (\mathbf {R}'\times\mathbf {J}(\mathbf {R}'))\\&amp;
+-\mathbf {e}_R\times (\int_V {\dfrac {1}{2}\mathbf {R}'\times\mathbf {J}(\mathbf {R}')\mathrm {d}\tau'})=-\mathbf {e}_R\times\mathbf {m}
+\end {align*}
+$$
+
+$$
+\mathbf {A}_{(2)}=-\mathrm {i} k\alpha\left (-\mathbf {e}_R\times\mathbf {m}+\dfrac {1}{6}\mathbf {e}_R\cdot\dot {\overleftrightarrow {\mathcal {D}}}\right)
+$$
+
+只考虑电四极辐射 $\left [\vec {\mathcal {D}}(\mathbf {e}_R)=\mathbf {e}_R\cdot\overleftrightarrow {\mathcal {D}}\right]$
+
+$$
+\begin {align*}
+    &amp;\mathbf {A}_{(2) e}=-\dfrac {\mathrm {i} k\alpha}{6}\mathbf {e}_R\cdot\dot {\overleftrightarrow {\mathcal {D}}}=-\dfrac {\mathrm {i} k\alpha}{6}\dot {\vec {\mathcal {D}}}=-\dfrac {\mathrm {i}\omega\alpha}{6c}\dot {\vec {\mathcal {D}}}=\dfrac {\alpha}{6c}\ddot {\vec {\mathcal {D}}}
+\\&amp;
+\mathbf {B}=\nabla\times\mathbf {A}=\dfrac {\alpha}{6c}\mathrm {i} k\mathbf {e}_R\times\ddot {\vec {\mathcal {D}}}=\dfrac {\alpha}{6c^2}\vec {\mathcal {D}}^{(3)}\times\mathbf {e}_R\\&amp;
+\mathbf {E}=c\mathbf {B}\times\mathbf {e}_R=\dfrac {\alpha}{6c}\left (\vec {\mathcal {D}}^{(3)}\times\mathbf {e}_R\right)\times\mathbf {e}_R
+\end {align*}
+$$
+
+对于以上都有
+
+$$
+\begin {align*}
+    &amp;\bar {S}=\dfrac {1}{2}(\mathbf {E}^*\times\mathbf {H})=\dfrac {c}{2\mu_0}(\mathbf {B}\times\mathbf {e}_R)^*\times\mathbf {B}=\dfrac {c}{2\mu_0}|\mathbf {B}|^2\mathbf {e}_R\\&amp;
+\bar {f}(\theta,\varphi)=\dfrac {\bar {\mathbf {S}}\cdot\mathrm {d}\mathbf {a}}{\mathrm {d}\Omega}=R^2\mathbf {S}\cdot \mathbf {e}_R\\&amp;
+\bar {p}=\oint_S {|\bar {\mathbf {S}}|\mathrm {d} a}=\oint_S {|\bar {\mathbf {S}}|R^2\mathrm {d}\Omega}
+\end {align*}
+$$
+
+** 例 1** 两个相同的电偶极矩，同向地排在一直线上，相矩为 $a$，计算它们的总辐射场
+
+偶极矩沿 $z$ 轴排列
+$$
+\mathbf {p}_1=\mathbf {p}_2=p_0\mathrm {e}^{-\mathrm {i}\omega t}\mathbf {e}_z
+$$
+由公式 $\mathbf {A}=\alpha \dot {\mathbf {p}}$ 得
+$$
+\begin {align*}
+    &amp;\mathbf {B}_1=\nabla\times \mathbf {A}_1=\mathrm {i} k\mathbf {e}_{R_1}\times \alpha \dot {\mathbf {p}}_1=\dfrac {\alpha}{c}\ddot {\mathbf {p}}_1\times \mathbf {e}_{R_1}\\
+    &amp;\mathbf {B}_2=\dfrac {\alpha}{c}\ddot {\mathbf {p}}_2\times \mathbf {e}_{R_2}
+\end {align*}
+$$
+其中 $R_1=R_2-a\cos\theta$，在分母上的 $R$ 可以视为相等，指数上的不可以视为相等，即有
+$$
+\begin {align*}
+    &amp;\mathbf {B}=\dfrac {\mu_0}{4\pi}\dfrac {\mathrm {e}^{\mathrm {i} k R_1}+\mathrm {e}^{\mathrm {i} k R_2}}{R}\dfrac {1}{c}\ddot {\mathbf {p}}\times\mathbf {e}_R=\alpha (1+\mathrm {e}^{-\mathrm {i} ka\cos\theta})\dfrac {1}{c}\ddot {\mathbf {p}}\times\mathbf {e}_R\\
+    &amp;\mathbf {E}=c\mathbf {B}\times\mathbf {e}_R
+\end {align*}
+$$
+
+## 线状天线系统的辐射
+
+### 元天线的辐射和天线的基本参数
+$$
+\mathrm {d}\dot {p}=I (z)\mathrm {d} z\mathrm {e}^{\mathrm {-\mathrm {i}\omega t}}
+$$
+
+### 长天线的辐射
+
+$$
+I (z)=I_0\sin {k (l-|z|)}
+$$
+
+## 磁偶极矩和电四极矩的辐射
+
+将电偶极矩辐射场中的各量按下面变换
+$$
+\mathbf {p}\rightarrow \dfrac {\mathbf {m}}{c},\quad \mathbf {E}\rightarrow c\mathbf {B},\quad c\mathbf {B}\rightarrow -\mathbf {E}
+$$
+就得到磁偶极矩的辐射场
+
+$$
+\mathbf {A}=\alpha\nabla\times\mathbf {m}=\dfrac {\alpha}{c}\dot {\mathbf {m}}\times\mathbf {e}_R
+$$
+
+** 例 1** 一圆形线圈半径为 $a$，外接交变电动势，线圈中出现交变电流，$a\le \lambda$，在整个线圈中电流振辐是常数 $I_0$，计算辐射能流和功率
+
+$$
+\begin {align*}
+    &amp;\mathbf {m}=I_0\pi a^2\mathrm {e}^{-\mathrm {i}\omega t}\mathbf {e}_z\\
+    &amp;\bar {S}=\dfrac {1}{2}\text {Re}(\mathbf {E}^*\times\mathbf {H})=\dfrac {\mu_0\omega^4 I_0^2a^4 }{32c^3R^2}\sin^2\theta\mathbf {e}_R
+\end {align*}
+$$
+
+
+** 例 2** 两个相同的电偶极子，电偶极矩为 $\mathbf {p}=\mathbf {p}_0\mathrm {e}^{-\mathrm {i}\omega t}$，反平位一平内，其中心相距为 $a\ll \lambda$，计算辐射场和能流
+设 $\mathbf {p}_1=-p_0\mathrm {e}^{-\mathrm {i}\omega t}\mathbf {e}_x,\mathbf {p}_2=p_0\mathrm {e}^{-\mathrm {i}\omega t}\mathbf {e}_x,R_1=R,R_2=R_1-a\cos\theta$
+$$
+\begin {align*}
+    &amp;\mathbf {A}=\alpha\dot {\mathbf {p}}\\
+    &amp;\mathbf {B}=\mathrm {i} k\mathbf {e}_R\times\mathbf {A}=\dfrac {\alpha}{c}\ddot {\mathbf {p}}\times\mathbf {e}_R\\
+    &amp;\mathbf {B}=\mathbf {B}_1+\mathbf {B}_2=\dfrac {\alpha}{c}\left (-1+\mathrm {e}^{-\mathrm {i} ka\cos\theta}\right)-\omega^2p\mathbf {e}_x\times\mathbf {e}_R\\
+    &amp;=\dfrac {p\omega^2\alpha}{c}\left (1-\mathrm {e}^{-\mathrm {i} ka\cos\theta}\right)\mathbf {e}_x\times\mathbf {e}_R
+\end {align*}
+$$
+其中
+$$
+\begin {align*}
+    \left (1-\mathrm {e}^{-\mathrm {i} ka\cos\theta}\right)&amp;\approx \mathrm {i} ka\cos\theta\\
+    \mathbf {e}_x\times\mathbf {e}_R&amp;=\left (-\sin\phi\mathbf {e}_\theta-\cos\theta\cos\phi\mathbf {e}_{\phi}\right)
+\end {align*}
+$$
+解得
+$$
+\begin {align*}
+    &amp;\mathbf {B}=-\dfrac {\mathrm {i} kap\omega^2\alpha}{c}\left (\cos\theta\sin\phi\mathbf {e}_\theta+\cos^2\theta\cos\phi\mathbf {e}_{\phi}\right)\\
+    &amp;\mathbf {E}=c\mathbf {B}\times\mathbf {e}_R=\mathrm {i} kap\omega^2\alpha\left (-\cos^2\theta\cos\phi\mathbf {e}_{\theta}+\cos\theta\sin\phi\mathbf {e}_\phi\right)\\
+    &amp;\bar {S}=\dfrac {c}{2\mu_0}|\mathbf {B}|^2\mathbf {e}_R=\dfrac {c}{2\mu_0}\left (\dfrac {\mu_0}{4\pi}\dfrac {kap\omega^2}{R}\right)^2\left ((\cos^2\theta\cos\phi)^2+(\cos\theta\sin\phi)^2\right)\mathbf {e}_R
+\end {align*}
+$$
+
+** 例 3** 有一回转椭球形分布的振荡电荷，求其四极矩辐射的平均辐射能流和辐射功率
+取对称轴为 z 轴，在主轴坐标系中，四矩的非对角元为零，即
+$$
+Q_{12}=Q_{13}=Q_{23}=0
+$$
+令 $Q_{33}=Q$，则四极矩张量为
+$$
+\mathcal {Q}=\dfrac {1}{2} Q (3\mathbf {k}\mathbf {k}-\mathcal {J})
+$$
+电四级子的矢势为
+$$
+\mathbf {A}=\dfrac {\alpha }{6c}\ddot {\mathcal {Q}}\cdot\mathbf {e}_R=\dfrac {\alpha }{6c}\ddot {\vec {\mathcal {Q}}}
+$$
+
+## 思考题与习题五
+
+1. 在求解电磁场方程时，为什么要引入矢势和标势？
+   矢势和标势可以求解出一切所需物理量，同时矢势和标势在规范变换下所有的物理量和物理规律都保持不变，可以选取不同的规范变换方便求解不同的情况。
+2. 什么是规范变换和规范不变性规范变换有什么意义？
+   规范变换：满足 $\mathbf {E}=-\partial_t\mathbf {A}–\nabla\phi$ 的变化；
+   规范不变性：拉格朗日量和运动方程在规范变换下保持不变的性质；
+   意义：对称操作，变换后所有物理量和物理规律保持不变
+3. 一个天线在什么条件下可以看成是电偶极子？用什么方法计算辐射场最简单？
+   线状天线接上交变电流，计算矢势最简单
+4. 以电偶极矩辐射场为例，说明辐射场的特性
+   $$
+    \begin {align*}
+        &amp;\mathbf {A}_{(1)}=\alpha\int_V {\mathbf {J}(\mathbf {R}')\mathrm {d}\tau'}=\alpha\dot {\mathbf {p}}\\
+        &amp;\mathbf {B}=\nabla\times\mathbf {A}=\mathrm {i} k\alpha\mathbf {e}_R\times\dot {\mathbf {p}}=\dfrac {\alpha}{c}\ddot {\mathbf {p}}\times\mathbf {e}_R\\
+        &amp;\mathbf {E}=\dfrac {\mathrm {i} c}{k}\nabla\times\mathbf {B}=c\mathbf {B}\times\mathbf {e}_R=\alpha (\ddot {\mathbf {p}}\times\mathbf {e}_R)\times\mathbf {e}_R
+    \end {align*}
+    $$
+5. 一般的广播天线是垂直立在地面上的，大地是具有一定电导率的非理想导体，分析一下地面附近的电场方向
+6. 一只密封的塑料盒子里有一个天线在辐射电磁波，你如何辨认这个天线是电偶极子还是磁偶极子？
+   假设待测黑盒放置于原点，接收天线放置于处于远场区的 x 轴上某点，最大辐射方向指向原点，垂直极化。
+   黑盒绕 x 轴旋转，到某一角度，接收电平最大，当前状态记为 s0；
+   黑盒以 s0 状态，绕 y 轴旋转，接收电平最大值 V1，当前状态记为 s1；
+   黑盒以 s0 状态，绕 z 轴旋转，接收电平最大值 V2，当前状态记为 s2；
+   若 V1&gt;V2，将黑盒置为 s1 状态，再绕 z 轴旋转，若接收电平没有起伏，则黑盒内为电基本振子；
+   若 V1<v2，将黑盒置为 s2="" 状态，再绕="" y="" 轴旋转，若接收电平没有起伏，则黑盒内为磁基本振子="" <div="" id="5-7">
+
+<ol>
+<li> 两个电偶极矩相互成直角，以同一频率做简谐变化，偶极矩强度为 $p$，两者相位差为 $\dfrac {\pi}{2}$ 计算辐射场辐射能流<br>由题我们已知<script type="math/tex; mode=display">
+\mathbf{p}_1=p\mathrm{e}^{-\mathrm{i}\omega t}\mathbf{\hat{x}},\quad \mathbf{p}_2=p\mathrm{e}^{-\mathrm{i}(\omega t-\frac{\pi}{2})}\mathbf{\hat{y}}=\mathrm{i}p\mathrm{e}^{-\mathrm{i}\omega t}\mathbf{\hat{y}}</script>那么根据公式有<script type="math/tex; mode=display">
+\begin{align*}
+ &\mathbf{B}_1=\dfrac{\alpha}{c}\ddot{\mathbf{p}}_1\times\mathbf{e}_R=\dfrac{p\omega^2\alpha}{c}\left(\sin\phi\mathbf{e}_\theta+\cos\theta\cos\phi\mathbf{e}_\phi\right)\\
+ &\mathbf{B}_2=\dfrac{\alpha}{c}\ddot{\mathbf{p}}_2\times\mathbf{e}_R=\dfrac{-\mathrm{i}p\omega^2\alpha}{c}\left(\cos\phi\mathbf{e}_\theta-\cos\theta\sin\phi\mathbf{e}_\phi\right)\\
+ &\bar{S}=\dfrac{c}{2\mu_0}|\mathbf{B}|^2\mathbf{e}_R=\dfrac{c}{2\mu_0}|\mathbf{B}_1+\mathbf{B}_2|^2\mathbf{e}_R=\dfrac{c}{2\mu_0}\dfrac{\mu_0^2}{16\pi^2}\dfrac{p^2\omega^4}{c^2R^2}\left(1+\cos^2\theta\right)\mathbf{e}_R\\
+ &=\dfrac{p^2\omega^4\mu_0}{32\pi^2cR^2}\left(1+\cos^2\theta\right)\mathbf{e}_R
+\end{align*}</script></li>
+<li>一个线性四极子由 $-e,+2e,-e$ 三个电荷组成，正电荷和在原点，负电荷位于 1,2，并且有<script type="math/tex; mode=display">
+z_1=-z_2=a\cos\dfrac{1}{2}\omega_tt</script>电四极矩为<script type="math/tex; mode=display">
+\mathcal{Q}=\sum_i{q_i\left(3\mathbf{R}'\mathbf{R}'-R'^2\mathcal{J}\right)}=ea^2\left(2\mathbf{i}\mathbf{i}+2\mathbf{j}\mathbf{j}-4\mathbf{k}\mathbf{k}\right)</script>辐射场为<script type="math/tex; mode=display">
+\begin{align*}
+ &\mathbf{A}=\dfrac{\alpha}{6c}\ddot{\mathcal{Q}}\cdot\mathbf{e}_R=-\dfrac{\omega^2\alpha ea^2}{12c}\left(\sin\theta\cos\phi,\sin\theta\sin\phi,-2\cos\theta\right)\\
+ &\mathbf{B}=\mathrm{i}k\mathbf{e}_R\times\mathbf{A}=\mathrm{i}k\dfrac{\omega^2\alpha ea^2}{8c}\sin 2\theta\mathbf{e}_\phi\\
+ &\mathbf{E}=c\mathbf{B}\times\mathbf{e}_R\\
+ &\bar{S}=\dfrac{c}{2\mu_0}|\mathbf{B}|^2\mathbf{e}_R
+\end{align*}</script></li>
+<li>在上题中若两负电荷的距离保持为 $a$，两负电荷绕原点以角速度 $\omega$ 旋转，旋转时三个电荷保持在一条直线上，计算辐射场与辐射角分布<br> 设旋转轴为 $x$ 轴，即有<script type="math/tex; mode=display">
+ R_1=a(0,\sin\omega t,\cos\omega t),\quad R_2=-a(0,\sin\omega t,\cos\omega t)</script> 电四极矩为<script type="math/tex; mode=display">
+ \mathcal{Q}=\sum_i{q_i\left(3\mathbf{R}'\mathbf{R}'-R'^2\mathcal{J}\right)}=ea^2\left(\begin{matrix}1&0&0\\0&3\sin^2{\omega t}-1&-3\sin{\omega t}\cos{\omega t}\\0&-3\sin{\omega t}\cos{\omega t}&3\cos^2{\omega t}-1\end{matrix}\right)</script> 辐射场为<script type="math/tex; mode=display">
+ \begin{align*}
+     &\mathbf{A}=\dfrac{\alpha}{6c}\ddot{\mathcal{Q}}\cdot\mathbf{e}_R=\dfrac{ea^2\omega^2\alpha}{c} \left(\begin{matrix}0&0&0\\0&\cos{2\omega t}&\sin{2\omega t}\\0&\sin{2\omega t}&-\cos{2\omega t}\end{matrix}\right)\cdot\mathbf{e}_R\\
+     &\mathbf{B}=\mathrm{i}k\mathbf{e}_R\times\mathbf{A}=\\
+     &\mathbf{E}=c\mathbf{B}\times\mathbf{e}_R\\
+     &\bar{S}=\dfrac{c}{2\mu_0}|\mathbf{B}|^2\mathbf{e}_R
+ \end{align*}</script></li>
+<li>两根完全相同的直天线，长度为 $l&lt;\lambda$，在天线中点外接交变电动势，天线上电流为<script type="math/tex; mode=display">
+I(z)=I_0\left(1-\left(\dfrac{2}{l}|z|\right)\right)</script>天线平行排列，相距为 $a\ll λ$，计算辐射场、辐射角分布和辐射功率。<br>视作元天线，电偶极矩为<script type="math/tex; mode=display">
+\dot{p}=I_0\dfrac{l}{2}\mathrm{e}^{\mathrm{-\mathrm{i}\omega t}}\mathbf{e}_z</script>那么根据公式有<script type="math/tex; mode=display">
+    \begin{align*}
+        &\mathbf{B}=2\cdot\dfrac{\alpha}{c}\ddot{\mathbf{p}}\times\mathbf{e}_R=\dfrac{-\mathrm{i}\omega \alpha l\sin\theta}{c}I_0\mathbf{e}_\phi\\
+        &\mathbf{E}=c\mathbf{B}\times\mathbf{e}_R=-\mathrm{i}\omega \alpha l\sin\theta I_0\mathbf{e}_\theta\\
+        &\bar{S}=\dfrac{c}{2\mu_0}|\mathbf{B}|^2\mathbf{e}_R=\dfrac{\mu_0\omega^2 l^2\sin^2\theta I_0^2}{32\pi^2cR^2}\mathbf{e}_R
+    \end{align*}</script></li>
+<li>一点电荷 $e$ 绕原点以角速度 $\omega$ 旋转，轨道半径 $a\ll\lambda$，设轨道位于 $x-y$ 平面，计算辐射场与辐射功率。<br>电荷绕原点以角速度旋转，可分解为相互成直角、位相差 $\dfrac {\pi}{2}$ 有同一频率的简谐振动的辐射，那么，把 $p=ea$，即可参考 <a href="#5-7">(5-7)</a></li>
+<li> 一半波天线，辐射 $10^3W$ 的功率，计算它在赤道平面上 $10km$ 远处的电场强度</li>
+<li>有一磁化强度 $\mathbf {M}$，半径 $a$ 的均磁化球，以恒定的率 $\omega$ 绕通过球心并与 $\mathbf {M}$ 方向成 $\varphi$ 角的轴旋转，求辐射场与辐射角分布</li>
+</ol>
+<h1 id="电磁波的传播"><a href="#电磁波的传播" class="headerlink" title="电磁波的传播"></a>电磁波的传播</h1><h2 id="电磁波传播问题中的基本方程"><a href="#电磁波传播问题中的基本方程" class="headerlink" title="电磁波传播问题中的基本方程"></a>电磁波传播问题中的基本方程</h2><h2 id="电磁波在导体中的传播及在导体表面的反射和折射"><a href="#电磁波在导体中的传播及在导体表面的反射和折射" class="headerlink" title="电磁波在导体中的传播及在导体表面的反射和折射"></a>电磁波在导体中的传播及在导体表面的反射和折射</h2><p>现在的 $\mathbf {k}’=\mathbf {k}+\mathrm {i}\mathbf {\tau}$<br>比较上式两边的实部和虚部部后，我们得到</p>
+<script type="math/tex; mode=display">
+\omega\mu(\omega)\varepsilon(\omega)=k^2-\tau^2,\qquad\dfrac{1}{2}\omega\mu(\omega)\sigma=\mathbf{k}\cdot\mathbf{\tau}</script><p>.<br>在下面的讨论中，我们仅考虑垂直入射的情况，即 $\theta=0$，解得</p>
+<script type="math/tex; mode=display">
+k_z=\omega\sqrt{\mu(\omega)\varepsilon(\omega)}\left[\dfrac{1}{2}\left(\sqrt{1+\dfrac{\sigma^2}{\omega^2\varepsilon^2(\omega)}}+1\right)\right]^{1/2}\\
+\tau_z=\omega\sqrt{\mu(\omega)\varepsilon(\omega)}\left[\dfrac{1}{2}\left(\sqrt{1+\dfrac{\sigma^2}{\omega^2\varepsilon^2(\omega)}}-1\right)\right]^{1/2}</script><p><strong>例 1</strong> 平面单色电磁波由真空垂直入射到良导体表面上，导体的电导率为 $\sigma$，磁导率为 $\mu_0$，求反射系数</p>
+<p>由边界条件有</p>
+<script type="math/tex; mode=display">
+E_i+E_f=E_g,\quad H_i-H_f=H_g</script><p>在真空的平面波中有</p>
+<script type="math/tex; mode=display">
+H=\sqrt{\dfrac{\varepsilon_0}{\mu_0}}E</script><p>对于良导体情况，有</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+    &k\approx \tau\approx\sqrt{\dfrac{\omega\mu\sigma}{2}}\\
+    &H_g=\dfrac{-\mathrm{i}}{\omega \mu}\nabla\times E_g=\dfrac{1}{\omega\mu}\sqrt{\dfrac{\omega\mu\sigma}{2}}(1+\mathrm{i})E_g
+\end{align*}</script><p>于是上式化为</p>
+<script type="math/tex; mode=display">
+\sqrt{\dfrac{\varepsilon_0}{\mu_0}}(E_i-E_f)=\sqrt{\dfrac{\sigma}{2\omega\mu}}(1+\mathrm{i})E_g</script><p>联立解得</p>
+<script type="math/tex; mode=display">
+\dfrac{E_f}{E_i}=\dfrac{\sqrt{\frac{2\omega \varepsilon_0}{\sigma}}-(1+\mathrm{i})}{\sqrt{\frac{2\omega \varepsilon_0}{\sigma}}+(1+\mathrm{i})}</script><p>反射系数为</p>
+<script type="math/tex; mode=display">
+R=|\dfrac{E_f}{E_i}|^2=\dfrac{1+(1-\alpha)^2}{1+(1+\alpha)^2},\left[\alpha=\sqrt{\frac{2\omega \varepsilon_0}{\sigma}}\right]</script><p><strong>例 2</strong> 平面单色电磁波垂直射到良导体上，电磁波穿过导体的厚度 L 后，证明电磁波损失的能量等于在 L 厚的导体内焦耳热损耗<br>导体内的电场为</p>
+<script type="math/tex; mode=display">
+\mathbf{E}=\mathbf{E}_0\mathrm{e}^{-\tau z}\mathrm{e}^{-\mathrm{i}(\omega t-kz)}</script><p>磁场为</p>
+<script type="math/tex; mode=display">
+\mathbf{H}=\sqrt{\dfrac{\sigma}{2\omega \mu_0}}(1+\mathrm{i})\mathrm{e}_z\times \mathbf{E}</script><p>导体中的能流</p>
+<script type="math/tex; mode=display">
+\bar{\mathbf{S}}=\dfrac{1}{2}(\mathbf{E}^*\times\mathbf{H})=\dfrac{1}{2}\sqrt{\dfrac{\sigma}{2\omega \mu_0}}E_0^2\mathrm{e}^{-2\tau z}</script><p>能流差为</p>
+<script type="math/tex; mode=display">
+\bar{S}(0)-\bar{S}(L)=\dfrac{1}{2}(\mathbf{E}^*\times\mathbf{H})=\dfrac{1}{2}\sqrt{\dfrac{\sigma}{2\omega \mu_0}}E_0^2(1-\mathrm{e}^{-2\tau L})</script><p>另一方面，导体内有电流 $\mathbf {J}=\sigma \mathbf {E}$，单位时间内在导体单位体积中消耗的焦耳热为</p>
+<script type="math/tex; mode=display">
+\dfrac{1}{2}(\mathbf{J}^*\cdot \mathbf{E})=\dfrac{\sigma}{2}E_0^2\mathrm{e}^{-2\tau z}</script><p>在厚为 $L$，横截面为单位面积的导体中，单位时间消耗的焦耳热为</p>
+<script type="math/tex; mode=display">
+Q=\int_0^L{\mathrm{d}z\dfrac{\sigma}{2}E_0^2\mathrm{e}^{-2\tau z}}=\dfrac{1}{2}\sqrt{\dfrac{\sigma}{2\omega \mu_0}}E_0^2(1-\mathrm{e}^{-2\tau L})</script><p>得证</p>
+<h2 id="电磁波在等离子体中的传播"><a href="#电磁波在等离子体中的传播" class="headerlink" title="电磁波在等离子体中的传播"></a>电磁波在等离子体中的传播</h2>
+  <span class="spoiler" onclick="this.classList.toggle('spoiler')">
+    <span class="spoiler-blur spoiler-1ffd9">不考捏</span>
+  </span>
+<h2 id="电磁波在波导中的传播"><a href="#电磁波在波导中的传播" class="headerlink" title="电磁波在波导中的传播"></a>电磁波在波导中的传播</h2><script type="math/tex; mode=display">
+\begin{aligned}
+    \mathbf{E}&=\left[\dfrac{\mathrm{i}}{k^2-k_z^2}\left(\omega\mu\partial_y H_z+k_z\partial_x E_z\right),\dfrac{\mathrm{i}}{k^2-k_z^2}\left(-\omega\mu\partial_x H_z+k_z\partial_y E_z\right),E_z\right]\\
+    \mathbf{H}&=\left[\dfrac{\mathrm{i}}{k^2-k_z^2}\left(-\omega\varepsilon\partial_y E_z+k_z\partial_x H_z\right),\dfrac{\mathrm{i}}{k^2-k_z^2}\left(\omega\varepsilon\partial_x E_z+k_z\partial_y H_z\right),H_z\right]
+\end{aligned}</script><p><strong>例 1</strong> 一对无限大的平行理想导体板，相距为 $b$，电磁波沿平行于板面的方向传播，求在板面间可能传播的 TEM,TE,TM 波<br>TEM：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+    &E_x(x,0/b,z)=0\Rightarrow E_x=0,\quad \mathbf{E}=E_0\mathrm{e}^{\mathrm{i}k_zz}\mathbf{e}_y\\
+    &\mathbf{H}=\dfrac{-\mathrm{i}}{\omega\mu}\nabla\times\mathbf{E}=-\dfrac{k_z}{\omega\mu}E_0\mathbf{e}_x
+\end{align*}</script><p>TE：$E_z\equiv 0$</p>
+<script type="math/tex; mode=display">
+\nabla^2\mathbf{H}+(k^2-k_z^2)\mathbf{H}=0</script><p>x 方向无限大，与 x 无关，则有</p>
+<script type="math/tex; mode=display">
+H_z(y)=A\cos{k_yy}+B\sin{k_yy}</script><p>根据边界条件有</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+    &E_{x,z}(x,0/b,z)=0\Leftrightarrow \partial_y H_z|_{y=0,b}=0\Rightarrow B=0,k_yb=m\pi
+\end{align*}</script><p>得到</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+    \mathbf{E}&=\left[-\dfrac{\mathrm{i}\omega\mu bA}{m\pi}\sin{\dfrac{m\pi}{b}y},0,0\right]\\
+    \mathbf{H}&=\left[0,-\dfrac{\mathrm{i}k_z bA}{m\pi}\sin{\dfrac{m\pi}{b}y},A\cos{\dfrac{m\pi}{b}y}\right]
+\end{aligned}</script><p>TM：$H_z\equiv 0$</p>
+<script type="math/tex; mode=display">
+E_z(y)=C\cos{k_yy}+D\sin{k_yy}</script><p>根据边界条件有</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+    &E_{x,z}(x,0/b,z)=0\Leftrightarrow E_z|_{y=0,b}=0\Rightarrow C=0,k_yb=n\pi
+\end{align*}</script><p>得到</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+    \mathbf{E}&=\left[0,\dfrac{\mathrm{i}bk_z}{n\pi}D\cos{\dfrac{n\pi}{b}y},D\sin{\dfrac{n\pi}{b}y}\right]\\
+    \mathbf{H}&=\left[\dfrac{-\mathrm{i}b\omega\varepsilon}{n\pi}D\cos{\dfrac{n\pi}{b}y},0,0\right]
+\end{aligned}</script><p><strong>例 2</strong> 同轴线内半径为 $a$，外半径为 $b$，求沿同轴线传播的 TEM 波。</p>
+<script type="math/tex; mode=display">
+E=E(r,\theta)\mathrm{e}^{\mathrm{i}k_zz}</script><p>设内外导体横向电势差值为 V，于是求出</p>
+<script type="math/tex; mode=display">
+\phi=V\dfrac{\ln(r/b)}{\ln(a/b)}\Rightarrow \mathbf{E}=-\nabla\phi=-\dfrac{V}{\ln(a/b)}\dfrac{\mathbf{e}_r}{r}</script><p>写出传播因子后，TEM 的电场为</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+    &\mathbf{E}=-\dfrac{V}{\ln(a/b)}\mathrm{e}^{-\mathrm{i}(\omega t-k_zz)}\dfrac{\mathbf{e}_r}{r}\\
+    &\mathbf{H}=\dfrac{-\mathrm{i}}{\omega \mu}\mathrm{i}k_z\mathbf{e}_z\times\mathbf{E}=-\dfrac{Vk_z}{\omega \mu\ln(a/b)}\mathrm{e}^{-\mathrm{i}(\omega t-k_zz)}\mathbf{e}_\theta
+\end{align*}</script><h2 id="矩形波导"><a href="#矩形波导" class="headerlink" title="矩形波导"></a>矩形波导</h2><h2 id="谐振腔"><a href="#谐振腔" class="headerlink" title="谐振腔"></a>谐振腔</h2>
+  <span class="spoiler" onclick="this.classList.toggle('spoiler')">
+    <span class="spoiler-blur spoiler-1ffd9">以下不考捏</span>
+  </span>
+<h2 id="电磁场的动量"><a href="#电磁场的动量" class="headerlink" title="电磁场的动量"></a>电磁场的动量</h2><p>电磁场的动量</p>
+<script type="math/tex; mode=display">
+\mathbf{G}_e=\int_V{\mathbf{D}\times\mathbf{B}\mathrm{d}V}</script><p>$\mathcal {T}$ 称为电磁场的应力张量</p>
+<script type="math/tex; mode=display">
+\mathcal{T}=(\mathbf{D}\mathbf{E}+\mathbf{B}\mathbf{H})-\dfrac{1}{2}\mathcal{J}(\mathbf{D}\cdot\mathbf{E}+\mathbf{B}\cdot\mathbf{H})</script><p><strong>例 1</strong> 用应力张量计算静电场中导体表面受力情况</p>
+<script type="math/tex; mode=display">
+\mathrm{d}f=\mathrm{d}\mathbf{S}\cdot\left[\varepsilon_0\mathbf{E}\mathbf{E}-\dfrac{\mathcal{J}}{2}\varepsilon_0\mathbf{E}\cdot\mathbf{E}\right]=\dfrac{\varepsilon_0}{2}E^2\mathrm{d}S</script><p><strong>例 2</strong> 平板电容器的一部分空间充满介电常数为 $\varepsilon$ 的均匀介质，求界面上单位面积的介质板面上受到的静电作用力</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+    &\mathrm{d}f_1=\mathrm{d}\mathbf{S}_1\cdot\left[\varepsilon_0\mathbf{E}\mathbf{E}-\dfrac{\mathcal{J}}{2}\varepsilon_0\mathbf{E}\cdot\mathbf{E}\right]=-\dfrac{\varepsilon_0}{2}E^2\mathrm{d}S_1\\
+    &\mathrm{d}f_2=\mathrm{d}\mathbf{S}_2\cdot\left[\varepsilon\mathbf{E}\mathbf{E}-\dfrac{\mathcal{J}}{2}\varepsilon\mathbf{E}\cdot\mathbf{E}\right]=\dfrac{\varepsilon}{2}E^2\mathrm{d}S_2\\
+    &\mathrm{d}f=\mathrm{d}f_1+\mathrm{d}f_2=\dfrac{1}{2}(\varepsilon-\varepsilon_0)E^2\mathrm{d}S_1
+\end{align*}</script><h2 id="思考题与习题六"><a href="#思考题与习题六" class="headerlink" title="思考题与习题六"></a>思考题与习题六</h2><ol>
+<li>在自由空间中电磁波有何特性？为什么说光就是电磁波？<script type="math/tex; mode=display">
+\begin{align*}
+ \nabla\cdot \mathbf{E}=0,&\nabla\times\mathbf{E}=\mathrm{i}\omega\mu\mathbf{H}\\
+ \nabla\cdot \mathbf{H}=0,&\nabla\times\mathbf{H}=-\mathrm{i}\omega\varepsilon\mathbf{E}
+\end{align*}</script>空间任何一处只要存在着变化的电场，它就能够在周围空间激发磁场；同样，变化的磁场也能够在它的周围空间激发电场。这种场和磁场能量不断地相互转化，就能形成随时间而变化的交变电磁场并以波动的形式在空间传播所谓电磁波，就是以波动形式在空间传播并传递电磁能量的交变电磁场。电场和磁场总是不可分离地联系在一起的。既不会有与磁场分离的纯电波，也不会有与电场分离的纯磁波。在自由空间中传播的电磁波一般是平面波，它是一种电场和磁场相互垂直的横波。<br>光是可见光频率区段的电磁波</li>
+<li>导体中的电磁波与介质中的电磁波相比有何特点？<br>导体中存在感生电流，需要考虑电导率</li>
+<li>推导非涅尔公式的基本思想是什么？从菲涅尔公式能说明什么物理效应？<br>能量守恒，边界条件。布鲁斯特定律，半波损失，反射系数和透射系数，全反射</li>
+<li>对电磁波来说，能否认为大地总是不良导体，金属总是良导体？<br>不是，得考虑电磁波频率，$\tau_z=\omega\sqrt {\mu (\omega)\varepsilon (\omega)}\left [\dfrac {1}{2}\left (\sqrt {1+\dfrac {\sigma^2}{\omega^2\varepsilon^2 (\omega)}}-1\right)\right]^{1/2}$</li>
+<li> 电磁波在等离子体中传播有些什么特性？什么是法拉第效应？
+  <span class="spoiler" onclick="this.classList.toggle('spoiler')">
+    <span class="spoiler-blur spoiler-1ffd9">不考！</span>
+  </span></li>
+<li>在传输线上传播的电磁波有什么特性？对电磁波在什么情况下可引入电势概念？<br>可能存在传播方向的电磁场；TEM 横波可引入电势概念</li>
+<li>电磁波在波导中传播有些什么特点？什么是相速和群速？群速是否总是小于相速？<script type="math/tex; mode=display">
+ \begin{aligned}
+     \mathbf{E}&=\left[\dfrac{\mathrm{i}}{k^2-k_z^2}\left(\omega\mu\partial_y H_z+k_z\partial_x E_z\right),\dfrac{\mathrm{i}}{k^2-k_z^2}\left(-\omega\mu\partial_x H_z+k_z\partial_y E_z\right),E_z\right]\\
+     \mathbf{H}&=\left[\dfrac{\mathrm{i}}{k^2-k_z^2}\left(-\omega\varepsilon\partial_y E_z+k_z\partial_x H_z\right),\dfrac{\mathrm{i}}{k^2-k_z^2}\left(\omega\varepsilon\partial_x E_z+k_z\partial_y H_z\right),H_z\right]
+ \end{aligned}</script> 相速度 $v=\omega/k$，群速度 $v_g=\mathrm {d}\omega/\mathrm {d} k$，不是相速于频率无关时，群速就等于相速，称为无色散。频率越高相速越小时，群速小于相速，称为正常色散。频率越高相速越大时，群速大于相速，称为反常色散。</li>
+<li>如何由标量衍射理论解释单缝衍射和双缝衍射？
+  <span class="spoiler" onclick="this.classList.toggle('spoiler')">
+    <span class="spoiler-blur spoiler-1ffd9">?</span>
+  </span></li>
+<li> 从什么事实说明电磁场有动量？如何用应力张量计算电磁场的作用力？<br> 1920 年列别捷夫的光压实验。$\mathrm {d} f=\mathrm {d}\mathbf {S}\cdot (\mathbf {D}\mathbf {E}+\mathbf {B}\mathbf {H})-\dfrac {1}{2}\mathcal {J}(\mathbf {D}\cdot\mathbf {E}+\mathbf {B}\cdot\mathbf {H})$</li>
+<li> 太阳光垂直入射到球表面上平均能量是 $8.4J/(cm^2・d)$，计算太阳光中强度的振幅，太阳与地球间的平均距离是 $1.5×10^{11}$m，太阳的半径是 $7.0×10^{8}$m，计算太阳辐射的功率、太阳光在太阳表面上的电场强度<script type="math/tex; mode=display">
+    8.4J/(cm^2・d)=1400W/m^2</script>那么电场强度有公式 $S=\dfrac {1}{2\mu_0 c}|E|^2$，得<script type="math/tex; mode=display">
+E=1027\ V/m</script>太阳辐射的功率为<script type="math/tex; mode=display">
+P=\int w\mathrm{d}S=w\cdot 4\pi R^2=3.958\times 10^{26} W</script>太阳表面上的电场强度<script type="math/tex; mode=display">
+E=\sqrt{2\mu_0 c(P/4\pi r^2)}=2.2\times 10^5\ V/m</script></li>
+<li>证明两个线偏振波<script type="math/tex; mode=display">
+\begin{align*}
+    &E_x=E_{x_0}\mathrm{e}^{-\mathrm{i}(\omega t-kz)}\\
+    &E_y=E_{y_0}\mathrm{e}^{-\mathrm{i}(\omega t-kz+\varphi)}
+\end{align*}</script>合成的波是椭偏振波当 $\varphi=90°，E_{x_0}=E_{y_0}$ 时，合成波是圆偏振波
+  <span class="spoiler" onclick="this.classList.toggle('spoiler')">
+    <span class="spoiler-blur spoiler-1ffd9">这个还要证明吗…</span>
+  </span></li>
+<li> 证明线偏振波在介质分界上全反射后，一般情况下要变成椭圆偏振波。在什么情况下变成圆偏振波？<br>TODO</li>
+<li> 一个 $60W$ 灯泡悬挂在离水面 $1.5m$ 的上空，水的折射率是 $1.33$，计算正在灯泡下面的水面处的入射光、反射光和折射光的电场和磁场的振幅。设灯泡消耗的全部能量都变为电磁辐射<br>TODO</li>
+<li> 已海水的 $\mu_\tau=1,\sigma=4.5/(\Omega\cdot m),\varepsilon_\tau=80$。计算频率 $f=50,10^6,10^9Hz$ 的三种波的透入深度<script type="math/tex; mode=display">
+\tau_z=\omega\sqrt{\mu(\omega)\varepsilon(\omega)}\left[\dfrac{1}{2}\left(\sqrt{1+\dfrac{\sigma^2}{\omega^2\varepsilon^2(\omega)}}-1\right)\right]^{1/2}</script>有 $d_1=\tau_z^{-1}=33.55m,d_2=0.237m,d_3=0.0116m$</li>
+<li> 一平面波由真空垂直入射到质板上，介质的介电常数等于 $4\varepsilon_0$，厚度为 1/4 波长，磁波频率为 f=1MHz，波中的电场振幅 100V/m，沿 x 方向极化，求透过介质板的电磁波中的电场强度<br>TODO</li>
+<li> 计算同轴线中传播 TEM 波时的面电流密度和传输功率。设同轴线内外半径为 $a,b$，横向电压振幅为 $V$。<br>见<a href="#6.电磁波在波导中的传播.2">例 3</a><script type="math/tex; mode=display">
+    \begin{align*}
+        &\phi=V\dfrac{\ln(r/b)}{\ln(a/b)}\Rightarrow \mathbf{E}=-\nabla\phi=-\dfrac{V}{\ln(a/b)}\dfrac{\mathrm{e}^{-\mathrm{i}(\omega t- k_zz)}}{r}\mathbf{e}_r\\
+        &\mathbf{H}=\dfrac{1}{\mathrm{i}\omega \mu}\nabla\times\mathbf{E}=-\dfrac{k_z}{\omega\mu}\dfrac{V}{\ln(a/b)}\dfrac{\mathrm{e}^{-\mathrm{i}(\omega t- k_zz)}}{r}\mathbf{e}_\theta
+    \end{align*}</script>面电流为<script type="math/tex; mode=display">
+\mathbf{e}_r\times(\mathbf{H}_2-\mathbf{H}_1)|_{a,b}=\alpha</script>即有<script type="math/tex; mode=display">
+\alpha_a=\dfrac{k_z}{\omega\mu}\dfrac{V}{\ln(a/b)}\dfrac{\mathrm{e}^{-\mathrm{i}(\omega t- k_zz)}}{a},\alpha_b=-\dfrac{k_z}{\omega\mu}\dfrac{V}{\ln(a/b)}\dfrac{\mathrm{e}^{-\mathrm{i}(\omega t- k_zz)}}{b}</script>传导功率为<script type="math/tex; mode=display">
+P=\int{\dfrac{1}{2}(\mathbf{E}^*\times \mathbf{H})r\mathrm{d}r\mathrm{d}\theta}=\dfrac{k_z}{2\omega\mu}\left(\dfrac{V}{\ln(a/b)}\right)^2\int{\dfrac{1}{r}\mathrm{d}r\mathrm{d}\theta}=\dfrac{\pi k_zV^2}{\omega\mu\ln(a/b)}</script></li>
+<li>求矩形波导内的 TM 波的电磁场分布。设波导截面的边长为 $a,b$<br>题目可知 $H_z=0$，设 $E_z=(A\cos {k_xx}+B\sin {k_xx})(C\cos {k_yy}+D\sin {k_yy})$<br>根据边界条件 $x=a,0,E_z=0,y=b,0,E_z=0$，得到<script type="math/tex; mode=display">
+E_z=A\sin{k_xx}\sin{k_yy}\left[k_xa=m\pi,k_yb=n\pi\right]</script>那么可以解得<script type="math/tex; mode=display">
+\begin{align*}
+    &\mathbf{E}=\left[\dfrac{\mathrm{i}k_zk_xA}{k^2-k_z}\cos{k_xx}\sin{k_yy},\dfrac{\mathrm{i}k_zk_yA}{k^2-k_z}\sin{k_xx}\cos{k_yy},A\sin{k_xx}\sin{k_yy}\right]\\
+    &\mathbf{H}=\left[\dfrac{-\mathrm{i}\omega\mu k_yA}{k^2-k_z}\sin{k_xx}\cos{k_yy},\dfrac{\mathrm{i}\omega\mu k_xA}{k^2-k_z}\cos{k_xx}\sin{k_yy},0\right]
+\end{align*}</script></li>
+<li>导体的表面阻抗定义为表面上 $E,H$ 的切线分量之比 $E_t/H_t$. 证明良导体的表面阻抗是 $(1-\mathrm {i})/\sigma d$，$d$ 是透入深度。其中的量 $1/\sigma d$ 叫表面电阻，它表示在表面上单位面积的正方形两个对边之间的电阻进一步证明导体中每平方米的能量损耗是 $H^2_{t_0}/2\sigma d$，其中 $H_{t_0}$ 是表面上 $H$ 切线分量的振幅<script type="math/tex; mode=display">
+H_y=\dfrac{-\mathrm{i}}{\omega\mu}\mathrm{i}k'\mathbf{e}_z\times\mathbf{e}_xE_x=\dfrac{k(1+\mathrm{i})}{\omega\mu}E_x</script>阻抗为<script type="math/tex; mode=display">
+\dfrac{E_x}{H_y}=\dfrac{\omega\mu}{k(1+\mathrm{i})}=\dfrac{(1-\mathrm{i})}{\sigma d}\left[k=\sqrt{\dfrac{\omega\mu\sigma}{2}}=d^{-1}\right]</script>坡应廷矢量为<script type="math/tex; mode=display">
+\bar{S}=\dfrac{1}{2}\text{Re}(E_xH_y)=\dfrac{1}{2}\dfrac{\omega\mu}{k(1+\mathrm{i})}H_{t_0}^2=\dfrac{1}{2}\dfrac{(1-\mathrm{i})}{\sigma d}H_{t_0}^2\Rightarrow\dfrac{H_{t_0}^2}{2\sigma d}</script></li>
+<li>有一半径为 $r$，比重为 5 的球形物体。计算太阳作用在它上面的引力和辐射压力。设球全部反射太阳辐射，在离太阳多远时两种力相等？太阳质量是 $2.0×10^{30} kg$，太阳辐射的电磁波功率是 $3.8×10^{26} W$，引力常量是 $6.7×10^{-11} N・m^2/kg^2$<script type="math/tex; mode=display">
+5=\dfrac{m}{\frac{4}{3}\pi r^3}</script>TODO</li>
+</ol>
+</v2，将黑盒置为></a)$>
     </div>
 
     
@@ -1038,7 +1570,7 @@ F=\nabla U_{m}=-\dfrac{3\mu_0}{4\pi}\dfrac{m^2\mathbf{r}}{r^5}</script></li>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A2%E9%87%8F%E5%88%86%E6%9E%90%E5%92%8C%E5%9C%BA%E8%AE%BA%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">矢量分析和场论基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E7%8E%B0%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%BE%8B"><span class="nav-number">2.</span> <span class="nav-text">电磁现象的基本规律</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%93%E4%BB%91%E5%AE%9A%E5%BE%8B-%E9%9D%99%E7%94%B5%E5%9C%BA%E7%9A%84%E6%95%A3%E5%BA%A6%E5%92%8C%E6%97%8B%E5%BA%A6"><span class="nav-number">2.1.</span> <span class="nav-text">库仑定律 静电场的散度和旋度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%95%E5%A5%A5-%E8%90%A8%E4%BC%90%E5%B0%94%E5%AE%9A%E5%BE%8B%E9%9D%99%E7%A3%81%E5%9C%BA%E7%9A%84%E6%95%A3%E5%BA%A6%E5%92%8C%E6%97%8B%E5%BA%A6"><span class="nav-number">2.2.</span> <span class="nav-text">毕奥 - 萨伐尔定律静磁场的散度和旋度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83%E9%A2%98%E4%B8%8E%E4%B9%A0%E9%A2%98%E4%BA%8C"><span class="nav-number">2.2.1.</span> <span class="nav-text">思考题与习题二</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%99%E7%94%B5%E5%9C%BA"><span class="nav-number">3.</span> <span class="nav-text">静电场</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%99%E7%94%B5%E5%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B"><span class="nav-number">3.1.</span> <span class="nav-text">静电场的基本方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%8A%E6%9D%BE%E6%96%B9%E7%A8%8B%E8%A7%A3%E7%9A%84%E5%94%AF%E4%B8%80%E6%80%A7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E7%9A%84%E7%A7%AF%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="nav-number">3.2.</span> <span class="nav-text">泊松方程解的唯一性问题与解的积分形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%9D%99%E7%94%B5%E9%97%AE%E9%A2%98%E7%9A%84%E5%88%86%E7%A6%BB%E5%8F%98%E6%95%B0%E6%B3%95"><span class="nav-number">3.3.</span> <span class="nav-text">解静电问题的分离变数法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%9D%99%E7%94%B5%E9%97%AE%E9%A2%98%E7%9A%84%E6%A0%BC%E6%9E%97%E5%87%BD%E6%95%B0%E6%96%B9%E6%B3%95"><span class="nav-number">3.4.</span> <span class="nav-text">解静电问题的格林函数方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E9%9D%99%E7%94%B5%E5%9C%BA%E7%9A%84%E5%A4%9A%E6%9E%81%E5%B1%95%E5%BC%80%E6%96%B9%E6%B3%95"><span class="nav-number">3.5.</span> <span class="nav-text">计算静电场的多极展开方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%99%E7%94%B5%E5%9C%BA%E7%9A%84%E8%83%BD%E9%87%8F%E4%B8%8E%E9%9D%99%E7%94%B5%E4%BD%9C%E7%94%A8%E5%8A%9B"><span class="nav-number">3.6.</span> <span class="nav-text">静电场的能量与静电作用力</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83%E9%A2%98%E4%B8%8E%E4%B9%A0%E9%A2%98%E4%B8%89"><span class="nav-number">3.6.1.</span> <span class="nav-text">思考题与习题三</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E7%94%B5%E7%A3%81%E5%9C%BA%E4%B8%8E%E4%BC%BC%E7%A8%B3%E7%94%B5%E7%A3%81%E5%9C%BA"><span class="nav-number">4.</span> <span class="nav-text">稳定电磁场与似稳电磁场</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E7%94%B5%E7%A3%81%E5%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B"><span class="nav-number">4.1.</span> <span class="nav-text">稳定电磁场的基本方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E7%94%B5%E6%B5%81%E7%A3%81%E5%9C%BA%E7%9A%84%E7%9F%A2%E5%8A%BF"><span class="nav-number">4.2.</span> <span class="nav-text">稳定电流磁场的矢势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E7%A3%81%E5%9C%BA%E7%9A%84%E6%A0%87%E5%8A%BF"><span class="nav-number">4.3.</span> <span class="nav-text">稳定磁场的标势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E7%A8%B3%E5%AE%9A%E7%A3%81%E5%9C%BA%E7%9A%84%E5%A4%9A%E6%9E%81%E5%B1%95%E5%BC%80%E6%96%B9%E6%B3%95"><span class="nav-number">4.4.</span> <span class="nav-text">计算稳定磁场的多极展开方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E7%A3%81%E5%9C%BA%E7%9A%84%E8%83%BD%E9%87%8F%E4%B8%8E%E7%A3%81%E4%BD%9C%E7%94%A8%E5%8A%9B"><span class="nav-number">4.5.</span> <span class="nav-text">稳定磁场的能量与磁作用力</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%80%83%E9%A2%98%E4%B8%8E%E4%B9%A0%E9%A2%98%E5%9B%9B"><span class="nav-number">4.6.</span> <span class="nav-text">思考题与习题四</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A2%E9%87%8F%E5%88%86%E6%9E%90%E5%92%8C%E5%9C%BA%E8%AE%BA%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">矢量分析和场论基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E7%8E%B0%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%BE%8B"><span class="nav-number">2.</span> <span class="nav-text">电磁现象的基本规律</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%93%E4%BB%91%E5%AE%9A%E5%BE%8B-%E9%9D%99%E7%94%B5%E5%9C%BA%E7%9A%84%E6%95%A3%E5%BA%A6%E5%92%8C%E6%97%8B%E5%BA%A6"><span class="nav-number">2.1.</span> <span class="nav-text">库仑定律 静电场的散度和旋度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%95%E5%A5%A5-%E8%90%A8%E4%BC%90%E5%B0%94%E5%AE%9A%E5%BE%8B%E9%9D%99%E7%A3%81%E5%9C%BA%E7%9A%84%E6%95%A3%E5%BA%A6%E5%92%8C%E6%97%8B%E5%BA%A6"><span class="nav-number">2.2.</span> <span class="nav-text">毕奥 - 萨伐尔定律静磁场的散度和旋度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%80%83%E9%A2%98%E4%B8%8E%E4%B9%A0%E9%A2%98%E4%BA%8C"><span class="nav-number">2.3.</span> <span class="nav-text">思考题与习题二</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%99%E7%94%B5%E5%9C%BA"><span class="nav-number">3.</span> <span class="nav-text">静电场</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%99%E7%94%B5%E5%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B"><span class="nav-number">3.1.</span> <span class="nav-text">静电场的基本方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%8A%E6%9D%BE%E6%96%B9%E7%A8%8B%E8%A7%A3%E7%9A%84%E5%94%AF%E4%B8%80%E6%80%A7%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E7%9A%84%E7%A7%AF%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="nav-number">3.2.</span> <span class="nav-text">泊松方程解的唯一性问题与解的积分形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%9D%99%E7%94%B5%E9%97%AE%E9%A2%98%E7%9A%84%E5%88%86%E7%A6%BB%E5%8F%98%E6%95%B0%E6%B3%95"><span class="nav-number">3.3.</span> <span class="nav-text">解静电问题的分离变数法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E7%9A%84%E4%BC%A0%E6%92%AD"><span class="nav-number">4.</span> <span class="nav-text">电磁波的传播</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B"><span class="nav-number">4.1.</span> <span class="nav-text">电磁波传播问题中的基本方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E5%9C%A8%E5%AF%BC%E4%BD%93%E4%B8%AD%E7%9A%84%E4%BC%A0%E6%92%AD%E5%8F%8A%E5%9C%A8%E5%AF%BC%E4%BD%93%E8%A1%A8%E9%9D%A2%E7%9A%84%E5%8F%8D%E5%B0%84%E5%92%8C%E6%8A%98%E5%B0%84"><span class="nav-number">4.2.</span> <span class="nav-text">电磁波在导体中的传播及在导体表面的反射和折射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E5%9C%A8%E7%AD%89%E7%A6%BB%E5%AD%90%E4%BD%93%E4%B8%AD%E7%9A%84%E4%BC%A0%E6%92%AD"><span class="nav-number">4.3.</span> <span class="nav-text">电磁波在等离子体中的传播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E6%B3%A2%E5%9C%A8%E6%B3%A2%E5%AF%BC%E4%B8%AD%E7%9A%84%E4%BC%A0%E6%92%AD"><span class="nav-number">4.4.</span> <span class="nav-text">电磁波在波导中的传播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E5%BD%A2%E6%B3%A2%E5%AF%BC"><span class="nav-number">4.5.</span> <span class="nav-text">矩形波导</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%90%E6%8C%AF%E8%85%94"><span class="nav-number">4.6.</span> <span class="nav-text">谐振腔</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E7%A3%81%E5%9C%BA%E7%9A%84%E5%8A%A8%E9%87%8F"><span class="nav-number">4.7.</span> <span class="nav-text">电磁场的动量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%80%83%E9%A2%98%E4%B8%8E%E4%B9%A0%E9%A2%98%E5%85%AD"><span class="nav-number">4.8.</span> <span class="nav-text">思考题与习题六</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
