@@ -176,14 +176,7 @@
   </url>
   
   <url>
-    <loc>https://www.uynajgi.com/tags/Hexo/</loc>
-    <lastmod>2022-08-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.uynajgi.com/tags/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/</loc>
+    <loc>https://www.uynajgi.com/tags/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6/</loc>
     <lastmod>2022-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -191,6 +184,27 @@
   
   <url>
     <loc>https://www.uynajgi.com/tags/%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/</loc>
+    <lastmod>2022-08-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.uynajgi.com/tags/%E6%A0%BC%E6%9E%97%E5%87%BD%E6%95%B0/</loc>
+    <lastmod>2022-08-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.uynajgi.com/tags/%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA/</loc>
+    <lastmod>2022-08-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.uynajgi.com/tags/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/</loc>
     <lastmod>2022-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -211,21 +225,14 @@
   </url>
   
   <url>
-    <loc>https://www.uynajgi.com/tags/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6/</loc>
+    <loc>https://www.uynajgi.com/tags/Hexo/</loc>
     <lastmod>2022-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.uynajgi.com/tags/%E6%A0%BC%E6%9E%97%E5%87%BD%E6%95%B0/</loc>
-    <lastmod>2022-08-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.uynajgi.com/tags/%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA/</loc>
+    <loc>https://www.uynajgi.com/tags/%E4%B9%A0%E9%A2%98/</loc>
     <lastmod>2022-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -267,13 +274,6 @@
   </url>
   
   <url>
-    <loc>https://www.uynajgi.com/tags/%E4%B9%A0%E9%A2%98/</loc>
-    <lastmod>2022-08-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.uynajgi.com/tags/%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86/</loc>
     <lastmod>2022-08-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -290,14 +290,14 @@
   </url>
   
   <url>
-    <loc>https://www.uynajgi.com/categories/%E4%B8%AA%E4%BA%BA%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>https://www.uynajgi.com/categories/%E7%89%A9%E7%90%86/</loc>
     <lastmod>2022-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.uynajgi.com/categories/%E7%89%A9%E7%90%86/</loc>
+    <loc>https://www.uynajgi.com/categories/%E4%B8%AA%E4%BA%BA%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2022-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -311,14 +311,14 @@
   </url>
   
   <url>
-    <loc>https://www.uynajgi.com/categories/%E4%B8%AA%E4%BA%BA%E5%AD%A6%E4%B9%A0/%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>https://www.uynajgi.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/</loc>
     <lastmod>2022-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.uynajgi.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/</loc>
+    <loc>https://www.uynajgi.com/categories/%E4%B8%AA%E4%BA%BA%E5%AD%A6%E4%B9%A0/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2022-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
