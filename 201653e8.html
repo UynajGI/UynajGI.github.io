@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="Kh9Fd2kRwyC6ZRSU1tw4Hk1EfDKThfkk5HneuPofGfU">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-material.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.uynajgi.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterance","storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="群论入门！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="物理学中的群论">
+<meta property="og:url" content="https://www.uynajgi.com/201653e8.html">
+<meta property="og:site_name" content="結凪·Cube">
+<meta property="og:description" content="群论入门！">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.328888.xyz/2022/08/29/CIlIr.png">
+<meta property="article:published_time" content="2022-08-29T15:05:50.000Z">
+<meta property="article:modified_time" content="2022-08-29T15:20:48.000Z">
+<meta property="article:author" content="結凪">
+<meta property="article:tag" content="矩阵">
+<meta property="article:tag" content="群论">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.328888.xyz/2022/08/29/CIlIr.png">
+
+<link rel="canonical" href="https://www.uynajgi.com/201653e8.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>物理学中的群论 | 結凪·Cube</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<style type="text/css">
+.spoiler {
+  display: inline-flex;
+}
+p.spoiler {
+  display: flex;
+}
+.spoiler a {
+  pointer-events: none;
+}
+.spoiler-blur, .spoiler-blur > * {
+  transition: text-shadow .5s ease;
+}
+.spoiler .spoiler-blur, .spoiler .spoiler-blur > * {
+  color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  text-shadow: 0 0 10px grey;
+  cursor: pointer;
+}
+.spoiler .spoiler-blur:hover, .spoiler .spoiler-blur:hover > * {
+  text-shadow: 0 0 5px grey;
+}
+.spoiler-box, .spoiler-box > * {
+  transition: color .5s ease,
+  background-color .5s ease;
+}
+.spoiler .spoiler-box, .spoiler .spoiler-box > * {
+  color: black;
+  background-color: black;
+  text-shadow: none;
+}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">結凪·Cube</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Game of Life</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>文章</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>图书馆</a>
+
+  </li>
+        <li class="menu-item menu-item-books">
+
+    <a href="/books/" rel="section"><i class="fa fa-file fa-fw"></i>资源馆</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.uynajgi.com/201653e8.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/U_avatar.jpg">
+      <meta itemprop="name" content="結凪">
+      <meta itemprop="description" content="如果你想走到高处，就要使用自己的两条腿！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="結凪·Cube">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          物理学中的群论
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-08-29 23:05:50 / 修改时间：23:20:48" itemprop="dateCreated datePublished" datetime="2022-08-29T23:05:50+08:00">2022-08-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%89%A9%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">物理</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%89%A9%E7%90%86/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">数学物理</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">群论入门！</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="群论的基本概念"><a href="#群论的基本概念" class="headerlink" title="群论的基本概念"></a>群论的基本概念</h1><h2 id="群的定义"><a href="#群的定义" class="headerlink" title="群的定义"></a>群的定义</h2><p><strong>定义 1.1</strong> 设 $G$ 是一个集合，在 $G$ 上给定一个二元运算，称之为乘法运算，即给定一个映射 $G\times G\rightarrow G$, 使其满足下列条件：</p>
+<ol>
+<li>集合 $G$ 在乘法下是封闭的，即对任意两个元素 $g_i,g_j\in G$，有<script type="math/tex; mode=display">
+ g_i g_j =g_k\in G</script></li>
+<li>乘法满足结合律，即对任意元素 $g_i,g_j,g_k\in G$, 有<script type="math/tex; mode=display">
+ g_i (g_j g_k)=(g_i g_j) g_k</script></li>
+<li>存在唯一的单位元 $e\in G$, 对所有 $g\in G$ 满足<script type="math/tex; mode=display">
+e g=g e=g</script></li>
+<li>对每个元素 $g\in G$, 都存在与之对应的唯一的逆元 $g^{-1} \in G$, 满足<script type="math/tex; mode=display">
+g g^{-1}=g^{-1} g=e</script></li>
+</ol>
+<p>群 $G$ 所包含的元素数目如果是有限的，则称之为有限群，如果包含的元素数目是无限的，则称之为无限群。</p>
+<script type="math/tex; mode=display">
+G_n=\left\{a,a^2,\cdots ,a^{n+-1},a^n=e\right\}</script><p>称为<strong>循环群</strong></p>
+<p><strong>定义 1.2</strong> 如果群 $G$ 的乘法是可交换的，即对任意的 $a,b\in G$ 有 $ab=ba$，则称群 $G$ 是 Abel 群。否则称其为非 Abel 群。<br><strong>定义 1.3</strong> 如果群 G 是有限群，则 G 所包含元素的数目称为群 G 的阶。<br><strong>定义 1.4</strong> 对于任意群元 $a\in G$，满足方程 $a^n=e$ 的最小正整数 $n$ 称为群元 $a$ 的阶。<br>易见，n 阶群元 $a$ 可以生成 n 阶循环群。</p>
+<ul>
+<li><p>最简单的非循环群是四阶群。</p>
+<script type="math/tex; mode=display">
+G_4^2=\left\{e,a,b,c\right\}\Rightarrow a^2=b^2=c^2=e,ab=ba=c,bc=cb=a,ac=ca=b</script></li>
+<li><p>实数集合 $\mathbb {R}$ 在普通加法下构成群，其中单位元和实数 $a$ 的逆元分别为</p>
+<script type="math/tex; mode=display">
+e=0,\quad a^{-1}=-a</script></li>
+<li><p>非零实数集合 $\mathbb {R}^*$ 在普通乘法下构成群，其中单位元和实数 $a$ 的逆元分别为</p>
+<script type="math/tex; mode=display">
+e=1,\quad a^{-1}=1/a</script></li>
+</ul>
+<h2 id="子群，重排定理"><a href="#子群，重排定理" class="headerlink" title="子群，重排定理"></a>子群，重排定理</h2><p>最简单的非 Abel 群是六阶群</p>
+<p><strong>定义 1.5</strong> 群 $G$ 的子集 $H$ 如果在和群 $G$ 相同的乘法规则下也构成群，则称 $H$ 为群 $G$ 的子群。</p>
+<p><strong>定理 1.1</strong>（重排定理）如果 $g\in G$ 是群 $G$ 中的任意群元，则有</p>
+<script type="math/tex; mode=display">
+gG=Gg=G</script><p>其中</p>
+<script type="math/tex; mode=display">
+gG=\left\{gg_i|g_i\in G\right\},\quad Gg=\left\{g_ig|g_i\in G\right\}</script><ul>
+<li>$(12\cdots n)$ 的所有可能置换构成群，即置换群 $S_n$，这是 $n!$ 阶的群</li>
+</ul>
+<h2 id="共轭类，陪集"><a href="#共轭类，陪集" class="headerlink" title="共轭类，陪集"></a>共轭类，陪集</h2><p><strong>定义 1.6</strong> 对于群 $G$ 中的两个元素 $g_i,g_j$，如果存在另一个元素 $g\in G$ 使下式成立：</p>
+<script type="math/tex; mode=display">
+g_i=gg_jg^{-1}</script><p>则称 $g_i,g_j$ 是互相共轭的，用符号 $\sim$ 表示，记为 $g_i\sim g_j$</p>
+<p><strong>定义 1.7</strong> 群 $G$ 内彼此共轭的元素集合构成共轭类，简称类。</p>
+<ul>
+<li><p>Abel 群的每个元素都构成一个类。易见同类元素具有相同的阶。</p>
+</li>
+<li><p>置换群 $S_3$ 有三个类：</p>
+<script type="math/tex; mode=display">
+[e]=\left\{e\right\},\quad[(12)]=\left\{(12),(23),(13)\right\},\quad[(123)]=\left\{(123),(132)\right\}</script><p>故可以将 $S_3$ 群按类分解为</p>
+<script type="math/tex; mode=display">
+S_3=[e]\oplus[(12)]\oplus[(123)]</script></li>
+</ul>
+<p><strong>定义 1.8</strong> 设 $H\sub G$ 为群 $G$ 的子群，令 $g_i\in G,g_i\notin G$，则集合</p>
+<script type="math/tex; mode=display">
+g_iH=\left\{g_ih|h\in H \right\}</script><p>称为子群 $H$ 的左陪集，右陪集同理</p>
+<p><strong>定理 1.2</strong> 子群 $H$ 的两个左（右）陪集或者完全相同，或者没有相同的元素。</p>
+<p><strong>定理 1.3 (Lagrange 定理)</strong> 有限群 $G$ 的阶 $n$ 一定能被其子群的阶 $n_H$ 整除，即 $n/n_H=l$ 为整数，称 $l$ 为子群 $H$ 的指数。</p>
+<ul>
+<li>可以将群 G 的所有元素都划分到某一个陪集中去。即<script type="math/tex; mode=display">
+G=H\oplus g_1H\oplus g_2H\oplus \cdots\oplus g_{l-1}H</script></li>
+</ul>
+<p>由于每个陪集都各不相同且包含的元素数目相同，因此得</p>
+<script type="math/tex; mode=display">
+n=n_Hl</script><p><strong>定义 1.9</strong> 设 $H$ 是群 $G$ 的一个子群，如果对任意的 $g\in G$ 都有</p>
+<script type="math/tex; mode=display">
+gHg^{-1}=H \text{ or } gH=Hg,</script><p>即 $H$ 的每个左陪集都与其相应的右陪集完全相同，则子群 $H$ 称为群 $G$ 的<strong>不变子群</strong>或正规子群。</p>
+<p><strong>定理 1.4</strong> 如果 $H$ 是群 $G$ 的不变子群，则 $H$ 一定包含群 $G$ 的一些完整的类。反之，如果子群 $H$ 包含了群 $G$ 的完整的类，则 $H$ 一定是群 $G$ 的不变子群。</p>
+<ul>
+<li>商群<script type="math/tex; mode=display">
+G/H=\left\{H,g_1H,g_2H,\cdots,g_{l-1}H\right\}</script></li>
+</ul>
+<p><strong>定义 1.10</strong> 一个群如果不包含任何非平凡的不变子群，则称之为单群（即单群可以有子群，但没有非平凡的不变子群）。一个群如果不包含任何 Abel 不变子群，则称之为半单群 (即半单群可以有不变子群，但没有 Abel 不变子群)。</p>
+<h2 id="群的同态和同构"><a href="#群的同态和同构" class="headerlink" title="群的同态和同构"></a>群的同态和同构</h2><p><strong>定义 1.11</strong> 从群 $G$ 到另一个群 $G’$ 的同态是一个映射 $\Gamma$（不一定是一一映射），要求在映射中保持群的乘法。即对任意的 $g_i,g_j\in G$，有映射</p>
+<script type="math/tex; mode=display">
+g_i'=\Gamma_{g_i},\quad g_j'=\Gamma_{g_j}\in G'</script><p>使得</p>
+<script type="math/tex; mode=display">
+g_i'g_j'=\Gamma_{g_i}\Gamma_{g_j}=\Gamma_{g_ig_j}=\Gamma_{g_k}=g_k'</script><p>如果映射是一一对应的，则称之为同构。同构是同态的特殊情况。</p>
+<p>将群同态中映射为单位元的元素集合称为同态的核。</p>
+<p><strong>定理 1.5（同态定理）</strong> 设 $f$ 是从群 $G$ 到群 $G’$ 的同态，则同态的核 $H$ 构成群 $G$ 的不变子群，商群 $G/H$ 则同构于群 $G’$。</p>
+<p><strong>定理 1.6 (Cayley 定理)</strong> 任意 $n$ 阶群都同构于置换群 $S_n$ 的一个子群。</p>
+<h2 id="群的直积"><a href="#群的直积" class="headerlink" title="群的直积"></a>群的直积</h2><p><strong>定义 1.12</strong> 设 $G_1,G_2$ 是两个群，这两个群的直积定义为</p>
+<script type="math/tex; mode=display">
+G=G_1\otimes G_2=\left\{(g_1,g_2)|g_1\in G_1,g_2\in G_2\right\}</script><p>若 $G=H_1\otimes H_2$，则 $H_1$ 和 $H_2$ 一定是群 $G$ 的不变子群。</p>
+<h1 id="群的表示"><a href="#群的表示" class="headerlink" title="群的表示"></a>群的表示</h1><h2 id="表示的定义"><a href="#表示的定义" class="headerlink" title="表示的定义"></a>表示的定义</h2><p><strong>定义 2.1</strong> 如果存在从群 $G$ 到作用在线性向量空间 $V$ 上的算符群 $\Gamma_{G}$。的一个同态，即</p>
+<script type="math/tex; mode=display">
+g\in G\mapsto \Gamma_g\in\Gamma_{G}</script><p>其中 $\Gamma_g$。是与群元 $g$ 对应的算符，满足</p>
+<script type="math/tex; mode=display">
+\Gamma_{g_1}\Gamma_{g_2}=\Gamma_{g_1g_2}</script><p>则算符群 $\Gamma_{G}$ 称为群 $G$ 的一个表示，线性向量空间 $V$ 的维数称为表示的维数。<br>今后，文中所说的群表示均为矩阵表示，表示矩阵的维数即为表示的维数。对任何表示都有</p>
+<script type="math/tex; mode=display">
+\mathbf{D}(e)=\mathbf{I},\mathbf{D}(g^{-1})=\mathbf{D}(g)^{-1}</script><p><strong>定义 2.2</strong> 设 $\mathbf {D}(G)$ 是群 $G$ 的一个 $d$ 维表示，则集合</p>
+<script type="math/tex; mode=display">
+\left\{\mathbf{S}\mathbf{D}(g)\mathbf{S}^{-1}:g\in G\right\}</script><p>也是群 $G$ 的一个 $d$ 维表示，称 $\mathbf {S}\mathbf {D}(g)\mathbf {S}^{-1}$ 是 $\mathbf {D}(G)$ 的等价表示，其中 $\mathbf {S}$ 是一个 $d\times d$ 的非奇异矩阵。<br><strong>定义 2.3</strong> 如果群 $G$ 的表示 $\mathbf {D}(G)$ 可以通过相似变换化为</p>
+<script type="math/tex; mode=display">
+\mathbf{D}(g)=\left(\begin{matrix}\mathbf{D}_1(g)&\mathbf{R}(g)\\0&\mathbf{D}_2(g)\end{matrix}\right),\quad \forall g\in G</script><p>则 $\mathbf {D}(G)$ 称为是可约表示。如果矩阵 $R (g)=0$, 则称之为完全可约表示。如果表示 $\mathbf {D}(G)$ 无法通过相似变换化成方块对角的形式，则称其为不可约表示。<br><strong>定义 2.4</strong> 设 $\mathbf {D}(G)$ 是群 $G$ 的 $d$ 维表示，定义</p>
+<script type="math/tex; mode=display">
+\chi(g)=\text{Tr}\mathbf{D}(g)=\sum_{i=1}^d{\mathbf{D}_{ii}(g)}</script><p>称 $\chi (g)$ 为群元 $g\in G$ 在表示 $\mathbf {D}(G)$ 中的特征标。</p>
+<p><strong>定义 2.5</strong> 如果表示 $\mathbf {D}(G)$ 的所有表示矩阵都是么正的，即</p>
+<script type="math/tex; mode=display">
+\mathbf{D}(g)^\dagger=\mathbf{D}(g)^{-1},\forall g\in G</script><p>则表示 $\mathbf {D}(G)$ 称为幺正表示。</p>
+<h2 id="群表示论的一些基本定理"><a href="#群表示论的一些基本定理" class="headerlink" title="群表示论的一些基本定理"></a>群表示论的一些基本定理</h2><p><strong>定理 2.1</strong> 如果群 $G$ 有非平凡的不变子群 $H$，则商群 $K=G/H$ 的任何表示也是群 $G$ 的表示。这个表示是群 $G$ 的非忠实表示。反之，如果 $\mathbf {D}(G)$ 是群 $G$ 的非忠实表示，则群 $G$ 至少有一个不变子群 $H$ 使得 $\mathbf {D}(G)$ 是商群 $G/H$ 的忠实表示。</p>
+<p><strong>定理 2.2</strong> 对有限群，可约表示一定是完全可约的。</p>
+<p><strong>定理 2.3</strong> 有限群 $G$ 的每个表示 $\mathbf {D}(G)$ 都有等价的么正表示。</p>
+<p><strong>定理 2.4 (Schur 引理)</strong> 设 $\mathbf {D}(G)$ 是群 $G$ 的一个 $d$ 维不可约表示，$\mathbf {M}$ 是任意一个 $d\times d$ 矩阵。如果 $\mathbf {M}$ 与所有表示矩阵对易，即</p>
+<script type="math/tex; mode=display">
+\mathbf{M}\mathbf{D}(g)=\mathbf{D}(g)\mathbf{M},\forall g\in G</script><p>则矩阵 $\mathbf {M}$ 一定是常数和单位矩阵的乘积，即有</p>
+<script type="math/tex; mode=display">
+\mathbf{M}=\lambda \mathbf{I}</script><p><strong>定理 2.5</strong> 设 $\mathbf {D}^{ (p) } (G) $ 和 $\mathbf {D}^{ (q) } (G) $ 是群 $G$ 的两个不可约表示，维数分别为 $d_p$，和 $d_q$。如果存在一个 $d_p\times d_q$，的矩阵 $\mathbf {M}$，使得</p>
+<script type="math/tex; mode=display">
+\mathbf{M}\mathbf{D}^{(p)}(g)=\mathbf{D}^{(q)}(g)\mathbf{M},\quad \forall g\in G</script><p>则有如下结论：</p>
+<ol>
+<li>如果 $d_q\not = d_p$，则 $\mathbf {M}=\mathbf {0}$</li>
+<li> 如果 $d_q=d_p$，则或者 $\mathbf {M}=\mathbf {0}$，或者 $\det { \mathbf {M} }\not ={0}$</li>
+</ol>
+<p><strong>定理 2.6（广义正交定理）</strong> 设 $\mathbf {D}^{(p)}(G)$ 和 $ \mathbf {D}^{(q)}(G)$ 是 $n$ 阶群 $G$ 的两个不等价不可约么正表示，维数分别为 $d_p$，和 $d_q$。则下列正交关系成立：</p>
+<script type="math/tex; mode=display">
+\sum_{g\in G}{D_{\mu\nu}^{(p)*}(g)D_{\mu'\nu'}^{(p)}(g)}=\dfrac{n}{d_p}\delta_{pq}\delta_{\mu\mu'}\delta_{\nu\nu'}</script><p>令 $p=q,\mu=\mu’,\nu=\nu’$ 得到</p>
+<script type="math/tex; mode=display">
+\sum_{g\in G}|D_{\mu\nu}^{(p)}(g)|^2=\dfrac{n}{d_P}</script><p>可以写成分量形式 $\mathbf {r}^{(p,\mu,\nu)}=\sqrt {\dfrac {d_p}{n}} D_{\mu\nu}^{(p)}(g)$</p>
+<p><strong>定理 2.7 (Burnside 定理)</strong> 群 $G$ 的所有不等价不可约表示的维数平方和等于群 $G$ 的阶数，即</p>
+<script type="math/tex; mode=display">
+d_1^2+d_2^2+\cdots+d_r^2=n</script><p><strong>定理 2.8（特征标正交定理）</strong> 群 $G$ 的不等价不可约表示的特征标满足正交关系</p>
+<script type="math/tex; mode=display">
+\dfrac{1}{n}\sum_{g\in G}{\chi}^{(p)*}(g)\chi^{(q)}(g)=\delta_{pq}</script><p><strong>定理 2.9</strong> 群 $G$ 不等价不可约表示的数目等于类的数目，即 $r=k$。</p>
+<p><strong>定理 2.10</strong> 两个表示等价的充要条件是具有相同的特征标。</p>
+<h2 id="正则表示"><a href="#正则表示" class="headerlink" title="正则表示"></a>正则表示</h2><p>由群的封闭性可知，如果将群 $G$ 的 $n$ 个群元看成是 $n$ 维向量空间的基，即 $\mathbf {e}_i=g_i (i=1,2,\cdots,n)$，同时将群元 $g$ 看成作用在这个向量空间上的算符，即 $\Gamma_g=g (g\in G)$，则算符对基的作用可以写成</p>
+<script type="math/tex; mode=display">
+\Gamma_g\mathbf{e}_i=gg_i=g_j,\quad \left\{g_i\right\}\rightarrow\left\{g_j\right\}</script><p>上式表明这组基 $\left\{g_i\right\}$ 张成的向量空间在算符 $=g (g\in G)$ 的作用下不变，因此可以负载群 $G$ 的一个表示。这个表示称为正则表示。为了得出正则表示矩阵，将上式改写为</p>
+<script type="math/tex; mode=display">
+gg_i=\sum_{k=1}^n{g_kD_{ki}^{(c)}(g)},\forall g\in G</script><p>其中正则表示矩阵 $\mathbf {D}^{(c)}(g)$ 的定义为</p>
+<script type="math/tex; mode=display">
+D_{ki}^{(c)}(g)=\begin{cases}
+  1,&k=j,gg_i=g_j,\\
+  0,&k\not ={j},gg_i\not ={g_j}
+\end{cases}</script><ul>
+<li>构造 $g_j\sim g_i^{-1}$ 的乘法表</li>
+</ul>
+<h2 id="基础表示"><a href="#基础表示" class="headerlink" title="基础表示"></a>基础表示</h2><p>设群 G 可以按子群 H 分解为陪集的直和</p>
+<script type="math/tex; mode=display">
+G=H\oplus g_2H\oplus g_3H\oplus \cdots\oplus g_lH=\sum_{i=1}^l{ g_iH }</script><p>由</p>
+<script type="math/tex; mode=display">
+g(g_iH)=\sum_{k=1}^l{(g_kH)D_{ki}^{(d)}(g)},\quad i=1,2,\cdots ,l,g\in G</script><p>其中矩阵 $\mathbf {D}^{(d)}(g)$ 定义为</p>
+<script type="math/tex; mode=display">
+D_{ki}^{(c)}(g)=\begin{cases}
+  1,&k=j,gg_i\in g_jH,\\
+  0,&k\not ={j},gg_i\notin g_jH,
+\end{cases}</script><p>容易看到，当 $H=\left\{e\right\}$ 时，基础表示就是正则表示。</p>
+<ul>
+<li>构造 $g_jH\sim Hg_i^{-1}$ 的乘法表</li>
+</ul>
+<h2 id="诱导表示"><a href="#诱导表示" class="headerlink" title="诱导表示"></a>诱导表示</h2><p>设负载子群 $H$ 的不可约表示 $\mathbf {D}^{(H)}$ 的基为 $\left\{e_1,e_2,\cdots,e_d\right\}$，$d$ 为 $\mathbf {D}^{(H)}$ 的维数。则有</p>
+<script type="math/tex; mode=display">
+\Gamma_g\mathbf{e}_i=\sum_{j=1}^d{D_{ji}^{(H)}(g)\mathbf{e}_j},g\in H</script><p>然后将群 G 按子群 H 作陪集分解得到</p>
+<script type="math/tex; mode=display">
+G=\sum_{\alpha=1}^{m}{g_\alpha H},\quad m=n/s</script><p>其中 $n,s$ 分别是群 $G$ 和子群 $H$ 的阶数。作集合</p>
+<script type="math/tex; mode=display">
+\left\{\Gamma_{g_\alpha}\mathbf{e}_i\right\},\quad \alpha=1,2,\cdots,m,i=1,2,\cdots,d,</script><p>集合中共有 $md$ 个元素，可以用来负载群 $G$ 的一个表示。这个表示称为 $\mathbf {D}^{(H)}$ 的诱导表示。<br>由 $gg_\alpha\in G$ 可得</p>
+<script type="math/tex; mode=display">
+gg_\alpha\in g_\beta H,</script><p>或</p>
+<script type="math/tex; mode=display">
+gg_\alpha = g_\beta h_\alpha(g),</script><p>其中 $g_\alpha,g_\beta$ 是陪集的代表元。上式可以写为</p>
+<script type="math/tex; mode=display">
+h_\alpha(g)=g_\beta^{-1}gg_\alpha,</script><p>由基础表示的定义，有</p>
+<script type="math/tex; mode=display">
+G_{\gamma\alpha}^{(d)}(g)=\begin{cases}
+  1,&\gamma=\beta,gg_\alpha\in g_\beta H,\\
+  0,&\gamma\not ={\beta}
+\end{cases}</script><p>于是对任意的 $g\in G$，有</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+  \Gamma_g(\Gamma_{g_\alpha}\mathbf{e}_i)&=\Gamma_{gg_\alpha}\mathbf{e}_i=\Gamma_{g_\beta h_\alpha(g)}\mathbf{e}_i=\Gamma_{g_\beta}\Gamma_{h_\alpha(g)}\mathbf{e}_i
+  \\&=\Gamma_{g_\beta}\sum_{j=1}^d{D_{ji}^{(H)}(h_\alpha(g))}\mathbf{e}_j
+  \\&=\sum_{\gamma=1}^m{D_{\gamma\alpha}^{(d)}(g)\Gamma_{g_\gamma}}\sum_{j=1}^dD_{ji}^{(H)}(h_\alpha(g))\mathbf{e}_j
+  \\&=\sum_{\gamma=1}^m\sum_{j=1}^d\mathbf{e}_j\Gamma_{g_\gamma}D_{\gamma\alpha}^{(d)}(g)D_{ji}^{(H)}(h_\alpha(g))\\
+  &=\sum_{\gamma=1}^m\sum_{j=1}^d\mathbf{e}_j\Gamma_{g_\gamma}D_{\gamma j,\alpha i}^{(I)}(g)
+\end{align*}</script><p>进一步可以将表示矩阵写成</p>
+<script type="math/tex; mode=display">
+D_{[\beta\alpha]}^{(I)}(g)=D_{\beta\alpha}^{(d)}(g)\mathbf{D}^{(H)}(h_\alpha(g))</script><p>根据定义，我们可以按如下方式来构造诱导表示。首先按上节的方法构造群 $G$ 的基础表示，然后根据非零矩阵元的位置，计算 $g_\beta^{-1} gg_\alpha=h_\alpha (g)$，最后将 1 换成子群 H 的表示矩阵 $\mathbf {D}^{(H)}(h_\alpha (g))$，0 换成相应维数的零矩阵，即得诱导表示矩阵。</p>
+<h2 id="特征标表"><a href="#特征标表" class="headerlink" title="特征标表"></a>特征标表</h2><p>群 G 不可约表示的数目等于群 G 的类数。</p>
+<h2 id="表示的直积，C-G-系数"><a href="#表示的直积，C-G-系数" class="headerlink" title="表示的直积，C-G 系数"></a>表示的直积，C-G 系数</h2><p>直积定义为</p>
+<script type="math/tex; mode=display">
+(\mathbf{A}\otimes \mathbf{B})_{ik,jl}=A_{ij}B_{kl}</script><p><strong>定理 2.11</strong> 设 $\mathbf {D}^{(p)}(G),\mathbf {D}^{(q)}(G)$ 是群 $G$ 的两个不可约幺正表示，维数分别为 $d_p$ 和 $d_p$，则这两个不可约表示的直积</p>
+<script type="math/tex; mode=display">
+\mathbf{D}^{(p,q)}(g)=\mathbf{D}^{(p)}(g)\otimes\mathbf{D}^{(q)}(g),\forall g\in G</script><p>是群 $G$ 的维数为 $d_pd_p$ 的幺正表示，它一般是可约表示。</p>
+<p>表示的约化相当于基的重新线性组合。设约化后的基为</p>
+<script type="math/tex; mode=display">
+\left\{w_l^{(\lambda)\alpha}\right\},\quad l=1,2,\cdots,d_\lambda,\quad \alpha=1,2,\cdots,a_\lambda</script><p>它与原来的基有如下关系：</p>
+<script type="math/tex; mode=display">
+w_l^{(\lambda)\alpha}=\sum_{i,j}\left\langle \begin{matrix}p&q\\ i&j\end{matrix}\right.\left|\begin{matrix}\lambda\\ l\end{matrix}\ \ \alpha\right\rangle w_{i,j}</script><p>逆变换为</p>
+<script type="math/tex; mode=display">
+w_{i,j}=\sum_{\alpha,\lambda,l}\left\langle \begin{matrix}\lambda\\ l\end{matrix}\ \ \alpha\right.\left|\begin{matrix}p&q\\ i&j\end{matrix}\right\rangle w_l^{(\lambda)\alpha}</script><p>该系数称为 Clebsch-Gordan 系数，简称 C-G 系数。</p>
+<h2 id="投影算符"><a href="#投影算符" class="headerlink" title="投影算符"></a>投影算符</h2><p>设 $G$ 是作用在三维 Euclid 空间上的有限群，群元 $g\in G $ 对空间位矢 $\mathbf {r}$ 的作用为</p>
+<script type="math/tex; mode=display">
+\mathbf{r}'=g\mathbf{r}</script><p>定义一组作用在标量函数 $\psi (r)$ 上的算符 $\Gamma_g (g\in G)$ 满足</p>
+<script type="math/tex; mode=display">
+\Gamma_g\psi(\mathbf{r})=\psi'(\mathbf{r})=\psi(g^{-1}\mathbf{r}),g\in G</script><p>$\Gamma_G$ 是群 $G$ 的同构。<br>有</p>
+<script type="math/tex; mode=display">
+(\phi_\mu^{(p)},\phi_\nu^{(q)})=\delta_{pq}\delta_{\mu\nu}</script><p><strong>定理 2.12</strong> 若 $\left\{\mathbf {D}^{(p)}(G)\right\}\lvert$ 是作用在坐标空间的有限群 $G$ 的所有不可约么正表示，$\left\{\phi_\mu^{(p)}\right\}$ 是相应的归一化基，则任意平方可积函数 $\psi (r)$ 都可以用 $\left\{\phi_\mu^{(p)}\right\}$ 展开为下列形式：</p>
+<script type="math/tex; mode=display">
+\psi(\mathbf{r})=\sum_p\sum_\mu{a_\mu^{(p)}}\phi_\mu^{(p)}(\mathbf{r})</script><p>定义投影算符</p>
+<script type="math/tex; mode=display">
+P_{\lambda \mu}^{(p)}=\dfrac{d_p}{n}\sum_{g\in G}{D_{\mu\lambda}^{(p)}(g^{-1})\Gamma_g}</script><p>有性质</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+  &P_{\lambda \mu}^{(p)}\phi_\nu^{(q)}=\delta_{pq}\delta_{\mu\nu}\phi_\lambda^{(q)}\\
+  &P_{\mu \nu}^{(p)}P_{\lambda \sigma}^{(q)}=\delta_{pq}\delta_{\nu\lambda}P_{\mu\sigma}^{(p)}
+\end{align*}</script><p>定义特征标投影算符</p>
+<script type="math/tex; mode=display">
+P^{(p)}=\sum_{\mu}{P_{\mu\mu}^{(p)}}=\dfrac{d_p}{n}\sum_{g\in G}{\chi^{(p)*}(g)\Gamma_g}</script><h1 id="群论与量子力学"><a href="#群论与量子力学" class="headerlink" title="群论与量子力学"></a>群论与量子力学</h1><h2 id="Schrodinger-方程和对称算符"><a href="#Schrodinger-方程和对称算符" class="headerlink" title="Schrodinger 方程和对称算符"></a>Schrodinger 方程和对称算符</h2><p>在某些情况下，一个本征值 $\varepsilon_n$ 可能对应多个本征函数中 $\psi_{n\lambda}(\mathbf {r})$，即</p>
+<script type="math/tex; mode=display">
+\hat{H}\psi_{n\lambda}=\varepsilon_n\psi_{n\lambda},\quad \lambda=1,2,\cdots,d,\quad n=1,2,\cdots,</script><p>这种情况称为简并，或者说是 $d$ 重简并。</p>
+<p>由于这 $d$ 个本征函数是线性独立的，因此 $\Gamma_g\psi_{n\lambda}(\mathbf {r})$ 一定是原来那些本征函数的线性组合，即</p>
+<script type="math/tex; mode=display">
+\Gamma_g\psi_{n\lambda}(\mathbf{r})=\sum_{\mu=1}^d{\psi_{n\lambda}(\mathbf{r})D_{\mu\lambda}(g)},\quad\lambda=1,2,\cdots,d</script><p>一般来说，这是一个可约表示，可以将其约化为不可约表示的直和</p>
+<script type="math/tex; mode=display">
+\mathbf{D}(g)=\sum_{p}{a_p\mathbf{D}^{(p)}(g)}</script><p>相应的不可约表示的基记为</p>
+<script type="math/tex; mode=display">
+\left\{\phi_{\mu\alpha_p}^{(p)}\right\},\quad p=1,2,\cdots,s,\quad\mu=1,2,\cdots,d_p,\quad\alpha_p=1,2,\cdots,a_p</script><p>则有</p>
+<script type="math/tex; mode=display">
+\Gamma_g\phi_{\mu\alpha_p}^{(p)}=\sum_{\nu}{\phi_{\nu\alpha_p}^{(p)}D_{\nu\mu}^{(p)}(g)}</script><p>因为总的能级数不变，故有</p>
+<script type="math/tex; mode=display">
+a_1d_1+a_2d_2+\cdots+a_sd_s=d</script><p>现在这些能级全部都是简并的，故有</p>
+<script type="math/tex; mode=display">
+\varepsilon_{n1}^{\alpha_1}=\varepsilon_{n2}^{\alpha_2}=\cdots=\varepsilon_{ns}^{\alpha_s}=\varepsilon_n</script><p>将属于同一个不可约表示 $\mathbf {D}^{(p)}$ 的 $d_p$ 重简并能级 $\varepsilon_{np}^{\alpha_p}$(即对于固定的 $p,\alpha_p$) 称为正常简并，而对应不同 $p,\alpha_p$ 的简并称为偶然简并。</p>
+<p>如果没有偶然简并，则由简并波函数负载的表示一定是不可约表示。因此，体系的能级可以按照体系对称群的不可约表示进行分类。</p>
+<p>计算跃迁矩阵元</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+    (\phi_{\mu\alpha_p}^{(p)},H\phi_{\nu\beta_q}^{(q)})&=\sum_{\mu'\nu'}D_{\mu'\mu}^{(p)*}(g)D_{\nu'\nu}^{(q)}(g)(\phi_{\mu'\alpha_p}^{(p)},H\phi_{\nu'\beta_q}^{(q)})\\
+    &=\dfrac{1}{n}\sum_{g\in G}\sum_{\mu'\nu'}D_{\mu'\mu}^{(p)*}(g)D_{\nu'\nu}^{(q)}(g)(\phi_{\mu'\alpha_p}^{(p)},H\phi_{\nu'\beta_q}^{(q)})\\
+    &=\dfrac{1}{d_p}\sum_{\mu'\nu'}(\phi_{\mu'\alpha_p}^{(p)},H\phi_{\nu'\beta_q}^{(q)})\delta_{pq}\delta_{\mu'\nu'}\delta_{\mu\nu}=\delta_{pq}\delta_{\mu\nu}\sum_\lambda(\phi_{\lambda\alpha_p}^{(p)},H\phi_{\lambda\beta_q}^{(q)})
+\end{align*}</script><p>上式表明，属于不同不可约表示或同一个不可约表示的不同列之间的跃迁矩阵元一定是零。</p>
+<p>进一步可以看到，这个跃迁矩阵元与下标 $\mu$ 无关，即</p>
+<script type="math/tex; mode=display">
+(\phi_{1\alpha_p}^{(p)},H\phi_{1\beta_q}^{(p)})=(\phi_{2\alpha_p}^{(p)},H\phi_{2\beta_q}^{(p)})=\cdots=\dfrac{1}{d_p}\sum_\lambda(\phi_{\lambda\alpha_p}^{(p)},H\phi_{\lambda\beta_q}^{(p)})</script><p>如果 $ H_0$ 的对称群是 $G_0$,$H’$ 的对称群是 $G\sub G_0$。能量的一级微扰修正可由方程</p>
+<script type="math/tex; mode=display">
+\varepsilon_{\mu\nu}=\varepsilon_0\delta_{\mu\nu}+(\phi_\mu^{(p)},H'\phi_\nu^{(p)})</script><p>考虑薛定谔方程</p>
+<script type="math/tex; mode=display">
+\hat{H}\psi(\mathbf{r})=\varepsilon\psi(\mathbf{r})</script><p>为求解这个方程，将波函数用完备集展开为</p>
+<script type="math/tex; mode=display">
+\psi(\mathbf{r})=\sum_{p}\sum_{\alpha_p}\sum_{\mu}{a_{\mu\alpha_p}^{(p)}\phi_{\mu\alpha_p}^{(p)}}</script><p>代入后方程，将上式与波函数 $\phi_{\nu\beta_q}^{(q)}$ 作内积得</p>
+<script type="math/tex; mode=display">
+\det\left((\phi_{\nu\beta_q}^{(q)},H\phi_{\mu\alpha_p}^{(p)})-\varepsilon(\phi_{\nu\beta_q}^{(q)},\phi_{\mu\alpha_p}^{(p)})\right)</script><p>从上面的讨论可知，仅当 $p=q,\mu=\nu$ 时，矩阵元才不为零。如果定义</p>
+<script type="math/tex; mode=display">
+D_{\alpha\beta}(p,\mu)=\left[(\phi_{\nu\beta_q}^{(q)},H\phi_{\mu\alpha_p}^{(p)})-\varepsilon(\phi_{\nu\beta_q}^{(q)},\phi_{\mu\alpha_p}^{(p)})\right]</script><p>因此久期方程变成</p>
+<script type="math/tex; mode=display">
+\prod_p\prod_{\mu=1}^{d_p}\det \mathbf{D}(p,\mu)=0</script><p>取遍所有的 $p$ 以及分别令 $\mu$ 取 $1,2,\cdots,d_n$ 来求解方程</p>
+<script type="math/tex; mode=display">
+\det \mathbf{D}(p,\mu)=0</script><p>就可以得到所有的本征值。进一步有</p>
+<script type="math/tex; mode=display">
+\mathbf{D}(p,1)=\mathbf{D}(p,2)=\cdots=\mathbf{D}(p,d_p)</script><h2 id="不可约张量算符和-Wigner-Eckart-定理"><a href="#不可约张量算符和-Wigner-Eckart-定理" class="headerlink" title="不可约张量算符和 Wigner-Eckart 定理"></a>不可约张量算符和 Wigner-Eckart 定理</h2><p>引入一组算符</p>
+<script type="math/tex; mode=display">
+\left\{J_\lambda^{(p)}\right\},\quad \lambda=1,2,\cdots,d_p</script><p>满足</p>
+<script type="math/tex; mode=display">
+\Gamma_g J_\lambda^{(p)}\Gamma_g^{-1}=\sum_{\mu=1}J_\mu^{(p)}D_{\mu\lambda}^{(p)}(g)_{\mu\lambda},\quad g\in G</script><p>算符 $J_\lambda^{(p)}$ 称为不可约张量算符。如果 $\left\{\phi_\mu^{(q)}\right\}$ 是负载不可约表示 $\mathbf {D}^{(q)}(g)$ 的基，则有</p>
+<script type="math/tex; mode=display">
+\Gamma_g J_\lambda^{(p)}\phi_\mu^{(q)}=\Gamma_g J_\lambda^{(p)}\Gamma_g^{-1}\Gamma_g\phi_{\mu}^{(q)}=\sum_{\lambda',\mu'}J_{\lambda'}^{(p)}\phi_{\mu'}D_{\lambda'\lambda}^{(p)}(g)D_{\mu'\mu}^{(q)}(g)=\sum_{\lambda',\mu'}J_{\lambda'}^{(p)}\phi_{\mu'}^{(q)}(\mathbf{D}^{(p)}(g)\otimes\mathbf{D}^{(q)}(g))_{\lambda'\mu',\lambda\mu}</script><p>因此 $\left\{J_\lambda^{(p)}\phi_\mu^{(q)}\right\}$ 负载的是直积表示 $\mathbf {D}^{(p)}(g)\otimes\mathbf {D}^{(q)}(g)$，一般这是可约表示。设约化后的基为</p>
+<script type="math/tex; mode=display">
+\left\{\psi_\nu^{(r)\alpha}\right\},\quad \nu=1,2,\cdots,d_r,\quad \alpha = 1,2,\cdots,a_r</script><p>可以用原来的基线性组合表示为</p>
+<script type="math/tex; mode=display">
+\psi_\nu^{(r)\alpha}=\sum_{\lambda,\mu}\left\langle \begin{matrix}p&q\\\lambda&\mu\end{matrix}\right.\left|\begin{matrix}r\\ \nu\end{matrix}\ \ \alpha\right\rangle J_\lambda^{(p)}\phi_\mu^{(q)}</script><p>逆变换为</p>
+<script type="math/tex; mode=display">
+J_\lambda^{(p)}\phi_\mu^{(q)}=\sum_{r,\nu,\alpha}\left\langle \begin{matrix}p&q\\\lambda&\mu\end{matrix}\right.\left|\begin{matrix}r\\ \nu\end{matrix}\ \ \alpha\right\rangle^*\psi_\nu^{(r)\alpha}</script><p>与 $\phi_\sigma^{(s)}$ 作标量积，可得</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+    (\phi_\sigma^{(s)},J_\lambda^{(p)}\phi_\mu^{(q)})&=\sum_{r,\nu,\alpha}\left\langle \begin{matrix}p&q\\\lambda&\mu\end{matrix}\right.\left|\begin{matrix}r\\ \nu\end{matrix}\ \ \alpha\right\rangle^*(\phi_\sigma^{(s)},\psi_\nu^{(r)\alpha})\\
+    &=\sum_{r,\nu,\alpha,\eta}\left\langle \begin{matrix}p&q\\\lambda&\mu\end{matrix}\right.\left|\begin{matrix}r\\ \nu\end{matrix}\ \ \alpha\right\rangle^*\delta_{sr}\delta_{\sigma\nu}(\phi_\eta^{(s)},\psi_\eta^{(r)\alpha})\\
+    &=\sum_{\alpha}\left\langle \begin{matrix}p&q\\\lambda&\mu\end{matrix}\right.\left|\begin{matrix}s\\ \sigma\end{matrix}\ \ \alpha\right\rangle^*f(s,\alpha)
+\end{align*}</script><p>其中 $f (s,\alpha)$ 仅与 $s,\alpha$ 有关，称为约化矩阵元。如果 $\alpha=1$，则有</p>
+<script type="math/tex; mode=display">
+(\phi_\sigma^{(s)},J_\lambda^{(p)}\phi_\mu^{(q)})=\left\langle \begin{matrix}p&q\\\lambda&\mu\end{matrix}\right.\left|\begin{matrix}s\\ \sigma\end{matrix}\right\rangle^*f(s)</script><p>上式称为 Wigner-Eckart 定理。</p>
+<h2 id="实表示"><a href="#实表示" class="headerlink" title="实表示"></a>实表示</h2><p>设 $D (G)$ 是群 $G$ 的表示，容易看到其复共轭 $D (G)^<em>$ 也是群 G 的表示。如果 $D (G)$ 是不可约表示，则 $D (G)^</em>$ 亦为不可约表示。如果 $D (G)$ 与 $D (G)^*$ 等价，并进一步等价于一个实数表示，则 $D (G)$ 称为实表示。</p>
+<p><strong>定理 3.1</strong> 如果 $D (G)$ 和 $D (G)^*$ 是等价的不可约表示，即</p>
+<script type="math/tex; mode=display">
+\mathbf{D}(g)^*=\mathbf{C}\mathbf{D}(g)\mathbf{C}^{-1},\quad \forall g \in G</script><p>则有</p>
+<script type="math/tex; mode=display">
+\mathbf{C}^T=\pm \mathbf{C}</script><p>当 $\mathbf {C}^T= \mathbf {C}$ 时，$D (G)$ 是实表示；当 $\mathbf {C}^T=- \mathbf {C}$ 时， $D (G)$ 是非实表示。</p>
+<p><strong>定理 3.2</strong> 如果 $\chi (g)$ 是不可约表示 $ D (g) $ 的特征标，则</p>
+<script type="math/tex; mode=display">
+\sum_{g\in G}\chi(g^2)-\begin{cases}
+    n,&\text{当$\mathbf{D}(g)$是实表示时},\\
+    0,&\text{当$\mathbf{D}(g)$与$\mathbf{D}^*(g)$不等价时},\\
+    -n,&\text{当$\mathbf{D}(g)$与$\mathbf{D}^*(g)$等价，但不是实表示时}
+\end{cases}</script><h2 id="时间反演对称和附加简并"><a href="#时间反演对称和附加简并" class="headerlink" title="时间反演对称和附加简并"></a>时间反演对称和附加简并</h2><script type="math/tex; mode=display">
+T\psi(r,t)=\psi^*(r,-t)</script><p>时间反演算符 $T$ 是一种反线性算符，即具有性质</p>
+<script type="math/tex; mode=display">
+T(c_1\psi_1+c_2\psi_2)=c_1^*T\psi_1+c_2^*T\psi_2</script><p>如果 Hamilton 量具有时间反演对称，即 $HT=TH$，则 $\psi (r)$ 是一个物理状态时，$T\psi (r)=\psi^*(r)$ 也是一个物理状态。</p>
+<p>$T^2$ 是恒等算符。</p>
+<p>对于自旋为 1/2 的粒子，满足的是 Dirac 方程</p>
+<script type="math/tex; mode=display">
+\mathrm{i}\hbar\dfrac{\partial{}}{\partial{t}}\psi(r,t)=[-\mathrm{i}\hbar c\alpha \cdot\nabla + \beta m c^2 + V(r)]\psi(r,t)</script><p>其中 $\alpha=(\alpha_1,\alpha_2,\alpha_3)$，$\alpha_i,\beta$ 是 $4\times 4$ 矩阵，具体写为</p>
+<script type="math/tex; mode=display">
+\alpha_i=\left(\begin{matrix}0&\sigma_i\\\sigma_i&0\end{matrix}\right),\quad \beta=\left(\begin{matrix}I&0\\0&-I\end{matrix}\right)</script><p>$\sigma_i$ 是泡利矩阵。<br>$\psi (r,t)$ 为旋量。定态 Dirac 方程为</p>
+<script type="math/tex; mode=display">
+E\psi(r)=[-\mathrm{i}\hbar c\alpha \cdot\nabla + \beta m c^2 + V(r)]\psi(r)</script><p>为了构造时间反演算符，令</p>
+<script type="math/tex; mode=display">
+T=\mathrm{i}\left(\begin{matrix}\sigma_2&0\\0&\sigma_2\end{matrix}\right)\mathbf{C}</script><p>其中 C 是复共轭算符。注意到</p>
+<script type="math/tex; mode=display">
+\sigma_2^*=-\sigma_2</script><p>则有</p>
+<script type="math/tex; mode=display">
+ET\psi(r)=[-\mathrm{i}\hbar c\alpha \cdot\nabla + \beta m c^2 + V(r)]T\psi(r)</script><p>对 Dirac 方程，时间反演算符的平方不再是恒等算符，这与 Schrodinger 方程的情况不同。</p>
+<h1 id="点群和空间群"><a href="#点群和空间群" class="headerlink" title="点群和空间群"></a>点群和空间群</h1><p>点群实际上是三维正交群 $O (3)$ 的分立子群，空间群是三维 Euclid 群 $E_3$ 的分立子群。</p>
+<h2 id="Euclid-群"><a href="#Euclid-群" class="headerlink" title="Euclid 群"></a>Euclid 群</h2><p>三维空间是均匀各向同性的，因而孤立体系一定具有平移不变和转动不变，这类空间称为 Euclid 空间。</p>
+<p>n 维 Euclid 空间的对称群称为 n 维 Euclid 群 $E_n$，一般人们比较感兴趣的是三维 Euclid 群 $E_3$。</p>
+<p>Euclid 群 $E_3$ 有两种对称操作，沿某个方向 $\mathbf {a}$ 平移距离 $a$ 的操作 $T (\mathbf {a})$ 及绕某个轴 $n$ 旋转 $\theta$ 角的操作 $ R_n (\theta)$，这两种操作一般不可对易。</p>
+<p>考虑三维 Euclid 空间中的一般坐标变换</p>
+<script type="math/tex; mode=display">
+\mathbf{r}\rightarrow \mathbf{r}'=\mathbf{R}\mathbf{r}+\mathbf{a}</script><p>写成分量形式为</p>
+<script type="math/tex; mode=display">
+x_i'=\sum_{j=1}^3 R_{i}^jx_j+a_i=R_{i}^jx_j+a_i,\quad i=1,2,3</script><p>容易证明，所有保持空间两点距离不变的变换的全体构成群，即三维 Euclid 群 $E_3$。</p>
+<script type="math/tex; mode=display">
+|\mathbf{r}_1-\mathbf{r}_2|^2=\sum_{i=1}(x_{1i}-x_{2i})^2</script><p>一般坐标变换可以写成</p>
+<script type="math/tex; mode=display">
+\mathbf{r}'=g\mathbf{r}=\left\{\mathbf{R}|\mathbf{a}\right\}\mathbf{r}</script><p>连续变换给出了</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+    \mathbf{r}''&=\left\{\mathbf{R}_1|\mathbf{a}_1\right\}\left\{\mathbf{R}_2|\mathbf{a}_2\right\}\mathbf{r}\\
+    &=\left\{\mathbf{R}_1\mathbf{R}_2|\mathbf{R}_1\mathbf{a}_2+\mathbf{a}_1\right\}\mathbf{r}
+\end{align*}</script><p>单位元 $e=\left\{\mathbf {I}|\mathbf {0}\right\}$，$g=\left\{\mathbf {R}|\mathbf {a}\right\}$ 的逆元为</p>
+<script type="math/tex; mode=display">
+\left\{\mathbf{R}^{-1}|-\mathbf{R}^{-1}\mathbf{a}\right\}</script><h2 id="点群中的对称算符和对称元素"><a href="#点群中的对称算符和对称元素" class="headerlink" title="点群中的对称算符和对称元素"></a>点群中的对称算符和对称元素</h2><p>如果绕一个轴转动 $2\pi/n$ 角度后保持体系不变，则这个轴称之为 $n$ 度轴，记为 $C_n$ 。绕 $C_n$ 轴转动 $2\pi k/n (k=1,2,\cdots,n)$ 角的对称操作则记为 $c_n^k$ ，其中 $c_n^n=e$ 即为单位操作。反射面记为 $\sigma$ ，中心反演记为 $i$ 。</p>
+<p>如果反射面与 $C_n$ 轴垂直，则称之为 $\sigma_h$ 面。如果反射面包含 $C_n$ 轴，则称之为 $\sigma_v$ 面。如果反射面平分两个对称轴之间的夹角，则称之为 $\sigma_d$ 面。</p>
+<p>$n$ 度轴和与其垂直的反射面的组合称为 $n$ 度像转轴，记为 $S_n=C_n\sigma_h$，即转动和反演操作的组合。</p>
+<p>当 $c_2=c_2^1$ 时，有</p>
+<script type="math/tex; mode=display">
+c_2\sigma_h=\sigma_h c_2=i,\quad c_2 i = ic_2=\sigma_h,\quad \sigma_h i = i\sigma_h=c_2</script><p>现在假定有两个 2 度轴 $C_{2A},C_{2B}$ 相交于 $O$ 点，它们之间的夹角为 $\varphi$。另一个轴 $C$ 与平面 $C_{2A},\times C_{2B}$ 垂直，则可证明</p>
+<script type="math/tex; mode=display">
+c_{2B}c_{2A}=c(2\varphi)</script><h2 id="第一类点群"><a href="#第一类点群" class="headerlink" title="第一类点群"></a>第一类点群</h2><p>1. 单轴点群</p>
+<p>如果只有一个对称轴，则称之为单轴点群，记为 $C_n (n=1,2,\cdots)$。其中 $C_1=\left\{e\right\}$ 是只包含单位元的平凡群。$C_\infty$ 实际上是连续群 $SO (2)$，这将在第 6 章讨论。</p>
+<p>由于所有对称操作 $c_n^k (n=1,2,\cdots)$ 都是对易的，故 $C_n$ 群是 $n$ 阶的 Abel 群，具有 $n$ 个一维不可约表示。</p>
+<p>在分子物理中，对 $n$ 没有限制。如果讨论晶格点群，则 $n$ 只能取 $1,2,3,4,6$ 这几个值，不存在 $n=5 $ 和 $n&gt;7$ 的对称轴。</p>
+<p>2. 不包含或只包含一个高阶对称轴的点群</p>
+<p>$n\ge 3$ 的对称轴 $C_n$ 称为高阶轴。如果没有高阶轴，则所有对称轴都是 2 度轴。</p>
+<p>假设有两个 2 度轴，$C_2,C_2’$，相交于 $O$ 点。则由前面的讨论可知，$C_2,C_2’$ 必须互相垂直，否则的话将产生高阶轴。两个互相垂直的 2 度轴 $C_2,C_2’$ 将产生与之垂直的第三个 2 度轴 $C’’_2$。这样得到的是点群</p>
+<script type="math/tex; mode=display">
+D_2=\left\{e,c_2,c_2',c_2''\right\}</script><p>它是 4 阶的 Abel 群，有 4 个一维不可约表示。</p>
+<p>如果 $n$ 是偶数，则 $n$ 个 2 度轴将分为两个等价类。如果 $n$ 是奇数，则所有 2 度轴都是等价的。由于有 $C_2$ 轴与 $C_n$ 轴垂直，故对称操作 $c_n^k,c_n^{-k}$ 属于同一类。因此有</p>
+<script type="math/tex; mode=display">
+D_n=\begin{cases}
+    \left\{e,nc_2,(c_n^1,c_n^{n-1}),\cdots,(c_n^{(n-1)/2},c_n^{(n+1)/2})\right\},& n\text{为奇数}\\
+    \left\{e,\frac{n}{2}c_2,\frac{n}{2}c'_2,(c_n^1,c_n^{n-1}),\cdots,(c_n^{(n-1)/2},c_n^{(n+1)/2}),c_n^{n/2}\right\},& n\text{为偶数}
+\end{cases}</script><p>3. 包含多个高阶轴的点群多面体点群 $T,O,I$</p>
+<h2 id="第二类点群"><a href="#第二类点群" class="headerlink" title="第二类点群"></a>第二类点群</h2><p>第二类点群包括反演操作。最简单的包含反演操作的群为</p>
+<script type="math/tex; mode=display">
+C_s=\left\{e,\sigma\right\}</script><p>和</p>
+<script type="math/tex; mode=display">
+C_i=\left\{e,i\right\}</script><p>现在考虑具有一个 $C_n$ 对称轴的群。引入 $\sigma$ 反射面，由</p>
+<script type="math/tex; mode=display">
+C_n'=\sigma C_n \sigma</script><p>可以看到，一般情况下 $\sigma$ 面的反射将产生新的 $C_n$ 轴。除非 $\sigma$ 面与 $C_n$ 轴垂直或包含 $C_n$ 轴。因此，从 $C_n$ 群出发加入反射面，将得到 $C_{nh}$ 和 $C_{nv}$ 群。</p>
+<p>1.$C_{nh}$ 群，即引入 $\sigma=\sigma_h$ 面与 $C_n$ 轴垂直。由</p>
+<script type="math/tex; mode=display">
+\sigma_h c_n^k=c_n^k\sigma_h</script><p>可知，$C_{nh}$ 群是 2n 阶的 Abel 群。</p>
+<script type="math/tex; mode=display">
+C_{nh}=\left\{e,c_n^1,\cdots,c_n^{n-1},\sigma_h,c_n^1\sigma_h,\cdots,c_n^{n-1}\sigma_h\right\}=C_n\otimes C_s</script><p>2.$C_{nv}$ 群，即引入 $\sigma=\sigma_v$ 面使其包含 $C_n$ 轴。$c_n^k$ 的作用将产生其余 $n-1$ 个 $\sigma_v$ 面，如果作对应 $\sigma_v\rightarrow C_2$，则容易看到 $C_{nv}$ 群与 $D_n$ 群同构。</p>
+<p>3. 现在考虑 $S_n$ 群，这是包含像转轴 $S_n=C_n\sigma_h$ 的群。由于</p>
+<script type="math/tex; mode=display">
+s_1 = c_1\sigma_h=\sigma_h,\quad s_2=c_2\sigma_h=i</script><p>因此</p>
+<script type="math/tex; mode=display">
+S_1=\left\{e,\sigma_h\right\}=C_s,\quad S_2=\left\{e,i\right\}=C_i</script><p>$S_3$ 群实际上就是 $C_{3h}$ 群。下面只需要考虑 $S_4,S_6$。</p>
+<script type="math/tex; mode=display">
+S_4=\left\{e,s_4^1,s_4^3,c_2\right\},\quad S_6=\left\{e,s_6^1,s_6^5,c_3^1,c_3^2,i\right\}</script><p>如果从 $D_n$ 群出发加入反射面，将得到 $D_{nh}$ 和 $D_{nd}$ 群。</p>
+<p>4.$D_{nh}$ 群。</p>
+<p>5.$D_{nd}$ 群</p>
+<p>6.$T_d$ 群</p>
+<p>7.$T_h$ 群</p>
+<p>8.$O_h$ 群</p>
+<p>9.$I_h$ 群</p>
+<p>得到 11 种第一类晶格点群，得到 21 种第二类晶格点群。所以总共只有 32 种晶格点群。即</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+    &C_n[n=1,2,3,4,6], D_n[2,3,4,6], T, O\\
+    &C_i,C_s,C_{2h},C_{3h},C_{4h},C_{6h},C_{2v},C_{3v},C_{4v},C_{6v}\\
+    &S_{4},S_6,D_{2h},D_{3h},D_{4h},D_{6h},D_{2d},D_{3d},T_{d},T_{h},O_{h}
+\end{align*}</script><h2 id="Bravais-格子和空间群"><a href="#Bravais-格子和空间群" class="headerlink" title="Bravais 格子和空间群"></a>Bravais 格子和空间群</h2><script type="math/tex; mode=display">
+G=\left\{\left\{\alpha|\mathbf{r}_n+\tau_i\right\}\right\}</script><p>对称性要求将对转动操作 $\alpha$ 和平移操作 $T_n$ 的形式加上一定的限制。转动轴包括像转轴只能是 1,2,3,4,6 度轴。</p>
+<p>反过来，这些被限制的转动操作也将对平移群的形式加以限制，并且会进一步将格点的形式限制为 14 种，称之为 Bravais 格子，分属 7 大晶系。</p>
+<p>定义平移群的对称点群</p>
+<script type="math/tex; mode=display">
+P=\left\{\alpha|\alpha\mathbf{r}_n=\mathbf{r}_n'\in T\right\}</script><p>其中可能 $\left\{\alpha|\mathbf {0}\right\}\notin G$。显然 P 点群应当是 32 个点群之一。可以证明，P 点群有下列性质。</p>
+<ol>
+<li>$i\in P$，即 $P$ 一定包含中心反演</li>
+<li>如果 $C_n\in P (n&gt;2)$，则有 $\sigma_v\in P$。因此 $C_{nv} \sub P$，即 $C_{nv}$ 一定是 $P$ 的子群。</li>
+</ol>
+<p>因为 P 点群必须是 32 个点群之一，而上述性质则将其限制为下列 7 个点群之一：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+    &C_i,C_{2h}=C_2\otimes C_i,D_{2h}=D_2\otimes C_i,D_{3d}=D_3\otimes C_i\\
+    &D_{4h}=D_4\otimes C_i,D_{6h}=D_4\otimes C_i,O_h=O\otimes C_i
+\end{align*}</script><p>$C_i$ 三斜系；$C_{2h}$ 单斜系；$D_{2h}$ 正交系；$D_{4h}$ 四角系；$D_{3d}$ 三角系；$D_{6h}$ 六角系；$O_h$ 立方系。</p>
+<h2 id="平移群的不可约表示"><a href="#平移群的不可约表示" class="headerlink" title="平移群的不可约表示"></a>平移群的不可约表示</h2><h2 id="空间群的不可约表示"><a href="#空间群的不可约表示" class="headerlink" title="空间群的不可约表示"></a>空间群的不可约表示</h2><h1 id="置换群"><a href="#置换群" class="headerlink" title="置换群"></a>置换群</h1><h2 id="置换"><a href="#置换" class="headerlink" title="置换"></a>置换</h2><p>$n$ 个符号的一个置换定义为</p>
+<script type="math/tex; mode=display">
+p=\left(\begin{matrix}1&2&\cdots&n\\p_1&p_2&\cdots&p_n\end{matrix}\right)</script><p>即作置换</p>
+<script type="math/tex; mode=display">
+1\rightarrow p_1,2\rightarrow p_2,\cdots,n\rightarrow p_n</script><p>$n$ 个符号的所有可能置换构成群，称为置换群，记为 $S_n$，这是 $n!$ 阶的群。</p>
+<p>定义 $S$ 元群中的 $m$ 个符号的循环</p>
+<script type="math/tex; mode=display">
+(a_1a_2\cdots a_m)=\left(\begin{matrix}1&2&\cdots&p&a_1&a_2&\cdots&a_m&a_{m+1}\cdots&n\\
+1&2&\cdots&p&a_2&a_3&\cdots&a_1&a_{m+1}\cdots&n\end{matrix}\right)</script><p>即只有 $m$ 个符号参与置换，分别为</p>
+<script type="math/tex; mode=display">
+a_1\rightarrow a_2,a_2\rightarrow a_3,\cdots,a_{m-1}\rightarrow a_m,a_m\rightarrow a_1</script><p>其余符号不作置换，$m$ 称为循环长度。</p>
+<script type="math/tex; mode=display">
+\left(\begin{matrix}1234567\\1374562\end{matrix}\right)=(237),\left(\begin{matrix}1234567\\3715642\end{matrix}\right)=(13)(27)(456)</script><p>容易看到，有</p>
+<script type="math/tex; mode=display">
+(a_1a_2\cdots a_m)^m=e</script><p>当 $m=2$ 时，称为对换。</p>
+<p>独立循环是可以交换的，不是独立不可交换。容易证明，任何循环都可以进一步写成一些对换的乘积，如</p>
+<script type="math/tex; mode=display">
+(a_1a_2\cdots a_m)=(a_1a_m)(a_1a_{m-1})\cdots(a_1a_2)</script><p>对换具有性质</p>
+<script type="math/tex; mode=display">
+(a_ma_n)=(a_na_m),\quad (a_pa_ma_n)(a_na_m)=(a_pa_m)</script><p>两个有共同符号的循环之积可以合并为一个循环，即</p>
+<script type="math/tex; mode=display">
+(a_p\cdots a_ma_n)(a_na_r\cdots a_q)=(a_p\cdots a_ma_na_r\cdots a_q)</script><p>对换可以进一步写成</p>
+<script type="math/tex; mode=display">
+(mn)=(1m)(1n)(1m )</script><p>因此，$S_n$ 群中的任意置换都可以写成一些如 $(12),(13),\cdots,(1n)$ 这样的基本对换的乘积。对换 $(1k)(k=2,3,\cdots,n)$ 称为 $S_n$ 群的生成元。</p>
+<p>偶数个符号的置换一定分解为奇数个对换的乘积，而奇数个符号的置换一定分解成偶数个对换的乘积。偶数个符号的置换称为奇置换，而奇数个符号的置换则称为偶置换。</p>
+<p>$S_n$ 中的每一个置换或者是偶置换，或者是奇置换。如果 $A_n$ 是 $S_n$ 中所有偶置换的集合，则 $A_n$ 构成 $n!/2$ 阶的群，称为交错群，是 $S_n$ 群的不变子群。</p>
+<h2 id="共轭类，配分和-Young-图"><a href="#共轭类，配分和-Young-图" class="headerlink" title="共轭类，配分和 Young 图"></a>共轭类，配分和 Young 图</h2><p>每个置换都有确定的循环结构。比如，$S_8$ 群中的循环 $(125)(37)(48)(6)$ 具有结构 $(12^23)$，而循环 $(1245)(36)(78)$ 具有结构 $(2^24)$ 等。</p>
+<p><strong>定理 5.1</strong> 置换群中元素属于同一类的充要条件是具有相同的循环结构。</p>
+<p>令</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+    \nu_1+\nu_2+\cdots+\nu_n&=\lambda_1,\\
+    \nu_2+\cdots+\nu_n&=\lambda_2,\\
+    &\vdots\\
+    \nu_n&=\lambda_n
+\end{align*}</script><p>记</p>
+<script type="math/tex; mode=display">
+[\lambda]=[\lambda_1,\lambda_2,\cdots,\lambda_n]</script><p>有 $\sum_i \lambda_i=n$</p>
+<p>每个解 $[\lambda]$ 称为是 $n$ 的一个配分。因此，配分的数目也就是类的数目，因而也就是 $S_n$ 群的不等价不可约表示的数目。<br>现在用记号</p>
+<script type="math/tex; mode=display">
+(l)=(1^{\nu_1}2^{\nu_2}\cdots n^{\nu_n})</script><p>来标记类，而用记号</p>
+<script type="math/tex; mode=display">
+[\lambda]=[\lambda_1,\lambda_2,\cdots,\lambda_n]</script><p>来标记不可约表示。$n$ 的每个配分，即 $S_n$ 群的每个不可约表示可以用一个图来表示，称为 Young 图。</p>
+<p><a target="_blank" rel="noopener" href="https://imgloc.com/i/CIlIr"><img src="https://s1.328888.xyz/2022/08/29/CIlIr.png" alt="CIlIr.png"></a></p>
+<p><strong>定理 5.2</strong> $S_n$ 群中的类</p>
+<script type="math/tex; mode=display">
+(l)=(1^{\nu_1}2^{\nu_2}\cdots n^{\nu_n})</script><p>所包含的元素数可以用下列公式表示：</p>
+<script type="math/tex; mode=display">
+n_{(l)}=\dfrac{n!}{1^{\nu_1}2^{\nu_2}\cdots n^{\nu_n}\nu_1!\nu_2!\cdots\nu_n!}</script><h2 id="Frobenius-公式和图形方法"><a href="#Frobenius-公式和图形方法" class="headerlink" title="Frobenius 公式和图形方法"></a>Frobenius 公式和图形方法</h2><p><strong>Frobenius 公式</strong> 令</p>
+<script type="math/tex; mode=display">
+(l)=(1^{\nu_1}2^{\nu_2}\cdots n^{\nu_n})</script><p>为 $S_n$ 群的一个类，定义函数</p>
+<script type="math/tex; mode=display">
+f_{(l)}(z_1,z_2,\cdots,z_n)=\left(\sum_{i=1}^n{z_i}\right)^{\nu_1}\left(\sum_{i=1}^n{z_i^2}\right)^{\nu_2}\cdots\left(\sum_{i=1}^n{z_i^n}\right)^{\nu_n}</script><p>以及</p>
+<script type="math/tex; mode=display">
+D(z_1,z_2,\cdots,z_n)=-\left|\begin{matrix}1&z_1&z_1^2\cdots&z_1^{n-1}\\
+1&z_2&z_2^2\cdots&z_2^{n-1}\\
+&&\vdots\\
+1&z_n&z_n^2\cdots&z_1n^{n-1}\\\end{matrix}\right|=\prod_{i<j}(z_i-z_j)</script><p>其中 $z_1,z_2,\cdots,z_n$ 是 $n$ 个独立变量。函数</p>
+<script type="math/tex; mode=display">
+F_{(l)}(z_1,z_2,\cdots,z_n)=f_{(l)}(z_1,z_2,\cdots,z_n)D(z_1,z_2,\cdots,z_n)</script><p>称为 Frobenius 生成函数。它可以展开为</p>
+<script type="math/tex; mode=display">
+F_{(l)}(z_1,z_2,\cdots,z_n)=\sum_{[\lambda]}\chi_{(l)}^{[\lambda]}\sum_P(-)^PPz_1^{\lambda_1+n-1}z_2^{\lambda_2+n-2}\cdots z_n^{\lambda_n}</script><p>上式称为 Frobenius 公式</p>
+<p><strong>定义 5.1</strong> Young 盘是用数字 $1,2,\cdots,n$ 填充后的 Young 图，其中每个数字只使用一次。标准 Young 盘是按从左到右，从上到下数字增加的方式来填充的。关于标准 Young 盘有如下定理。</p>
+<p><strong>定理 5.3</strong> $S_n$ 群的不可约表示 $[\lambda]$ 的维数等于相应的标准 Young 盘的数目。</p>
+<h1 id="Lie-群"><a href="#Lie-群" class="headerlink" title="Lie 群"></a>Lie 群</h1><h2 id="Lie-群的定义"><a href="#Lie-群的定义" class="headerlink" title="Lie 群的定义"></a>Lie 群的定义</h2><p>Lie 群 G 具有三种数学结构：<br>1.G 是群，所以群的四个公理都必须满足，这是 Lie 群的代数性质；<br>2.G 是拓扑空间，因而具有连续性、连通性和紧致性等拓扑性质；<br>3.G 是解析流形，因此群的操作都是解析的。</p>
+<p>定义 6.1 设 G 是群，并存在映射</p>
+<script type="math/tex; mode=display">
+g:K\times K\times \cdots \times K=K^r \rightarrow G</script><p>使得</p>
+<script type="math/tex; mode=display">
+g(\alpha_1,\alpha_2,\cdots,\alpha_r)-g(\vec{\alpha})\in G</script><p>而 $K=\mathbb {R}/\mathbb {C}$<br>如果群的操作都是解析的，则 G 是一个 Lie 群。</p>
+<script type="math/tex; mode=display">
+g(\vec{\alpha})g(\vec{\beta})=g(\vec{\gamma})=g[f(\vec{\alpha},\vec{\beta})]</script><ul>
+<li>实一维空间的标度变换<br>$x’=\alpha x,\quad \alpha \not ={0}$</li>
+<li><p> 实一维空间非齐次线性变换<br>$x’=\alpha_1 x+\alpha_2,\quad \alpha_1 \not ={0}$<br>这个变换也可以写成 2×2 的矩阵</p>
+<script type="math/tex; mode=display">
+\left(\begin{matrix}x\\1\end{matrix}\right)\rightarrow\left(\begin{matrix}x'\\1\end{matrix}\right)=\left(\begin{matrix}\alpha_1&\alpha_2\\0&1\end{matrix}\right)\left(\begin{matrix}x\\1\end{matrix}\right)</script></li>
+<li><p>二维实空间一般线性变换群定义为</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+  x'_1=\alpha_{11}x_1+\alpha_{12}x_2,\\
+  x'_2=\alpha_{21}x_1+\alpha_{22}x_2,
+\end{cases}</script><script type="math/tex; mode=display">
+  \mathbf{X}'=\alpha\mathbf{X},\quad \det \alpha\not =0</script><p>  用 $GL (2,\mathbb {R})$ 表示，这是 4 参数 Lie 群。</p>
+</li>
+<li><p>类似地可定义 $n$ 维空间的一般线性变换群 $GL (n,\mathbb {R})$ 具有 $n^2$ 个实参，$GL (n,\mathbb {C})$ 具有 $2n^2$ 个实参。</p>
+</li>
+<li><p>$n$ 维空间的特殊线性变换群定义为</p>
+<script type="math/tex; mode=display">
+  \mathbf{X}'=\alpha\mathbf{X},\quad \det \alpha =1</script><p>行列式为 1 的变换全体构成群，记为 $SL (n,\mathbb {C})$ 或 $SL (n,\mathbb {R})$</p>
+</li>
+<li><p>幺正群。定义复空间的幺正变换</p>
+<script type="math/tex; mode=display">
+\mathbf{Z}'=\alpha\mathbf{Z},\quad \alpha^\dagger\alpha=\mathbf{I}</script><p>记为 $U (n,\mathbb {C})=U (n)$，有 $n^2$ 个独立参量，如果加上行列式为 1 的条件，则得到特殊幺正群 $SU (n)$，$\det \alpha=\mathrm {e}^{\mathrm {i}\delta}=1$。</p>
+</li>
+<li><p>定义 $n$ 维复空间中向量长度的平方为</p>
+<script type="math/tex; mode=display">
+|| z||^2=|z_1|^2+\cdots+|z_p|^2-|z_{p+1}|^2-\cdots+|z_{p+1}|^2=\sum_{i,j=1}^{n=p+q}{g_{ij}z_i^*z_j}</script><p>其中引进了度规张量 $g_{ij}$，其定义为</p>
+<script type="math/tex; mode=display">
+g_{ij}=\begin{cases}
+  1,&i=j=1,2,\cdots,p,\\
+  -1,&i=j=p+1,p+2,\cdots,p+q=n\\
+  0,&i\not ={j}
+\end{cases}</script><p>则所有保持 $||z||^2$ 不变的变换全体构成群，称为 $U (p,q)$ 群，和 $SU (p,q)$ 群。</p>
+</li>
+<li><p>实正交群 $O (n,\mathbb {R})=O (n)$。这是所有 $n\times n$ 实正交矩阵构成的群，即</p>
+<script type="math/tex; mode=display">
+\mathbf{X}'=\alpha\mathbf{X},\quad \alpha^T\alpha=\mathbf{I}</script><p>满足条件 $\det \alpha=1$ 的分支记为 $SO (n)$，与上类似，存在 $O (p,q)$ 群，Lorentz 群即为 $O (3,1)$ 群。</p>
+</li>
+<li><p>辛群 $Sp (2n,\mathbb {C})$。定义一个 $2n$ 维空间中的 $2n\times 2n$ 反对称非奇异度规张量</p>
+<script type="math/tex; mode=display">
+g^T=-g,\quad \det g=1</script><p>取</p>
+<script type="math/tex; mode=display">
+g=\left(\begin{matrix}0&\mathbf{I}_n\\-\mathbf{I}_n&0\end{matrix}\right)</script><p>其中 $\mathbf {I}_n$ 为 $n\times n$ 单位阵，则保持双线性形式</p>
+<script type="math/tex; mode=display">
+\sum_{i,j=1}^{2n}g_{ij}x^iy^j=\sum_{i,j=1}^{2n}g_{ij}x'^iy'^j</script><p>不变的变换全体构成群，称为辛群，记为 $Sp (2n,\mathbb {C})$。由</p>
+</li>
+</ul>
+<h2 id="SO-3-群和-SU-2-群"><a href="#SO-3-群和-SU-2-群" class="headerlink" title="SO(3) 群和 SU(2) 群"></a>SO (3) 群和 SU (2) 群</h2><p>首先考虑二维空间的转动群 SO (2)。</p>
+<script type="math/tex; mode=display">
+R(\phi)=\left(\begin{matrix}\cos\phi&-\sin\phi\\\sin\phi&\cos\phi\end{matrix}\right)</script><p>推广到三维空间 SO (3)。可以将一个转动按如下方式分解，先绕 $x$ 轴转动 $\alpha_1$ 角，然后绕 $y$ 轴转动 $\alpha_2$ 角，最后绕 $z$ 轴转动 $\alpha_3$ 角，$R (\alpha_1,\alpha_2,\alpha_3)$。还可以用 3 个 Euler 角 $\alpha,\beta,\gamma$ 来参数化 SO (3) 群，$R (\alpha,\beta,\gamma)$。一个转动也可以用转轴 $n$ 及绕转轴转过的角度 $\phi$ 来描写，而转轴 $n$ 可以用两个方向角如极角和方位角 $(\theta,\psi)$ 来确定，因此一个转动也可以用参数 $(\theta,\psi,\phi)$ 来描写，可以表示为 $\mathbf {R}_n (\phi)$</p>
+<p>下面来讨论 SU (2) 群。群元的一般形式可以写成</p>
+<script type="math/tex; mode=display">
+g=\left(\begin{matrix}a&b\\-b^*&a^*\end{matrix}\right),|a|^2+|b|^2=1</script><h2 id="无穷小生成元和无穷小算符"><a href="#无穷小生成元和无穷小算符" class="headerlink" title="无穷小生成元和无穷小算符"></a>无穷小生成元和无穷小算符</h2><p>设 G 是一个 r 参数 Lie 群，群元可以写成</p>
+<script type="math/tex; mode=display">
+g(\alpha_1,\alpha_2,\cdots,\alpha_r)=g(\alpha)\in G,\quad \alpha=(\alpha_1,\alpha_2,\cdots,\alpha_r)\in \mathbb{R}^r/\mathbb{C}^r</script><p>由于群元 $g (\alpha)$ 是 $\alpha$ 的解析函数，因而可以在 $\alpha=0$ 附近展开成 Taylor 级数（已经取参数使 $g (0)=e=\mathbf {I}$)，有</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+  g(\alpha)&=g(0)+\left.\sum_{i=1}^r\alpha_i\dfrac{\partial{g(\alpha)}}{\partial{\alpha_i}}\right|_{\alpha=0}+\left.\dfrac{1}{2!}\sum_{i,j=1}^r\alpha_i\alpha_j\dfrac{\partial^2{g(\alpha)}}{\partial{\alpha_i}\partial{\alpha_j}}\right|_{\alpha=0}+\cdots\\
+  &\mathbf{I}+\alpha_i\mathbf{X}^i+\dfrac{1}{2}\alpha_i\alpha_j\mathbf{X}^{ij}+\cdots
+\end{align*}</script><p>其中</p>
+<script type="math/tex; mode=display">
+\mathbf{X}^i=\left.\dfrac{\partial{g(\alpha)}}{\partial{\alpha_i}}\right|_{\alpha=0}</script><p>称为 Lie 群的无穷小生成元，这是一个非常重要的量。首先考虑 SO (2) 的情形。</p>
+<script type="math/tex; mode=display">
+\mathbf{X}=\left.\dfrac{\partial{g(\alpha)}}{\partial{\alpha_i}}\right|_{\alpha=0}=\left(\begin{matrix}-\sin\phi&-\cos\phi\\\cos\phi&-\sin\phi\end{matrix}\right)_{\phi=0}=\left(\begin{matrix}0&-1\\1&0\end{matrix}\right)</script><p>对于 SO (3) 群，可以将无穷小形式写成</p>
+<script type="math/tex; mode=display">
+g=\mathbf{I}+\varepsilon</script><p>由正交条件 $g^Tg=\mathbf {I}$，即得</p>
+<script type="math/tex; mode=display">
+\varepsilon^T=-\varepsilon</script><p>其中 $\varepsilon$ 是 $3\times 3$ 的 3 参数反对称矩阵，因而可以写成</p>
+<script type="math/tex; mode=display">
+\varepsilon=\left(\begin{matrix}0&-\alpha_3&\alpha_2\\\alpha_3&0&-\alpha_1\\-\alpha_2&\alpha_1&0\end{matrix}\right)=\alpha_1\mathbf{X}^1+\alpha_2\mathbf{X}^2+\alpha_3\mathbf{X}^3</script><p>由此可得无穷小生成元</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+  \mathbf{X}^1&=\left(\begin{matrix}0&0&0\\0&0&-1\\0&1&0\end{matrix}\right)\\
+  \mathbf{X}^2&=\left(\begin{matrix}0&0&1\\0&0&0\\-1&0&0\end{matrix}\right)\\
+  \mathbf{X}^3&=\left(\begin{matrix}0&-1&0\\1&0&0\\0&0&0\end{matrix}\right)
+\end{align*}</script><p>直接计算给出对易关系</p>
+<script type="math/tex; mode=display">
+[\mathbf{X}^i,\mathbf{X}^j]=\varepsilon_{ijk}\mathbf{X}^k</script><p>SO (3) 群的一般群元可以表示为</p>
+<script type="math/tex; mode=display">
+g(\alpha_1,\alpha_2,\alpha_3)=\exp(\alpha_1\mathbf{X}^1+\alpha_2\mathbf{X}^2+\alpha_3\mathbf{X}^3)</script><p>现在考虑特殊么正群 SU (2), 这也是 3 参数 Lie 群。如果令</p>
+<script type="math/tex; mode=display">
+g=\mathbf{I}+\varepsilon</script><p>由正交条件 $g^\dagger g=\mathbf {I}$，即得</p>
+<script type="math/tex; mode=display">
+\varepsilon^\dagger=-\varepsilon</script><p>因此可以写成</p>
+<script type="math/tex; mode=display">
+\varepsilon=\dfrac{1}{2}\left(\begin{matrix}\mathrm{i}\alpha_3&-\alpha_2+\mathrm{i}\alpha_1\\\alpha_2+\mathrm{i}\alpha_1&-\mathrm{i}\alpha_3\end{matrix}\right)=\alpha_1\mathbf{X}^1+\alpha_2\mathbf{X}^2+\alpha_3\mathbf{X}^3</script><p>由此可以得到无穷小生成元</p>
+<script type="math/tex; mode=display">
+\mathbf{X}^1=\dfrac{\mathrm{i}}{2}\sigma_1,\quad \mathbf{X}^2=-\dfrac{\mathrm{i}}{2}\sigma_2,\quad \mathbf{X}^3=\dfrac{\mathrm{i}}{2}\sigma_3</script><p>与 SO (3) 群的无穷小生成元对易关系比较，可以看到 SO (3) 群和 SU (2) 群的无穷小生成元满足完全相同的对易关系，于是 SO (3) 群和 SU (2) 群对应的 Lie 代数是同构的。</p>
+<p>现在考虑对空间坐标函数的变换。定义算符</p>
+<script type="math/tex; mode=display">
+\hat{\mathbf{X}}_\lambda=\sum_{i=1}^nU_{\lambda,i}(x)\dfrac{\partial{}}{\partial{x_i}}=U_{\lambda,i}(x)\dfrac{\partial{}}{\partial{x_i}}</script><p>其中</p>
+<script type="math/tex; mode=display">
+\mathrm{d}x_i=\varepsilon_{ij}x_j=\sum_{\lambda=1}^rU_{\lambda,i}(x)\delta\alpha_\lambda=U_{\lambda,i}(x)\delta\alpha_\lambda</script><p>对 SO (2) 群，有</p>
+<script type="math/tex; mode=display">
+\mathrm{d}\mathbf{r}=\mathbf{r}'-\mathbf{r}=\varepsilon\mathbf{r}\rightarrow\mathrm{d}x_i=\varepsilon_{ij}x_j</script><p>其中 $\varepsilon$ 是单参数 $2\times 2$ 反对称矩阵，具体表为</p>
+<script type="math/tex; mode=display">
+\varepsilon=\left(\begin{matrix}0&-\alpha\\\alpha&0\end{matrix}\right)</script><p>因此有</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+  \mathrm{d}x_1=-\alpha x_2=U_1(x)\alpha,\\\mathrm{d}x_2=\alpha x_1=U_2(x)\alpha
+\end{cases}</script><p>由此可得无穷小算符</p>
+<script type="math/tex; mode=display">
+\hat{\mathbf{X}}=U_i(x)\partial_i=x_1\dfrac{\partial{}}{\partial{x_2}}-x_2\dfrac{\partial{}}{\partial{x_1}}=\mathrm{i}\hat{L}_3</script><p>对 SO (3) 群</p>
+<script type="math/tex; mode=display">
+\hat{\mathbf{X}}_i=\mathrm{i}\hat{L}_i</script><h2 id="SU-2-群的不可约表示"><a href="#SU-2-群的不可约表示" class="headerlink" title="SU(2) 群的不可约表示"></a>SU (2) 群的不可约表示</h2><h2 id="群上的不变积分"><a href="#群上的不变积分" class="headerlink" title="群上的不变积分"></a>群上的不变积分</h2><h2 id="SU-2-群和-SO-3-群的同态映射"><a href="#SU-2-群和-SO-3-群的同态映射" class="headerlink" title="SU(2) 群和 SO(3) 群的同态映射"></a>SU (2) 群和 SO (3) 群的同态映射</h2><h2 id="角动量及其耦合"><a href="#角动量及其耦合" class="headerlink" title="角动量及其耦合"></a>角动量及其耦合</h2><p>可见量子力学</p>
+<h2 id="转动矩阵-D-l-alpha-beta-gamma-的一些性质"><a href="#转动矩阵-D-l-alpha-beta-gamma-的一些性质" class="headerlink" title="转动矩阵 $D^{(l)}(\alpha,\beta,\gamma)$ 的一些性质"></a>转动矩阵 $D^{(l)}(\alpha,\beta,\gamma)$ 的一些性质</h2><h2 id="Lorentz-群及其表示"><a href="#Lorentz-群及其表示" class="headerlink" title="Lorentz 群及其表示"></a>Lorentz 群及其表示</h2><p>四维时空的坐标向量可以表示为</p>
+<script type="math/tex; mode=display">
+x^\mu=(x^0,\mathbf{x})=(ct,\mathbf{x})</script><p>其中 $\mathbf {x}$ 是三维空间的位矢。四维向量的长度平方定义为</p>
+<script type="math/tex; mode=display">
+x^2=x^\mu x_\mu=g_{\mu\nu}x^\mu x^\nu=\mathbf{x}^2-c^2t^2</script><p>其中 $g_{\mu\nu}$ 为四维时空的度规张量，通常可取为</p>
+<script type="math/tex; mode=display">
+\mathbf{g}=\left(\begin{matrix}-1&&&\\&1&&\\&&1&\\&&&1\end{matrix}\right)</script><p>一般的 Lorentz 变换</p>
+<script type="math/tex; mode=display">
+x^\mu\rightarrow x'^\mu=\Lambda_\nu^\mu x^\nu</script><p>保持四维时空向量的长度平方不变，即</p>
+<script type="math/tex; mode=display">
+x^2=g_{\alpha\beta}x^\alpha x^\beta=x'^2=g_{\mu\nu}\Lambda^\mu_\alpha\Lambda^\nu_\beta x^\alpha x^\beta</script><p>由此即得</p>
+<script type="math/tex; mode=display">
+g_{\alpha\beta}=g_{\mu\nu}\Lambda^\mu_\alpha\Lambda^\nu_\beta</script><p>一般 Lorentz 群按 $\det \Lambda=\pm1$ 和 $\Lambda_0^0\ge 1$ 或 $\Lambda_0^0\le -1$ 分为 4 个不连通的分支。其中满足 $\det \Lambda=1,\Lambda\ge 1$ 的分支包含单位元，本身构成群，且是一般 Lorentz 群的不变子群，称为真 Lorentz 群，或固有 Lorentz 群，用 $L_+^\uparrow$ 表示。其余分支则包括了时间反演和空间反演，分别用 $L_+^{\downarrow},L_-^{\uparrow},L_-^{\downarrow}$ 表示。可以将一般 Lorentz 群按其不变子群分解为</p>
+<script type="math/tex; mode=display">
+L=L_+^\uparrow\oplus\mathbf{g}L_+^\uparrow\oplus(-\mathbf{g})L_+^\uparrow\oplus(-\mathbf{I})L_+^\uparrow</script><p>沿 $x_1$ 方向的特殊 Lorentz 变换则可以写成</p>
+<script type="math/tex; mode=display">
+\mathbf{L}(\xi_1)=\left(\begin{matrix}\gamma&\gamma\beta&&\\\gamma\beta&\gamma&&\\&&1&\\&&&1\end{matrix}\right)</script><p>一般的 Lorentz 变换可以表示为</p>
+<script type="math/tex; mode=display">
+\Lambda =\exp(\xi_i\mathbf{K}_i+\alpha_i\mathbf{J}_i)</script><h2 id="经典-Lie-群的张量表示"><a href="#经典-Lie-群的张量表示" class="headerlink" title="经典 Lie 群的张量表示"></a>经典 Lie 群的张量表示</h2><h1 id="Lie-代数"><a href="#Lie-代数" class="headerlink" title="Lie 代数"></a>Lie 代数</h1><p>每个 Lie 群都对应一个 Lie 代数，而 Lie 代数则决定了 Lie 群单位元附近的局部性质。因此，研究 Lie 代数的结构及其表示对研究 Lie 群的结构及表示是非常重要的。本章将对 Lie 代数及其表示理论作一个初步的讨论。</p>
+<h2 id="Lie-代数-1"><a href="#Lie-代数-1" class="headerlink" title="Lie 代数"></a>Lie 代数</h2><p><strong>定义 7.1</strong> 设 $\mathcal {L}$ 是域 $\mathbb {K}$(实数域 $\mathbb {R}$ 或复数域 $\mathbb {C}$) 上的有限维线性向量空间，定义映射</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+  \mathcal{L}\times\mathcal{L}\rightarrow \mathcal{L},\\
+  x,y\mapsto[x,y]
+\end{align*}</script><p>其中方括号运算 $[\cdot,\cdot]$ 称为 Lie 括号或 Lie 乘积，它满足下列条件：<br>1. 封闭性 在向量空间中取定一组基 $\left\{x_i,i=1,2,\cdots\right\}$ 对任意的，$x_i,x_j\in \mathcal {L}$，有</p>
+<script type="math/tex; mode=display">
+[x_i,x_j]=c_{ij}^kx_k\in \mathcal{L}</script><p>其中 $c_{ij}^k$ 称为结构常数：<br>2. 线性 对任意向量 $x,y_1,y_2\in\mathcal {L},\lambda_1,\lambda_2\in\mathbb {K}$，有</p>
+<script type="math/tex; mode=display">
+[x,\lambda_1y_1+\lambda_2y_2]=\lambda_1[x,y_1]+\lambda_2[x,y_2]</script><p>3. 反对称 对任意向量 $x,y\in \mathcal {L}$，有</p>
+<script type="math/tex; mode=display">
+[x,y]=-[y,x]</script><p>4.Jacobi 恒等式 对任意的 $x,y,z\in \mathcal {L}$，有</p>
+<script type="math/tex; mode=display">
+[x,[y,z]]+[y,[z,x]]+[z,[x,y]]=0</script><p>则称 $\mathcal {L}$ 是一个 Lie 代数。</p>
+<p><strong>定义 7.2</strong> 给定 Lie 代数 $\mathcal {L}$ 的子代数 $\mathcal {U}$，如果对任意的 $x\in\mathcal {U},y\in\mathcal {L}$，都满足</p>
+<script type="math/tex; mode=display">
+[x,y]\in\mathcal{U}</script><p>则称 $\mathcal {U}$ 为 $\mathcal {L}$ 的不变子代数。不变子代数也称理想。不变子代数对应 Lie 群的不变子群。</p>
+<p><strong>定义 7.3</strong> 设 Lie 代数 $\mathcal {L}$ 有两个子代数 $\mathcal {L}_1$ 和 $\mathcal {L}_2$，如果 $\mathcal {L}$ 对应的向量空间是 $\mathcal {L}_1$ 和 $\mathcal {L}_2$ 对应的向量空间的直和，且对任意的工 $x_1\in\mathcal {L}_1,x_2\in\mathcal {L}_2$，都有 $[x_1,x_2]=0$，则称 Lie 代数 $\mathcal {L}$ 是其子代数 $\mathcal {L}_1$ 和 $\mathcal {L}_2$ 的直和，记作</p>
+<script type="math/tex; mode=display">
+\mathcal{L}=\mathcal{L}_1\oplus \mathcal{L}_2</script><p><strong>定义 7.4</strong> 对于 Lie 代数 $\mathcal {L}$，如果除 $\mathcal {L}$ 本身和 $\left\{0\right\}$ 外没有非平凡的不变子代数，则称之为单 Lie 代数；如果除 $\left\{0\right\}$ 外没有 Abel 不变子代数，则称之为半单 Lie 代数。</p>
+<p><strong>定理 7.1</strong> 每个半单 Lie 代数或者是单的，或者是一些单 Lie 代数的直和。即当 $\mathcal {L}$ 是半单的时，存在一些单 Lie 代数 $\mathcal {L}_k (k=1,2,\cdots,m)$，使得</p>
+<script type="math/tex; mode=display">
+\mathcal{L}=\mathcal{L}_1\oplus\mathcal{L}_2\oplus\cdots\oplus\mathcal{L}_m</script><p>其中 $\mathcal {L}_k$ 都是 $\mathcal {L}$ 的不变子代数，并且这个分解是唯一的。</p>
+<p><strong>定义 7.5</strong> 设 $\mathcal {L}$ 和 $\mathcal {L}’$ 是两个 Lie 代数，如果存在映射 $f:\mathcal {L}\rightarrow \mathcal {L}’$，使得</p>
+<script type="math/tex; mode=display">
+f([x,y])=[f(x),f(y)]=[x',y']</script><p>则称 $f$ 为从 $\mathcal {L}$ 到 $\mathcal {L}’$ 的同态。如 $f$ 是一一对应的，则称为同构。</p>
+<p><strong>定义 7.6</strong> 对于任意的 $x\in \mathcal {L}$，如果存在一个 $d\times d$ 的矩阵 $\Gamma (x)$ 使得<br>1. 对任意的 $x,y\in \mathcal {L}$, 有</p>
+<script type="math/tex; mode=display">
+\Gamma(\lambda_1x+\lambda_2y)=\lambda_1\Gamma(x)+\lambda_2\Gamma(y)</script><p>2. 对任意的 $x,y\in \mathcal {L}$，有</p>
+<script type="math/tex; mode=display">
+\Gamma([x,y])=[\Gamma(x),\Gamma(y)]</script><p>则称这些矩阵构成 Lie 代数 $\mathcal {L}$ 的 $d$ 维表示。</p>
+<h2 id="伴随表示"><a href="#伴随表示" class="headerlink" title="伴随表示"></a>伴随表示</h2><p>定义</p>
+<script type="math/tex; mode=display">
+(\mathbf{ad}(\mathbf{x}_k))_{ij}=c_{kj}^i</script><p>将 Jacobi 恒等式改写为</p>
+<script type="math/tex; mode=display">
+c_{ij}^lc_{lk}^m+c_{jk}^lc_{li}^m+c_{ki}^lc_{lj}^m=0</script><p>得</p>
+<script type="math/tex; mode=display">
+(\mathbf{ad}(\mathbf{x}_k))_{ml}(\mathbf{ad}(\mathbf{x}_j))_{li}+(\mathbf{ad}([\mathbf{x}_j,\mathbf{x}_k]))_{mi}-(\mathbf{ad}(\mathbf{x}_j))_{ml}(\mathbf{ad}(\mathbf{x}_k))_{li}=0</script><p>写成矩阵形式，即得</p>
+<script type="math/tex; mode=display">
+\mathbf{ad}([\mathbf{x}_j,\mathbf{x}_k])=[\mathbf{ad}(\mathbf{x}_j),\mathbf{ad}(\mathbf{x}_k)]</script><p>因此，$\mathbf {ad}(\mathbf {x})$ 构成了 Lie 代数的一个表示，即伴随表示。</p>
+<h2 id="Killing-形式"><a href="#Killing-形式" class="headerlink" title="Killing 形式"></a>Killing 形式</h2><p><strong>定义 7.7</strong> Lie 代数 $\mathcal {L}$ 的任意两个元素 $x,y\in \mathcal {L}$ 的 Killing 形式 $g (x,y)$ 定义为</p>
+<script type="math/tex; mode=display">
+g(x,y)=\mathrm{Tr}[\mathbf{ad}(\mathbf{x})\mathbf{ad}(\mathbf{y})]</script><p>其中 $\mathbf {ad}(\mathbf {x})$ 为 $x\in\mathcal {L}$ 的伴随表示矩阵。取定一组基 $\left\{x_i\right\}$ 后，可得</p>
+<script type="math/tex; mode=display">
+g_{ij}=g(x_i,y_i)=c_{il}^kc_{jk}^l</script><p>$g_{ij}$ 称为 Lie 代数 $\mathcal {L}$ 的度规张量。</p>
+<p><strong>定理 7.2</strong> Lie 代数 $\mathcal {L}$ 是半单的，当且仅当其 Killing 形式为非退化的，即 $\det (g_{ij})\not = 0$。</p>
+<h2 id="单根与-Dynkin-图"><a href="#单根与-Dynkin-图" class="headerlink" title="单根与 Dynkin 图"></a>单根与 Dynkin 图</h2><p>为了给出半单 Lie 代数的标准形式，考虑本征方程</p>
+<script type="math/tex; mode=display">
+[\mathbf{A},\mathbf{X}]=\rho \mathbf{X},</script><p>其中 $\rho$ 为相应的本征值。而 $\mathbf {A},\mathbf {X}$ 都是 Lie 代数基 $\left\{x_i\right\}$ 的线性组合，具体表为</p>
+<script type="math/tex; mode=display">
+\mathbf{A}=a^ix_i,\quad \mathbf{X}=b^ix_i</script><p>它的久期方程为</p>
+<script type="math/tex; mode=display">
+\det ([a^ic_{ij}^k-\rho\delta_j^k])=0</script><p><strong>定理 7.3</strong> 如果 $\alpha$ 是半单 Lie 代数 $\mathcal {L}$ 的一个非零根，则 $-\alpha$ 也是 $\mathcal {L}$ 的根。</p>
+<p><strong>定理 7.4</strong> 如果 $\alpha,\beta$ 是半单 Lie 代数 $\mathcal {L}$ 的非零根，则 $\beta-2\alpha (\alpha,\beta)/(\alpha,\alpha)$ 也是根，并且 $2 (\alpha,\beta)/(\alpha,\alpha)$ 是整数。其中记号 $(\alpha,\beta)$ 表示根向量 $\alpha$ 和 $\beta$ 之间的标积，即</p>
+<script type="math/tex; mode=display">
+(\alpha,\beta)=\alpha\cdot \beta=\alpha^i\beta_i=g^{ij}\alpha_i\beta_j</script><p><strong>定理 7.5</strong> 如果 $\alpha,\beta$ 是两个单根，且 $\alpha\not= \beta$，则 $\alpha$ 和 $\beta$ 之差不是单根，并有</p>
+<script type="math/tex; mode=display">
+\dfrac{2(\alpha,\beta)}{(\alpha,\alpha)}=-q</script><p>其中 $q$ 是正整数。</p>
+<p><strong>定理 7.6</strong> 如果 $\alpha,\beta$ 是两个单根，则 $\alpha$ 和 $\beta$ 的夹角和长度平方之比为</p>
+<script type="math/tex; mode=display">
+k^2=\dfrac{(\beta,\beta)}{(\alpha,\alpha)}=\begin{cases}
+  3,&\theta=\dfrac{5\pi}{6},\\
+  2,&\theta=\dfrac{3\pi}{4},\\
+  1,&\theta=\dfrac{2\pi}{3},\\
+  any,&\theta=\dfrac{\pi}{2}
+\end{cases}</script><h2 id="权与-Lie-代数的表示"><a href="#权与-Lie-代数的表示" class="headerlink" title="权与 Lie 代数的表示"></a>权与 Lie 代数的表示</h2><p><strong>定理 7.7</strong> $\Lambda$ 是复半单 Lie 代数 $\tilde {\mathcal {L}}$ 不可约表示最高权的充要条件是</p>
+<script type="math/tex; mode=display">
+\lambda_a=\dfrac{2(\Lambda,\alpha)}{(\alpha,\alpha)}</script><p>为非负整数。其中 α 是单根。</p>
+<p><strong>定理 7.8</strong> 如果 $\Lambda$ 是半单复 Lie 代数 $\tilde {\mathcal {L}}$ 的不可约表示的最高权，则 $\Lambda$ 一定是单权，且不可约表示的其他权可以表示为</p>
+<script type="math/tex; mode=display">
+\Lambda'=\Lambda-\sum_{i=1}^lq_i\alpha_i</script><p>$q_i$ 为非负整数。</p>
+<h2 id="Casimir-算符"><a href="#Casimir-算符" class="headerlink" title="Casimir 算符"></a>Casimir 算符</h2><p>对半单 Lie 代数，有 $\det (g_{ij})\not =0$，因而度规张量 $g_{ij}$ 的逆满足</p>
+<script type="math/tex; mode=display">
+g_{ij}g^{jk}=\delta_i^k</script><p>定义 Casimir 算符</p>
+<script type="math/tex; mode=display">
+\mathbf{C}=g^{ij}\mathbf{X}_i\mathbf{X}_j</script><p>算符 $C$ 与所有无穷小算符 $X_i$ 对易</p>
+<p>对 Lie 代数 so (3), 可知</p>
+<script type="math/tex; mode=display">
+g^{ij}=-\dfrac{1}{2}\delta^{ij}</script><p>相应的 Casimir 算符为</p>
+<script type="math/tex; mode=display">
+\mathbf{C}=g^{ij}\mathbf{X}_i\mathbf{X}_j=-\dfrac{1}{2}(\mathbf{X}_1^2+\mathbf{X}_2^2+\mathbf{X}_3^2)=\dfrac{1}{2}L^2</script>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%9F%A9%E9%98%B5/" rel="tag"># 矩阵</a>
+              <a href="/tags/%E7%BE%A4%E8%AE%BA/" rel="tag"># 群论</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/5662e4d8.html" rel="prev" title="经典电动力学习题">
+      <i class="fa fa-chevron-left"></i> 经典电动力学习题
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2e18d59c.html" rel="next" title="淬火平均和退火平均的差异">
+      淬火平均和退火平均的差异 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="utterances-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BE%A4%E8%AE%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">群论的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%A4%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">群的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E7%BE%A4%EF%BC%8C%E9%87%8D%E6%8E%92%E5%AE%9A%E7%90%86"><span class="nav-number">1.2.</span> <span class="nav-text">子群，重排定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B1%E8%BD%AD%E7%B1%BB%EF%BC%8C%E9%99%AA%E9%9B%86"><span class="nav-number">1.3.</span> <span class="nav-text">共轭类，陪集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%A4%E7%9A%84%E5%90%8C%E6%80%81%E5%92%8C%E5%90%8C%E6%9E%84"><span class="nav-number">1.4.</span> <span class="nav-text">群的同态和同构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%A4%E7%9A%84%E7%9B%B4%E7%A7%AF"><span class="nav-number">1.5.</span> <span class="nav-text">群的直积</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BE%A4%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="nav-number">2.</span> <span class="nav-text">群的表示</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8%E7%A4%BA%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">2.1.</span> <span class="nav-text">表示的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%A4%E8%A1%A8%E7%A4%BA%E8%AE%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E5%AE%9A%E7%90%86"><span class="nav-number">2.2.</span> <span class="nav-text">群表示论的一些基本定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E7%A4%BA"><span class="nav-number">2.3.</span> <span class="nav-text">正则表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E8%A1%A8%E7%A4%BA"><span class="nav-number">2.4.</span> <span class="nav-text">基础表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B1%E5%AF%BC%E8%A1%A8%E7%A4%BA"><span class="nav-number">2.5.</span> <span class="nav-text">诱导表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E6%A0%87%E8%A1%A8"><span class="nav-number">2.6.</span> <span class="nav-text">特征标表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8%E7%A4%BA%E7%9A%84%E7%9B%B4%E7%A7%AF%EF%BC%8CC-G-%E7%B3%BB%E6%95%B0"><span class="nav-number">2.7.</span> <span class="nav-text">表示的直积，C-G 系数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%95%E5%BD%B1%E7%AE%97%E7%AC%A6"><span class="nav-number">2.8.</span> <span class="nav-text">投影算符</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BE%A4%E8%AE%BA%E4%B8%8E%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6"><span class="nav-number">3.</span> <span class="nav-text">群论与量子力学</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Schrodinger-%E6%96%B9%E7%A8%8B%E5%92%8C%E5%AF%B9%E7%A7%B0%E7%AE%97%E7%AC%A6"><span class="nav-number">3.1.</span> <span class="nav-text">Schrodinger 方程和对称算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E5%8F%AF%E7%BA%A6%E5%BC%A0%E9%87%8F%E7%AE%97%E7%AC%A6%E5%92%8C-Wigner-Eckart-%E5%AE%9A%E7%90%86"><span class="nav-number">3.2.</span> <span class="nav-text">不可约张量算符和 Wigner-Eckart 定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E8%A1%A8%E7%A4%BA"><span class="nav-number">3.3.</span> <span class="nav-text">实表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%8F%8D%E6%BC%94%E5%AF%B9%E7%A7%B0%E5%92%8C%E9%99%84%E5%8A%A0%E7%AE%80%E5%B9%B6"><span class="nav-number">3.4.</span> <span class="nav-text">时间反演对称和附加简并</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%82%B9%E7%BE%A4%E5%92%8C%E7%A9%BA%E9%97%B4%E7%BE%A4"><span class="nav-number">4.</span> <span class="nav-text">点群和空间群</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Euclid-%E7%BE%A4"><span class="nav-number">4.1.</span> <span class="nav-text">Euclid 群</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%82%B9%E7%BE%A4%E4%B8%AD%E7%9A%84%E5%AF%B9%E7%A7%B0%E7%AE%97%E7%AC%A6%E5%92%8C%E5%AF%B9%E7%A7%B0%E5%85%83%E7%B4%A0"><span class="nav-number">4.2.</span> <span class="nav-text">点群中的对称算符和对称元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%B1%BB%E7%82%B9%E7%BE%A4"><span class="nav-number">4.3.</span> <span class="nav-text">第一类点群</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%B1%BB%E7%82%B9%E7%BE%A4"><span class="nav-number">4.4.</span> <span class="nav-text">第二类点群</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bravais-%E6%A0%BC%E5%AD%90%E5%92%8C%E7%A9%BA%E9%97%B4%E7%BE%A4"><span class="nav-number">4.5.</span> <span class="nav-text">Bravais 格子和空间群</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E7%A7%BB%E7%BE%A4%E7%9A%84%E4%B8%8D%E5%8F%AF%E7%BA%A6%E8%A1%A8%E7%A4%BA"><span class="nav-number">4.6.</span> <span class="nav-text">平移群的不可约表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A9%BA%E9%97%B4%E7%BE%A4%E7%9A%84%E4%B8%8D%E5%8F%AF%E7%BA%A6%E8%A1%A8%E7%A4%BA"><span class="nav-number">4.7.</span> <span class="nav-text">空间群的不可约表示</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%AE%E6%8D%A2%E7%BE%A4"><span class="nav-number">5.</span> <span class="nav-text">置换群</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%AE%E6%8D%A2"><span class="nav-number">5.1.</span> <span class="nav-text">置换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B1%E8%BD%AD%E7%B1%BB%EF%BC%8C%E9%85%8D%E5%88%86%E5%92%8C-Young-%E5%9B%BE"><span class="nav-number">5.2.</span> <span class="nav-text">共轭类，配分和 Young 图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Frobenius-%E5%85%AC%E5%BC%8F%E5%92%8C%E5%9B%BE%E5%BD%A2%E6%96%B9%E6%B3%95"><span class="nav-number">5.3.</span> <span class="nav-text">Frobenius 公式和图形方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lie-%E7%BE%A4"><span class="nav-number">6.</span> <span class="nav-text">Lie 群</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Lie-%E7%BE%A4%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">6.1.</span> <span class="nav-text">Lie 群的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SO-3-%E7%BE%A4%E5%92%8C-SU-2-%E7%BE%A4"><span class="nav-number">6.2.</span> <span class="nav-text">SO (3) 群和 SU (2) 群</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A0%E7%A9%B7%E5%B0%8F%E7%94%9F%E6%88%90%E5%85%83%E5%92%8C%E6%97%A0%E7%A9%B7%E5%B0%8F%E7%AE%97%E7%AC%A6"><span class="nav-number">6.3.</span> <span class="nav-text">无穷小生成元和无穷小算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SU-2-%E7%BE%A4%E7%9A%84%E4%B8%8D%E5%8F%AF%E7%BA%A6%E8%A1%A8%E7%A4%BA"><span class="nav-number">6.4.</span> <span class="nav-text">SU (2) 群的不可约表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%A4%E4%B8%8A%E7%9A%84%E4%B8%8D%E5%8F%98%E7%A7%AF%E5%88%86"><span class="nav-number">6.5.</span> <span class="nav-text">群上的不变积分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SU-2-%E7%BE%A4%E5%92%8C-SO-3-%E7%BE%A4%E7%9A%84%E5%90%8C%E6%80%81%E6%98%A0%E5%B0%84"><span class="nav-number">6.6.</span> <span class="nav-text">SU (2) 群和 SO (3) 群的同态映射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%92%E5%8A%A8%E9%87%8F%E5%8F%8A%E5%85%B6%E8%80%A6%E5%90%88"><span class="nav-number">6.7.</span> <span class="nav-text">角动量及其耦合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AC%E5%8A%A8%E7%9F%A9%E9%98%B5-D-l-alpha-beta-gamma-%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%A7%E8%B4%A8"><span class="nav-number">6.8.</span> <span class="nav-text">转动矩阵 $D^{(l)}(\alpha,\beta,\gamma)$ 的一些性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lorentz-%E7%BE%A4%E5%8F%8A%E5%85%B6%E8%A1%A8%E7%A4%BA"><span class="nav-number">6.9.</span> <span class="nav-text">Lorentz 群及其表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%8F%E5%85%B8-Lie-%E7%BE%A4%E7%9A%84%E5%BC%A0%E9%87%8F%E8%A1%A8%E7%A4%BA"><span class="nav-number">6.10.</span> <span class="nav-text">经典 Lie 群的张量表示</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lie-%E4%BB%A3%E6%95%B0"><span class="nav-number">7.</span> <span class="nav-text">Lie 代数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Lie-%E4%BB%A3%E6%95%B0-1"><span class="nav-number">7.1.</span> <span class="nav-text">Lie 代数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%B4%E9%9A%8F%E8%A1%A8%E7%A4%BA"><span class="nav-number">7.2.</span> <span class="nav-text">伴随表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Killing-%E5%BD%A2%E5%BC%8F"><span class="nav-number">7.3.</span> <span class="nav-text">Killing 形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E6%A0%B9%E4%B8%8E-Dynkin-%E5%9B%BE"><span class="nav-number">7.4.</span> <span class="nav-text">单根与 Dynkin 图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%83%E4%B8%8E-Lie-%E4%BB%A3%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="nav-number">7.5.</span> <span class="nav-text">权与 Lie 代数的表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Casimir-%E7%AE%97%E7%AC%A6"><span class="nav-number">7.6.</span> <span class="nav-text">Casimir 算符</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="結凪"
+      src="/images/U_avatar.jpg">
+  <p class="site-author-name" itemprop="name">結凪</p>
+  <div class="site-description" itemprop="description">如果你想走到高处，就要使用自己的两条腿！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/UynajGI" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;UynajGI" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/suquan12148@outlook.com" title="E-Mail → suquan12148@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤 ICP 备 2022065599 号 </a>
+      <img src="/images/beian.png" style="display: inline-block;">
+  </div>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">結凪</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#utterances-container'), () => {
+    // if (typeof parcelRequire === 'function') { return; }
+    var js = document.createElement('script');
+    js.type = 'text/javascript';
+    js.src = 'https://utteranc.es/client.js';
+    js.async = true;
+    js.crossorigin = 'anonymous';
+    js.setAttribute('repo', 'UynajGI/UynajGI-s-Comment');
+    js.setAttribute('issue-term', 'pathname');
+    js.setAttribute('theme', 'github-light');
+    document.getElementById('utterances-container').appendChild(js);
+});
+</script>
+
+</body>
+</html>
