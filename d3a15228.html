@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="Kh9Fd2kRwyC6ZRSU1tw4Hk1EfDKThfkk5HneuPofGfU">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-material.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.uynajgi.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterance","storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="应用随机过程笔记，复习用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="应用随机过程">
+<meta property="og:url" content="https://www.uynajgi.com/d3a15228.html">
+<meta property="og:site_name" content="結凪·Cube">
+<meta property="og:description" content="应用随机过程笔记，复习用">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202307291945445.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202307291946805.png">
+<meta property="article:published_time" content="2023-07-30T13:10:06.000Z">
+<meta property="article:modified_time" content="2023-07-30T13:23:30.529Z">
+<meta property="article:author" content="結凪">
+<meta property="article:tag" content="记录">
+<meta property="article:tag" content="统计">
+<meta property="article:tag" content="随机过程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202307291945445.png">
+
+<link rel="canonical" href="https://www.uynajgi.com/d3a15228.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>应用随机过程 | 結凪·Cube</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<style type="text/css">
+.spoiler {
+  display: inline-flex;
+}
+p.spoiler {
+  display: flex;
+}
+.spoiler a {
+  pointer-events: none;
+}
+.spoiler-blur, .spoiler-blur > * {
+  transition: text-shadow .5s ease;
+}
+.spoiler .spoiler-blur, .spoiler .spoiler-blur > * {
+  color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  text-shadow: 0 0 10px grey;
+  cursor: pointer;
+}
+.spoiler .spoiler-blur:hover, .spoiler .spoiler-blur:hover > * {
+  text-shadow: 0 0 5px grey;
+}
+.spoiler-box, .spoiler-box > * {
+  transition: color .5s ease,
+  background-color .5s ease;
+}
+.spoiler .spoiler-box, .spoiler .spoiler-box > * {
+  color: black;
+  background-color: black;
+  text-shadow: none;
+}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">結凪·Cube</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Game of Life</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>文章</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>图书馆</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.uynajgi.com/d3a15228.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/U_avatar.jpg">
+      <meta itemprop="name" content="結凪">
+      <meta itemprop="description" content="如果你想走到高处，就要使用自己的两条腿！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="結凪·Cube">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          应用随机过程
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-07-30 21:10:06 / 修改时间：21:23:30" itemprop="dateCreated datePublished" datetime="2023-07-30T21:10:06+08:00">2023-07-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">随机过程</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">应用随机过程笔记，复习用</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div style="page-break-after: always;"></div>
+
+<h1 id="概率准备知识"><a href="#概率准备知识" class="headerlink" title="概率准备知识"></a>概率准备知识</h1><h2 id="条件期望的定义"><a href="#条件期望的定义" class="headerlink" title="条件期望的定义"></a>条件期望的定义</h2><h3 id="基于事件的条件概率"><a href="#基于事件的条件概率" class="headerlink" title="基于事件的条件概率"></a>基于事件的条件概率</h3><script type="math/tex; mode=display">P(A|B) = \frac{P(AB)}{P(B)}, P(B) > 0</script><p>如果 $A$ 与 $B$ 独立：</p>
+<script type="math/tex; mode=display">P(A|B) = P(A)</script><p>全概率公式：</p>
+<script type="math/tex; mode=display">P(A) = \sum_{i=1}^n P(A|B_i)P(B_i)</script><h3 id="随机变量的条件分布"><a href="#随机变量的条件分布" class="headerlink" title="随机变量的条件分布"></a>随机变量的条件分布</h3><p><strong>离散型随机变量</strong></p>
+<p>设 $(X, Y)$ 是二维离散型随机变量，其分布律为</p>
+<script type="math/tex; mode=display">P(X=x_i, Y=y_j) = p_{ij}, i, j = 1, 2, \cdots</script><p>$(X, Y)$ 关于 $X$ 和关于 $Y$ 的边缘分布律分别为：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+ &P(X=x_i) = \sum_{j=1}^\infty p_{ij}, i = 1, 2, \cdots \\
+ &P(Y=y_j) = \sum_{i=1}^\infty p_{ij}, j = 1, 2, \cdots
+\end{align*}</script><p>则称</p>
+<script type="math/tex; mode=display">P(Y=y_j|X=x_i) = \frac{P(X=x_i, Y=y_j)}{P(X=x_i)} = \frac{p_{ij}}{p_{i\cdot}}</script><p>为在 $X=x_i$ 条件下 $Y$ 的条件分布律，其中 $p_{i\cdot} = \sum_{j=1}^\infty p_{ij}$，反之，也可定义 $X$ 关于 $Y$ 的条件分布律。</p>
+<p><strong>连续型随机变量</strong></p>
+<p>设 $(X, Y)$ 是二维连续型随机变量，其概率密度为 $f (x, y)$，边缘概率密度分别为 $f_X (x), f_Y (y)$，若 $f_X (x) &gt; 0$，则称</p>
+<script type="math/tex; mode=display">f_{Y|X}(y|x) = \frac{f(x, y)}{f_X(x)}</script><p>为在 $X=x$ 条件下 $Y$ 的条件概率密度，反之，也可定义 $X$ 关于 $Y$ 的条件概率密度。</p>
+<h3 id="随机变量的条件分布的期望"><a href="#随机变量的条件分布的期望" class="headerlink" title="随机变量的条件分布的期望"></a>随机变量的条件分布的期望</h3><p><strong>离散型随机变量</strong></p>
+<p>随机变量 $X$ 在条件 $Y=y_j$ 下的条件期望为</p>
+<script type="math/tex; mode=display">E[X|Y=y_j] = \sum_{i=1}^\infty x_i P(X=x_i|Y=y_j) = \sum_{i=1}^\infty x_i \frac{P(X=x_i, Y=y_j)}{P(Y=y_j)}</script><p>是关于 $y_j$ 的函数</p>
+<p><strong>连续随机变量</strong></p>
+<p>随机变量 $X$ 在条件 $Y=y$ 下的条件期望为</p>
+<script type="math/tex; mode=display">E[X|Y=y] = \int_{-\infty}^\infty x f_{X|Y}(x|y)dx</script><p>是关于 $y$ 的函数</p>
+<h3 id="条件数学期望"><a href="#条件数学期望" class="headerlink" title="条件数学期望"></a>条件数学期望</h3><p>设 $X$ 和 $Y$ 是二维随机变量，若 $E [X|Y=y]$ 存在，则称</p>
+<script type="math/tex; mode=display">E[X|Y] = E[X|Y=y]</script><p>为随机变量 $X$ 关于 $Y$ 的<strong>条件数学期望</strong>。</p>
+<h2 id="条件期望的属性"><a href="#条件期望的属性" class="headerlink" title="条件期望的属性"></a>条件期望的属性</h2><ol>
+<li>$E (E [X|Y]) = E [X]$ （全期望公式）</li>
+<li>$X$ 与 $Y$ 独立，则 $E [X|Y] = E [X]$</li>
+<li>$E (aX+bY|Y) = aX + bY$，即 $c_i$ 有，$E (\sum_{i=1}^n {c_iX_i}|Y) = \sum_{i=1}^n {c_iE [X_i|Y]}$</li>
+<li> 对于任意实函数 $h (x)$，都有 $E [h (Y) E [X|Y]] = E [h (Y) X]$</li>
+<li> 对于任意实函数 $h (x)$，都有 $E [h (X) X|Y)] = h (Y) E [X|Y]$，特别地，$E (X|X)=X$\</li>
+<li>$Z$ 与 $(X,Y)$ 独立时，$E [ZX|Y]=E (Z) E [X|Y]$</li>
+</ol>
+<h2 id="条件期望的推广"><a href="#条件期望的推广" class="headerlink" title="条件期望的推广"></a>条件期望的推广</h2><h3 id="条件方差"><a href="#条件方差" class="headerlink" title="条件方差"></a>条件方差</h3><p>在给定 $Y=y$ 时，$X$ 的条件方差为</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+  Var(X|Y=y) &=E\left\{[X-E[X|Y=y]]^2|Y=y\right\}
+  \\&= E[X^2|Y=y] - [E[X|Y=y]]^2
+\end{align*}</script><h3 id="条件方差公式"><a href="#条件方差公式" class="headerlink" title="条件方差公式"></a>条件方差公式</h3><script type="math/tex; mode=display">
+Var(X) = E[Var(X|Y)] + Var(E[X|Y])</script><h3 id="关于随机向量的条件期望"><a href="#关于随机向量的条件期望" class="headerlink" title="关于随机向量的条件期望"></a>关于随机向量的条件期望</h3><ol>
+<li>$E[E[X|\vec{Y}]] = E[X]$</li>
+<li>$E[\vec{c}\cdot\vec{X}|\vec{Y}] = \vec{c}\cdot E[\vec{X}|\vec{Y}]$</li>
+<li>$X$ 与 $\vec {Y}$ 独立，则 $E [X|\vec {Y}] = E [X]$</li>
+<li> 对于任意实值 $n$ 元函数 $h (\vec {t})$，都有 $E [h (\vec {Y}) E [X|\vec {Y}]] = E [h (\vec {Y}) X]$</li>
+<li> 对于任意实值 $n$ 元函数 $h (\vec {t})$，都有 $E [h (\vec {X}) X|\vec {Y}] = h (\vec {Y}) E [X|\vec {Y}]$</li>
+</ol>
+<h2 id="特征函数的定义"><a href="#特征函数的定义" class="headerlink" title="特征函数的定义"></a>特征函数的定义</h2><p>$X$ 是 $(\Omega,F,P)$ 上的实值随机变量，对于 $\forall t\in \mathbb {R}$，$\phi_X (t)=E [e^{\mathrm {i} tX}]$ 称为 $X$ 的<strong>特征函数</strong></p>
+<h3 id="特征函数的性质"><a href="#特征函数的性质" class="headerlink" title="特征函数的性质"></a>特征函数的性质</h3><ol>
+<li>唯一性：$X$ 的特征函数唯一确定 $X$ 的分布</li>
+<li> $\forall t\in \mathbb{R},|\phi_X(t)\le 1$</li>
+<li>$\phi_X(-t)=\phi_{-X}(t)=\overline{\phi_X(t)}$</li>
+<li>$\phi_{aX+b}=\phi_X(at)\mathrm{e}^{\mathrm{i}bt}$</li>
+<li>$\phi_X (t)$ 一致连续</li>
+<li> $X_1,\cdots,X_n$ 互相独立，则 $\phi_{\sum_i^n {X_i}}(t)=\prod_{i=1}^n {\phi_{X_i}(t)}$</li>
+<li>$X_1,\cdots,X_n$ 独立同分布，则 $\phi_{\sum_i^n {X_i}}(t)=(\phi_{X_1}(t))^n$</li>
+<li> 若 $E [X^n]$ 存在，则 $k\le n$，<script type="math/tex; mode=display">
+\phi_X^{(k)}(0)=\mathrm{i}^kE[X^k]</script></li>
+<li>$\phi_X (t)$ 非负定。$\forall t_i\in\mathbb {R},\lambda_i\in\mathbb {C}$<script type="math/tex; mode=display">
+ \sum_{i,j=1}^n{\lambda_i\overline{\lambda_j}\phi_X(t_i-t_j)}\ge 0</script></li>
+</ol>
+<h2 id="常用分布的特征函数"><a href="#常用分布的特征函数" class="headerlink" title="常用分布的特征函数"></a>常用分布的特征函数</h2><ol>
+<li>两点分布 $X\sim B (1,p)$<script type="math/tex; mode=display">
+ \phi_X(t)=p_1e^{\mathrm{i}t}+p_2e^{-\mathrm{i}t}</script></li>
+<li>二项分布 $X\sim B (n,p)$<script type="math/tex; mode=display">
+ \phi_X(t)=(pe^{\mathrm{i}t}+q)^n</script></li>
+<li>泊松分布 $X\sim P (\lambda)$<script type="math/tex; mode=display">
+ \phi_X(t)=\mathrm{e}^{\lambda(e^{\mathrm{i}t}-1)}</script></li>
+<li>均匀分布 $X\sim U (a,b)$<script type="math/tex; mode=display">
+ \phi_X(t)=\frac{\mathrm{e}^{\mathrm{i}ta}-\mathrm{e}^{\mathrm{i}tb}}{\mathrm{i}t(b-a)}</script></li>
+<li>指数分布 $X\sim Exp (\lambda)$<script type="math/tex; mode=display">
+ \phi_X(t)=\frac{\lambda}{\lambda-\mathrm{i}t}</script></li>
+<li>正态分布 $X\sim N (\mu,\sigma^2)$<script type="math/tex; mode=display">
+ \phi_X(t)=\mathrm{e}^{-\frac{1}{2}\sigma^2t^2+\mathrm{i}\mu t}</script></li>
+</ol>
+<div style="page-break-after: always;"></div>
+
+<h1 id="随机过程基本概念"><a href="#随机过程基本概念" class="headerlink" title="随机过程基本概念"></a>随机过程基本概念</h1><h2 id="随机过程的定义"><a href="#随机过程的定义" class="headerlink" title="随机过程的定义"></a>随机过程的定义</h2><p><img src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202307291945445.png" alt="202307291945445"></p>
+<p>随机过程的样本轨道</p>
+<p><img src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202307291946805.png" alt="202307291946805"></p>
+<h2 id="随机过程的数字特征"><a href="#随机过程的数字特征" class="headerlink" title="随机过程的数字特征"></a>随机过程的数字特征</h2><blockquote>
+<p>期望、方差、协方差、自相关函数、特征函数</p>
+</blockquote>
+<p>$\mu_{X_t}=E [X_t]$ 称为随机过程 $X_t$ 的<strong>均值函数</strong>，$\mu_{X_t}$ 是 $t$ 的函数</p>
+<p>$\sigma_{X_t}^2=Var (X_t)$ 称为随机过程 $X_t$ 的<strong>方差函数</strong>，$\sigma_{X_t}^2$ 是 $t$ 的函数</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+  c_X(t_1,t_2)
+  &=Cov(X_{t_1},X_{t_2})\\
+  &=E[(X_{t_1}-\mu_{X_{t_1}})(X_{t_2}-\mu_{X_{t_2}})]\\
+  &=E[X_{t_1}X_{t_2}]-\mu_{X_{t_1}}\mu_{X_{t_2}}
+\end{align*}</script><p>称为随机过程 $X_t$ 的<strong>协方差函数</strong>，$c_X (t_1,t_2)$ 是 $t_1,t_2$ 的函数</p>
+<font size="3" color="red">当 $t_1=t_2$ 时，$c_X (t_1,t_2)=\sigma_{X_t}^2$</font>
+
+<p>$R_X (t_1,t_2)=E [X_{t_1} X_{t_2}]$ 称为随机过程 $X_t$ 的<strong>自相关函数</strong>，$R_X (t_1,t_2)$ 是 $t_1,t_2$ 的函数</p>
+<font size="3" color="red">当 $t_1=t_2$ 时，$R_X (t_1,t_2)=E [X_t^2]$</font>
+
+<h2 id="平稳随机过程"><a href="#平稳随机过程" class="headerlink" title="平稳随机过程"></a>平稳随机过程</h2><h3 id="严平稳随机过程"><a href="#严平稳随机过程" class="headerlink" title="严平稳随机过程"></a>严平稳随机过程</h3><p>实随机过程 $X_t$，若对于任意 $n\in\mathbb {N}$，$\forall t_1,\cdots,t_n\in T$，$X_{t_1},\cdots,X_{t_n}$ 的联合分布与 $X_{t_1+\tau},\cdots,X_{t_n+\tau}$ 的联合分布相同，$\forall \tau\in T$，则称 $X_t$ 是<strong>严平稳随机过程</strong></p>
+<font size="3" color="FF0000">严平稳过程的均值、矩和方差函数都是常数</font>
+
+<font size="3" color="FF0000">严平稳过程的自相关函数，协方差函数只与时间间隔 $\tau$ 有关，与起点无关</font>
+
+<h3 id="宽平稳随机过程"><a href="#宽平稳随机过程" class="headerlink" title="宽平稳随机过程"></a>宽平稳随机过程</h3><p>实随机过程 $X_t$ 满足：</p>
+<ol>
+<li>$E[X_t]=\mu$</li>
+<li>$R_X(t,t+\tau)=E(X_tX_{t+\tau})=R_X(\tau)$</li>
+<li>$E[X_t^2]&lt;\infty$</li>
+</ol>
+<p>则称 $X_t$ 是<strong>宽平稳随机过程</strong></p>
+<h2 id="宽平稳过程的性质"><a href="#宽平稳过程的性质" class="headerlink" title="宽平稳过程的性质"></a>宽平稳过程的性质</h2><blockquote>
+<p>自相关函数与自相关系数的区别</p>
+</blockquote>
+<p>设 $R_X (\tau)$ 为平稳过程 $X_t$ 的自相关函数，则有</p>
+<ol>
+<li>$R_X(0)\ge 0$</li>
+<li>$R_X (\tau)$ 是偶函数，即 $R_X (\tau)=R_X (-\tau)$</li>
+<li>$|R_X(\tau)|\le R_X(0),\ \forall \tau$</li>
+<li> 若 ${X_t}$ 满足 $X_t=X_{t+T}$，则称为周期平稳过程，此时 $R_X (\tau)$ 是周期函数，周期为 $T$</li>
+<li> 若 ${X_t}$ 含有一个周期分量，则自相关函数 $R_X (\tau)$ 也含有一个周期分量</li>
+<li> $R_X (\tau)$ 在 $\mathbb {R}$ 上连续的充要条件为 $R_X (\tau)$ 在 $\tau=0$ 处连续</li>
+<li>非负定性：对于任意 $n\in\mathbb {N}$，$\forall t_1,\cdots,t_n\in T$，$\forall a_1,\cdots,a_n\in\mathbb {R}$，有<script type="math/tex; mode=display">
+ \sum_{i=1}^n\sum_{j=1}^na_ia_jR_X(t_i,t_j)\ge 0</script></li>
+</ol>
+<p>自相关系数 $\rho_X (\tau)$</p>
+<script type="math/tex; mode=display">
+\rho_X(\tau)=\frac{C_X(\tau)}{C_X(0)}=\dfrac{R_X(\tau)-\mu^2}{\sigma^2}</script><p>称为宽平稳过程 $X_t$ 的<strong>自相关系数</strong></p>
+<ol>
+<li>$|\rho_X(\tau)|\le 1$</li>
+<li>$\rho_X(0)=1$</li>
+</ol>
+<h2 id="几个特殊的随机过程"><a href="#几个特殊的随机过程" class="headerlink" title="几个特殊的随机过程"></a>几个特殊的随机过程</h2><h3 id="独立增量过程"><a href="#独立增量过程" class="headerlink" title="独立增量过程"></a>独立增量过程</h3><p>设 $X_t$ 是随机过程，若对于任意 $t_1&lt;t_2&lt;\cdots&lt;t_n$，$X_{t_1},X_{t_2}-X_{t_1},\cdots,X_{t_n}-X_{t_{n-1}}$ 相互独立，则称 $X_t$ 是<strong>独立增量过程</strong></p>
+<h3 id="平稳增量过程"><a href="#平稳增量过程" class="headerlink" title="平稳增量过程"></a>平稳增量过程</h3><p>设 $X_t$ 是随机过程，若对于任意 $t_1&lt;t_2&lt;\cdots&lt;t_n$，$X_{t_2}-X_{t_1},\cdots,X_{t_n}-X_{t_{n-1}}$ 的联合分布与 $X_{t_2+\tau}-X_{t_1+\tau},\cdots,X_{t_n+\tau}-X_{t_{n-1}+\tau}$ 的联合分布相同，$\forall \tau\in T$，则称 $X_t$ 是<strong>平稳增量过程</strong></p>
+<ol>
+<li>时间离散的独立增量过程，就是独立随机变量的部分和</li>
+<li>时间离散的独立平稳增量过程，就是独立同分布随机变量的部分和。</li>
+<li>独立增量过程 ${X_t}$ 为平稳过程的充要条件是特征函数具有可乘性，即<script type="math/tex; mode=display">
+\phi(t+s,\theta)=\phi(t,\theta)\phi(s,\theta)</script></li>
+</ol>
+<div style="page-break-after: always;"></div>
+
+<h1 id="Poisson-过程"><a href="#Poisson-过程" class="headerlink" title="Poisson 过程"></a>Poisson 过程</h1><h2 id="Poisson-过程的定义-I——基于分布的直接定义"><a href="#Poisson-过程的定义-I——基于分布的直接定义" class="headerlink" title="Poisson 过程的定义 I——基于分布的直接定义"></a>Poisson 过程的定义 I—— 基于分布的直接定义</h2><h3 id="计数过程"><a href="#计数过程" class="headerlink" title="计数过程"></a>计数过程</h3><p>如果用随机变量 $N (t)$ 表示在时间区间 $(0,t]$ 内发生的事件个数，那么 $N (t)$ 就是一个随机变量，称为<strong>计数过程</strong></p>
+<ol>
+<li>$N_t\ge 0$</li>
+<li>$N_t\in \mathbb{N}$</li>
+<li>$N_t$ 是非降的，即 $N_t\le N_s,\ \forall t\le s$</li>
+<li>$N_{t,s}=N_t- N_s,\ \forall t\le s$ 等于在时间区间 $(s,t]$ 内发生的事件个数，称为<strong>计数过程的增量</strong></li>
+</ol>
+<p>说明</p>
+<ol>
+<li>若 ${N_t}$ 在不相交的时间区间上是独立的，则称 ${N_t}$ 有<strong>独立增量</strong></li>
+<li>若在任一时间区间中发生的事件数的分布只依赖于时间区间长度，而与时间区间的位置无关，则称 ${N_t}$ 有<strong>平稳增量</strong></li>
+</ol>
+<h3 id="Poisson-过程的定义-I"><a href="#Poisson-过程的定义-I" class="headerlink" title="Poisson 过程的定义 I"></a>Poisson 过程的定义 I</h3><p>设 ${N_t}$ 是计数过程，若满足</p>
+<ol>
+<li>$N_0=0$</li>
+<li>${N_t}$ 有独立增量</li>
+<li> $\forall s,t\ge0,N_{t+s}-N_s\sim P (\lambda t)$ 具有参数 $\lambda t (\lambda&gt;0)$ 的 Poisson 分布，即<script type="math/tex; mode=display">
+ P\{N_{t+s}-N_s=k\}=\frac{(\lambda t)^k}{k!}\mathrm{e}^{-\lambda t},\ k=0,1,2,\cdots</script> 则称 ${N_t}$ 是 <strong>Poisson 过程</strong>，$\lambda$ 称为<strong>强度</strong>或<strong>速率</strong></li>
+</ol>
+<p>Poisson 过程 $N_t$ 具有均值 $E [N_t]=\lambda t$，于是 $\lambda=\dfrac {EN_t}{t}$ 是单位时间内事件发生的平均次数。</p>
+<ol>
+<li>均值：$E [N_t]=\lambda t$<br>方差：$Var [N_t]=\lambda t$<br>二阶矩：$E [N_t^2]=\lambda t+\lambda^2t^2$</li>
+<li> 自相关函数：$R_X (t_1,t_2)=\lambda \min\left\{t_1,t_2\right\}+\lambda^2t_1t_2$</li>
+<li> 协方差函数：$C_X (t_1,t_2)=\lambda \min\left\{t_1,t_2\right\}$</li>
+<li> 特征函数：$\phi_{N_t}(u)=\exp\left\{\lambda t\left (\mathrm {e}^{iu}-1\right)\right\}$</li>
+</ol>
+<h2 id="Poisson-过程的定义-II——基于非宇宙大爆炸模型的间接定义"><a href="#Poisson-过程的定义-II——基于非宇宙大爆炸模型的间接定义" class="headerlink" title="Poisson 过程的定义 II——基于非宇宙大爆炸模型的间接定义"></a>Poisson 过程的定义 II—— 基于非宇宙大爆炸模型的间接定义</h2><p>设 ${N_t}$ 是计数过程，若满足</p>
+<ol>
+<li>$N_0=0$</li>
+<li>${N_t}$ 是平稳独立增量过程</li>
+<li> $\forall h&gt;0,P\{N_h=1\}=\lambda h+o(h)$</li>
+<li>$\forall h&gt;0,P\{N_h\ge 2\}=o(h)$</li>
+</ol>
+<p>则称 ${N_t}$ 是具有强度 $\lambda$ 的齐次 Poisson 过程</p>
+<h2 id="Poisson-过程定义-I-和定义-II-的等价性"><a href="#Poisson-过程定义-I-和定义-II-的等价性" class="headerlink" title="Poisson 过程定义 I 和定义 II 的等价性"></a>Poisson 过程定义 I 和定义 II 的等价性</h2><p>证明略</p>
+<h2 id="等待时间与到达间隔的定义及分布"><a href="#等待时间与到达间隔的定义及分布" class="headerlink" title="等待时间与到达间隔的定义及分布"></a>等待时间与到达间隔的定义及分布</h2><p>等待时间序列</p>
+<p>用 $S_n$ 表示第 $n$ 个事件发生的时刻，称 ${S_n,n\ge0}$ 为<strong>等待时间序列</strong>，则 $0=S_0&lt;S_1&lt;S_2&lt;\cdots\to \infty$</p>
+<p>到达间隔序列</p>
+<p>令 $X_n=S_n-S_{n-1},n\ge1$，则 $X_n$ 表示第 $(n-1)$ 个事件到第 $n$ 个事件之间的间隔，称 ${X_n,n\ge1}$ 为<strong>到达间隔序列</strong></p>
+<p>转换关系：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+  \left\{N_t\ge n\right\}= & \{S_n\le t\}\\
+  \left\{N_t=n\right\}= & \left\{S_n\le t< S_{n+1}\right\}
+\end{align*}</script><p><strong>命题 3.1</strong> 强度为 $\lambda$ 的齐次 Poisson 过程的到达间隔序列是独立同分布的，且都服从参数为 $\lambda$ 的指数分布，均值为 $\dfrac {1}{\lambda}$</p>
+<p><strong>命题 3.2</strong> 强度为 $\lambda$ 的齐次 Poisson 过程的到达时刻序列服从参数为 $n,\lambda$ 的 $\Gamma$ 分布，即 $\text {Erlang}(n,\lambda)$，密度函数为</p>
+<script type="math/tex; mode=display">
+f(t)=\lambda \mathrm{e}^{-\lambda t}\dfrac{(\lambda t)^{n-1}}{(n-1)!},t\ge 0</script><h2 id="齐次-Poisson-过程的判定"><a href="#齐次-Poisson-过程的判定" class="headerlink" title="齐次 Poisson 过程的判定"></a>齐次 Poisson 过程的判定</h2><p><strong>命题 3.3</strong> 设 ${N_t}$ 是强度为 $\lambda$ 的齐次 Poisson 过程，则</p>
+<ol>
+<li>时间间隔序列 $\left\{X_n,n=1,2,\cdots\right\}$ 且服从 $\text {Exp}(\lambda)$</li>
+<li> 到达时刻序列 $\left\{S_n,n=0,1,2,\cdots\right\}$ 且服从 $\text {Erlang}(n,\lambda)$</li>
+</ol>
+<h2 id="到达时间序列的条件分布"><a href="#到达时间序列的条件分布" class="headerlink" title="到达时间序列的条件分布"></a>到达时间序列的条件分布</h2><p><strong>命题 3.4</strong> 强度为 $\lambda$ 的齐次 Poisson 过程的第一个到达时刻 $S_1$ 在 $N_t=1$ 的条件下服从区间 $[0,t]$ 上的均匀分布，即 $(S_1|N_t=1)\sim U [0,t]$</p>
+<p><strong>命题 3.5</strong> 设 ${N_t}$ 为齐次 Poisson 过程，则 $(S_k|N_t=n)$ 服从 Beta 分布，密度函数为</p>
+<script type="math/tex; mode=display">
+f_{S_k|N_t}(s|n)=\dfrac{n!}{(k-1)!(n-k)!}\dfrac{s^{k-1}}{t^k}\left(1-\dfrac{s}{t}\right)^{n-k}</script><h2 id="到达时间序列的联合条件分布"><a href="#到达时间序列的联合条件分布" class="headerlink" title="到达时间序列的联合条件分布"></a>到达时间序列的联合条件分布</h2><p><strong>命题 3.6</strong> 强度为 $\lambda$ 的齐次 Poisson 过程，在已知 $N_t=n$ 的条件下，$n$ 个到达时刻 $S_1,S_2,\cdots,S_n$ 的联合条件分布为</p>
+<script type="math/tex; mode=display">
+f(t_1,t_2,\cdots,t_n|n)=\begin{cases}
+  \dfrac{n!}{t^n}, & 0<t_1<t_2<\cdots<t_n<t\\
+  0, & \text{其他}
+\end{cases}</script><h2 id="齐次-Poisson-过程的判定-2"><a href="#齐次-Poisson-过程的判定-2" class="headerlink" title="齐次 Poisson 过程的判定 2"></a>齐次 Poisson 过程的判定 2</h2><p><strong>命题 3.7</strong> 设 ${N_t}$ 是计数过程，若 $\forall 0&lt;s\le t$，有 $P (S_1\le s|N_t=1)=\dfrac {s}{t}$，则 $\left\{N_t\right\}$ 为齐次 Poisson 过程</p>
+<h2 id="齐次-Poisson-过程与均匀分布、二项分布、贝塔分布的关系"><a href="#齐次-Poisson-过程与均匀分布、二项分布、贝塔分布的关系" class="headerlink" title="齐次 Poisson 过程与均匀分布、二项分布、贝塔分布的关系"></a>齐次 Poisson 过程与均匀分布、二项分布、贝塔分布的关系</h2><p>与均匀分布的关系</p>
+<script type="math/tex; mode=display">
+(S_1|N_t=1)\sim U[0,t],\\
+(S_1,\cdots,S_n|N_t=n)\sim U^{(n)}[0,t]</script><p>与二项分布的关系</p>
+<script type="math/tex; mode=display">
+(N_s|N_t=n)\sim Bi(n,\dfrac{s}{t})</script><p>与贝塔分布的关系</p>
+<script type="math/tex; mode=display">
+(S_k|N_t=n)\sim Beta(\dfrac{s}{t};k,n-k+1)</script><h2 id="齐次-Poisson-过程的分解"><a href="#齐次-Poisson-过程的分解" class="headerlink" title="齐次 Poisson 过程的分解"></a><span id="3.10">齐次 Poisson 过程的分解</span></h2><p><strong>命题 3.8</strong> $N_i (t)$ 表示到到达时刻 $t$ 发生的 $i$ 型事件数，分别服从均值为 $\lambda tp$ 和 $\lambda t (1-p)$ 的 Poisson 分布，其中 $p=\dfrac {1}{t}\int_0^t {P (s)}\mathrm {d} s$</p>
+<h2 id="非时齐-Poisson-过程"><a href="#非时齐-Poisson-过程" class="headerlink" title="非时齐 Poisson 过程"></a>非时齐 Poisson 过程</h2><p>设 ${N_t}$ 是计数过程，若满足</p>
+<ol>
+<li>$N_0=0$</li>
+<li>${N_t}$ 是平稳独立增量过程</li>
+<li> $\forall h&gt;0,P\{N_h=1\}=\lambda(t) h+o(h)$</li>
+<li>$\forall h&gt;0,P\{N_h\ge 2\}=o(h)$</li>
+</ol>
+<p>则称 ${N_t}$ 是具有强度函数 $\lambda (t)$ 的非时期 Poisson 过程</p>
+<p><strong>命题 3.9</strong> 设 ${N_t}$ 是具有强度函数 $\lambda (t)$ 的非时齐 Poisson 过程，令 $m (t)=\int_0^t {\lambda (s)\mathrm {d} s}$，则有 $\forall k= 0,1,2,\cdots$，</p>
+<script type="math/tex; mode=display">
+P(N_{t+s}-N_t=k)=\dfrac{[m(t+s)-m(t)]^k}{k!}\mathrm{e}^{-[m(t+s)-m(t)]}</script><p>即 $N_{t+s}-N_t\sim Poisson ([m (t+s)-m (t)])$</p>
+<p>说明：</p>
+<ol>
+<li>$m (t)$ 称为非时齐 Poisson 过程的累积强度函数</li>
+<li>非齐次 Poisson 过程不再要求平稳增量性</li>
+<li>若 $\lambda (t)$ 有界，可以将非时齐 Poisson 过程看作一个强度为 $\lambda$ 的齐次 Poisson 过程的随机采样</li>
+</ol>
+<p>应用：</p>
+<p><a href="#M-G-infty">$M/G/\infty$ Queue</a></p>
+<h2 id="复合-Poisson-过程"><a href="#复合-Poisson-过程" class="headerlink" title="复合 Poisson 过程"></a>复合 Poisson 过程</h2><p>设 ${N_t}$ 是齐次 Poisson 过程，$\xi_n$ 是独立同分布的随机变量，且与 ${N_t}$ 独立，令</p>
+<script type="math/tex; mode=display">
+Y_t=\sum_{i=1}^{N_t}{\xi_i}</script><p>则称 ${Y_t}$ 为复合 Poisson 过程</p>
+<ol>
+<li>$\left\{Y_t\right\}$ 的特征函数为<script type="math/tex; mode=display">
+\phi_{Y_t}(u)=\exp\left\{\lambda t\left[\varphi_{\xi}(u)-1\right]\right\}</script>其中 $\varphi_{\xi}(u)$ 为 $\xi$ 的特征函数</li>
+<li> $\left\{Y_t\right\}$ 是独立平稳增量过程</li>
+<li>若 $E [\xi^2]&lt;\infty$，则有<script type="math/tex; mode=display">
+E[Y_t]=\lambda tE[\xi],\ \text{Var}(Y_t)=\lambda tE[\xi^2]</script></li>
+</ol>
+<h2 id="年龄和剩余寿命"><a href="#年龄和剩余寿命" class="headerlink" title="年龄和剩余寿命"></a>年龄和剩余寿命</h2><p>令 $A_t=t-S_{N (t)}$ 表示在时刻 $t$ 的年龄，$Y_t=S_{N (t)+1}-1$ 表示在时刻 $t$ 的剩余寿命，称 $B (t)=A_t+Y_t$ 为总寿命</p>
+<ol>
+<li>剩余寿命 $Y_t$ 的分布与 $X_n$ 的分布相同，即<script type="math/tex; mode=display">
+ P(Y_t\le x)=1-\mathrm{e}^{-\lambda x},\ x\ge 0</script></li>
+<li><p>年龄 $A_t$ 是截尾的指数分布，即</p>
+<script type="math/tex; mode=display">
+P(A_t\le x)=\begin{cases}
+  1-\mathrm{e}^{-\lambda x}, & 0\le x <t\\
+  1, & x\ge t
+\end{cases}</script><div style="page-break-after: always;"></div>
+
+</li>
+</ol>
+<p>3.</p>
+<h1 id="更新过程"><a href="#更新过程" class="headerlink" title="更新过程"></a>更新过程</h1><h2 id="更新过程的定义"><a href="#更新过程的定义" class="headerlink" title="更新过程的定义"></a>更新过程的定义</h2><p>如果一个计数过程，事件发生的时间间隔 $X_n$ 仍具有独立性和同分布性，但分布不是指数分布，而是一般的分布 F (x)，则称该过程为更新过程</p>
+<p>更新过程的分布</p>
+<ol>
+<li>$\left\{N_t\ge n\right\}=\left\{S_n\le t\right\}$</li>
+<li>$\left\{N_t=n\right\}=\left\{S_n\le t&lt;S_{n+1}\right\}=\left\{S_n\le t\right\}-\left\{S_{n+1}\le t\right\}$</li>
+<li> 记 $S_n$ 的分布函数为 $F_n (x)$，则 $F_n (x)$ 是 $F (x)$ 的 $n$ 重卷积</li>
+<li> $P(N_t=n)=P\left\{S_n\le t\right\}-P\left\{S_{n+1}\le t\right\}=F_n(t)-F_{n+1}(t)$</li>
+</ol>
+<p>更新函数及性质</p>
+<ol>
+<li>记更新函数的均值函数为 $m (t)=E [N_t]$，称 $m (t)$ 为更新函数</li>
+<li><strong>命题 4.1</strong> $\forall t\ge 0,\ m(t)=\sum_{n=1}^{\infty}{F_n(t)}$</li>
+<li><strong> 命题 4.2</strong> $\forall t\ge 0,\ m(t)&lt;\infty$</li>
+</ol>
+<h2 id="更新过程的极限定理"><a href="#更新过程的极限定理" class="headerlink" title="更新过程的极限定理"></a>更新过程的极限定理</h2><ol>
+<li>设 $N (t)$ 是更新过程，则有<script type="math/tex; mode=display">
+P(N(\infty)=\infty)=1</script></li>
+<li>由 $N (t)$ 的单调性，当 $t\to \infty$ 时，则<script type="math/tex; mode=display">
+N(t)\to\infty,\ m(t)\to\infty</script></li>
+<li>当 $t\to \infty$ 时，有 $P\left (\lim_{t\to \infty}{\dfrac {N (t)}{t}=\dfrac {1}{\mu}}\right)=1$</li>
+</ol>
+<p>更新函数 $m (t)$ 的极限属性</p>
+<ol>
+<li>停时：事件 $\left\{N=n\right\}$ 与 $X_{n+1},X_{n+2},\cdots$ 独立，则称 $N$ 是序列 $\left\{X_{1},X_2,\cdots\right\}$ 的<strong>停时</strong></li>
+<li> Wald 方程：设 $N$ 是 $\left\{X_{1},X_2,\cdots\right\}$i.i.d 的停时，且 $E\left|X_{n}\right|&lt;\infty$，则 $E\left [\sum_{n=1}^{N} X_{n}\right]=E [N] E\left [X_{1}\right]$</li>
+<li> 推论 4.1：更新过程 $\left\{N (t)\right\}$，若 $\mu&lt;\infty$，则有 $E [S_{N (t)+1}]=\mu (m (t)+1)$</li>
+<li> 基本更新定理： $\mu&lt;\infty$，则有 $\lim _{t \rightarrow \infty} \frac {m (t)}{t}=\frac {1}{\mu}$</li>
+</ol>
+<h2 id="关键更新定理——格点分布、Blackwell-定理、关键更新定理"><a href="#关键更新定理——格点分布、Blackwell-定理、关键更新定理" class="headerlink" title="关键更新定理——格点分布、Blackwell 定理、关键更新定理"></a>关键更新定理 —— 格点分布、Blackwell 定理、关键更新定理</h2><h3 id="格点分布"><a href="#格点分布" class="headerlink" title="格点分布"></a>格点分布</h3><ol>
+<li>非负 r.v.$X$，若 $\exists d&gt;0$，使得 $X$ 以概率 $1$ 只取 $d$ 的非负整数倍值，即 $\sum_{n=0}^\infty {P (X=nd)}=1$，则称 $X$ 是<strong>格点的</strong></li>
+<li>把具有这个性质的最大的 $d$ 称为 $X$ 的<strong>周期</strong></li>
+<li>若 $X$ 是格点的，则其分布函数 $F$ 也称为<strong>格点分布</strong></li>
+</ol>
+<h3 id="Blackwell-定理"><a href="#Blackwell-定理" class="headerlink" title="Blackwell 定理"></a>Blackwell 定理</h3><p>$N (t)$ 是普通更新过程，更新间隔 $X_{n}$ 的分布是 $F$，且其期望为 $\mu$，则有</p>
+<ol>
+<li>若 $F$ 不是格点分布，则<script type="math/tex; mode=display">
+\lim_{t\to\infty}\left[m(t+a)-m(t)\right]=\dfrac{a}{\mu}</script></li>
+<li>若 $F$ 是格点分布，则<script type="math/tex; mode=display">
+\lim_{t\to\infty}\left[m[(n+1)d]-m(nd)\right]=\dfrac{d}{\mu}</script>其中 $d$ 是 $X$ 的周期</li>
+</ol>
+<h3 id="关键更新定理"><a href="#关键更新定理" class="headerlink" title="关键更新定理"></a>关键更新定理</h3><p>若 $F$ 不是格点分布，且 $h$ 是直接黎曼可积的，则有</p>
+<script type="math/tex; mode=display">
+\lim_{t\to\infty}\dfrac{1}{t}\int_0^th(t-x)\mathrm{d}m(x)=\dfrac{1}{\mu}\int_0^\infty h(s)\mathrm{d}s</script><p>其中 $m (x)=\sum_{n=1}^\infty {F_n (x)},\ \mu=\int_0^\infty {\overline {F}(t)\mathrm {d} t},\ \overline {F}(t)=1-F (t)$</p>
+<p><strong>引理 4.1</strong> 当 $0\le s\le t,P (S_{N (t)}\le s)=\overline {F}(t)+\int_0^s {\overline {F}(t-y)\mathrm {d} m (y)}$</p>
+<h2 id="交替更新过程"><a href="#交替更新过程" class="headerlink" title="交替更新过程"></a>交替更新过程</h2><p>设随机向量 $(Z_n,Y_n)$ 独立同分布，$Z_n$ 和 $Y_n$ 都是独立同分布，但 $Z_n$ 和 $Y_n$ 不一定独立，$Z_n$ 和 $Y_n$ 的分布函数分别为 $H$ 和 $G$，$Z_n+Y_n$ 分布函数为 $F$，则称 $\left\{(Z_n,Y_n)\right\}$ 为<strong>交替更新过程</strong>，令 $P (t)$ 为 $t$ 时刻处于 $Z$ 状态的概率。</p>
+<p><strong>定理 4.1</strong> 若 $E (Z_n+Y_n)&lt;\infty$，且 $F$ 不是格点分布，那么</p>
+<script type="math/tex; mode=display">
+\lim_{t\to\infty}P(t)=\dfrac{E[Z_n]}{E[Z_n]+E[Y_n]}</script><p>相应的</p>
+<script type="math/tex; mode=display">
+\lim_{t\to\infty}Q(t)=\dfrac{E[Y_n]}{E[Z_n]+E[Y_n]}</script><div style="page-break-after: always;"></div>
+
+<h1 id="离散时间-Markov-链"><a href="#离散时间-Markov-链" class="headerlink" title="离散时间 Markov 链"></a>离散时间 Markov 链</h1><h2 id="Markov-链的基本概念"><a href="#Markov-链的基本概念" class="headerlink" title="Markov 链的基本概念"></a>Markov 链的基本概念</h2><p>设离散时间随机过程的状态空间也是离散的，j 记为 $E=\left\{0,1,2,\cdots\right\},\ \forall i_0,i_1,\cdots,i_{n-1},i,j\in E,\forall n\ge 0$，都有</p>
+<script type="math/tex; mode=display">
+P(X_{n+1}=j|X_n=i,X_{n-1}=i_{n-1},\cdots,X_0=i_0)=P(X_{n+1}=j|X_n=i)</script><p>则称离散时间随机过程 $\left\{X_n,n\ge 0\right\}$ 为马尔可夫链，简称马氏链。</p>
+<p><strong>时齐性</strong>：$P (X_{n+1}=j|X_n=i)=P (X_1=j|X_0=i)=P_{ij}$，记 $P=(P_{ij})_{i,j\in E}$，称 $P$ 为转移概率矩阵。</p>
+<ol>
+<li>$p_{ij}\ge 0$</li>
+<li>$\sum_{j\in E}p_{ij}=1$</li>
+<li>$P=\left[\begin{matrix}<br> p_{00}  &amp; \cdots &amp; p_{0j} &amp; \cdots \\<br> \vdots  &amp; \ddots &amp; \vdots &amp; \vdots \\<br> p_{i0}  &amp; \cdots &amp; p_{ij} &amp; \cdots \\<br> \vdots  &amp; \vdots &amp; \vdots &amp; \ddots<br> \end{matrix}\right]$</li>
+<li>$P$ 是一个随机矩阵</li>
+</ol>
+<p><strong>马氏性</strong>：$A$ 为 $n$ 之前的时间并集，$B$ 为 $n$ 之后的时间并集，则</p>
+<ol>
+<li>$P(X_{n+1}=j|X_n=i,A)=P(X_{n+1}=j|X_n=i)$</li>
+<li>$P(B|A,X_n=i)=P(B|X_n=i)$</li>
+<li>$P(AB|X_n=i)=P(A|X_n=i)P(B|X_n=i)$</li>
+</ol>
+<p><strong>有限维分布</strong></p>
+<script type="math/tex; mode=display">
+\begin{align*}
+    P(X_{0}=i_0,X_{1}=i_1,\cdots,X_{n}=i_n)&=P(X_{0}=i_0)P(X_{1}=i_1|X_{0}=i_0)\cdots P(X_{n}=i_n|X_{n-1}=i_{n-1})\\
+    &=P(X_{0}=i_0)p_{i_0i_1}\cdots p_{i_{n-1}i_n}
+\end{align*}</script><p>记 $\pi_i (n)=P (X_n=i),\ \pi (n)=\left (\pi_1 (n),\cdots,\pi_n (n)\right)$，称 $\left\{\pi_i (0),i\in E\right\}$ 为马氏链的初始分布，有</p>
+<script type="math/tex; mode=display">
+\pi(n+1)=\pi(n)P\\
+\pi(n)=\pi(0)P^n</script><h2 id="Chapman-Kolmogorov-方程"><a href="#Chapman-Kolmogorov-方程" class="headerlink" title="Chapman-Kolmogorov 方程"></a>Chapman-Kolmogorov 方程</h2><p>m 步转移概率矩阵</p>
+<script type="math/tex; mode=display">
+P^{(m)} = P^m</script><p>性质</p>
+<ol>
+<li>$P_{ij}^{(0)}=\begin{cases}<br>1, &amp; i=j\\<br>0, &amp; i\neq j<br>\end {cases}$，即 $P^{(0)}$ 是单位矩阵</li>
+<li> Chapman-Kolmogorov 方程<script type="math/tex; mode=display">
+ P_{ij}^{(m+n)} = \sum_{k\in E}P_{ik}^{(m)}P_{kj}^{(n)}=P^{(m)}P^{(n)}</script></li>
+</ol>
+<h2 id="Markov-链的判定"><a href="#Markov-链的判定" class="headerlink" title="Markov 链的判定"></a><span id="5.3">Markov 链的判定</span></h2><p>设 $X_n$ 满足：</p>
+<ol>
+<li>$X_n=f (X_{n-1},\xi_n)$，其中 $f:\ E\times E\to E$，且 $\xi_n$ 取值于 $E$</li>
+<li>$\left\{\xi_n\right\}$ 独立同分布，且与 $X_0$ 相互独立</li>
+</ol>
+<p>则 $\left\{X_n\right\}$ 是马氏链，且转移概率矩阵为</p>
+<script type="math/tex; mode=display">
+P_{ij} = P\left(f(i,\xi_1)=j\right)</script><p>应用：<br><a href="#M-G-1">$M/G/s$ Queue</a></p>
+<h2 id="Markov-链状态分类——准备知识"><a href="#Markov-链状态分类——准备知识" class="headerlink" title="Markov 链状态分类——准备知识"></a>Markov 链状态分类 —— 准备知识</h2><h3 id="可达"><a href="#可达" class="headerlink" title="可达"></a>可达</h3><p>$\exists n\ge 0$，使得 $P_{ij}^{(n)}&gt;0$，则称状态 $i$ 可达状态 $j$，记作 $i\to j$，若不可达，则记作 $i\not\to j$</p>
+<h3 id="互通"><a href="#互通" class="headerlink" title="互通"></a>互通</h3><p>若 $i\to j$ 且 $j\to i$，则称状态 $i$ 与状态 $j$ 互通，记作 $i\leftrightarrow j$</p>
+<p><strong>命题 5.1</strong>：可达关系与互通关系都具有传递性<br><strong>命题 5.2</strong>：互通关系是 $\leftrightarrow$ 是等价关系，即</p>
+<ol>
+<li>自反性：$i\leftrightarrow i$</li>
+<li> 对称性：$i\leftrightarrow j\Rightarrow j\leftrightarrow i$</li>
+<li> 传递性：$i\leftrightarrow j$ 且 $j\leftrightarrow k\Rightarrow i\leftrightarrow k$</li>
+</ol>
+<h3 id="首达时间"><a href="#首达时间" class="headerlink" title="首达时间"></a>首达时间</h3><script type="math/tex; mode=display">
+T_{ij}=\begin{cases}
+\min\left\{n:X_0=i,X_n=j,n\ge 1\right\}\\
+\infty, \emptyset
+\end{cases}</script><p>$T_{ij}$ 表示该马氏链从状态 $i$ 出发，首次到达状态 $j$ 的时刻，称为自状态 $i$ 到 $j$ 的<strong>首达时间</strong>，若 $i\not\to j$，则 $T_{ij}=\infty$</p>
+<p>$T_{ii}$ 表示 $i$ 的<strong>首回时间</strong></p>
+<h3 id="首达概率"><a href="#首达概率" class="headerlink" title="首达概率"></a>首达概率</h3><script type="math/tex; mode=display">
+f_{ij}^{(n)} = P\left(T_{ij}=n|X_0=i\right)=P(X_n=j,X_k\neq j,1\le k\le n-1|X_0=i)</script><p>$f_{ij}^{(n)}$ 表示从状态 $i$ 出发，第 $n$ 步首次到达状态 $j$ 的概率，称为<strong>首达概率</strong>，当 $n=1$ 时，$f_{ij}^{(1)}=P_{ij}$，当 $n=0$ 时，$f_{ij}^{(0)}=0,i\neq j$</p>
+<p>令 $f_{ij}=\sum_{n=1}^\infty f_{ij}^{(n)}$，表示过程由状态 $i$ 出发，经过有限步到达状态 $j$ 的概率。</p>
+<h3 id="首达分解定理"><a href="#首达分解定理" class="headerlink" title="首达分解定理"></a>首达分解定理</h3><script type="math/tex; mode=display">
+P_{ij}^{(n)} = \sum_{k=1}^n f_{ij}^{(k)}P_{jj}^{(n-k)}=\sum_{k=0}^n f_{ij}^{(n-k)}P_{jj}^{(k)}</script><p><strong>命题 5.3</strong> $f_{ij} &gt;0 \Leftrightarrow i\to j$</p>
+<h2 id="Markov-链状态分类——状态类别"><a href="#Markov-链状态分类——状态类别" class="headerlink" title="Markov 链状态分类——状态类别"></a>Markov 链状态分类 —— 状态类别</h2><h3 id="周期性"><a href="#周期性" class="headerlink" title="周期性"></a>周期性</h3><p>若 $D=\left\{n:P_{ii}^{(n)},n\ge 1\right\}$ 非空，令 $d (i)$ 为该数集的最大公约数，即 $d (i)=\gcd\left\{n:P_{ii}^{(n)},n\ge 1\right\}$，则称 $d (i)$ 为状态 $i$ 的周期，若上述集合为空，则规定 $d (i)=\infty$1</p>
+<p>若 $d (i)=1$，则称状态 $i$ 为非周期状态，否则称状态 $i$ 为周期状态。</p>
+<ol>
+<li>若 $i\leftrightarrow j$，则 $d (i)=d (j)$</li>
+<li> 若 $i$ 的周期为 $d$，则 $\exists M\in \mathbb {N}^+,\forall n\ge M$，有 $P_{ii}^{(nd)}&gt;0$</li>
+</ol>
+<h3 id="常返性"><a href="#常返性" class="headerlink" title="常返性"></a>常返性</h3><ol>
+<li>若 $f_{ii}=1$，则称状态 $i$ 为<strong>常返的</strong></li>
+<li>若 $f_{ii}&lt;1$，则称状态 $i$ 为<strong>非常返的</strong>，或<strong>瞬时的</strong><br>定义：$\mu_i=E [T_{ii}]=\sum_{n=1}^\infty nf_{ii}^{(n)}$，称为<strong>平均返回时间</strong></li>
+<li>设状态 $i$ 常返 $(f_{ii}=1)$，若 $\mu_i&lt;\infty$，则称状态 $i$ 为<strong>正常返的</strong>，若 $\mu_i=\infty$，称状态 $i$ 为<strong>零常返的</strong></li>
+<li>若状态 $i$ 是正常返的，且是非周期的，则称 $i$ 为<strong>遍历态</strong></li>
+</ol>
+<p><strong>命题 5.4</strong> 若 $i \leftrightarrow j$，则</p>
+<ol>
+<li>$i$ 与 $j$ 同为常返态或瞬时态</li>
+<li>若为常返态，同为正常返态或零常返态</li>
+</ol>
+<h2 id="常返性判定"><a href="#常返性判定" class="headerlink" title="常返性判定"></a>常返性判定</h2><h3 id="母函数"><a href="#母函数" class="headerlink" title="母函数"></a>母函数</h3><h4 id="数列母函数"><a href="#数列母函数" class="headerlink" title="数列母函数"></a>数列母函数</h4><ol>
+<li>设 $\left\{a_n,n\ge 0\right\}$ 为实数列，称 $A (s)=\sum_{n=0}^\infty a_ns^n$ 为该数列的<strong>母函数</strong></li>
+<li>设 $\left\{a_n\right\},\left\{b_n\right\}$ 为两个实数列，则其卷积 $c_n=\sum_{k=0}^na_kb_{n-k}$ 的母函数为 $C (s)=A (s) B (s)$</li>
+</ol>
+<h4 id="概率母函数"><a href="#概率母函数" class="headerlink" title="概率母函数"></a>概率母函数</h4><ol>
+<li>若 $X$ 为一离散 r.v.，称下式为 $X$ 的<strong>概率母函数</strong><script type="math/tex; mode=display">
+G_X(s)=E[s^X]=\sum_{k=0}^\infty s^kp_k</script></li>
+<li>设 $Z=X+Y$，则 $Z$ 的概率母函数为 $G_Z (s)=G_X (s) G_Y (s)$</li>
+<li>$P(X=k)=\dfrac{1}{k!}\dfrac{\mathrm{d}^k}{\mathrm{d}s^k}G_X(s)\bigg|_{s=0}$</li>
+</ol>
+<h3 id="常返性判定准则"><a href="#常返性判定准则" class="headerlink" title="常返性判定准则"></a>常返性判定准则</h3><p><strong>命题 5.5</strong><br>状态 $i$ 为常返的充要条件是 $\sum_{n=0}^\infty p_{ii}^{(n)}=\infty$<br>状态 $i$ 为瞬时态的充要条件是 $\sum_{n=0}^\infty p_{ii}^{(n)}=\dfrac {1}{1-f_{ii}}&lt;\infty$</p>
+<p>由首达分解定理，$p_{ii}^{(n)}=\sum_{k=0}^n f_{ii}^{(n-k)} p_{ii}^{(k)}$，得到 $P (s)-1=P (s) F (s)$</p>
+<h3 id="判断准则的推论"><a href="#判断准则的推论" class="headerlink" title="判断准则的推论"></a>判断准则的推论</h3><ol>
+<li><strong>推论 5.1</strong>：若状态 $j$ 为常返态，则<ol>
+<li>当 $i\to j$ 时，有 $\sum_{n=1}^\infty p_{ij}^{(n)}=\infty$</li>
+<li> 当 $i\not\to j$ 时，有 $\sum_{n=1}^\infty p_{ij}^{(n)}=0$</li>
+</ol>
+</li>
+<li><strong> 推论 5.2</strong>：若状态 $j$ 为瞬时态，$\exists i \in E$，有<br>$\sum_{n=1}^\infty p_{ij}^{(n)}&lt;\infty,\qquad\lim_{n\to\infty}p_{ij}^{(n)}=0$</li>
+<li><strong> 推论 5.3</strong>：若状态 $j$ 为常返态，且 $i\leftrightarrow j$，则 $j$ 是常返态</li>
+<li><strong>推论 5.4</strong>：若 $i\leftrightarrow j$，且 $j$ 为常返态，则 $f_{ij}=1$</li>
+</ol>
+<h2 id="常返性再访"><a href="#常返性再访" class="headerlink" title="常返性再访"></a>常返性再访</h2><p>设 $S_m (j)=\sum_{n=m}^\infty I_n (j)$，表示自时刻 $m$ 后过程访问 $j$ 的次数</p>
+<p>令 $g_{ij}=P (S_1 (j)=\infty|X_0=i)=P (S_{m+1}(j)=\infty|X_m=j)$</p>
+<p><strong>引理 5.1</strong> $\forall i\in E$，有 $g_{ij}=\begin {cases}<br>   f_{ij},&amp;j\text {为常返态}\\<br>   0,&amp;j\text {为瞬时态}<br>\end{cases}$</p>
+<p><strong>命题 5.6</strong> 常返与瞬时的等价判定</p>
+<ol>
+<li>$i$ 为常返态 $\Leftrightarrow g_{ii}=1$</li>
+<li>$i$ 为瞬时态 $\Leftrightarrow g_{ii}=0$</li>
+</ol>
+<p><strong>命题 5.7</strong> 设 $i$ 为常返态，则</p>
+<ol>
+<li>$i$ 为零常返态 $\Leftrightarrow \lim_{n\to\infty} p_{ii}^{(n)}=0$</li>
+<li>$i$ 有周期 $d\Leftrightarrow \lim_{n\to\infty} p_{ii}^{(nd)}=0$</li>
+<li>$i$ 为遍历态 $\Leftrightarrow \lim_{n\to\infty} p_{ii}^{(n)}=\dfrac {1}{\mu_i}&gt;0$</li>
+</ol>
+<h2 id="常返性实例——醉汉回家问题"><a href="#常返性实例——醉汉回家问题" class="headerlink" title="常返性实例——醉汉回家问题"></a>常返性实例 —— 醉汉回家问题</h2><p><strong>一维随机游走</strong><br>初态在原点，每次向左或向右走一步，设 $p$ 为向右走的概率，$q=1-p$ 为向左走的概率</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+   &p_{00}^{(2n)}=\binom{2n}{n}p^nq^n,\qquad p_{00}^{(2n+1)}=0\\
+   &\Rightarrow p_{00}^{(2n)}\approx\dfrac{(4pq)^n}{\sqrt{\pi n}}=O\left(n^{-1/2}\right)\\
+   &\Rightarrow \begin{cases}
+   \sum_{n=0}^\infty p_{00}^{(n)}=\infty,&p=q=\dfrac{1}{2}\\
+   \sum_{n=0}^\infty p_{00}^{(n)}=\dfrac{1}{\sqrt{1-4pq}}<\infty,&p\neq q
+\end{cases}
+\end{align*}</script><p><strong>二维随机游走</strong></p>
+<script type="math/tex; mode=display">
+p_{00}^{(2n)}=\sum_{k=0}^n{\binom{2n}{k}\binom{2n-k}{k}\binom{2n-2k}{n-k}\dfrac{1}{4^{2n}}}\\
+\approx\dfrac{1}{\pi n}=O\left(n^{-1}\right)\\</script><p><strong>三维随机游走</strong></p>
+<script type="math/tex; mode=display">
+p_{00}^{(2n)}\approx O\left(n^{-3/2}\right)</script><h2 id="状态空间的分解"><a href="#状态空间的分解" class="headerlink" title="状态空间的分解"></a>状态空间的分解</h2><ol>
+<li>闭集：状态空间 $E$ 的子集 $C$ 称为 (随机) 闭集，若 $\forall i \in C, j\not \in C$，有 $p_{ij}=0$</li>
+<li> 不可约：若闭集 $C$ 中的状态都是互通。</li>
+<li>不可约马氏链：马氏链称为<strong>不可约的</strong>，若其状态空间不可约。</li>
+</ol>
+<h3 id="闭集的属性"><a href="#闭集的属性" class="headerlink" title="闭集的属性"></a>闭集的属性</h3><ol>
+<li>$C$ 是闭集 $\Leftrightarrow \forall i \in C, j\not \in C$，都有 $p_{ij}^(n)=0$</li>
+<li>$i$ 常返，若 $i\to j$，则 $j$ 常返，且 $f_{ij}=1, i\leftrightarrow j$</li>
+<li> 马氏链具有如下性质<ol>
+<li>所有常返态构成一闭集</li>
+<li>不可约马氏链或者全是常返态，或者全是瞬时态</li>
+</ol>
+</li>
+</ol>
+<h3 id="状态空间分解定理"><a href="#状态空间分解定理" class="headerlink" title="状态空间分解定理"></a>状态空间分解定理</h3><p>任一马氏链的状态空间 $E$，可唯一地分解成有限个或可数个互不相交的子集 $D,C_1,C_2,\cdots$ 的并集，使得</p>
+<ol>
+<li>每一个 $C_i$ 是常返态组成的不可约闭集</li>
+<li> $C_i$ 中状态同类，任两状态互通，同为正（零）常返态，$\forall i,j\in C_i$，有 $f_{ij}=1$；称 $C_i$ 为<strong>基本常返闭集</strong></li>
+<li> $D$ 由全体瞬时态组成，自 $C_i$ 中的状态不能到达 $D$ 中的状态。$D$ 不一定是闭集；若 $E$ 为有限集，则 $D$ 一定是非闭集</li>
+</ol>
+<h3 id="状态空间分解推论"><a href="#状态空间分解推论" class="headerlink" title="状态空间分解推论"></a>状态空间分解推论</h3><p>设 $C\subset E$ 为闭集，$G=\left (p_{ij}^{(m)}\right)_{i,j\in C}$ 是 $C$ 上的 $m$ 步转移子矩阵，则 $G$ 为随机矩阵</p>
+<p><strong>命题 5.8</strong></p>
+<script type="math/tex; mode=display">
+P=\left[
+   \begin{matrix}
+      P_C&0\\
+      R&Q_D
+   \end{matrix}
+\right]</script><h2 id="Markov-链的极限分布"><a href="#Markov-链的极限分布" class="headerlink" title="Markov 链的极限分布"></a>Markov 链的极限分布</h2><h3 id="零常返和非常返情形"><a href="#零常返和非常返情形" class="headerlink" title="零常返和非常返情形"></a>零常返和非常返情形</h3><p><strong>命题 5.9</strong> 若 $j$ 为零常返或非常返态，则 $\forall i \in E$，都有 $\lim_{n\to \infty}{p_{ij}^{(n)}}=0$</p>
+<h3 id="命题-5-9-的推论"><a href="#命题-5-9-的推论" class="headerlink" title="命题 5.9 的推论"></a>命题 5.9 的推论</h3><ol>
+<li>有限状态马氏链没有零常返态</li>
+<li>不可约有限马氏链只有正常返态</li>
+<li>若马氏链有一个零常返态，则必定有无穷多个零常返态</li>
+</ol>
+<h3 id="正常返情形"><a href="#正常返情形" class="headerlink" title="正常返情形"></a>正常返情形</h3><ol>
+<li>非周期状态</li>
+</ol>
+<p><strong>命题 5.10</strong> 若 $j$ 为遍历态，则 $\lim_{n\to \infty}{p_{ij}^{(n)}}=\dfrac {f_{ij}}{\mu_{j}}$</p>
+<ol>
+<li>周期状态</li>
+</ol>
+<p><strong>命题 5.11</strong> 若 $j$ 为正常返态，周期为 $d$ 则 $\forall i \in E$，及 $0\le r\le d-1$，有</p>
+<script type="math/tex; mode=display">
+\lim_{n\to \infty}{p_{ij}^{(nd+r)}}=f_{ij}(r)\dfrac{d}{\mu_{j}}</script><p>其中</p>
+<script type="math/tex; mode=display">
+f_{ij}(r)=\sum_{n=0}^{\infty}{f_{ij}^{(nd+r)}},\ \mu_j=\sum_{m=1}^\infty{n f_{jj}^{(n)}}=E[T_{jj}]</script><h3 id="遍历定理"><a href="#遍历定理" class="headerlink" title="遍历定理"></a>遍历定理</h3><ol>
+<li>不可约马氏链，若状态都是遍历态，则 $\lim_{n\to \infty}{p_{ij}^{(n)}}=\dfrac {1}{\mu_{j}}$</li>
+<li> 不可约马氏链，若状态有限且非周期，则 $\lim_{n\to \infty}{p_{ij}^{(n)}}=\dfrac {1}{\mu_{j}}$</li>
+</ol>
+<h2 id="Markov-链的平稳分布"><a href="#Markov-链的平稳分布" class="headerlink" title="Markov 链的平稳分布"></a>Markov 链的平稳分布</h2><h3 id="平稳分布的定义"><a href="#平稳分布的定义" class="headerlink" title="平稳分布的定义"></a>平稳分布的定义</h3><p>设马氏链 $X_n$ 有转移概率矩阵 $P$，若存在一个概率分布 $\left\{\pi_i,i\in E\right\}$ 满足，</p>
+<script type="math/tex; mode=display">
+\pi_j=\sum_{i\in E}{\pi_i p_{ij}}\Leftrightarrow \vec{\pi}=\vec{\pi}P</script><p>则称 $\left\{\pi_i,i\in E\right\}$ 为马氏链 $X_n$ 的<strong>平稳分布</strong>，或不变分布，或稳态分布</p>
+<h3 id="平稳分布的性质"><a href="#平稳分布的性质" class="headerlink" title="平稳分布的性质"></a>平稳分布的性质</h3><p><strong>命题 5.12</strong> 不可约非周期马氏链是正常返的充要条件是存在平稳分布，且就是极限分布 $\left\{\frac {1}{\mu_j},j\in E\right\}$</p>
+<h3 id="Markov-链的平稳性"><a href="#Markov-链的平稳性" class="headerlink" title="Markov 链的平稳性"></a>Markov 链的平稳性</h3><p><strong>命题 5.13</strong></p>
+<ol>
+<li>不可约非周期马氏链，若所有状态正常返，则存在平稳分布，就是 $\left\{\frac {1}{\mu_j},j\in E\right\}$；若全是非常返或零常返，则不存在平稳分布</li>
+<li>有限不可约非周期马氏链必有平稳分布</li>
+<li>若 $\left\{\pi_j,j\in E\right\}$ 是马氏链平稳分布，则<script type="math/tex; mode=display">
+\lim_{n\to \infty}{p_{ij}^{(n)}}=\dfrac{1}{\mu_j}=\pi_j</script></li>
+</ol>
+<h2 id="分支过程"><a href="#分支过程" class="headerlink" title="分支过程"></a>分支过程</h2><p>一群体，用 $X_n$ 表示第 $n$ 代的个体数，第 $n+1$ 代由第 $n$ 代繁殖而来，每个个体的繁衍是相互独立的，且每个个体的直接后代数有相同的分布 ${p_k}$，且与上代相互独立，称 $\left\{X_n,n\le 0\right\}$ 为带有后代分布为 ${p_k}$ 的<strong>分支过程</strong>，也是一马氏链</p>
+<p>设 $\xi_i$ 表示每一代中第 $i$ 个个体的直接后代数，即 $P (\xi_i=k)=p_k$，则</p>
+<script type="math/tex; mode=display">
+X_{n+1}=\sum_{i=1}^{X_n}{\xi_i}</script><h3 id="转移概率"><a href="#转移概率" class="headerlink" title="转移概率"></a>转移概率</h3><script type="math/tex; mode=display">
+\begin{align*}
+   P_{ij}&=P(X_{n+1}=j|X_n=i)=P\left(\sum_{k=1}^{X_n}{\xi_k}=j|X_n=i\right)\\
+   &=P\left(\sum_{k=1}^{i}{\xi_k}=j\right)=\dfrac{1}{j!}\dfrac{\mathrm{d}^j\left[\phi^i(s)\right]}{\mathrm{d}s^j}\bigg|_{s=0}\\
+\end{align*}</script><h3 id="数字特征"><a href="#数字特征" class="headerlink" title="数字特征"></a>数字特征</h3><p>假设 $X_0=1,\mu=E [\xi],\sigma^2=Var (\xi)$，则</p>
+<ol>
+<li>期望<script type="math/tex; mode=display">
+E[X_n]=E\left[\sum_{k=1}^{X_{n-1}}{\xi_k}\right]=E[X_{n-1}]E[\xi]=\cdots=E[\xi]^n\\
+\Rightarrow E[X_n]=\mu^n</script></li>
+<li>方差<script type="math/tex; mode=display">
+\begin{align*}
+   Var(X_n)&=E[Var(X_n|X_{n-1})]+Var(E[X_n|X_{n-1}])\\
+   &=E[\sigma^2X_{n-1}]+Var(\mu X_{n-1})\\
+   \Rightarrow Var(X_n)&=\begin{cases}
+      \sigma^2\mu^{n-1}\dfrac{1-\mu^n}{1-\mu},&n\ge 2\\
+      n\sigma^2,&n=1
+   \end{cases}
+\end{align*}</script></li>
+</ol>
+<h3 id="灭绝概率"><a href="#灭绝概率" class="headerlink" title="灭绝概率"></a>灭绝概率</h3><p>考虑群体灭绝概率 $\pi_0$</p>
+<p><strong>命题 5.14</strong> 假设 $p_0&gt;0$，且 $p_0+p_1&lt;1$，则</p>
+<ol>
+<li>$\pi_0$ 是满足方程 $\pi_0=\sum_{j=0}^\infty {\pi_0^jp_j}$ 的最小非负解，其中 $P (X_{i+1}=0|X_i=j)=\pi_0^j$</li>
+<li>$\pi_0=1\Leftrightarrow\mu\le 1$</li>
+</ol>
+<div style="page-break-after: always;"></div>
+
+<h1 id="连续时间-Markov-链"><a href="#连续时间-Markov-链" class="headerlink" title="连续时间 Markov 链"></a>连续时间 Markov 链</h1><h2 id="连续时间-Markov-链基本概念"><a href="#连续时间-Markov-链基本概念" class="headerlink" title="连续时间 Markov 链基本概念"></a>连续时间 Markov 链基本概念</h2><p>设连续时间参数随机过程 $X (t)$ 的状态空间仍是离散的，记为 $E=\{0,1,\cdots\}$，$\forall s,t\ge0,\forall i,j,x (u)\in E, 0\le u &lt;s$，都有</p>
+<script type="math/tex; mode=display">
+P\{X(t+s)=j|X(u)=i,0\le u <s\}=P\{X(t+s)=j|X(s)=i\}=p_{ij}(s)</script><p>则称 $X (t)$ 为<strong>连续时间 Markov 链</strong>。</p>
+<h3 id="转移概率矩阵"><a href="#转移概率矩阵" class="headerlink" title="转移概率矩阵"></a>转移概率矩阵</h3><script type="math/tex; mode=display">
+P(s,t)=\left(p_{ij}(s,t)\right)_{i,j\in E}</script><p>称为<strong>转移概率矩阵</strong></p>
+<h3 id="时齐性"><a href="#时齐性" class="headerlink" title="时齐性"></a>时齐性</h3><p>若 $P (X (t+s)=j|X (s)=i)=p_{ij}(t)$ 与 $s$ 无关，则称 $X (t)$ 为<strong>时齐连续时间 Markov 链</strong>。</p>
+<h3 id="有限维分布"><a href="#有限维分布" class="headerlink" title="有限维分布"></a>有限维分布</h3><ol>
+<li>$P(X_0=i_0,X_1=i_1,\cdots,X_n=i_n)=\mu_{i_0}(0)P_{i_0i_1}(t_1)p_{i_1i_2}(t_2-t_1)\cdots p_{i_{n-1}i_n}(t_n-t_{n-1})$</li>
+<li>$\forall s,t\ge0,\mu(s+t)=\mu(s)P(t),\mu(u)=\mu(0)P(t)$<br>即连续时间 Markov 链的有限维分布由初始分布 $\mu (0)$ 和转移概率矩阵 $P (t)$ 唯一确定。</li>
+</ol>
+<h3 id="样本轨道"><a href="#样本轨道" class="headerlink" title="样本轨道"></a>样本轨道</h3><p>由无记忆性，可知在状态 $i$ 上停留的时间</p>
+<script type="math/tex; mode=display">
+\tau \sim \text{Exp}(v_i),\ E[\tau]=\frac{1}{v_i}</script><p>称 $v_i$ 为过程离开状态 $i$ 的<strong>速率</strong></p>
+<p>由时齐性，可知转移发生的瞬间，跳转概率与时刻无关，即若从 $i$ 离开，都以概率 $p_{ij}$ 跳转到 $j$</p>
+<h3 id="正则性"><a href="#正则性" class="headerlink" title="正则性"></a>正则性</h3><p>若在任意有限长时段内的转移次数以概率 $1$ 是有限的，则称连续时间 Markov 链是<strong>正则</strong>的。</p>
+<h2 id="连续时间-Markov-链的转移概率矩阵"><a href="#连续时间-Markov-链的转移概率矩阵" class="headerlink" title="连续时间 Markov 链的转移概率矩阵"></a>连续时间 Markov 链的转移概率矩阵</h2><h3 id="转移概率矩阵的性质"><a href="#转移概率矩阵的性质" class="headerlink" title="转移概率矩阵的性质"></a>转移概率矩阵的性质</h3><ol>
+<li>$\forall t\ge0,\forall i,j\in E,0\le p_{ij}(t)\le1$</li>
+<li>$\forall t\ge0,\forall i\in E,\sum_{j\in E}p_{ij}(t)=1$</li>
+<li>Chapman-Kolmogorov 方程<script type="math/tex; mode=display">
+\forall s,t\ge0,\forall i,j\in E\\
+p_{ij}(s+t)=\sum_{k\in E}p_{ik}(s)p_{kj}(t)\\
+P(s+t)=P(s)P(t)</script></li>
+<li>$P_{ij}(0)=\delta_{ij}$</li>
+<li> 若 $\lim_{t\to0} P_{ij}(t)=\delta_{ij}$，称为<strong>标准转移概率</strong>，即 $P (t)$ 在 $0$ 处连续，$\lim_{t\to 0} P (t)=I$</li>
+<li>$\forall i,j\in E,P_{ij}(t)$ 是 $t$ 的一致连续函数</li>
+<li> $\forall i \in E, P’_{ii}(0)=\lim_{t\to0^+}\dfrac {P_{ii}(t)-1}{t}=q_ii$ 存在，且 $-\infty&lt; q_{ii}&lt;0$，当 $i\not = j$ 时，$P’_{ij}(0)=\lim_{t\to0^+}\dfrac {P_{ij}(t)}{t}=q_{ij}$ 存在，且 $0\le q_{ij}&lt;\infty$，即 $P’(0)$ 存在</li>
+</ol>
+<h2 id="转移速率矩阵"><a href="#转移速率矩阵" class="headerlink" title="转移速率矩阵"></a>转移速率矩阵</h2><script type="math/tex; mode=display">
+q_{ij}=\lim_{t\to0^+}\dfrac{P_{ij}(t)}{t}=v_i p_{ij}\\
+-q_{ii}=\lim_{t\to0^+}\dfrac{1-P_{ii}(t)}{t}=v_i</script><p>称 $q_{ij}$ 为过程从状态 $i$ 转移到状态 $j$ 的<strong>转移速率</strong>，$Q=(q_{ij})_{i,j\in E}$ 称为<strong>转移速率矩阵</strong>，称为时齐连续时间 Markov 链的<strong>转移速率矩阵</strong>。</p>
+<h3 id="转移速率矩阵的性质"><a href="#转移速率矩阵的性质" class="headerlink" title="转移速率矩阵的性质"></a>转移速率矩阵的性质</h3><ol>
+<li>$\forall i,j\in E,q_{ii}\le0,q_{ij}\ge0,i\not =j$</li>
+<li>$-q_{ii}\ge \sum_{j\not =i}q_{ij}$</li>
+<li> 若 $-q_{ii}= \sum_{j\not =i} q_{ij}$，称 $Q$ 是<strong>保守的</strong></li>
+<li>若 $E$ 有限，则 $Q$ 是保守的</li>
+</ol>
+<h3 id="齐次-Poisson-过程的-Markov-性"><a href="#齐次-Poisson-过程的-Markov-性" class="headerlink" title="齐次 Poisson 过程的 Markov 性"></a>齐次 Poisson 过程的 Markov 性</h3><p>强度为 $\lambda$ 的齐次 Poisson 过程 $N (t)$ 是保守正则的连续 Markov 链。</p>
+<h3 id="Q-过程"><a href="#Q-过程" class="headerlink" title="Q 过程"></a>Q 过程</h3><ol>
+<li>一个矩阵 $Q=(q_{ij})$ 称为 <strong>$Q$ 矩阵</strong>，若满足 $q_{ii}\le 0 \And 0\le q_{ij} &lt; +\infty\And -q_{ii}\ge \sum_{j\not=i} q_{ij}$</li>
+<li> 给定 $Q$ 矩阵，若有连续 MC 的转移概率矩阵 $P (t)$ 满足，$Q=P’(0)$，则称此过程为 <strong>$Q$ 过程</strong></li>
+</ol>
+<h2 id="连续时间-Markov-链的状态分类"><a href="#连续时间-Markov-链的状态分类" class="headerlink" title="连续时间 Markov 链的状态分类"></a>连续时间 Markov 链的状态分类</h2><h3 id="状态定义"><a href="#状态定义" class="headerlink" title="状态定义"></a>状态定义</h3><ol>
+<li>若 $v_i=\infty,E [\tau_i]=0$：状态 $i$ 为瞬时态；</li>
+<li>若 $v_i=0,E [\tau_i]=\infty$：状态 $i$ 为吸收态；</li>
+<li>若 $0&lt;v_i,E [\tau_i]&lt;\infty$：状态 $i$ 为逗留态。</li>
+</ol>
+<h3 id="状态分类"><a href="#状态分类" class="headerlink" title="状态分类"></a>状态分类</h3><ol>
+<li>可达：$\exists t&gt;0$，使 $P_{ij}(t)&gt;0,i\to j$</li>
+<li> 若 $\int_0^\infty {P_{ii}(t)\mathrm {d} t}=+\infty$，状态 $i$ 为 <strong>常返态</strong>；反之为 <strong>非常返态</strong></li>
+<li>当 $i$ 为常返态，若 $\lim_{t\to \infty} P_{ii}(t)&gt;0$，则 $i$ 为 <strong>正常返态</strong>；反之为 <strong>零常返态</strong></li>
+<li>若分布 $\pi=(\pi_i,i\in E)$ 满足，$\forall t\ge 0$，有 $\pi =\pi P (t)$，则称 $\pi$ 为 <strong>平稳分布</strong></li>
+<li>若 $\forall i\in E,\lim_{t\to \infty}\mu_i (t)=\pi_i’$ 存在，则称 $\pi’= (\pi_i’,i\in E)$ 为 过程的<strong>极限分布</strong>，其中 $\mu_i (t)=P (X_t=i)$</li>
+<li> 不可约链是正常返的 $\Leftrightarrow$ 存在平稳分布存在，且等于极限分布</li>
+</ol>
+<h2 id="Kolmogorov-微分方程"><a href="#Kolmogorov-微分方程" class="headerlink" title="Kolmogorov 微分方程"></a>Kolmogorov 微分方程</h2><h3 id="Kolmogorov-向后微分方程"><a href="#Kolmogorov-向后微分方程" class="headerlink" title="Kolmogorov 向后微分方程"></a>Kolmogorov 向后微分方程</h3><script type="math/tex; mode=display">
+P_{ij}'(t)=\sum_{k\not =i}q_{ik}P_{kj}(t)-v_iP_{ij}(t)\\</script><h3 id="Kolmogorov-向前微分方程"><a href="#Kolmogorov-向前微分方程" class="headerlink" title="Kolmogorov 向前微分方程"></a>Kolmogorov 向前微分方程</h3><script type="math/tex; mode=display">
+P_{ij}'(t)=\sum_{k\not =j}P_{ik}(t)q_{kj}-P_{ij}(t)v_j\\</script><h3 id="Kolmogorov-微分方程组"><a href="#Kolmogorov-微分方程组" class="headerlink" title="Kolmogorov 微分方程组"></a>Kolmogorov 微分方程组</h3><script type="math/tex; mode=display">
+P'(t)=QP(t)=P(t)Q</script><h2 id="连续时间-Markov-链的极限定理"><a href="#连续时间-Markov-链的极限定理" class="headerlink" title="连续时间 Markov 链的极限定理"></a>连续时间 Markov 链的极限定理</h2><h3 id="嵌入链"><a href="#嵌入链" class="headerlink" title="嵌入链"></a>嵌入链</h3><ol>
+<li>定义：设以 $P_{ij}$ 为转移概率的离散时间马氏链为 $\left\{Z_n,n\ge 1\right\}$，则称 $\left\{Z_n,n\ge 1\right\}$ 为连续时间马氏链 $\left\{X_t,t\ge 0\right\}$ 的<strong>嵌入链</strong></li>
+<li>属性：若 $\left\{X_t,t\ge 0\right\}$ 是不可约的正常返，则其<ol>
+<li>极限分布存在，即 $\forall j \in E,\lim_{n\to \infty} P_{ij}^{(n)}=P_j$；</li>
+<li>平稳分布存在，即 $\Pi=\Pi P,\sum_{j\in E}\Pi_j=1$；</li>
+<li>极限分布与平稳分布相等，即 $\forall j \in E,P_j=\Pi_j$。</li>
+</ol>
+</li>
+</ol>
+<h3 id="极限定理"><a href="#极限定理" class="headerlink" title="极限定理"></a>极限定理</h3><p>Fokker-Planck 方程：设 $\pi_j (t)=P (X_t=j)$ 为过程在 $t$ 时刻的分布，则 $E$ 有限时，有 $\pi_j’=\sum_{k\not =j}{\pi_k (t) q_{kj}}-v_j\pi_j (t),\ \pi’(t)=\pi (t) Q$。</p>
+<p><strong>命题 6.1</strong> 若 $\left\{X_t,t\ge 0\right\}$ 是不可约马氏链，则有 $\pi_j’=\lim_{t\to \infty} P_{ij}(t)=\lim_{t\to \infty}{\dfrac {[0,j]\text {内马氏链处于 j 的时间}}{t}}$</p>
+<p><strong>命题 6.2</strong> 不可约连续时间马氏链 $\left\{X_t\right\}$，$E$ 有限时，则</p>
+<ol>
+<li>极限分布存在且等于平稳分布，即 $\pi_j’=\pi_j’P (t)$；</li>
+<li>极限分布 $\left\{\pi_j’\right\}$ 满足<strong>平衡方程</strong>，$v_j\pi_j’=\sum_{k\not =j}{\pi_k’q_{kj}}$</li>
+<li> 设嵌入链的平稳分布为 $\Pi=(\Pi_j)_{j\in E}$，则<script type="math/tex; mode=display">
+\pi_j'=\dfrac{\Pi_j/v_j}{\sum_{i\in E}{\Pi_k/v_i}}</script></li>
+</ol>
+<h2 id="生灭过程"><a href="#生灭过程" class="headerlink" title="生灭过程"></a><span id="6.7">生灭过程</span></h2><p>连续时间 Markov 链 $\left\{X (t),t\ge0\right\}$ 的状态空间为 $E=\left\{0,1,2,\cdots\right\}$，若 $\forall i,j\in E$，只要 $|i-j|&gt;1$，就有 $q_{ij}=0$，则称为<strong>生灭过程</strong></p>
+<p>若令 $q_{i,i+1}=\lambda_i,q_{i,i-1}=\mu_i$，称为<strong>出生率</strong>和<strong>死亡率</strong>，此时 $q_{ii}=-(\lambda_i+\mu_i)$，此链称为 <strong>齐次生灭过程</strong></p>
+<h3 id="生灭过程的统计属性"><a href="#生灭过程的统计属性" class="headerlink" title="生灭过程的统计属性"></a>生灭过程的统计属性</h3><ol>
+<li>转移速率矩阵为<script type="math/tex; mode=display">
+Q=\begin{bmatrix}
+-\lambda_0 & \lambda_0 & 0 & \cdots \\
+\mu_1 & -(\lambda_1+\mu_1) & \lambda_1 & \cdots \\
+0 & \mu_2 & -(\lambda_2+\mu_2) & \lambda_2 \\
+\vdots & \vdots & \vdots & \ddots
+\end{bmatrix}</script></li>
+<li>嵌入链的转移概率矩阵为<script type="math/tex; mode=display">
+P=\begin{bmatrix}
+0 & 1 & 0 & \cdots \\
+\dfrac{\mu_1}{\lambda_1+\mu_1} & 0 & \dfrac{\lambda_1}{\lambda_1+\mu_1} & \cdots \\
+0 & \dfrac{\mu_2}{\lambda_2+\mu_2} & 0 & \cdots \\
+\vdots & \vdots & \vdots & \ddots
+\end{bmatrix}</script></li>
+<li>Kolmogorov 向后方程组<script type="math/tex; mode=display">
+P_{0j}'(t)=-\lambda_0P_{0j}(t)+\lambda_0P_{1j}(t)\\
+P_{ij}'(t)=\lambda_iP_{i+1,j}(t)-(\lambda_i+\mu_i)P_{ij}(t)+\mu_iP_{i-1,j}(t)\\</script></li>
+<li>Kolmogorov 向前方程组<script type="math/tex; mode=display">
+P_{i0}'(t)=-\lambda_0P_{i0}(t)+\mu_1P_{i1}(t)\\
+P_{ij}'(t)=\lambda_{j-1}P_{i,j-1}(t)-(\lambda_j+\mu_j)P_{ij}(t)+\mu_{j+1}P_{i,j+1}(t)\\</script></li>
+<li>极限概率<script type="math/tex; mode=display">
+\begin{align*}
+&\lambda_0\pi_0'=\mu_1\pi_1'\\
+&(\lambda_i+\mu_i)\pi_i'=\lambda_{i-1}\pi_{i-1}'+\mu_{i+1}\pi_{i+1}',\ i\ge 1\\
+\Downarrow
+\\
+&\pi_0'=\left(1+\sum_{n=1}^\infty{\dfrac{\prod_{i=0}^{n-1}\lambda_i}{\prod_{i=1}^n\mu_i}}\right)^{-1}\\
+&\pi_n'=\dfrac{\prod_{i=0}^{n-1}\lambda_i}{\prod_{i=1}^n\mu_i}\left(1+\sum_{n=1}^\infty{\dfrac{\prod_{i=0}^{n-1}\lambda_i}{\prod_{i=1}^n\mu_i}}\right)^{-1}
+\end{align*}</script>极限分布存在 $\Leftrightarrow\sum_{n=1}^\infty {\dfrac {\prod_{i=0}^{n-1}\lambda_i}{\prod_{i=1}^n\mu_i}}&lt;\infty$</li>
+</ol>
+<p>应用：</p>
+<p><a href="#M-M-s">$M/M/s$ 排队系统</a></p>
+<div style="page-break-after: always;"></div>
+
+<h1 id="排队系统"><a href="#排队系统" class="headerlink" title="排队系统"></a>排队系统</h1><h2 id="M-G-infty-Queue"><a href="#M-G-infty-Queue" class="headerlink" title="$M/G/\infty$ Queue"></a><span id="M-G-infty">$M/G/\infty$ Queue</span></h2><p>参考 <a href="#3.10">3.10 齐次 Poisson 过程的分解</a></p>
+<p>顾客到达为 Poisson 过程；服务为 i.i.d 的一般分布 $Y\sim G (x)$；服务员个数为无穷多个。</p>
+<p>已服务顾客数为 $I$ 型，尚未服务顾客数为 $II$ 型，$N_1 (t)$ 和 $N_2 (t)$ 分别为 $I$ 型和 $II$ 型在时间 $t$ 的个数。</p>
+<p>若一顾客在 $s$ 时刻到来 $(s&lt;t)$，若服务时间 $T\le t-s$，则他为 $I$ 型，那么</p>
+<script type="math/tex; mode=display">
+P(s)=P(Y\le t-s)=G(t-s)</script><p>$N_1 (t)$ 和 $N_2 (t)$ 互相独立，均为泊松分布</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+&E[N_1(t)]=\lambda tp=\lambda\dfrac{1}{t}\int_0^tG(t-s)ds=\lambda\int_0^tG(x)dx\\
+&E[N_2(t)]=\lambda t(1-p)=\lambda\int_0^t(1-G(x))dx\\
+\Rightarrow &P(N_1(t)=n,N_2(t)=m)=\mathrm{e}^{-\lambda t}\dfrac{\left(\lambda\int_0^tG(x)dx\right)^n}{n!}\dfrac{\left(\lambda\int_0^t(1-G(x))dx\right)^m}{m!}
+\end{align*}</script><h2 id="M-G-1-Queue"><a href="#M-G-1-Queue" class="headerlink" title="$M/G/1$ Queue"></a><span id="M-G-1">$M/G/1$ Queue</span></h2><p>参考 <a href="#5.3">5.3 Markov 链的判定</a></p>
+<p>顾客到达为 Poisson 过程；服务为 i.i.d 的一般分布 $Y\sim G (x)$；服务员个数为 1 个。设 $X (t)$ 为在 $t$ 时刻系统中的顾客数，可得 $X (t)$ 不是马氏链。</p>
+<p>假设为第 $n$ 个顾客提供的服务时间段定义为第 $n$ 个服务周期；设 $X_n$ 为第 $n$ 个服务周期开始时服务台前的顾客总数，$Y_n$ 为第 $n$ 个服务周期中新到达的顾客数</p>
+<script type="math/tex; mode=display">
+X_{n+1}=f(X_n,Y_n)=\begin{cases}
+X_n+Y_n-1,&X_n\ge 1\\
+Y_n,&X_n=0
+\end{cases}</script><h2 id="M-M-s-Queue"><a href="#M-M-s-Queue" class="headerlink" title="$M/M/s$ Queue"></a><span id="M-M-s">$M/M/s$ Queue</span></h2><p>参考 <a href="#6.7">6.7 生灭过程</a></p>
+<p>顾客到达为 Poisson 过程；服务为 i.i.d 的指数分布 $Y\sim Exp (\mu)$；服务员个数为 $s$ 个。</p>
+<script type="math/tex; mode=display">
+\lambda_n=\lambda,\ \mu_n=\begin{cases}
+n\mu,&1\le n\le s\\
+s\mu,&n>s
+\end{cases}</script>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%B0%E5%BD%95/" rel="tag"># 记录</a>
+              <a href="/tags/%E7%BB%9F%E8%AE%A1/" rel="tag"># 统计</a>
+              <a href="/tags/%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B/" rel="tag"># 随机过程</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/d799c516.html" rel="prev" title="code-in-learning">
+      <i class="fa fa-chevron-left"></i> code-in-learning
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E7%8E%87%E5%87%86%E5%A4%87%E7%9F%A5%E8%AF%86"><span class="nav-number">1.</span> <span class="nav-text">概率准备知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E6%9C%9F%E6%9C%9B%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">条件期望的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87"><span class="nav-number">1.1.1.</span> <span class="nav-text">基于事件的条件概率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B8%83"><span class="nav-number">1.1.2.</span> <span class="nav-text">随机变量的条件分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B8%83%E7%9A%84%E6%9C%9F%E6%9C%9B"><span class="nav-number">1.1.3.</span> <span class="nav-text">随机变量的条件分布的期望</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B"><span class="nav-number">1.1.4.</span> <span class="nav-text">条件数学期望</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E6%9C%9F%E6%9C%9B%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="nav-number">1.2.</span> <span class="nav-text">条件期望的属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E6%9C%9F%E6%9C%9B%E7%9A%84%E6%8E%A8%E5%B9%BF"><span class="nav-number">1.3.</span> <span class="nav-text">条件期望的推广</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E6%96%B9%E5%B7%AE"><span class="nav-number">1.3.1.</span> <span class="nav-text">条件方差</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E6%96%B9%E5%B7%AE%E5%85%AC%E5%BC%8F"><span class="nav-number">1.3.2.</span> <span class="nav-text">条件方差公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E9%9A%8F%E6%9C%BA%E5%90%91%E9%87%8F%E7%9A%84%E6%9D%A1%E4%BB%B6%E6%9C%9F%E6%9C%9B"><span class="nav-number">1.3.3.</span> <span class="nav-text">关于随机向量的条件期望</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.4.</span> <span class="nav-text">特征函数的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.4.1.</span> <span class="nav-text">特征函数的性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%88%86%E5%B8%83%E7%9A%84%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0"><span class="nav-number">1.5.</span> <span class="nav-text">常用分布的特征函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">2.</span> <span class="nav-text">随机过程基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">2.1.</span> <span class="nav-text">随机过程的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81"><span class="nav-number">2.2.</span> <span class="nav-text">随机过程的数字特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E7%A8%B3%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B"><span class="nav-number">2.3.</span> <span class="nav-text">平稳随机过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%A5%E5%B9%B3%E7%A8%B3%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B"><span class="nav-number">2.3.1.</span> <span class="nav-text">严平稳随机过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%BD%E5%B9%B3%E7%A8%B3%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B"><span class="nav-number">2.3.2.</span> <span class="nav-text">宽平稳随机过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%BD%E5%B9%B3%E7%A8%B3%E8%BF%87%E7%A8%8B%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">2.4.</span> <span class="nav-text">宽平稳过程的性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%A0%E4%B8%AA%E7%89%B9%E6%AE%8A%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B"><span class="nav-number">2.5.</span> <span class="nav-text">几个特殊的随机过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8B%AC%E7%AB%8B%E5%A2%9E%E9%87%8F%E8%BF%87%E7%A8%8B"><span class="nav-number">2.5.1.</span> <span class="nav-text">独立增量过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B3%E7%A8%B3%E5%A2%9E%E9%87%8F%E8%BF%87%E7%A8%8B"><span class="nav-number">2.5.2.</span> <span class="nav-text">平稳增量过程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Poisson-%E8%BF%87%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">Poisson 过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Poisson-%E8%BF%87%E7%A8%8B%E7%9A%84%E5%AE%9A%E4%B9%89-I%E2%80%94%E2%80%94%E5%9F%BA%E4%BA%8E%E5%88%86%E5%B8%83%E7%9A%84%E7%9B%B4%E6%8E%A5%E5%AE%9A%E4%B9%89"><span class="nav-number">3.1.</span> <span class="nav-text">Poisson 过程的定义 I—— 基于分布的直接定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E6%95%B0%E8%BF%87%E7%A8%8B"><span class="nav-number">3.1.1.</span> <span class="nav-text">计数过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Poisson-%E8%BF%87%E7%A8%8B%E7%9A%84%E5%AE%9A%E4%B9%89-I"><span class="nav-number">3.1.2.</span> <span class="nav-text">Poisson 过程的定义 I</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Poisson-%E8%BF%87%E7%A8%8B%E7%9A%84%E5%AE%9A%E4%B9%89-II%E2%80%94%E2%80%94%E5%9F%BA%E4%BA%8E%E9%9D%9E%E5%AE%87%E5%AE%99%E5%A4%A7%E7%88%86%E7%82%B8%E6%A8%A1%E5%9E%8B%E7%9A%84%E9%97%B4%E6%8E%A5%E5%AE%9A%E4%B9%89"><span class="nav-number">3.2.</span> <span class="nav-text">Poisson 过程的定义 II—— 基于非宇宙大爆炸模型的间接定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Poisson-%E8%BF%87%E7%A8%8B%E5%AE%9A%E4%B9%89-I-%E5%92%8C%E5%AE%9A%E4%B9%89-II-%E7%9A%84%E7%AD%89%E4%BB%B7%E6%80%A7"><span class="nav-number">3.3.</span> <span class="nav-text">Poisson 过程定义 I 和定义 II 的等价性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%89%E5%BE%85%E6%97%B6%E9%97%B4%E4%B8%8E%E5%88%B0%E8%BE%BE%E9%97%B4%E9%9A%94%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E5%88%86%E5%B8%83"><span class="nav-number">3.4.</span> <span class="nav-text">等待时间与到达间隔的定义及分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%BD%90%E6%AC%A1-Poisson-%E8%BF%87%E7%A8%8B%E7%9A%84%E5%88%A4%E5%AE%9A"><span class="nav-number">3.5.</span> <span class="nav-text">齐次 Poisson 过程的判定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%B0%E8%BE%BE%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E7%9A%84%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B8%83"><span class="nav-number">3.6.</span> <span class="nav-text">到达时间序列的条件分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%B0%E8%BE%BE%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E7%9A%84%E8%81%94%E5%90%88%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B8%83"><span class="nav-number">3.7.</span> <span class="nav-text">到达时间序列的联合条件分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%BD%90%E6%AC%A1-Poisson-%E8%BF%87%E7%A8%8B%E7%9A%84%E5%88%A4%E5%AE%9A-2"><span class="nav-number">3.8.</span> <span class="nav-text">齐次 Poisson 过程的判定 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%BD%90%E6%AC%A1-Poisson-%E8%BF%87%E7%A8%8B%E4%B8%8E%E5%9D%87%E5%8C%80%E5%88%86%E5%B8%83%E3%80%81%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83%E3%80%81%E8%B4%9D%E5%A1%94%E5%88%86%E5%B8%83%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">3.9.</span> <span class="nav-text">齐次 Poisson 过程与均匀分布、二项分布、贝塔分布的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%BD%90%E6%AC%A1-Poisson-%E8%BF%87%E7%A8%8B%E7%9A%84%E5%88%86%E8%A7%A3"><span class="nav-number">3.10.</span> <span class="nav-text">齐次 Poisson 过程的分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E6%97%B6%E9%BD%90-Poisson-%E8%BF%87%E7%A8%8B"><span class="nav-number">3.11.</span> <span class="nav-text">非时齐 Poisson 过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E5%90%88-Poisson-%E8%BF%87%E7%A8%8B"><span class="nav-number">3.12.</span> <span class="nav-text">复合 Poisson 过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B4%E9%BE%84%E5%92%8C%E5%89%A9%E4%BD%99%E5%AF%BF%E5%91%BD"><span class="nav-number">3.13.</span> <span class="nav-text">年龄和剩余寿命</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E8%BF%87%E7%A8%8B"><span class="nav-number">4.</span> <span class="nav-text">更新过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E8%BF%87%E7%A8%8B%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">4.1.</span> <span class="nav-text">更新过程的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E8%BF%87%E7%A8%8B%E7%9A%84%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86"><span class="nav-number">4.2.</span> <span class="nav-text">更新过程的极限定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E6%9B%B4%E6%96%B0%E5%AE%9A%E7%90%86%E2%80%94%E2%80%94%E6%A0%BC%E7%82%B9%E5%88%86%E5%B8%83%E3%80%81Blackwell-%E5%AE%9A%E7%90%86%E3%80%81%E5%85%B3%E9%94%AE%E6%9B%B4%E6%96%B0%E5%AE%9A%E7%90%86"><span class="nav-number">4.3.</span> <span class="nav-text">关键更新定理 —— 格点分布、Blackwell 定理、关键更新定理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%BC%E7%82%B9%E5%88%86%E5%B8%83"><span class="nav-number">4.3.1.</span> <span class="nav-text">格点分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Blackwell-%E5%AE%9A%E7%90%86"><span class="nav-number">4.3.2.</span> <span class="nav-text">Blackwell 定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E6%9B%B4%E6%96%B0%E5%AE%9A%E7%90%86"><span class="nav-number">4.3.3.</span> <span class="nav-text">关键更新定理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%A4%E6%9B%BF%E6%9B%B4%E6%96%B0%E8%BF%87%E7%A8%8B"><span class="nav-number">4.4.</span> <span class="nav-text">交替更新过程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A6%BB%E6%95%A3%E6%97%B6%E9%97%B4-Markov-%E9%93%BE"><span class="nav-number">5.</span> <span class="nav-text">离散时间 Markov 链</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Markov-%E9%93%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">5.1.</span> <span class="nav-text">Markov 链的基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapman-Kolmogorov-%E6%96%B9%E7%A8%8B"><span class="nav-number">5.2.</span> <span class="nav-text">Chapman-Kolmogorov 方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markov-%E9%93%BE%E7%9A%84%E5%88%A4%E5%AE%9A"><span class="nav-number">5.3.</span> <span class="nav-text">Markov 链的判定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markov-%E9%93%BE%E7%8A%B6%E6%80%81%E5%88%86%E7%B1%BB%E2%80%94%E2%80%94%E5%87%86%E5%A4%87%E7%9F%A5%E8%AF%86"><span class="nav-number">5.4.</span> <span class="nav-text">Markov 链状态分类 —— 准备知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E8%BE%BE"><span class="nav-number">5.4.1.</span> <span class="nav-text">可达</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%92%E9%80%9A"><span class="nav-number">5.4.2.</span> <span class="nav-text">互通</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%96%E8%BE%BE%E6%97%B6%E9%97%B4"><span class="nav-number">5.4.3.</span> <span class="nav-text">首达时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%96%E8%BE%BE%E6%A6%82%E7%8E%87"><span class="nav-number">5.4.4.</span> <span class="nav-text">首达概率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%96%E8%BE%BE%E5%88%86%E8%A7%A3%E5%AE%9A%E7%90%86"><span class="nav-number">5.4.5.</span> <span class="nav-text">首达分解定理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markov-%E9%93%BE%E7%8A%B6%E6%80%81%E5%88%86%E7%B1%BB%E2%80%94%E2%80%94%E7%8A%B6%E6%80%81%E7%B1%BB%E5%88%AB"><span class="nav-number">5.5.</span> <span class="nav-text">Markov 链状态分类 —— 状态类别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%A8%E6%9C%9F%E6%80%A7"><span class="nav-number">5.5.1.</span> <span class="nav-text">周期性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%BF%94%E6%80%A7"><span class="nav-number">5.5.2.</span> <span class="nav-text">常返性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%BF%94%E6%80%A7%E5%88%A4%E5%AE%9A"><span class="nav-number">5.6.</span> <span class="nav-text">常返性判定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AF%8D%E5%87%BD%E6%95%B0"><span class="nav-number">5.6.1.</span> <span class="nav-text">母函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E5%88%97%E6%AF%8D%E5%87%BD%E6%95%B0"><span class="nav-number">5.6.1.1.</span> <span class="nav-text">数列母函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A6%82%E7%8E%87%E6%AF%8D%E5%87%BD%E6%95%B0"><span class="nav-number">5.6.1.2.</span> <span class="nav-text">概率母函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%BF%94%E6%80%A7%E5%88%A4%E5%AE%9A%E5%87%86%E5%88%99"><span class="nav-number">5.6.2.</span> <span class="nav-text">常返性判定准则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E5%87%86%E5%88%99%E7%9A%84%E6%8E%A8%E8%AE%BA"><span class="nav-number">5.6.3.</span> <span class="nav-text">判断准则的推论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%BF%94%E6%80%A7%E5%86%8D%E8%AE%BF"><span class="nav-number">5.7.</span> <span class="nav-text">常返性再访</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%BF%94%E6%80%A7%E5%AE%9E%E4%BE%8B%E2%80%94%E2%80%94%E9%86%89%E6%B1%89%E5%9B%9E%E5%AE%B6%E9%97%AE%E9%A2%98"><span class="nav-number">5.8.</span> <span class="nav-text">常返性实例 —— 醉汉回家问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4%E7%9A%84%E5%88%86%E8%A7%A3"><span class="nav-number">5.9.</span> <span class="nav-text">状态空间的分解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AD%E9%9B%86%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="nav-number">5.9.1.</span> <span class="nav-text">闭集的属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4%E5%88%86%E8%A7%A3%E5%AE%9A%E7%90%86"><span class="nav-number">5.9.2.</span> <span class="nav-text">状态空间分解定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4%E5%88%86%E8%A7%A3%E6%8E%A8%E8%AE%BA"><span class="nav-number">5.9.3.</span> <span class="nav-text">状态空间分解推论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markov-%E9%93%BE%E7%9A%84%E6%9E%81%E9%99%90%E5%88%86%E5%B8%83"><span class="nav-number">5.10.</span> <span class="nav-text">Markov 链的极限分布</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%B6%E5%B8%B8%E8%BF%94%E5%92%8C%E9%9D%9E%E5%B8%B8%E8%BF%94%E6%83%85%E5%BD%A2"><span class="nav-number">5.10.1.</span> <span class="nav-text">零常返和非常返情形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E9%A2%98-5-9-%E7%9A%84%E6%8E%A8%E8%AE%BA"><span class="nav-number">5.10.2.</span> <span class="nav-text">命题 5.9 的推论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%B8%B8%E8%BF%94%E6%83%85%E5%BD%A2"><span class="nav-number">5.10.3.</span> <span class="nav-text">正常返情形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%8D%E5%8E%86%E5%AE%9A%E7%90%86"><span class="nav-number">5.10.4.</span> <span class="nav-text">遍历定理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markov-%E9%93%BE%E7%9A%84%E5%B9%B3%E7%A8%B3%E5%88%86%E5%B8%83"><span class="nav-number">5.11.</span> <span class="nav-text">Markov 链的平稳分布</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B3%E7%A8%B3%E5%88%86%E5%B8%83%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">5.11.1.</span> <span class="nav-text">平稳分布的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B3%E7%A8%B3%E5%88%86%E5%B8%83%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">5.11.2.</span> <span class="nav-text">平稳分布的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Markov-%E9%93%BE%E7%9A%84%E5%B9%B3%E7%A8%B3%E6%80%A7"><span class="nav-number">5.11.3.</span> <span class="nav-text">Markov 链的平稳性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E8%BF%87%E7%A8%8B"><span class="nav-number">5.12.</span> <span class="nav-text">分支过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E7%A7%BB%E6%A6%82%E7%8E%87"><span class="nav-number">5.12.1.</span> <span class="nav-text">转移概率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81"><span class="nav-number">5.12.2.</span> <span class="nav-text">数字特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%81%AD%E7%BB%9D%E6%A6%82%E7%8E%87"><span class="nav-number">5.12.3.</span> <span class="nav-text">灭绝概率</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4-Markov-%E9%93%BE"><span class="nav-number">6.</span> <span class="nav-text">连续时间 Markov 链</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4-Markov-%E9%93%BE%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">6.1.</span> <span class="nav-text">连续时间 Markov 链基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E7%A7%BB%E6%A6%82%E7%8E%87%E7%9F%A9%E9%98%B5"><span class="nav-number">6.1.1.</span> <span class="nav-text">转移概率矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E9%BD%90%E6%80%A7"><span class="nav-number">6.1.2.</span> <span class="nav-text">时齐性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E9%99%90%E7%BB%B4%E5%88%86%E5%B8%83"><span class="nav-number">6.1.3.</span> <span class="nav-text">有限维分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E6%9C%AC%E8%BD%A8%E9%81%93"><span class="nav-number">6.1.4.</span> <span class="nav-text">样本轨道</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E6%80%A7"><span class="nav-number">6.1.5.</span> <span class="nav-text">正则性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4-Markov-%E9%93%BE%E7%9A%84%E8%BD%AC%E7%A7%BB%E6%A6%82%E7%8E%87%E7%9F%A9%E9%98%B5"><span class="nav-number">6.2.</span> <span class="nav-text">连续时间 Markov 链的转移概率矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E7%A7%BB%E6%A6%82%E7%8E%87%E7%9F%A9%E9%98%B5%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">6.2.1.</span> <span class="nav-text">转移概率矩阵的性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AC%E7%A7%BB%E9%80%9F%E7%8E%87%E7%9F%A9%E9%98%B5"><span class="nav-number">6.3.</span> <span class="nav-text">转移速率矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E7%A7%BB%E9%80%9F%E7%8E%87%E7%9F%A9%E9%98%B5%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">6.3.1.</span> <span class="nav-text">转移速率矩阵的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BD%90%E6%AC%A1-Poisson-%E8%BF%87%E7%A8%8B%E7%9A%84-Markov-%E6%80%A7"><span class="nav-number">6.3.2.</span> <span class="nav-text">齐次 Poisson 过程的 Markov 性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-%E8%BF%87%E7%A8%8B"><span class="nav-number">6.3.3.</span> <span class="nav-text">Q 过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4-Markov-%E9%93%BE%E7%9A%84%E7%8A%B6%E6%80%81%E5%88%86%E7%B1%BB"><span class="nav-number">6.4.</span> <span class="nav-text">连续时间 Markov 链的状态分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E5%AE%9A%E4%B9%89"><span class="nav-number">6.4.1.</span> <span class="nav-text">状态定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E5%88%86%E7%B1%BB"><span class="nav-number">6.4.2.</span> <span class="nav-text">状态分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kolmogorov-%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B"><span class="nav-number">6.5.</span> <span class="nav-text">Kolmogorov 微分方程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Kolmogorov-%E5%90%91%E5%90%8E%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B"><span class="nav-number">6.5.1.</span> <span class="nav-text">Kolmogorov 向后微分方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Kolmogorov-%E5%90%91%E5%89%8D%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B"><span class="nav-number">6.5.2.</span> <span class="nav-text">Kolmogorov 向前微分方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Kolmogorov-%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%84"><span class="nav-number">6.5.3.</span> <span class="nav-text">Kolmogorov 微分方程组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4-Markov-%E9%93%BE%E7%9A%84%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86"><span class="nav-number">6.6.</span> <span class="nav-text">连续时间 Markov 链的极限定理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B5%8C%E5%85%A5%E9%93%BE"><span class="nav-number">6.6.1.</span> <span class="nav-text">嵌入链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86"><span class="nav-number">6.6.2.</span> <span class="nav-text">极限定理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E7%81%AD%E8%BF%87%E7%A8%8B"><span class="nav-number">6.7.</span> <span class="nav-text">生灭过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E7%81%AD%E8%BF%87%E7%A8%8B%E7%9A%84%E7%BB%9F%E8%AE%A1%E5%B1%9E%E6%80%A7"><span class="nav-number">6.7.1.</span> <span class="nav-text">生灭过程的统计属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#M-G-1-Queue"><span class="nav-number">6.8.</span> <span class="nav-text">$M&#x2F;G&#x2F;1$ Queue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#M-M-s-Queue"><span class="nav-number">6.9.</span> <span class="nav-text">$M&#x2F;M&#x2F;s$ Queue</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="結凪"
+      src="/images/U_avatar.jpg">
+  <p class="site-author-name" itemprop="name">結凪</p>
+  <div class="site-description" itemprop="description">如果你想走到高处，就要使用自己的两条腿！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/UynajGI" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;UynajGI" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/yuunagi.cn@outlook.com" title="E-Mail → yuunagi.cn@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤 ICP 备 2022065599 号 -1 </a>
+      <img src="/images/beian.png" style="display: inline-block;">
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">結凪</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+</body>
+</html>
