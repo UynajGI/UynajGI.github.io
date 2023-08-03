@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="Kh9Fd2kRwyC6ZRSU1tw4Hk1EfDKThfkk5HneuPofGfU">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-material.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.uynajgi.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterance","storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="网络科学引论知识点记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络科学引论 —— 基础理论">
+<meta property="og:url" content="https://www.uynajgi.com/714255f6.html">
+<meta property="og:site_name" content="結凪·Cube">
+<meta property="og:description" content="网络科学引论知识点记录">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308011020332.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308011018607.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308011028491.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308011029363.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308011034178.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308011519085.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308011521644.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308011522434.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308021256189.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308021427977.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308021438373.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308031138394.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308031143502.png">
+<meta property="article:published_time" content="2023-08-03T06:03:08.000Z">
+<meta property="article:modified_time" content="2023-08-03T06:03:08.638Z">
+<meta property="article:author" content="結凪">
+<meta property="article:tag" content="记录">
+<meta property="article:tag" content="复杂网络">
+<meta property="article:tag" content="图论">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308011020332.png">
+
+<link rel="canonical" href="https://www.uynajgi.com/714255f6.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>网络科学引论 —— 基础理论 | 結凪·Cube</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<style type="text/css">
+.spoiler {
+  display: inline-flex;
+}
+p.spoiler {
+  display: flex;
+}
+.spoiler a {
+  pointer-events: none;
+}
+.spoiler-blur, .spoiler-blur > * {
+  transition: text-shadow .5s ease;
+}
+.spoiler .spoiler-blur, .spoiler .spoiler-blur > * {
+  color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  text-shadow: 0 0 10px grey;
+  cursor: pointer;
+}
+.spoiler .spoiler-blur:hover, .spoiler .spoiler-blur:hover > * {
+  text-shadow: 0 0 5px grey;
+}
+.spoiler-box, .spoiler-box > * {
+  transition: color .5s ease,
+  background-color .5s ease;
+}
+.spoiler .spoiler-box, .spoiler .spoiler-box > * {
+  color: black;
+  background-color: black;
+  text-shadow: none;
+}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">結凪·Cube</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Game of Life</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>文章</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>图书馆</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.uynajgi.com/714255f6.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/U_avatar.jpg">
+      <meta itemprop="name" content="結凪">
+      <meta itemprop="description" content="如果你想走到高处，就要使用自己的两条腿！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="結凪·Cube">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          网络科学引论 —— 基础理论
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-08-03 14:03:08" itemprop="dateCreated datePublished" datetime="2023-08-03T14:03:08+08:00">2023-08-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%89%A9%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">物理</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%89%A9%E7%90%86/%E7%BD%91%E7%BB%9C%E7%A7%91%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">网络科学</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">网络科学引论知识点记录</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="网络基础理论"><a href="#网络基础理论" class="headerlink" title="网络基础理论"></a>网络基础理论</h1><h2 id="网络的数学基础"><a href="#网络的数学基础" class="headerlink" title="网络的数学基础"></a>网络的数学基础</h2><h3 id="网络及其表示方法"><a href="#网络及其表示方法" class="headerlink" title="网络及其表示方法"></a>网络及其表示方法</h3><p>所谓网络，在数学的相关文献中也称为<strong>图 (graph)</strong>, 是一个由多个顶点及连接顶点之间的边组成的集合。顶点和边在计算机科学中也称为<strong>节点 (node)</strong> 和<strong>链接 (link)</strong>, 在物理学中称为<strong>点 (site)</strong> 和<strong>键 (bond)</strong>, 在社会学中称为<strong>参与者 (actor)</strong> 和<strong>关系 (tie)</strong>。</p>
+<p><strong>重边和自环</strong>：两个顶点之间有多条边，或者一个顶点与自身相连。没有重边和自环的网络称为<strong>简单网络 (simple network)</strong> 或<strong>简单图</strong>，存在重边和自环的网络称为<strong>多重网络 (multigraph)</strong> 或<strong>多重图</strong>。</p>
+<h3 id="邻接矩阵"><a href="#邻接矩阵" class="headerlink" title="邻接矩阵"></a>邻接矩阵</h3><p>邻接矩阵：$A_{ij}$ 表示顶点 $i$ 和顶点 $j$ 之间是否有边，如果有边则为 1，否则为 0。</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308011020332.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">简单图的邻接矩阵</div>
+</center>
+
+<h3 id="加权网络"><a href="#加权网络" class="headerlink" title="加权网络"></a>加权网络</h3><p>加权网络：网络中的边带有权重，权重可以表示边的强度或者两个顶点之间的距离。</p>
+<h3 id="有向网络"><a href="#有向网络" class="headerlink" title="有向网络"></a>有向网络</h3><p>有向网络：网络中的边有方向，从一个顶点指向另一个顶点。$A_{ij}$ 表示顶点 j 指向顶点 i 的边的存在性。</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308011018607.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">网络中的箭头代表边的方向</div>
+</center>
+
+<h4 id="共引和文献耦合"><a href="#共引和文献耦合" class="headerlink" title="共引和文献耦合"></a>共引和文献耦合</h4><p>有向网络中顶点 i 和 j 的<strong>共引值 (cocitation)</strong> 是指共同指向顶点 i 和顶点 j 的边数。</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+    C_{ij}&=\sum_{k=1}^{N} A_{ik} A_{kj}^T\\
+    \mathbf{C}&=\mathbf{A} \mathbf{A}^T
+\end{align*}</script><center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308011028491.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">共引值</div>
+</center>
+
+<p>文献耦合与共引类似。有向网络中的两个顶点的<strong>文献耦合 (bibliographic coupling)</strong> 数是这两个顶点共同指向的顶点总数。</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+    B_{ij}=\sum_{k=1}^{N} A_{ik}^T A_{kj}\\
+    \mathbf{B}=\mathbf{A}^T \mathbf{A}
+\end{align*}</script><center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308011029363.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">耦合值</div>
+</center>
+
+<h4 id="非循环有向网络"><a href="#非循环有向网络" class="headerlink" title="非循环有向网络"></a>非循环有向网络</h4><p>所有特征值为 0 的矩阵称为<strong>幂零矩阵 (nilpotent matrix)</strong>。因此也可以说，当且仅当网络的邻接矩阵是幂零矩阵时，该网络是非循环网络。</p>
+<h3 id="超图"><a href="#超图" class="headerlink" title="超图"></a>超图</h3><p>在某些类型的网络中，一些边会同时连接多个顶点。这种边称为<strong>超边 (hyperedge)</strong>，含有超边的网络称为<strong>超图 (hypergraph)</strong>。</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308011034178.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">超图</div>
+</center>
+
+<h3 id="二分网络"><a href="#二分网络" class="headerlink" title="二分网络"></a>二分网络</h3><p><strong>二分网络</strong>也称为<strong>双模网络 (two-mode network)</strong>。在这种网络中有两类顶点，一类顶点代表原始顶点，而另一类顶点则表示原始顶点所属的群组。</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308011519085.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">一个二分网络的两种单模投影</div>
+</center>
+
+<h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><p><strong>树 (tree)</strong> 是连通的、无向的且不包含闭合循环的网络。所谓 “连通” 是指网络中的任意两个顶点（节点）之间都存在一条互相可达的路径。一个网络可能由两个或多个部分组成，每个部分相互之间不连通②，如果一个单独的部分中不包含闭合循环，那么称它为树。如果一个网络的所有组成部分都是树，那么称该网络为<strong>森林 (forest)</strong>。</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308011521644.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">一棵树</div>
+</center>
+
+<p><strong>根节点 (root node)</strong> 在最上方，分枝结构向下延伸。只与一个其他顶点相连的最底部的顶点称为叶<strong>子 (leaf)</strong>。</p>
+<h3 id="平面网络"><a href="#平面网络" class="headerlink" title="平面网络"></a>平面网络</h3><p><strong>平面网络 (planar network)</strong> 是指一个可以画在平面上，而边与边之间互不交叉的网络。</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308011522434.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">一个平面图的两种描述</div>
+</center>
+
+<h3 id="度"><a href="#度" class="headerlink" title="度"></a>度</h3><p>图中顶点的<strong>度 (degree)</strong> 是指与其直接相连的边数目。</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+    k_i = \sum_{j=1}^n A_{ij}\\
+    2m=\sum_{i=1}^n k_i
+\end{align*}</script><p>其中 $m$ 是网络中边的数目。</p>
+<p>度的平均值为：$\langle k\rangle = \frac {1}{n}\sum_{i=1}^n k_i=\frac {2m}{n}$。</p>
+<p>一个简单图中，可能边数的最大值为 $\binom {n}{2}=n (n-1)/2$，图的 <strong>连通度 (connectivity)</strong> 或 <strong>密度 (density)</strong> 定义为：</p>
+<script type="math/tex; mode=display">
+\rho = \dfrac{m}{\binom{n}{2}}=\dfrac{2m}{n(n-1)}=\dfrac{c}{n-1}\approx\dfrac{c}{n}[n\gg1]</script><p>在图论中，这样的网络称为<strong>正则图 (regular graph)</strong>。每一个顶点度都为 k 的正则图称为 <strong>k - 正则图 (k-regular)</strong>。</p>
+<p><strong>入度 (in-degree)</strong> 是连接到该顶点的入边数目，<strong>出度 (out-degree)</strong> 是出边数目。</p>
+<h3 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h3><p>路径就是网络中从一个顶点沿着网络中的边到达另一个顶点的线路。与自身没有交叉的路径称为<strong>自回避路径 (sclf-avoiding path)</strong>。网络中的路径<strong>长度 (length)</strong> 等于该路径经过的边的数目</p>
+<p>长度为任意值 r 的路径总数，可以得到</p>
+<script type="math/tex; mode=display">
+N_{ij}^{(r)}=\left[\mathbf{A}^r\right]_{ij}</script><p>循环总数 $L_r$ 是所有可能的起始点 i 对应的 $\left [\mathbf {A}^r\right]_{ii}$ 的总和，即</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+    L_r&=\sum_{i=1}^n\left[\mathbf{A}^r\right]_{ii}=Tr\left(\mathbf{A}^r\right)\\
+    \Rightarrow L_r&=\sum_i\lambda_i^r
+\end{align*}</script><p>其中 $\lambda_i$ 是 $\mathbf {A}^r$ 的特征值。</p>
+<h4 id="测地路径"><a href="#测地路径" class="headerlink" title="测地路径"></a>测地路径</h4><p><strong>测地路径 (geodesic path)</strong>, 简称为<strong>最短路径 (shortest path)</strong>，即两个顶点间不存在更短路径的路径。测地路径的长度通常称为<strong>测地距离 (geodesic distance)</strong></p>
+<p>图的<strong>直径 (diameter)</strong> 是指：图中任意一对相互连接的顶点之间的最长测地路径长度。</p>
+<h4 id="欧拉路径和哈密顿路径"><a href="#欧拉路径和哈密顿路径" class="headerlink" title="欧拉路径和哈密顿路径"></a>欧拉路径和哈密顿路径</h4><p><strong>欧拉路径 (Eulerian path)</strong> 是经过网络中的所有边且每条边只经过一次的路径。<br><strong>哈密顿路径 (Hamiltonian path)</strong> 是访问网络的所有顶点且每个顶点只访问一次的路径。</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308021256189.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">一个小规模网络中的欧拉和哈密顿路径的实例</div>
+</center>
+
+<h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><p>如果网络中任何两个顶点之间都能找到一条路径，则称该网络是<strong>连通 (connected)</strong> 网络，反之则称为<strong>非连通 (disconnected)</strong> 网络。</p>
+<h4 id="有向网络中的分支"><a href="#有向网络中的分支" class="headerlink" title="有向网络中的分支"></a>有向网络中的分支</h4><p><strong>强连通 (strongly connected)</strong> 网络是指网络中任意两个顶点之间都能找到一条有向路径。<br><strong>弱连通 (weakly connected)</strong> 网络是指将有向网络中的所有有向边都替换为无向边后得到的网络。<br><strong>外向分支 (out-component)</strong> 它是从特定顶点 A 出发，沿着有向边能够到达的所有顶点的集合，外向分支包括顶点 A。<br><strong>内向分支 (in-component)</strong> 是指能够到达特定顶点 A 的所有顶点的集合，内向分支包括顶点 A。</p>
+<h3 id="独立路径、连通度和割集"><a href="#独立路径、连通度和割集" class="headerlink" title="独立路径、连通度和割集"></a>独立路径、连通度和割集</h3><p>如果两条路径除了起点和终点外，不共享其他任何顶点，那么这两条路径是<strong>顶点独立 (vertex-independent)</strong> 的，或称是<strong>节点独立 (node-independent)</strong> 的。<br>如果两条路径除了起点和终点外，不共享其他任何边，那么这两条路径是<strong>边独立 (edge-independent)</strong> 的。</p>
+<p>如果两条路在数学中，独立路径有时也称为<strong>非相交路径 (disjoint path)</strong>。数学中描述边和顶点独立性的术语是<strong>边非相交 (edge-disjoint)</strong> 和<strong>顶点非相交 (vertex-disjoint)</strong>。</p>
+<p>两个顶点之间的独立路径数称为顶点之间的<strong>连通度 (connectivity)</strong>。如果希望清晰地表明考虑的是边还是顶点，则需要利用<strong>边连通度 (edge connectivity)</strong> 及<strong>顶点连通度 (vertex connectivity)</strong> 的概念。</p>
+<p><strong>割集 (cut set)</strong>, 更恰当地说是<strong>顶点割集 (vertex cut set)</strong>，是一个顶点的集合，如果移除这些顶点，则某两个顶点间的路径将会断开。<br><strong>边割集 (edge cut set)</strong> 是对于边的对应概念，它是一个边的集合，移除这些边后，某两个顶点之间的路径将被断开。<br><strong>最小割集 (minimum cut set)</strong> 是使特定两个顶点之间路径断开的规模最小的割集。</p>
+<p><strong>Menger 定理 (Menger’s theorem)</strong>:<br>如果给定的两个顶点之间不存在规模小于 n 的割集，那么在这两个顶点之间至少存在 n 条独立路径。</p>
+<h4 id="加权网络的最大流量和割集"><a href="#加权网络的最大流量和割集" class="headerlink" title="加权网络的最大流量和割集"></a>加权网络的最大流量和割集</h4><p>在网络中，给定两个顶点之间的最大流量等于这两个顶点的最小边割集中的边的权重之和。</p>
+<h3 id="图拉普拉斯矩阵"><a href="#图拉普拉斯矩阵" class="headerlink" title="图拉普拉斯矩阵"></a>图拉普拉斯矩阵</h3><h4 id="扩散"><a href="#扩散" class="headerlink" title="扩散"></a>扩散</h4><p>扩散速率</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+&\dfrac{\mathrm{d}\psi_i}{\mathrm{d}t}=C\sum_{j=1}^nA_{ij}(\psi_j-\psi_i)=C\sum_{j=1}\left(A_{ij}-\delta_{ij}k_i\right)\psi_j\\
+\Rightarrow &\dfrac{\mathrm{d}\mathbf{\psi}}{\mathrm{d}t}+C\mathbf{L}\mathbf{\psi}=0
+\end{align*}</script><p>其中 $\mathbf {L}=\mathbf {D}-\mathbf {A}$，$\mathbf {D}=\begin {bmatrix}<br>    k_1 &amp; 0 &amp; \cdots\\<br>    0 &amp; k_2 &amp; \cdots \\<br>    \vdots &amp; \vdots &amp; \ddots \\<br>\end {bmatrix}$ 是度矩阵，$\mathbf {A}$ 是邻接矩阵。矩阵 $\mathbf {L}$ 称为<strong>图拉普拉斯矩阵 (graph Laplacian matrix)</strong></p>
+<h4 id="图拉普拉斯矩阵的特征值"><a href="#图拉普拉斯矩阵的特征值" class="headerlink" title="图拉普拉斯矩阵的特征值"></a>图拉普拉斯矩阵的特征值</h4><p>定义一个 m×n 的矩阵 B，其元素如下：</p>
+<script type="math/tex; mode=display">
+B_{ij}=\begin{cases}
+    +1 & \text{如果边 i 的端点 1 连接顶点 j}\\
+    -1 & \text{如果边 i 的端点 2 连接顶点 j}\\
+    0 & \text{其他}
+\end{cases}</script><p>矩阵 B 称为<strong>边关联矩阵 (edge incidence matrix)</strong>，则拉普拉斯矩阵可以表示为</p>
+<script type="math/tex; mode=display">
+\mathbf{L}=\mathbf{B}^T\mathbf{B}</script><h4 id="分支和代数连通度"><a href="#分支和代数连通度" class="headerlink" title="分支和代数连通度"></a>分支和代数连通度</h4><p><strong>代数连通度</strong> 是指图拉普拉斯矩阵的第二特征值</p>
+<h3 id="随机游走"><a href="#随机游走" class="headerlink" title="随机游走"></a>随机游走</h3><script type="math/tex; mode=display">
+\begin{align*}
+\mathbf{p}(t)&=\mathbf{A}\mathbf{D}^{-1}\mathbf{p}(t-1)\\
+\Rightarrow\mathbf{D}^{-1/2}\mathbf{p}(t)&=\left[\mathbf{D}^{-1/2}\mathbf{A}\mathbf{D}^{-1/2}\right]\left[\mathbf{D}^{-1/2}\mathbf{p}(t-1)\right]
+\end{align*}</script><p>其中 $\mathbf {D}^{-1/2}\mathbf {A}\mathbf {D}^{-1/2}$ 被称为<strong>压缩邻接矩阵 (reduced adjacency matrix)</strong></p>
+<h2 id="测度与参数"><a href="#测度与参数" class="headerlink" title="测度与参数"></a>测度与参数</h2><h3 id="度中心性"><a href="#度中心性" class="headerlink" title="度中心性"></a>度中心性</h3><p>网络中心性的最简单的测度是顶点的度，即与顶点相连的边的数量</p>
+<h3 id="特征向量中心性"><a href="#特征向量中心性" class="headerlink" title="特征向量中心性"></a>特征向量中心性</h3><script type="math/tex; mode=display">
+\begin{align*}
+\mathbf{x}(t)=\mathbf{A}\mathbf{x}(t-1)\\
+t\to\infty,\ \mathbf{A}\mathbf{x}=\lambda_1\mathbf{x}
+\end{align*}</script><h3 id="Katz-性"><a href="#Katz-性" class="headerlink" title="Katz 性"></a>Katz 性</h3><script type="math/tex; mode=display">
+\mathbf{x}=(\mathbf{I}-\alpha\mathbf{A})^{-1}\mathbf{1}[\text{or }\mathbf{\beta}]</script><h3 id="PageRank"><a href="#PageRank" class="headerlink" title="PageRank"></a>PageRank</h3><script type="math/tex; mode=display">
+\begin{align*}
+\mathbf{x}=&\alpha\mathbf{A}\mathbf{D}^{-1}\mathbf{x}+\beta\mathbf{1}\\
+\beta=1,\ \mathbf{x}=&\mathbf{D}(\mathbf{D}-\alpha\mathbf{A})^{-1}\mathbf{1}
+\end{align*}</script><center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308021427977.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">四种中心性测度</div>
+</center>
+
+<h3 id="核心顶点与权威顶点"><a href="#核心顶点与权威顶点" class="headerlink" title="核心顶点与权威顶点"></a>核心顶点与权威顶点</h3><h3 id="接近度中心性"><a href="#接近度中心性" class="headerlink" title="接近度中心性"></a>接近度中心性</h3><p>假设 $d_{ij}$, 是从顶点 i 到 j 的测地路径长度，即路径中边的总数。对网络中所有的顶点 j 取平均，那么从 i 到 j 的平均测地距离是</p>
+<script type="math/tex; mode=display">
+l_i=\dfrac{1}{n}\sum_{j=1}^nd_{ij}\text{ or } \dfrac{1}{n-1}\sum_{j(\not = i)}^nd_{ij}</script><p>其倒数称为<strong>接近度中心性 (closeness centrality)</strong></p>
+<script type="math/tex; mode=display">
+C_i=\dfrac{1}{l_i}</script><h3 id="介数中心性"><a href="#介数中心性" class="headerlink" title="介数中心性"></a>介数中心性</h3><p>从数学角度讲，如果顶点 i 位于顶点 s 到 t 的测地路径上，则令 $n_{st}^i$ 为 1，否则为 0：或者当不存在路径时 (因为 s 与 t 位于网络的不同分支中)，令 $n_{st}^i$ 为 0，则介数中心性 x，为</p>
+<script type="math/tex; mode=display">
+x_i=\sum_{s,t}\dfrac{n_{st}^i}{g_{st}}</script><p>其中 $g_{st}$ 是 s 到 t 的最短路径的数量。</p>
+<h3 id="顶点群组"><a href="#顶点群组" class="headerlink" title="顶点群组"></a>顶点群组</h3><h4 id="团、丛和核"><a href="#团、丛和核" class="headerlink" title="团、丛和核"></a>团、丛和核</h4><p><strong>团 (clique)</strong> ：无向网络中的一个最大顶点子集，在该子集中任何两个顶点之间都有一条边直接相连。<br><strong>k - 丛 (k-plex)</strong> ：大小为 n 的 k - 丛是网络中顶点数为 n 的最大子集，该子集的每个顶点都至少和子集中的另外 n-k 个顶点相连。<br><strong>k - 核 (k-core)</strong> ：网络顶点的一个最大子集，该子集中的每个顶点至少与子集中的 k 个其他顶点相连。</p>
+<h4 id="分支和-k-分支"><a href="#分支和-k-分支" class="headerlink" title="分支和 k-分支"></a>分支和 k - 分支</h4><p><strong>k 分支 (k-component)</strong> 有时也称为 <strong>k 连通分支 (k-connected component)</strong>，它是网络顶点的一个最大子集，该子集中的顶点彼此之间能够通过至少 k 条顶点独立路径相连。</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308021438373.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">小型网络中的 k 分支</div>
+</center>
+
+<h3 id="传递性"><a href="#传递性" class="headerlink" title="传递性"></a>传递性</h3><p>我们将聚类系数（clustering coefficient) 定义为网络中所有长度为 2 的路径中闭合路径所占的比例。也就是说，要计算网络中所有长度为 2 的路径总数，然后计算其中有闭合路径的总数，用第二个数值除以第一个数值，从而得到聚类系数 C，</p>
+<script type="math/tex; mode=display">
+C=\dfrac{\text{长度为 2 的闭合路径的数量}}{\text{长度为 2 的路径的数量}}</script><p>聚类系数的另外一种定义方式是</p>
+<script type="math/tex; mode=display">
+C=\dfrac{6\times\text{三角形的数量}}{\text{长度为 2 的路径的数量}}</script><p>还有一种定义方式是</p>
+<script type="math/tex; mode=display">
+C=\dfrac{3\times\text{三角形的数量}}{\text{连通三元组的数量}}</script><h4 id="局部聚类和冗余"><a href="#局部聚类和冗余" class="headerlink" title="局部聚类和冗余"></a>局部聚类和冗余</h4><p>也可以定义单个顶点的聚类系数。对于顶点 i，定义</p>
+<script type="math/tex; mode=display">
+C_i=\dfrac{\text{与顶点 i 相连的顶点对之间的边数}}{\text{与顶点 i 相连的顶点对之间的可能边数}}</script><p>而分母的值为 $\dfrac {1}{2} k_i (k_i-1)$，其中 $k_i$ 是顶点 i 的度数。这种定义方式也称为<strong>局部聚类系数 (local clustering coefficient)</strong>。</p>
+<p>从局部聚类系数可以定义<strong>冗余</strong></p>
+<script type="math/tex; mode=display">
+R_i=(k_i-1)C_i</script><p>WS 全局聚类系数和局部聚类系数之间的关系是</p>
+<script type="math/tex; mode=display">
+C_{WS}=\dfrac{1}{n} \sum_{i=1}^n C_i</script><h3 id="相互性"><a href="#相互性" class="headerlink" title="相互性"></a>相互性</h3><p>如果在网络中，顶点 i 到顶点 j 有一条有向边，同时从顶点 j 到顶点 i 也有一条有向边，那么顶点 i 到 j 的边是<strong>相互的 (reciprocated)</strong>(显然从顶点 j 到 i 的边也是相互的)，得到相互性的定义</p>
+<script type="math/tex; mode=display">
+r=\dfrac{1}{m}Tr(\mathbf{A}^2)</script><h3 id="有符号边和结构平衡"><a href="#有符号边和结构平衡" class="headerlink" title="有符号边和结构平衡"></a>有符号边和结构平衡</h3><p>每条边只有两种状态中的一种，要么是正的，要么是负的，或者要么喜欢，要么不喜欢。这样的网络称为有<strong>符号网络 (signed network)</strong>，其边称为<strong>有符号边 (signed edge)</strong>。</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308031138394.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">符号网络</div>
+</center>
+
+<p>网络若只包含带有偶数个负号的循环，则称其<strong>结构平衡 (structural balance)</strong>, 有时简称<strong>平衡 (balance)</strong>.Harary 证明了关于网络平衡的一个重要推论：</p>
+<blockquote>
+<p>一个平衡网络能够被划分为若千个连通顶点群组，且群组内顶点之间的连接都是正的，而不同群组之间的连接都是负的。</p>
+</blockquote>
+<h3 id="相似性"><a href="#相似性" class="headerlink" title="相似性"></a>相似性</h3><p>构造网络相似性的测度有两种基本方法，分别称为<strong>结构等价 (structural equivalence)</strong> 和<strong>规则等价 (regular equivalence)</strong>。<br>如果网络中的两个顶点共享很多相同的邻居顶点，那么这两个顶点是结构等价的。<br>两个规则等价的顶点不必共享相同的邻居顶点，但是它们拥有的邻居顶点本身要相似。</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308031143502.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">结构等价与规则等价</div>
+</center>
+
+<h4 id="余弦相似性"><a href="#余弦相似性" class="headerlink" title="余弦相似性"></a>余弦相似性</h4><p>在无向网络中，顶点 i 和的共享邻居顶点数表示为 $n_{ij}$，则有</p>
+<script type="math/tex; mode=display">
+n_{ij}=\sum_k A_{ik}A_{kj}=[\mathbf{A}^2]_{ij}</script><p>更好的相似性测度应该考虑到顶点度的区别。<strong>余弦相似性 (cosine similarity)</strong> 就是这样的一种测度，有时也称其为 <strong>Salton 余弦 (Salton’s cosine)</strong>。</p>
+<script type="math/tex; mode=display">
+\sigma_{ij}=\dfrac{\sum_k A_{ik}A_{kj}}{\sqrt{\sum_k A_{ik}^2}\sqrt{\sum_k A_{jk}^2}}=\left[\dfrac{n_{ij}}{\sqrt{k_ik_j}}\text{，当简单图时}\right]</script><h4 id="皮尔逊相关系数"><a href="#皮尔逊相关系数" class="headerlink" title="皮尔逊相关系数"></a>皮尔逊相关系数</h4><script type="math/tex; mode=display">
+r_{ij}=\dfrac{cov\left(A_i,A_j\right)}{\sigma_i\sigma_j}=\dfrac{\sum_k\left(A_{ik}-\left\langle A_i\right\rangle\right)\left(A_{jk}-\left\langle A_j\right\rangle\right)}{\sqrt{\sum_k\left(A_{ik}-\left\langle A_i\right\rangle\right)^2}\sqrt{\sum_k\left(A_{jk}-\left\langle A_j\right\rangle\right)^2}}</script><h4 id="结构等价的其他测度"><a href="#结构等价的其他测度" class="headerlink" title="结构等价的其他测度"></a>结构等价的其他测度</h4><script type="math/tex; mode=display">
+\dfrac{n_{ij}}{k_ik_j/n}=n\dfrac{\sum_k A_{ik}A_{jk}}{\sum_k A_{ik}\sum_k A_{jk}}</script><p><strong>欧几里得距离 (Euclidean distance)</strong></p>
+<script type="math/tex; mode=display">
+\begin{align*}
+    d_{ij}=\sum_k\left(A_{ik}-A_{jk}\right)^2\\
+    \text{norm }\to d_{ij}=1-2\dfrac{n_{ij}}{k_i+k_j}
+\end{align*}</script><h4 id="规则等价"><a href="#规则等价" class="headerlink" title="规则等价"></a>规则等价</h4><p>无向网络：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+    \sigma_{ij}=&\alpha\sum_{kl}A_{ik}A_{jl}\sigma_{kl}\\
+    \Rightarrow\sigma=&\alpha\mathbf{A}\sigma\mathbf{A}
+\end{align*}</script><p>添加自相似性：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+    \sigma_{ij}=&\alpha\sum_{kl}A_{ik}A_{jl}\sigma_{kl}+\delta_{ij}\\
+    \Rightarrow\sigma=&\alpha\mathbf{A}\sigma\mathbf{A}+\mathbf{I}
+\end{align*}</script><p>考虑所有长度路径：</p>
+<script type="math/tex; mode=display">
+\sigma =\sum_{m=0}^\infty{\alpha\mathbf{A}}^m=\left(\mathbf{I}-\alpha\mathbf{A}\right)^{-1}</script><p>归一化度的偏差：</p>
+<script type="math/tex; mode=display">
+\sigma=\left(\mathbf{I}-\alpha\mathbf{D}^{-1}\mathbf{A}\right)^{-1}=\left(\mathbf{D}-\alpha\mathbf{A}\right)^{-1}\mathbf{D}</script><h3 id="同质性和同配混合"><a href="#同质性和同配混合" class="headerlink" title="同质性和同配混合"></a>同质性和同配混合</h3><p>人们倾向于选择那些他们认为与其自身在某些方面相似的人作为朋友，这种倾向性称为<strong>同质性 (homophily)</strong> 或者<strong>同配混合 (assortative mixing)</strong>。<br>有时也会碰到<strong>异配混合 (disassortative mixing)</strong>，但这相对少见，所谓异配混合是指与自己不相像的人交往的倾向。</p>
+<h4 id="依据枚举特征的同配混合"><a href="#依据枚举特征的同配混合" class="headerlink" title="依据枚举特征的同配混合"></a>依据枚举特征的同配混合</h4><script type="math/tex; mode=display">
+Q=\dfrac{1}{2m}\sum_{ij}\left(A_{ij}-\dfrac{k_ik_j}{2m}\right)\delta_{c_i,c_j}</script><p>上式中的 Q 称为<strong>模块度 (modularity)</strong>，其中的变量</p>
+<script type="math/tex; mode=display">
+B_{ij}=A_{ij}-\dfrac{k_ik_j}{2m}</script><p>被称为<strong>模块度矩阵 (modularity matrix)</strong>。</p>
+<p>模块度归一化后得</p>
+<script type="math/tex; mode=display">
+\dfrac{Q}{Q_{max}}=\dfrac{\sum_{ij}\left(A_{ij}-k_ik_j/2m\right)\delta_{c_i,c_j}}{2m-\sum_{ij}\left(k_ik_j/2m\right)\delta_{c_i,c_j}}</script><p>被称为<strong>同配系数 (assortativity coefficient)</strong></p>
+<h4 id="依据标量特征的同配混合"><a href="#依据标量特征的同配混合" class="headerlink" title="依据标量特征的同配混合"></a>依据标量特征的同配混合</h4><p>令 $\delta_{c_i,c_j}\eqqcolon x_ix_j$，其中 $x_i$ 是节点的标量特征，如性别、年龄等。公式略。</p>
+<h4 id="依据度的同配混合"><a href="#依据度的同配混合" class="headerlink" title="依据度的同配混合"></a>依据度的同配混合</h4><p>令 $\delta_{c_i,c_j}\eqqcolon k_ik_j$，公式略。</p>
+<h2 id="网络的大规模结构"><a href="#网络的大规模结构" class="headerlink" title="网络的大规模结构"></a>网络的大规模结构</h2><h3 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h3><h3 id="最短路径和小世界效应"><a href="#最短路径和小世界效应" class="headerlink" title="最短路径和小世界效应"></a>最短路径和小世界效应</h3><h3 id="度分布"><a href="#度分布" class="headerlink" title="度分布"></a>度分布</h3><p>定义 $p_k$ 是无向网络中度为 k 的顶点占顶点总数的比例，表示网络的<strong>度分布 (degree distribution)</strong>。<br>另外一种结构是<strong>度序列 (degree sequence)</strong>，即所有顶点度的集合，记为 $\{k_i\}$。</p>
+<h3 id="幂律和无标度网络"><a href="#幂律和无标度网络" class="headerlink" title="幂律和无标度网络"></a>幂律和无标度网络</h3><script type="math/tex; mode=display">
+\ln p_k=-\alpha\ln k+\ln C</script><p>这种形式的分布，即按照 k 的幂变化，称为<strong>幂律 (power law)</strong>。</p>
+<h4 id="检测和观察幂律分布"><a href="#检测和观察幂律分布" class="headerlink" title="检测和观察幂律分布"></a>检测和观察幂律分布</h4><p><strong>对数方柱 (logarithmic binning)</strong> 在该方法中，每个方柱宽度是前一个方柱宽度的 a 倍 (a 为常数)。</p>
+<p><strong>累积分布函数 (cumulative distribution function)</strong> 该函数定义如下</p>
+<script type="math/tex; mode=display">
+P_k=\sum_{k'=k}^\infty p_{k'}</script><p>其分布满足</p>
+<script type="math/tex; mode=display">
+P_k=C\sum_{k'=k}^\infty k'^{-\alpha}=C\dfrac{k^{-\alpha+1}}{\alpha-1}</script><p><strong>利用数据直接计算 α 的值</strong></p>
+<script type="math/tex; mode=display">
+\alpha=1+N\left[\sum_i\ln\dfrac{k}{k_{\min}-\frac{1}{2}}\right]^{-1}</script><p>其统计误差为</p>
+<script type="math/tex; mode=display">
+\sigma=\sqrt{N}\left[\sum_i\ln\dfrac{k}{k_{\min}-\frac{1}{2}}\right]^{-1}=\dfrac{\alpha-1}{\sqrt{N}}</script><h4 id="幂律分布的性质"><a href="#幂律分布的性质" class="headerlink" title="幂律分布的性质"></a>幂律分布的性质</h4><p><strong>归一化 (normalization</strong>) $p_k=\frac{k^{-\alpha}}{\zeta(\alpha,[k_{\min}])}$<br><strong>矩 (moment)</strong></p>
+<script type="math/tex; mode=display">
+\left\langle k^m\right\rangle=\sum_kk^mp_k</script><p><strong>头重分布 (top-heavy distribution)</strong> 对于完全满足幂律度分布的网络，会发现与度最大的顶点连接的边数比例 W 与最大度顶点数比例 P 之间存在以下关系：</p>
+<script type="math/tex; mode=display">
+W=P^{(\alpha-2)/(\alpha-1)}</script><h3 id="其他中心性测度的分布"><a href="#其他中心性测度的分布" class="headerlink" title="其他中心性测度的分布"></a>其他中心性测度的分布</h3><h3 id="聚类系数"><a href="#聚类系数" class="headerlink" title="聚类系数"></a>聚类系数</h3><p>考虑一个给定度分布的网络，其顶点之间的连接都是随机的，那么聚类系数将是</p>
+<script type="math/tex; mode=display">
+C=\dfrac{1}{n}\dfrac{[\left\langle k^2\right\rangle-\left\langle k\right\rangle]^2}{\left\langle k\right\rangle^3}</script><h3 id="同配混合"><a href="#同配混合" class="headerlink" title="同配混合"></a>同配混合</h3><p>同配系数可以写为</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+    r&=\dfrac{\sum_{ij}\left(A_{ij}-k_ik_j/2m\right)k_ik_j}{2m-\sum_{ij}\left(k_ik_j/2m\right)k_ik_j}\\
+    &=\dfrac{\mathcal{S}_1\mathcal{S}_e-\mathcal{S}_2^2}{\mathcal{S}_1\mathcal{S}_3-\mathcal{S}_2^2}
+\end{align*}</script><p>其中 $\mathcal {S}_1=\sum_ik_i$，$\mathcal {S}_2=\sum_ik_i^2$，$\mathcal {S}_3=\sum_ik_i^3$，$\mathcal {S}_e=\sum_{ij} k_ik_jA_{ij}$。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%B0%E5%BD%95/" rel="tag"># 记录</a>
+              <a href="/tags/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C/" rel="tag"># 复杂网络</a>
+              <a href="/tags/%E5%9B%BE%E8%AE%BA/" rel="tag"># 图论</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/d3a15228.html" rel="prev" title="应用随机过程">
+      <i class="fa fa-chevron-left"></i> 应用随机过程
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA"><span class="nav-number">1.</span> <span class="nav-text">网络基础理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E7%9A%84%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="nav-number">1.1.</span> <span class="nav-text">网络的数学基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E5%8F%8A%E5%85%B6%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.1.</span> <span class="nav-text">网络及其表示方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5"><span class="nav-number">1.1.2.</span> <span class="nav-text">邻接矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E6%9D%83%E7%BD%91%E7%BB%9C"><span class="nav-number">1.1.3.</span> <span class="nav-text">加权网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E5%90%91%E7%BD%91%E7%BB%9C"><span class="nav-number">1.1.4.</span> <span class="nav-text">有向网络</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B1%E5%BC%95%E5%92%8C%E6%96%87%E7%8C%AE%E8%80%A6%E5%90%88"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">共引和文献耦合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%9E%E5%BE%AA%E7%8E%AF%E6%9C%89%E5%90%91%E7%BD%91%E7%BB%9C"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">非循环有向网络</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B6%85%E5%9B%BE"><span class="nav-number">1.1.5.</span> <span class="nav-text">超图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E7%BD%91%E7%BB%9C"><span class="nav-number">1.1.6.</span> <span class="nav-text">二分网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%91"><span class="nav-number">1.1.7.</span> <span class="nav-text">树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B3%E9%9D%A2%E7%BD%91%E7%BB%9C"><span class="nav-number">1.1.8.</span> <span class="nav-text">平面网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%A6"><span class="nav-number">1.1.9.</span> <span class="nav-text">度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B7%AF%E5%BE%84"><span class="nav-number">1.1.10.</span> <span class="nav-text">路径</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%8B%E5%9C%B0%E8%B7%AF%E5%BE%84"><span class="nav-number">1.1.10.1.</span> <span class="nav-text">测地路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AC%A7%E6%8B%89%E8%B7%AF%E5%BE%84%E5%92%8C%E5%93%88%E5%AF%86%E9%A1%BF%E8%B7%AF%E5%BE%84"><span class="nav-number">1.1.10.2.</span> <span class="nav-text">欧拉路径和哈密顿路径</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%94%AF"><span class="nav-number">1.1.11.</span> <span class="nav-text">分支</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%89%E5%90%91%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E5%88%86%E6%94%AF"><span class="nav-number">1.1.11.1.</span> <span class="nav-text">有向网络中的分支</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8B%AC%E7%AB%8B%E8%B7%AF%E5%BE%84%E3%80%81%E8%BF%9E%E9%80%9A%E5%BA%A6%E5%92%8C%E5%89%B2%E9%9B%86"><span class="nav-number">1.1.12.</span> <span class="nav-text">独立路径、连通度和割集</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A0%E6%9D%83%E7%BD%91%E7%BB%9C%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B5%81%E9%87%8F%E5%92%8C%E5%89%B2%E9%9B%86"><span class="nav-number">1.1.12.1.</span> <span class="nav-text">加权网络的最大流量和割集</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%9F%A9%E9%98%B5"><span class="nav-number">1.1.13.</span> <span class="nav-text">图拉普拉斯矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%A9%E6%95%A3"><span class="nav-number">1.1.13.1.</span> <span class="nav-text">扩散</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%9F%A9%E9%98%B5%E7%9A%84%E7%89%B9%E5%BE%81%E5%80%BC"><span class="nav-number">1.1.13.2.</span> <span class="nav-text">图拉普拉斯矩阵的特征值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E5%92%8C%E4%BB%A3%E6%95%B0%E8%BF%9E%E9%80%9A%E5%BA%A6"><span class="nav-number">1.1.13.3.</span> <span class="nav-text">分支和代数连通度</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%B8%B8%E8%B5%B0"><span class="nav-number">1.1.14.</span> <span class="nav-text">随机游走</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E5%BA%A6%E4%B8%8E%E5%8F%82%E6%95%B0"><span class="nav-number">1.2.</span> <span class="nav-text">测度与参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%A6%E4%B8%AD%E5%BF%83%E6%80%A7"><span class="nav-number">1.2.1.</span> <span class="nav-text">度中心性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F%E4%B8%AD%E5%BF%83%E6%80%A7"><span class="nav-number">1.2.2.</span> <span class="nav-text">特征向量中心性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Katz-%E6%80%A7"><span class="nav-number">1.2.3.</span> <span class="nav-text">Katz 性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PageRank"><span class="nav-number">1.2.4.</span> <span class="nav-text">PageRank</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E9%A1%B6%E7%82%B9%E4%B8%8E%E6%9D%83%E5%A8%81%E9%A1%B6%E7%82%B9"><span class="nav-number">1.2.5.</span> <span class="nav-text">核心顶点与权威顶点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A5%E8%BF%91%E5%BA%A6%E4%B8%AD%E5%BF%83%E6%80%A7"><span class="nav-number">1.2.6.</span> <span class="nav-text">接近度中心性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8B%E6%95%B0%E4%B8%AD%E5%BF%83%E6%80%A7"><span class="nav-number">1.2.7.</span> <span class="nav-text">介数中心性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B6%E7%82%B9%E7%BE%A4%E7%BB%84"><span class="nav-number">1.2.8.</span> <span class="nav-text">顶点群组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%A2%E3%80%81%E4%B8%9B%E5%92%8C%E6%A0%B8"><span class="nav-number">1.2.8.1.</span> <span class="nav-text">团、丛和核</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E5%92%8C-k-%E5%88%86%E6%94%AF"><span class="nav-number">1.2.8.2.</span> <span class="nav-text">分支和 k - 分支</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E9%80%92%E6%80%A7"><span class="nav-number">1.2.9.</span> <span class="nav-text">传递性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E8%81%9A%E7%B1%BB%E5%92%8C%E5%86%97%E4%BD%99"><span class="nav-number">1.2.9.1.</span> <span class="nav-text">局部聚类和冗余</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E4%BA%92%E6%80%A7"><span class="nav-number">1.2.10.</span> <span class="nav-text">相互性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E7%AC%A6%E5%8F%B7%E8%BE%B9%E5%92%8C%E7%BB%93%E6%9E%84%E5%B9%B3%E8%A1%A1"><span class="nav-number">1.2.11.</span> <span class="nav-text">有符号边和结构平衡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E4%BC%BC%E6%80%A7"><span class="nav-number">1.2.12.</span> <span class="nav-text">相似性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%99%E5%BC%A6%E7%9B%B8%E4%BC%BC%E6%80%A7"><span class="nav-number">1.2.12.1.</span> <span class="nav-text">余弦相似性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9A%AE%E5%B0%94%E9%80%8A%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0"><span class="nav-number">1.2.12.2.</span> <span class="nav-text">皮尔逊相关系数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E7%AD%89%E4%BB%B7%E7%9A%84%E5%85%B6%E4%BB%96%E6%B5%8B%E5%BA%A6"><span class="nav-number">1.2.12.3.</span> <span class="nav-text">结构等价的其他测度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%84%E5%88%99%E7%AD%89%E4%BB%B7"><span class="nav-number">1.2.12.4.</span> <span class="nav-text">规则等价</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E8%B4%A8%E6%80%A7%E5%92%8C%E5%90%8C%E9%85%8D%E6%B7%B7%E5%90%88"><span class="nav-number">1.2.13.</span> <span class="nav-text">同质性和同配混合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%9D%E6%8D%AE%E6%9E%9A%E4%B8%BE%E7%89%B9%E5%BE%81%E7%9A%84%E5%90%8C%E9%85%8D%E6%B7%B7%E5%90%88"><span class="nav-number">1.2.13.1.</span> <span class="nav-text">依据枚举特征的同配混合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%9D%E6%8D%AE%E6%A0%87%E9%87%8F%E7%89%B9%E5%BE%81%E7%9A%84%E5%90%8C%E9%85%8D%E6%B7%B7%E5%90%88"><span class="nav-number">1.2.13.2.</span> <span class="nav-text">依据标量特征的同配混合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%9D%E6%8D%AE%E5%BA%A6%E7%9A%84%E5%90%8C%E9%85%8D%E6%B7%B7%E5%90%88"><span class="nav-number">1.2.13.3.</span> <span class="nav-text">依据度的同配混合</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E7%9A%84%E5%A4%A7%E8%A7%84%E6%A8%A1%E7%BB%93%E6%9E%84"><span class="nav-number">1.3.</span> <span class="nav-text">网络的大规模结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84"><span class="nav-number">1.3.1.</span> <span class="nav-text">分支结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E5%92%8C%E5%B0%8F%E4%B8%96%E7%95%8C%E6%95%88%E5%BA%94"><span class="nav-number">1.3.2.</span> <span class="nav-text">最短路径和小世界效应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%A6%E5%88%86%E5%B8%83"><span class="nav-number">1.3.3.</span> <span class="nav-text">度分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%82%E5%BE%8B%E5%92%8C%E6%97%A0%E6%A0%87%E5%BA%A6%E7%BD%91%E7%BB%9C"><span class="nav-number">1.3.4.</span> <span class="nav-text">幂律和无标度网络</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A3%80%E6%B5%8B%E5%92%8C%E8%A7%82%E5%AF%9F%E5%B9%82%E5%BE%8B%E5%88%86%E5%B8%83"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">检测和观察幂律分布</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B9%82%E5%BE%8B%E5%88%86%E5%B8%83%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.3.4.2.</span> <span class="nav-text">幂律分布的性质</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E4%B8%AD%E5%BF%83%E6%80%A7%E6%B5%8B%E5%BA%A6%E7%9A%84%E5%88%86%E5%B8%83"><span class="nav-number">1.3.5.</span> <span class="nav-text">其他中心性测度的分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%81%9A%E7%B1%BB%E7%B3%BB%E6%95%B0"><span class="nav-number">1.3.6.</span> <span class="nav-text">聚类系数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E9%85%8D%E6%B7%B7%E5%90%88"><span class="nav-number">1.3.7.</span> <span class="nav-text">同配混合</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="結凪"
+      src="/images/U_avatar.jpg">
+  <p class="site-author-name" itemprop="name">結凪</p>
+  <div class="site-description" itemprop="description">如果你想走到高处，就要使用自己的两条腿！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/UynajGI" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;UynajGI" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/yuunagi.cn@outlook.com" title="E-Mail → yuunagi.cn@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤 ICP 备 2022065599 号 -1 </a>
+      <img src="/images/beian.png" style="display: inline-block;">
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">結凪</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+</body>
+</html>
