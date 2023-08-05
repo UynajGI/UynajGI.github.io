@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="Kh9Fd2kRwyC6ZRSU1tw4Hk1EfDKThfkk5HneuPofGfU">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-material.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.uynajgi.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterance","storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="非线性动力学的一些记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="非线性动力学">
+<meta property="og:url" content="https://www.uynajgi.com/1fb22ba0.html">
+<meta property="og:site_name" content="結凪·Cube">
+<meta property="og:description" content="非线性动力学的一些记录">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308031431301.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308031450325.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308031454312.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308051456358.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308031457290.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308031500023.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308041337073.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308041339946.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308041342911.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308041342990.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308041351114.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308041418407.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308041420640.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308041421451.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308041438539.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308041443081.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308041449721.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308051504499.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308041454955.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308041457982.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308051607477.png">
+<meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308051625463.png">
+<meta property="article:published_time" content="2023-08-05T08:39:21.000Z">
+<meta property="article:modified_time" content="2023-08-05T08:39:21.757Z">
+<meta property="article:author" content="結凪">
+<meta property="article:tag" content="记录">
+<meta property="article:tag" content="非线性">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308031431301.png">
+
+<link rel="canonical" href="https://www.uynajgi.com/1fb22ba0.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>非线性动力学 | 結凪·Cube</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<style type="text/css">
+.spoiler {
+  display: inline-flex;
+}
+p.spoiler {
+  display: flex;
+}
+.spoiler a {
+  pointer-events: none;
+}
+.spoiler-blur, .spoiler-blur > * {
+  transition: text-shadow .5s ease;
+}
+.spoiler .spoiler-blur, .spoiler .spoiler-blur > * {
+  color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  text-shadow: 0 0 10px grey;
+  cursor: pointer;
+}
+.spoiler .spoiler-blur:hover, .spoiler .spoiler-blur:hover > * {
+  text-shadow: 0 0 5px grey;
+}
+.spoiler-box, .spoiler-box > * {
+  transition: color .5s ease,
+  background-color .5s ease;
+}
+.spoiler .spoiler-box, .spoiler .spoiler-box > * {
+  color: black;
+  background-color: black;
+  text-shadow: none;
+}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">結凪·Cube</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Game of Life</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>文章</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>图书馆</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.uynajgi.com/1fb22ba0.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/U_avatar.jpg">
+      <meta itemprop="name" content="結凪">
+      <meta itemprop="description" content="如果你想走到高处，就要使用自己的两条腿！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="結凪·Cube">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          非线性动力学
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-08-05 16:39:21" itemprop="dateCreated datePublished" datetime="2023-08-05T16:39:21+08:00">2023-08-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%89%A9%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">物理</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%89%A9%E7%90%86/%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%8A%A8%E5%8A%9B%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">非线性动力学</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">非线性动力学的一些记录</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="一维流"><a href="#一维流" class="headerlink" title="一维流"></a>一维流</h1><h2 id="直线上的流"><a href="#直线上的流" class="headerlink" title="直线上的流"></a>直线上的流</h2><h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><script type="math/tex; mode=display">
+\dot{x} = f(x)</script><p>这种方程为<strong>一维的</strong>或<strong>一阶的系统</strong></p>
+<h3 id="几何的思维方式"><a href="#几何的思维方式" class="headerlink" title="几何的思维方式"></a>几何的思维方式</h3><center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308031431301.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">f (x)=sin x 的相图</div>
+</center>
+
+<p>在 $x=0$ 的点，没有流动。这样的点称为<strong>不动点</strong>。实心黑点表示<strong>稳定的</strong>不动点（常称为吸引子或汇，因为流指向它），而虚点表示<strong>不稳定的</strong>不动点（也称为排斥子或源）。</p>
+<h3 id="不动点与稳定性"><a href="#不动点与稳定性" class="headerlink" title="不动点与稳定性"></a>不动点与稳定性</h3><p>为了寻求 $\dot {x}=f (x)$ 从任意初始条件 $x$ 出发的解，我们在 $x_0$ 处放置一个虚拟粒子（称为<strong>相点</strong>），并观察它如何随流而运动。随着时间变化，相点根据某个函数 $x (t)$ 沿着 $x$ 轴运动。这个函数称为基于 $x_0$ 的<strong>轨迹</strong>，它代表微分方程从初始条件 $x_0$ 出发的解。系统所有不同的定性轨迹称为<strong>相图</strong>。</p>
+<h3 id="种群增长"><a href="#种群增长" class="headerlink" title="种群增长"></a>种群增长</h3><script type="math/tex; mode=display">
+\dot{N}=rN\left(1-\dfrac{N}{K}\right)</script><h3 id="线性稳定性分析"><a href="#线性稳定性分析" class="headerlink" title="线性稳定性分析"></a>线性稳定性分析</h3><p>令 $x^<em>$ 为一个不动点，$\eta (t)=x (t)-x^</em>$ 是偏离 $x^*$ 的小扰动，得到</p>
+<script type="math/tex; mode=display">
+\dot{\eta}=\eta f'(x^*)+O(\eta^2)</script><p>这是关于 $\eta$ 的线性方程，称为在 $x^<em>$ 处<strong>线性化</strong>。可见，小扰动 $\eta (t)$ 当 $f’(x^</em>)&gt;0$ 时以指数律增加，当 $f’(x^<em>)&lt;0$ 时以指数律衰减，当 $f’(x^</em>)=0$ 时，$O (\eta^2)$ 不可忽略，此时需要更高阶的线性化。$1/f’(x^<em>)$ 称为一个<strong>特征时间尺度</strong>，决定了 $x (t)$ 在 $x^</em> $ 邻域内发生较大变化所需的时间。</p>
+<h3 id="存在性与唯一性"><a href="#存在性与唯一性" class="headerlink" title="存在性与唯一性"></a>存在性与唯一性</h3><p>给定初值的情况，系统有解，且解是唯一的。</p>
+<h3 id="振动的不可能性"><a href="#振动的不可能性" class="headerlink" title="振动的不可能性"></a>振动的不可能性</h3><p>$\dot {x}=f (x)$ 没有周期解。</p>
+<h3 id="势"><a href="#势" class="headerlink" title="势"></a>势</h3><p>势函数 $V (x)$ 定义为</p>
+<script type="math/tex; mode=display">
+f(x)=-\dfrac{\mathrm{d} V}{\mathrm{d} x}</script><p>对于一阶系统</p>
+<script type="math/tex; mode=display">
+\dfrac{\mathrm{d}V}{\mathrm{d}t}=-\left(\dfrac{\mathrm{d}V}{\mathrm{d}x}\right)^2\le 0</script><p>因此，$V (t)$ 沿着轨迹而减小，进而粒子也始终朝着低势而运动。</p>
+<h3 id="利用计算机解方程"><a href="#利用计算机解方程" class="headerlink" title="利用计算机解方程"></a>利用计算机解方程</h3><p><strong>欧拉方法</strong>：$\dot {x}=f (x)$，$x (t+\Delta t)=x (t)+\Delta t f (x (t))$，$\Delta t$ 为时间步长。<br><strong>四阶龙格库塔方法</strong></p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+k_1&=f(x(t))\Delta t\\
+k_2&=f(x(t)+\dfrac{1}{2}k_1)\Delta t\\
+k_3&=f(x(t)+\dfrac{1}{2}k_2)\Delta t\\
+k_4&=f(x(t)+\dfrac{1}{2}k_3)\Delta t\\
+x(t+\Delta t)&=x(t)+\dfrac{1}{6}(k_1+2k_2+2k_3+k_4)
+\end{aligned}</script><h2 id="分岔"><a href="#分岔" class="headerlink" title="分岔"></a>分岔</h2><h3 id="鞍-结分岔"><a href="#鞍-结分岔" class="headerlink" title="鞍 - 结分岔"></a>鞍 - 结分岔</h3><p>鞍－结分岔是不动点<em>出现</em>或<em>消失</em>的基本机制。当参数变化时，两个不动点朝着彼此移动、碰撞，并消失。</p>
+<p><strong>鞍 - 结分岔标准形式</strong></p>
+<script type="math/tex; mode=display">
+\dot{x}=r+x^2</script><center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308031450325.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">随着 r 变换出现分叉</div>
+</center>
+
+<p><strong>分叉图</strong></p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308031454312.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">线上的点为不动点的值</div>
+</center>
+
+<h3 id="跨临界分岔"><a href="#跨临界分岔" class="headerlink" title="跨临界分岔"></a>跨临界分岔</h3><p>在某些科学情境中，对所有的参数值不动点一定存在，而且不会消失，两个不动点之间发生了稳定性交换。</p>
+<p><strong>跨临界分岔标准形式</strong></p>
+<script type="math/tex; mode=display">
+\dot{x}=rx-x^2</script><center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308051456358.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">r&lt;0;r=0;r&gt;0</div>
+</center>
+
+<h3 id="叉式分岔"><a href="#叉式分岔" class="headerlink" title="叉式分岔"></a>叉式分岔</h3><p>这类分岔在具有对称性的物理问题中很普遍，不动点倾向于对称成对地出现或者消失。</p>
+<p><strong>叉式分岔标准形式</strong></p>
+<script type="math/tex; mode=display">
+\dot{x}=rx-x^3</script><center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308031457290.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">超临界叉式分叉</div>
+</center>
+
+<p><strong>亚临界叉式分岔</strong></p>
+<script type="math/tex; mode=display">
+\dot{x}=rx+x^3</script><p>在上述超临界情形中，立方项起着稳定作用。相反地，立方项起着反稳定作用。</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308031500023.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">亚临界叉式分叉</div>
+</center>
+
+<h3 id="不完美分岔与灾变"><a href="#不完美分岔与灾变" class="headerlink" title="不完美分岔与灾变"></a>不完美分岔与灾变</h3><script type="math/tex; mode=display">
+\dot{x}=rx-x^3+h</script><h3 id="昆虫爆发"><a href="#昆虫爆发" class="headerlink" title="昆虫爆发"></a>昆虫爆发</h3><script type="math/tex; mode=display">
+\dot{N}=RN(1-\dfrac{N}{K})-p[N](\eqqcolon\dfrac{BN^2}{A^2+N^2})</script><h2 id="圆上的流"><a href="#圆上的流" class="headerlink" title="圆上的流"></a>圆上的流</h2><h3 id="引言-1"><a href="#引言-1" class="headerlink" title="引言"></a>引言</h3><script type="math/tex; mode=display">
+\dot{\theta}=f(\theta)</script><p>圆上的向量场提供了能产生振荡的动力系统的最基本模型。</p>
+<h3 id="均匀振子"><a href="#均匀振子" class="headerlink" title="均匀振子"></a>均匀振子</h3><p>圆上的一点常被称为角度或者<strong>相位</strong>。相位的变化率由函数 $f (\theta)$ 给出。</p>
+<h3 id="非均匀振子"><a href="#非均匀振子" class="headerlink" title="非均匀振子"></a>非均匀振子</h3><script type="math/tex; mode=display">
+\dot{\theta}=\omega-a\sin\theta</script><h3 id="过阻尼摆"><a href="#过阻尼摆" class="headerlink" title="过阻尼摆"></a>过阻尼摆</h3><script type="math/tex; mode=display">
+b\dot{\theta}+mgL\sin\theta=\Gamma</script><h3 id="萤火虫"><a href="#萤火虫" class="headerlink" title="萤火虫"></a>萤火虫</h3><h3 id="超导约瑟夫森结"><a href="#超导约瑟夫森结" class="headerlink" title="超导约瑟夫森结"></a>超导约瑟夫森结</h3><h1 id="二维流"><a href="#二维流" class="headerlink" title="二维流"></a>二维流</h1><h2 id="线性系统"><a href="#线性系统" class="headerlink" title="线性系统"></a>线性系统</h2><h3 id="定义与例子"><a href="#定义与例子" class="headerlink" title="定义与例子"></a>定义与例子</h3><p>一个二维线性系统</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\dot{x}&=ax+by\\
+\dot{y}&=cx+dy
+\end{align*}</script><p>或者可以写成</p>
+<script type="math/tex; mode=display">
+\dot{\mathbf{x}}=\mathbf{A}\mathbf{x}</script><p>$\mathbf {x}(t)$ 的通解如下：</p>
+<script type="math/tex; mode=display">
+\mathbf{x}(t)=\mathbf{c}_1e^{\lambda_1t}\mathbf{v}_1+\mathbf{c}_2e^{\lambda_2t}\mathbf{v}_2</script><p>其中 $\mathbf {c}_1,\mathbf {c}_2$ 是任意常数，$\lambda_1,\lambda_2$ 是 $\mathbf {A}$ 的特征值，$\mathbf {v}_1,\mathbf {v}_2$ 是对应的特征向量。</p>
+<h3 id="线性系统的分类"><a href="#线性系统的分类" class="headerlink" title="线性系统的分类"></a>线性系统的分类</h3><p>当 $\lambda_1 \lambda_2&lt;0$ 时，意味着原点是一个<strong>鞍点</strong>；</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308041337073.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">鞍点</div>
+</center>
+
+<p>若特征值为复数，不动点为<strong>中心</strong>或 <strong>焦点</strong>，实部 $\alpha=0$ 时，不动点是<strong>中心</strong>的，若实部 $\alpha&gt;0$，则不动点是<strong>不稳定焦点</strong>的，若 $\alpha&lt;0$，则不动点是<strong>稳定焦点</strong>的。</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308041339946.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">中心与焦点</div>
+</center>
+
+<p>若特征值只有一个时，不动点是<strong>结点</strong>，对应 $\lambda$ 有两个独立的特征向量，或者有一个特征向量。<br>若有两个独立的特征向量，则它们张成了平面，因此每个向量都是同一个特征值 A 的特征向量。不动点是 <strong>星型结点</strong><br>另一个可能是只有一个特征向量，这时不动点是<strong>退化结点</strong>。</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308041342911.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">节点与退化节点</div>
+</center>
+
+<p><strong>不动点的分类</strong></p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308041342990.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">节点的分类</div>
+</center>
+
+<p>其中，$\tau\eqqcolon Tr (\mathbf {A}),\ \Delta\eqqcolon \det (\mathbf {A})$</p>
+<h2 id="相平面"><a href="#相平面" class="headerlink" title="相平面"></a>相平面</h2><h3 id="相图"><a href="#相图" class="headerlink" title="相图"></a>相图</h3><p>相平面中向量场的一般表达式为</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\dot{x_1}&=f_1(x_1,x_2)\\
+\dot{x_2}&=f_2(x_1,x_2)
+\end{align*}</script><p>或者可以写成</p>
+<script type="math/tex; mode=display">
+\dot{\mathbf{x}}=\mathbf{f}(\mathbf{x})</script><p>相图中一些最显著的特征如下：</p>
+<ol>
+<li><strong>不动点</strong> 不动点满足 $\mathbf {f}(\mathbf {x}^*)=\mathbf {0}$，其值对应着系统的稳定状态或平衡点。</li>
+<li><strong>闭合轨道（闭轨）</strong> 对应着系统的周期轨道，也就是对于所有的 $t$，及某些 $T&gt;0$ 时，方程 $x (t+T)=x (t)$ 的解</li>
+<li>处于不动点及闭轨附近轨迹的排列。</li>
+<li>不动点和闭轨的稳定性或不稳定性。</li>
+</ol>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308041351114.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">相图特征</div>
+</center>
+
+<p><strong>相图的数值计算</strong></p>
+<p>龙格库塔：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\mathbf{k_1}&=f(\mathbf{x_n})\Delta t\\
+\mathbf{k_2}&=f(\mathbf{x_n}+\frac{1}{2}\mathbf{k_1})\Delta t\\
+\mathbf{k_3}&=f(\mathbf{x_n}+\frac{1}{2}\mathbf{k_2})\Delta t\\
+\mathbf{k_4}&=f(\mathbf{x_n}+\frac{1}{2}\mathbf{k_3})\Delta t\\
+\mathbf{x_{n+1}}&=\mathbf{x_n}+\frac{1}{6}(\mathbf{k_1}+2\mathbf{k_2}+2\mathbf{k_3}+\mathbf{k_4})
+\end{align*}</script><h3 id="存在性、唯一性与拓扑结果"><a href="#存在性、唯一性与拓扑结果" class="headerlink" title="存在性、唯一性与拓扑结果"></a>存在性、唯一性与拓扑结果</h3><blockquote>
+<p>不同的轨道是不相交的</p>
+</blockquote>
+<h3 id="不动点与线性化"><a href="#不动点与线性化" class="headerlink" title="不动点与线性化"></a>不动点与线性化</h3><p>不动点展开，令 $u=x-x^<em>,\ v=y-y^</em>$，则有</p>
+<script type="math/tex; mode=display">
+\begin{pmatrix*}
+    \dot{u}\\
+    \dot{v}
+\end{pmatrix*}=\begin{pmatrix*}
+    \frac{\partial f}{\partial x} & \frac{\partial f}{\partial y}\\
+    \frac{\partial g}{\partial x} & \frac{\partial g}{\partial y}
+\end{pmatrix*} \begin{pmatrix*}
+    u\\
+    v
+\end{pmatrix*}+\mathcal{O}(u^2,v^2,uv)</script><p><strong>鲁棒情形</strong>：<br>排斥子（也叫作源）：两个特征值都有正实部。<br>吸引子（也叫作汇）：两个特征值都有负实部。<br>鞍点：一个特征值是正的，一个特征值是负的。<br><strong>边缘情形</strong>：<br>中心：两个特征值都是纯虚数。<br>高阶和非孤立的不动点：至少有一个特征值是 0。</p>
+<h3 id="保守系统"><a href="#保守系统" class="headerlink" title="保守系统"></a>保守系统</h3><script type="math/tex; mode=display">
+m\ddot{x}=-\frac{\partial V}{\partial x}</script><h4 id="非线性中心"><a href="#非线性中心" class="headerlink" title="非线性中心"></a>非线性中心</h4><p><strong>定理 2.1</strong> （保守系统的非线性中心）假设存在一个守恒量 $E (x)$，$x^<em>$ 是一个孤立的不动点，在它的一个小邻域内没有其他不动点。如果 $x^</em>$ 是 $E$ 的局部极小值，那么所有足够接近 $x^*$ 的轨迹都是闭合的。</p>
+<h3 id="可逆系统"><a href="#可逆系统" class="headerlink" title="可逆系统"></a>可逆系统</h3><p><strong>定理 2.2</strong> :（可逆系统的非线性中心）假设原点 $x^*=0$ 是一个连续可导系统的线性中心，系统为</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\dot{x}&=f(x,y)\\
+\dot{y}&=g(x,y)
+\end{align*}</script><p>假定系统是可逆的。如果无限接近起点，所有的轨道都是闭曲线。</p>
+<h2 id="极限环"><a href="#极限环" class="headerlink" title="极限环"></a>极限环</h2><p><strong>极限环</strong>是一个孤立的闭轨迹。孤立意味着邻近的轨迹不是闭的。</p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308041418407.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">极限环</div>
+</center>
+
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><h4 id="一个简单的极限环"><a href="#一个简单的极限环" class="headerlink" title="一个简单的极限环"></a>一个简单的极限环</h4><script type="math/tex; mode=display">
+\dot{r}=r(1-r^2),\ \dot{\theta}=1</script><center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308041420640.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">简单极限环</div>
+</center>
+
+<h4 id="范德波尔振子"><a href="#范德波尔振子" class="headerlink" title="范德波尔振子"></a>范德波尔振子</h4><script type="math/tex; mode=display">
+\ddot{x}+\mu(x^2-1)\dot{x}+x=0</script><center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308041421451.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">范德波尔极限环</div>
+</center>
+
+<h3 id="排除闭轨"><a href="#排除闭轨" class="headerlink" title="排除闭轨"></a>排除闭轨</h3><h4 id="梯度系统"><a href="#梯度系统" class="headerlink" title="梯度系统"></a>梯度系统</h4><p>假设系统可以被写为 $\dot {x}=-\nabla V$ 的形式这一系统被称为具有势函数 $V$ 的梯度系统</p>
+<p><strong>定理 2.3</strong>：在梯度系统中不可能存在闭轨</p>
+<h4 id="李雅普诺夫函数"><a href="#李雅普诺夫函数" class="headerlink" title="李雅普诺夫函数"></a>李雅普诺夫函数</h4><p>考虑一个在 $x^<em>$ 处有一个不动点的系统 $\dot {x}=f (x)$。假设可以得到一个 <em>* 李雅普诺夫函数</em></em>，即存在一个具有以下特点的连续可微的实值函数 $V (x)$:</p>
+<ol>
+<li>对于全部 $x\not =x^<em>$ 且 $V (x^</em>)=0$，有 $V (x)&gt;0$，我们说 $V$ 是正定的</li>
+<li>对于全部 $x\not =x^*$ ，$\dot {V}(x)&lt;0$</li>
+</ol>
+<h3 id="庞加莱-本迪克松定理"><a href="#庞加莱-本迪克松定理" class="headerlink" title="庞加莱 - 本迪克松定理"></a>庞加莱 - 本迪克松定理</h3><ol>
+<li>R 是平面上一个封闭有界子集。</li>
+<li>$\dot {x}=f (x)$ 在一个包含 R 的开子集上是一个连续可微的向量场；</li>
+<li>R 不包含任何不动点；</li>
+<li>存在一个 “局限” 在 R 内的轨迹 C，意思是它开始于 R 并永远在 R 内运动</li>
+</ol>
+<p>那么，或者 C 是一个闭轨道，或者当 $t\to \infty$ 时，它盘旋靠近一条闭轨道。</p>
+<h3 id="李纳系统"><a href="#李纳系统" class="headerlink" title="李纳系统"></a>李纳系统</h3><script type="math/tex; mode=display">
+\ddot{x}+f(x)\dot{x}+g(x)=0</script><center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308041438539.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">李纳定理</div>
+</center>
+
+<h3 id="松弛振荡"><a href="#松弛振荡" class="headerlink" title="松弛振荡"></a>松弛振荡</h3><p>考虑对于 $\mu \gg 1$ 时的范德波尔方程</p>
+<script type="math/tex; mode=display">
+\ddot{x}+\mu(x^2-1)\dot{x}+x=0</script><p>在这强非线性极限下，我们将看到，极限环开始由极其缓慢的过程形成然后突然松弛，紧随其后的是另一个缓慢的过程，等等。这种类型的振子通常被称为<strong>松弛振荡</strong>。</p>
+<h3 id="弱非线性振子"><a href="#弱非线性振子" class="headerlink" title="弱非线性振子"></a>弱非线性振子</h3><script type="math/tex; mode=display">
+\ddot{x}+x+\varepsilon h(x,\dot{x})=0</script><p>其中 $0\le \varepsilon \le 1$，$h$ 是一个任意的函数。这种类型的振子通常被称为<strong>弱非线性振子</strong>。</p>
+<h2 id="再探分岔"><a href="#再探分岔" class="headerlink" title="再探分岔"></a>再探分岔</h2><h3 id="鞍-结分岔、跨临界分岔与叉式分岔"><a href="#鞍-结分岔、跨临界分岔与叉式分岔" class="headerlink" title="鞍 - 结分岔、跨临界分岔与叉式分岔"></a>鞍 - 结分岔、跨临界分岔与叉式分岔</h3><h4 id="鞍-结分岔-1"><a href="#鞍-结分岔-1" class="headerlink" title="鞍 - 结分岔"></a>鞍 - 结分岔</h4><script type="math/tex; mode=display">
+\begin{align*}
+\dot{x}&=\mu-x^2\\
+\dot{y}&=-y
+\end{align*}</script><center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308041443081.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">经典鞍 - 结分岔</div>
+</center>
+
+<p>一般地，鞍 - 结分岔、跨临界分岔和叉式分岔属于<strong>零特征值分岔</strong>。这些分岔涉及两个或更多不动点的碰撞。</p>
+<h4 id="跨临界和叉式分岔"><a href="#跨临界和叉式分岔" class="headerlink" title="跨临界和叉式分岔"></a>跨临界和叉式分岔</h4><script type="math/tex; mode=display">
+\begin{align*}
+\dot{x}&=\mu x-x^2,\ \dot{y}=-y \text{（跨临界分岔）}\\
+\dot{x}&=\mu x-x^3,\ \dot{y}=-y \text{（叉式分岔）}\\
+\dot{x}&=\mu x+x^3,\ \dot{y}=-y \text{（叉式分岔）}
+\end{align*}</script><h3 id="霍普夫分岔"><a href="#霍普夫分岔" class="headerlink" title="霍普夫分岔"></a>霍普夫分岔</h3><p><strong>超临界霍普夫分岔</strong></p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\dot{r}=\mu r -r^3\\
+\dot{\theta}=\omega+br^2
+\end{align*}</script><center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308041449721.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">超临界霍普夫分岔</div>
+</center>
+
+<p><strong>亚临界霍普夫分岔</strong></p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\dot{r}&=\mu r +r^3-r^5\\
+\dot{\theta}&=\omega+br^2
+\end{align*}</script><center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308051504499.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">亚临界霍普夫分岔</div>
+</center>
+
+<p>当 $\mu &lt; 0$ 时，在原点处，存在两个吸引子、一个稳定的极限环和一个稳定不动点。在它们之间，存在一个不稳定的环（虚线）。当 $\mu$ 增大时，收紧的不稳定环像一个绳套围绕着不动点，直到 $\mu = 0$ 时，不稳定环和不动点碰撞，消失。这就是<strong>亚临界霍普夫分岔</strong>。</p>
+<h3 id="环的全局分岔"><a href="#环的全局分岔" class="headerlink" title="环的全局分岔"></a>环的全局分岔</h3><p><strong>环的鞍 - 结分岔</strong><br>两个极限环重合并消失称为折叠或者<strong>环的鞍 - 结分岔</strong></p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\dot{r}&=\mu r+r^3-r^5\\
+\dot{\theta}&=\omega+br^2
+\end{align*}</script><center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308041454955.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">环的鞍 - 结分岔</div>
+</center>
+
+<p><strong>无限周期分岔</strong></p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\dot{r}&=r(1-r^2)\\
+\dot{\theta}&=\mu - \sin \theta
+\end{align*}</script><center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308041457982.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">无限周期分岔</div>
+</center>
+
+<p><strong>同宿分岔</strong></p>
+<p>在分岔处，环与鞍点相交变为一个同宿轨它为同宿分岔。</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\dot{x}&=y\\
+\dot{y}&=\mu y+x-x^2+xy
+\end{align*}</script><h3 id="驱动钟摆与约瑟夫森结滞后现象"><a href="#驱动钟摆与约瑟夫森结滞后现象" class="headerlink" title="驱动钟摆与约瑟夫森结滞后现象"></a>驱动钟摆与约瑟夫森结滞后现象</h3><h3 id="耦合振子与准周期性"><a href="#耦合振子与准周期性" class="headerlink" title="耦合振子与准周期性"></a>耦合振子与准周期性</h3><p>一个重要的二维相空间就是环面。它是如下系统的自然相空间。</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\dot{\theta_1}&=f_1(\theta_1,\theta_2)\\
+\dot{\theta_2}&=f_2(\theta_1,\theta_2)
+\end{align*}</script><p>耦合阵子的模型为</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\dot{\theta_1}&=\omega_1+K_1sin(\theta_2-\theta_1)\\
+\dot{\theta_2}&=\omega_2+K_2sin(\theta_1-\theta_2)
+\end{align*}</script><p>由于环面的曲表面使得相图很难画出，所以更喜欢用一个等价的表达：<em>具有周期边界条件的正方形</em></p>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308051607477.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">正方形相图</div>
+</center>
+
+<p><strong>非耦合系统</strong><br>$K_1 = 0, K_2 = 0$</p>
+<ol>
+<li>如果斜率是有理数，那么轨道是闭合的，周期为 $\omega_1/\omega_2 =  p/q$</li>
+<li> 如果斜率是无理数，那么轨道是无限的，不重复的，<strong>准周期的</strong>。</li>
+</ol>
+<p><strong>耦合系统</strong></p>
+<script type="math/tex; mode=display">
+\dot{\phi}=\dot{\theta_1}-\dot{\theta_2}=\omega_1-\omega_2-(K_1+K_2)sin(\phi)</script><p>系统随着 $|\omega_1-\omega_2|，K_1+K_2$ 的关系发生鞍 - 结分岔。<br>在不动点 $\phi^<em>$ 附近，轨迹接近一个稳定的锁相解，其中振子被一个恒定的相位差 $\phi^</em>$ 分离。锁相解是<strong>周期性</strong>的，得到折中频率</p>
+<script type="math/tex; mode=display">
+\omega^*=\dot{\theta_1}=\dot{\theta_2}=\dfrac{K_1\omega_2+K_2\omega_1}{K_1+K_2}</script><h3 id="庞加莱映射"><a href="#庞加莱映射" class="headerlink" title="庞加莱映射"></a>庞加莱映射</h3><h1 id="混沌"><a href="#混沌" class="headerlink" title="混沌"></a>混沌</h1><h2 id="洛伦兹方程"><a href="#洛伦兹方程" class="headerlink" title="洛伦兹方程"></a>洛伦兹方程</h2><script type="math/tex; mode=display">
+\begin{align*}
+\dot{x}&=\sigma(y-x)\\
+\dot{y}&=rx-y-xz\\
+\dot{z}&=xy-bz
+\end{align*}</script><p>其中 $\sigma&gt;0,r&gt;0,b&gt;0$</p>
+<p>在很宽的参数范围内，方程的解不规则地振荡，从不重复，但总是保持在一个有界相空间区域内。</p>
+<h3 id="洛伦兹方程的简单性质"><a href="#洛伦兹方程的简单性质" class="headerlink" title="洛伦兹方程的简单性质"></a>洛伦兹方程的简单性质</h3><p><strong>不动点</strong> $(0,0,0)$ 和对称的两个不动点 $(\pm\sqrt {b (r-1)},\pm\sqrt {b (r-1)},r-1)$</p>
+<p><strong>原点的线性稳定性</strong> 由雅可比矩阵决定</p>
+<script type="math/tex; mode=display">
+\begin{pmatrix*}
+    \dot{x}\\
+    \dot{y}
+\end{pmatrix*}=J\begin{pmatrix*}
+    -\sigma & \sigma\\
+    r & -1
+\end{pmatrix*}\begin{pmatrix*}
+    x\\
+    y
+\end{pmatrix*}</script><p>容易得到 $\tau =-\sigma-1&lt;0$，$\Delta = \sigma (1-r)$，如果 $r&gt;0$，则原点是鞍点；如果 $r&lt;0$，则原点是汇。</p>
+<p><strong>原点的全局稳定性</strong> 考虑李雅普诺夫函数</p>
+<script type="math/tex; mode=display">
+V(x,y,z)=\dfrac{1}{\sigma}(x^2+y^2+z^2)</script><p>求导代入方程得到</p>
+<script type="math/tex; mode=display">
+\dfrac{1}{2}\dot{V}=-\left[x-\dfrac{r+1}{2}\right]^2-\left[1-\left(\dfrac{r+1}{2}\right)^2\right]y^2-bz^2</script><p>结果当 $r&lt;1$，若 $\dot {V}=0$ 则 $(x,y,z)=(0,0,0)$，否则 $\dot {V}&lt;0$，所以原点是全局稳定的。</p>
+<h3 id="奇怪吸引子上的混沌"><a href="#奇怪吸引子上的混沌" class="headerlink" title="奇怪吸引子上的混沌"></a>奇怪吸引子上的混沌</h3><center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308051625463.png">
+    <br>
+    <div style="color:orange;
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">奇怪吸引子</div>
+</center>
+
+<p>吸引子的运动呈现出对初始条件的敏感依赖，这种现象称为<strong>混沌</strong>。假设 $x (t)$ 是 $t$ 时刻吸引子上的一点，$x (t)+\delta (t)$ 是 $t$ 时刻吸引子上的另一点，$\delta (t)$ 是初始条件的微小变化，初始长度为 $|| \delta_0||=10^{-15}$，那么有关系</p>
+<script type="math/tex; mode=display">
+|| \delta(t)||\sim e^{\lambda t}||\delta(0)||</script><p>因此，相邻轨迹呈指数快速分离。数 $\lambda$ 通常被称为<strong>李雅普诺夫指数</strong></p>
+<p><strong>混沌的定义</strong> 混沌是确定性系统中的非周期的长期行为，呈现出对初始条件的敏感依赖性。</p>
+<ol>
+<li>“非周期的长期行为” 是指当 $t\in \infty$ 时，轨迹不会落到不动点、周期轨道或准周期轨道。</li>
+<li>“确定性” 是指系统没有随机或噪声的输入或参数。</li>
+<li>“敏感依赖于初始条件” 是指附近的轨迹以指数形式快速分离，即系统存在正的李雅普诺夫指数。</li>
+</ol>
+<h3 id="洛伦兹映射"><a href="#洛伦兹映射" class="headerlink" title="洛伦兹映射"></a>洛伦兹映射</h3><h3 id="探究参数空间"><a href="#探究参数空间" class="headerlink" title="探究参数空间"></a>探究参数空间</h3><h3 id="利用混沌传送秘密信息"><a href="#利用混沌传送秘密信息" class="headerlink" title="利用混沌传送秘密信息"></a>利用混沌传送秘密信息</h3><h2 id="一维映射"><a href="#一维映射" class="headerlink" title="一维映射"></a>一维映射</h2><h3 id="不动点和蛛网模型"><a href="#不动点和蛛网模型" class="headerlink" title="不动点和蛛网模型"></a>不动点和蛛网模型</h3><h3 id="逻辑斯谛映射：数值方法"><a href="#逻辑斯谛映射：数值方法" class="headerlink" title="逻辑斯谛映射：数值方法"></a>逻辑斯谛映射：数值方法</h3><h3 id="逻辑斯谛映射：解析方法"><a href="#逻辑斯谛映射：解析方法" class="headerlink" title="逻辑斯谛映射：解析方法"></a>逻辑斯谛映射：解析方法</h3><h3 id="周期窗口"><a href="#周期窗口" class="headerlink" title="周期窗口"></a>周期窗口</h3><h3 id="李雅普诺夫指数"><a href="#李雅普诺夫指数" class="headerlink" title="李雅普诺夫指数"></a>李雅普诺夫指数</h3><h3 id="普适性与实验"><a href="#普适性与实验" class="headerlink" title="普适性与实验"></a>普适性与实验</h3><h3 id="重整化"><a href="#重整化" class="headerlink" title="重整化"></a>重整化</h3><h2 id="分形"><a href="#分形" class="headerlink" title="分形"></a>分形</h2><h3 id="可数集与不可数集"><a href="#可数集与不可数集" class="headerlink" title="可数集与不可数集"></a>可数集与不可数集</h3><h3 id="康托尔集"><a href="#康托尔集" class="headerlink" title="康托尔集"></a>康托尔集</h3><h3 id="自相似分形的维数"><a href="#自相似分形的维数" class="headerlink" title="自相似分形的维数"></a>自相似分形的维数</h3><h3 id="盒维数"><a href="#盒维数" class="headerlink" title="盒维数"></a>盒维数</h3><h3 id="点态维数与关联维数"><a href="#点态维数与关联维数" class="headerlink" title="点态维数与关联维数"></a>点态维数与关联维数</h3><h2 id="奇怪吸引子"><a href="#奇怪吸引子" class="headerlink" title="奇怪吸引子"></a>奇怪吸引子</h2><h3 id="简例"><a href="#简例" class="headerlink" title="简例"></a>简例</h3><h3 id="埃农映射"><a href="#埃农映射" class="headerlink" title="埃农映射"></a>埃农映射</h3><h3 id="若斯勒系统"><a href="#若斯勒系统" class="headerlink" title="若斯勒系统"></a>若斯勒系统</h3><h3 id="化学混沌与吸引子重构"><a href="#化学混沌与吸引子重构" class="headerlink" title="化学混沌与吸引子重构"></a>化学混沌与吸引子重构</h3><h3 id="受迫双井振子"><a href="#受迫双井振子" class="headerlink" title="受迫双井振子"></a>受迫双井振子</h3>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%B0%E5%BD%95/" rel="tag"># 记录</a>
+              <a href="/tags/%E9%9D%9E%E7%BA%BF%E6%80%A7/" rel="tag"># 非线性</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/714255f6.html" rel="prev" title="网络科学引论 —— 基础理论">
+      <i class="fa fa-chevron-left"></i> 网络科学引论 —— 基础理论
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4%E6%B5%81"><span class="nav-number">1.</span> <span class="nav-text">一维流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B4%E7%BA%BF%E4%B8%8A%E7%9A%84%E6%B5%81"><span class="nav-number">1.1.</span> <span class="nav-text">直线上的流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E8%A8%80"><span class="nav-number">1.1.1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%A0%E4%BD%95%E7%9A%84%E6%80%9D%E7%BB%B4%E6%96%B9%E5%BC%8F"><span class="nav-number">1.1.2.</span> <span class="nav-text">几何的思维方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%8A%A8%E7%82%B9%E4%B8%8E%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="nav-number">1.1.3.</span> <span class="nav-text">不动点与稳定性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%8D%E7%BE%A4%E5%A2%9E%E9%95%BF"><span class="nav-number">1.1.4.</span> <span class="nav-text">种群增长</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E7%A8%B3%E5%AE%9A%E6%80%A7%E5%88%86%E6%9E%90"><span class="nav-number">1.1.5.</span> <span class="nav-text">线性稳定性分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%98%E5%9C%A8%E6%80%A7%E4%B8%8E%E5%94%AF%E4%B8%80%E6%80%A7"><span class="nav-number">1.1.6.</span> <span class="nav-text">存在性与唯一性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%AF%E5%8A%A8%E7%9A%84%E4%B8%8D%E5%8F%AF%E8%83%BD%E6%80%A7"><span class="nav-number">1.1.7.</span> <span class="nav-text">振动的不可能性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%BF"><span class="nav-number">1.1.8.</span> <span class="nav-text">势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A9%E7%94%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%A3%E6%96%B9%E7%A8%8B"><span class="nav-number">1.1.9.</span> <span class="nav-text">利用计算机解方程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%B2%94"><span class="nav-number">1.2.</span> <span class="nav-text">分岔</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9E%8D-%E7%BB%93%E5%88%86%E5%B2%94"><span class="nav-number">1.2.1.</span> <span class="nav-text">鞍 - 结分岔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B7%A8%E4%B8%B4%E7%95%8C%E5%88%86%E5%B2%94"><span class="nav-number">1.2.2.</span> <span class="nav-text">跨临界分岔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%89%E5%BC%8F%E5%88%86%E5%B2%94"><span class="nav-number">1.2.3.</span> <span class="nav-text">叉式分岔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%AE%8C%E7%BE%8E%E5%88%86%E5%B2%94%E4%B8%8E%E7%81%BE%E5%8F%98"><span class="nav-number">1.2.4.</span> <span class="nav-text">不完美分岔与灾变</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%86%E8%99%AB%E7%88%86%E5%8F%91"><span class="nav-number">1.2.5.</span> <span class="nav-text">昆虫爆发</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%86%E4%B8%8A%E7%9A%84%E6%B5%81"><span class="nav-number">1.3.</span> <span class="nav-text">圆上的流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E8%A8%80-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9D%87%E5%8C%80%E6%8C%AF%E5%AD%90"><span class="nav-number">1.3.2.</span> <span class="nav-text">均匀振子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E5%9D%87%E5%8C%80%E6%8C%AF%E5%AD%90"><span class="nav-number">1.3.3.</span> <span class="nav-text">非均匀振子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%87%E9%98%BB%E5%B0%BC%E6%91%86"><span class="nav-number">1.3.4.</span> <span class="nav-text">过阻尼摆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%90%A4%E7%81%AB%E8%99%AB"><span class="nav-number">1.3.5.</span> <span class="nav-text">萤火虫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B6%85%E5%AF%BC%E7%BA%A6%E7%91%9F%E5%A4%AB%E6%A3%AE%E7%BB%93"><span class="nav-number">1.3.6.</span> <span class="nav-text">超导约瑟夫森结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E6%B5%81"><span class="nav-number">2.</span> <span class="nav-text">二维流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.1.</span> <span class="nav-text">线性系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E4%B8%8E%E4%BE%8B%E5%AD%90"><span class="nav-number">2.1.1.</span> <span class="nav-text">定义与例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">2.1.2.</span> <span class="nav-text">线性系统的分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%B9%B3%E9%9D%A2"><span class="nav-number">2.2.</span> <span class="nav-text">相平面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E5%9B%BE"><span class="nav-number">2.2.1.</span> <span class="nav-text">相图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%98%E5%9C%A8%E6%80%A7%E3%80%81%E5%94%AF%E4%B8%80%E6%80%A7%E4%B8%8E%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%9C"><span class="nav-number">2.2.2.</span> <span class="nav-text">存在性、唯一性与拓扑结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%8A%A8%E7%82%B9%E4%B8%8E%E7%BA%BF%E6%80%A7%E5%8C%96"><span class="nav-number">2.2.3.</span> <span class="nav-text">不动点与线性化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%9D%E5%AE%88%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.2.4.</span> <span class="nav-text">保守系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E4%B8%AD%E5%BF%83"><span class="nav-number">2.2.4.1.</span> <span class="nav-text">非线性中心</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E9%80%86%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.2.5.</span> <span class="nav-text">可逆系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%81%E9%99%90%E7%8E%AF"><span class="nav-number">2.3.</span> <span class="nav-text">极限环</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-number">2.3.1.</span> <span class="nav-text">例子</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E6%9E%81%E9%99%90%E7%8E%AF"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">一个简单的极限环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8C%83%E5%BE%B7%E6%B3%A2%E5%B0%94%E6%8C%AF%E5%AD%90"><span class="nav-number">2.3.1.2.</span> <span class="nav-text">范德波尔振子</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%92%E9%99%A4%E9%97%AD%E8%BD%A8"><span class="nav-number">2.3.2.</span> <span class="nav-text">排除闭轨</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">梯度系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9D%8E%E9%9B%85%E6%99%AE%E8%AF%BA%E5%A4%AB%E5%87%BD%E6%95%B0"><span class="nav-number">2.3.2.2.</span> <span class="nav-text">李雅普诺夫函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%9E%E5%8A%A0%E8%8E%B1-%E6%9C%AC%E8%BF%AA%E5%85%8B%E6%9D%BE%E5%AE%9A%E7%90%86"><span class="nav-number">2.3.3.</span> <span class="nav-text">庞加莱 - 本迪克松定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%8E%E7%BA%B3%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.3.4.</span> <span class="nav-text">李纳系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%BE%E5%BC%9B%E6%8C%AF%E8%8D%A1"><span class="nav-number">2.3.5.</span> <span class="nav-text">松弛振荡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%B1%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%8C%AF%E5%AD%90"><span class="nav-number">2.3.6.</span> <span class="nav-text">弱非线性振子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%8D%E6%8E%A2%E5%88%86%E5%B2%94"><span class="nav-number">2.4.</span> <span class="nav-text">再探分岔</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9E%8D-%E7%BB%93%E5%88%86%E5%B2%94%E3%80%81%E8%B7%A8%E4%B8%B4%E7%95%8C%E5%88%86%E5%B2%94%E4%B8%8E%E5%8F%89%E5%BC%8F%E5%88%86%E5%B2%94"><span class="nav-number">2.4.1.</span> <span class="nav-text">鞍 - 结分岔、跨临界分岔与叉式分岔</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9E%8D-%E7%BB%93%E5%88%86%E5%B2%94-1"><span class="nav-number">2.4.1.1.</span> <span class="nav-text">鞍 - 结分岔</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B7%A8%E4%B8%B4%E7%95%8C%E5%92%8C%E5%8F%89%E5%BC%8F%E5%88%86%E5%B2%94"><span class="nav-number">2.4.1.2.</span> <span class="nav-text">跨临界和叉式分岔</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9C%8D%E6%99%AE%E5%A4%AB%E5%88%86%E5%B2%94"><span class="nav-number">2.4.2.</span> <span class="nav-text">霍普夫分岔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%AF%E7%9A%84%E5%85%A8%E5%B1%80%E5%88%86%E5%B2%94"><span class="nav-number">2.4.3.</span> <span class="nav-text">环的全局分岔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A9%B1%E5%8A%A8%E9%92%9F%E6%91%86%E4%B8%8E%E7%BA%A6%E7%91%9F%E5%A4%AB%E6%A3%AE%E7%BB%93%E6%BB%9E%E5%90%8E%E7%8E%B0%E8%B1%A1"><span class="nav-number">2.4.4.</span> <span class="nav-text">驱动钟摆与约瑟夫森结滞后现象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%80%A6%E5%90%88%E6%8C%AF%E5%AD%90%E4%B8%8E%E5%87%86%E5%91%A8%E6%9C%9F%E6%80%A7"><span class="nav-number">2.4.5.</span> <span class="nav-text">耦合振子与准周期性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%9E%E5%8A%A0%E8%8E%B1%E6%98%A0%E5%B0%84"><span class="nav-number">2.4.6.</span> <span class="nav-text">庞加莱映射</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%B7%E6%B2%8C"><span class="nav-number">3.</span> <span class="nav-text">混沌</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B4%9B%E4%BC%A6%E5%85%B9%E6%96%B9%E7%A8%8B"><span class="nav-number">3.1.</span> <span class="nav-text">洛伦兹方程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B4%9B%E4%BC%A6%E5%85%B9%E6%96%B9%E7%A8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E6%80%A7%E8%B4%A8"><span class="nav-number">3.1.1.</span> <span class="nav-text">洛伦兹方程的简单性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A5%87%E6%80%AA%E5%90%B8%E5%BC%95%E5%AD%90%E4%B8%8A%E7%9A%84%E6%B7%B7%E6%B2%8C"><span class="nav-number">3.1.2.</span> <span class="nav-text">奇怪吸引子上的混沌</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B4%9B%E4%BC%A6%E5%85%B9%E6%98%A0%E5%B0%84"><span class="nav-number">3.1.3.</span> <span class="nav-text">洛伦兹映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A2%E7%A9%B6%E5%8F%82%E6%95%B0%E7%A9%BA%E9%97%B4"><span class="nav-number">3.1.4.</span> <span class="nav-text">探究参数空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A9%E7%94%A8%E6%B7%B7%E6%B2%8C%E4%BC%A0%E9%80%81%E7%A7%98%E5%AF%86%E4%BF%A1%E6%81%AF"><span class="nav-number">3.1.5.</span> <span class="nav-text">利用混沌传送秘密信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4%E6%98%A0%E5%B0%84"><span class="nav-number">3.2.</span> <span class="nav-text">一维映射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%8A%A8%E7%82%B9%E5%92%8C%E8%9B%9B%E7%BD%91%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.2.1.</span> <span class="nav-text">不动点和蛛网模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E6%96%AF%E8%B0%9B%E6%98%A0%E5%B0%84%EF%BC%9A%E6%95%B0%E5%80%BC%E6%96%B9%E6%B3%95"><span class="nav-number">3.2.2.</span> <span class="nav-text">逻辑斯谛映射：数值方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E6%96%AF%E8%B0%9B%E6%98%A0%E5%B0%84%EF%BC%9A%E8%A7%A3%E6%9E%90%E6%96%B9%E6%B3%95"><span class="nav-number">3.2.3.</span> <span class="nav-text">逻辑斯谛映射：解析方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%A8%E6%9C%9F%E7%AA%97%E5%8F%A3"><span class="nav-number">3.2.4.</span> <span class="nav-text">周期窗口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%8E%E9%9B%85%E6%99%AE%E8%AF%BA%E5%A4%AB%E6%8C%87%E6%95%B0"><span class="nav-number">3.2.5.</span> <span class="nav-text">李雅普诺夫指数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%AE%E9%80%82%E6%80%A7%E4%B8%8E%E5%AE%9E%E9%AA%8C"><span class="nav-number">3.2.6.</span> <span class="nav-text">普适性与实验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E6%95%B4%E5%8C%96"><span class="nav-number">3.2.7.</span> <span class="nav-text">重整化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%BD%A2"><span class="nav-number">3.3.</span> <span class="nav-text">分形</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E6%95%B0%E9%9B%86%E4%B8%8E%E4%B8%8D%E5%8F%AF%E6%95%B0%E9%9B%86"><span class="nav-number">3.3.1.</span> <span class="nav-text">可数集与不可数集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%B7%E6%89%98%E5%B0%94%E9%9B%86"><span class="nav-number">3.3.2.</span> <span class="nav-text">康托尔集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E7%9B%B8%E4%BC%BC%E5%88%86%E5%BD%A2%E7%9A%84%E7%BB%B4%E6%95%B0"><span class="nav-number">3.3.3.</span> <span class="nav-text">自相似分形的维数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%92%E7%BB%B4%E6%95%B0"><span class="nav-number">3.3.4.</span> <span class="nav-text">盒维数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%B9%E6%80%81%E7%BB%B4%E6%95%B0%E4%B8%8E%E5%85%B3%E8%81%94%E7%BB%B4%E6%95%B0"><span class="nav-number">3.3.5.</span> <span class="nav-text">点态维数与关联维数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A5%87%E6%80%AA%E5%90%B8%E5%BC%95%E5%AD%90"><span class="nav-number">3.4.</span> <span class="nav-text">奇怪吸引子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E4%BE%8B"><span class="nav-number">3.4.1.</span> <span class="nav-text">简例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%83%E5%86%9C%E6%98%A0%E5%B0%84"><span class="nav-number">3.4.2.</span> <span class="nav-text">埃农映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8B%A5%E6%96%AF%E5%8B%92%E7%B3%BB%E7%BB%9F"><span class="nav-number">3.4.3.</span> <span class="nav-text">若斯勒系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%96%E5%AD%A6%E6%B7%B7%E6%B2%8C%E4%B8%8E%E5%90%B8%E5%BC%95%E5%AD%90%E9%87%8D%E6%9E%84"><span class="nav-number">3.4.4.</span> <span class="nav-text">化学混沌与吸引子重构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%97%E8%BF%AB%E5%8F%8C%E4%BA%95%E6%8C%AF%E5%AD%90"><span class="nav-number">3.4.5.</span> <span class="nav-text">受迫双井振子</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="結凪"
+      src="/images/U_avatar.jpg">
+  <p class="site-author-name" itemprop="name">結凪</p>
+  <div class="site-description" itemprop="description">如果你想走到高处，就要使用自己的两条腿！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/UynajGI" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;UynajGI" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/yuunagi.cn@outlook.com" title="E-Mail → yuunagi.cn@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤 ICP 备 2022065599 号 -1 </a>
+      <img src="/images/beian.png" style="display: inline-block;">
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">結凪</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+</body>
+</html>
