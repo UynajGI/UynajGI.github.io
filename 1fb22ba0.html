@@ -53,7 +53,7 @@
 <meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308051607477.png">
 <meta property="og:image" content="https://yuunagi-image-1306014007.cos.ap-beijing.myqcloud.com/202308051625463.png">
 <meta property="article:published_time" content="2023-08-05T08:39:21.000Z">
-<meta property="article:modified_time" content="2023-08-05T08:39:21.757Z">
+<meta property="article:modified_time" content="2023-08-05T08:45:00.513Z">
 <meta property="article:author" content="結凪">
 <meta property="article:tag" content="记录">
 <meta property="article:tag" content="非线性">
@@ -246,8 +246,9 @@ p.spoiler {
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2023-08-05 16:39:21" itemprop="dateCreated datePublished" datetime="2023-08-05T16:39:21+08:00">2023-08-05</time>
+              <time title="创建时间：2023-08-05 16:39:21 / 修改时间：16:45:00" itemprop="dateCreated datePublished" datetime="2023-08-05T16:39:21+08:00">2023-08-05</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -482,16 +483,19 @@ b\dot{\theta}+mgL\sin\theta=\Gamma</script><h3 id="萤火虫"><a href="#萤火�
 </blockquote>
 <h3 id="不动点与线性化"><a href="#不动点与线性化" class="headerlink" title="不动点与线性化"></a>不动点与线性化</h3><p>不动点展开，令 $u=x-x^<em>,\ v=y-y^</em>$，则有</p>
 <script type="math/tex; mode=display">
-\begin{pmatrix*}
+\left(\begin{matrix*}
     \dot{u}\\
     \dot{v}
-\end{pmatrix*}=\begin{pmatrix*}
+\end{matrix*}\right)
+=\left(\begin{matrix*}
     \frac{\partial f}{\partial x} & \frac{\partial f}{\partial y}\\
     \frac{\partial g}{\partial x} & \frac{\partial g}{\partial y}
-\end{pmatrix*} \begin{pmatrix*}
+\end{matrix*}\right)
+\left(\begin{matrix*}
     u\\
     v
-\end{pmatrix*}+\mathcal{O}(u^2,v^2,uv)</script><p><strong>鲁棒情形</strong>：<br>排斥子（也叫作源）：两个特征值都有正实部。<br>吸引子（也叫作汇）：两个特征值都有负实部。<br>鞍点：一个特征值是正的，一个特征值是负的。<br><strong>边缘情形</strong>：<br>中心：两个特征值都是纯虚数。<br>高阶和非孤立的不动点：至少有一个特征值是 0。</p>
+\end{matrix*}\right)
++\mathcal{O}(u^2,v^2,uv)</script><p><strong>鲁棒情形</strong>：<br>排斥子（也叫作源）：两个特征值都有正实部。<br>吸引子（也叫作汇）：两个特征值都有负实部。<br>鞍点：一个特征值是正的，一个特征值是负的。<br><strong>边缘情形</strong>：<br>中心：两个特征值都是纯虚数。<br>高阶和非孤立的不动点：至少有一个特征值是 0。</p>
 <h3 id="保守系统"><a href="#保守系统" class="headerlink" title="保守系统"></a>保守系统</h3><script type="math/tex; mode=display">
 m\ddot{x}=-\frac{\partial V}{\partial x}</script><h4 id="非线性中心"><a href="#非线性中心" class="headerlink" title="非线性中心"></a>非线性中心</h4><p><strong>定理 2.1</strong> （保守系统的非线性中心）假设存在一个守恒量 $E (x)$，$x^<em>$ 是一个孤立的不动点，在它的一个小邻域内没有其他不动点。如果 $x^</em>$ 是 $E$ 的局部极小值，那么所有足够接近 $x^*$ 的轨迹都是闭合的。</p>
 <h3 id="可逆系统"><a href="#可逆系统" class="headerlink" title="可逆系统"></a>可逆系统</h3><p><strong>定理 2.2</strong> :（可逆系统的非线性中心）假设原点 $x^*=0$ 是一个连续可导系统的线性中心，系统为</p>
@@ -700,16 +704,18 @@ m\ddot{x}=-\frac{\partial V}{\partial x}</script><h4 id="非线性中心"><a hre
 <h3 id="洛伦兹方程的简单性质"><a href="#洛伦兹方程的简单性质" class="headerlink" title="洛伦兹方程的简单性质"></a>洛伦兹方程的简单性质</h3><p><strong>不动点</strong> $(0,0,0)$ 和对称的两个不动点 $(\pm\sqrt {b (r-1)},\pm\sqrt {b (r-1)},r-1)$</p>
 <p><strong>原点的线性稳定性</strong> 由雅可比矩阵决定</p>
 <script type="math/tex; mode=display">
-\begin{pmatrix*}
+\left(\begin{matrix*}
     \dot{x}\\
     \dot{y}
-\end{pmatrix*}=J\begin{pmatrix*}
+\end{matrix*}\right)
+=J\left(\begin{matrix*}
     -\sigma & \sigma\\
     r & -1
-\end{pmatrix*}\begin{pmatrix*}
+\end{matrix*}\right)
+\left(\begin{matrix*}
     x\\
     y
-\end{pmatrix*}</script><p>容易得到 $\tau =-\sigma-1&lt;0$，$\Delta = \sigma (1-r)$，如果 $r&gt;0$，则原点是鞍点；如果 $r&lt;0$，则原点是汇。</p>
+\end{matrix*}\right)</script><p>容易得到 $\tau =-\sigma-1&lt;0$，$\Delta = \sigma (1-r)$，如果 $r&gt;0$，则原点是鞍点；如果 $r&lt;0$，则原点是汇。</p>
 <p><strong>原点的全局稳定性</strong> 考虑李雅普诺夫函数</p>
 <script type="math/tex; mode=display">
 V(x,y,z)=\dfrac{1}{\sigma}(x^2+y^2+z^2)</script><p>求导代入方程得到</p>
